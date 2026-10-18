@@ -1,0 +1,42 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+QSA_F32_PREFILL_FIXTURE backend=CUDA3 case=q512-k8192 model=none D=128 H=4 keys=F32_pooled queries=F32 weights=1 mask=0 numerical_policy=REPORT_ONLY
+[mp-dbg] mul_mat hook: type=0 ne11=512 reg=0 ptr=0x10017400000
+[mp-dbg] mul_mat hook: type=0 ne11=512 reg=0 ptr=0x10017400000
+[mp-dbg] mul_mat hook: type=0 ne11=512 reg=0 ptr=0x10017400000
+[mp-dbg] mul_mat hook: type=0 ne11=512 reg=0 ptr=0x10017400000
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+[mp-dbg] mul_mat hook: type=0 ne11=512 reg=0 ptr=0x10017400000
+[mp-dbg] mul_mat hook: type=0 ne11=512 reg=0 ptr=0x10017400000
+lightning indexer runtime: path=tile heads=4 batch=512 kv=8192 type=f32 decode_vector_requested=0 decode_vector_active=0
+lightning indexer F32 keys preserved=1 tile_keys=32 tile_tokens=8 shared_bytes=33152
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+QSA_F32_CASE backend=CUDA3 case=q512-k8192 K=8192 Q=512 D=128 H=4 input=f32_pooled_keys_4cells query=f32 weights=one mask=f16_zero selected_width=2051 numerical_policy=REPORT_ONLY
+QSA_F32_ARM case=q512-k8192 arm=standard_headloop D=128 H=4 K=8192 Q=512 type_k=f32 type_q=f32 weights=one mask=zero graph_workspace_bytes=39059456 timing_scope=warm_graph_compute_async_plus_sync warmups=2 samples=9 median_us=797.406 min_us=793.348 max_us=803.625 result=REPORT_ONLY
+QSA_F32_SAMPLE case=q512-k8192 arm=standard_headloop sample=0 wall_us=801.861
+QSA_F32_SAMPLE case=q512-k8192 arm=standard_headloop sample=1 wall_us=798.499
+QSA_F32_SAMPLE case=q512-k8192 arm=standard_headloop sample=2 wall_us=796.572
+QSA_F32_SAMPLE case=q512-k8192 arm=standard_headloop sample=3 wall_us=800.553
+QSA_F32_SAMPLE case=q512-k8192 arm=standard_headloop sample=4 wall_us=803.625
+QSA_F32_SAMPLE case=q512-k8192 arm=standard_headloop sample=5 wall_us=797.406
+QSA_F32_SAMPLE case=q512-k8192 arm=standard_headloop sample=6 wall_us=794.973
+QSA_F32_SAMPLE case=q512-k8192 arm=standard_headloop sample=7 wall_us=793.348
+QSA_F32_SAMPLE case=q512-k8192 arm=standard_headloop sample=8 wall_us=796.127
+QSA_F32_ARM case=q512-k8192 arm=lightning_f32 D=128 H=4 K=8192 Q=512 type_k=f32 type_q=f32 weights=one mask=zero graph_workspace_bytes=30416896 timing_scope=warm_graph_compute_async_plus_sync warmups=2 samples=9 median_us=839.594 min_us=837.828 max_us=841.497 result=REPORT_ONLY
+QSA_F32_SAMPLE case=q512-k8192 arm=lightning_f32 sample=0 wall_us=841.497
+QSA_F32_SAMPLE case=q512-k8192 arm=lightning_f32 sample=1 wall_us=839.803
+QSA_F32_SAMPLE case=q512-k8192 arm=lightning_f32 sample=2 wall_us=839.233
+QSA_F32_SAMPLE case=q512-k8192 arm=lightning_f32 sample=3 wall_us=839.604
+QSA_F32_SAMPLE case=q512-k8192 arm=lightning_f32 sample=4 wall_us=839.594
+QSA_F32_SAMPLE case=q512-k8192 arm=lightning_f32 sample=5 wall_us=837.828
+QSA_F32_SAMPLE case=q512-k8192 arm=lightning_f32 sample=6 wall_us=838.131
+QSA_F32_SAMPLE case=q512-k8192 arm=lightning_f32 sample=7 wall_us=840.516
+QSA_F32_SAMPLE case=q512-k8192 arm=lightning_f32 sample=8 wall_us=839.427
+QSA_F32_COMPARE case=q512-k8192 score_elements=4194304 score_bitdiff=0 score_max_abs=0 score_max_rel=0 score_rms_abs=0 score_count_gt_1e5=0 score_count_gt_1e3=0 score_nonfinite=0 score_max_index=0 selected_positions_same=1050112/1050112 selected_positions_same_pct=100.000000 selected_set_overlap=1050112/1050112 selected_set_overlap_pct=100.000000 block_cutoff_margin_standard_min=4.19616699e-05 block_cutoff_margin_lightning_min=4.19616699e-05 result=REPORT_ONLY
+QSA_F32_WORKSPACE case=q512-k8192 standard_bytes=39059456 lightning_bytes=30416896 delta_bytes=-8642560
+QSA_F32_PREFILL_FIXTURE COMPLETE scope=operator_only model_load=0 numerical_policy=REPORT_ONLY

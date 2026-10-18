@@ -1,0 +1,7 @@
+# Corrected bounded QSA stream fixture attempt (V77)
+
+- The fixture now runs the original Q8_0 backing KV dense `ggml_flash_attn_ext` reference only for its previously verified sm_70-compatible shape (`streams=1, ntps=4, heads=4`). The other seven shapes omit only the unsupported dense-FA graph; all eight retain helper-vs-old explicit-cell bitwise comparison, fixed per-element Q8_0 FP64 comparison (`atol=2e-6`, `rtol=2e-5`), selected-order-vs-dense CPU check (`max_abs<=1e-12`), finite-output checks, distinct stream/token input checks, and readback verification that KV tail canaries are unchanged.
+- Host `-Wall -Wextra -Werror` syntax compilation passed. The V77 runtime fixture host-linked successfully, and `--host-plan` passed all eight shape plans. `--cpu-oracle` passed all eight cases; selected-order vs dense masked FP64 max absolute error ranged from `7.55e-15` to `1.02e-14`. The existing Python stream-stride test passed.
+- One authorized GPU3 retry was run under the 60-second timeout. It exited 139 (SIGSEGV) after CUDA device enumeration, before any `CUDA_CASE` line. No assertion or CUDA kernel diagnostic was emitted in the log. Kernel core dumps are disabled (`ulimit -c=0`), so no backtrace is available from that run.
+- GPU3 release check: 39 C and 2 MiB used; all six GPUs showed 2–8 MiB used. No fixture process remained. No GPU reset, further retry, model load, or core edit was performed.
+- Raw output is preserved in `qsa-standard-sparse-gpu3-v77-20261016T063325Z.log`. The earlier unsupported-F16 log is preserved separately.

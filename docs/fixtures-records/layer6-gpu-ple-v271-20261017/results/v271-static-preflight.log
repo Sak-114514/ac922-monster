@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "scope": "local/static only; no hostlink/model/GPU run",
+  "checks": [
+    "V259 R2 D2 source ancestry and family order",
+    "V274 frozen report/build identity and successful compile/link return codes",
+    "V274-to-V268 runtime lineage pinned",
+    "source/header/native-checker/hostlink/profile hashes",
+    "unchanged non-PLE fastpaths and original split/MTP owner",
+    "separate-layer PLE + shared MTP embedding flags; all hybrid NUMA/shard fields off",
+    "both exact scenario inputs and copy0 destinations preserved",
+    "all known PLE/KV/scenario/corpus/gate checks before model load",
+    "launch remains disabled until root review"
+  ],
+  "runtime_build_id": "20261017T132251.715508Z",
+  "runtime_report_sha256": "9e51eb7577613e20ea0177032ca60563451773a1ce5ce6dea940c77664f3da0e",
+  "profile_sha256": "e060cd80b168c2d00a4565f69b656cda7b9a211dd26ac44e3068d046c171f06a",
+  "source_sha256": "3f0b67a79f7709eb92a3b927bdcfc62b34675b055c15f8b2a460c4c16ccee7e1",
+  "kv_policy_sha256": "7281c4bf1534c78277dff7bd53e6e5aaf0e2cc7eb0a49b258eee5e38dd513fd4",
+  "semantic_gate_sha256": "d9d7da2b458abd6a43549bcebe92754ae3a257f6285323aef2ff126346f6d3e3",
+  "host_link_script_sha256": "7b063a105e8ca2b5893d90e2bb84bff75d7e2b5f813a24c049a98b1187b454d9",
+  "changed_environment_keys": [
+    "GGML_META_PLAIN_DEVICE_COPY",
+    "LD_LIBRARY_PATH",
+    "LLAMA_MTP_SHARE_GPU_EMBEDDING",
+    "LLAMA_PLE_NUMA_CPU_BALANCE",
+    "LLAMA_PLE_NUMA_CPU_HEADROOM",
+    "LLAMA_PLE_NUMA_GPU_GIB",
+    "LLAMA_PLE_NUMA_GPU_NODES",
+    "LLAMA_PLE_NUMA_HYBRID",
+    "LLAMA_PLE_NUMA_REQUIRED",
+    "LLAMA_PLE_SEPARATE_LAYER",
+    "ROOT_BUILD_REPORT",
+    "ROOT_DYNAMIC_LIB_DIR",
+    "ROOT_PROFILE_KIND",
+    "ROOT_RUNTIME_REVISION"
+  ],
+  "model_loaded": false,
+  "gpu_touched": false
+}

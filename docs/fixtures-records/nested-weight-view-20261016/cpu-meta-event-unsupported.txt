@@ -1,0 +1,16 @@
+CPU-only nested Meta probe status (2026-10-16):
+
+GGUF metadata inspector passed:
+  PLE_WEIGHT name=blk.1.ple_conv1d.weight type=f16 ne=4,10240,1,1 bytes=81920 offset=2479353664
+
+The CPU-only Meta3/nested2x3 graph probe did not reach the PLE view/cont graph.
+With GGML_META_CONTEXT_VIEWS=1, GGML_META_REPLAY_GUARD=1,
+GGML_META_FIFO_PIPELINE=1, and GGML_META_NESTED_EXPERIMENTAL=1, the first
+scheduler graph compute aborted at ggml-backend-meta.cpp:3328:
+
+  GGML_ASSERT(tail != nullptr) failed
+
+This is the submit-tail event creation gate. The CPU backend does not provide
+the child event required by the Meta submit lane; this CPU run does not diagnose
+the V61 nested static-weight-view owner failure. No CUDA runtime was linked or
+initialized, and no GPU was used.

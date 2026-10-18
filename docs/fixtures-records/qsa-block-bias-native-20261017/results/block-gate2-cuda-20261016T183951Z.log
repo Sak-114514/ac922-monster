@@ -1,0 +1,39 @@
+start=2026-10-16T18:39:51Z
+base=/home/debian/ac922-monster/experiments/standard-opt-20261014
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-block-bias-native-20261017/qsa-block-bias-native-gate2
+mode=cuda
+timeout=20
+model_loaded=0
+21c816e4505ae28e8804051531e490dae39e1740d38000064529fcb969a97ae6  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-block-bias-native-20261017/qsa-block-bias-native-gate2
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 2 MiB, 16125 MiB, 39
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 1 MiB, 16126 MiB, 38
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 1 MiB, 16126 MiB, 38
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 0 MiB, 16127 MiB, 38
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 7 MiB, 16120 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 6 MiB, 16121 MiB, 39
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+BACKEND mode=cuda target=CUDA0
+GRAPH_READY name=A ratio=4 B=6 Q=8 S=2 uid=1 nodes=21 full_shape_f32_nodes=5 output_bytes=384 root_bytes=3072 reference=1 native_op=DIAG_MASK_INF
+optimization path device=0 path=qsa_block_bias_native scope=host_dispatch_or_capture requested=1 selected=1 reason=exact_f32_fill_scatter tokens=8 width=6 auxiliary=2 count=1
+optimization path device=0 path=qsa_block_bias_native scope=host_dispatch_or_capture requested=1 selected=1 reason=exact_f32_fill_scatter tokens=8 width=6 auxiliary=2 count=2
+PASS_SMALL ratio=4 phase=A1 exact_native=1 exact_old_expression=1 helper_optin=1 oracle=1 input_immutable=1 poison_fullwrite=1 canary=1 dead_foreign_spare=1 querytail_edges=1 float_cast_tie=1 uid=1
+PASS_SMALL ratio=4 phase=B exact_native=1 exact_old_expression=1 helper_optin=1 oracle=1 input_immutable=1 poison_fullwrite=1 canary=1 dead_foreign_spare=1 querytail_edges=1 float_cast_tie=1 uid=1
+PASS_SMALL ratio=4 phase=A2 exact_native=1 exact_old_expression=1 helper_optin=1 oracle=1 input_immutable=1 poison_fullwrite=1 canary=1 dead_foreign_spare=1 querytail_edges=1 float_cast_tie=1 uid=1
+GRAPH_READY name=A ratio=64 B=6 Q=8 S=2 uid=3 nodes=21 full_shape_f32_nodes=5 output_bytes=384 root_bytes=3072 reference=1 native_op=DIAG_MASK_INF
+PASS_SMALL ratio=64 phase=A1 exact_native=1 exact_old_expression=1 helper_optin=1 oracle=1 input_immutable=1 poison_fullwrite=1 canary=1 dead_foreign_spare=1 querytail_edges=1 float_cast_tie=1 uid=3
+PASS_SMALL ratio=64 phase=B exact_native=1 exact_old_expression=1 helper_optin=1 oracle=1 input_immutable=1 poison_fullwrite=1 canary=1 dead_foreign_spare=1 querytail_edges=1 float_cast_tie=1 uid=3
+PASS_SMALL ratio=64 phase=A2 exact_native=1 exact_old_expression=1 helper_optin=1 oracle=1 input_immutable=1 poison_fullwrite=1 canary=1 dead_foreign_spare=1 querytail_edges=1 float_cast_tie=1 uid=3
+PASS_QSA_BLOCK_BIAS_NATIVE mode=cuda model_loaded=0
+optimization path summary device=0 path=qsa_block_bias_native scope=host_dispatch_or_capture requested=12 selected=12
+end=2026-10-16T18:39:51Z
+elapsed_seconds=0
+exit_status=0
+peak_sampled_gpu_memory_delta_mib=1
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 3 MiB, 16124 MiB, 40
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 1 MiB, 16126 MiB, 38
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 1 MiB, 16126 MiB, 38
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 0 MiB, 16127 MiB, 38
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 7 MiB, 16120 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 6 MiB, 16121 MiB, 39

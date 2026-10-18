@@ -1,0 +1,927 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-10-16T04:13:32.453715+00:00",
+  "phase": "finish",
+  "runtime_revision_label": "20261016T040204.430535Z",
+  "runtime_source_git_revision": null,
+  "host": {
+    "platform": "Linux-8.8.8-ac922-gw-ppc64le-with-glibc2.36",
+    "machine": "ppc64le",
+    "python": "3.11.2"
+  },
+  "runner_binary": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/build-runtime-v30/dual-context-v30-onebank4d3",
+    "size_bytes": 545520,
+    "sha256": "9f114e7101e909a3d30d1bb7d7c0823160b25e55520294b9dd30b51e3449b24c"
+  },
+  "fixture_sources": {
+    "dual-context-v30-onebank4d3.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/dual-context-v30-onebank4d3.cpp",
+      "size_bytes": 91675,
+      "sha256": "0ec67cc846042098f600b3d8fa8924089e4d70b0d98c27711d6ff083f1a3d304"
+    },
+    "kv-layout-policy-v30.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/kv-layout-policy-v30.h",
+      "size_bytes": 1311,
+      "sha256": "4d7a2e8195494f952e560790e15f082912caeb1efb409e49e9cab852a9439821"
+    },
+    "kv-layout-policy-v30-test.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/kv-layout-policy-v30-test.cpp",
+      "size_bytes": 780,
+      "sha256": "3709d35e8cb79bc53f011012d6fae870de32814fc7bfdc042208e8fff31d821c"
+    },
+    "v30-policy-shape-test.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/v30-policy-shape-test.cpp",
+      "size_bytes": 2013,
+      "sha256": "34e08c26964dde06ecb04b6e696d688e42f797605af92efd48f4d1abb3c9c520"
+    },
+    "autonomous-owner-loop-v23.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/autonomous-owner-loop-v23.h",
+      "size_bytes": 1792,
+      "sha256": "b52a9af08764abe559f2760d933613bee782520bfd64596208f7bc6c06dd82e8"
+    },
+    "dual-context-v15-owner.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/dual-context-v15-owner.h",
+      "size_bytes": 2804,
+      "sha256": "172cf33efed70365032bf476a822953a13b6fe6313520d40d8fede5acde64030"
+    },
+    "dual-context-v14-results.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/dual-context-v14-results.h",
+      "size_bytes": 1626,
+      "sha256": "47bd1bc701d95ea6f8d4f6af1ec8940284cf8826b3283281c1b44b7889f83410"
+    },
+    "cupti-window-policy-v14.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/cupti-window-policy-v14.h",
+      "size_bytes": 943,
+      "sha256": "9370f153da831f2deb7db4865ee6846dc50007d446e34558c18178de6e36f4db"
+    },
+    "warmup-policy-v14.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/warmup-policy-v14.h",
+      "size_bytes": 418,
+      "sha256": "f32992c8a6440099222c7134cc44d543b35b26944df65a36c4910d8d6df9da5d"
+    },
+    "fatal-backtrace-v15.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/fatal-backtrace-v15.h",
+      "size_bytes": 4382,
+      "sha256": "d2221972784ae14e3ca31609fd67fc039f567cb5a23511805e2ee130835c1166"
+    },
+    "prefill-logit-dump-v16.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/prefill-logit-dump-v16.h",
+      "size_bytes": 6722,
+      "sha256": "0f210135e1106e4e8f394321d9d1732b4e8cacfc1ea9398b6a261c69d95905d5"
+    },
+    "cupti-failure-policy-v16.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/cupti-failure-policy-v16.h",
+      "size_bytes": 211,
+      "sha256": "4707b59525eb7cbc2ac16d944abfcc92a6e089958e5db22e641c1f1355fad596"
+    },
+    "copy-mode-policy-v22.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/copy-mode-policy-v22.h",
+      "size_bytes": 442,
+      "sha256": "c389d9ab763218a0b580c843694324dc087e4089f83a593cb0deb81699327733"
+    },
+    "dual-context-v14-submit-guard.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/dual-context-v14-submit-guard.h",
+      "size_bytes": 1656,
+      "sha256": "4a38e2218130f8bdf0d1d3ed4b942e2d4f2457a8e76fe43df2008cff0741ee87"
+    },
+    "prepare_variant_v30.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/prepare_variant_v30.py",
+      "size_bytes": 5449,
+      "sha256": "b062980e6d4b748e26c079ec41e37cedf8505aa26bc1a90028e13f317147719d"
+    },
+    "compare_v30_results.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/compare_v30_results.py",
+      "size_bytes": 45601,
+      "sha256": "c0c941c2090a0771fb88f640d0a99e90579866671cdd1f90cb941e7f07960365"
+    },
+    "write_run_manifest_v30.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/write_run_manifest_v30.py",
+      "size_bytes": 15247,
+      "sha256": "3dc876016321ced49ec880d99291e37e41f08d3ac63a6ca3e1683528c1cd3484"
+    },
+    "run-v30-onebank4d3.sh": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/run-v30-onebank4d3.sh",
+      "size_bytes": 14587,
+      "sha256": "f7c2dbd2a0d564f1f8ac2126f95be8f47b99cad20c9ff3a62b6ef6b85bf5504b"
+    },
+    "compile-runtime-v30.sh": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/compile-runtime-v30.sh",
+      "size_bytes": 3656,
+      "sha256": "78a1ae6684cc8b8cf2b720fa311a5742056b66d042bb7c3c5870bcd4230363da"
+    },
+    "run-cpu-tests-v30.sh": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/run-cpu-tests-v30.sh",
+      "size_bytes": 888,
+      "sha256": "e03301d11b825ce76e24c46a09fc229d80e1213f082ea0858f0eeba29971cd1e"
+    },
+    "test_v30_plan.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/test_v30_plan.py",
+      "size_bytes": 3329,
+      "sha256": "0f28a1c5f95045e4e9b4e15d6ec98bb2f9b7de262859af41fccd0464ac57606a"
+    },
+    "compare_v30_vs_v27_token_arrays.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/compare_v30_vs_v27_token_arrays.py",
+      "size_bytes": 8380,
+      "sha256": "ce72c3ab78161f556211b322ab638fed2efecb5e80fab7c000fc1caa764668ff"
+    },
+    "V27-AUX-PREFIX-BASELINE.md": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/V27-AUX-PREFIX-BASELINE.md",
+      "size_bytes": 1801,
+      "sha256": "5e9da83bed117fdf90c02ffeb319962e6931290a9524d1bf6236c2df566e55a2"
+    },
+    "semantic_gate_v14.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/semantic_gate_v14.py",
+      "size_bytes": 10072,
+      "sha256": "60735017c01411d0e1e5826ca19bd9cb9d7f57c738dbbca1619c914a6d7399a4"
+    },
+    "preclean_quality_gate_v22.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/preclean_quality_gate_v22.py",
+      "size_bytes": 8362,
+      "sha256": "4b97209a30737eea347ef3d5293019254b9b42180ba5b5e5f55f076c06224fbc"
+    },
+    "extract_variant_log_v22.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/extract_variant_log_v22.py",
+      "size_bytes": 2162,
+      "sha256": "8933b4f343df5cc699161b01e257f4466670abb0c50e930b237287dae21d4921"
+    },
+    "compare_prefill_logits_v16.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/compare_prefill_logits_v16.py",
+      "size_bytes": 5664,
+      "sha256": "64329a6882da87de9c157e7908ec9ad8cc93bbbcf2bf58a38c7e275e0094feab"
+    },
+    "scenarios.json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/scenarios.json",
+      "size_bytes": 1281961,
+      "sha256": "0696a6c100a209ae97fda17c80a8f951d246c9c871ed69478d48e092eb6f4ac4"
+    },
+    "plan-v30-onebank4d3.json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/plan-v30-onebank4d3.json",
+      "size_bytes": 7100,
+      "sha256": "43c4088339f44a4027f2b610b6ec46331a5fdb51a2fa71ffb05cd8f332462a9b"
+    },
+    "input-provenance.json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/input-provenance.json",
+      "size_bytes": 5484,
+      "sha256": "766509ad6ef90a923d6155365a4aae9d8a4ecba301981f60d3b8002dce25a218"
+    },
+    "real-corpus-token-ids.json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/real-corpus-token-ids.json",
+      "size_bytes": 1021232,
+      "sha256": "1b85382068bee8ed9108db3e5b924f020dedf00d43d6da80c9d218099d428a02"
+    },
+    "v30-onebank4d3-exact-env.json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/v30-onebank4d3-exact-env.json",
+      "size_bytes": 7720,
+      "sha256": "9d2414ad872026f063f80c79f49cb59862bf03436578d814f621152535fdc4b5"
+    },
+    "README.md": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/README.md",
+      "size_bytes": 5706,
+      "sha256": "e4317a7c0e4c6ef80ed0885a770fc322263753eff977a3bb1b81b0742ed234e4"
+    },
+    "STATUS.md": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/STATUS.md",
+      "size_bytes": 2675,
+      "sha256": "8cd4b19af76e6b24ce02c760f167d46eea93a73c62793c91e513821d19ff1e88"
+    },
+    "CAPACITY-LEDGER.md": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/CAPACITY-LEDGER.md",
+      "size_bytes": 2549,
+      "sha256": "b5216f3fa63fe6a35cec030db61bce4ed2a0c31699cb3f3ef89e2f84d341cb5d"
+    },
+    "native-semantic/run_semantic_native.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/native-semantic/run_semantic_native.py",
+      "size_bytes": 34556,
+      "sha256": "85b56838258de35eb492425a0286f1078ac836b1826b9f8885fe331cd92cc2ad"
+    },
+    "native-semantic/run_semantic_chat.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/native-semantic/run_semantic_chat.py",
+      "size_bytes": 50662,
+      "sha256": "08ef9fa3704e3b9b9e2f0530890a48c51041165eb65260efa51d57a2f2c82194"
+    },
+    "native-semantic/case-input.json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/native-semantic/case-input.json",
+      "size_bytes": 14172,
+      "sha256": "f2487f90c32d0e383494dc5ae68bec24d6bf0c8d31a065dfbf614447fb6b53fd"
+    },
+    "hardware-next-20261014/semantic-checks.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/hardware-next-20261014/semantic-checks.py",
+      "size_bytes": 24049,
+      "sha256": "9dcd040ef8f2b8dd157c8ab44dbabb5715078a8db2f1585319811b8a1311058c"
+    },
+    "selected_variant/scenarios.json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/scenarios.json",
+      "size_bytes": 1282505,
+      "sha256": "881296418916af15690b32826504e8b84b32fdcfc1508ce95776e4bf903d6983"
+    },
+    "selected_variant/plan-v30-onebank4d3.json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/plan-v30-onebank4d3.json",
+      "size_bytes": 8838,
+      "sha256": "ece3d31a26490c76672df4a887ec3a9c6a450287a658bd4b2cf21e1dc8899374"
+    }
+  },
+  "runtime_libraries": {
+    "libllama-common.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v71/lib/libllama-common.so.0",
+      "size_bytes": 6586040,
+      "sha256": "c44880bd2a977b4f1eb9bbd0f40c1039f5067a2d1964a70670064602f800dda3"
+    },
+    "libllama.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v71/lib/libllama.so.0",
+      "size_bytes": 4210248,
+      "sha256": "4113f9ace2ce998f70bc375f3251fc056f7850ea893d8dad7786acc63f9986b6"
+    },
+    "libmtmd.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v71/lib/libmtmd.so.0",
+      "size_bytes": 2154656,
+      "sha256": "02b78e109820e28de208363e3f6d8f3cde8f43a452ec8770972d3565caed8e23"
+    },
+    "libggml.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v71/lib/libggml.so.0",
+      "size_bytes": 81144,
+      "sha256": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2"
+    },
+    "libggml-cpu.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v71/lib/libggml-cpu.so.0",
+      "size_bytes": 1280008,
+      "sha256": "c1fd8d19e54df03e97f1c71c8c95565626ec73f44f7d4f3e334bfe3e74f464fc"
+    },
+    "libggml-cuda.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v71/lib/libggml-cuda.so.0",
+      "size_bytes": 231439496,
+      "sha256": "3b55d98d385d54dce5ba177050218eb7e26f15b3c424498e7cfc98bb7d44a6da"
+    },
+    "libggml-base.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v71/lib/libggml-base.so.0",
+      "size_bytes": 1614960,
+      "sha256": "a2c84d7ef1a04d091a5c3e9e1ca627aeeefe75a461570a7b866d516b624f732d"
+    }
+  },
+  "frozen_runtime_build_report": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V71-build.json",
+    "size_bytes": 271655,
+    "sha256": "4a2c5fe80c2ade780fb11af97992d0919930ed44b7e0347c01dda3924c87e789",
+    "build_run_id": "20261016T040204.430535Z",
+    "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v71",
+    "run_completed": true,
+    "server_sha256": "347e5faf3b13c4c23ae92adc353637eaea21bbb1f15873a233a169c3a2c90ca6",
+    "verified_no_old_source_or_build_paths": true,
+    "server_binary": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v71/bin/llama-server",
+      "size_bytes": 72984,
+      "sha256": "347e5faf3b13c4c23ae92adc353637eaea21bbb1f15873a233a169c3a2c90ca6"
+    },
+    "link_results": [
+      {
+        "target": "ggml/src:ggml-base",
+        "returncode": 0
+      },
+      {
+        "target": "ggml/src:ggml-base",
+        "returncode": 0
+      },
+      {
+        "target": "tools/server:server-context",
+        "returncode": 0
+      },
+      {
+        "target": "tools/server:server-context",
+        "returncode": 0
+      },
+      {
+        "target": "ggml/src/ggml-cuda:ggml-cuda",
+        "returncode": 0
+      },
+      {
+        "target": "ggml/src/ggml-cuda:ggml-cuda",
+        "returncode": 0
+      },
+      {
+        "target": "ggml/src:ggml-cpu",
+        "returncode": 0
+      },
+      {
+        "target": "ggml/src:ggml-cpu",
+        "returncode": 0
+      },
+      {
+        "target": "ggml/src:ggml",
+        "returncode": 0
+      },
+      {
+        "target": "ggml/src:ggml",
+        "returncode": 0
+      },
+      {
+        "target": "src:llama",
+        "returncode": 0
+      },
+      {
+        "target": "src:llama",
+        "returncode": 0
+      },
+      {
+        "target": "common:llama-common",
+        "returncode": 0
+      },
+      {
+        "target": "common:llama-common",
+        "returncode": 0
+      },
+      {
+        "target": "tools/mtmd:mtmd",
+        "returncode": 0
+      },
+      {
+        "target": "tools/mtmd:mtmd",
+        "returncode": 0
+      },
+      {
+        "target": "tools/server:llama-server-impl",
+        "returncode": 0
+      },
+      {
+        "target": "tools/server:llama-server",
+        "returncode": 0
+      }
+    ]
+  },
+  "semantic_gate_report": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/results.json.semantic-gate.json",
+    "size_bytes": 13870,
+    "sha256": "3eacd09e1c5adf270bfe4f65641abf447b174297ff4e277fd21b2a0ce5a504c3"
+  },
+  "cupti_trace": null,
+  "selected_cupti_collector": null,
+  "prefill_logit_artifacts": {
+    "enabled": true,
+    "directory": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits",
+    "files": [
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-00__arithmetic-zh.ac922pflogits",
+        "size_bytes": 994882,
+        "sha256": "1835510454dcb3a0bfdb9329cbbf0c89c1c679c0367f691770cbb6840c752c7d"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-00__capital-en.ac922pflogits",
+        "size_bytes": 994780,
+        "sha256": "9ae5b480096538d693482e39f189f0b0272038d9b98248b43050449c864b1b53"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-00__logic-en.ac922pflogits",
+        "size_bytes": 995067,
+        "sha256": "321f3ab2857be636cd0a9e67f74c98f43b92468d17f7eac1736cce9ca59f954a"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-00__strict-json-zh.ac922pflogits",
+        "size_bytes": 995292,
+        "sha256": "4868ad953372032e6d6cda0fedee045733590fd3402387dc5b823a8fc3f90ba3"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-00_before-mtp__arithmetic-zh.ac922pflogits",
+        "size_bytes": 994893,
+        "sha256": "6a000a13a36550e76ba7d3f6a71795bf1fab0ba892d865f585a3fca413030717"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-00_before-mtp__capital-en.ac922pflogits",
+        "size_bytes": 994791,
+        "sha256": "a49e23b1c252304420a506d27c494c412c08b432d112161c82f9e6abf1e109a3"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-00_before-mtp__logic-en.ac922pflogits",
+        "size_bytes": 995078,
+        "sha256": "fe1f938db3c97e895c383ea8fa07399cb61f886ccccc38fb5bf08d7e8dfdd8d0"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-00_before-mtp__strict-json-zh.ac922pflogits",
+        "size_bytes": 995303,
+        "sha256": "a0c072247776691c83c48be018bdce8cbd5bfffb54cd5a71128ac89fcd1752e0"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-01__parallel2-add-en.ac922pflogits",
+        "size_bytes": 996323,
+        "sha256": "feea9f7a8942afcf5d4c0c2e9360b04d4b796f69712f4083324594382dd3fdea"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-01__parallel2-subtract-zh.ac922pflogits",
+        "size_bytes": 996332,
+        "sha256": "b4468d74d3b1a1f2f536e7f64b156ce2d60a730a08515278036f89fb76bd46c7"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-01__python-clamp.ac922pflogits",
+        "size_bytes": 995444,
+        "sha256": "7bbda826b8cad1a9bb103945dbb8fa4e59682ab67cac7086b6fc6b9a547c8dc2"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-01__vocabulary-en-zh.ac922pflogits",
+        "size_bytes": 994819,
+        "sha256": "e4fc022092dc2676658f9e20cd06b60f3e3c6aca8381d12295d77c662c7976ca"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-01_before-mtp__parallel2-add-en.ac922pflogits",
+        "size_bytes": 996334,
+        "sha256": "565ec77562508a574b1a5107b02ed125da1d787931b6ab7b300114d95a2a4299"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-01_before-mtp__parallel2-subtract-zh.ac922pflogits",
+        "size_bytes": 996343,
+        "sha256": "1882f5ff9fd099e0df339b1dc9e944f1dd35437cdbe31b62a6ca82a80c38ecc7"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-01_before-mtp__python-clamp.ac922pflogits",
+        "size_bytes": 995455,
+        "sha256": "a219f05ddc4fbd28c840fb456074f00aa1bb32321b43779848dd0fbe7846f728"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-01_before-mtp__vocabulary-en-zh.ac922pflogits",
+        "size_bytes": 994830,
+        "sha256": "24e5ded14e4bcf1dc28cd929fe8503a0a1b46564f8b76bafcde220c573bd2808"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-02__parallel4-add.ac922pflogits",
+        "size_bytes": 996203,
+        "sha256": "8d2948ad37b5d725491623731163d0cc170608f6423522458efe665dddc5155d"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-02__parallel4-divide.ac922pflogits",
+        "size_bytes": 996301,
+        "sha256": "442fa994d269679230b5937097f322379dd542439c3fce3741cfe4e56d77311b"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-02__parallel4-multiply.ac922pflogits",
+        "size_bytes": 996205,
+        "sha256": "db9048591280341085d0d5e42f95f9cb0316e5c6e4bab79c99ab409bf2572e59"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-02__parallel4-subtract.ac922pflogits",
+        "size_bytes": 996295,
+        "sha256": "db398d0d3eee288b026e2f3a93b278aa2d2fedb45e1683d19d757c489952f5d4"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-02_before-mtp__parallel4-add.ac922pflogits",
+        "size_bytes": 996214,
+        "sha256": "278f5ac660f4846eaf5f5eecd88fee24b6d871ef5cdedee8e945a7c628e55e3e"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-02_before-mtp__parallel4-divide.ac922pflogits",
+        "size_bytes": 996312,
+        "sha256": "2f16a3cf4ed91596b22e50c8cb19b50596365c88ea2ac704ff229b06fb149f5b"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-02_before-mtp__parallel4-multiply.ac922pflogits",
+        "size_bytes": 996216,
+        "sha256": "e1afeb48eb31b445ab46872f0cb2d4c427e2f366ed9dc41a0a349b2bbc307f39"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-02_before-mtp__parallel4-subtract.ac922pflogits",
+        "size_bytes": 996306,
+        "sha256": "aa3be4dc4424c0f1029fdb035e33fd2ed8fd26f81dc51173b95466c18eb3aa68"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-03__slot-reuse-0.ac922pflogits",
+        "size_bytes": 996772,
+        "sha256": "31152806b61dd1bc87040c0626d87c8cdad368e91341405b357ba7b8c3406b21"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-03__slot-reuse-1.ac922pflogits",
+        "size_bytes": 996772,
+        "sha256": "7afc062e2969e0eb13fe1576f08aa65a15967f30f48de4f3339b6aa0a584d12d"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-03__slot-reuse-2.ac922pflogits",
+        "size_bytes": 996744,
+        "sha256": "da8a06c850f590fa11b094930721ea3469eaf0fbf2ab0582bb044321723b79a9"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-03__slot-reuse-3.ac922pflogits",
+        "size_bytes": 996630,
+        "sha256": "82b15cf715329d67235c0324883dc8ec9408d2fb82f3d703cb38587a3258e084"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-03_before-mtp__slot-reuse-0.ac922pflogits",
+        "size_bytes": 996783,
+        "sha256": "5015cd2b85b1c26a755dc9afe10bafe4ad2d8e0b1fab9738272695ec3dadb811"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-03_before-mtp__slot-reuse-1.ac922pflogits",
+        "size_bytes": 996783,
+        "sha256": "84046c5e14e96029c0e4f9ac6cce078a26703ca7a01cf12d2fc3782762edd246"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-03_before-mtp__slot-reuse-2.ac922pflogits",
+        "size_bytes": 996755,
+        "sha256": "ad06e54513c07cdf238d1a2fb6b179e723118eaa7ef2fbda02306d156de1af48"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-dual-sem-03_before-mtp__slot-reuse-3.ac922pflogits",
+        "size_bytes": 996641,
+        "sha256": "22b9c2300fb78023a4114966ef9603ab6d495828c5f8c284619c9df187649207"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-real8k-p4-1x4__real8k-0.ac922pflogits",
+        "size_bytes": 1265229,
+        "sha256": "c0efbd83d8575c392c0edddc6bceb767009d1a263de9cbc9c2162a2ae6a511ba"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-real8k-p4-1x4__real8k-1.ac922pflogits",
+        "size_bytes": 1266132,
+        "sha256": "04aa5310e1cf34a5fc306895c20f3d43a15c8aa11953401daa26bb5e5d5dd1f9"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-real8k-p4-1x4__real8k-2.ac922pflogits",
+        "size_bytes": 1266320,
+        "sha256": "a8625194f27f118cea4f6d5c2db6053c1f0eb82b0022a83283fea3707c995904"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-real8k-p4-1x4__real8k-3.ac922pflogits",
+        "size_bytes": 1266476,
+        "sha256": "2ee6bffcf24c0d2f0883890945d6244eb23e157983085cb2a827f16862cf9d14"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-real8k-p4-1x4_before-mtp__real8k-0.ac922pflogits",
+        "size_bytes": 1265240,
+        "sha256": "5927d1476d798c689da2b9df7cbd4ef82cedc25e634dcdfcf9d0e1c11ca75454"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-real8k-p4-1x4_before-mtp__real8k-1.ac922pflogits",
+        "size_bytes": 1266143,
+        "sha256": "133854a17551ddebf998d22395cab03c796e6235a2d4fe6cf19398085c270182"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-real8k-p4-1x4_before-mtp__real8k-2.ac922pflogits",
+        "size_bytes": 1266331,
+        "sha256": "8a1d6168c9b62fd4aaff68a9096bff83efcf693278390942efb914ed1705b22e"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-real8k-p4-1x4_before-mtp__real8k-3.ac922pflogits",
+        "size_bytes": 1266487,
+        "sha256": "614d2e53de7294a80a13e69e0d6e3bf6b9b5b0e02851e822d829c1b7c75d5bbb"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-real8k-0__real8k-0.ac922pflogits",
+        "size_bytes": 1265231,
+        "sha256": "ea4bb65b4b3ceba8f023aa55f4dd94afb5bb9636d5175707a2cc8177601d0302"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-real8k-0__real8k-1.ac922pflogits",
+        "size_bytes": 1266134,
+        "sha256": "468f001c020f9c48d52234fa203eaa12ce2686320e484c8ef511880ce244170f"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-real8k-0_before-mtp__real8k-0.ac922pflogits",
+        "size_bytes": 1265242,
+        "sha256": "c6a28408a8293338d0a778076814f527700e3f2bfee29b1c60636f46cb57dec9"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-real8k-0_before-mtp__real8k-1.ac922pflogits",
+        "size_bytes": 1266145,
+        "sha256": "1f4f4c21409b9f0125faf21fa9157659f56ca7f084f9aad9fd1606fa80ce07dd"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-real8k-1__real8k-2.ac922pflogits",
+        "size_bytes": 1266322,
+        "sha256": "61f4fb266844eea3e4e2be0171b72fd89635b79a8c77d9e39319921d872e531f"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-real8k-1__real8k-3.ac922pflogits",
+        "size_bytes": 1266478,
+        "sha256": "2e187df8d417efc6eff4463c14f5349b9f5526fb625e5c9131c317fb6a64a6c9"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-real8k-1_before-mtp__real8k-2.ac922pflogits",
+        "size_bytes": 1266333,
+        "sha256": "44fe14ade02744dfb6dba959f4b33e1e2c459d691ac44819040fb564d6899b95"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-real8k-1_before-mtp__real8k-3.ac922pflogits",
+        "size_bytes": 1266489,
+        "sha256": "f1c458c8047dc83b41adf32ec8ba5adf3d20ca9e62a0fcaa2810fbaceb13564c"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-00-0__arithmetic-zh.ac922pflogits",
+        "size_bytes": 994886,
+        "sha256": "0d226ceb4625c8ce0aa1cc410e438e51ad082a448caf968b33c45698b5a9a07c"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-00-0__capital-en.ac922pflogits",
+        "size_bytes": 994784,
+        "sha256": "13519ff1ffa895af2716f2636ceb69f9bb0d9506ebae3bd27162e48514cd3792"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-00-0_before-mtp__arithmetic-zh.ac922pflogits",
+        "size_bytes": 994897,
+        "sha256": "b05d6bb5bef3a0f6bc2c191da09df6e3315af280ad5dc8a0c1aab6ec37eb1ecd"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-00-0_before-mtp__capital-en.ac922pflogits",
+        "size_bytes": 994795,
+        "sha256": "c3e6bf1a70fdd5f359b7e0a2bc615ca4ab30ac76cd07b11e0929438512c187de"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-00-1__logic-en.ac922pflogits",
+        "size_bytes": 995071,
+        "sha256": "90c4613b502a2f245ba3f0bb461e1a8c90ec40fbfc798c453c67d369c3e8fce7"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-00-1__strict-json-zh.ac922pflogits",
+        "size_bytes": 995296,
+        "sha256": "33b2808bdbaf9882e8a7f80e7fdecf24fa7a90238df709f76e57ebb1885d737d"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-00-1_before-mtp__logic-en.ac922pflogits",
+        "size_bytes": 995082,
+        "sha256": "f9c0e50dd315f4ad18bf37e6b169590dab1d4705526db82708bd7993a11b2848"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-00-1_before-mtp__strict-json-zh.ac922pflogits",
+        "size_bytes": 995307,
+        "sha256": "0b4fd169a80565025a117af172057196312b3c75daf50bb40992ac1ecbfea035"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-01-0__python-clamp.ac922pflogits",
+        "size_bytes": 995448,
+        "sha256": "97d7bf0cdc96d181aa4b9482a70b4e45ffc2eb8502811e16f794d4c92ca047ae"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-01-0__vocabulary-en-zh.ac922pflogits",
+        "size_bytes": 994823,
+        "sha256": "6b51b12544582c5159524281a3106f27520a23100a897a8910026ac2e7bdcc2c"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-01-0_before-mtp__python-clamp.ac922pflogits",
+        "size_bytes": 995459,
+        "sha256": "5856fb7c1870935792a74ea090e68b7b300ba28f5ec3d996dc2a7092a1bf2bcd"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-01-0_before-mtp__vocabulary-en-zh.ac922pflogits",
+        "size_bytes": 994834,
+        "sha256": "eb740255bf4b7b660f82f5fd7b6698169cd6bb360bedea520bbfdcbe54e8dff5"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-01-1__parallel2-add-en.ac922pflogits",
+        "size_bytes": 996327,
+        "sha256": "cf9f83efd73d27224f1730338c2759e2be0edbff9d5a8dca75eefd753f359596"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-01-1__parallel2-subtract-zh.ac922pflogits",
+        "size_bytes": 996336,
+        "sha256": "0eec80a5391bea7818bf48cab57a254e5cfa102212df1be18ef961dd92eb6883"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-01-1_before-mtp__parallel2-add-en.ac922pflogits",
+        "size_bytes": 996338,
+        "sha256": "5b945b4618825cef6248205ae480a5058c0ecc453dadd54d29a2ec3c843a6ae0"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-01-1_before-mtp__parallel2-subtract-zh.ac922pflogits",
+        "size_bytes": 996347,
+        "sha256": "43e5969542563a8d5e6f715d5c41e2c6a36b59ddbac8c92c593a89eac5090c1d"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-02-0__parallel4-add.ac922pflogits",
+        "size_bytes": 996207,
+        "sha256": "2b3ab8ba8175b5cc01b9fbcc290aa50b0b79d616b62d47c433a64b21ef1d4f28"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-02-0__parallel4-subtract.ac922pflogits",
+        "size_bytes": 996299,
+        "sha256": "4bf34b4dbc9807211eaea31323ececb112d5bfa13e166ab8a9689e1d640683b1"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-02-0_before-mtp__parallel4-add.ac922pflogits",
+        "size_bytes": 996218,
+        "sha256": "3e7daacbbfc4175b544c4af475dad69b822a4607a69faf676616af25208751c0"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-02-0_before-mtp__parallel4-subtract.ac922pflogits",
+        "size_bytes": 996310,
+        "sha256": "1a6c14e6800bd09763c7e50af3c26f196295376b0643d31cda0e00d758b74f1a"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-02-1__parallel4-divide.ac922pflogits",
+        "size_bytes": 996305,
+        "sha256": "472d244fa204231683ca2fff3f19d8e0c6872d79dc1b02babb9fb5eb5128b5b8"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-02-1__parallel4-multiply.ac922pflogits",
+        "size_bytes": 996209,
+        "sha256": "a548b192e4819a1e460fa9281efde67fa00a8be288ea1f0ff1c35bce7d039fca"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-02-1_before-mtp__parallel4-divide.ac922pflogits",
+        "size_bytes": 996316,
+        "sha256": "07ebf132e18b418fc5c30554fad643666ef92f6f7a4beb489c8c47814ca755fa"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-02-1_before-mtp__parallel4-multiply.ac922pflogits",
+        "size_bytes": 996220,
+        "sha256": "7743829396b00a378a7661cc365dad1cfaec9b9e04f75c7e05d7324f4e5b8815"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-03-0__slot-reuse-0.ac922pflogits",
+        "size_bytes": 996776,
+        "sha256": "21500f4d5aa4a015fa8883664fb696af087612bf03ae98be8e379d158b03f02c"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-03-0__slot-reuse-1.ac922pflogits",
+        "size_bytes": 996776,
+        "sha256": "fae8b4863eb89f0c228bdf3123687a22a5c5a92a2c0d44b3627444e183ea7633"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-03-0_before-mtp__slot-reuse-0.ac922pflogits",
+        "size_bytes": 996787,
+        "sha256": "7f204f52739ed283628afb89eb0c08aaf9a68cf9f265534d4e2a2f57738e59a7"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-03-0_before-mtp__slot-reuse-1.ac922pflogits",
+        "size_bytes": 996787,
+        "sha256": "b364c545f1e94fd6bd03f06e630217012c017384052215ee574b7e6f6f08f495"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-03-1__slot-reuse-2.ac922pflogits",
+        "size_bytes": 996748,
+        "sha256": "d5900cab0d9a5adf9cc9778bf51739b975c2faa9e817a1e058a04865854a8807"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-03-1__slot-reuse-3.ac922pflogits",
+        "size_bytes": 996634,
+        "sha256": "64492ff47fb6510161a50a0e842e2add601350d209500496902f7c90bd429db3"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-03-1_before-mtp__slot-reuse-2.ac922pflogits",
+        "size_bytes": 996759,
+        "sha256": "3f99a633ae3b3932f06ecdf562e6f097ea3f086b4d32aaea25567c7a903218d9"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-serial-sem-03-1_before-mtp__slot-reuse-3.ac922pflogits",
+        "size_bytes": 996645,
+        "sha256": "ffbd829715570760a44c95e0a6e9ee91786a870213a1d0c842ebcb6f346030de"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-single8k-pp-probe-32__real8k0-pp-probe-32.ac922pflogits",
+        "size_bytes": 1265247,
+        "sha256": "e5b8d7b53b75a728a57b5e6ae95b693ec1ee673b0c4726a8b843b3522235bf0e"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-single8k-pp-probe-32_before-mtp__real8k0-pp-probe-32.ac922pflogits",
+        "size_bytes": 1265258,
+        "sha256": "014927a88b1b4e7a7436c4caea2e2eddc98c2d4ef5a9adbfc3471a7d5cdb534c"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-single8k-pp-warm-32__real8k0-pp-warm-32.ac922pflogits",
+        "size_bytes": 1265245,
+        "sha256": "d88ae57edfa19760b667c5802fdd731837eff6ed9452d5bd8f2c59cdd75ad142"
+      },
+      {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits/v30-onebank4d3-copy1-diagnostic-single8k-pp-warm-32_before-mtp__real8k0-pp-warm-32.ac922pflogits",
+        "size_bytes": 1265256,
+        "sha256": "5bb5ef7ed0277ee10bf7178fd386fb5c204d7e57f33063be5c0cdf0f6873796f"
+      }
+    ]
+  },
+  "model": {
+    "path": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+    "size_bytes": 78615622080,
+    "mtime_ns": 1790833321720010216,
+    "sha256": null,
+    "sha256_note": "not computed here because the integrated GGUF is multi-GB; use a pre-existing integrity manifest if available"
+  },
+  "environment": {
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_VISIBLE_DEVICES": "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+    "ROOT_BANK_LANES": "4",
+    "ROOT_MTP_DEPTH": "3",
+    "ROOT_BANK_CTX": "65536",
+    "ROOT_KV_UNIFIED": "0",
+    "ROOT_META_CPU_COPY_VARIANTS": "1",
+    "ROOT_META_CPU_COPY_MODE": "1",
+    "ROOT_VARIANT_DIR": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic",
+    "ROOT_PROFILE_KIND": "diagnostic",
+    "ROOT_MTP_UBATCH": "512",
+    "ROOT_KV_VARIANT": "per_seq_16k_x4",
+    "ROOT_UBATCH": "1024",
+    "ROOT_WARMUP_FRAMES": "4",
+    "ROOT_PREFILL_BATCH": "8192",
+    "ROOT_SERIAL_CPU_SUBMIT": "0",
+    "ROOT_SERVER_MTP_KV_POLICY": "1",
+    "ROOT_TURBOPREFILL": "0",
+    "ROOT_RUNTIME_REVISION": "20261016T040204.430535Z",
+    "LLAMA_ISLAND_SPLIT": "3,3",
+    "LLAMA_TURBOPREFILL": "0",
+    "LLAMA_EXPERT_PARALLEL": "1",
+    "LLAMA_MTP_GPU_CHAIN_MULTI": "1",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED": "1",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED_DEPTH": "3",
+    "LLAMA_MTP_FIXED_PREFIX_ROWS": "6",
+    "LLAMA_MTP_N_UBATCH": "512",
+    "LLAMA_MTP_UNROLL_VARIABLE_LANES": "1",
+    "LLAMA_MTP_UNROLL_D3_LANES4": "1",
+    "LLAMA_MTP_VERIFY_ROW_BUDGET": "16",
+    "LLAMA_PLE_SHARD": "0",
+    "LLAMA_PLE_SHARD_ROWS": "0",
+    "LLAMA_HIERARCHICAL_EP6": "1",
+    "GGML_META_NESTED_EXPERIMENTAL": "1",
+    "GGML_META_NESTED_GPU_AR": "1",
+    "LLAMA_PLE_NUMA_GPU_NODES": "6",
+    "LLAMA_PLE_NUMA_GPU_GIB": "8",
+    "LLAMA_PLE_NUMA_HYBRID": "1",
+    "ROOT_RUNTIME_SOURCE": "/home/debian/ac922-monster/experiments/standard-opt-20261014/src",
+    "ROOT_MODEL_SHA256": null,
+    "LLAMA_PREFILL_FRAME_PIPELINE": "0",
+    "LLAMA_QSA_INDEXER_IMPL": "standard",
+    "LLAMA_QSA_POOLED_MULTI": "0",
+    "LLAMA_MTP_KV_ONLY_PREFILL": "1",
+    "GGML_META_REPLAY_GUARD": "1",
+    "GGML_META_FIFO_PIPELINE": "1",
+    "GGML_META_CPU_ASYNC_COPY": "1",
+    "GGML_META_CPU_ASYNC_COPY_MAX_BYTES": "1048576",
+    "GGML_META_ASYNC_INPUTS": "0",
+    "GGML_META_NCCL_MIN_BYTES": "0",
+    "GGML_CUDA_NCCL_F32": "1",
+    "GGML_CUDA_GRAPH_STRUCTURAL_TRACE": "1",
+    "GGML_META_FRAGMENT_CACHE": "1",
+    "GGML_META_FRAGMENT_CACHE_CAP": "64",
+    "GGML_META_FRAGMENT_CACHE_MIB": "128",
+    "GGML_META_TIMING": "1",
+    "LLAMA_STEP_TIMING": "1",
+    "LLAMA_STEP_TIMING_PERIOD": "32",
+    "GGML_CUDA_P2P_AR_BLOCKS": "64",
+    "V30_V29_QUALIFICATION_PASSED": "1",
+    "V30_GPU_WINDOW_AUTHORIZED": "1",
+    "V27_BASELINE_RESULT_ROOT": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v27-shortctx16k-hierarchical-20261016/results/root-p4-v27-shortctx16k-hierarchical-ep6-d3-20261016t022431z/copy1",
+    "V27_BASELINE_DIAGNOSTIC_SHA256": "16cb38688dc2e4581c0f5990dcf432949f431dad842e44ac5560c082cdf6f994",
+    "V27_BASELINE_CLEAN_SHA256": "beee7b03194cea10d8f56225bf2f8bae83c014f461324b8b9603bb746b95ae36",
+    "GGML_META_ASYNC_COPY": "1",
+    "GGML_META_GPU_EVENT_WAIT": "1",
+    "GGML_CUDA_META_COPY_GPU_WAIT": "1",
+    "GGML_META_CONTEXT_VIEWS": "1",
+    "GGML_META_GPU_SPANS": "1",
+    "GGML_META_GPU_SPANS_PERIOD": "1",
+    "GGML_SCHED_CPU_GATHER_PIPELINE": "1",
+    "GGML_META_SHARED_DEVICE_COPY": null,
+    "GGML_CUDA_FATTN_ONECAT": "1",
+    "LLAMA_PLE_ONECAT": "0",
+    "GGML_CUDA_P2P": "1",
+    "GGML_CUDA_ALLREDUCE": "nccl",
+    "GGML_CUDA_P2P_AR_DISABLE": null,
+    "GGML_SCHED_META_SINGLE_COPY_EVENTS": "1",
+    "ROOT_BUILD_REPORT": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V71-build.json",
+    "ROOT_DYNAMIC_LIB_DIR": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v71/lib",
+    "ROOT_CUPTI_PHASE": "off",
+    "ROOT_CUPTI_COLLECTOR": null,
+    "ROOT_CUPTI_TRACE_PATH": null,
+    "ROOT_CUPTI_COLLECTOR_SHA256": null,
+    "ROOT_CUPTI_DEFER_FAILURE": null,
+    "ROOT_FATAL_BACKTRACE": "1",
+    "ROOT_PREFILL_LOGITS_DIR": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/prefill-logits",
+    "ROOT_PREFILL_LOGITS_BEFORE_MTP": "1",
+    "LD_PRELOAD": null,
+    "AC922_SYNC_AUDIT": null
+  },
+  "context_family": {
+    "copy_mode": "1",
+    "profile_kind": "diagnostic",
+    "requested_variants": "1",
+    "model_load_count_per_process": 1,
+    "model_retained_across_context_family_recreation": true,
+    "context_profiles_recreated_after_drain": true,
+    "contexts_destroyed_before_next_copy_mode": true,
+    "feature_env_sampled_before_context_family_construction": "GGML_META_CPU_ASYNC_COPY",
+    "legacy_scope_mode": "0",
+    "cpu_copy_max_bytes": "1048576",
+    "ld_preload_empty": true,
+    "sync_audit_disabled": true
+  },
+  "required_runtime_contract": {
+    "meta_context_owner_views": true,
+    "per_physical_gpu_stage_tail_order": true,
+    "confirm_from_actual_runtime_build": true
+  },
+  "invocation": {
+    "runner": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/build-runtime-v30/dual-context-v30-onebank4d3",
+    "model": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+    "scenarios": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/scenarios.json",
+    "results": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/results.json"
+  },
+  "finished_at": "2026-10-16T04:24:17.536215+00:00",
+  "return_code": 1,
+  "runtime_log": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1/diagnostic/runtime.log",
+    "size_bytes": 25055916,
+    "sha256": "470520ecc84f4d670d63af270817109a50d38b882cc5be9fd09f13d363efa1f3"
+  },
+  "observed_runtime_markers": {
+    "model_load_complete_count": 1,
+    "family_begin_count": 1,
+    "family_complete_count": 1,
+    "copy_mode": "1",
+    "profile_kind": "diagnostic",
+    "max_copy_bytes_configured": true,
+    "ld_preload_unset_marker": true,
+    "async_copy_policy_markers": 6,
+    "async_copy_transfer_markers": 2,
+    "async_copy_summary_markers": 2,
+    "nccl_min_bytes_zero_marker": true
+  }
+}

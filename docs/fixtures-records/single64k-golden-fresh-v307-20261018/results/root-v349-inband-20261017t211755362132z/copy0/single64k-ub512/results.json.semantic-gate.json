@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "checked_at": "2026-10-17T21:21:15.950379+00:00",
+  "case_count": 3,
+  "reports": [
+    {
+      "schema_version": 1,
+      "checked_at": "2026-10-17T21:21:15.950294+00:00",
+      "status": "pass",
+      "scenario_label": "v319-single64k-ub512-native-semantic-canary",
+      "case_count": 1,
+      "cases": [
+        {
+          "id": "capital-france",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "expected": "Paris",
+          "actual": "Paris"
+        }
+      ],
+      "gate_order": "canary passes before V50 runner begins its following long-prefill scenario",
+      "model_loaded_by_checker": false,
+      "gpu_touched": false
+    },
+    {
+      "schema_version": 1,
+      "checked_at": "2026-10-17T21:21:15.950345+00:00",
+      "status": "pass",
+      "scenario_label": "v346-window64k-native-semantic-canary",
+      "case_count": 1,
+      "cases": [
+        {
+          "id": "capital-france-window64k",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "expected": "Paris",
+          "actual": "Paris"
+        }
+      ],
+      "gate_order": "canary passes before V50 runner begins its following long-prefill scenario",
+      "model_loaded_by_checker": false,
+      "gpu_touched": false
+    },
+    {
+      "schema_version": 1,
+      "checked_at": "2026-10-17T21:21:15.950371+00:00",
+      "status": "pass",
+      "scenario_label": "v346-short-reuse-tokyo",
+      "case_count": 1,
+      "cases": [
+        {
+          "id": "capital-japan-after-window",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "expected": "Tokyo",
+          "actual": "Tokyo"
+        }
+      ],
+      "gate_order": "canary passes before V50 runner begins its following long-prefill scenario",
+      "model_loaded_by_checker": false,
+      "gpu_touched": false
+    }
+  ],
+  "model_loaded_by_checker": false,
+  "gpu_touched": false,
+  "gate_order": "all three semantic requests pass before the performance request",
+  "performance_warmth": "promptKV cleared; graph/cache shapes warmed by the64K semantic request"
+}

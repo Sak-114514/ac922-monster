@@ -1,0 +1,373 @@
+start=2026-10-16T00:54:21Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61
+binary_sha256=133d398dac86bb3c6b80b7fdb91d1bb3aee405abead258013512a8e931716b10  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/hierarchical-ep6-real-20261016/hierarchical-ep6-real-fixture
+visible=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a
+model=/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf
+temp_limit=58C memory_limit=2048MiB timeout=600s
+meta_context_views=1 meta_replay_guard=1 meta_fifo_pipeline=1
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_backend_meta_context: nested native GPU AllReduce opt-in requested; unsupported PARTIAL boundaries fail closed
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+meta-nested-gpu-ar opt-in=1 topology=2x3 leaves=6 order=A0,A1,A2,B0,B1,B2 p2p6=1 nccl6_f32=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=0/6 first=0 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=1/6 first=85 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=2/6 first=170 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=3/6 first=256 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=4/6 first=341 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=5/6 first=426 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=0/2 first=0 local=256 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=1/2 first=256 local=256 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=0/3 first=0 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=1/3 first=85 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=2/3 first=170 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=0/3 first=256 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=1/3 first=341 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=2/3 first=426 local=86 total=512 final-output-only-reduction=1
+meta-context-submit FIFO active context=0x100104ade90 members=6 CPU_enqueue_atomic=1 GPU_tail_wait=1
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=0 ptr=0x7ffd96400000 ne=[2560,640,85]
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=0 ptr=0x7ffd98800000 ne=[2560,640,85]
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=0 ptr=0x7ffd9ac00000 ne=[2560,640,86]
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=0 ptr=0x7ffd9d000000 ne=[2560,640,85]
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=0 ptr=0x7ffdb3800000 ne=[2560,640,85]
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=0 ptr=0x7ffdb5c00000 ne=[2560,640,86]
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-context-submit FIFO active context=0x10012604140 members=2 CPU_enqueue_atomic=1 GPU_tail_wait=1
+meta-context-submit FIFO active context=0x100126044b0 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+meta-context-submit FIFO active context=0x1001298a400 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-nested-gpu-ar sequence=1 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+meta-nested-gpu-ar sequence=2 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-nested-gpu-ar sequence=3 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.0.ffn_gate_exps.weight rank=0/6 first=0 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.0.ffn_gate_exps.weight rank=1/6 first=85 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.0.ffn_gate_exps.weight rank=2/6 first=170 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.0.ffn_gate_exps.weight rank=3/6 first=256 local=85 total=512 final-output-only-reduction=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-nested-gpu-ar sequence=4 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+meta-nested-gpu-ar sequence=5 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-nested-gpu-ar sequence=6 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-nested-gpu-ar sequence=7 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+meta-nested-gpu-ar sequence=8 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GGUF_CASE name=blk.1.ffn_gate_exps.weight type=iq2_xxs ne=2560,640,512 bytes=216268800 offset=2016154944
+GGUF_CASE name=blk.0.ffn_gate_exps.weight type=iq2_xs ne=2560,640,512 bytes=242483200 offset=1227835328
+GGUF_CASE name=blk.12.ffn_gate_exps.weight type=iq2_s ne=2560,640,512 bytes=268697600 offset=11190584128
+GGUF_CASE name=blk.35.ffn_gate_exps.weight type=iq3_xxs ne=2560,640,512 bytes=321126400 offset=33501050944
+GGUF_CASE name=blk.8.ffn_gate_exps.weight type=iq3_s ne=2560,640,512 bytes=360448000 offset=7846859968
+GGUF_CASE name=blk.0.ffn_down_exps.weight type=iq4_nl ne=640,2560,512 bytes=471859200 offset=755054528
+GGUF_CASE name=blk.1.ffn_down_exps.weight type=q2_0 ne=640,2560,512 bytes=235929600 offset=1779303744
+PASS blk.1.ffn_gate_exps.weight/flat6/A foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_gate_exps.weight/nested/A foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_gate_exps.weight/flat6/B foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_gate_exps.weight/nested/B foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_gate_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_gate_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=640
+PASS REAL_FORMAT type=iq2_xxs tensor=blk.1.ffn_gate_exps.weight T=64 bytes=216268800 ABA=PASS
+PASS blk.0.ffn_gate_exps.weight/flat6/A foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_gate_exps.weight/nested/A foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_gate_exps.weight/flat6/B foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_gate_exps.weight/nested/B foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_gate_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_gate_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=640
+PASS REAL_FORMAT type=iq2_xs tensor=blk.0.ffn_gate_exps.weight T=64 bytes=242483200 ABA=PASS
+PASS blk.12.ffn_gate_exps.weight/flat6/A foreign_zero=1 owners=6 routes=640
+PASS blk.12.ffn_gate_exps.weight/nested/A foreign_zero=1 owners=6 routes=640
+PASS blk.12.ffn_gate_exps.weight/flat6/B foreign_zero=1 owners=6 routes=640
+PASS blk.12.ffn_gate_exps.weight/nested/B foreign_zero=1 owners=6 routes=640
+PASS blk.12.ffn_gate_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=640
+PASS blk.12.ffn_gate_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=640
+PASS REAL_FORMAT type=iq2_s tensor=blk.12.ffn_gate_exps.weight T=64 bytes=268697600 ABA=PASS
+PASS blk.35.ffn_gate_exps.weight/flat6/A foreign_zero=1 owners=6 routes=640
+PASS blk.35.ffn_gate_exps.weight/nested/A foreign_zero=1 owners=6 routes=640
+PASS blk.35.ffn_gate_exps.weight/flat6/B foreign_zero=1 owners=6 routes=640
+PASS blk.35.ffn_gate_exps.weight/nested/B foreign_zero=1 owners=6 routes=640
+PASS blk.35.ffn_gate_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=640
+PASS blk.35.ffn_gate_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=640
+PASS REAL_FORMAT type=iq3_xxs tensor=blk.35.ffn_gate_exps.weight T=64 bytes=321126400 ABA=PASS
+PASS blk.8.ffn_gate_exps.weight/flat6/A foreign_zero=1 owners=6 routes=640
+PASS blk.8.ffn_gate_exps.weight/nested/A foreign_zero=1 owners=6 routes=640
+PASS blk.8.ffn_gate_exps.weight/flat6/B foreign_zero=1 owners=6 routes=640
+PASS blk.8.ffn_gate_exps.weight/nested/B foreign_zero=1 owners=6 routes=640
+PASS blk.8.ffn_gate_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=640
+PASS blk.8.ffn_gate_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=640
+PASS REAL_FORMAT type=iq3_s tensor=blk.8.ffn_gate_exps.weight T=64 bytes=360448000 ABA=PASS
+PASS blk.0.ffn_down_exps.weight/flat6/A foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_down_exps.weight/nested/A foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_down_exps.weight/flat6/B foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_down_exps.weight/nested/B foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_down_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_down_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=640
+PASS REAL_FORMAT type=iq4_nl tensor=blk.0.ffn_down_exps.weight T=64 bytes=471859200 ABA=PASS
+PASS blk.1.ffn_down_exps.weight/flat6/A foreign_zero=1 owners=6 rggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x100104ae200 device=0 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x100104ae200 device=0 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x100104af480 device=1 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x100104b0700 device=2 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x100104b1980 device=3 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x100104b2c00 device=4 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x100104b3e80 device=5 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x10012604850 device=0 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x10012605b70 device=1 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x10012606e90 device=2 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x1001298a7d0 device=3 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x1001298bb10 device=4 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x1001298ce50 device=5 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+[mp-dbg] mul_mat hook: type=23 ne11=64 reg=0 ptr=0x7ffcfdc5ee00
+[mp-dbg] mul_mat hook: type=21 ne11=64 reg=0 ptr=0x7ffcfdd33600
+[mp-dbg] mul_mat hook: type=23 ne11=64 reg=0 ptr=0x7ffcfde5ee00
+[mp-dbg] mul_mat hook: type=21 ne11=64 reg=0 ptr=0x7ffcfdf33600
+[mp-dbg] mul_mat hook: type=23 ne11=64 reg=0 ptr=0x7ffcfe05ee00
+[mp-dbg] mul_mat hook: type=21 ne11=64 reg=0 ptr=0x7ffcfe133600
+HIERARCHICAL_EP6_REAL_FIXTURE_FAIL nested dense shared output slice shape mismatch
+outes=640
+PASS blk.1.ffn_down_exps.weight/nested/A foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_down_exps.weight/flat6/B foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_down_exps.weight/nested/B foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_down_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_down_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=640
+PASS REAL_FORMAT type=q2_0 tensor=blk.1.ffn_down_exps.weight T=64 bytes=235929600 ABA=PASS
+PASS blk.0.ffn_gate_exps.weight/flat6/A foreign_zero=1 owners=6 routes=80
+PASS blk.0.ffn_gate_exps.weight/nested/A foreign_zero=1 owners=6 routes=80
+PASS blk.0.ffn_gate_exps.weight/flat6/B foreign_zero=1 owners=6 routes=80
+PASS blk.0.ffn_gate_exps.weight/nested/B foreign_zero=1 owners=6 routes=80
+PASS blk.0.ffn_gate_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=80
+PASS blk.0.ffn_gate_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=80
+PASS REAL_FORMAT type=iq2_xs tensor=blk.0.ffn_gate_exps.weight T=8 bytes=242483200 ABA=PASS
+PASS blk.0.ffn_gate_exps.weight/flat6/A foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_gate_exps.weight/nested/A foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_gate_exps.weight/flat6/B foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_gate_exps.weight/nested/B foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_gate_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_gate_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=1280
+PASS REAL_FORMAT type=iq2_xs tensor=blk.0.ffn_gate_exps.weight T=128 bytes=242483200 ABA=PASS
+PASS blk.0.ffn_down_exps.weight/flat6/A foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_down_exps.weight/nested/A foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_down_exps.weight/flat6/B foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_down_exps.weight/nested/B foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_down_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_down_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=1280
+PASS REAL_FORMAT type=iq4_nl tensor=blk.0.ffn_down_exps.weight T=128 bytes=471859200 ABA=PASS
+FULL_BLOCK0_BYTES complete_weights=956825600 tokens=8 pruned=0
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/flat6/A routes=80 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/nested/A routes=80 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/flat6/B routes=80 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/nested/B routes=80 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/flat6/A2 routes=80 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/nested/A2 routes=80 exact_zero=1
+PASS FULL_BLOCK0_GGUF_MOE T=8 formats=IQ2_XS/IQ2_XS/IQ4_NL all512=1 foreign_zero=1 ABA=PASS
+FULL_BLOCK0_BYTES complete_weights=956825600 tokens=64 pruned=0
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/flat6/A routes=640 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/nested/A routes=640 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/flat6/B routes=640 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/nested/B routes=640 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/flat6/A2 routes=640 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/nested/A2 routes=640 exact_zero=1
+PASS FULL_BLOCK0_GGUF_MOE T=64 formats=IQ2_XS/IQ2_XS/IQ4_NL all512=1 foreign_zero=1 ABA=PASS
+DENSE_SHARED_BYTES complete_gate_up=1574400 gate_type=iq4_xs up_type=iq3_s K=2560 N=640 tokens=64
+DENSE_SHARED_FRAME label=flat6/A tokens=64 values=40960

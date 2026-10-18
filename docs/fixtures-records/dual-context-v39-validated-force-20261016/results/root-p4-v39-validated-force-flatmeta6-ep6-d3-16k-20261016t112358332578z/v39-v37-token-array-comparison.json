@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "FAIL",
+  "comparison": "V37-flat-Meta6-to-V39-flat-Meta6 exact token IDs by scenario and flow",
+  "requested_profiles": [
+    "diagnostic",
+    "clean"
+  ],
+  "profiles": {
+    "diagnostic": {
+      "status": "FAIL",
+      "baseline": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v37-flatmeta6-20261016/results/root-p4-v37-flatmeta6-ep6-d3-16k-20261016t094843z/copy1/diagnostic/results.json",
+      "candidate": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v39-validated-force-20261016/results/root-p4-v39-validated-force-flatmeta6-ep6-d3-16k-20261016t112358332578z/copy1/diagnostic/results.json",
+      "baseline_records": 17,
+      "candidate_records": 2,
+      "compared_flows": 4,
+      "missing_labels": [
+        "flatmeta6d3-copy1-diagnostic-dual-sem-00",
+        "flatmeta6d3-copy1-diagnostic-dual-sem-01",
+        "flatmeta6d3-copy1-diagnostic-dual-sem-02",
+        "flatmeta6d3-copy1-diagnostic-dual-sem-03",
+        "flatmeta6d3-copy1-diagnostic-real8k-p4-1x4",
+        "flatmeta6d3-copy1-diagnostic-serial-real8k-0",
+        "flatmeta6d3-copy1-diagnostic-serial-real8k-1",
+        "flatmeta6d3-copy1-diagnostic-serial-sem-01-0",
+        "flatmeta6d3-copy1-diagnostic-serial-sem-01-1",
+        "flatmeta6d3-copy1-diagnostic-serial-sem-02-0",
+        "flatmeta6d3-copy1-diagnostic-serial-sem-02-1",
+        "flatmeta6d3-copy1-diagnostic-serial-sem-03-0",
+        "flatmeta6d3-copy1-diagnostic-serial-sem-03-1",
+        "flatmeta6d3-copy1-diagnostic-single8k-pp-probe-32",
+        "flatmeta6d3-copy1-diagnostic-single8k-pp-warm-32"
+      ],
+      "unexpected_labels": [],
+      "mismatch_count": 0,
+      "mismatches": []
+    },
+    "clean": {
+      "status": "INCOMPLETE",
+      "baseline": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v37-flatmeta6-20261016/results/root-p4-v37-flatmeta6-ep6-d3-16k-20261016t094843z/copy1/clean/results.json",
+      "candidate": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v39-validated-force-20261016/results/root-p4-v39-validated-force-flatmeta6-ep6-d3-16k-20261016t112358332578z/copy1/clean/results.json",
+      "baseline_exists": true,
+      "candidate_exists": false,
+      "reason": "result file missing"
+    }
+  }
+}

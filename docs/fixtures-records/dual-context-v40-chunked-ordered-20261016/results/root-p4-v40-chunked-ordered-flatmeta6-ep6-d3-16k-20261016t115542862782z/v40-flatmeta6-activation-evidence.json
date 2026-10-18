@@ -1,0 +1,357 @@
+{
+  "checks": {
+    "cpu_copy_32m_context_policy_observed": true,
+    "cpu_copy_dispatch_observed": true,
+    "flat_meta_chunked_merge_selected": true,
+    "flat_six_device_p2p_initialized": true,
+    "graphs_force_disabled_when_not_requested": true,
+    "ordered_relay6_kind4_all_six_large_payload": false,
+    "ordered_relay6_small_one_shot_fallback_all_six": false,
+    "packed_dense_decode_selected_when_requested": true,
+    "ple_12_gib_prefix_selected": true,
+    "single_chunk_cold_drain_observed_when_requested": true,
+    "structural_snapshot_stats_all_six_devices": true
+  },
+  "cpu_copy_active_examples": [
+    "2.59.755.959 I meta CPU->Meta async copy active context=0x7ffecdd40d70 source=model.input_embed src_op=GET_ROWS flags=16 bytes=327680 slot=0",
+    "3.02.263.812 I meta CPU->Meta async copy active context=0x7ffdcc24fab0 source=mtp_tok_embd-48 src_op=GET_ROWS flags=16 bytes=327680 slot=0",
+    "6.48.729.736 I meta CPU->Meta async copy active context=0x7ffecdd40d70 source=model.input_embed src_op=GET_ROWS flags=16 bytes=10485760 slot=0",
+    "6.52.219.076 I meta CPU->Meta async copy active context=0x7ffe64219640 source=mtp_tok_embd-48 src_op=GET_ROWS flags=16 bytes=5242880 slot=0"
+  ],
+  "cpu_copy_active_transfers": 4,
+  "cpu_copy_cap_expected": 33554432,
+  "cpu_copy_caps_observed": [
+    33554432
+  ],
+  "graphs_force_examples": [],
+  "graphs_force_requested": false,
+  "graphs_force_selected_count": 0,
+  "merged_chunk_histogram": {
+    "1": 443,
+    "12": 112,
+    "13": 60
+  },
+  "merged_graph_count": 615,
+  "merged_graph_examples": [
+    {
+      "chunks": 1,
+      "line": "3.12.642.275 W ggml_backend_meta_graph_compute: graph 487 nodes, 10 subgraphs: merged, 1 chunks",
+      "nodes": 487,
+      "state": "merged",
+      "subgraphs": 10
+    },
+    {
+      "chunks": 12,
+      "line": "3.12.935.773 W ggml_backend_meta_graph_compute: graph 7274 nodes, 98 subgraphs: merged, 12 chunks",
+      "nodes": 7274,
+      "state": "merged",
+      "subgraphs": 98
+    },
+    {
+      "chunks": 1,
+      "line": "3.13.065.584 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 1,
+      "line": "3.15.110.183 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 1,
+      "line": "3.15.119.218 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 12,
+      "line": "3.15.167.825 W ggml_backend_meta_graph_compute: graph 7094 nodes, 98 subgraphs: merged, 12 chunks",
+      "nodes": 7094,
+      "state": "merged",
+      "subgraphs": 98
+    },
+    {
+      "chunks": 1,
+      "line": "3.15.252.110 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 1,
+      "line": "3.15.260.486 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 12,
+      "line": "3.15.663.664 W ggml_backend_meta_graph_compute: graph 7094 nodes, 98 subgraphs: merged, 12 chunks",
+      "nodes": 7094,
+      "state": "merged",
+      "subgraphs": 98
+    },
+    {
+      "chunks": 13,
+      "line": "3.16.245.456 W ggml_backend_meta_graph_compute: graph 7382 nodes, 98 subgraphs: merged, 13 chunks",
+      "nodes": 7382,
+      "state": "merged",
+      "subgraphs": 98
+    },
+    {
+      "chunks": 13,
+      "line": "3.16.870.032 W ggml_backend_meta_graph_compute: graph 7382 nodes, 98 subgraphs: merged, 13 chunks",
+      "nodes": 7382,
+      "state": "merged",
+      "subgraphs": 98
+    },
+    {
+      "chunks": 13,
+      "line": "3.17.504.684 W ggml_backend_meta_graph_compute: graph 7382 nodes, 98 subgraphs: merged, 13 chunks",
+      "nodes": 7382,
+      "state": "merged",
+      "subgraphs": 98
+    },
+    {
+      "chunks": 1,
+      "line": "3.20.305.608 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 1,
+      "line": "3.20.315.318 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 12,
+      "line": "3.20.597.703 W ggml_backend_meta_graph_compute: graph 7094 nodes, 98 subgraphs: merged, 12 chunks",
+      "nodes": 7094,
+      "state": "merged",
+      "subgraphs": 98
+    },
+    {
+      "chunks": 1,
+      "line": "3.20.694.958 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 1,
+      "line": "3.20.703.666 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 1,
+      "line": "3.20.795.529 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 1,
+      "line": "3.20.803.996 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 1,
+      "line": "3.26.582.971 W ggml_backend_meta_graph_compute: graph 487 nodes, 10 subgraphs: merged, 1 chunks",
+      "nodes": 487,
+      "state": "merged",
+      "subgraphs": 10
+    },
+    {
+      "chunks": 12,
+      "line": "3.26.887.836 W ggml_backend_meta_graph_compute: graph 7274 nodes, 98 subgraphs: merged, 12 chunks",
+      "nodes": 7274,
+      "state": "merged",
+      "subgraphs": 98
+    },
+    {
+      "chunks": 1,
+      "line": "3.26.997.222 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 1,
+      "line": "3.27.005.713 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 12,
+      "line": "3.27.303.693 W ggml_backend_meta_graph_compute: graph 7094 nodes, 98 subgraphs: merged, 12 chunks",
+      "nodes": 7094,
+      "state": "merged",
+      "subgraphs": 98
+    }
+  ],
+  "ordered_relay6_confirmation_groups": {},
+  "ordered_relay6_large_all_six_pass": false,
+  "ordered_relay6_large_path_groups": {},
+  "ordered_relay6_small_fallback_all_six_pass": false,
+  "ordered_relay6_small_fallback_groups": {},
+  "ordered_relay_requested": true,
+  "packed_examples": [
+    "optimization path device=0 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=1",
+    "optimization path device=0 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=2",
+    "optimization path device=1 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=1",
+    "optimization path device=1 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=2",
+    "optimization path device=2 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=1",
+    "optimization path device=2 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=2",
+    "optimization path device=3 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=1",
+    "optimization path device=3 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=2",
+    "optimization path device=4 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=1",
+    "optimization path device=4 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=2",
+    "optimization path device=5 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=1",
+    "optimization path device=5 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=2",
+    "optimization path device=0 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=128",
+    "optimization path device=2 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=128",
+    "optimization path device=3 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=128",
+    "optimization path device=5 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=128"
+  ],
+  "packed_requested": true,
+  "packed_selected_count": 422,
+  "ple_placement_records": [
+    {
+      "cpu_gib": 14.82,
+      "gpu_gib": 12.0,
+      "line": "1.11.220.857 I load_tensors: hybrid PLE enabled; 12.00 GiB on CUDA UUID-mapped GPU NUMA nodes (stripe map above) and 14.82 GiB strictly bound in 32 MiB stripes to CPU nodes 0/8; row format unchanged"
+    }
+  ],
+  "single_chunk_cold_drain_examples": [
+    "3.12.643.097 I meta-cold-graph-drain context=0x7ffdcc24fab0 ranks=6 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "3.12.936.997 I meta-cold-graph-drain context=0x7ffecdd40d70 ranks=6 chunks=12 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "3.13.066.062 I meta-cold-graph-drain context=0x7ffdcc24fab0 ranks=6 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "3.15.110.830 I meta-cold-graph-drain context=0x7ffdcc24fab0 ranks=6 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "3.15.119.719 I meta-cold-graph-drain context=0x7ffdcc24fab0 ranks=6 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "3.15.122.373 I meta-cold-graph-drain context=0x7ffdcc24fab0 ranks=6 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "3.15.169.289 I meta-cold-graph-drain context=0x7ffecdd40d70 ranks=6 chunks=12 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "3.15.252.636 I meta-cold-graph-drain context=0x7ffdcc24fab0 ranks=6 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "6.44.981.744 I meta-cold-graph-drain context=0x7ffecdd40d70 ranks=6 chunks=13 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "6.45.694.718 I meta-cold-graph-drain context=0x7ffecdd40d70 ranks=6 chunks=13 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "6.53.152.706 I meta-cold-graph-drain context=0x7ffecdd40d70 ranks=6 chunks=13 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "6.54.392.559 I meta-cold-graph-drain context=0x7ffecdd40d70 ranks=6 chunks=13 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "6.55.184.149 I meta-cold-graph-drain context=0x7ffecdd40d70 ranks=6 chunks=13 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "6.58.926.515 I meta-cold-graph-drain context=0x7ffecdd40d70 ranks=6 chunks=13 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "7.00.819.838 I meta-cold-graph-drain context=0x7ffecdd40d70 ranks=6 chunks=13 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "7.02.133.966 I meta-cold-graph-drain context=0x7ffecdd40d70 ranks=6 chunks=13 ready_at_entry=0 action=drain_before_capture_and_lockstep"
+  ],
+  "single_chunk_cold_drain_marker_count": 16,
+  "single_chunk_cold_drain_requested": true,
+  "snapshot_devices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "snapshot_hits_total": 1745,
+  "snapshot_misses_total": 20386,
+  "status": "FAIL",
+  "structural_snapshot_summary_count": 24,
+  "unmerged_graph_count": 46,
+  "unmerged_graph_examples": [
+    {
+      "chunks": 1,
+      "line": "3.15.916.081 W ggml_backend_meta_graph_compute: graph 40 nodes, 1 subgraphs: not merged, 1 chunks",
+      "nodes": 40,
+      "state": "not merged",
+      "subgraphs": 1
+    },
+    {
+      "chunks": 1,
+      "line": "3.16.532.508 W ggml_backend_meta_graph_compute: graph 40 nodes, 1 subgraphs: not merged, 1 chunks",
+      "nodes": 40,
+      "state": "not merged",
+      "subgraphs": 1
+    },
+    {
+      "chunks": 1,
+      "line": "3.17.155.692 W ggml_backend_meta_graph_compute: graph 40 nodes, 1 subgraphs: not merged, 1 chunks",
+      "nodes": 40,
+      "state": "not merged",
+      "subgraphs": 1
+    },
+    {
+      "chunks": 1,
+      "line": "3.17.806.283 W ggml_backend_meta_graph_compute: graph 40 nodes, 1 subgraphs: not merged, 1 chunks",
+      "nodes": 40,
+      "state": "not merged",
+      "subgraphs": 1
+    },
+    {
+      "chunks": 1,
+      "line": "3.30.816.671 W ggml_backend_meta_graph_compute: graph 40 nodes, 1 subgraphs: not merged, 1 chunks",
+      "nodes": 40,
+      "state": "not merged",
+      "subgraphs": 1
+    },
+    {
+      "chunks": 1,
+      "line": "3.32.249.590 W ggml_backend_meta_graph_compute: graph 40 nodes, 1 subgraphs: not merged, 1 chunks",
+      "nodes": 40,
+      "state": "not merged",
+      "subgraphs": 1
+    },
+    {
+      "chunks": 1,
+      "line": "3.32.829.808 W ggml_backend_meta_graph_compute: graph 40 nodes, 1 subgraphs: not merged, 1 chunks",
+      "nodes": 40,
+      "state": "not merged",
+      "subgraphs": 1
+    },
+    {
+      "chunks": 1,
+      "line": "3.33.387.770 W ggml_backend_meta_graph_compute: graph 40 nodes, 1 subgraphs: not merged, 1 chunks",
+      "nodes": 40,
+      "state": "not merged",
+      "subgraphs": 1
+    },
+    {
+      "chunks": 1,
+      "line": "3.33.933.988 W ggml_backend_meta_graph_compute: graph 40 nodes, 1 subgraphs: not merged, 1 chunks",
+      "nodes": 40,
+      "state": "not merged",
+      "subgraphs": 1
+    },
+    {
+      "chunks": 1,
+      "line": "3.45.320.074 W ggml_backend_meta_graph_compute: graph 40 nodes, 1 subgraphs: not merged, 1 chunks",
+      "nodes": 40,
+      "state": "not merged",
+      "subgraphs": 1
+    },
+    {
+      "chunks": 1,
+      "line": "3.45.927.105 W ggml_backend_meta_graph_compute: graph 40 nodes, 1 subgraphs: not merged, 1 chunks",
+      "nodes": 40,
+      "state": "not merged",
+      "subgraphs": 1
+    },
+    {
+      "chunks": 1,
+      "line": "3.47.212.337 W ggml_backend_meta_graph_compute: graph 40 nodes, 1 subgraphs: not merged, 1 chunks",
+      "nodes": 40,
+      "state": "not merged",
+      "subgraphs": 1
+    }
+  ]
+}

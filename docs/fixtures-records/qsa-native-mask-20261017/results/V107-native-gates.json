@@ -1,0 +1,44 @@
+{
+  "runtime": "runtime-perf-v107",
+  "build_id": "20261016T180334.793763Z",
+  "report_sha256": "ad0218bbbbc0f92a16a69a0cc3b774ea2b783c2b7a4daad788f3584a47664006",
+  "native_gates": {
+    "cpu": {
+      "log": "monster-engine/standard-opt-20261014/fixtures/qsa-native-mask-20261017/results/native-gate3-cpu-20261016T180642Z.log",
+      "sha256": "b94789c4522a209128a975b889dc2123c82cfa2a7b3be4bc41964d88f96562fa",
+      "pass": true
+    },
+    "cuda": {
+      "log": "monster-engine/standard-opt-20261014/fixtures/qsa-native-mask-20261017/results/native-gate3-cuda-20261016T180651Z.log",
+      "sha256": "58ff242c58f08adaedd8d8a756da974362a6e8b9ea477fe708c7248b88f2b320",
+      "pass": true
+    },
+    "meta3": {
+      "log": "monster-engine/standard-opt-20261014/fixtures/qsa-native-mask-20261017/results/native-gate3-meta3-20261016T180657Z.log",
+      "sha256": "05adf85a3ee35688a57ddcda3e097e53ae2cbd86946b7cd06e96dae3a10ac854",
+      "pass": true
+    },
+    "large_cuda": {
+      "log": "monster-engine/standard-opt-20261014/fixtures/qsa-native-mask-20261017/results/native-gate5-large-large-cuda-20261016T180829Z.log",
+      "sha256": "0ca4ebabdae970ef2745c5e0f4787facb8f20b58966671478ee93616409bfd60",
+      "pass": true
+    }
+  },
+  "large_shape": [
+    65536,
+    2048
+  ],
+  "large_F16_payload_bytes": 268435456,
+  "large_sampled_process_gpu_delta_mib": 569,
+  "large_f32_fullshape_nodes": 0,
+  "graph_capture_scope": "fixture graphs disabled; actual host dispatch verified, full-model replay pending",
+  "extended_upload_cpu_log": "fixtures/cpu-upload-budget-20261017/root-extended-cpu-suite.log",
+  "historical_failed_attempts": [
+    "gate1 hostcompile APIarity/parse/internalstaticwarnings",
+    "gate2CPU unpinned fixture allocation134",
+    "largegate3 extra-memory cap512 hit CUDAcontext+mask566MiB; free>15GiB",
+    "largegate4 timeout20s eager per-element error-string allocations; lazy failure formatting fixes oracle, subsequentlarge2sPASS"
+  ],
+  "fullmodel_ready": true,
+  "quality_scope": "exact operator only; V50 full model pending"
+}

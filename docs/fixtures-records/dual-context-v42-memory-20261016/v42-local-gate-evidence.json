@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "runtime_build_id": "20261016T125920.508355Z",
+  "gates": {
+    "v96_relay_leader_stage_and_segment_elision": {
+      "status": "PASS",
+      "runtime_build_id": "20261016T125920.508355Z",
+      "summary": "V96 OFF/ON gate bundle PASS; all-six exact/canary/ABA/negative-zero, same-communicator 160 KiB one-shot -> 40 MiB ordered Relay6 -> 160 KiB one-shot with continuous epoch, 40 MiB dispatch and graph_append, and 41 MiB segmented fallback after graph retirement. Leader-only stage and unused-segment elision saved 78 MiB per leader, 558 MiB per nonleader, 2,504,000,000 bytes total. The bundle reports parser acceptance/rejection self-test PASS.",
+      "local_evidence_paths": [
+        "fixtures/dual-context-v42-memory-20261016/v96-gate-bundle.json",
+        "fixtures/dual-context-v42-memory-20261016/v96-gate-summary.json",
+        "fixtures/dual-context-v42-memory-20261016/v96-off-summary.json",
+        "fixtures/dual-context-v42-memory-20261016/v96-off-provenance.txt",
+        "fixtures/relay6-stage-elision-v96-20261016/results/v96-stage-elision-ononly-20261016T1320Z/on-summary.json",
+        "fixtures/relay6-stage-elision-v96-20261016/results/v96-stage-elision-ononly-20261016T1320Z/on.log",
+        "fixtures/relay6-stage-elision-v96-20261016/results/v96-stage-elision-ononly-20261016T1320Z/provenance.txt",
+        "fixtures/relay6-stage-elision-v96-20261016/results/off.log",
+        "fixtures/relay6-stage-elision-v96-20261016/snapshot-v96/allreduce-p2p.cu",
+        "fixtures/relay6-stage-elision-v96-20261016/relay6-stage-elision-v96.cu",
+        "fixtures/relay6-stage-elision-v96-20261016/validate-v96.py"
+      ],
+      "remote_evidence_paths": [
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v42-memory-20261016/v96-gate-bundle.json",
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v42-memory-20261016/v96-gate-summary.json",
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v42-memory-20261016/v96-off-summary.json",
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v42-memory-20261016/v96-off-provenance.txt",
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-stage-elision-v96-20261016/results/v96-stage-elision-v96-stage-elision-ononly-20261016T1320Z/on-summary.json",
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-stage-elision-v96-20261016/results/v96-stage-elision-v96-stage-elision-ononly-20261016T1320Z/on.log",
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-stage-elision-v96-20261016/results/v96-stage-elision-v96-stage-elision-ononly-20261016T1320Z/provenance.txt",
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-stage-elision-v96-20261016/results/v96-stage-elision-v96-combined-stage-elision-20261016T1309Z/off.log",
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-stage-elision-v96-20261016/snapshot-v96/allreduce-p2p.cu",
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-stage-elision-v96-20261016/relay6-stage-elision-v96.cu",
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-stage-elision-v96-20261016/validate-v96.py"
+      ],
+      "evidence_sha256": [
+        "c956ff6a4f595a82b60eb0ffb6e6b974949dde9a789ad5eba6659a8a42327a7b",
+        "5acf43837e116bd6251256ec4f3f70f52c2ca9382971eee13a54caff44653116",
+        "c694dea67e5ab9cc2e33c29dbdd35d39e9710b4511e0c1d5db22a0d1b7909bd6",
+        "569b31e0a2e3389356971ada63eb5e9aa84ccacf523215e10b3c014eafe91675",
+        "66f80de2a76835f0e3a09a20048c0d927991b976f02bdd8082ae2c3d5850f170",
+        "f073601812a5c8ff924f51bf1d2455a54788966efcb5a39c7936a7d816a9c6d5",
+        "1702eda9b6b56f78dcf1c99b2b368b7f5cf0fe769097f27b9abaf6da553060f1",
+        "b8b7e7f73b7e17586c428a9ecca4305835448cc6261dfd0a38d9f6d2e5743662",
+        "940eeffcd61285779c08aae49feaaf5a89ad64f88b8fb36d7991e0cfe2fb5109",
+        "8ee2188bd6c0edb63c61abf521008fed57edc0ad2fe6cf250e5336b8d959090c",
+        "0d1d1b960677dcfa3bf3c7fef97feb361f51d77770ff169f6c34dd28fabf726b"
+      ]
+    }
+  }
+}

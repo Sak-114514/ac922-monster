@@ -1,0 +1,18 @@
+{
+  "schema": "v238-d4-kv-fit-audit-v1",
+  "status": "STATIC_PASS_NO_POLICY_CHANGE",
+  "policy_file": "v221-kv-shape-policy.h",
+  "policy_sha256": "6a14601dfcadaa2cb2516a8148788f907825b50c5fb07123effd90ef72fa322a",
+  "depth": 4,
+  "prompt_tokens": 16384,
+  "output_tokens": 512,
+  "mtp_lookahead_tokens": 4,
+  "sequence_context": 17152,
+  "mtp_pad_rows": 6,
+  "request_plus_lookahead": 16901,
+  "request_context_fits": true,
+  "target_verify_rows_per_lane": 5,
+  "pad_fits": true,
+  "actual_policy_supports_depth4": "family_depth_allowed(4) is true; request_and_pad_fit preserves context and PAD bounds",
+  "historical_evidence": "V209 D4 native canary passed and V209 D4 fourbank 4x16K/512 completed with measurement_complete=true; this establishes prior feasibility, not V238 performance"
+}

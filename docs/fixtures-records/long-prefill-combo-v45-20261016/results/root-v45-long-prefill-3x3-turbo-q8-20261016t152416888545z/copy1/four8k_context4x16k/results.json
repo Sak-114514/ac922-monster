@@ -1,0 +1,359 @@
+[
+  {
+    "label": "v45-4x8k-context-canary",
+    "kind": "v45_semantic_canary",
+    "v45_source_corpus_sha256": "4d7ee033662bde6151a7dd13a9b106929e8caa7d447a091d1e2f125a09e8ca15",
+    "v45_corpus_token_count": 92037,
+    "wall_seconds": 5.232452,
+    "prefill_parallel": false,
+    "prefill_mode": "ordered 8192-token logical chunks per lane on persistent owner; KV cleared before each scenario",
+    "prefill_chunks_by_lane": [
+      {
+        "id": "capital-france",
+        "chunks": [
+          {
+            "index": 0,
+            "start_token": 0,
+            "end_token_exclusive": 32,
+            "target_decode_sync_us": 1760998,
+            "mtp_process_sync_us": 123893,
+            "output_rows": 1
+          }
+        ]
+      },
+      {
+        "id": "capital-germany",
+        "chunks": [
+          {
+            "index": 0,
+            "start_token": 0,
+            "end_token_exclusive": 32,
+            "target_decode_sync_us": 332235,
+            "mtp_process_sync_us": 6232,
+            "output_rows": 1
+          }
+        ]
+      },
+      {
+        "id": "arithmetic-2plus2",
+        "chunks": [
+          {
+            "index": 0,
+            "start_token": 0,
+            "end_token_exclusive": 26,
+            "target_decode_sync_us": 1223598,
+            "mtp_process_sync_us": 5296,
+            "output_rows": 1
+          }
+        ]
+      },
+      {
+        "id": "capital-italy",
+        "chunks": [
+          {
+            "index": 0,
+            "start_token": 0,
+            "end_token_exclusive": 32,
+            "target_decode_sync_us": 332102,
+            "mtp_process_sync_us": 3779,
+            "output_rows": 1
+          }
+        ]
+      }
+    ],
+    "prompt_kv_cache_mode": "disabled; bank.reset clears target and MTP memory before every scenario",
+    "prompt_cache_enabled": false,
+    "uncached_prompt": true,
+    "prefill_probe": false,
+    "prefill_warm_graph_probe": false,
+    "graph_warmup_source": "",
+    "prefill_logits_enabled": false,
+    "prefill_logits_before_mtp_enabled": false,
+    "diagnostic_logit_dump_process": false,
+    "prefill_logits_directory": "",
+    "profile_kind": "four8k_context4x16k",
+    "full_logit_diagnostics_enabled": false,
+    "ld_preload": "",
+    "sync_audit": "0",
+    "prefill_logit_dumps": [],
+    "turbo_requested": true,
+    "meta_context_views_enabled": true,
+    "gpu_spans_requested": false,
+    "gpu_span_sample_period": 0,
+    "gpu_span_semantics": "CUDA event envelope; includes stream gaps, not kernel busy time",
+    "island_split": "3,3",
+    "qsa_indexer_impl": "standard",
+    "qsa_pooled_multi": "0",
+    "mtp_kv_only_prefill": "1",
+    "server_mtp_kv_policy": true,
+    "expert_parallel": "1",
+    "mtp_chain_multi": true,
+    "mtp_unrolled": true,
+    "mtp_unrolled_depth": 3,
+    "mtp_d3_lanes4_optin": true,
+    "mtp_active_lane_fallback_expected": false,
+    "mtp_active_lane_fallback_reason": "none",
+    "mtp_fixed_prefix_rows": 6,
+    "mtp_fixed_prefix_rows_per_lane": 6,
+    "mtp_fixed_prefix_rows_total": 24,
+    "target_verify_row_capacity": 16,
+    "target_verify_pad_enabled": true,
+    "target_verify_pad_rows_per_active_lane": 4,
+    "qsa_standard_sparse": true,
+    "qsa_standard_head_loop": true,
+    "cuda_get_rows_narrow": true,
+    "cuda_moe_fused_t16": true,
+    "sm70_bf16_decode_panel": true,
+    "requested_target_ubatch": 1024,
+    "configured_target_n_ubatch": 1024,
+    "configured_draft_n_ubatch": 512,
+    "selected_target_prefill_ubatches": [],
+    "mtp_variable_lanes": true,
+    "prefill_wall_seconds": 3.789073,
+    "prefill_scenario_wall_us": 3789073,
+    "scenario_whole_wall_us": 5232452,
+    "target_prefill_us_sum": 3648933,
+    "mtp_prefill_us_sum": 139200,
+    "diagnostic_io_us_sum": 0,
+    "lane_prefill_total_us_sum": 3788700,
+    "target_argmax_cpu_fallbacks": 0,
+    "prefill_input_tokens": 122,
+    "prefill_aggregate_wall_tok_s": 32.19784891977537,
+    "single_request_prefill_tok_s": 0.0,
+    "single_request_target_prefill_tok_s": 0.0,
+    "parallel_seconds": 7.2e-05,
+    "parallel_window_start_us": 83424391410,
+    "parallel_window_end_us": 83424391482,
+    "serialized_warmup_frames": 1,
+    "warmup_frames_requested_per_bank": 4,
+    "warmup_frames_actual_by_bank": [
+      {
+        "bank": 0,
+        "lanes": 4,
+        "frames": 1,
+        "skipped_empty_bank": false,
+        "ended_early_because_all_lanes_completed": true
+      }
+    ],
+    "profiled": false,
+    "fatal_backtrace_enabled": true,
+    "diagnostic_profile_process": false,
+    "cupti_window": {
+      "phase": "off",
+      "selected_for_scenario": false,
+      "profiled_diagnostic_only": false,
+      "defer_stop_failure": false,
+      "dso_loaded": false,
+      "prepared_before_cuda_init": false,
+      "collector": "",
+      "trace_path": "",
+      "scope": "",
+      "prepare_status": null,
+      "start_status": null,
+      "stop_status": null,
+      "start_host_before_us": null,
+      "start_host_after_us": null,
+      "stop_host_before_us": null,
+      "stop_host_after_us": null,
+      "last_error": ""
+    },
+    "clean_performance_eligible": true,
+    "serial_cpu_submit": false,
+    "submit_guard_scope": "off; selected runtime per-physical-GPU Meta stage-tail ordering is the active safety mechanism",
+    "model_load_count": 1,
+    "bank_topology": "one_bank_4_lanes_per_seq_16384",
+    "hierarchical_ep6_profile": false,
+    "flat_meta6_ep6_profile": false,
+    "strata_3_plus_3_ep3_profile": true,
+    "fifo_single_island": true,
+    "meta_debug_requested": true,
+    "capacity_qualification_only": true,
+    "meta_cpu_async_copy_mode": 1,
+    "meta_cpu_async_copy_max_bytes": "33554432",
+    "legacy_meta_async_inputs": 0,
+    "meta_nccl_min_bytes": 0,
+    "cuda_nccl_f32": true,
+    "meta_fragment_parent_signature_requested": true,
+    "context_family_index": 0,
+    "persistent_owner_threads_per_bank": 1,
+    "bank_count": 1,
+    "max_verify_rows": 16,
+    "ubatch": 1024,
+    "bank_lanes": 4,
+    "mtp_depth": 3,
+    "bank_context": 65536,
+    "pooled_context_capacity": 65536,
+    "kv_variant": "per_seq_16k_x4",
+    "kv_unified": false,
+    "expected_context_per_sequence": 16384,
+    "expected_kv_streams": 4,
+    "actual_context_total": 65536,
+    "actual_context_per_sequence": 16384,
+    "actual_sequence_count": 4,
+    "actual_kv_streams": 4,
+    "actual_draft_context_total": 65536,
+    "actual_draft_context_per_sequence": 16384,
+    "actual_draft_sequence_count": 4,
+    "actual_draft_kv_streams": 4,
+    "max_single_request_context": 16384,
+    "context_capacity_note": "4 independent 16384-cell streams in one bank; aggregate 65536 cells is not a per-request guarantee",
+    "actual_kv_streams_source": "public llama_n_ctx()/llama_n_ctx_seq() ratio after context initialization",
+    "banks_kv_layout": [
+      {
+        "bank": 0,
+        "target_context_total": 65536,
+        "target_context_per_sequence": 16384,
+        "target_sequence_count": 4,
+        "target_actual_kv_streams": 4,
+        "draft_context_total": 65536,
+        "draft_context_per_sequence": 16384,
+        "draft_sequence_count": 4,
+        "draft_actual_kv_streams": 4
+      }
+    ],
+    "logical_prefill_batch_capacity": 8192,
+    "expected_max_verify_rows": 16,
+    "banks": [
+      {
+        "id": 0,
+        "configured_lanes": 4,
+        "max_verify_rows_observed": 16,
+        "max_draft_rows_observed": 3,
+        "last_verify_rows": 16,
+        "submitted_frames": 1,
+        "active_chain_lanes": 4,
+        "fallback_lanes": 0,
+        "planned_terminal_no_draft_lanes": 0
+      }
+    ],
+    "planned_terminal_no_draft_lanes": 0,
+    "flows": [
+      {
+        "id": "capital-france",
+        "bank": 0,
+        "checker": "exact_text",
+        "semantic_checked": false,
+        "semantic_pass": false,
+        "expected": "Paris",
+        "prompt_source": "compact_native_semantic_canary",
+        "prompt_sha256": "678afb9d5078d3ef479ad3e40b6e01e132b65aac62879b62ac421f37a4c5de53",
+        "input_tokens": 32,
+        "has_corpus_token_slice": false,
+        "corpus_token_start": 0,
+        "corpus_token_end_exclusive": 0,
+        "output_tokens": 1,
+        "token_ids": [
+          57590
+        ],
+        "output": "Paris",
+        "emitted_us": [
+          83421044136
+        ],
+        "prefill_us": 1885063,
+        "target_prefill_us": 1760998,
+        "mtp_prefill_us": 123893,
+        "diagnostic_io_us": 0,
+        "target_argmax_cpu_fallbacks": 0,
+        "proposed": 3,
+        "accepted": 3
+      },
+      {
+        "id": "capital-germany",
+        "bank": 0,
+        "checker": "exact_text",
+        "semantic_checked": false,
+        "semantic_pass": false,
+        "expected": "Berlin",
+        "prompt_source": "compact_native_semantic_canary",
+        "prompt_sha256": "975a70ed5320d47056f22740a81f3d9f050c791ad4bdd9f083509019384344f6",
+        "input_tokens": 32,
+        "has_corpus_token_slice": false,
+        "corpus_token_start": 0,
+        "corpus_token_end_exclusive": 0,
+        "output_tokens": 1,
+        "token_ids": [
+          91149
+        ],
+        "output": "Berlin",
+        "emitted_us": [
+          83421382809
+        ],
+        "prefill_us": 338596,
+        "target_prefill_us": 332235,
+        "mtp_prefill_us": 6232,
+        "diagnostic_io_us": 0,
+        "target_argmax_cpu_fallbacks": 0,
+        "proposed": 3,
+        "accepted": 3
+      },
+      {
+        "id": "arithmetic-2plus2",
+        "bank": 0,
+        "checker": "exact_text",
+        "semantic_checked": false,
+        "semantic_pass": false,
+        "expected": "4",
+        "prompt_source": "compact_native_semantic_canary",
+        "prompt_sha256": "91b79cc91e552ac9d4ccc00e3306af388b251ddf2fc7ea1f370a3357126787f0",
+        "input_tokens": 26,
+        "has_corpus_token_slice": false,
+        "corpus_token_start": 0,
+        "corpus_token_end_exclusive": 0,
+        "output_tokens": 1,
+        "token_ids": [
+          19
+        ],
+        "output": "4",
+        "emitted_us": [
+          83422611901
+        ],
+        "prefill_us": 1229027,
+        "target_prefill_us": 1223598,
+        "mtp_prefill_us": 5296,
+        "diagnostic_io_us": 0,
+        "target_argmax_cpu_fallbacks": 0,
+        "proposed": 3,
+        "accepted": 3
+      },
+      {
+        "id": "capital-italy",
+        "bank": 0,
+        "checker": "exact_text",
+        "semantic_checked": false,
+        "semantic_pass": false,
+        "expected": "Rome",
+        "prompt_source": "compact_native_semantic_canary",
+        "prompt_sha256": "c66418fc19ea3bbeeec496a0e010b557e20587b86dd92af986500cf1b2f1cf5f",
+        "input_tokens": 32,
+        "has_corpus_token_slice": false,
+        "corpus_token_start": 0,
+        "corpus_token_end_exclusive": 0,
+        "output_tokens": 2,
+        "token_ids": [
+          49,
+          617
+        ],
+        "output": "Rome",
+        "emitted_us": [
+          83422947980,
+          83424391299
+        ],
+        "prefill_us": 336014,
+        "target_prefill_us": 332102,
+        "mtp_prefill_us": 3779,
+        "diagnostic_io_us": 0,
+        "target_argmax_cpu_fallbacks": 0,
+        "proposed": 3,
+        "accepted": 3
+      }
+    ],
+    "shared_window_seconds": 0.0,
+    "shared_window_start_us": 0,
+    "shared_window_end_us": 0,
+    "shared_tokens": 0,
+    "shared_tg": 0.0,
+    "shared_window_definition": "intersection of all lane post-parallel first-to-last emission spans; count all lane token events in (start,end] divided by one wall-clock window",
+    "measurement_complete": true,
+    "semantic_status": "unscored"
+  }
+]

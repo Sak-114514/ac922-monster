@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-16T10:33:30.047705+00:00",
+  "checker": "run_semantic_native.evaluate_case",
+  "generated_python_executed": false,
+  "id_slot_policy": "null; local bank/lane IDs are not HTTP slots",
+  "status": "fail",
+  "semantic_scenario_count": 12,
+  "scenarios": [
+    {
+      "label": "v37-flatmeta6d3-copy1-diagnostic-serial-sem-00-0",
+      "kind": "semantic_serial_reference",
+      "status": "pass",
+      "case_count": 2,
+      "cases": [
+        {
+          "id": "capital-en",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "Paris"
+        },
+        {
+          "id": "arithmetic-zh",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "9805"
+        }
+      ],
+      "missing_lane_ids": [],
+      "unexpected_lane_ids": []
+    },
+    {
+      "label": "v37-flatmeta6d3-copy1-diagnostic-serial-sem-00-1",
+      "kind": "semantic_serial_reference",
+      "status": "pass",
+      "case_count": 2,
+      "cases": [
+        {
+          "id": "logic-en",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "NO"
+        },
+        {
+          "id": "strict-json-zh",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+        }
+      ],
+      "missing_lane_ids": [],
+      "unexpected_lane_ids": []
+    },
+    {
+      "label": "v37-flatmeta6d3-copy1-diagnostic-dual-sem-00",
+      "status": "fail",
+      "reason": "missing result"
+    },
+    {
+      "label": "v37-flatmeta6d3-copy1-diagnostic-serial-sem-01-0",
+      "status": "fail",
+      "reason": "missing result"
+    },
+    {
+      "label": "v37-flatmeta6d3-copy1-diagnostic-serial-sem-01-1",
+      "status": "fail",
+      "reason": "missing result"
+    },
+    {
+      "label": "v37-flatmeta6d3-copy1-diagnostic-dual-sem-01",
+      "status": "fail",
+      "reason": "missing result"
+    },
+    {
+      "label": "v37-flatmeta6d3-copy1-diagnostic-serial-sem-02-0",
+      "status": "fail",
+      "reason": "missing result"
+    },
+    {
+      "label": "v37-flatmeta6d3-copy1-diagnostic-serial-sem-02-1",
+      "status": "fail",
+      "reason": "missing result"
+    },
+    {
+      "label": "v37-flatmeta6d3-copy1-diagnostic-dual-sem-02",
+      "status": "fail",
+      "reason": "missing result"
+    },
+    {
+      "label": "v37-flatmeta6d3-copy1-diagnostic-serial-sem-03-0",
+      "status": "fail",
+      "reason": "missing result"
+    },
+    {
+      "label": "v37-flatmeta6d3-copy1-diagnostic-serial-sem-03-1",
+      "status": "fail",
+      "reason": "missing result"
+    },
+    {
+      "label": "v37-flatmeta6d3-copy1-diagnostic-dual-sem-03",
+      "status": "fail",
+      "reason": "missing result"
+    }
+  ],
+  "errors": [
+    "missing completed semantic result v37-flatmeta6d3-copy1-diagnostic-dual-sem-00",
+    "missing completed semantic result v37-flatmeta6d3-copy1-diagnostic-serial-sem-01-0",
+    "missing completed semantic result v37-flatmeta6d3-copy1-diagnostic-serial-sem-01-1",
+    "missing completed semantic result v37-flatmeta6d3-copy1-diagnostic-dual-sem-01",
+    "missing completed semantic result v37-flatmeta6d3-copy1-diagnostic-serial-sem-02-0",
+    "missing completed semantic result v37-flatmeta6d3-copy1-diagnostic-serial-sem-02-1",
+    "missing completed semantic result v37-flatmeta6d3-copy1-diagnostic-dual-sem-02",
+    "missing completed semantic result v37-flatmeta6d3-copy1-diagnostic-serial-sem-03-0",
+    "missing completed semantic result v37-flatmeta6d3-copy1-diagnostic-serial-sem-03-1",
+    "missing completed semantic result v37-flatmeta6d3-copy1-diagnostic-dual-sem-03",
+    "serial semantic cases do not cover the frozen 16-case source exactly",
+    "P4 semantic cases do not cover the frozen 16-case source exactly"
+  ]
+}

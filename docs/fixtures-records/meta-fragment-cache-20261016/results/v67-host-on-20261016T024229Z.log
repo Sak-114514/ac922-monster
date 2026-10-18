@@ -1,0 +1,91 @@
+start=2026-10-16T02:42:30Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v67
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/meta-fragment-cache-20261016/meta-fragment-cache-v67-host
+cache=1
+3b4f042e94f22c42230bb5ca90df17e43e0c1d19ed97d2b9ee13bf41bf0ff760  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/meta-fragment-cache-20261016/meta-fragment-cache-v67-host
+visible=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a
+limits temp<58C preexisting<=512MiB runtime<=1024MiB timeout=180s
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 2 MiB, 39
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 38
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 2 MiB, 38
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 2 MiB, 38
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 2 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 3 MiB, 39
+ggml[2] ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+ggml[2]   Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2] P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml[2] ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml[2] ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml[2] ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml[2] P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml[2] ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml[2] ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml[2] ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml[2] ggml_backend_meta_context: nested native GPU AllReduce opt-in requested; unsupported PARTIAL boundaries fail closed
+ggml[2] P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml[2] ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml[3] initialize_nested_gpu_ar: nested NCCL fallback rejected; strict F32 NCCL is not active
+ggml[2] meta-nested-gpu-ar opt-in=1 topology=2x3 leaves=6 order=A0,A1,A2,B0,B1,B2 p2p6=1 nccl6_f32=0
+ggml[2] meta-fragment-cache context=0x10026c81310 requested=1 enabled=0 reason=ineligible_parent_or_topology scope=0 members=2
+ggml[2] meta-context-submit FIFO active context=0x10026c81310 members=2 CPU_enqueue_atomic=1 GPU_tail_wait=1
+ggml[2] meta-fragment-cache context=0x10026c81710 requested=1 enabled=1 parent=1 fragment=0/3 child_uid=3 hit=0 hits=0 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-context-submit FIFO active context=0x10026c81710 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffd5d032800
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffd5d232800
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffd5d432800
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffd5d032900
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffd5d232900
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffd5d432900
+ggml[2] meta-fragment-cache context=0x100285fb8f0 requested=1 enabled=1 parent=1 fragment=0/3 child_uid=6 hit=0 hits=0 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-context-submit FIFO active context=0x100285fb8f0 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+ggml[2] meta-nested-gpu-ar sequence=1 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=32 tensors=6 host_stage=0
+ggml[2] meta-fragment-cache context=0x10026c81710 requested=1 enabled=1 parent=1 fragment=1/3 child_uid=4 hit=0 hits=0 misses=2 retained=0 bytes=0 evictions=0
+ggml[2] meta-fragment-cache context=0x100285fb8f0 requested=1 enabled=1 parent=1 fragment=1/3 child_uid=7 hit=0 hits=0 misses=2 retained=0 bytes=0 evictions=0
+ggml[2] meta-nested-gpu-ar sequence=2 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=32 tensors=6 host_stage=0
+ggml[2] meta-fragment-cache context=0x10026c81710 requested=1 enabled=1 parent=1 fragment=2/3 child_uid=5 hit=0 hits=0 misses=3 retained=0 bytes=0 evictions=0
+ggml[2] meta-fragment-cache context=0x100285fb8f0 requested=1 enabled=1 parent=1 fragment=2/3 child_uid=8 hit=0 hits=0 misses=3 retained=0 bytes=0 evictions=0
+ggml[2] meta-fragment-cache context=0x10026c81310 requested=1 enabled=0 reason=ineligible_parent_or_topology scope=0 members=2
+ggml[2] meta-fragment-cache context=0x10026c81710 requested=1 enabled=1 parent=1 fragment=0/3 child_uid=3 hit=0 hits=0 misses=4 retained=1 bytes=13728 evictions=0
+ggml[2] meta-fragment-cache collective-generation context=0x10026c81710 generation=1 high_water_bytes=32 invalidated_all=1
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 2 subgraphs: merged, 1 chunks
+ggml[2] meta-fragment-cache context=0x100285fb8f0 requested=1 enabled=1 parent=1 fragment=0/3 child_uid=6 hit=0 hits=0 misses=4 retained=1 bytes=13728 evictions=0
+ggml[2] meta-fragment-cache collective-generation context=0x100285fb8f0 generation=1 high_water_bytes=32 invalidated_all=1
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 2 subgraphs: merged, 1 chunks
+ggml[2] meta-nested-gpu-ar sequence=3 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=32 tensors=6 host_stage=0
+ggml[2] meta-fragment-cache context=0x10026c81710 requested=1 enabled=1 parent=1 fragment=1/3 child_uid=4 hit=0 hits=0 misses=5 retained=1 bytes=38936 evictions=0
+ggml[3] ggml_backend_meta_graph_compute: graph 5 nodes, 2 subgraphs: merged, 1 chunks
+ggml[2] meta-fragment-cache context=0x100285fb8f0 requested=1 enabled=1 parent=1 fragment=1/3 child_uid=7 hit=0 hits=0 misses=5 retained=1 bytes=38936 evictions=0
+ggml[3] ggml_backend_meta_graph_compute: graph 5 nodes, 2 subgraphs: merged, 1 chunks
+ggml[2] meta-nested-gpu-ar sequence=4 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=32 tensors=6 host_stage=0
+ggml[2] meta-fragment-cache context=0x10026c81710 requested=1 enabled=1 parent=1 fragment=2/3 child_uid=5 hit=0 hits=0 misses=6 retained=2 bytes=86864 evictions=0
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 1 subgraphs: not merged, 0 chunks
+ggml[2] meta-fragment-cache context=0x100285fb8f0 requested=1 enabled=1 parent=1 fragment=2/3 child_uid=8 hit=0 hits=0 misses=6 retained=2 bytes=86864 evictions=0
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 1 subgraphs: not merged, 0 chunks
+ggml[2] meta-fragment-cache context=0x10026c81310 requested=1 enabled=0 reason=ineligible_parent_or_topology scope=0 members=2
+ggml[2] meta-fragment-cache context=0x10026c81710 requested=1 enabled=1 parent=1 fragment=0/3 child_uid=3 hit=1 hits=1 misses=6 retained=2 bytes=61656 evictions=0
+ggml[2] meta-fragment-cache context=0x100285fb8f0 requested=1 enabled=1 parent=1 fragment=0/3 child_uid=6 hit=1 hits=1 misses=6 retained=2 bytes=61656 evictions=0
+ggml[2] meta-nested-gpu-ar sequence=5 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=32 tensors=6 host_stage=0
+ggml[2] meta-fragment-cache context=0x10026c81710 requested=1 enabled=1 parent=1 fragment=1/3 child_uid=4 hit=1 hits=2 misses=6 retained=2 bytes=52664 evictions=0
+ggml[2] meta-fragment-cache context=0x100285fb8f0 requested=1 enabled=1 parent=1 fragment=1/3 child_uid=7 hit=1 hits=2 misses=6 retained=2 bytes=52664 evictions=0
+ggml[2] meta-nested-gpu-ar sequence=6 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=32 tensors=6 host_stage=0
+FAIL META_FRAGMENT_CACHE no inner TP3 merged graph with at least two partial boundaries was observed
+ggml[2] meta-nested-gpu-ar-summary context=0x10026c81310 calls=6 log_first=8 topology=2x3
+ggml[2] meta-fragment-cache summary context=0x10026c81710 hits=3 misses=6 invalidations=0 evictions=0 retained=2
+ggml[2] meta-fragment-cache summary context=0x100285fb8f0 hits=3 misses=6 invalidations=0 evictions=0 retained=2
+FRAGMENT_SETUP topology=Meta2x3 cache=1 outerUIDA=1 outerUIDB=2 graphBuffer=0x100297dfba0 inputA=0x100297acb70 inputB=0x100297c7950 nodesA=11 nodesB=11
+PASS_OUTPUT label=A-warmup frame=0 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=B-input-same-UID frame=1 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=A-input-restored frame=0 max_abs=0 exact=1 canary=1 parent_uid=1
+exit_status=1
+after:
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 2 MiB, 40
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 39
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 2 MiB, 40
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 2 MiB, 39
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 2 MiB, 39
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 4 MiB, 40

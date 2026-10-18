@@ -1,0 +1,43 @@
+start=2026-10-16T20:55:19Z
+base=/home/debian/ac922-monster/experiments/standard-opt-20261014
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v120
+tag=v125-host3
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-prefill-path-screen-v125-20261017/qsa-prefill-path-screen-v125-host3
+scope=one-fixture-TU; model=0; GPU=0 during compile; runtime=V120
+bf958c58b2948f648dea6fd22477584e2539377821871d44da0267957e09f502  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-prefill-path-screen-v125-20261017/qsa_prefill_path_screen.cu
+87c940ca5ec5cb136b1dc30480bf5b01933eae703ff6dc584f941891016e5557  /home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-qsa-standard-sparse.h
+602774b94fa20f4defbb8486d8c42298f1c9213d4c37d0b57b0201d0ef7c6553  /home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-cuda/common.cuh
+34da3b22663dfb4df17b36b76b9dc2314188b16b1f13c1fddfe21e1427c81b99  /home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-cuda/qsa-attn.cu
+8fa366def24db4b65bdc03a86156d2bee917a2200a4ec850233babf2ae3dccac  /home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-cuda/fattn.cu
+84debba398d48061ac3f55367de3fb2ccdf80b2ea062dd8083490124d9b33550  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v120/lib/libggml-cuda.so.0
+73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v120/lib/libggml.so.0
+beee6adf3e5fc7801e3e2291e039119707f0a8cfbee4ac75555192bf3182279a  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v120/lib/libggml-base.so.0
+d51a3e28fafe2fc03584d790512d4dcb88583f9949647602e5cbef1fc0d71781  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v120/lib/libggml-cpu.so.0
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-prefill-path-screen-v125-20261017/qsa_prefill_path_screen.cu(36): warning #177-D: variable "<unnamed>::kCellMode" was declared but never referenced
+  constexpr int32_t kCellMode = 0x51534143;
+                    ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+end=2026-10-16T20:55:28Z
+binary_sha256=1a3750189bf54c051d735018d5fcf9b0436ceb9ffdca76896515202ea465890c  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-prefill-path-screen-v125-20261017/qsa-prefill-path-screen-v125-host3
+	linux-vdso64.so.1 (0x00007fffae8c0000)
+	libggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v120/lib/libggml-cuda.so.0 (0x00007fffa0cb0000)
+	libggml.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v120/lib/libggml.so.0 (0x00007fffa0c80000)
+	libggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v120/lib/libggml-base.so.0 (0x00007fffa0af0000)
+	libggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v120/lib/libggml-cpu.so.0 (0x00007fffa0930000)
+	libcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fffa0850000)
+	libstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fffa0520000)
+	libm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fffa03f0000)
+	libgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fffa03b0000)
+	libc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fffa0150000)
+	libcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fff99430000)
+	libcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fff97670000)
+	libnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff95810000)
+	/lib64/ld64.so.2 (0x00007fffae8e0000)
+	libgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fff95790000)
+	libdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff95760000)
+	libpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff95730000)
+	librt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff95700000)
+	libcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff81870000)
+BUILD_OK host_fixture_only=1

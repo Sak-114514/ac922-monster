@@ -1,0 +1,25 @@
+V160 leaf-slot regression; CPU allocator APIs only; no CUDA library linked
+v155_runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v155
+v160_runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v160
+runtime library hashes:
+348b013d1ecf903f90a0c4e525d53fe8ecdfa3f4e1cca688fb2d67b027718084  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v155/lib/libggml-base.so.0
+d51a3e28fafe2fc03584d790512d4dcb88583f9949647602e5cbef1fc0d71781  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v155/lib/libggml-cpu.so.0
+cb3e9a17ad475ccfae3ad6fe3be0e83d0e7d8b53a99c53ba5ed495075e2ca21d  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v160/lib/libggml-base.so.0
+d51a3e28fafe2fc03584d790512d4dcb88583f9949647602e5cbef1fc0d71781  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v160/lib/libggml-cpu.so.0
+CUDA dependency checks=PASS for both runtime selections
+
+--- old V155: expect child failure at stale leaf slot ---
+MOVE stage=alloc_graph leaf-order=[unallocated,preallocated] nodes=1 leaves=2
+GROW result=leaf-count-change_requires_reserve
+V160 leaf-move RED reproduced: child signal=11 at alloc_graph
+V160 leaf-growth PASS: 32 to 64 unused leaves with unchanged node/source; reserve+alloc passed
+
+--- fixed V160: expect reserve request then recovery ---
+MOVE stage=alloc_graph leaf-order=[unallocated,preallocated] nodes=1 leaves=2
+MOVE result=alloc_graph_false_requires_reserve
+MOVE result=reserve_then_alloc_pass
+GROW result=leaf-count-change_requires_reserve
+V160 leaf-move FIXED: alloc_graph requested reserve; reserve+alloc passed
+V160 leaf-growth PASS: 32 to 64 unused leaves with unchanged node/source; reserve+alloc passed
+
+V160_COMPARISON_PASS

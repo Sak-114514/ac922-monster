@@ -1,0 +1,15 @@
+CPU_SELF_TEST_CONFIG tag=20261016T032826Z-124118 runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v69 binary_sha256=857b37c6ba675dce84ceb1af38920ae9dbdcac5077f6c2e6656c3f4a95afc332 libllama_sha256=4113f9ace2ce998f70bc375f3251fc056f7850ea893d8dad7786acc63f9986b6 mode=no-backend-init
+PASS POLICY_CPU case=d2-four-default lanes=4 depth=2 variable=0 d3_four=0 enabled=1
+PASS POLICY_CPU case=d4-four-default lanes=4 depth=4 variable=0 d3_four=0 enabled=1
+PASS POLICY_CPU case=d2-two-variable lanes=2 depth=2 variable=1 d3_four=0 enabled=1
+PASS POLICY_CPU case=d4-two-variable lanes=2 depth=4 variable=1 d3_four=0 enabled=1
+PASS POLICY_CPU case=d3-two-variable lanes=2 depth=3 variable=1 d3_four=0 enabled=1
+PASS POLICY_CPU case=d3-two-default lanes=2 depth=3 variable=0 d3_four=1 enabled=0
+PASS POLICY_CPU case=d3-four-optin-off lanes=4 depth=3 variable=1 d3_four=0 enabled=0
+PASS POLICY_CPU case=d3-four-optin-on lanes=4 depth=3 variable=1 d3_four=1 enabled=1
+PASS POLICY_CPU case=d3-three-optin-on lanes=3 depth=3 variable=1 d3_four=1 enabled=0
+PASS PREFIX_CPU case=four-a lanes=4 rows=24 real_rows=15 catchup_rows=11 pad_rows=9 verify_rows=16
+PASS PREFIX_CPU case=two-b lanes=2 rows=12 real_rows=7 catchup_rows=5 pad_rows=5 verify_rows=8
+PASS PREFIX_CPU case=four-a-reuse lanes=4 rows=24 real_rows=15 catchup_rows=11 pad_rows=9 verify_rows=16
+PASS PREFIX_CPU case=three-ragged-general lanes=3 rows=18 real_rows=12 catchup_rows=9 pad_rows=6 verify_rows=12
+PASS CPU_D3_FOUR_LANE_POLICY_AND_PREFIX rows4=24 verify4=16 fixed6=1 ragged_fallback_shape=3lane-declined

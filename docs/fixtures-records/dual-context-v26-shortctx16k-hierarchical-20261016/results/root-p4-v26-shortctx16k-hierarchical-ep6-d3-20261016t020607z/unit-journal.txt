@@ -1,0 +1,44 @@
+2026-10-16T10:06:09+0800 192 systemd[1562]: Started root-p4-v26-shortctx16k-hierarchical-ep6-d3-20261016t020607z.service - V26 16K hierarchical EP6 short-context fallback.
+2026-10-16T10:06:09+0800 192 numactl[103446]: {
+2026-10-16T10:06:09+0800 192 numactl[103446]:   "modes": [
+2026-10-16T10:06:09+0800 192 numactl[103446]:     1
+2026-10-16T10:06:09+0800 192 numactl[103446]:   ],
+2026-10-16T10:06:09+0800 192 numactl[103446]:   "profile_dirs": [
+2026-10-16T10:06:09+0800 192 numactl[103446]:     "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v26-shortctx16k-hierarchical-20261016/results/root-p4-v26-shortctx16k-hierarchical-ep6-d3-20261016t020607z/copy1/diagnostic",
+2026-10-16T10:06:09+0800 192 numactl[103446]:     "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v26-shortctx16k-hierarchical-20261016/results/root-p4-v26-shortctx16k-hierarchical-ep6-d3-20261016t020607z/copy1/clean"
+2026-10-16T10:06:09+0800 192 numactl[103446]:   ]
+2026-10-16T10:06:09+0800 192 numactl[103446]: }
+2026-10-16T10:09:16+0800 192 numactl[104663]: Traceback (most recent call last):
+2026-10-16T10:09:16+0800 192 numactl[104663]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v26-shortctx16k-hierarchical-20261016/extract_variant_log_v22.py", line 51, in <module>
+2026-10-16T10:09:16+0800 192 numactl[104663]:     raise SystemExit(main())
+2026-10-16T10:09:16+0800 192 numactl[104663]:                      ^^^^^^
+2026-10-16T10:09:16+0800 192 numactl[104663]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v26-shortctx16k-hierarchical-20261016/extract_variant_log_v22.py", line 45, in main
+2026-10-16T10:09:16+0800 192 numactl[104663]:     result = extract(args.input.read_text(encoding="utf-8", errors="replace"), args.mode, args.profile)
+2026-10-16T10:09:16+0800 192 numactl[104663]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T10:09:16+0800 192 numactl[104663]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v26-shortctx16k-hierarchical-20261016/extract_variant_log_v22.py", line 26, in extract
+2026-10-16T10:09:16+0800 192 numactl[104663]:     raise ValueError(f"mode {mode}/{name}: expected one complete family, starts={starts}, ends={stops}")
+2026-10-16T10:09:16+0800 192 numactl[104663]: ValueError: mode 1/diagnostic: expected one complete family, starts=[1943], ends=[]
+2026-10-16T10:09:16+0800 192 numactl[104665]: Traceback (most recent call last):
+2026-10-16T10:09:16+0800 192 numactl[104665]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v26-shortctx16k-hierarchical-20261016/extract_variant_log_v22.py", line 51, in <module>
+2026-10-16T10:09:16+0800 192 numactl[104665]:     raise SystemExit(main())
+2026-10-16T10:09:16+0800 192 numactl[104665]:                      ^^^^^^
+2026-10-16T10:09:16+0800 192 numactl[104665]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v26-shortctx16k-hierarchical-20261016/extract_variant_log_v22.py", line 45, in main
+2026-10-16T10:09:16+0800 192 numactl[104665]:     result = extract(args.input.read_text(encoding="utf-8", errors="replace"), args.mode, args.profile)
+2026-10-16T10:09:16+0800 192 numactl[104665]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T10:09:16+0800 192 numactl[104665]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v26-shortctx16k-hierarchical-20261016/extract_variant_log_v22.py", line 26, in extract
+2026-10-16T10:09:16+0800 192 numactl[104665]:     raise ValueError(f"mode {mode}/{name}: expected one complete family, starts={starts}, ends={stops}")
+2026-10-16T10:09:16+0800 192 numactl[104665]: ValueError: mode 1/clean: expected one complete family, starts=[], ends=[]
+2026-10-16T10:09:16+0800 192 numactl[104667]: Traceback (most recent call last):
+2026-10-16T10:09:16+0800 192 numactl[104667]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v26-shortctx16k-hierarchical-20261016/extract_variant_log_v22.py", line 51, in <module>
+2026-10-16T10:09:16+0800 192 numactl[104667]:     raise SystemExit(main())
+2026-10-16T10:09:16+0800 192 numactl[104667]:                      ^^^^^^
+2026-10-16T10:09:16+0800 192 numactl[104667]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v26-shortctx16k-hierarchical-20261016/extract_variant_log_v22.py", line 45, in main
+2026-10-16T10:09:16+0800 192 numactl[104667]:     result = extract(args.input.read_text(encoding="utf-8", errors="replace"), args.mode, args.profile)
+2026-10-16T10:09:16+0800 192 numactl[104667]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T10:09:16+0800 192 numactl[104667]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v26-shortctx16k-hierarchical-20261016/extract_variant_log_v22.py", line 26, in extract
+2026-10-16T10:09:16+0800 192 numactl[104667]:     raise ValueError(f"mode {mode}/{name}: expected one complete family, starts={starts}, ends={stops}")
+2026-10-16T10:09:16+0800 192 numactl[104667]: ValueError: mode 1/diagnostic: expected one complete family, starts=[1943], ends=[]
+2026-10-16T10:09:16+0800 192 numactl[103438]: run_rc=139 final_rc=139 output=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v26-shortctx16k-hierarchical-20261016/results/root-p4-v26-shortctx16k-hierarchical-ep6-d3-20261016t020607z variants=1
+2026-10-16T10:09:16+0800 192 systemd[1562]: root-p4-v26-shortctx16k-hierarchical-ep6-d3-20261016t020607z.service: Main process exited, code=exited, status=139/n/a
+2026-10-16T10:09:16+0800 192 systemd[1562]: root-p4-v26-shortctx16k-hierarchical-ep6-d3-20261016t020607z.service: Failed with result 'exit-code'.
+2026-10-16T10:09:16+0800 192 systemd[1562]: root-p4-v26-shortctx16k-hierarchical-ep6-d3-20261016t020607z.service: Consumed 49.265s CPU time.

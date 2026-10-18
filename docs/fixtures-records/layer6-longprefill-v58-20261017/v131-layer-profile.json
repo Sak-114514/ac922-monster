@@ -1,0 +1,520 @@
+{
+  "schema": "v131-layer6-longprefill-host-profile-v1",
+  "status": "HOST_LINKED_V135_NO_MODEL_NO_GPU",
+  "runner_lineage": {
+    "base_source": "fixtures/long-prefill-native-v50-20261017/dual-context-v50-long-prefill-native.cpp",
+    "base_source_sha256": "766a555bffb20631d7ce4d3020ca41d452ba05ec888c757ddf610793b2a7b965",
+    "v55_reuse_record": "fixtures/long-prefill-virtual-v55-20261017/results/v55-runner-reuse-v120-20261016T201131.417114Z.json",
+    "v55_reuse_record_sha256": "31cbea8480fd935da9999be0da4cd31c07ffd6bcf9e5edea325ebf9735c9e467",
+    "v55_profile_sha256_at_reuse": "2df2fb36e30090333ddd7a7ce55ad4ac3fd203faabaaa85080c2780c0e427ac9",
+    "runner_binary_reuse_only_recorded": true,
+    "new_runner_source": "fixtures/layer6-longprefill-v58-20261017/dual-context-v131-layer-longprefill.cpp",
+    "new_runner_source_sha256": "51427a9a58965d82b92c3f714a29ae588bb4c8a573df83fee1bff43a8998e920",
+    "minimal_transformations": [
+      {
+        "label": "inspect the loaded model device types without private APIs",
+        "matches": 1
+      },
+      {
+        "label": "name the derived runner in its CLI",
+        "matches": 1
+      },
+      {
+        "label": "select the V122 byte-balanced contiguous six-GPU layer split",
+        "matches": 1
+      },
+      {
+        "label": "reduce target workspace from the V50 4096 ubatch after its 64K OOM",
+        "matches": 1
+      },
+      {
+        "label": "remove the V50 Meta upload-pool and Turbo pinned-memory assumptions",
+        "matches": 1
+      },
+      {
+        "label": "select the six-node 12-GiB PLE prefix",
+        "matches": 1
+      },
+      {
+        "label": "run one non-Meta copy mode and avoid V50's Meta copy selector",
+        "matches": 1
+      },
+      {
+        "label": "disable expert parallelism and its AllReduce path",
+        "matches": 1
+      },
+      {
+        "label": "select the existing single-lane MTP GPU chain and disable multi-lane unrolling",
+        "matches": 1
+      },
+      {
+        "label": "remove the Meta fragment signature requirement",
+        "matches": 1
+      },
+      {
+        "label": "turn off Meta island/TurboPrefill scheduling",
+        "matches": 1
+      },
+      {
+        "label": "remove Meta-only parent-walk/cache requirements",
+        "matches": 1
+      },
+      {
+        "label": "disable the Meta upload-copy mode",
+        "matches": 1
+      },
+      {
+        "label": "prove that the candidate does not select an AllReduce path",
+        "matches": 1
+      },
+      {
+        "label": "disable Meta scheduler replay/context views",
+        "matches": 1
+      },
+      {
+        "label": "namespace the reused V50 corpus input under the V131 profile",
+        "matches": 1
+      },
+      {
+        "label": "select only the single32k/single64k families",
+        "matches": 1
+      },
+      {
+        "label": "name the candidate row-budget artifact",
+        "matches": 1
+      },
+      {
+        "label": "label the selected profile accurately",
+        "matches": 1
+      },
+      {
+        "label": "label the single-lane owner accurately",
+        "matches": 1
+      },
+      {
+        "label": "remove the Meta stage-order claim",
+        "matches": 1
+      },
+      {
+        "label": "log actual six-GPU devices and enable debug layer-owner records during model load",
+        "matches": 1
+      },
+      {
+        "label": "mark the actual prefill profile in runtime output",
+        "matches": 1
+      },
+      {
+        "label": "avoid claiming Meta per-physical-GPU order for plain CUDA",
+        "matches": 1
+      }
+    ]
+  },
+  "runtime": {
+    "status": "FROZEN_V135",
+    "name": "runtime-perf-v135",
+    "build_id": "20261016T213259.513817Z",
+    "report": "notes/V135-build.json",
+    "report_sha256": "75a0a3a651a0f8a1b1fbd115a391e19289de10ffcca0959497c4e52b65c2b519",
+    "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v135",
+    "runtime_library_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v135/lib",
+    "loaded_runner_dso_sha256": {
+      "libllama-common.so.0": "c331b4e27d74fdc4ea295676985c1ae1d8b8ad296feee0715164e37a96d395ac",
+      "libmtmd.so.0": "02b78e109820e28de208363e3f6d8f3cde8f43a452ec8770972d3565caed8e23",
+      "libllama.so.0": "9cfe867acf27dc4bc48c7132c5db9796c4b4813cf1e8df1ab323067925b029b9",
+      "libggml.so.0": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+      "libggml-cpu.so.0": "d51a3e28fafe2fc03584d790512d4dcb88583f9949647602e5cbef1fc0d71781",
+      "libggml-cuda.so.0": "5f663e079037bee6fe0d9cf1246433566e7103d53699ca659574f5efcbd6e53a",
+      "libggml-base.so.0": "beee6adf3e5fc7801e3e2291e039119707f0a8cfbee4ac75555192bf3182279a"
+    }
+  },
+  "split": {
+    "mode": "LLAMA_SPLIT_MODE_LAYER",
+    "visible_plain_cuda_devices": 6,
+    "tensor_split_relative_weights": [
+      10,
+      10,
+      9,
+      7,
+      8,
+      6
+    ],
+    "cumulative_normalized_boundaries": [
+      0.2,
+      0.4,
+      0.58,
+      0.72,
+      0.88,
+      1.0
+    ],
+    "actual_layer_device_map": [
+      {
+        "logical_gpu": 0,
+        "blocks": "0-9",
+        "includes_output": false
+      },
+      {
+        "logical_gpu": 1,
+        "blocks": "10-19",
+        "includes_output": false
+      },
+      {
+        "logical_gpu": 2,
+        "blocks": "20-28",
+        "includes_output": false
+      },
+      {
+        "logical_gpu": 3,
+        "blocks": "29-35",
+        "includes_output": false
+      },
+      {
+        "logical_gpu": 4,
+        "blocks": "36-43",
+        "includes_output": false
+      },
+      {
+        "logical_gpu": 5,
+        "blocks": "44-48",
+        "includes_output": true
+      }
+    ],
+    "loader_owner_rule_source": "src/src/llama-model.cpp:1509-1510,1564-1567",
+    "expected_debug_owner_lines": 50,
+    "no_expert_parallelism_or_allreduce": true,
+    "all_recurrent_blocks_plus_output_offloaded": true,
+    "input_embedding_expected_on_cpu": true,
+    "runtime_ownership_gate": {
+      "expected_layer_owner_records": 50,
+      "cpu_global_tensor_names": [
+        "token_embd.weight",
+        "per_layer_token_embd.weight"
+      ],
+      "cpu_global_source_bytes": 29073290240,
+      "forbid_cpu_expert_weight_fallback": true,
+      "requires_actual_loader_buffer_summary": true,
+      "output_weight_owner": "logical GPU 5; independently present, not tied to token_embd.weight"
+    }
+  },
+  "memory_ledger": {
+    "source": "fixtures/layer6-two-bank-v57-20261017/v122-layer-fit-summary.json",
+    "source_sha256": "c4bc7f4f5c57917aa215a7f9d2bac42740496fc6a654cf397cdcaf5c98a56405",
+    "candidate_ranges": [
+      "0-9",
+      "10-19",
+      "20-28",
+      "29-35",
+      "36-43",
+      "44-48"
+    ],
+    "gpu_source_weight_gib": [
+      8.06925344467163,
+      7.572100281715393,
+      7.992317318916321,
+      7.513027548789978,
+      7.8863489627838135,
+      7.096575379371643
+    ],
+    "gpu_weight_plus_4gib_reserve_gib": [
+      12.06925344467163,
+      11.572100281715393,
+      11.99231731891632,
+      11.513027548789978,
+      11.886348962783813,
+      11.096575379371643
+    ],
+    "gpu_remaining_of_16gib_before_contexts_gib": [
+      3.930746555328369,
+      4.427899718284607,
+      4.007682681083679,
+      4.486972451210022,
+      4.1136510372161865,
+      4.903424620628357
+    ],
+    "max_source_weight_gib": 8.06925344467163,
+    "target_ubatch": 1024,
+    "historical_target_workspace_mib_at_ub1024": 238.44,
+    "draft_ubatch": 512,
+    "historical_draft_workspace_mib": 249.28,
+    "native_mask_f16_mib_if_65536_by_1024": 128,
+    "native_mask_shape_is_estimate": true,
+    "previous_v50_64k_oom": {
+      "device": 0,
+      "allocation_mib": 4561.92,
+      "target_ubatch": 4096
+    },
+    "fit_claim": false,
+    "actual_gpu_min_free_gate_mib": 512
+  },
+  "prefill_scenarios": {
+    "scenario_map_source": "fixtures/long-prefill-native-v50-20261017/v50-scenarios.json",
+    "scenario_map_sha256": "79ceb966fa052f460a5c9b4082cdbc7a03e3550dbab92c3246150a38e5cf4e94",
+    "model_loads_per_process": 1,
+    "families": {
+      "single32k": {
+        "n_parallel": 1,
+        "ctx_per_sequence": 33280,
+        "prompt_tokens": 32768,
+        "logical_chunks": [
+          32768
+        ],
+        "output_tokens": 32
+      },
+      "single64k": {
+        "n_parallel": 1,
+        "ctx_per_sequence": 66048,
+        "prompt_tokens": 65536,
+        "logical_chunks": [
+          32768,
+          32768
+        ],
+        "output_tokens": 32
+      }
+    },
+    "short_semantic_canary_precedes_each_long_case": true,
+    "q8_kv_target_and_draft": true,
+    "original_weights_and_standard_fast_paths_preserved_when_supported": true
+  },
+  "pipeline_parallel": {
+    "requested_by_runner": false,
+    "selection": "stock llama_context auto predicate in src/src/llama-context.cpp:1131-1158",
+    "offload_kqv_source_default": "llama_context_default_params initializes offload_kqv=true; common_params has no offload_kqv member",
+    "conditions": [
+      "six devices",
+      "n_gpu_layers > n_layer_all",
+      "LAYER split",
+      "offload_kqv",
+      "no tensor overrides",
+      "all devices async+events"
+    ],
+    "scheduler_parallel_argument": "cparams.pipeline_parallel",
+    "copies_when_auto_enabled": 4,
+    "copy_count_source": "src/ggml/src/ggml-backend.cpp:789-790,3579",
+    "runtime_confirmation": "require the actual pipeline parallelism enabled log and reject any reserve fallback; no overlap claim from host profile"
+  },
+  "ple": {
+    "gpu_nodes": 6,
+    "gpu_prefix_gib_total": 12,
+    "gpu_stripe_gib_each": 2,
+    "cpu_ddr_remainder_gib_source": 14.822218894958496,
+    "cpu_nodes": [
+      0,
+      8
+    ],
+    "runtime_exact_gate": {
+      "chunks": 859,
+      "bytes": 28800138240,
+      "memcmp_exact": true,
+      "require_each_gpu_stripe_actual_pages": true
+    },
+    "gpu_stripes_verified_gate": {
+      "required_count": 6,
+      "required_marker": "ple-numa: gpu_stripes_verified=6 per_stripe_exact=1",
+      "source_marker_template": "ple-numa: gpu_stripes_verified=%zu per_stripe_exact=1",
+      "must_follow_per_device_actual_placement_checks": true
+    },
+    "source_page_verification": {
+      "source": "src/src/llama-ple-numa.h:573-577",
+      "status": "SOURCE_LOOP_FIXED_RUNTIME_UNVERIFIED",
+      "issue": null,
+      "core_loop_uses_configured_gpu_count": true,
+      "blocks_six_gpu_placement_proof_until_core_fix": false,
+      "required_verified_gpu_stripes": 6
+    }
+  },
+  "safety": {
+    "gpu_temp_ceiling_c": 58,
+    "bmc_temp_ceiling_c": 58,
+    "gpu_free_floor_mib": 512,
+    "automatic_retry": false,
+    "gpu_reset": false,
+    "model_loaded": false,
+    "gpu_touched": false,
+    "runner_host_linked": true,
+    "engine_cuda_rebuild": false
+  },
+  "host_build": {
+    "status": "HOST_LINKED_V135_VALID_SEVEN_DSO_CLOSURE",
+    "script": "build-v131-host.sh",
+    "compiler": "/usr/bin/g++",
+    "cpu_binding": "numactl --cpunodebind=0 --membind=0,8",
+    "translation_units": 1,
+    "remote_build_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/build-v131-20261016T213259.513817Z-51427a9a5896",
+    "runner_binary": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/build-v131-20261016T213259.513817Z-51427a9a5896/dual-context-v131-layer-longprefill",
+    "compile_scope": "one fixture translation unit linked against frozen runtime-perf-v135 DSOs; no engine/CUDA objects",
+    "model_loads": 0,
+    "gpu_touched": false,
+    "binary_remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/build-v131-20261016T213259.513817Z-51427a9a5896/dual-context-v131-layer-longprefill",
+    "binary_sha256": "97ce54874d07022974f713b06ea8d6801ab8fb8c809ee829176e6bff8a21023f",
+    "build_record_remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/build-v131-20261016T213259.513817Z-51427a9a5896/v131-runner-build.json",
+    "build_record_local_path": "fixtures/layer6-longprefill-v58-20261017/results/host-build-v135/v131-runner-build.json",
+    "build_record_sha256": "9fb8d6c82a203b4a14ac9b9f9b2509156211d439b3e4744b32f14f4d319d8951",
+    "ldd_report_remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/build-v131-20261016T213259.513817Z-51427a9a5896/ldd.txt",
+    "ldd_status": "PASS_SEVEN_PRIVATE_RUNTIME_DSOS_NO_MISSING_DEPENDENCIES",
+    "ldd_sha256": "87755832ef65dc4e1ddcece9d6432c2924bf8ca9c49d59262f5d0f17fca4f229",
+    "compile_log_remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/build-v131-20261016T213259.513817Z-51427a9a5896/compile.log",
+    "compile_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "prior_attempt": {
+      "status": "FIXTURE_COMPILE_ERROR_CORRECTED",
+      "log": "fixtures/layer6-longprefill-v58-20261017/results/host-build-v135/initial-invalid-common-params.log",
+      "log_sha256": "18e333102ef455bca025a39c71d28ea5a247ddacefb5802c364732c3aa16f76d",
+      "error": "common_params has no member named offload_kqv; assignment removed and pipeline prerequisite verified against llama_context_default_params"
+    },
+    "wrapper_exit_status": 1,
+    "wrapper_note": "The initial post-link validator incorrectly required libllama-server-impl.so; it is not a dependency of this runner. The actual seven-DSO closure resolves cleanly."
+  },
+  "environment": {
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "LD_LIBRARY_PATH": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v135/lib",
+    "ROOT_RUNTIME_REVISION": "20261016T213259.513817Z",
+    "ROOT_DYNAMIC_LIB_DIR": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v135/lib",
+    "ROOT_BUILD_REPORT": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V135-build.json",
+    "CUDA_VISIBLE_DEVICES": "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+    "GGML_CUDA_P2P": "1",
+    "LLAMA_ISLAND_SPLIT": null,
+    "LLAMA_EXPERT_PARALLEL": "0",
+    "LLAMA_HIERARCHICAL_EP6": "0",
+    "LLAMA_DRAFT_DETP": "0",
+    "LLAMA_PLE_SHARD": "0",
+    "LLAMA_PLE_SHARD_ROWS": "0",
+    "LLAMA_PLE_NUMA_HYBRID": "1",
+    "LLAMA_PLE_NUMA_GPU_NODES": "6",
+    "LLAMA_PLE_NUMA_GPU_GIB": "12",
+    "LLAMA_QSA_INDEXER_IMPL": "standard",
+    "LLAMA_QSA_SPARSE_KERNEL": "1",
+    "LLAMA_QSA_GATHER_MAX_TOKENS": "32",
+    "LLAMA_QSA_STANDARD_SPARSE": "1",
+    "LLAMA_QSA_STANDARD_HEAD_LOOP": "1",
+    "LLAMA_QSA_BIAS_DEVICE": "1",
+    "GGML_CUDA_GET_ROWS_NARROW": "1",
+    "GGML_CUDA_MOE_GROUPED": "1",
+    "GGML_CUDA_MOE_ADAPTIVE_J": "1",
+    "GGML_CUDA_MOE_FUSED_T16": "1",
+    "GGML_CUDA_TOPK_STABLE": "1",
+    "GGML_CUDA_VOLTA_GDN_X4": "1",
+    "GGML_SM70_BF16_GEMV": "1",
+    "GGML_SM70_MOE_REWORK": "1",
+    "GGML_SM70_BF16_DECODE_PANEL": "1",
+    "GGML_CUDA_GRAPH_OPT": "1",
+    "GGML_CUDA_GRAPH_STRUCTURAL": "1",
+    "GGML_CUDA_GRAPH_STRUCTURAL_TRACE": "1",
+    "GGML_CUDA_GRAPH_STRUCTURAL_MAX_NODES": "16384",
+    "GGML_CUDA_GRAPH_PATH_LOG": "1",
+    "GGML_CUDA_GRAPH_SNAPSHOT_CACHE": "1",
+    "GGML_FT_GRAPH_CACHE": "1",
+    "GGML_FT_GRAPH_CACHE_MIN_NODES": "32",
+    "GGML_OPTIMIZATION_PATH_LOG": "1",
+    "GGML_SM70_DECODE_LINEAR_CHUNKS": "4",
+    "GGML_SM70_DECODE_LINEAR_PACKED": "1",
+    "LLAMA_PLE_PREFETCH": "1",
+    "LLAMA_PLE_NUMA_CPU_BALANCE": "1",
+    "LLAMA_PLE_ONECAT": "0",
+    "GGML_CUDA_FATTN_ONECAT": "1",
+    "LLAMA_HC_FUSED": "1",
+    "LLAMA_QWEN4EXP_HC_FUSION": "0",
+    "LLAMA_MTP_FOLD": "1",
+    "LLAMA_MTP_FOLD_MULTI": "0",
+    "LLAMA_MTP_SEQ_LAYOUT": "1",
+    "LLAMA_MTP_GPU_CHAIN": "1",
+    "LLAMA_MTP_GPU_CHAIN_SINGLE": "0",
+    "LLAMA_MTP_GPU_CHAIN_MULTI": "0",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED": "0",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED_DEPTH": "3",
+    "LLAMA_MTP_UNROLL_VARIABLE_LANES": "0",
+    "LLAMA_MTP_UNROLL_D3_LANES4": "0",
+    "LLAMA_MTP_GPU_EMBED": "1",
+    "LLAMA_MTP_DRAFT_GRAPH_CACHE": "0",
+    "LLAMA_MTP_DRAFT_GRAPH_CACHE_LOG": "1",
+    "LLAMA_MTP_FUSE_CATCHUP_SEED": "1",
+    "LLAMA_MTP_N_UBATCH": "512",
+    "LLAMA_MTP_PAD": "6",
+    "LLAMA_MTP_FIXED_PREFIX_ROWS": "6",
+    "LLAMA_MTP_VERIFY_ROW_BUDGET": "4",
+    "LLAMA_GPU_ARGMAX": "1",
+    "LLAMA_ARGMAX_PINNED_OUTPUT": "1",
+    "LLAMA_GPU_ARGMAX_UNIQUE": "1",
+    "LLAMA_GREEDY_SUPPRESSION_FAST": "1",
+    "LLAMA_MTP_KV_ONLY_PREFILL": "1",
+    "LLAMA_MTP_RELEASE_PREFILL_HISTORY": "1",
+    "LLAMA_MTP_FIFO": "0",
+    "LLAMA_TARGET_FIFO_MULTI": "0",
+    "ROOT_MTP_DEPTH": "3",
+    "ROOT_TARGET_VERIFY_PAD_PER_ACTIVE_LANE": "1",
+    "ROOT_WARMUP_FRAMES": "4",
+    "ROOT_UBATCH": "1024",
+    "ROOT_PREFILL_BATCH": "32768",
+    "ROOT_KV_UNIFIED": "0",
+    "ROOT_BANK_LANES": "1",
+    "ROOT_PER_SEQUENCE_CONTEXT": "33280",
+    "ROOT_BANK_CTX": "33280",
+    "ROOT_KV_VARIANT": "per_seq_32k_plus512_x1",
+    "ROOT_V131_LONG_ONLY": "1",
+    "ROOT_V131_CORPUS_SOURCE": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/v45-real-corpus-source.json",
+    "ROOT_PREFILL_LOGITS_DIR": "off",
+    "ROOT_PREFILL_LOGITS_BEFORE_MTP": "0",
+    "ROOT_SERIAL_CPU_SUBMIT": "0",
+    "ROOT_SERVER_MTP_KV_POLICY": "1",
+    "ROOT_CUPTI_PHASE": "off",
+    "ROOT_NSYS_PREFILL_PROFILE": "0",
+    "ROOT_FATAL_BACKTRACE": "1",
+    "LLAMA_STEP_TIMING": "1",
+    "LLAMA_STEP_TIMING_PERIOD": "32",
+    "CUDA_DEVICE_MAX_CONNECTIONS": "32",
+    "LLAMA_PREFILL_FRAME_PIPELINE": "0",
+    "LLAMA_PREFILL_LAZY_RESERVE": "0",
+    "LLAMA_TURBOPREFILL": "0",
+    "ROOT_TURBOPREFILL": "0",
+    "LLAMA_FIFO_SINGLE_ISLAND": "0",
+    "LLAMA_QSA_COMPACT_MASK": "1",
+    "LLAMA_QSA_COMPACT_MASK_NATIVE": "1",
+    "LLAMA_PREFILL_FIXED_UBATCH": "1",
+    "LLAMA_PREFILL_KV_PAD": "65536",
+    "LLAMA_DECODE_KV_PAD": "8192",
+    "LLAMA_SPEC_PAD_MULTI": "20",
+    "LLAMA_SPEC_PAD_MULTI_AUTO": "1",
+    "LLAMA_LOAD_RECLAIM_GPU_PAGES": "1",
+    "LLAMA_LOAD_RECLAIM_GPU_PAGES_STREAM": "1",
+    "LLAMA_LOAD_PREFETCH": "0",
+    "LLAMA_MONOMOE_SM70": "0",
+    "GGML_CUDA_VOLTA_Q8_HEAD_TC": "0",
+    "GGML_SM70_FUSED_PROJ": "0",
+    "GGML_CUDA_IQ2S_VOLTA_EP": "0",
+    "GGML_CPU_PLE_PAGE_BATCH": "1",
+    "GGML_CPU_PLE_PAGE_BATCH_LOG_PERIOD": "1",
+    "GGML_CPU_PLE_GET_ROWS_THREADS": "32",
+    "GGML_CPU_PLE_DECODE_THREADS": "4",
+    "LLAMA_QSA_POOLED_SINGLE": "0",
+    "LLAMA_QSA_POOLED_MULTI": "0",
+    "LLAMA_QSA_MULTI_CELL_SEL": "0",
+    "LLAMA_PREFILL_FAIR_SHARE": "1",
+    "GGML_META_ASYNC_INPUTS": "0",
+    "GGML_META_ASYNC_COPY": "0",
+    "GGML_META_CPU_ASYNC_COPY": "0",
+    "GGML_META_CPU_ASYNC_COPY_BUDGET_MIB": null,
+    "GGML_META_CPU_ASYNC_COPY_MAX_BYTES": null,
+    "GGML_META_NCCL_MIN_BYTES": "0",
+    "GGML_CUDA_NCCL_F32": "0",
+    "GGML_CUDA_ALLREDUCE": null,
+    "GGML_CUDA_P2P_AR_DISABLE": "1",
+    "GGML_CUDA_P2P_AR_RELAY6": "0",
+    "GGML_CUDA_P2P_AR_RELAY6_ORDERED": "0",
+    "GGML_CUDA_P2P_AR_ELIDE_UNUSED_SEGMENT": "0",
+    "GGML_CUDA_P2P_AR_RELAY_LEADER_STAGE": "0",
+    "GGML_META_FIFO_PIPELINE": "0",
+    "GGML_META_GPU_EVENT_WAIT": "0",
+    "GGML_CUDA_META_COPY_GPU_WAIT": "0",
+    "GGML_CUDA_META_COPY_TOPOLOGY": "0",
+    "GGML_META_FRAGMENT_PARENT_SIG": "0",
+    "GGML_META_FRAGMENT_CACHE": "0",
+    "GGML_META_PARENT_WALK_FAST": "0",
+    "GGML_META_CONTEXT_VIEWS": "0",
+    "GGML_META_REPLAY_GUARD": "0",
+    "GGML_META_NESTED_EXPERIMENTAL": "0",
+    "GGML_META_NESTED_GPU_AR": "0",
+    "GGML_META_NESTED_COMPOSE": "0",
+    "GGML_META_NESTED_ASYNC": "0",
+    "GGML_META_SHARED_DEVICE_COPY": "0",
+    "GGML_META_GPU_SPANS": "0",
+    "GGML_META_GPU_SPANS_PERIOD": "0",
+    "GGML_TURBOPREFILL_TRACE": "0"
+  }
+}

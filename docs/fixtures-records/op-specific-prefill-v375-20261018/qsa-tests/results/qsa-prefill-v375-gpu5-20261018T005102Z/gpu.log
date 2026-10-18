@@ -1,0 +1,12 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+V375_QSA_PREFILL_FIXTURE device=0 cuda_backend=CUDA0 cpu_backend=CPU shapes=1024,2048 chunk=512 width=2051 models_loaded=0 compact_mask_native=1 block_bias_native=1 stable_topk=1
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/op-specific-prefill-v375-20261018/qsa-tests/include/llama-qsa-prefill-chunks-private.h:33: GGML_ASSERT(pooled->type==GGML_TYPE_F32 && pooled->ne[0]==128 && pooled->ne[2]==1 && queries->type==GGML_TYPE_F32 && queries->ne[0]==128 && queries->ne[1]==4 && queries->ne[3]==1 && tokens>chunk && tokens%chunk==0 && (bool(build_bias) || (bias && bias->type==GGML_TYPE_F32 && bias->ne[0]==blocks && bias->ne[1]==tokens && bias->ne[2]==1)) && cell_blocks->type==GGML_TYPE_I32 && cell_blocks->ne[1]==1 && width>0 && key_positions->ne[0]==cell_blocks->ne[0] && query_positions->ne[0]==tokens) failed
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib/libggml-base.so.0(+0x29128)[0x7fff76d29128]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fff76d29728]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fff76d298c4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/op-specific-prefill-v375-20261018/qsa-tests/bin/qsa-prefill-chunks-v375-r1(_ZN32llama_qsa_prefill_chunks_private6selectEP12ggml_contextP11ggml_cgraphP18ggml_backend_schedP12ggml_backendP11ggml_tensorS9_S9_S9_S9_S9_llRKSt8functionIFS9_llEE+0x6b4)[0x10b20bbc4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/op-specific-prefill-v375-20261018/qsa-tests/bin/qsa-prefill-chunks-v375-r1(+0x7640)[0x10b207640]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/op-specific-prefill-v375-20261018/qsa-tests/bin/qsa-prefill-chunks-v375-r1(main+0x20c)[0x10b203dec]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fff76754d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fff76754f6c]

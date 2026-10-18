@@ -1,0 +1,76 @@
+{
+  "schema": "meta3-cold-cohort-v100-gate/v1",
+  "result": "PASS",
+  "mode": "force0",
+  "rank_count": 3,
+  "rank_mask": "0x07",
+  "scale_nodes": 10000,
+  "schedule": [
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A"
+  ],
+  "eager_cohort_count": 3,
+  "force0_eager_preceded_capture": true,
+  "complete_prepare_launch_cohort_count": 3,
+  "cohort_first_launch_after_last_prepare": true,
+  "capture_devices": [
+    0,
+    1,
+    2
+  ],
+  "replay_devices": [
+    0,
+    1,
+    2
+  ],
+  "allreduce_96b_phases": {
+    "A2": [
+      0,
+      1,
+      2
+    ],
+    "A3": [
+      0,
+      1,
+      2
+    ],
+    "B2": [
+      0,
+      1,
+      2
+    ],
+    "B3": [
+      0,
+      1,
+      2
+    ],
+    "A4": [
+      0,
+      1,
+      2
+    ],
+    "A5": [
+      0,
+      1,
+      2
+    ],
+    "A6": [
+      0,
+      1,
+      2
+    ]
+  },
+  "oracle_exact": true,
+  "host_canary": true,
+  "shared_A2_B2_child_key": true,
+  "intermediate_host_syncs": 0,
+  "error_xid_or_stall_markers": 0,
+  "log_sha256": "a2308b6b1794dc06f6fb02db0306344917f340f12448e982530016b34a515f19"
+}

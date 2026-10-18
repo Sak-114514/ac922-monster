@@ -1,0 +1,26 @@
+ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+BACKEND_MODE meta3 members=CUDA0,CUDA1,CUDA2 split=MIRRORED
+BACKEND_MODE name=meta3 device=Meta(CUDA0,CUDA1,CUDA2) visible_devices=3
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp:2311: GGML_ASSERT(t != nullptr && ggml_backend_buffer_is_meta(t->buffer)) failed
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v47/lib/libggml-base.so.0(+0x23c28)[0x7fff80cf3c28]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v47/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fff80cf4228]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v47/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fff80cf43c4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v47/lib/libggml-base.so.0(+0x60084)[0x7fff80d30084]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v47/lib/libggml-base.so.0(+0x74b88)[0x7fff80d44b88]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v47/lib/libggml-base.so.0(+0x74e5c)[0x7fff80d44e5c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v47/lib/libggml-base.so.0(+0x76b28)[0x7fff80d46b28]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v47/lib/libggml-base.so.0(ggml_backend_buffer_init_tensor+0x38)[0x7fff80d17a78]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v47/lib/libggml-base.so.0(ggml_backend_tensor_alloc+0xdc)[0x7fff80d208cc]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v47/lib/libggml-base.so.0(ggml_gallocr_alloc_graph+0x6d8)[0x7fff80d142d8]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v47/lib/libggml-base.so.0(ggml_backend_sched_alloc_graph+0x5c4)[0x7fff80d2bc34]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-device-bias-20261016/qsa-device-bias-ggml-fixture(+0xa16c)[0x13e4fa16c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-device-bias-20261016/qsa-device-bias-ggml-fixture(+0x39a4)[0x13e4f39a4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-device-bias-20261016/qsa-device-bias-ggml-fixture(+0x4c60)[0x13e4f4c60]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-device-bias-20261016/qsa-device-bias-ggml-fixture(+0x2ebc)[0x13e4f2ebc]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fff805c4d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fff805c4f6c]

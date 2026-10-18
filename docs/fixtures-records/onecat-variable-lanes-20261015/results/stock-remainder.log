@@ -1,0 +1,36 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+RUNTIME_GATE GGML_CUDA_FATTN_ONECAT=0 cuda_device_index=0 visible_gpu_count=1
+CASE name=t1_s1_bias8 t=1 streams=1 total_query_rows=1 nkv=2303 partial_tail=1 gathered=1 kv=q8_0/q8_0 mask=causal-triangular max_bias=8.0 prefix=2299 env=0 onecat_supported=0 expected_path=stock_fallback alloc=0 buft=4741120
+OUTPUT name=t1_s1_bias8 elements=6144 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/onecat-variable-lanes-20261015/results/stock/t1_s1_bias8.f32
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+MASK_ORACLE name=t1_s1_bias8 mutated_future_keys=3 max_abs=0 exact=1 PASS
+CASE name=t10_s1_bias0 t=10 streams=1 total_query_rows=10 nkv=2304 partial_tail=0 gathered=1 kv=q8_0/q8_0 mask=causal-triangular max_bias=0.0 prefix=2291 env=0 onecat_supported=0 expected_path=stock_fallback alloc=0 buft=4964352
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CPU_ORACLE name=t10_s1_bias0 sampled_rows=8 max_abs=0.00024539232 atol=0.01 PASS
+OUTPUT name=t10_s1_bias0 elements=61440 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/onecat-variable-lanes-20261015/results/stock/t10_s1_bias0.f32
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+MASK_ORACLE name=t10_s1_bias0 mutated_future_keys=30 max_abs=0 exact=1 PASS
+TRIANGLE_ORACLE name=t10_s1_bias0 mutated_key=2292 q0_masked_delta=0 q1_visible_delta=37.547661 PASS
+CASE name=t12_s1_bias0 t=12 streams=1 total_query_rows=12 nkv=2304 partial_tail=0 gathered=1 kv=q8_0/q8_0 mask=causal-triangular max_bias=0.0 prefix=2289 env=0 onecat_supported=0 expected_path=stock_fallback alloc=0 buft=5013504
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CPU_ORACLE name=t12_s1_bias0 sampled_rows=8 max_abs=0.00024619699 atol=0.01 PASS
+OUTPUT name=t12_s1_bias0 elements=73728 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/onecat-variable-lanes-20261015/results/stock/t12_s1_bias0.f32
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+MASK_ORACLE name=t12_s1_bias0 mutated_future_keys=36 max_abs=0 exact=1 PASS
+TRIANGLE_ORACLE name=t12_s1_bias0 mutated_key=2290 q0_masked_delta=0 q1_visible_delta=37.547867 PASS
+CASE name=t6_s1_bias0 t=6 streams=1 total_query_rows=6 nkv=2304 partial_tail=0 gathered=1 kv=q8_0/q8_0 mask=causal-triangular max_bias=0.0 prefix=2295 env=0 onecat_supported=0 expected_path=stock_fallback alloc=0 buft=4866048
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CPU_ORACLE name=t6_s1_bias0 sampled_rows=8 max_abs=9.1254711e-05 atol=0.01 PASS
+CASE name=t9_s1_bias0 t=9 streams=1 total_query_rows=9 nkv=2304 partial_tail=0 gathered=1 kv=q8_0/q8_0 mask=causal-triangular max_bias=0.0 prefix=2292 env=0 onecat_supported=0 expected_path=stock_fallback alloc=0 buft=4939776
+CPU_ORACLE name=t9_s1_bias0 sampled_rows=8 max_abs=0.00024586916 atol=0.01 PASS
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+OUTPUT name=t6_s1_bias0 elements=36864 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/onecat-variable-lanes-20261015/results/stock/t6_s1_bias0.f32
+OUTPUT name=t9_s1_bias0 elements=55296 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/onecat-variable-lanes-20261015/results/stock/t9_s1_bias0.f32
+MASK_ORACLE name=t6_s1_bias0 mutated_future_keys=18 max_abs=0 exact=1 PASS
+TRIANGLE_ORACLE name=t6_s1_bias0 mutated_key=2296 q0_masked_delta=0 q1_visible_delta=37.550346 PASS
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+MASK_ORACLE name=t9_s1_bias0 mutated_future_keys=27 max_abs=0 exact=1 PASS
+TRIANGLE_ORACLE name=t9_s1_bias0 mutated_key=2293 q0_masked_delta=0 q1_visible_delta=37.547565 PASS
+ABA A=t6_s1_bias0 B=t9_s1_bias0 A_replay=bit_exact PASS
+PASS fixture=onecat_variable_lanes suite=remainder T=1,3,6,9,10,12 plus S=2/3 q8/q8 causal_mask partial_tail keybias ABA canary

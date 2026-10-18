@@ -1,0 +1,44 @@
+tag=v285-r2-production
+started_utc=2026-10-17T14:02:25Z
+mode=production
+expected=assert
+visible_devices=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 4 MiB, 16123 MiB, 39, 0 %
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 4 MiB, 16123 MiB, 38, 0 %
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 5 MiB, 16123 MiB, 38, 0 %
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 4 MiB, 16123 MiB, 38, 0 %
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 40 MiB, 16087 MiB, 38, 0 %
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 16 MiB, 16111 MiB, 38, 0 %
+V285 runtime guard tripped total_delta_mib=2069 max_temp=40
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+GPU_PREFLIGHT rank=0 name=CUDA0 free=16582967296 total=16911433728
+GPU_PREFLIGHT rank=1 name=CUDA1 free=16582639616 total=16911433728
+GPU_PREFLIGHT rank=2 name=CUDA2 free=16582443008 total=16911433728
+GPU_PREFLIGHT rank=3 name=CUDA3 free=16582574080 total=16911433728
+GPU_PREFLIGHT rank=4 name=CUDA4 free=16546398208 total=16911433728
+GPU_PREFLIGHT rank=5 name=CUDA5 free=16570318848 total=16911433728
+2026-10-17T14:02:25Z gpu=0 used=4 delta=0 temp=38
+2026-10-17T14:02:25Z gpu=1 used=7 delta=3 temp=38
+2026-10-17T14:02:25Z gpu=2 used=7 delta=2 temp=38
+2026-10-17T14:02:25Z gpu=3 used=7 delta=3 temp=38
+2026-10-17T14:02:25Z gpu=4 used=42 delta=2 temp=38
+2026-10-17T14:02:25Z gpu=5 used=19 delta=3 temp=39
+2026-10-17T14:02:26Z gpu=0 used=417 delta=413 temp=40
+2026-10-17T14:02:27Z gpu=1 used=417 delta=413 temp=39
+2026-10-17T14:02:27Z gpu=2 used=417 delta=412 temp=39
+2026-10-17T14:02:27Z gpu=3 used=417 delta=413 temp=39
+2026-10-17T14:02:27Z gpu=4 used=458 delta=418 temp=39
+finished_utc=2026-10-17T14:02:28Z
+classified_status=90
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 5 MiB, 16122 MiB, 40, 0 %
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 5 MiB, 16122 MiB, 39, 0 %
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 5 MiB, 16122 MiB, 39, 0 %
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 5 MiB, 16122 MiB, 39, 0 %
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 39 MiB, 16088 MiB, 39, 0 %
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 17 MiB, 16110 MiB, 40, 0 %

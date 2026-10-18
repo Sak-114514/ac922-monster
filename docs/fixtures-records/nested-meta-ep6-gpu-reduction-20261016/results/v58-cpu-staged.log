@@ -1,0 +1,9 @@
+candidate=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-meta-ep6-gpu-reduction-20261016/candidate/ggml-backend-meta.cpp patch=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-meta-ep6-gpu-reduction-20261016/proposal.patch additions=213
+PASS: depth-first 2x3 rank mapping, rank-order FP32 oracle, and empty-rank zero contract
+PASS: local-partial producer stays marked; next ADD/RMS_NORM source is mirrored and avoids a second island reduction
+PASS: staged bridge is opt-in, direct-leaf, native-only, strict-F32-gated, and fail-closed
+PASS: source contract preserves PARTIAL producer marker and treats post-collective consumers as MIRRORED
+PASS: staged Q8 Meta2x3 GPU fixture with ADD/RMSNorm consumer syntax
+patching file ggml/src/ggml-backend-meta.cpp
+PASS: proposal.patch applies and reproduces staged candidate
+PASS: staged Meta TU syntax-only against current private headers; no core build/GPU

@@ -1,0 +1,37 @@
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+P2P compact staging selected ranks=6 max_tensor=0.20 MiB small_arena=2.34 MiB segmented_arena=0.39 MiB per_rank old_arena=2.34 MiB
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+P2P compact staging selected ranks=6 max_tensor=0.20 MiB small_arena=2.34 MiB segmented_arena=0.39 MiB per_rank old_arena=2.34 MiB
+p2p-ar-path entry=dispatch device=0 rank=0 ranks=6 bytes=204800 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=0 rank=0 bytes=204800 rank-order-exact=1 cross-payload=2V entry=dispatch
+p2p allreduce launch: rank 0 allreduce_0 n=51200 zero=0 kind=4 stream=0x100275e3070
+p2p-ar-path entry=dispatch device=1 rank=1 ranks=6 bytes=204800 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=1 rank=1 bytes=204800 rank-order-exact=1 cross-payload=2V entry=dispatch
+p2p allreduce launch: rank 1 allreduce_0 n=51200 zero=0 kind=4 stream=0x10027d21ce0
+p2p-ar-path entry=dispatch device=2 rank=2 ranks=6 bytes=204800 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=2 rank=2 bytes=204800 rank-order-exact=1 cross-payload=2V entry=dispatch
+p2p allreduce launch: rank 2 allreduce_0 n=51200 zero=0 kind=4 stream=0x10027d27790
+p2p-ar-path entry=dispatch device=3 rank=3 ranks=6 bytes=204800 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=3 rank=3 bytes=204800 rank-order-exact=1 cross-payload=2V entry=dispatch
+p2p allreduce launch: rank 3 allreduce_0 n=51200 zero=0 kind=4 stream=0x10027d2d240
+p2p-ar-path entry=dispatch device=4 rank=4 ranks=6 bytes=204800 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=4 rank=4 bytes=204800 rank-order-exact=1 cross-payload=2V entry=dispatch
+p2p allreduce launch: rank 4 allreduce_0 n=51200 zero=0 kind=4 stream=0x10027d32cf0
+p2p-ar-path entry=dispatch device=5 rank=5 ranks=6 bytes=204800 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=5 rank=5 bytes=204800 rank-order-exact=1 cross-payload=2V entry=dispatch
+p2p allreduce launch: rank 5 allreduce_0 n=51200 zero=0 kind=4 stream=0x10027d387a0
+p2p allreduce launch: rank 0 allreduce_0 n=51200 zero=0 kind=4 stream=0x10027d3e250
+p2p allreduce launch: rank 1 allreduce_0 n=51200 zero=0 kind=4 stream=0x10027d40640
+p2p allreduce launch: rank 2 allreduce_0 n=51200 zero=0 kind=4 stream=0x10027d42a30
+p2p allreduce launch: rank 3 allreduce_0 n=51200 zero=0 kind=4 stream=0x10027d44e20
+p2p allreduce launch: rank 4 allreduce_0 n=51200 zero=0 kind=4 stream=0x10027d47210
+p2p allreduce launch: rank 5 allreduce_0 n=51200 zero=0 kind=4 stream=0x10027d49600

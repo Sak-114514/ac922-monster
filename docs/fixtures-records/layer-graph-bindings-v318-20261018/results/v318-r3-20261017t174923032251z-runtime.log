@@ -1,0 +1,142 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+V318_DEVICE rank=0 name=CUDA0 free=16582574080 total=16911433728
+V318_DEVICE rank=1 name=CUDA1 free=16582311936 total=16911433728
+V318_DEVICE rank=2 name=CUDA2 free=16582246400 total=16911433728
+V318_DEVICE rank=3 name=CUDA3 free=16581066752 total=16911433728
+V318_DEVICE rank=4 name=CUDA4 free=16567631872 total=16911433728
+V318_DEVICE rank=5 name=CUDA5 free=16570646528 total=16911433728
+PP pinned inputs requested=1 selected=1 scheduler=0x1000b7ed870 copies=4 cap=268435456 reset_preserves_slots=1 host_slots=4 device_ring_unchanged=1
+V318_CAPTURE slot=0 label=A graph_object=0x7ffee6de1a40 uid=0 nodes=18 leaves=3
+V318_NODE slot=0 uid=0 index=0 ptr=0x7ffee6de0060 name=A_cpu_get_rows_prefix op=GET_ROWS owner=CPU flags=16 src=0x7ffefd780060,0x7ffefc7701d0
+V318_NODE slot=0 uid=0 index=1 ptr=0x7ffee6de01d0 name=A_cuda_stage_sum_0 op=ADD owner=AUTO flags=16 src=0x7ffefc770060,0x7ffee6de0060
+V318_NODE slot=0 uid=0 index=2 ptr=0x7ffee6de0340 name=A_cuda_stage_0 op=SCALE owner=CUDA0 flags=18 src=0x7ffee6de01d0
+V318_NODE slot=0 uid=0 index=3 ptr=0x7ffee6de04b0 name=A_cuda_stage_sum_1 op=ADD owner=AUTO flags=16 src=0x7ffee6de0340,0x7ffefc770060
+V318_NODE slot=0 uid=0 index=4 ptr=0x7ffee6de0620 name=A_cuda_stage_prefix_1 op=ADD owner=AUTO flags=16 src=0x7ffee6de04b0,0x7ffee6de0060
+V318_NODE slot=0 uid=0 index=5 ptr=0x7ffee6de0790 name=A_cuda_stage_1 op=SCALE owner=CUDA1 flags=18 src=0x7ffee6de0620
+V318_NODE slot=0 uid=0 index=6 ptr=0x7ffee6de0900 name=A_cuda_stage_sum_2 op=ADD owner=AUTO flags=16 src=0x7ffee6de0790,0x7ffefc770060
+V318_NODE slot=0 uid=0 index=7 ptr=0x7ffee6de0a70 name=A_cuda_stage_prefix_2 op=ADD owner=AUTO flags=16 src=0x7ffee6de0900,0x7ffee6de0060
+V318_NODE slot=0 uid=0 index=8 ptr=0x7ffee6de0be0 name=A_cuda_stage_2 op=SCALE owner=CUDA2 flags=18 src=0x7ffee6de0a70
+V318_NODE slot=0 uid=0 index=9 ptr=0x7ffee6de0d50 name=A_cuda_stage_sum_3 op=ADD owner=AUTO flags=16 src=0x7ffee6de0be0,0x7ffefc770060
+V318_NODE slot=0 uid=0 index=10 ptr=0x7ffee6de0ec0 name=A_cuda_stage_prefix_3 op=ADD owner=AUTO flags=16 src=0x7ffee6de0d50,0x7ffee6de0060
+V318_NODE slot=0 uid=0 index=11 ptr=0x7ffee6de1030 name=A_cuda_stage_3 op=SCALE owner=CUDA3 flags=18 src=0x7ffee6de0ec0
+V318_NODE slot=0 uid=0 index=12 ptr=0x7ffee6de11a0 name=A_cuda_stage_sum_4 op=ADD owner=AUTO flags=16 src=0x7ffee6de1030,0x7ffefc770060
+V318_NODE slot=0 uid=0 index=13 ptr=0x7ffee6de1310 name=A_cuda_stage_prefix_4 op=ADD owner=AUTO flags=16 src=0x7ffee6de11a0,0x7ffee6de0060
+V318_NODE slot=0 uid=0 index=14 ptr=0x7ffee6de1480 name=A_cuda_stage_4 op=SCALE owner=CUDA4 flags=18 src=0x7ffee6de1310
+V318_NODE slot=0 uid=0 index=15 ptr=0x7ffee6de15f0 name=A_cuda_stage_sum_5 op=ADD owner=AUTO flags=16 src=0x7ffee6de1480,0x7ffefc770060
+V318_NODE slot=0 uid=0 index=16 ptr=0x7ffee6de1760 name=A_cuda_stage_prefix_5 op=ADD owner=AUTO flags=16 src=0x7ffee6de15f0,0x7ffee6de0060
+V318_NODE slot=0 uid=0 index=17 ptr=0x7ffee6de18d0 name=A_cuda_stage_5 op=SCALE owner=CUDA5 flags=18 src=0x7ffee6de1760
+V318_STAGE_OWNER slot=0 uid=0 stage=0 tensor=0x7ffee6de0340 backend=CUDA0 device=CUDA0
+V318_STAGE_OWNER slot=0 uid=0 stage=1 tensor=0x7ffee6de0790 backend=CUDA1 device=CUDA1
+V318_STAGE_OWNER slot=0 uid=0 stage=2 tensor=0x7ffee6de0be0 backend=CUDA2 device=CUDA2
+V318_STAGE_OWNER slot=0 uid=0 stage=3 tensor=0x7ffee6de1030 backend=CUDA3 device=CUDA3
+V318_STAGE_OWNER slot=0 uid=0 stage=4 tensor=0x7ffee6de1480 backend=CUDA4 device=CUDA4
+V318_STAGE_OWNER slot=0 uid=0 stage=5 tensor=0x7ffee6de18d0 backend=CUDA5 device=CUDA5
+V318_CAPTURE slot=1 label=B graph_object=0x7ffee5dd1a40 uid=0 nodes=18 leaves=3
+V318_NODE slot=1 uid=0 index=0 ptr=0x7ffee5dd0060 name=B_cpu_get_rows_prefix op=GET_ROWS owner=CPU flags=16 src=0x7ffefd780060,0x7ffefc7701d0
+V318_NODE slot=1 uid=0 index=1 ptr=0x7ffee5dd01d0 name=B_cuda_stage_sum_0 op=ADD owner=AUTO flags=16 src=0x7ffefc770060,0x7ffee5dd0060
+V318_NODE slot=1 uid=0 index=2 ptr=0x7ffee5dd0340 name=B_cuda_stage_0 op=SCALE owner=CUDA0 flags=18 src=0x7ffee5dd01d0
+V318_NODE slot=1 uid=0 index=3 ptr=0x7ffee5dd04b0 name=B_cuda_stage_sum_1 op=ADD owner=AUTO flags=16 src=0x7ffee5dd0340,0x7ffefc770060
+V318_NODE slot=1 uid=0 index=4 ptr=0x7ffee5dd0620 name=B_cuda_stage_prefix_1 op=ADD owner=AUTO flags=16 src=0x7ffee5dd04b0,0x7ffee5dd0060
+V318_NODE slot=1 uid=0 index=5 ptr=0x7ffee5dd0790 name=B_cuda_stage_1 op=SCALE owner=CUDA1 flags=18 src=0x7ffee5dd0620
+V318_NODE slot=1 uid=0 index=6 ptr=0x7ffee5dd0900 name=B_cuda_stage_sum_2 op=ADD owner=AUTO flags=16 src=0x7ffee5dd0790,0x7ffefc770060
+V318_NODE slot=1 uid=0 index=7 ptr=0x7ffee5dd0a70 name=B_cuda_stage_prefix_2 op=ADD owner=AUTO flags=16 src=0x7ffee5dd0900,0x7ffee5dd0060
+V318_NODE slot=1 uid=0 index=8 ptr=0x7ffee5dd0be0 name=B_cuda_stage_2 op=SCALE owner=CUDA2 flags=18 src=0x7ffee5dd0a70
+V318_NODE slot=1 uid=0 index=9 ptr=0x7ffee5dd0d50 name=B_cuda_stage_sum_3 op=ADD owner=AUTO flags=16 src=0x7ffee5dd0be0,0x7ffefc770060
+V318_NODE slot=1 uid=0 index=10 ptr=0x7ffee5dd0ec0 name=B_cuda_stage_prefix_3 op=ADD owner=AUTO flags=16 src=0x7ffee5dd0d50,0x7ffee5dd0060
+V318_NODE slot=1 uid=0 index=11 ptr=0x7ffee5dd1030 name=B_cuda_stage_3 op=SCALE owner=CUDA3 flags=18 src=0x7ffee5dd0ec0
+V318_NODE slot=1 uid=0 index=12 ptr=0x7ffee5dd11a0 name=B_cuda_stage_sum_4 op=ADD owner=AUTO flags=16 src=0x7ffee5dd1030,0x7ffefc770060
+V318_NODE slot=1 uid=0 index=13 ptr=0x7ffee5dd1310 name=B_cuda_stage_prefix_4 op=ADD owner=AUTO flags=16 src=0x7ffee5dd11a0,0x7ffee5dd0060
+V318_NODE slot=1 uid=0 index=14 ptr=0x7ffee5dd1480 name=B_cuda_stage_4 op=SCALE owner=CUDA4 flags=18 src=0x7ffee5dd1310
+V318_NODE slot=1 uid=0 index=15 ptr=0x7ffee5dd15f0 name=B_cuda_stage_sum_5 op=ADD owner=AUTO flags=16 src=0x7ffee5dd1480,0x7ffefc770060
+V318_NODE slot=1 uid=0 index=16 ptr=0x7ffee5dd1760 name=B_cuda_stage_prefix_5 op=ADD owner=AUTO flags=16 src=0x7ffee5dd15f0,0x7ffee5dd0060
+V318_NODE slot=1 uid=0 index=17 ptr=0x7ffee5dd18d0 name=B_cuda_stage_5 op=SCALE owner=CUDA5 flags=18 src=0x7ffee5dd1760
+V318_STAGE_OWNER slot=1 uid=0 stage=0 tensor=0x7ffee5dd0340 backend=CUDA0 device=CUDA0
+V318_STAGE_OWNER slot=1 uid=0 stage=1 tensor=0x7ffee5dd0790 backend=CUDA1 device=CUDA1
+V318_STAGE_OWNER slot=1 uid=0 stage=2 tensor=0x7ffee5dd0be0 backend=CUDA2 device=CUDA2
+V318_STAGE_OWNER slot=1 uid=0 stage=3 tensor=0x7ffee5dd1030 backend=CUDA3 device=CUDA3
+V318_STAGE_OWNER slot=1 uid=0 stage=4 tensor=0x7ffee5dd1480 backend=CUDA4 device=CUDA4
+V318_STAGE_OWNER slot=1 uid=0 stage=5 tensor=0x7ffee5dd18d0 backend=CUDA5 device=CUDA5
+PP pinned input allocation scheduler=0x1000b7ed870 backend=0 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=5099520 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x1000b7ed870 backend=CUDA0 slot=0 source=v318_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=1 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=10199040 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x1000b7ed870 backend=CUDA1 slot=0 source=v318_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x1000b7ed870 source=CUDA0 destination=CUDA1 slot=0 waits=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=2 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=15298560 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x1000b7ed870 backend=CUDA2 slot=0 source=v318_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x1000b7ed870 source=CUDA1 destination=CUDA2 slot=0 waits=2
+PP pinned input allocation scheduler=0x1000b7ed870 backend=3 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=20398080 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x1000b7ed870 backend=CUDA3 slot=0 source=v318_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=4 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=25497600 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x1000b7ed870 backend=CUDA4 slot=0 source=v318_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+V318_SUBMIT frame=0 slot=0 label=A root_graph=0x7ffee6de1a40 uid=1 same_object_reused=0 sched_copies=4 copy_index_inferred_from_alloc_order=0 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_RESTORE slot=0 label=A uid=1 owner_match=1 node_src_restored=1 pending_prior_frames=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=0 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=30597120 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=1 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=35696640 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=2 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=40796160 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=3 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=45895680 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=4 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=50995200 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+V318_SUBMIT frame=1 slot=1 label=B root_graph=0x7ffee5dd1a40 uid=9 same_object_reused=0 sched_copies=4 copy_index_inferred_from_alloc_order=1 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_RESTORE slot=1 label=B uid=9 owner_match=1 node_src_restored=1 pending_prior_frames=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=0 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=56094720 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=1 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=61194240 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=2 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=66293760 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=3 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=71393280 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=4 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=76492800 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+V318_SUBMIT frame=2 slot=0 label=A root_graph=0x7ffee6de1a40 uid=17 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=2 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_RESTORE slot=0 label=A uid=17 owner_match=1 node_src_restored=1 pending_prior_frames=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=0 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=81592320 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=1 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=86691840 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=2 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=91791360 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=3 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=96890880 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x1000b7ed870 backend=4 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=101990400 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+V318_SUBMIT frame=3 slot=1 label=B root_graph=0x7ffee5dd1a40 uid=25 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=3 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_WINDOW_PASS window=0 submitted=4 drained=1 exact=24/24 canaries=all
+V318_RESTORE slot=1 label=B uid=25 owner_match=1 node_src_restored=1 pending_prior_frames=0
+V318_SUBMIT frame=4 slot=0 label=A root_graph=0x7ffee6de1a40 uid=33 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=0 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_RESTORE slot=0 label=A uid=33 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V318_SUBMIT frame=5 slot=1 label=B root_graph=0x7ffee5dd1a40 uid=41 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=1 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_RESTORE slot=1 label=B uid=41 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V318_SUBMIT frame=6 slot=0 label=A root_graph=0x7ffee6de1a40 uid=49 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=2 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_RESTORE slot=0 label=A uid=49 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V318_SUBMIT frame=7 slot=1 label=B root_graph=0x7ffee5dd1a40 uid=57 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=3 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_WINDOW_PASS window=1 submitted=4 drained=1 exact=24/24 canaries=all
+V318_RESTORE slot=1 label=B uid=57 owner_match=1 node_src_restored=1 pending_prior_frames=0
+V318_SUBMIT frame=8 slot=0 label=A root_graph=0x7ffee6de1a40 uid=65 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=0 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_RESTORE slot=0 label=A uid=65 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V318_SUBMIT frame=9 slot=1 label=B root_graph=0x7ffee5dd1a40 uid=73 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=1 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_RESTORE slot=1 label=B uid=73 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V318_SUBMIT frame=10 slot=0 label=A root_graph=0x7ffee6de1a40 uid=81 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=2 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_RESTORE slot=0 label=A uid=81 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V318_SUBMIT frame=11 slot=1 label=B root_graph=0x7ffee5dd1a40 uid=89 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=3 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_WINDOW_PASS window=2 submitted=4 drained=1 exact=24/24 canaries=all
+V318_RESTORE slot=1 label=B uid=89 owner_match=1 node_src_restored=1 pending_prior_frames=0
+V318_SUBMIT frame=12 slot=0 label=A root_graph=0x7ffee6de1a40 uid=97 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=0 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_RESTORE slot=0 label=A uid=97 owner_match=1 node_src_restored=1 pending_prior_frames=0
+V318_SUBMIT frame=13 slot=1 label=B root_graph=0x7ffee5dd1a40 uid=105 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=1 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_RESTORE slot=1 label=B uid=105 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V318_SUBMIT frame=14 slot=0 label=A root_graph=0x7ffee6de1a40 uid=113 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=2 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_RESTORE slot=0 label=A uid=113 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V318_SUBMIT frame=15 slot=1 label=B root_graph=0x7ffee5dd1a40 uid=121 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=3 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_WINDOW_PASS window=3 submitted=4 drained=1 exact=24/24 canaries=all
+V318_RESTORE slot=1 label=B uid=121 owner_match=1 node_src_restored=1 pending_prior_frames=0
+V318_SUBMIT frame=16 slot=0 label=A root_graph=0x7ffee6de1a40 uid=129 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=0 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_RESTORE slot=0 label=A uid=129 owner_match=1 node_src_restored=1 pending_prior_frames=0
+V318_SUBMIT frame=17 slot=1 label=B root_graph=0x7ffee5dd1a40 uid=137 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=1 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_RESTORE slot=1 label=B uid=137 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V318_SUBMIT frame=18 slot=0 label=A root_graph=0x7ffee6de1a40 uid=145 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=2 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_RESTORE slot=0 label=A uid=145 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V318_SUBMIT frame=19 slot=1 label=B root_graph=0x7ffee5dd1a40 uid=153 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=3 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V318_WINDOW_PASS window=4 submitted=4 drained=1 exact=24/24 canaries=all
+V318_PASS frames=20 root_graph_objects=2 distinct_allocated_uids=20 alternating_ABAB=1 scheduler_copies=4 reuse_restores=19 cleanup_restores=1 seals=20 six_stages=1 cpu_external=20 cpu_get_rows=20 four_submit_windows=5 exact=120/120 canaries=all query_supported_readbacks=120 pending_at_submit=120 max_pending_prior_frames=1 copy_index_claim=alloc-order-inference-only
+PP pinned inputs summary scheduler=0x1000b7ed870 copies=200 declines=0 pinned_high_water=101990400 cap=268435456
+PP pinned source wait summary scheduler=0x1000b7ed870 backend=0 host_slots=4 count=16 total_us=280 max_us=27
+PP pinned source wait summary scheduler=0x1000b7ed870 backend=1 host_slots=4 count=16 total_us=224 max_us=22
+PP pinned source wait summary scheduler=0x1000b7ed870 backend=2 host_slots=4 count=16 total_us=669 max_us=88
+PP pinned source wait summary scheduler=0x1000b7ed870 backend=3 host_slots=4 count=16 total_us=733 max_us=106
+PP pinned source wait summary scheduler=0x1000b7ed870 backend=4 host_slots=4 count=16 total_us=524 max_us=83

@@ -1,0 +1,63 @@
+{
+  "status": "staged_only",
+  "launch_eligible": false,
+  "base": {
+    "runtime": "runtime-perf-v389",
+    "build_id": "20261018T022755.085744Z",
+    "build_report_sha256": "04449418bbc34a659239e3d2e307c6089d6a0f22513555c8c0a48b9710c8b5f7",
+    "source": "source-pin/r381/ggml-cuda.cu",
+    "source_sha256": "b575634b00fd5e6e343b3bd93a885ba9ee3242ed1378f524357d3116394da4a2"
+  },
+  "feature": {
+    "flag": "GGML_CUDA_GRAPH_DEVICE_TAIL_CAPTURE_ONLY=1",
+    "requires": "GGML_CUDA_GRAPH_DEVICE_TAIL=1",
+    "default": "off",
+    "scope": ["Linux", "CUDA >= 12", "SM70/Volta", "actual prefill capture hint", "non-cold-cohort"],
+    "semantic_changes": false
+  },
+  "expected_optimization": {
+    "removed": "standard main cudaGraphExec_t instantiate for qualifying graph",
+    "retained": ["helper child graph executable", "helper controller graph executable", "same captured model graph", "done event retirement", "R385 isolated upload stream"],
+    "baseline_v386_first_32k": {
+      "main_cudaGraphInstantiate_calls": 60,
+      "main_cudaGraphInstantiate_ms": 736,
+      "helper_cudaGraphInstantiate_calls": 60,
+      "helper_cudaGraphInstantiate_ms": 751
+    },
+    "success_evidence": "CUPTI call counts split by main/helper DSO; a selected V2 log marker alone is insufficient"
+  },
+  "required_hostlink_gates": [
+    "all exact source/runtime/helper hashes pinned",
+    "new v2 symbols resolve; ldd -r has no unresolved symbols",
+    "V1 helper ABI remains present and unchanged",
+    "V2 ready and launch use identical owner/key/captured graph identity",
+    "V2 launch accepts no standard cudaGraphExec_t argument",
+    "CUDA TU patch applies to the pinned source without replacing unrelated changes"
+  ],
+  "required_helper_lifecycle_cases": [
+    "cold ready query returns false without allocating or launching",
+    "first compatible captured-only submission prepares then launches child through controller",
+    "same owner/key/captured graph query returns ready and replay does not reinstantiate child/controller",
+    "changed capture or explicit invalidate retires the prior entry before replacing it",
+    "fresh graph key/address cannot accidentally reuse stale captured graph identity",
+    "stream change, unsupported node, capacity full, or absent v2 ABI declines before model work and uses ordinary host graph fallback",
+    "CUDA/runtime failures propagate and do not falsely fall back after partial queued work",
+    "context drop fences the helper completion event and drains both V1/V2 entries",
+    "R385 pending-consumer, isolated upload, exact output, cap, and teardown cases still pass"
+  ],
+  "required_model_gates": [
+    "native semantic canary passes before timing",
+    "bounded one-request real prefill only; no stress test",
+    "all six temperatures and guard thresholds remain in force",
+    "V2 selection log records selected/outcome; host fallback marker is also observable",
+    "main graph instantiate count is reported separately from helper child/controller instantiate count",
+    "semantic output is validated; timing is not a correctness gate"
+  ],
+  "fallback_contract": {
+    "default_off_or_ineligible": "unchanged V1 or standard CUDA graph path",
+    "known_admission_decline": "instantiate standard exec if absent, skip redundant immediate update for that newly instantiated graph, then cudaGraphLaunch",
+    "existing_standard_exec": "retain ordinary update path if required",
+    "unknown_cuda_error": "propagate; never relabel as admission decline"
+  },
+  "not_tested": ["hostlink", "CUDA compile", "device execution", "full model semantics", "performance effect"]
+}

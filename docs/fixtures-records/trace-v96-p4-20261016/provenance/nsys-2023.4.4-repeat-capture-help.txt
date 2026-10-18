@@ -1,0 +1,15 @@
+Read-only command: ssh ac922 '/usr/local/cuda-12.4/nsight-systems-2023.4.4/target-linux-ppc64le/nsys profile --help'
+Nsight Systems version: NVIDIA Nsight Systems version 2023.4.4.54-234433681190v0
+
+Relevant help output:
+
+--capture-range=
+  Possible values are none, cudaProfilerApi, nvtx.
+  With cudaProfilerApi, profiling starts only when cudaProfilerStart is invoked.
+
+--capture-range-end=
+  Possible values are 'none', 'stop', 'stop-shutdown', 'repeat[:N]' or 'repeat-shutdown:N'.
+  If 'repeat[:N]', collection stops at each range end and subsequent ranges trigger more collections.
+  The optional ':N' sets the maximum number of ranges; subsequent ranges are ignored once N ranges are collected.
+
+This confirms that --capture-range-end=repeat:2 bounds collection to the first two profiler API ranges in a single target process. No model, CUDA workload, or Nsight capture was run for this check.

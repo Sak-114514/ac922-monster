@@ -1,0 +1,119 @@
+TAG=20261015T220118Z
+ARCH=ppc64le
+CPU_CAP_BEFORE_KHZ=2300000
+O2_BUILD_RC=0 elapsed_s=7.257
+
+NORMAL_TEST_RC=0 elapsed_s=0.021
+PASS cache hit validates every live node and closure input
+PASS graph descriptor mutation: type
+PASS external descriptor mutation: type
+PASS graph descriptor mutation: buffer
+PASS external descriptor mutation: buffer
+PASS graph descriptor mutation: shape
+PASS external descriptor mutation: shape
+PASS graph descriptor mutation: strides
+PASS external descriptor mutation: strides
+PASS graph descriptor mutation: op
+PASS external descriptor mutation: op
+PASS graph descriptor mutation: op_params
+PASS external descriptor mutation: op_params
+PASS graph descriptor mutation: flags
+PASS external descriptor mutation: flags
+PASS graph descriptor mutation: view_offset
+PASS external descriptor mutation: view_offset
+PASS graph descriptor mutation: data_address
+PASS external descriptor mutation: data_address
+PASS graph descriptor mutation: name
+PASS external descriptor mutation: name
+PASS graph descriptor mutation: extra_identity
+PASS external descriptor mutation: extra_identity
+PASS graph descriptor mutation: padding
+PASS external descriptor mutation: padding
+PASS graph descriptor mutation: cuda_data_binding
+PASS external descriptor mutation: cuda_data_binding
+PASS graph descriptor mutation: cuda_event_binding
+PASS external descriptor mutation: cuda_event_binding
+PASS graph source edge mutation
+PASS graph view edge mutation
+PASS external closure edge mutation
+PASS foreign or opaque extra rejected
+PASS parent graph edge checked before new descendant read
+PASS external parent edge checked before child read
+PASS UID zero disables cache
+PASS raw-key mismatch disables cache
+PASS node identity ABA/order change disables cache
+PASS early key checks do not dereference cached identities
+PASS same-address node ABA with changed descriptor misses
+PASS same-address external ABA/event mutation misses
+PASS one-entry context replacement, isolation, and drop release snapshot
+PASS external closure cap rejects oversized snapshot
+PASS snapshot byte cap declines oversized retained state
+PASS multiple rawkey+UID snapshots hit alternately and still validate descriptors
+PASS 64-entry LRU evicts least-recently-used and isolates contexts
+PASS aggregate 8MiB budget evicts by LRU and declines oversized entry
+RESULT passed=47 failed=0
+PPC_MICROBENCH_5_RUNS:
+MICROBENCH iterations=500 keys=32 nodes_per_key=128 external_per_key=32 cache_entries=32 cache_bytes=4052992 lru_hits=500 rebuild_us=64684 lru_validate_copy_us=38655 ratio=1.673 checksum=160000 elapsed_s=0.133
+MICROBENCH iterations=500 keys=32 nodes_per_key=128 external_per_key=32 cache_entries=32 cache_bytes=4052992 lru_hits=500 rebuild_us=64686 lru_validate_copy_us=38628 ratio=1.675 checksum=160000 elapsed_s=0.133
+MICROBENCH iterations=500 keys=32 nodes_per_key=128 external_per_key=32 cache_entries=32 cache_bytes=4052992 lru_hits=500 rebuild_us=64651 lru_validate_copy_us=38736 ratio=1.669 checksum=160000 elapsed_s=0.133
+MICROBENCH iterations=500 keys=32 nodes_per_key=128 external_per_key=32 cache_entries=32 cache_bytes=4052992 lru_hits=500 rebuild_us=64644 lru_validate_copy_us=38674 ratio=1.672 checksum=160000 elapsed_s=0.132
+MICROBENCH iterations=500 keys=32 nodes_per_key=128 external_per_key=32 cache_entries=32 cache_bytes=4052992 lru_hits=500 rebuild_us=64560 lru_validate_copy_us=38604 ratio=1.672 checksum=160000 elapsed_s=0.133
+ASAN_BUILD=PASS elapsed_s=41.230
+ASAN_TEST_RC=0 elapsed_s=0.131
+PASS cache hit validates every live node and closure input
+PASS graph descriptor mutation: type
+PASS external descriptor mutation: type
+PASS graph descriptor mutation: buffer
+PASS external descriptor mutation: buffer
+PASS graph descriptor mutation: shape
+PASS external descriptor mutation: shape
+PASS graph descriptor mutation: strides
+PASS external descriptor mutation: strides
+PASS graph descriptor mutation: op
+PASS external descriptor mutation: op
+PASS graph descriptor mutation: op_params
+PASS external descriptor mutation: op_params
+PASS graph descriptor mutation: flags
+PASS external descriptor mutation: flags
+PASS graph descriptor mutation: view_offset
+PASS external descriptor mutation: view_offset
+PASS graph descriptor mutation: data_address
+PASS external descriptor mutation: data_address
+PASS graph descriptor mutation: name
+PASS external descriptor mutation: name
+PASS graph descriptor mutation: extra_identity
+PASS external descriptor mutation: extra_identity
+PASS graph descriptor mutation: padding
+PASS external descriptor mutation: padding
+PASS graph descriptor mutation: cuda_data_binding
+PASS external descriptor mutation: cuda_data_binding
+PASS graph descriptor mutation: cuda_event_binding
+PASS external descriptor mutation: cuda_event_binding
+PASS graph source edge mutation
+PASS graph view edge mutation
+PASS external closure edge mutation
+PASS foreign or opaque extra rejected
+PASS parent graph edge checked before new descendant read
+PASS external parent edge checked before child read
+PASS UID zero disables cache
+PASS raw-key mismatch disables cache
+PASS node identity ABA/order change disables cache
+PASS early key checks do not dereference cached identities
+PASS same-address node ABA with changed descriptor misses
+PASS same-address external ABA/event mutation misses
+PASS one-entry context replacement, isolation, and drop release snapshot
+PASS external closure cap rejects oversized snapshot
+PASS snapshot byte cap declines oversized retained state
+PASS multiple rawkey+UID snapshots hit alternately and still validate descriptors
+PASS 64-entry LRU evicts least-recently-used and isolates contexts
+PASS aggregate 8MiB budget evicts by LRU and declines oversized entry
+RESULT passed=47 failed=0
+CPU_CAP_AFTER_KHZ=2300000
+GPU_READ_ONLY_AFTER:
+0 %, 0 MiB, 39
+0 %, 0 MiB, 38
+0 %, 1 MiB, 38
+0 %, 0 MiB, 38
+0 %, 0 MiB, 38
+0 %, 0 MiB, 39
+ARTIFACT=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/structural-cache-multislot-20261016/results/ppc-host-only-20261015T220118Z.log

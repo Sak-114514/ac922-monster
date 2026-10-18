@@ -1,0 +1,52 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA graph path config ctx=0x1000a70bb10 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=0 structural_active=0 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000a70bb10 device=0 uid=2 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+ggml_cuda_mul_mat: sm70_bf16_gemv n_out=320 k_dim=10240 ncols=8
+CUDA Graph id 2 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000a70bb10 device=0 uid=2 nodes=1 mode=capture count=1
+ggml_cuda_mul_mat: sm70_bf16_gemv n_out=320 k_dim=10240 ncols=8
+CUDA Graph id 2 reused
+CUDA graph path active ctx=0x1000a70bb10 device=0 uid=2 nodes=1 mode=replay count=1
+CUDA Graph id 2 reused
+CUDA graph path active ctx=0x1000a70bb10 device=0 uid=2 nodes=1 mode=replay count=2
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+BF16_F32_FIXTURE_BEGIN mode=bf16-custom GGML_SM70_BF16_GEMV=2
+DEVICE name=CUDA0 id=0004:06:00.0 visible_count=1
+RESULT mode=bf16-custom shape=down K=10240 N=320 batch=8 route=sm70_bf16_custom exact=52/2560 max_abs=1.60932541e-06 max_rel=0.00419915794 nrmse=1.84571257e-06 median_ms=0.047533 p90_ms=0.047873 graph_opt=1
+CUDA graph path config ctx=0x1000a70bb10 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=0 structural_active=0 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000a70bb10 device=0 uid=4 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+ggml_cuda_mul_mat: sm70_bf16_gemv n_out=10240 k_dim=320 ncols=8
+CUDA Graph id 4 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000a70bb10 device=0 uid=4 nodes=1 mode=capture count=1
+ggml_cuda_mul_mat: sm70_bf16_gemv n_out=10240 k_dim=320 ncols=8
+CUDA Graph id 4 reused
+CUDA graph path active ctx=0x1000a70bb10 device=0 uid=4 nodes=1 mode=replay count=1
+CUDA Graph id 4 reused
+CUDA graph path active ctx=0x1000a70bb10 device=0 uid=4 nodes=1 mode=replay count=2
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+DEVICE name=CUDA0 id=0004:06:00.0 visible_count=1
+RESULT mode=bf16-custom shape=up K=320 N=10240 batch=8 route=sm70_bf16_custom exact=7339/81920 max_abs=1.49011612e-07 max_rel=0.119125683 nrmse=3.27932457e-07 median_ms=0.079230 p90_ms=0.079399 graph_opt=1
+BF16_F32_FIXTURE_END mode=bf16-custom status=PASS

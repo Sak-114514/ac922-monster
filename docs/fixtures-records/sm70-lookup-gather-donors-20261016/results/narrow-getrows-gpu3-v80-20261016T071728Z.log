@@ -1,0 +1,132 @@
+GPU_PREFLIGHT PASS device=3 uuid=GPU-fadb0459-4d30-907b-289a-862b3014f165 free_mib=16126 temp_c=39 compute_apps=none
+GET_ROWS_CPU_ORACLE_START mode=default_off
+GET_ROWS_FIXTURE mode=cpu-oracle device=-1 no_model=1 output_type=F32
+GET_ROWS_CASE PASS name=prod_f16_w1_i2051_b1024_s1 src=f16 dst=F32 ne00=1 ne10=2051 ne11=1024 ne12=1 src_nb01=16 src_nb02=33792 src_nb03=34636800 idx_nb10=4 idx_nb11=8216 idx_nb12=8421400 elements=2100224 warmup=0 timed_reps=1 exact=1 finite=1 canary=1 mean_graph_ms=86.382
+GET_ROWS_CASE PASS name=f32_w1_i257_b17_s2 src=f32 dst=F32 ne00=1 ne10=257 ne11=17 ne12=2 src_nb01=32 src_nb02=2336 src_nb03=42048 idx_nb10=4 idx_nb11=1040 idx_nb12=18720 elements=8738 warmup=0 timed_reps=1 exact=1 finite=1 canary=1 mean_graph_ms=0.115
+GET_ROWS_CASE PASS name=f16_w2_i257_b17_s2 src=f16 dst=F32 ne00=2 ne10=257 ne11=17 ne12=2 src_nb01=16 src_nb02=2064 src_nb03=37152 idx_nb10=4 idx_nb11=1040 idx_nb12=18720 elements=17476 warmup=0 timed_reps=1 exact=1 finite=1 canary=1 mean_graph_ms=0.512
+GET_ROWS_CASE PASS name=f32_w2_i129_b17_s2 src=f32 dst=F32 ne00=2 ne10=129 ne11=17 ne12=2 src_nb01=32 src_nb02=4128 src_nb03=74304 idx_nb10=4 idx_nb11=528 idx_nb12=9504 elements=8772 warmup=0 timed_reps=1 exact=1 finite=1 canary=1 mean_graph_ms=0.060
+GET_ROWS_CASE PASS name=f16_w4_i129_b17_s2 src=f16 dst=F32 ne00=4 ne10=129 ne11=17 ne12=2 src_nb01=16 src_nb02=2064 src_nb03=37152 idx_nb10=4 idx_nb11=528 idx_nb12=9504 elements=17544 warmup=0 timed_reps=1 exact=1 finite=1 canary=1 mean_graph_ms=0.447
+GET_ROWS_CASE PASS name=f32_w4_i17_b3_s2 src=f32 dst=F32 ne00=4 ne10=17 ne11=3 ne12=2 src_nb01=32 src_nb02=4128 src_nb03=16512 idx_nb10=4 idx_nb11=80 idx_nb12=320 elements=408 warmup=0 timed_reps=1 exact=1 finite=1 canary=1 mean_graph_ms=0.005
+GET_ROWS_CASE PASS name=f32_w4_vector_control_i129_b17_s2 src=f32 dst=F32 ne00=4 ne10=129 ne11=17 ne12=2 src_nb01=32 src_nb02=4128 src_nb03=74304 idx_nb10=4 idx_nb11=528 idx_nb12=9504 elements=17544 warmup=0 timed_reps=1 exact=1 finite=1 canary=1 mean_graph_ms=0.072
+GET_ROWS_CPU_ORACLE_DONE
+GPU_ARM_START label=generic env_GGML_CUDA_GET_ROWS_NARROW=0
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+GET_ROWS_FIXTURE mode=unset device=3 no_model=1 output_type=F32
+GET_ROWS_WARMUP PASS name=prod_f16_w1_i2051_b1024_s1 exact=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GET_ROWS_TIMING name=prod_f16_w1_i2051_b1024_s1 rep=1 graph_ms=3.750 exact=1
+GET_ROWS_TIMING name=prod_f16_w1_i2051_b1024_s1 rep=2 graph_ms=3.501 exact=1
+GET_ROWS_TIMING name=prod_f16_w1_i2051_b1024_s1 rep=3 graph_ms=3.479 exact=1
+GET_ROWS_CASE PASS name=prod_f16_w1_i2051_b1024_s1 src=f16 dst=F32 ne00=1 ne10=2051 ne11=1024 ne12=1 src_nb01=16 src_nb02=33792 src_nb03=34636800 idx_nb10=4 idx_nb11=8216 idx_nb12=8421400 elements=2100224 warmup=1 timed_reps=3 exact=1 finite=1 canary=1 mean_graph_ms=3.577
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+GET_ROWS_WARMUP PASS name=f32_w1_i257_b17_s2 exact=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GET_ROWS_TIMING name=f32_w1_i257_b17_s2 rep=1 graph_ms=0.148 exact=1
+GET_ROWS_TIMING name=f32_w1_i257_b17_s2 rep=2 graph_ms=0.075 exact=1
+GET_ROWS_TIMING name=f32_w1_i257_b17_s2 rep=3 graph_ms=0.076 exact=1
+GET_ROWS_CASE PASS name=f32_w1_i257_b17_s2 src=f32 dst=F32 ne00=1 ne10=257 ne11=17 ne12=2 src_nb01=32 src_nb02=2336 src_nb03=42048 idx_nb10=4 idx_nb11=1040 idx_nb12=18720 elements=8738 warmup=1 timed_reps=3 exact=1 finite=1 canary=1 mean_graph_ms=0.100
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+GET_ROWS_WARMUP PASS name=f16_w2_i257_b17_s2 exact=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GET_ROWS_TIMING name=f16_w2_i257_b17_s2 rep=1 graph_ms=0.093 exact=1
+GET_ROWS_TIMING name=f16_w2_i257_b17_s2 rep=2 graph_ms=0.049 exact=1
+GET_ROWS_TIMING name=f16_w2_i257_b17_s2 rep=3 graph_ms=0.048 exact=1
+GET_ROWS_CASE PASS name=f16_w2_i257_b17_s2 src=f16 dst=F32 ne00=2 ne10=257 ne11=17 ne12=2 src_nb01=16 src_nb02=2064 src_nb03=37152 idx_nb10=4 idx_nb11=1040 idx_nb12=18720 elements=17476 warmup=1 timed_reps=3 exact=1 finite=1 canary=1 mean_graph_ms=0.063
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+GET_ROWS_WARMUP PASS name=f32_w2_i129_b17_s2 exact=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GET_ROWS_TIMING name=f32_w2_i129_b17_s2 rep=1 graph_ms=0.097 exact=1
+GET_ROWS_TIMING name=f32_w2_i129_b17_s2 rep=2 graph_ms=0.053 exact=1
+GET_ROWS_TIMING name=f32_w2_i129_b17_s2 rep=3 graph_ms=0.055 exact=1
+GET_ROWS_CASE PASS name=f32_w2_i129_b17_s2 src=f32 dst=F32 ne00=2 ne10=129 ne11=17 ne12=2 src_nb01=32 src_nb02=4128 src_nb03=74304 idx_nb10=4 idx_nb11=528 idx_nb12=9504 elements=8772 warmup=1 timed_reps=3 exact=1 finite=1 canary=1 mean_graph_ms=0.068
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+GET_ROWS_WARMUP PASS name=f16_w4_i129_b17_s2 exact=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GET_ROWS_TIMING name=f16_w4_i129_b17_s2 rep=1 graph_ms=0.082 exact=1
+GET_ROWS_TIMING name=f16_w4_i129_b17_s2 rep=2 graph_ms=0.041 exact=1
+GET_ROWS_TIMING name=f16_w4_i129_b17_s2 rep=3 graph_ms=0.040 exact=1
+GET_ROWS_CASE PASS name=f16_w4_i129_b17_s2 src=f16 dst=F32 ne00=4 ne10=129 ne11=17 ne12=2 src_nb01=16 src_nb02=2064 src_nb03=37152 idx_nb10=4 idx_nb11=528 idx_nb12=9504 elements=17544 warmup=1 timed_reps=3 exact=1 finite=1 canary=1 mean_graph_ms=0.054
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+GET_ROWS_WARMUP PASS name=f32_w4_i17_b3_s2 exact=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GET_ROWS_TIMING name=f32_w4_i17_b3_s2 rep=1 graph_ms=0.121 exact=1
+GET_ROWS_TIMING name=f32_w4_i17_b3_s2 rep=2 graph_ms=0.050 exact=1
+GET_ROWS_TIMING name=f32_w4_i17_b3_s2 rep=3 graph_ms=0.047 exact=1
+GET_ROWS_CASE PASS name=f32_w4_i17_b3_s2 src=f32 dst=F32 ne00=4 ne10=17 ne11=3 ne12=2 src_nb01=32 src_nb02=4128 src_nb03=16512 idx_nb10=4 idx_nb11=80 idx_nb12=320 elements=408 warmup=1 timed_reps=3 exact=1 finite=1 canary=1 mean_graph_ms=0.073
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+GET_ROWS_WARMUP PASS name=f32_w4_vector_control_i129_b17_s2 exact=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GET_ROWS_TIMING name=f32_w4_vector_control_i129_b17_s2 rep=1 graph_ms=0.114 exact=1
+GET_ROWS_TIMING name=f32_w4_vector_control_i129_b17_s2 rep=2 graph_ms=0.061 exact=1
+GET_ROWS_TIMING name=f32_w4_vector_control_i129_b17_s2 rep=3 graph_ms=0.060 exact=1
+GET_ROWS_CASE PASS name=f32_w4_vector_control_i129_b17_s2 src=f32 dst=F32 ne00=4 ne10=129 ne11=17 ne12=2 src_nb01=32 src_nb02=4128 src_nb03=74304 idx_nb10=4 idx_nb11=528 idx_nb12=9504 elements=17544 warmup=1 timed_reps=3 exact=1 finite=1 canary=1 mean_graph_ms=0.078
+GPU_ARM_MATRIX PASS label=generic cases=7 warmups=7 timings=21 narrow_selected_markers=0
+GPU_ARM_DONE label=generic
+GPU_ARM_START label=narrow env_GGML_CUDA_GET_ROWS_NARROW=1
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+GET_ROWS_FIXTURE mode=1 device=3 no_model=1 output_type=F32
+optimization path device=3 path=get_rows_narrow scope=host_dispatch_or_capture requested=1 selected=1 reason=flat_batched_element_copy_original_cast_and_strides tokens=2100224 width=1 auxiliary=1 count=1
+GET_ROWS_WARMUP PASS name=prod_f16_w1_i2051_b1024_s1 exact=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=3 path=get_rows_narrow scope=host_dispatch_or_capture requested=1 selected=1 reason=flat_batched_element_copy_original_cast_and_strides tokens=2100224 width=1 auxiliary=1 count=2
+GET_ROWS_TIMING name=prod_f16_w1_i2051_b1024_s1 rep=1 graph_ms=0.369 exact=1
+GET_ROWS_TIMING name=prod_f16_w1_i2051_b1024_s1 rep=2 graph_ms=0.128 exact=1
+GET_ROWS_TIMING name=prod_f16_w1_i2051_b1024_s1 rep=3 graph_ms=0.108 exact=1
+GET_ROWS_CASE PASS name=prod_f16_w1_i2051_b1024_s1 src=f16 dst=F32 ne00=1 ne10=2051 ne11=1024 ne12=1 src_nb01=16 src_nb02=33792 src_nb03=34636800 idx_nb10=4 idx_nb11=8216 idx_nb12=8421400 elements=2100224 warmup=1 timed_reps=3 exact=1 finite=1 canary=1 mean_graph_ms=0.201
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+GET_ROWS_WARMUP PASS name=f32_w1_i257_b17_s2 exact=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GET_ROWS_TIMING name=f32_w1_i257_b17_s2 rep=1 graph_ms=0.101 exact=1
+GET_ROWS_TIMING name=f32_w1_i257_b17_s2 rep=2 graph_ms=0.033 exact=1
+GET_ROWS_TIMING name=f32_w1_i257_b17_s2 rep=3 graph_ms=0.032 exact=1
+GET_ROWS_CASE PASS name=f32_w1_i257_b17_s2 src=f32 dst=F32 ne00=1 ne10=257 ne11=17 ne12=2 src_nb01=32 src_nb02=2336 src_nb03=42048 idx_nb10=4 idx_nb11=1040 idx_nb12=18720 elements=8738 warmup=1 timed_reps=3 exact=1 finite=1 canary=1 mean_graph_ms=0.055
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+GET_ROWS_WARMUP PASS name=f16_w2_i257_b17_s2 exact=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GET_ROWS_TIMING name=f16_w2_i257_b17_s2 rep=1 graph_ms=0.063 exact=1
+GET_ROWS_TIMING name=f16_w2_i257_b17_s2 rep=2 graph_ms=0.032 exact=1
+GET_ROWS_TIMING name=f16_w2_i257_b17_s2 rep=3 graph_ms=0.032 exact=1
+GET_ROWS_CASE PASS name=f16_w2_i257_b17_s2 src=f16 dst=F32 ne00=2 ne10=257 ne11=17 ne12=2 src_nb01=16 src_nb02=2064 src_nb03=37152 idx_nb10=4 idx_nb11=1040 idx_nb12=18720 elements=17476 warmup=1 timed_reps=3 exact=1 finite=1 canary=1 mean_graph_ms=0.042
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+GET_ROWS_WARMUP PASS name=f32_w2_i129_b17_s2 exact=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GET_ROWS_TIMING name=f32_w2_i129_b17_s2 rep=1 graph_ms=0.063 exact=1
+GET_ROWS_TIMING name=f32_w2_i129_b17_s2 rep=2 graph_ms=0.031 exact=1
+GET_ROWS_TIMING name=f32_w2_i129_b17_s2 rep=3 graph_ms=0.032 exact=1
+GET_ROWS_CASE PASS name=f32_w2_i129_b17_s2 src=f32 dst=F32 ne00=2 ne10=129 ne11=17 ne12=2 src_nb01=32 src_nb02=4128 src_nb03=74304 idx_nb10=4 idx_nb11=528 idx_nb12=9504 elements=8772 warmup=1 timed_reps=3 exact=1 finite=1 canary=1 mean_graph_ms=0.042
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+GET_ROWS_WARMUP PASS name=f16_w4_i129_b17_s2 exact=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GET_ROWS_TIMING name=f16_w4_i129_b17_s2 rep=1 graph_ms=0.063 exact=1
+GET_ROWS_TIMING name=f16_w4_i129_b17_s2 rep=2 graph_ms=0.031 exact=1
+GET_ROWS_TIMING name=f16_w4_i129_b17_s2 rep=3 graph_ms=0.031 exact=1
+GET_ROWS_CASE PASS name=f16_w4_i129_b17_s2 src=f16 dst=F32 ne00=4 ne10=129 ne11=17 ne12=2 src_nb01=16 src_nb02=2064 src_nb03=37152 idx_nb10=4 idx_nb11=528 idx_nb12=9504 elements=17544 warmup=1 timed_reps=3 exact=1 finite=1 canary=1 mean_graph_ms=0.042
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+GET_ROWS_WARMUP PASS name=f32_w4_i17_b3_s2 exact=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GET_ROWS_TIMING name=f32_w4_i17_b3_s2 rep=1 graph_ms=0.063 exact=1
+GET_ROWS_TIMING name=f32_w4_i17_b3_s2 rep=2 graph_ms=0.035 exact=1
+GET_ROWS_TIMING name=f32_w4_i17_b3_s2 rep=3 graph_ms=0.036 exact=1
+GET_ROWS_CASE PASS name=f32_w4_i17_b3_s2 src=f32 dst=F32 ne00=4 ne10=17 ne11=3 ne12=2 src_nb01=32 src_nb02=4128 src_nb03=16512 idx_nb10=4 idx_nb11=80 idx_nb12=320 elements=408 warmup=1 timed_reps=3 exact=1 finite=1 canary=1 mean_graph_ms=0.044
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+GET_ROWS_WARMUP PASS name=f32_w4_vector_control_i129_b17_s2 exact=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GET_ROWS_TIMING name=f32_w4_vector_control_i129_b17_s2 rep=1 graph_ms=0.081 exact=1
+GET_ROWS_TIMING name=f32_w4_vector_control_i129_b17_s2 rep=2 graph_ms=0.053 exact=1
+GET_ROWS_TIMING name=f32_w4_vector_control_i129_b17_s2 rep=3 graph_ms=0.052 exact=1
+GET_ROWS_CASE PASS name=f32_w4_vector_control_i129_b17_s2 src=f32 dst=F32 ne00=4 ne10=129 ne11=17 ne12=2 src_nb01=32 src_nb02=4128 src_nb03=74304 idx_nb10=4 idx_nb11=528 idx_nb12=9504 elements=17544 warmup=1 timed_reps=3 exact=1 finite=1 canary=1 mean_graph_ms=0.062
+optimization path summary device=3 path=get_rows_narrow scope=host_dispatch_or_capture requested=10 selected=10
+GPU_ARM_MATRIX PASS label=narrow cases=7 warmups=7 timings=21 narrow_selected_markers=2
+GPU_ARM_DONE label=narrow

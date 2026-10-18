@@ -1,0 +1,53 @@
+{
+  "fixture": "layer-pp-inputs-v163-force-capture-v152-20261017",
+  "status": "tiny-pass-v160-force-capture-selected",
+  "runtime": {
+    "id": "runtime-perf-v160",
+    "build_id": "20261016T232842.692185Z",
+    "report_sha256": "76bccf22d9a755bdabc2ce3bec817eccdd5cd46e4b72b6ff5dd2034b91982aca",
+    "dsos": {
+      "libggml-base.so.0": "cb3e9a17ad475ccfae3ad6fe3be0e83d0e7d8b53a99c53ba5ed495075e2ca21d",
+      "libggml.so.0": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+      "libggml-cpu.so.0": "d51a3e28fafe2fc03584d790512d4dcb88583f9949647602e5cbef1fc0d71781",
+      "libggml-cuda.so.0": "5f663e079037bee6fe0d9cf1246433566e7103d53699ca659574f5efcbd6e53a"
+    }
+  },
+  "runner": {
+    "reuse_from_fixture": "layer-pp-inputs-v152-20261017",
+    "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer-pp-inputs-v152-20261017/build-v155-gallocguard-frameflush-v2/pp-input-staging-v152",
+    "sha256": "be0fd64d4d4e16b515a6e1bc113b33d1460106d2b2546b7db3c2cdbe2c1968b7",
+    "source_sha256": "23fcbcc93cc45742a4cf6666771646760fd1855c6767e601e398445b0fec0aa7",
+    "compiled_against_runtime": "runtime-perf-v155",
+    "actual_runtime": "runtime-perf-v160",
+    "ld_preload": "unset"
+  },
+  "environment": {
+    "V152_STAGE_INPUTS": "1",
+    "GGML_SCHED_LAYER_PINNED_INPUTS": "1",
+    "GGML_SCHED_LAYER_PINNED_CAP_MIB": "256",
+    "GGML_CUDA_GRAPH_STRUCTURAL": "1",
+    "GGML_CUDA_GRAPH_STRUCTURAL_MAX_NODES": "16384",
+    "GGML_CUDA_GRAPHS_FORCE": "1",
+    "GGML_CUDA_GRAPH_PATH_LOG": "1",
+    "GGML_FT_GRAPH_CACHE": "1",
+    "GGML_OPTIMIZATION_PATH_LOG": "1"
+  },
+  "scenarios": {
+    "source": "layer-pp-inputs-v152-20261017/results/v152-v160-stage-on-20261017T001438Z-summary.json",
+    "families": ["independent A/B 32x16 eight-frame interleave", "A reset/growth to 128x1024 eight-frame ABA", "invalid cap fallback"],
+    "expected_output_frames": 25,
+    "all_exact_and_canary_required": true,
+    "force_capture_log_required": true,
+    "force_capture_reason_required": "compatible_changed_graph_capture",
+    "structural_signature_gate_must_remain_active": true
+  },
+  "launch": {
+    "model_load": false,
+    "automatic_retry": false,
+    "gpu_window_authorized": true,
+    "hold_reason": null,
+    "timeout_seconds": 120,
+    "postrun": "requires V152 exact/canary PASS plus an actual force-capture selected log"
+  },
+  "latest_result": "results/v163-force-v160-20261017T010927Z-summary.json"
+}

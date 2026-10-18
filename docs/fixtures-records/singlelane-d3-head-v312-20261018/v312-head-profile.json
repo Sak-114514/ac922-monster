@@ -1,0 +1,115 @@
+{
+  "profile": "singlelane-d3-realhead-v312-preparation",
+  "status": "prepared_only",
+  "runtime": {
+    "required_runtime_dir_env": "RUNTIME_DIR",
+    "required_runtime": "root-frozen V312 build",
+    "build_id": null,
+    "launch_eligible": false
+  },
+  "source": {
+    "fixture": "fixtures/singlelane-d3-head-v312-20261018/singlelane-d3-head-fixture.cpp",
+    "adapted_from": "fixtures/mtp-d3-prep-20261016/head-only/mtp-d3-context-fixture.cpp",
+    "adapted_from_sha256": "9e482ca0d665c5d7b0a680957c930b04c2fc036505061b01319d5022f9e766d4",
+    "adapted_fixture_sha256_at_prep": "45b40058f8be11e18a25edd77ada31939117495136b6b8def9e1912ddb8a0a50"
+  },
+  "model": {
+    "path": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+    "download": false,
+    "selected_tensors": 34,
+    "trunk_payloads": false,
+    "ple_payloads": false
+  },
+  "topology": {
+    "cuda_uuids": [
+      "GPU-fadb0459-4d30-907b-289a-862b3014f165",
+      "GPU-760ce501-32f6-69b6-215b-1020da68bbfc",
+      "GPU-d3558623-deca-c702-3cc0-01b4aa9c667a"
+    ],
+    "split_mode": "layer",
+    "layer_device_weights": [
+      1,
+      1,
+      1
+    ],
+    "mtp_base_device": 0,
+    "mtp_body_and_output_head_owner": "physical CUDA0",
+    "expert_layout": "whole tensors on CUDA0; LLAMA_EXPERT_PARALLEL unset",
+    "expected_mtp_backends": [
+      "CUDA0",
+      "CPU"
+    ],
+    "sequence_lanes": 1
+  },
+  "mtp": {
+    "depth": 3,
+    "fixed_prefix_rows": 0,
+    "catchup_positions": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "seed_position": 4,
+    "planned_target_verify_rows": 4,
+    "semantic_golden_cases": 100,
+    "full_logit_depth_comparisons": 300,
+    "dedicated_scheduler_cases": 4,
+    "dedicated_case_pattern": [
+      0,
+      17,
+      0,
+      12345
+    ],
+    "rollback_anchor": "seed_pos"
+  },
+  "environment_overrides": {
+    "LLAMA_MTP_BASE_DEVICE": "0",
+    "LLAMA_PLE_SHARD": "0",
+    "LLAMA_PLE_SHARD_ROWS": "0",
+    "LLAMA_MTP_GPU_CHAIN_MULTI": "1",
+    "LLAMA_MTP_GPU_CHAIN_SINGLE": "1",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED": "1",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED_DEPTH": "3",
+    "LLAMA_MTP_FIXED_PREFIX_ROWS": "0",
+    "LLAMA_MTP_UNROLL_SINGLE_LANE": "1",
+    "LLAMA_MTP_UNROLL_SINGLE_D3": "1",
+    "LLAMA_MTP_UNROLL_DEDICATED_SCHED": "1",
+    "LLAMA_MTP_UNROLL_VARIABLE_LANES": "0",
+    "LLAMA_MTP_UNROLL_D3_LANES4": "0",
+    "LLAMA_MTP_GPU_EMBED": "0",
+    "LLAMA_GPU_ARGMAX": "1",
+    "LLAMA_QSA_INDEXER_IMPL": "standard",
+    "GGML_CUDA_TOPK_STABLE": "1",
+    "GGML_CUDA_P2P": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "guards": {
+    "requires_root_gpu_window_release": true,
+    "launch_token_env": "SINGLELANE_D3_GPU_WINDOW_AUTHORIZED=1",
+    "required_free_mib_per_gpu": 512,
+    "maximum_gpu_temperature_c": 58,
+    "maximum_runtime_seconds": 600,
+    "refuses_existing_gpu_compute_processes": true,
+    "automatic_retry": false
+  },
+  "acceptance": {
+    "semantic": "all three full logits, exact token history, final hidden, final KV; generic fallback after seed-anchor rollback",
+    "dedicated": "A/B/A plus random same-context reuse; final logits/hidden/tokens/KV match stepwise baseline; require a rebuilt=0 runtime record",
+    "not_tested": [
+      "high-level speculative selector in common/speculative.cpp",
+      "target-model verification and accepted length",
+      "full-model quality or performance"
+    ]
+  },
+  "commands": {
+    "build": "RUNTIME_DIR=<frozen-v312-runtime> ./fixtures/singlelane-d3-head-v312-20261018/build-head-fixture.sh",
+    "run_after_root_release": "SINGLELANE_D3_GPU_WINDOW_AUTHORIZED=1 RUNTIME_DIR=<frozen-v312-runtime> ./fixtures/singlelane-d3-head-v312-20261018/run-head-fixture.sh"
+  },
+  "frozen_runtime": {
+    "dir": "runtime-perf-v312-r2",
+    "build_id": "20261017T170743.809218Z",
+    "report_sha256": "6c4d773f7ab1f282254d83919721805015619e530f78db8cb643cb05216a355c"
+  },
+  "launch_eligible": true
+}

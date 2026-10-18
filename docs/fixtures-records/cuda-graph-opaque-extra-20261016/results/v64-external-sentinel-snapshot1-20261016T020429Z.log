@@ -1,0 +1,28 @@
+start=2026-10-16T02:04:29Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v64
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cuda-graph-opaque-extra-20261016/opaque-extra-fixture-v64-external
+mode=sentinel snapshot=1 expect_crash=0
+8cff19757574d29b999e257f1c9f30dfc6851e6a28989ccec50f22ac119bb7e1  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cuda-graph-opaque-extra-20261016/opaque-extra-fixture-v64-external
+gpu=GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb before=38, 5
+limits temp<58C preexisting<=512MiB runtime<=1024MiB timeout=60s
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+load_backend: failed to load /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cuda-graph-opaque-extra-20261016/backend-v64-external: /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cuda-graph-opaque-extra-20261016/backend-v64-external: cannot read file data: Is a directory
+CUDA_OPAQUE_SETUP device=CUDA0 buft=CUDA0
+OPAQUE_EXTERNAL_READY name=opaque_extra.materialized_external_producer buffer=0x1000570b8e0 buft=CUDA0 data=0x10037400800 extra=0x57800 graph_nodes=1
+OPAQUE_GRAPH_SHAPE full_nodes=5 suffix_nodes=4 external_producer=1 producer_in_view=0 ancestry_expanded=0 uid_a=3 uid_b=4
+CUDA graph structural opaque external device=0 name=opaque_extra.materialized_external_producer op=2 extra=0x57800 buffer=0x1000570b8e0 uid=3
+CUDA graph structural rejected binding device=0 name=opaque_extra.materialized_external_producer op=2 buffer=1 data=1 extra_valid=0 view=0 ne=256,1,1,1
+CUDA graph structural rejected graph device=0 reason=unsupported_external nodes=4 external=3 uid=3
+PASS OPAQUE_EXTRA_FRAME frame=0 sequence=A exact=1 canary=1
+CUDA graph structural opaque external device=0 name=opaque_extra.materialized_external_producer op=2 extra=0x57800 buffer=0x1000570b8e0 uid=4
+CUDA graph structural rejected binding device=0 name=opaque_extra.materialized_external_producer op=2 buffer=1 data=1 extra_valid=0 view=0 ne=256,1,1,1
+CUDA graph structural rejected graph device=0 reason=unsupported_external nodes=4 external=3 uid=4
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+PASS OPAQUE_EXTRA_FRAME frame=1 sequence=B exact=1 canary=1
+CUDA graph structural opaque external device=0 name=opaque_extra.materialized_external_producer op=2 extra=0x57800 buffer=0x1000570b8e0 uid=3
+CUDA graph structural rejected binding device=0 name=opaque_extra.materialized_external_producer op=2 buffer=1 data=1 extra_valid=0 view=0 ne=256,1,1,1
+PASS OPAQUE_EXTRA_FRAME frame=2 sequence=A exact=1 canary=1
+CUDA graph structural stats device=0 attempts=5 built=2 reject_too_large=0 reject_graph=0 reject_external=3 reject_missing=0 active_matches=0 variant_matches=0 lookup_misses=2 cross_descriptor_replays=0 flat_snapshot_hits=0 flat_snapshot_misses=2 signature_build_us=134 lookup_us=2
+OPAQUE_EXTRA_CHILD_PASS mode=sentinel structural=1 snapshot=1 output_exact=1 frames=ABA
+exit_status=0 after=39, 5

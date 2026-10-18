@@ -1,0 +1,238 @@
+{
+  "architecture_bytes": {
+    "GDN": {
+      "main_dense_other": {
+        "bytes": 2409422336,
+        "gib": 2.2439494132995605
+      },
+      "main_expert": {
+        "bytes": 32505856000,
+        "gib": 30.2734375
+      },
+      "main_shared": {
+        "bytes": 90206720,
+        "gib": 0.08401155471801758
+      },
+      "ple_aux": {
+        "bytes": 65740800,
+        "gib": 0.06122589111328125
+      }
+    },
+    "QSA": {
+      "main_dense_other": {
+        "bytes": 796278784,
+        "gib": 0.7415924072265625
+      },
+      "main_expert": {
+        "bytes": 10407116800,
+        "gib": 9.6923828125
+      },
+      "main_shared": {
+        "bytes": 30871040,
+        "gib": 0.028750896453857422
+      }
+    }
+  },
+  "expert_formats": {
+    "IQ2_S": {
+      "bytes": 5373952000,
+      "gib": 5.0048828125,
+      "tensor_count": 20
+    },
+    "IQ2_XS": {
+      "bytes": 4849664000,
+      "gib": 4.5166015625,
+      "tensor_count": 20
+    },
+    "IQ2_XXS": {
+      "bytes": 3892838400,
+      "gib": 3.62548828125,
+      "tensor_count": 18
+    },
+    "IQ3_S": {
+      "bytes": 9371648000,
+      "gib": 8.72802734375,
+      "tensor_count": 26
+    },
+    "IQ3_XXS": {
+      "bytes": 3853516800,
+      "gib": 3.5888671875,
+      "tensor_count": 12
+    },
+    "IQ4_NL": {
+      "bytes": 8493465600,
+      "gib": 7.91015625,
+      "tensor_count": 18
+    },
+    "Q2_0": {
+      "bytes": 7077888000,
+      "gib": 6.591796875,
+      "tensor_count": 30
+    }
+  },
+  "kv_estimates": {
+    "2x50k_active_tokens_per_dpa2_bank": {
+      "cells": 100000,
+      "dpa2_tp3_mtp_kv_plus_mirrored_indexer_per_gpu_gib": 0.04643925708701752,
+      "dpa2_tp3_qsa_plus_mirrored_indexer_per_gpu_gib": 0.557300656340843,
+      "full_model_qsa_indexer_gib": 0.15198907186818678,
+      "full_model_qsa_kv_gib": 1.2159347534179688,
+      "full_model_qsa_plus_indexer_gib": 1.3679238252861556,
+      "mtp_indexer_gib": 0.012663907782976018,
+      "mtp_kv_gib": 0.10132604791212452
+    },
+    "4x50k_replicated_full_model_qsa_kv_plus_indexer_per_gpu_gib": 2.7358476505723113,
+    "full_132096_cell_reserved_pool_per_dpa2_bank": {
+      "cells": 132096,
+      "dpa2_tp3_mtp_kv_plus_mirrored_indexer_per_gpu_gib": 0.06134440104166666,
+      "dpa2_tp3_qsa_plus_mirrored_indexer_per_gpu_gib": 0.736171875,
+      "full_model_qsa_indexer_gib": 0.200771484375,
+      "full_model_qsa_kv_gib": 1.606201171875,
+      "full_model_qsa_plus_indexer_gib": 1.80697265625,
+      "mtp_indexer_gib": 0.016728515625,
+      "mtp_kv_gib": 0.13384765625
+    },
+    "single_50k_dp6_owner_qsa_kv_plus_indexer_per_gpu_gib": 0.6839619126430778,
+    "source_pool_cells": 132096
+  },
+  "per_gpu_static_proxy_gib": {
+    "assumptions": [
+      "routed target and MTP expert tensors evenly sharded across six GPUs",
+      "target dense/shared weights TP-sharded evenly over each 3-GPU attention island for DPA2",
+      "global output.weight sharded over three attention ranks; other global tensors replicated",
+      "candidate PLE budget rebalances V13's observed 8 GiB GPU-resident component evenly across six GPUs; 18.82 GiB stays in host DDR",
+      "small PLE aux tensors mirrored; runtime workspaces, KV, RS state and graph allocations excluded"
+    ],
+    "candidate_rebalanced_ple_gpu_per_gpu_gib": 1.3333333333333333,
+    "dp6_dense_replicated_moe_ep6": 12.33730332056681,
+    "dp6_dense_replicated_moe_ep6_by_expert_rank_gib": [
+      12.30966265996297,
+      12.30966265996297,
+      12.392584641774494,
+      12.30966265996297,
+      12.30966265996297,
+      12.392584641774494
+    ],
+    "dp6_if_mtp_experts_are_replicated": 14.41249863306681,
+    "dpa2_attention_tp3_moe_ep6": 10.000415007273354,
+    "dpa2_attention_tp3_moe_ep6_by_expert_rank_gib": [
+      9.972774346669514,
+      9.972774346669514,
+      10.055696328481037,
+      9.972774346669514,
+      9.972774346669514,
+      10.055696328481037
+    ],
+    "dpa2_if_mtp_experts_are_replicated": 12.075610319773354,
+    "full_ple_table_shard_per_gpu_gib": 4.470369815826416,
+    "mtp_expert_ep6_by_rank_gib": [
+      0.4134178161621094,
+      0.4134178161621094,
+      0.41828155517578125,
+      0.4134178161621094,
+      0.4134178161621094,
+      0.41828155517578125
+    ],
+    "target_expert_ep6_by_rank_gib": [
+      6.634950637817383,
+      6.634950637817383,
+      6.713008880615234,
+      6.634950637817383,
+      6.634950637817383,
+      6.713008880615234
+    ]
+  },
+  "recurrent_state": {
+    "linear_one_sequence_proxy_gib_per_dp6_gpu": 0.549658203125,
+    "linear_tp3_proxy_gib_per_dpa2_gpu": 0.36643880208333335,
+    "runtime_bytes_mib_at_2_sequences_4_rollback_slots": 1125.7,
+    "warning": "The TP3 division is a shape-based proxy; new DPA2/DP6 ownership is not implemented or measured."
+  },
+  "source": {
+    "gguf_path": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+    "gguf_size_bytes": 78615622080,
+    "layer_counts": {
+      "GDN": 36,
+      "QSA": 12
+    },
+    "manifest": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf.monpack.manifest.json",
+    "manifest_tensor_count": 1256,
+    "target_expert_count": 512,
+    "target_expert_partition_6": [
+      85,
+      85,
+      86,
+      85,
+      85,
+      86
+    ]
+  },
+  "v13_ple_placement_observation": {
+    "gpu_logical_indices": [
+      0,
+      1,
+      2
+    ],
+    "gpu_numa_nodes": [
+      255,
+      254,
+      253
+    ],
+    "gpu_resident_total_gib": 8.0,
+    "host_ddr_gib": 18.82,
+    "mean_residency_on_these_three_gpus_gib": 2.6666666666666665,
+    "note": "Per-GPU PLE byte split is not logged; the candidate subtotal rebalances the 8 GiB GPU component evenly across six GPUs.",
+    "source": "V13 runtime.log lines 193-196, 1925"
+  },
+  "weight_bytes": {
+    "global": {
+      "bytes": 723343360,
+      "gib": 0.6736660003662109,
+      "tensors": 5
+    },
+    "main_dense_other": {
+      "bytes": 3205701120,
+      "gib": 2.985541820526123,
+      "tensors": 876
+    },
+    "main_expert": {
+      "bytes": 42912972800,
+      "gib": 39.9658203125,
+      "tensors": 144
+    },
+    "main_shared": {
+      "bytes": 121077760,
+      "gib": 0.112762451171875,
+      "tensors": 192
+    },
+    "mtp_expert": {
+      "bytes": 2673868800,
+      "gib": 2.490234375,
+      "tensors": 3
+    },
+    "mtp_other": {
+      "bytes": 101752832,
+      "gib": 0.09476470947265625,
+      "tensors": 29
+    },
+    "ple_aux": {
+      "bytes": 65740800,
+      "gib": 0.06122589111328125,
+      "tensors": 6
+    },
+    "ple_table": {
+      "bytes": 28800138240,
+      "gib": 26.822218894958496,
+      "tensors": 1
+    }
+  },
+  "workspace_log_mib_not_per_gpu": {
+    "mtp_cuda_host_compute": 9.89,
+    "mtp_meta_compute": 272.89,
+    "target_cuda_host_compute": 106.05,
+    "target_meta_compute_buffers": [
+      552.55,
+      554.37
+    ]
+  }
+}

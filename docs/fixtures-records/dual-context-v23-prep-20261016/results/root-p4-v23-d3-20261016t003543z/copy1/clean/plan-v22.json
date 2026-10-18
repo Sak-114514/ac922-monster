@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "parallel_labels": [
+    "v22-copy1-clean-real8k-p4-2x2-clean"
+  ],
+  "pairs": [
+    {
+      "id": "real8k-0",
+      "serial_label": "v22-copy1-diagnostic-serial-real8k-0",
+      "parallel_label": "v22-copy1-clean-real8k-p4-2x2-clean",
+      "parallel_bank": 0
+    },
+    {
+      "id": "real8k-1",
+      "serial_label": "v22-copy1-diagnostic-serial-real8k-0",
+      "parallel_label": "v22-copy1-clean-real8k-p4-2x2-clean",
+      "parallel_bank": 1
+    },
+    {
+      "id": "real8k-2",
+      "serial_label": "v22-copy1-diagnostic-serial-real8k-1",
+      "parallel_label": "v22-copy1-clean-real8k-p4-2x2-clean",
+      "parallel_bank": 0
+    },
+    {
+      "id": "real8k-3",
+      "serial_label": "v22-copy1-diagnostic-serial-real8k-1",
+      "parallel_label": "v22-copy1-clean-real8k-p4-2x2-clean",
+      "parallel_bank": 1
+    }
+  ],
+  "prefix_checks": [],
+  "required_config": {
+    "bank_count": 2,
+    "bank_lanes": 2,
+    "mtp_depth_default": 3,
+    "mtp_depth_allowed": [
+      3
+    ],
+    "mtp_draft_ubatch": 512,
+    "target_verify_rows_for_d3": 8,
+    "mtp_fixed_prefix_rows_per_lane": 6,
+    "mtp_fixed_prefix_rows_total": 12,
+    "logical_prefill_batch_capacity": 8192,
+    "max_verify_rows": 8,
+    "serial_cpu_submit": false,
+    "server_mtp_kv_policy": true,
+    "expert_parallel": "1",
+    "mtp_chain_multi": true,
+    "mtp_unrolled": true,
+    "mtp_fixed_prefix_rows": 6,
+    "mtp_variable_lanes": true,
+    "model_load_count": 1,
+    "model_load_count_per_process": 1,
+    "context_family_recreated_between_copy_modes": true,
+    "ubatch_default": 1024,
+    "ubatch_allowed": [
+      1024
+    ],
+    "turboprefill_default": false,
+    "turboprefill_optional": false,
+    "island_split": "3,3",
+    "qsa_indexer_impl": "standard",
+    "kv_variant": "per_seq_64k",
+    "bank_context": 131072,
+    "n_seq_max": 2,
+    "context_per_sequence": 65536,
+    "kv_streams_per_bank": 2,
+    "aggregate_kv_streams": 4,
+    "maximum_request_context": 65536,
+    "meta_cpu_async_copy_mode_default": 1,
+    "meta_cpu_async_copy_env": "GGML_META_CPU_ASYNC_COPY",
+    "meta_cpu_async_copy_max_bytes": 1048576,
+    "legacy_meta_async_inputs": 0,
+    "nccl_min_bytes": 0,
+    "cuda_nccl_f32": 1,
+    "diagnostic_profile_gpu_spans": 1,
+    "clean_profile_gpu_spans": 0,
+    "diagnostic_full_logits_capture": true,
+    "clean_full_logits_capture": false,
+    "effective_ld_preload": null,
+    "context_profiles": [
+      "diagnostic",
+      "clean"
+    ],
+    "diagnostic_clean_contexts_must_not_coexist": true,
+    "profile_kind": "clean"
+  },
+  "require_full_output_label": "v22-copy1-clean-real8k-p4-2x2-clean",
+  "require_runtime_diagnostics_for_label": "v22-copy1-clean-real8k-p4-2x2-clean",
+  "kv_variants_allowed": [
+    "per_seq_64k"
+  ],
+  "kv_layouts": {
+    "per_seq_64k": {
+      "kv_unified": false,
+      "bank_context": 131072,
+      "n_seq_max": 2,
+      "context_per_sequence": 65536,
+      "kv_streams": 2,
+      "bank_count": 2,
+      "aggregate_context_capacity": 262144,
+      "maximum_request_context": 65536
+    }
+  },
+  "topology": {
+    "variant": "two_banks_two_lanes_per_seq_64k",
+    "bank_count": 2,
+    "lanes_per_bank": 2,
+    "all_parallel_flows_by_bank": {
+      "0": 2,
+      "1": 2
+    },
+    "capacity_note": "two banks x two independent 65536-cell KV streams per bank; 262144 aggregate cells are not per-request context",
+    "mode_variants_allowed": [
+      1,
+      0
+    ],
+    "mode_default": [
+      1
+    ],
+    "model_load_count_per_process": 1,
+    "context_family_recreated_between_modes": true
+  },
+  "context_copy_variant": 1,
+  "profile_kind": "clean",
+  "variant_label_prefix": "v22-copy1-clean-",
+  "full_logit_capture_in_clean_family": false,
+  "native_semantic_gate_source": "same-model diagnostic context family; must pass before clean family construction"
+}

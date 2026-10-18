@@ -1,0 +1,77 @@
+{
+  "schema": "v244-static-contract-v1",
+  "status": "PASS",
+  "build_performed_here": false,
+  "model_loads_by_static_verifier": 0,
+  "historical_r1_model_loads": 1,
+  "gpu_touched_by_static_verifier": false,
+  "remote_accessed": false,
+  "launch_eligible": false,
+  "checks": [
+    {
+      "name": "frozen_source_and_hostlink_hash",
+      "status": "pass",
+      "detail": "R2 frozen runner, review source, hostlink and profile all pin the same bytes"
+    },
+    {
+      "name": "v241_runtime_pin",
+      "status": "pass",
+      "detail": "frozen V241 runtime ID/report hash is locally verified and pinned for hostlink"
+    },
+    {
+      "name": "context_capacity_and_actual_v50_slots",
+      "status": "pass",
+      "detail": "single request 65549 <= 66048; four-bank 16901 <= 17152; D4 verify rows 5 <= PAD6; [{'prompt': 65536, 'output': 8, 'D4_lookahead_and_seed': 5, 'request_plus_lookahead': 65549, 'context': 66048, 'PAD6_verify_rows': 5, 'target_n_batch': 32768, 'target_n_ubatch': 512, 'prefill_chunk': 32768}, {'prompt': 16384, 'output': 512, 'D4_lookahead_and_seed': 5, 'request_plus_lookahead': 16901, 'context': 17152, 'PAD6_verify_rows': 5, 'target_n_batch': 4096, 'target_n_ubatch': 256, 'prefill_chunk': 4096}]"
+    },
+    {
+      "name": "frozen_scenario_families",
+      "status": "pass",
+      "detail": "exact Paris canary then 64K/8; exact V146 canary then four disjoint 16K/512 flows"
+    },
+    {
+      "name": "candidate_environment",
+      "status": "pass",
+      "detail": "V241 base device 0/PLE12, D4/PAD6, draft request+actual 256, small-J, pinned 16/1024, binding keys, force off"
+    },
+    {
+      "name": "one_load_dynamic_family_lifecycle",
+      "status": "pass",
+      "detail": "one model load; context families are sequential and drained; one/four banks are family-driven; exact split and measured input/time metrics"
+    },
+    {
+      "name": "private_context_policy",
+      "status": "pass",
+      "detail": "private layout policy permits only 1x66048/1x17152 and enforces D4/PAD6 fit"
+    },
+    {
+      "name": "semantic_dispatch_and_prefix",
+      "status": "pass",
+      "detail": "exact labels/hash dispatch to existing V50/V146 semantics; native prefix accepted; full pair validated when present"
+    },
+    {
+      "name": "no_build_or_launch",
+      "status": "pass",
+      "detail": "R1 no-inference failure is preserved; R2 launch remains ineligible until V243/root release"
+    },
+    {
+      "name": "hostlink_v241_r2_and_r1_receipts",
+      "status": "pass",
+      "detail": "R2 hostlink/runner path is unique; R1 failure/source/profile/runner receipt remains preserved"
+    },
+    {
+      "name": "static_python_tests_and_summary",
+      "status": "pass",
+      "detail": "CPU-only gate tests and final summary cover semantic dispatch, measured single prefill, and four-flow decode"
+    },
+    {
+      "name": "cxx_brace_balance",
+      "status": "pass",
+      "detail": "source braces balance to zero (depth=0)"
+    },
+    {
+      "name": "python_bash_json_syntax",
+      "status": "pass",
+      "detail": "Python AST, hostlink shell syntax and profile/scenario JSON parse"
+    }
+  ]
+}

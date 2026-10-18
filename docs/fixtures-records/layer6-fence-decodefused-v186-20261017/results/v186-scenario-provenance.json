@@ -1,0 +1,68 @@
+{
+  "schema": "v186-fourbank-depth-scenario-provenance-v1",
+  "status": "PREPARED_LOCAL_ONLY",
+  "source_scenarios": "fixtures/layer6-fence-decodefused-v186-20261017/v146-scenarios-source.json",
+  "source_scenarios_sha256": "49a9fd8c564866ab0e6f23309618c5596357d730702d89bb099192cd2edfa3f3",
+  "upstream_source_scenarios": "fixtures/layer6-fourbank-v146-20261017/v146-scenarios.json",
+  "source_scenario_provenance": "fixtures/layer6-fourbank-v146-20261017/v146-scenario-provenance.json",
+  "source_scenario_provenance_sha256": "0f2418a0c1af12cb4b3082e62e7ffb84c0d4479929cc3b228c98b1e5605052ef",
+  "native_source": "fixtures/dual-context-v35-onebank4-combined-20261016/native-semantic/case-input.json",
+  "native_source_sha256": "f2487f90c32d0e383494dc5ae68bec24d6bf0c8d31a065dfbf614447fb6b53fd",
+  "native_case_ids_preserved_in_order": [
+    "capital-en",
+    "arithmetic-zh",
+    "logic-en",
+    "strict-json-zh"
+  ],
+  "corpus_source": "fixtures/long-prefill-combo-v45-20261016/v45-real-corpus-source.json",
+  "corpus_source_sha256": "bd231acb8ce9423222dd0e5b043b2c274163106dc99af8d5a2380916b7df957c",
+  "runtime_token_count_proof": "fixtures/layer6-longprefill-v58-20261017/results/root-v131-layer6-longprefill-20261016t223610299893z/single32k-results.json",
+  "runtime_token_count_proof_sha256": "55b9bc066c60d2937567dda49693152f135af039d0e96857482b74b2cecb0e0f",
+  "runtime_token_count_proven": 92037,
+  "families": {
+    "d4": {
+      "scenario_file": "v186-d4-scenarios.json",
+      "scenario_sha256": "09b38bdf0e6da79fd0e0482851a3a7cd7a8f2da8d806b8b9745f450065892596",
+      "family_labels": [
+        "v186-d4-native-fourbank-canary",
+        "v186-d4-fourbank-4x16k-512"
+      ],
+      "prompt_tokens_per_bank": 16384,
+      "output_tokens_per_bank": 512,
+      "context_per_bank": 17152,
+      "lookahead_tokens": 4,
+      "context_slack_tokens": 251,
+      "mtp_pad_rows": 6,
+      "draft_rows_plus_seed": 5,
+      "performance_slices": [
+        [
+          0,
+          16384
+        ],
+        [
+          16384,
+          32768
+        ],
+        [
+          32768,
+          49152
+        ],
+        [
+          49152,
+          65536
+        ]
+      ],
+      "raw_performance_outputs_semantically_scored": false,
+      "require_generic_gpu_chain_observed": true
+    }
+  },
+  "semantic_checker_closure": "fixtures/layer6-fence-decodefused-v186-20261017/results/v186-semantic-closure.json",
+  "semantic_checker_closure_sha256": "65ade0d42908c4659dd08469510eef003a05713cfcdf69777174bdebbe13d835",
+  "model_loads_per_process": 1,
+  "family_order": [
+    "d4"
+  ],
+  "family_contexts_destroyed_before_next": true,
+  "host_build": "not run",
+  "gpu_touched": false
+}

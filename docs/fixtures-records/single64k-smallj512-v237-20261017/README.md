@@ -1,0 +1,1 @@
+V237 reuses the byte-unchanged V233 hostrunner, binds V235 only after freeze and V236 real7format T512 gate. Two64K UB256/512 families, nativeParis each, long8 unscored. Propscache/pin16/cap1024/fixed64Kpad retained; smallJ1/max512 + FORCE1 retained by frozenV233runner contract. No model launch yet. Rootguard exactprefix/path required.

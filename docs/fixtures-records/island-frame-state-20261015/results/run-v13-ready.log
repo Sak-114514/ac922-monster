@@ -1,0 +1,293 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+RUNTIME_LD_LIBRARY_PATH=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib:/usr/local/cuda-12.4/targets/ppc64le-linux/lib:/usr/local/cuda/lib:/usr/local/cuda/lib:/usr/local/cuda-12.4/lib
+RUNTIME_MAP 7fffb0880000-7fffb09a0000 r-xp 00000000 08:04 31915844                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-cpu.so.0
+RUNTIME_MAP 7fffb09a0000-7fffb09b0000 r--p 00110000 08:04 31915844                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-cpu.so.0
+RUNTIME_MAP 7fffb09b0000-7fffb09c0000 rw-p 00120000 08:04 31915844                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-cpu.so.0
+RUNTIME_MAP 7fffb0a40000-7fffbe470000 r-xp 00000000 08:04 31915845                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-cuda.so.0
+RUNTIME_MAP 7fffbe470000-7fffbe480000 r--p 0da20000 08:04 31915845                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-cuda.so.0
+RUNTIME_MAP 7fffbe480000-7fffbe490000 rw-p 0da30000 08:04 31915845                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-cuda.so.0
+RUNTIME_MAP 7fffbe4a0000-7fffbe5c0000 r-xp 00000000 08:04 31915843                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-base.so.0
+RUNTIME_MAP 7fffbe5c0000-7fffbe5d0000 r--p 00110000 08:04 31915843                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-base.so.0
+RUNTIME_MAP 7fffbe5d0000-7fffbe5e0000 rw-p 00120000 08:04 31915843                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-base.so.0
+RUNTIME_MAP 7fffbe5e0000-7fffbe5f0000 r-xp 00000000 08:04 31915842                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml.so.0
+RUNTIME_MAP 7fffbe5f0000-7fffbe600000 r--p 00000000 08:04 31915842                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml.so.0
+RUNTIME_MAP 7fffbe600000-7fffbe610000 rw-p 00010000 08:04 31915842                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml.so.0
+DEVICE phase=start index=0 name=CUDA0 pci=0004:04:00.0 free=16575102976 total=16911433728 island=A
+DEVICE phase=start index=1 name=CUDA1 pci=0004:05:00.0 free=16575102976 total=16911433728 island=A
+DEVICE phase=start index=2 name=CUDA2 pci=0004:06:00.0 free=16575102976 total=16911433728 island=A
+DEVICE phase=start index=3 name=CUDA3 pci=0035:03:00.0 free=16575102976 total=16911433728 island=B
+DEVICE phase=start index=4 name=CUDA4 pci=0035:04:00.0 free=16569073664 total=16911433728 island=B
+DEVICE phase=start index=5 name=CUDA5 pci=0035:05:00.0 free=16574644224 total=16911433728 island=B
+SHARED_LAYER_STATE A_kv=0x100126f9ea0 A_gdn=0x100126fa010 B_kv=0x10014000ee0 B_gdn=0x10014001050 frames_share_state=1
+NVTX_BEGIN name=P4S/epoch=1/frame=0/stage=A host_ns=104034229017220
+meta-replay-ready backend=0x1000cc96d80 graph_uid=2 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+CUDA graph path config ctx=0x1000cc81300 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000cc81300 device=0 uid=3 nodes=130 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x7ffd3d042400
+CUDA graph path config ctx=0x1000cc82580 device=1 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000cc82580 device=1 uid=5 nodes=130 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x7ffd3d242400
+CUDA graph path config ctx=0x1000cc83800 device=2 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000cc83800 device=2 uid=7 nodes=130 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x7ffd3d442400
+CUDA graph fallback ctx=0x1000cc81300 device=0 uid=4 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1000cc82580 device=1 uid=6 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1000cc83800 device=2 uid=8 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+meta-replay-ready backend=0x1000cc96d80 graph_uid=2 ctx_uid=2 subgraphs=2 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+STAGE_ENQUEUED epoch=1 generation=1 slot=0 stage=A pos=0..4 host_us=104034263544
+NVTX_END name=P4S/epoch=1/frame=0/stage=A host_ns=104034263545504
+NVTX_BEGIN name=P4S/A0_to_B0 host_ns=104034263582145
+meta cross-device event wait active: CUDA stream dependencies
+NVTX_BEGIN name=P4S/epoch=1/frame=0/stage=B host_ns=104034263873373
+meta-replay-ready backend=0x1000bf295a0 graph_uid=10 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+CUDA graph path config ctx=0x1000e0de650 device=3 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000e0de650 device=3 uid=11 nodes=130 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x7ffc7d042400
+CUDA graph path config ctx=0x1000e0df970 device=4 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000e0df970 device=4 uid=13 nodes=130 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x7ffc7d242400
+CUDA graph path config ctx=0x1000e0e0c90 device=5 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000e0e0c90 device=5 uid=15 nodes=130 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x7ffc7d442400
+CUDA graph fallback ctx=0x1000e0de650 device=3 uid=12 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1000e0df970 device=4 uid=14 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1000e0e0c90 device=5 uid=16 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+meta-replay-ready backend=0x1000bf295a0 graph_uid=10 ctx_uid=10 subgraphs=2 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+STAGE_ENQUEUED epoch=1 generation=1 slot=0 stage=B pos=0..4 host_us=104034288625
+NVTX_END name=P4S/epoch=1/frame=0/stage=B host_ns=104034288627300
+NVTX_END name=P4S/A0_to_B0 host_ns=104034288670990
+NVTX_BEGIN name=P4S/epoch=1/frame=1/stage=A host_ns=104034288692063
+meta-replay-ready backend=0x1000e0de350 graph_uid=18 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+CUDA graph path config ctx=0x1000dd59420 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000dd59420 device=0 uid=19 nodes=136 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1000dd5a6d0 device=1 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000dd5a6d0 device=1 uid=21 nodes=136 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1000dd5b9f0 device=2 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000dd5b9f0 device=2 uid=23 nodes=136 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph fallback ctx=0x1000dd59420 device=0 uid=20 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1000dd5a6d0 device=1 uid=22 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1000dd5b9f0 device=2 uid=24 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+meta-replay-ready backend=0x1000e0de350 graph_uid=18 ctx_uid=18 subgraphs=2 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+STAGE_ENQUEUED epoch=1 generation=2 slot=1 stage=A pos=4..8 host_us=104034295772
+NVTX_END name=P4S/epoch=1/frame=1/stage=A host_ns=104034295773823
+NVTX_BEGIN name=P4S/A1_B0_to_B1 host_ns=104034295801155
+NVTX_BEGIN name=P4S/epoch=1/frame=1/stage=B host_ns=104034296038115
+meta-replay-ready backend=0x1000e0e3730 graph_uid=26 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+CUDA graph path config ctx=0x1000f161fc0 device=3 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000f161fc0 device=3 uid=27 nodes=136 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1000f163240 device=4 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000f163240 device=4 uid=29 nodes=136 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1000f1644e0 device=5 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000f1644e0 device=5 uid=31 nodes=136 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph fallback ctx=0x1000f161fc0 device=3 uid=28 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1000f163240 device=4 uid=30 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1000f1644e0 device=5 uid=32 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+meta-replay-ready backend=0x1000e0e3730 graph_uid=26 ctx_uid=26 subgraphs=2 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+STAGE_ENQUEUED epoch=1 generation=2 slot=1 stage=B pos=4..8 host_us=104034302350
+NVTX_END name=P4S/epoch=1/frame=1/stage=B host_ns=104034302352149
+NVTX_END name=P4S/A1_B0_to_B1 host_ns=104034302378555
+meta-replay-ready backend=0x1000cc96d80 graph_uid=2 ctx_uid=2 subgraphs=2 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x1000bf295a0 graph_uid=10 ctx_uid=10 subgraphs=2 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x1000e0de350 graph_uid=18 ctx_uid=18 subgraphs=2 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x1000e0e3730 graph_uid=26 ctx_uid=26 subgraphs=2 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+BACKPRESSURE epoch=1 occupied=2 capacity=2
+EXACT_OUTPUT epoch=1 slot=0 stage=A values=128
+EXACT_OUTPUT epoch=1 slot=0 stage=B values=128
+EXACT_OUTPUT epoch=1 slot=1 stage=A values=128
+EXACT_OUTPUT epoch=1 slot=1 stage=B values=128
+EXACT_SHARED_STATE epoch=1 stage=A kv_values=512 gdn_layers=2
+EXACT_SHARED_STATE epoch=1 stage=B kv_values=512 gdn_layers=2
+PRE_ENTRY_META_REPLAY_READY pass=1 slot=0 stage=A sched=0x1001bd24a70 root=0x7ffc448bbcb0 ready=0
+PRE_ENTRY_META_REPLAY_READY pass=1 slot=0 stage=B sched=0x1001bf1c1d0 root=0x7ffc440abcb0 ready=0
+PRE_ENTRY_META_REPLAY_READY pass=1 slot=1 stage=A sched=0x1001c1139e0 root=0x7ffc3c86c550 ready=0
+PRE_ENTRY_META_REPLAY_READY pass=1 slot=1 stage=B sched=0x1001c30b1f0 root=0x7ffc3c05c550 ready=0
+PRE_ENTRY_META_REPLAY_READY_SUMMARY pass=1 all_four=0
+STALE_GENERATION_REJECTED old=1 new=3
+NVTX_BEGIN name=P4S/epoch=2/frame=0/stage=A host_ns=104034303632944
+meta-replay-ready backend=0x1000cc96d80 graph_uid=2 ctx_uid=2 subgraphs=2 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x1000cc96d80 graph_uid=2 ctx_uid=2 subgraphs=2 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=3 chunks=3
+STAGE_ENQUEUED epoch=2 generation=3 slot=0 stage=A pos=0..4 host_us=104034307691
+NVTX_END name=P4S/epoch=2/frame=0/stage=A host_ns=104034307693005
+NVTX_BEGIN name=P4S/A0_to_B0 host_ns=104034307722946
+NVTX_BEGIN name=P4S/epoch=2/frame=0/stage=B host_ns=104034307924464
+meta-replay-ready backend=0x1000bf295a0 graph_uid=10 ctx_uid=10 subgraphs=2 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x1000bf295a0 graph_uid=10 ctx_uid=10 subgraphs=2 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=3 chunks=3
+STAGE_ENQUEUED epoch=2 generation=3 slot=0 stage=B pos=0..4 host_us=104034311137
+NVTX_END name=P4S/epoch=2/frame=0/stage=B host_ns=104034311139154
+NVTX_END name=P4S/A0_to_B0 host_ns=104034311168515
+NVTX_BEGIN name=P4S/epoch=2/frame=1/stage=A host_ns=104034311183010
+STAGE_ENQUEUED epoch=2 generation=4 slot=1 stage=A pos=4..8 host_us=104034313836
+NVTX_END name=P4S/epoch=2/frame=1/stage=A host_ns=104034313837690
+NVTX_BEGIN name=P4S/A1_B0_to_B1 host_ns=104034313869197
+NVTX_BEGIN name=P4S/epoch=2/frame=1/stage=B host_ns=104034314071547
+STAGE_ENQUEUED epoch=2 generation=4 slot=1 stage=B pos=4..8 host_us=104034316581
+NVTX_END name=P4S/epoch=2/frame=1/stage=B host_ns=104034316582579
+NVTX_END name=P4S/A1_B0_to_B1 host_ns=104034316612621
+BACKPRESSURE epoch=2 occupied=2 capacity=2
+EXACT_OUTPUT epoch=2 slot=0 stage=A values=128
+EXACT_OUTPUT epoch=2 slot=0 stage=B values=128
+EXACT_OUTPUT epoch=2 slot=1 stage=A values=128
+EXACT_OUTPUT epoch=2 slot=1 stage=B values=128
+EXACT_SHARED_STATE epoch=2 stage=A kv_values=512 gdn_layers=2
+EXACT_SHARED_STATE epoch=2 stage=B kv_values=512 gdn_layers=2
+PRE_ENTRY_META_REPLAY_READY pass=2 slot=0 stage=A sched=0x1001bd24a70 root=0x7ffc448bbcb0 ready=0
+PRE_ENTRY_META_REPLAY_READY pass=2 slot=0 stage=B sched=0x1001bf1c1d0 root=0x7ffc440abcb0 ready=0
+PRE_ENTRY_META_REPLAY_READY pass=2 slot=1 stage=A sched=0x1001c1139e0 root=0x7ffc3c86c550 ready=0
+PRE_ENTRY_META_REPLAY_READY pass=2 slot=1 stage=B sched=0x1001c30b1f0 root=0x7ffc3c05c550 ready=0
+PRE_ENTRY_META_REPLAY_READY_SUMMARY pass=2 all_four=0
+STALE_GENERATION_REJECTED old=3 new=5
+NVTX_BEGIN name=P4S/epoch=3/frame=0/stage=A host_ns=104034317763582
+CUDA Graph id 33 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 34 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 35 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000cc81300 device=0 uid=33 nodes=132 mode=capture count=1
+CUDA graph path active ctx=0x1000cc83800 device=2 uid=35 nodes=132 mode=capture count=1
+CUDA graph path active ctx=0x1000cc82580 device=1 uid=34 nodes=132 mode=capture count=1
+STAGE_ENQUEUED epoch=3 generation=5 slot=0 stage=A pos=0..4 host_us=104034320341
+NVTX_END name=P4S/epoch=3/frame=0/stage=A host_ns=104034320342809
+NVTX_BEGIN name=P4S/A0_to_B0 host_ns=104034320375613
+NVTX_BEGIN name=P4S/epoch=3/frame=0/stage=B host_ns=104034320566967
+CUDA Graph id 36 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000e0de650 device=3 uid=36 nodes=132 mode=capture count=1
+CUDA Graph id 37 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000e0df970 device=4 uid=37 nodes=132 mode=capture count=1
+CUDA Graph id 38 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000e0e0c90 device=5 uid=38 nodes=132 mode=capture count=1
+STAGE_ENQUEUED epoch=3 generation=5 slot=0 stage=B pos=0..4 host_us=104034322982
+NVTX_END name=P4S/epoch=3/frame=0/stage=B host_ns=104034322984118
+NVTX_END name=P4S/A0_to_B0 host_ns=104034323016211
+NVTX_BEGIN name=P4S/epoch=3/frame=1/stage=A host_ns=104034323031331
+CUDA Graph id 39 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000dd59420 device=0 uid=39 nodes=138 mode=capture count=1
+CUDA Graph id 40 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000dd5a6d0 device=1 uid=40 nodes=138 mode=capture count=1
+CUDA Graph id 41 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000dd5b9f0 device=2 uid=41 nodes=138 mode=capture count=1
+STAGE_ENQUEUED epoch=3 generation=6 slot=1 stage=A pos=4..8 host_us=104034325676
+NVTX_END name=P4S/epoch=3/frame=1/stage=A host_ns=104034325677769
+NVTX_BEGIN name=P4S/A1_B0_to_B1 host_ns=104034325710824
+NVTX_BEGIN name=P4S/epoch=3/frame=1/stage=B host_ns=104034325920579
+CUDA Graph id 42 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000f161fc0 device=3 uid=42 nodes=138 mode=capture count=1
+CUDA Graph id 43 reused
+CUDA Graph id 44 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000f1644e0 device=5 uid=44 nodes=138 mode=capture count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000f163240 device=4 uid=43 nodes=138 mode=capture count=1
+STAGE_ENQUEUED epoch=3 generation=6 slot=1 stage=B pos=4..8 host_us=104034328694
+NVTX_END name=P4S/epoch=3/frame=1/stage=B host_ns=104034328695620
+NVTX_END name=P4S/A1_B0_to_B1 host_ns=104034328728216
+BACKPRESSURE epoch=3 occupied=2 capacity=2
+EXACT_OUTPUT epoch=3 slot=0 stage=A values=128
+EXACT_OUTPUT epoch=3 slot=0 stage=B values=128
+EXACT_OUTPUT epoch=3 slot=1 stage=A values=128
+EXACT_OUTPUT epoch=3 slot=1 stage=B values=128
+EXACT_SHARED_STATE epoch=3 stage=A kv_values=512 gdn_layers=2
+EXACT_SHARED_STATE epoch=3 stage=B kv_values=512 gdn_layers=2
+PRE_ENTRY_META_REPLAY_READY pass=3 slot=0 stage=A sched=0x1001bd24a70 root=0x7ffc448bbcb0 ready=1
+PRE_ENTRY_META_REPLAY_READY pass=3 slot=0 stage=B sched=0x1001bf1c1d0 root=0x7ffc440abcb0 ready=1
+PRE_ENTRY_META_REPLAY_READY pass=3 slot=1 stage=A sched=0x1001c1139e0 root=0x7ffc3c86c550 ready=1
+PRE_ENTRY_META_REPLAY_READY pass=3 slot=1 stage=B sched=0x1001c30b1f0 root=0x7ffc3c05c550 ready=1
+PRE_ENTRY_META_REPLAY_READY_SUMMARY pass=3 all_four=1
+STALE_GENERATION_REJECTED old=5 new=7
+NVTX_BEGIN name=P4S/epoch=4/frame=0/stage=A host_ns=104034329895636
+CUDA Graph id 33 reused
+CUDA graph path active ctx=0x1000cc81300 device=0 uid=33 nodes=132 mode=replay count=1
+CUDA Graph id 35 reused
+CUDA Graph id 34 reused
+CUDA graph path active ctx=0x1000cc83800 device=2 uid=35 nodes=132 mode=replay count=1
+CUDA graph path active ctx=0x1000cc82580 device=1 uid=34 nodes=132 mode=replay count=1
+STAGE_ENQUEUED epoch=4 generation=7 slot=0 stage=A pos=0..4 host_us=104034331581
+NVTX_END name=P4S/epoch=4/frame=0/stage=A host_ns=104034331583454
+NVTX_BEGIN name=P4S/A0_to_B0 host_ns=104034331591116
+NVTX_BEGIN name=P4S/epoch=4/frame=0/stage=B host_ns=104034332190148
+CUDA Graph id 36 reused
+CUDA graph path active ctx=0x1000e0de650 device=3 uid=36 nodes=132 mode=replay count=1
+CUDA Graph id 37 reused
+CUDA graph path active ctx=0x1000e0df970 device=4 uid=37 nodes=132 mode=replay count=1
+CUDA Graph id 38 reused
+CUDA graph path active ctx=0x1000e0e0c90 device=5 uid=38 nodes=132 mode=replay count=1
+STAGE_ENQUEUED epoch=4 generation=7 slot=0 stage=B pos=0..4 host_us=104034332677
+NVTX_END name=P4S/epoch=4/frame=0/stage=B host_ns=104034332679374
+NVTX_END name=P4S/A0_to_B0 host_ns=104034332685506
+NVTX_BEGIN name=P4S/epoch=4/frame=1/stage=A host_ns=104034332707058
+CUDA Graph id 39 reused
+CUDA graph path active ctx=0x1000dd59420 device=0 uid=39 nodes=138 mode=replay count=1
+CUDA Graph id 40 reused
+CUDA graph path active ctx=0x1000dd5a6d0 device=1 uid=40 nodes=138 mode=replay count=1
+CUDA Graph id 41 reused
+CUDA graph path active ctx=0x1000dd5b9f0 device=2 uid=41 nodes=138 mode=replay count=1
+STAGE_ENQUEUED epoch=4 generation=8 slot=1 stage=A pos=4..8 host_us=104034333160
+NVTX_END name=P4S/epoch=4/frame=1/stage=A host_ns=104034333161851
+NVTX_BEGIN name=P4S/A1_B0_to_B1 host_ns=104034333168322
+NVTX_BEGIN name=P4S/epoch=4/frame=1/stage=B host_ns=104034333388478
+CUDA Graph id 42 reused
+CUDA graph path active ctx=0x1000f161fc0 device=3 uid=42 nodes=138 mode=replay count=1
+CUDA Graph id 43 reused
+CUDA graph path active ctx=0x1000f163240 device=4 uid=43 nodes=138 mode=replay count=1
+CUDA Graph id 44 reused
+CUDA graph path active ctx=0x1000f1644e0 device=5 uid=44 nodes=138 mode=replay count=1
+STAGE_ENQUEUED epoch=4 generation=8 slot=1 stage=B pos=4..8 host_us=104034333874
+NVTX_END name=P4S/epoch=4/frame=1/stage=B host_ns=104034333876069
+NVTX_END name=P4S/A1_B0_to_B1 host_ns=104034333882048
+FreeToken graph cache ctx=0x1000cc81300 hits=0 saves=0 evictions=0 retained=0
+FreeToken graph cache ctx=0x1000cc82580 hits=0 saves=0 evictions=0 retained=0
+FreeToken graph cache ctx=0x1000cc83800 hits=0 saves=0 evictions=0 retained=0
+FreeToken graph cache ctx=0x1000dd59420 hits=0 saves=0 evictions=0 retained=0
+FreeToken graph cache ctx=0x1000dd5a6d0 hits=0 saves=0 evictions=0 retained=0
+FreeToken graph cache ctx=0x1000dd5b9f0 hits=0 saves=0 evictions=0 retained=0
+FreeToken graph cache ctx=0x1000e0de650 hits=0 saves=0 evictions=0 retained=0
+FreeToken graph cache ctx=0x1000e0df970 hits=0 saves=0 evictions=0 retained=0
+FreeToken graph cache ctx=0x1000e0e0c90 hits=0 saves=0 evictions=0 retained=0
+FreeToken graph cache ctx=0x1000f161fc0 hits=0 saves=0 evictions=0 retained=0
+FreeToken graph cache ctx=0x1000f163240 hits=0 saves=0 evictions=0 retained=0
+FreeToken graph cache ctx=0x1000f1644e0 hits=0 saves=0 evictions=0 retained=0
+BACKPRESSURE epoch=4 occupied=2 capacity=2
+EXACT_OUTPUT epoch=4 slot=0 stage=A values=128
+EXACT_OUTPUT epoch=4 slot=0 stage=B values=128
+EXACT_OUTPUT epoch=4 slot=1 stage=A values=128
+EXACT_OUTPUT epoch=4 slot=1 stage=B values=128
+EXACT_SHARED_STATE epoch=4 stage=A kv_values=512 gdn_layers=2
+EXACT_SHARED_STATE epoch=4 stage=B kv_values=512 gdn_layers=2
+HOT_REPLAY_PRECONDITION ready=1 warm_passes=3 epoch=4
+SCHED_META_BYTES A=1408 B=1408
+PASS stateful_island_prefill_fixture exact=1 shared_kv=1 shared_gdn=1 backpressure=1 drain_reset=1 order=A0,B0,A1,B1
+DEVICE phase=released index=0 name=CUDA0 pci=0004:04:00.0 free=16464084992 total=16911433728 island=A
+DEVICE phase=released index=1 name=CUDA1 pci=0004:05:00.0 free=16464084992 total=16911433728 island=A
+DEVICE phase=released index=2 name=CUDA2 pci=0004:06:00.0 free=16464084992 total=16911433728 island=A
+DEVICE phase=released index=3 name=CUDA3 pci=0035:03:00.0 free=16464084992 total=16911433728 island=B
+DEVICE phase=released index=4 name=CUDA4 pci=0035:04:00.0 free=16458055680 total=16911433728 island=B
+DEVICE phase=released index=5 name=CUDA5 pci=0035:05:00.0 free=16463626240 total=16911433728 island=B
+Generating '/tmp/nsys-report-10ab.qdstrm'
+[1/1] [0%                          ] stateful-p4-v13-ready.nsys-rep[1/1] [0%                          ] stateful-p4-v13-ready.nsys-rep[1/1] [5%                          ] stateful-p4-v13-ready.nsys-rep[1/1] [10%                         ] stateful-p4-v13-ready.nsys-rep[1/1] [=================73%        ] stateful-p4-v13-ready.nsys-rep[1/1] [=====================86%    ] stateful-p4-v13-ready.nsys-rep[1/1] [========================100%] stateful-p4-v13-ready.nsys-rep[1/1] [========================100%] stateful-p4-v13-ready.nsys-rep
+Generated:
+    /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/island-frame-state-20261015/results/stateful-p4-v13-ready.nsys-rep

@@ -1,0 +1,35 @@
+{
+  "status": "V53_SCENARIOS_PREPARED_HOST_ONLY",
+  "source": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-native-v52-20261017/v50-scenarios.json",
+  "source_sha256": "79ceb966fa052f460a5c9b4082cdbc7a03e3550dbab92c3246150a38e5cf4e94",
+  "scenario_file": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-ple6-v53-20261017/v53-scenarios.json",
+  "scenario_sha256": "7826fab9daba8f57d268061a6d3c0c7896118bc1d1ee2d8d0e1ac6e9a435e3e7",
+  "families": {
+    "single32k": {
+      "case_order": [
+        "v53-single32k-semantic-canary",
+        "v53-single32k-native-mask-long-prefill"
+      ],
+      "kinds": [
+        "v50_semantic_canary",
+        "v50_long_prefill"
+      ],
+      "input_tokens": 32768,
+      "output_tokens": 32
+    },
+    "single64k": {
+      "case_order": [
+        "v53-single64k-semantic-canary",
+        "v53-single64k-native-mask-long-prefill"
+      ],
+      "kinds": [
+        "v50_semantic_canary",
+        "v50_long_prefill"
+      ],
+      "input_tokens": 65536,
+      "output_tokens": 32
+    }
+  },
+  "model_loaded": false,
+  "gpu_touched": false
+}

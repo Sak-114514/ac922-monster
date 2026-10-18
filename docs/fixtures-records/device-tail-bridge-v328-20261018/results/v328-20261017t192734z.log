@@ -1,0 +1,10 @@
+cuda_call operation=select one visible V100 cuda_error=0 text=no error
+cuda_call operation=verify selected device cuda_error=0 text=no error
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add original-stream input copy cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=add original-stream output copy cuda_error=1 text=invalid argument
+cleanup original_stream_fence cuda_error=0 text=no error
+drop_context cuda_error=0 text=no error
+V328_FIXTURE_ERROR: add original-stream output copy: invalid argument
+v328_summary status=FAIL reason=exception cuda_errors=1 gpu_model_math=0 device_reset=0

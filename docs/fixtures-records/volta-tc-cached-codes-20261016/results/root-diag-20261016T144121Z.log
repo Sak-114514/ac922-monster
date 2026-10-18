@@ -1,0 +1,37 @@
+STAGE main-entry argc=4
+STAGE argv/mode-ready mode=all manifest=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tc-cached-codes-20261016/manifest.json samples=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tc-real
+STAGE cudaSetDevice-before visible_index=0
+STAGE cudaSetDevice-after
+STAGE cudaGetDevice-before
+STAGE cudaGetDevice-after device=0
+STAGE cudaGetDeviceProperties-before device=0
+STAGE cudaGetDeviceProperties-after name=Tesla V100-SXM2-16GB cc=7.0
+STAGE cudaMemGetInfo-before
+STAGE cudaMemGetInfo-after free=16585981952 total=16911433728
+DEVICE visible_index=0 name=Tesla V100-SXM2-16GB cc=7.0 free_bytes=16585981952 total_bytes=16911433728 l2_bytes=6291456 cuda_visible_devices=GPU-fadb0459-4d30-907b-289a-862b3014f165
+STAGE formats-load-before
+STAGE formats-load-after count=7
+STAGE oracle-case-before type=IQ2_XXS Ksrc=2560 N=16 cols=7
+STAGE oracle-host-weights-before type=IQ2_XXS N=16 cols=7
+STAGE oracle-host-weights-after type=IQ2_XXS bytes=1267200
+STAGE oracle-device-buffers-before type=IQ2_XXS
+STAGE oracle-device-buffers-after type=IQ2_XXS
+STAGE oracle-stream-create-before type=IQ2_XXS
+STAGE oracle-stream-create-after type=IQ2_XXS
+STAGE oracle-upload-inputs-before type=IQ2_XXS
+STAGE oracle-upload-sync-before type=IQ2_XXS
+STAGE oracle-upload-inputs-after type=IQ2_XXS
+STAGE oracle-prepare-before type=IQ2_XXS K=2560 N=16 E=3
+STAGE oracle-prepare-after type=IQ2_XXS
+STAGE oracle-prepare-sync-before type=IQ2_XXS
+STAGE oracle-prepare-sync-after type=IQ2_XXS
+STAGE oracle-cache-snapshot-before type=IQ2_XXS
+STAGE oracle-cache-snapshot-after type=IQ2_XXS
+FATAL SIGSEGV
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tc-cached-codes-20261016/results/cached-tc-fixture-v96-host-diag-2(_ZN49_GLOBAL__N__5a8b3dc8_20_cached_tc_fixture_cu_main20crash_signal_handlerEiP9siginfo_tPv+0x58)[0x106bfd0f8]
+linux-vdso64.so.1(__kernel_sigtramp_rt64+0x0)[0x7fffbbf70504]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tc-cached-codes-20261016/results/cached-tc-fixture-v96-host-diag-2(_ZN49_GLOBAL__N__5a8b3dc8_20_cached_tc_fixture_cu_main7make_q8Eiiiii+0x310)[0x106c02720]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tc-cached-codes-20261016/results/cached-tc-fixture-v96-host-diag-2(_ZN49_GLOBAL__N__5a8b3dc8_20_cached_tc_fixture_cu_main15run_oracle_caseERKNS_6FormatEiiRiS3_Rm+0x844)[0x106c03594]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tc-cached-codes-20261016/results/cached-tc-fixture-v96-host-diag-2(main+0x404)[0x106bfc9b4]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fffad8c4d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fffad8c4f6c]

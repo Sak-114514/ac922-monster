@@ -1,0 +1,19 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+FAIL qsa-device-bias-ggml-fixture: target backend does not support a device-bias graph op
+BACKEND_MODE name=cuda device=CUDA0 visible_devices=1
+OP_PLACEMENT name= (reshaped) op=RESHAPE assigned=CUDA0 target=CUDA0 supports_target=1
+OP_PLACEMENT name= (reshaped) (copy) op=CPY assigned=CUDA0 target=CUDA0 supports_target=1
+OP_PLACEMENT name= (reshaped) op=RESHAPE assigned=CUDA0 target=CUDA0 supports_target=1
+OP_PLACEMENT name= (reshaped) (copy) op=CPY assigned=CUDA0 target=CUDA0 supports_target=1
+OP_PLACEMENT name= (reshaped) op=RESHAPE assigned=CUDA0 target=CUDA0 supports_target=1
+OP_PLACEMENT name=node_2 op=REPEAT assigned=CUDA0 target=CUDA0 supports_target=1
+OP_PLACEMENT name=node_5 op=SUB assigned=CUDA0 target=CUDA0 supports_target=1
+OP_PLACEMENT name=node_6 op=SCALE assigned=CUDA0 target=CUDA0 supports_target=1
+OP_PLACEMENT name=node_7 op=UNARY assigned=CUDA0 target=CUDA0 supports_target=1
+OP_PLACEMENT name=node_8 op=SCALE assigned=CUDA0 target=CUDA0 supports_target=1
+OP_PLACEMENT name=node_10 op=ADD assigned=CUDA0 target=CUDA0 supports_target=1
+OP_PLACEMENT name= (cont) op=CONT assigned=CUDA0 target=CUDA0 supports_target=1
+OP_PLACEMENT name= (cont) (reshaped) op=RESHAPE assigned=CUDA0 target=CUDA0 supports_target=1
+OP_PLACEMENT name= (reshaped) op=RESHAPE assigned=CUDA0 target=CUDA0 supports_target=1
+OP_PLACEMENT name=node_14 op=REPEAT assigned=CUDA0 target=CUDA0 supports_target=0

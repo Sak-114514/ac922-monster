@@ -1,0 +1,58 @@
+DENSE_FIXTURE_START mode=host format=Q5_K type=q5_K K=2560 N=2048 weight_bytes=3604480 layout=2d ordinary_mul_mat source=original_expert170_raw_as_matrix semantic_claim=none shapes=32
+FP64_SAMPLE mode=host shape=T32 frame=A0 tokens=32 count=40 max_host_vs_f64=0.00235982337 max_serial_f32_vs_f64=5.79525258e-07
+SHAPE_RESULT mode=host format=Q5_K tokens=32 frame=A0 readback=exact canary=PASS finite=PASS
+FP64_SAMPLE mode=host shape=T32 frame=B tokens=32 count=40 max_host_vs_f64=0.00226210831 max_serial_f32_vs_f64=5.96655989e-07
+SHAPE_RESULT mode=host format=Q5_K tokens=32 frame=B readback=exact canary=PASS finite=PASS
+FP64_SAMPLE mode=host shape=T32 frame=A2 tokens=32 count=40 max_host_vs_f64=0.00235982337 max_serial_f32_vs_f64=5.79525258e-07
+SHAPE_RESULT mode=host format=Q5_K tokens=32 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=host format=Q5_K tokens=32 A_vs_B=changed A2_exact=1
+PASS_DTYPE mode=host format=Q5_K shapes=1 layout=2d weights_unchanged=1 canary=PASS
+DENSE_FIXTURE_START mode=host format=IQ2_XXS type=iq2_xxs K=2560 N=640 weight_bytes=422400 layout=2d ordinary_mul_mat source=original_expert170_raw_as_matrix semantic_claim=none shapes=32
+SHAPE_RESULT mode=host format=IQ2_XXS tokens=32 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=IQ2_XXS tokens=32 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=IQ2_XXS tokens=32 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=host format=IQ2_XXS tokens=32 A_vs_B=changed A2_exact=1
+PASS_DTYPE mode=host format=IQ2_XXS shapes=1 layout=2d weights_unchanged=1 canary=PASS
+DENSE_FIXTURE_START mode=host format=IQ2_XS type=iq2_xs K=2560 N=640 weight_bytes=473600 layout=2d ordinary_mul_mat source=original_expert170_raw_as_matrix semantic_claim=none shapes=32
+SHAPE_RESULT mode=host format=IQ2_XS tokens=32 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=IQ2_XS tokens=32 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=IQ2_XS tokens=32 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=host format=IQ2_XS tokens=32 A_vs_B=changed A2_exact=1
+PASS_DTYPE mode=host format=IQ2_XS shapes=1 layout=2d weights_unchanged=1 canary=PASS
+DENSE_FIXTURE_START mode=host format=IQ2_S type=iq2_s K=2560 N=640 weight_bytes=524800 layout=2d ordinary_mul_mat source=original_expert170_raw_as_matrix semantic_claim=none shapes=32
+SHAPE_RESULT mode=host format=IQ2_S tokens=32 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=IQ2_S tokens=32 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=IQ2_S tokens=32 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=host format=IQ2_S tokens=32 A_vs_B=changed A2_exact=1
+PASS_DTYPE mode=host format=IQ2_S shapes=1 layout=2d weights_unchanged=1 canary=PASS
+DENSE_FIXTURE_START mode=host format=IQ3_XXS type=iq3_xxs K=2560 N=640 weight_bytes=627200 layout=2d ordinary_mul_mat source=original_expert170_raw_as_matrix semantic_claim=none shapes=32
+SHAPE_RESULT mode=host format=IQ3_XXS tokens=32 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=IQ3_XXS tokens=32 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=IQ3_XXS tokens=32 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=host format=IQ3_XXS tokens=32 A_vs_B=changed A2_exact=1
+PASS_DTYPE mode=host format=IQ3_XXS shapes=1 layout=2d weights_unchanged=1 canary=PASS
+DENSE_FIXTURE_START mode=host format=IQ3_S type=iq3_s K=2560 N=640 weight_bytes=704000 layout=2d ordinary_mul_mat source=original_expert170_raw_as_matrix semantic_claim=none shapes=32
+SHAPE_RESULT mode=host format=IQ3_S tokens=32 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=IQ3_S tokens=32 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=IQ3_S tokens=32 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=host format=IQ3_S tokens=32 A_vs_B=changed A2_exact=1
+PASS_DTYPE mode=host format=IQ3_S shapes=1 layout=2d weights_unchanged=1 canary=PASS
+DENSE_FIXTURE_START mode=host format=IQ4_NL type=iq4_nl K=640 N=2560 weight_bytes=921600 layout=2d ordinary_mul_mat source=original_expert170_raw_as_matrix semantic_claim=none shapes=32
+SHAPE_RESULT mode=host format=IQ4_NL tokens=32 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=IQ4_NL tokens=32 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=IQ4_NL tokens=32 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=host format=IQ4_NL tokens=32 A_vs_B=changed A2_exact=1
+PASS_DTYPE mode=host format=IQ4_NL shapes=1 layout=2d weights_unchanged=1 canary=PASS
+DENSE_FIXTURE_START mode=host format=Q2_0 type=q2_0 K=640 N=2560 weight_bytes=460800 layout=2d ordinary_mul_mat source=original_expert170_raw_as_matrix semantic_claim=none shapes=32
+SHAPE_RESULT mode=host format=Q2_0 tokens=32 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=Q2_0 tokens=32 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=Q2_0 tokens=32 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=host format=Q2_0 tokens=32 A_vs_B=changed A2_exact=1
+PASS_DTYPE mode=host format=Q2_0 shapes=1 layout=2d weights_unchanged=1 canary=PASS
+DENSE_FIXTURE_START mode=host format=Q8_0 type=q8_0 K=5120 N=512 weight_bytes=2785280 layout=2d ordinary_mul_mat source=original_gguf_tensor_rows_as_matrix semantic_claim=none shapes=32
+SHAPE_RESULT mode=host format=Q8_0 tokens=32 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=Q8_0 tokens=32 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=host format=Q8_0 tokens=32 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=host format=Q8_0 tokens=32 A_vs_B=changed A2_exact=1
+PASS_DTYPE mode=host format=Q8_0 shapes=1 layout=2d weights_unchanged=1 canary=PASS
+PASS_HOST_ENTRY runtime=V89_CPU formats=9 shape=T32 backend=CPU cuda_init=not_called

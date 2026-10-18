@@ -1,0 +1,19 @@
+ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ENV CUDA_VISIBLE_DEVICES=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb GGML_META_CONTEXT_VIEWS=1 GGML_META_CONTEXT_VIEWS_TRACE=1
+DEVICE member=0 name=CUDA0 pci=0004:04:00.0
+DEVICE member=1 name=CUDA1 pci=0004:05:00.0
+DEVICE member=2 name=CUDA2 pci=0004:06:00.0
+/home/debian/ac922-monster/src/ggml/src/ggml-alloc.c:1170: GGML_ASSERT(ggml_get_no_alloc(ctx) == true) failed
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v46/lib/libggml-base.so.0(+0x23c28)[0x7fff93f13c28]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v46/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fff93f14228]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v46/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fff93f143c4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v46/lib/libggml-base.so.0(+0x43064)[0x7fff93f33064]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v46/lib/libggml-base.so.0(ggml_backend_alloc_ctx_tensors_from_buft+0x54)[0x7fff93f34c24]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v46/lib/libggml-base.so.0(ggml_backend_alloc_ctx_tensors+0x34)[0x7fff93f34ca4]
+./owner-real-backend-fixture(+0x5408)[0x12b495408]
+./owner-real-backend-fixture(+0x3428)[0x12b493428]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fff76ca4d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fff76ca4f6c]

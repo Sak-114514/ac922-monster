@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "status": "host_ready_no_gpu_run",
+  "runtime": {
+    "directory": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77",
+    "build_id": "20261016T051430.291943Z",
+    "report_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V77-build.json",
+    "report_sha256": "dc3d61c8228e40aa2135e087b02429d15905cce59306c1b5edd759dbf0d48a12"
+  },
+  "candidate": {
+    "scope": "private two-bank, two-lanes-per-bank, D3 runner; target-only four rows per active lane",
+    "source_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/target-verify-pad-20261016/dual-context-target-verify-pad.cpp",
+    "source_sha256": "81abc0b71e946b0b1b7102e97377d31296884809e06c538269eeba8014844e32",
+    "runner_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/target-verify-pad-20261016/build-runtime-target-verify-pad-nsys-20261016T055956Z/dual-context-target-verify-pad",
+    "runner_sha256": "7dcd91ec6a7e80b309cbe2b2de7aa6b2965bb71315487bca8b91b49528cd0599",
+    "runtime_closure": "V77 shared libraries; verified by host-link ldd check",
+    "cli": [
+      "RUNNER",
+      "MODEL_GGUF",
+      "NEW_OUTPUT_DIR"
+    ]
+  },
+  "profile": {
+    "exact_environment_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/target-verify-pad-20261016/target-verify-pad-exact-env.json",
+    "exact_environment_sha256": "378669387fba33e16dfb13c4ec96b46808ce66f67c3a689ead929b317f46d86c",
+    "inherited_profile": "V32 exact profile; the JSON contains all environment values and both new candidate switches at 0",
+    "pad_switch": {
+      "name": "ROOT_TARGET_VERIFY_PAD_PER_ACTIVE_LANE",
+      "default": "0",
+      "opt_in": "1"
+    },
+    "nsys_prefill_switch": {
+      "name": "ROOT_NSYS_PREFILL_PROFILE",
+      "default": "0",
+      "diagnostic_opt_in": "1",
+      "clean_profile_behavior": "profiler API is not called"
+    },
+    "relay": {
+      "configured_here": false,
+      "status": "separate capacity/dispatch gate; keep fail-closed until its owner qualifies it"
+    }
+  },
+  "launcher": {
+    "candidate_wrapper": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/target-verify-pad-20261016/run-target-verify-pad.sh",
+    "delegated_quality_launcher": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v32-parent-walkfast-2bank2-20261016/run-v32-shortctx.sh",
+    "invocation": "ROOT_TARGET_VERIFY_PAD_PER_ACTIVE_LANE=1 ROOT_NSYS_PREFILL_PROFILE=0 run-target-verify-pad.sh RUNNER MODEL_GGUF NEW_OUTPUT_DIR",
+    "nsys_invocation_addition": "For the separate diagnostic capture, set ROOT_NSYS_PREFILL_PROFILE=1 and launch under nsys profile --capture-range=cudaProfilerApi --capture-range-end=stop.",
+    "authorization": "The V32 wrapper still requires the root GPU-window token and original semantic, preclean, generated-token, and capacity gates."
+  },
+  "activation_markers": {
+    "pad_prefix": "target-verify-pad-plan active=1",
+    "pad_fields": [
+      "bank",
+      "frame",
+      "active_lanes",
+      "real_rows",
+      "pad_rows",
+      "total_rows",
+      "score_rows",
+      "output_rows",
+      "depth",
+      "row_budget"
+    ],
+    "expected_shape": "For two active lanes and D3, total_rows=output_rows=row_budget=8; real_rows+pad_rows=8.",
+    "nsys_activation_prefix": "nsys-prefill-range active=1 profile=diagnostic scenario=single8k-pp-warm-32",
+    "nsys_start_prefix": "nsys-prefill-range-start scenario=single8k-pp-warm-32",
+    "nsys_stop_prefix": "nsys-prefill-range-stop scenario=single8k-pp-warm-32",
+    "nsys_window_artifact": "copy1/diagnostic/nsys-prefill-window.json",
+    "nsys_range_scope": "Only prefill_banks_on_persistent_owners(); V32 wrapper forces CUPTI off; clean profile logs skipped and remains unprofiled",
+    "nsys_window_fields": [
+      "request_start_monotonic_ns",
+      "request_end_monotonic_ns",
+      "request_start_realtime_ns",
+      "request_end_realtime_ns",
+      "profiler_start_call_monotonic_before_ns",
+      "profiler_start_call_monotonic_after_ns",
+      "profiler_stop_call_monotonic_before_ns",
+      "profiler_stop_call_monotonic_after_ns"
+    ]
+  },
+  "capacity_and_gate_evidence": [
+    {
+      "kind": "private CPU planner row-budget and acceptance regression",
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/target-verify-pad-20261016/results/cpu-planner-ac922-final-20261016T054924Z.log",
+      "sha256": "b64f8cf37a9b38779b3303e8dbb6c0fb2ce69b41acc4aca5c3ce3996f572d5fa",
+      "result": "PASS; planner budget is 8 and D3 rollback choices 0..3 are covered"
+    },
+    {
+      "kind": "V32 actual baseline and output-capacity profile evidence",
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v32-parent-walkfast-2bank2-20261016/STATUS.md",
+      "sha256": "6411187b05327a75253ff97d6e6042cd0ac970c5699ad1c4a2bdb0229b91a595",
+      "result": "8-row V32 D3 target capacity; semantic/preclean/token gates passed, while two auxiliary-prefix gates remain failed"
+    },
+    {
+      "kind": "V77 prerequisite tiny qualification evidence",
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v32-parent-walkfast-2bank2-20261016/v77-parent-walk-tiny-gate-evidence.txt",
+      "sha256": "96808f7b37dbb0891a4e826bcf39a34405da6b5a8f841c86d14bd3bb0a7fa521",
+      "result": "Fixture-only tiny gates; not a pad-runner or model-quality result"
+    }
+  ],
+  "verification": {
+    "cpp_syntax": "V77 AC922 host g++ -fsyntax-only passed",
+    "host_link": "V77 host link and dynamic-library closure passed",
+    "model_loaded": false,
+    "gpu_used": false,
+    "nvcc_invoked": false,
+    "pad_runtime_marker_observed": false,
+    "nsys_capture_observed": false
+  }
+}

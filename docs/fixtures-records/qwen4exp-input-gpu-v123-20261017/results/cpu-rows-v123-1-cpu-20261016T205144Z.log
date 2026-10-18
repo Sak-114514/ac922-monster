@@ -1,0 +1,16 @@
+start=2026-10-16T20:51:44Z
+base=/home/debian/ac922-monster/experiments/standard-opt-20261014
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v123
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qwen4exp-input-gpu-v123-20261017/qwen4exp-input-gpu-v123-host2
+mode=cpu
+model_loaded=0
+timeout_seconds=20
+1839ea109da7e343b4a5c0279b2d1f2fca364d069cee4bb22ceb3c593f03148e  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qwen4exp-input-gpu-v123-20261017/qwen4exp-input-gpu-v123-host2
+SOURCE_ROWS type=iq3_s ne0=2560 vocab=248320 row_bytes=1100 payload_offset=461217728 compact_rows=8 original_global_ids=0,248319,124160,1,248318,82773,49664,3 original_first_last_selected=1 compact_index_remap=1 full_vocab_index_addressing=not_tested
+GET_ROWS phase=A1 backend=CPU rows=8 ids=32 output_bytes=327680 input_immutable=1 canaries=1
+GET_ROWS phase=B backend=CPU rows=8 ids=32 output_bytes=327680 input_immutable=1 canaries=1
+GET_ROWS phase=A2 backend=CPU rows=8 ids=32 output_bytes=327680 input_immutable=1 canaries=1
+PASS_CPU_GET_ROWS type=iq3_s ne0=2560 vocab=248320 sampled_rows=8 A_B_A=1 exact_repeat=1 original_data=1
+end=2026-10-16T20:51:45Z
+elapsed_seconds=1
+exit_status=0

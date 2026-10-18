@@ -1,0 +1,224 @@
+{
+  "schema": "ac922-v21-postrun-analysis-corrected-v1",
+  "analysis_scope": "CPU-only post-run read; original result, manifest, and runtime-log files are unchanged",
+  "run": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v21-prep-20261016/results/p4-d3-20261015T234920Z/copy1",
+    "runner_return_code": 1,
+    "copy_mode": 1,
+    "model_load_count": 1,
+    "runtime_revision": "20261015T234005.671446Z",
+    "clean_performance_eligible": false,
+    "performance_label": "diagnostic-only; F32 prompt-logit snapshots were enabled",
+    "run_id": "p4-d3-20261015T234920Z",
+    "run_manifest_phase": "finish",
+    "runtime_build_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V58-build.json"
+  },
+  "source_artifacts": {
+    "v21_results_json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v21-prep-20261016/results/p4-d3-20261015T234920Z/copy1/results.json",
+      "sha256": "6bc3a04beb5b1d22a4dfddf2f169662f1c8192c59fbb8d24bd38d673eb9e1d10"
+    },
+    "v21_semantic_gate": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v21-prep-20261016/results/p4-d3-20261015T234920Z/copy1/results.json.semantic-gate.json",
+      "sha256": "95efa297ef66d3935c9620e1531ace7f0b4565512afba5190cadd951657ee426"
+    },
+    "v21_runtime_log": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v21-prep-20261016/results/p4-d3-20261015T234920Z/copy1/runtime.log",
+      "sha256": "077f6021d85d8a7b47188db2f0a94a13534800224e87a40aafae4f29504cc444"
+    },
+    "r19_baseline_results_json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v19-prep-20261016/results/p4-d3-20261015T223353Z/results.json",
+      "sha256": "a41fbbd7ad56a5b5775f71a929d91f25fd65f1c66ce39bbac83ca4e72a3081f4"
+    }
+  },
+  "quality": {
+    "native_semantic": {
+      "status": "pass",
+      "scenarios": 12,
+      "cases_passed": 32,
+      "cases_failed": 0,
+      "checker": "run_semantic_native.evaluate_case"
+    },
+    "serial_vs_p4_prefill_f32": {
+      "pairs_before_and_after_mtp_exact": 40,
+      "pairs_total": 40,
+      "max_abs_diff": 0.0,
+      "max_rms_diff": 0.0,
+      "argmax_equal": 40
+    },
+    "same_flow_before_vs_after_mtp_f32": {
+      "pairs_exact": 42,
+      "pairs_total": 42,
+      "max_abs_diff": 0.0,
+      "argmax_equal": 42
+    },
+    "serial_vs_p4_generated_tokens": {
+      "pairs_exact": 19,
+      "pairs_total": 20,
+      "failed_pairs": [
+        {
+          "id": "real8k-0",
+          "tokens_each": 256,
+          "first_diff_zero_based_index": 231,
+          "serial_tokens_at_diff": [
+            948,
+            279,
+            2136,
+            15511
+          ],
+          "p4_tokens_at_diff": [
+            413,
+            2136,
+            15511,
+            557
+          ]
+        }
+      ]
+    },
+    "single_8k_probe_prefix": {
+      "checks_exact": 0,
+      "checks_total": 2,
+      "checks": [
+        {
+          "id": "single8k-pp-probe-prefix",
+          "first_diff_zero_based_index": 3,
+          "probe_first_three_match_warm_probe": true
+        },
+        {
+          "id": "pp-warm-prefix",
+          "first_diff_zero_based_index": 3,
+          "probe_first_three_match_cold_probe": true
+        }
+      ]
+    },
+    "conclusion": "Prefill logits matched exactly for all serial/P4 pairs and before/after MTP dumps; the full original token-parity gate remains failed because real8k-0 diverged late and both single-lane probe prefixes diverged at zero-based token index 3."
+  },
+  "performance": {
+    "metric": "4-lane shared decode common window",
+    "v21": {
+      "tokens": 887,
+      "seconds": 6.954407,
+      "tok_s": 127.54502288980211
+    },
+    "r19_baseline": {
+      "tokens": 887,
+      "seconds": 6.748059,
+      "tok_s": 131.44520520641566
+    },
+    "change_percent": -2.9671544964221974,
+    "warm_uncached_8k_pp": {
+      "v21_whole_tok_s": 1475.6919737992619,
+      "r19_whole_tok_s": 1516.648887266259,
+      "change_percent": -2.7004874899437925,
+      "v21_target_tok_s": 1745.0869369421187,
+      "r19_target_tok_s": 1764.629602264723,
+      "target_change_percent": -1.10746557223812
+    },
+    "cold_uncached_8k_pp": {
+      "v21_whole_tok_s": 833.6910511122225,
+      "v21_target_tok_s": 1011.9215775600461,
+      "target_prefill_us": 8095489,
+      "mtp_prefill_us": 1644572,
+      "diagnostic_io_us": 85526
+    },
+    "warm_probe_timing": {
+      "target_prefill_us": 4694322,
+      "mtp_prefill_us": 771095,
+      "diagnostic_io_us": 85326
+    }
+  },
+  "cpu_to_meta_async_copy": {
+    "policy_constructor_markers_requested_enabled_1": 6,
+    "successful_copy_active_markers": 6,
+    "backend_summaries": 6,
+    "successful_copy_calls": 3696,
+    "successful_bytes": 1518086304,
+    "slot_waits": 435,
+    "summaries_in_log_order": [
+      {
+        "copies": 261,
+        "bytes": 242032640,
+        "slot_waits": 56
+      },
+      {
+        "copies": 478,
+        "bytes": 40792828,
+        "slot_waits": 47
+      },
+      {
+        "copies": 258,
+        "bytes": 14803708,
+        "slot_waits": 16
+      },
+      {
+        "copies": 695,
+        "bytes": 897515520,
+        "slot_waits": 197
+      },
+      {
+        "copies": 1340,
+        "bytes": 285354324,
+        "slot_waits": 78
+      },
+      {
+        "copies": 664,
+        "bytes": 37587284,
+        "slot_waits": 41
+      }
+    ],
+    "first_successful_paths_observed": [
+      {
+        "source": "model.input_embed",
+        "src_op": "GET_ROWS",
+        "bytes": 327680
+      },
+      {
+        "source": "rs_s_copy (view)",
+        "src_op": "VIEW",
+        "bytes": 4
+      },
+      {
+        "source": "mtp_tok_embd-48",
+        "src_op": "GET_ROWS",
+        "bytes": 327680
+      },
+      {
+        "source": "model.input_embed",
+        "src_op": "GET_ROWS",
+        "bytes": 358400
+      },
+      {
+        "source": "rs_s_copy (view)",
+        "src_op": "VIEW",
+        "bytes": 4
+      },
+      {
+        "source": "mtp_tok_embd-48",
+        "src_op": "GET_ROWS",
+        "bytes": 358400
+      }
+    ],
+    "fallbacks": {
+      "pinned_budget_full": 164,
+      "invalid_or_empty_copy": 900
+    },
+    "budget_full_examples": [
+      {
+        "source": "mtp_h_state-48",
+        "src_op": "RESHAPE",
+        "bytes": 20971520,
+        "detailed_events": 2
+      },
+      {
+        "source": "model.input_embed",
+        "src_op": "GET_ROWS",
+        "bytes": 10485760,
+        "detailed_events": 1
+      }
+    ],
+    "budget_note": "The runtime configured a global 64 MiB pinned budget; 164 requested copies used the explicit pinned_budget_full fallback. The detailed 20 MiB and 10 MiB examples are fallback requests, not additional successful bytes.",
+    "invalid_or_empty_note": "900 summary-counted declines were invalid_or_empty_copy; the detailed examples are zero-byte rs_s_copy (view) VIEW requests.",
+    "pointer_identity_note": "Constructor markers print Meta-context pointers; active/fallback/summary markers print backend pointers. No address-based cross-correlation was made."
+  },
+  "baseline_correction": "R19 raw shared TG is 131.44520520641566 tok/s, not 151.6 tok/s. The 1516.648887 and 1764.629602 figures are R19 warm whole/target prefill tok/s."
+}

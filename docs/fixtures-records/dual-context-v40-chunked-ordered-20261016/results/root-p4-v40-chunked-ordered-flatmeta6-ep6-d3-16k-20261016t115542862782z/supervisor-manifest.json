@@ -1,0 +1,543 @@
+{
+  "tag": "root-p4-v40-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t115542862782z",
+  "unit": "root-p4-v40-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t115542862782z",
+  "output": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v40-chunked-ordered-20261016/results/root-p4-v40-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t115542862782z",
+  "status": "one V40/V92 model load; no automatic retry",
+  "root_authorization": "one V40 full-model GPU window authorized by root",
+  "runtime_and_runner": {
+    "build_id": "20261016T112235.532285Z",
+    "report_sha256": "320160fda5ee9b256f80494f4e0b783db4b20f1aee3b0886b964d67a9c8c652d",
+    "runner": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v38-flatmeta6-combined-20261016/build-runtime-v89/dual-context-v38-flatmeta6",
+    "runner_sha256": "fb9c3130889e3eb15b7077d7b16d2b42661c3f9a7127058319d3258985c403e2",
+    "runtime": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92",
+    "ldd": "linux-vdso64.so.1 (0x00007fff84f90000)\n\tlibllama-common.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib/libllama-common.so.0 (0x00007fff849a0000)\n\tlibmtmd.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib/libmtmd.so.0 (0x00007fff847a0000)\n\tlibllama.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib/libllama.so.0 (0x00007fff84410000)\n\tlibggml.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib/libggml.so.0 (0x00007fff843e0000)\n\tlibggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib/libggml-cpu.so.0 (0x00007fff84220000)\n\tlibggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib/libggml-cuda.so.0 (0x00007fff766a0000)\n\tlibggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib/libggml-base.so.0 (0x00007fff76520000)\n\tlibstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fff761f0000)\n\tlibgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fff761b0000)\n\tlibc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fff75f50000)\n\tlibm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fff75e20000)\n\t/lib64/ld64.so.2 (0x00007fff84fb0000)\n\tlibgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fff75da0000)\n\tlibcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fff75cc0000)\n\tlibcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fff6efa0000)\n\tlibcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fff6d1e0000)\n\tlibnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff6b380000)\n\tlibdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff6b350000)\n\tlibpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff6b320000)\n\tlibrt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff6b2f0000)\n\tlibcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff57460000)",
+    "model_exists": true
+  },
+  "source_sha256s": {
+    "make_v40_profile.py": "b4280e7387d47f9fa68aeca8b622ae90256940fe9e95156bfb749bd8d8096598",
+    "V92-build.json": "320160fda5ee9b256f80494f4e0b783db4b20f1aee3b0886b964d67a9c8c652d",
+    "v40-exact-env.json": "006374a1556355c05b2f3f3ac2149768a89fab7b82ac100b87379683299eff31",
+    "v40-micro-gates.json": "bc58e4c5499504634c4d34072ba33eabc43e8c1a9c6edbe2426036ab294d4b5d",
+    "v40-environment-diff.json": "3f5eb696b13f73532045c987cd6abea94deadeb33cae72a83e1ddd233ceeb0ec",
+    "run-v40-flatmeta6.sh": "4d3f135c7f3f745a56e50f75d9499f6b07eaedb645ef5c83b1ae30a7f4489907",
+    "run-v40-supervisor.py": "fbbea9e4f54e82d172035556a5807d873a445ff6a87fd37a027035ec6fe18376",
+    "verify_v40_activation.py": "5020a6fcb94da214a1d4422d51183fd1d896ccf6584df2d4410ff2d31f75d008",
+    "compare_v40_results.py": "a68cd98f352b276d96866880d4b826528ea8795ef7d1291ce6174305f36ef2dc",
+    "compare_v40_vs_v37_token_arrays.py": "df71f59b507bc3906428f977b87073f28d06e6bdc75a99959c0ae05441f50749",
+    "write_run_manifest_v40.py": "9b3407fb9fdc60f66d65ed94a638ec84f649910a0f0e0f11a0b198e0e69a463e",
+    "plan-v37-flatmeta6d3.json": "a6bfb5cda3a2011b43fcead76b017e3eb9c34e597d6bcf4b4f7055d6fea36172",
+    "scenarios.json": "0696a6c100a209ae97fda17c80a8f951d246c9c871ed69478d48e092eb6f4ac4",
+    "../../notes/v92-ordered-relay-plan.md": "0b684ec4505bca1dd680ebb9692173e18ff5ad940b97250332f4de9dd9dc42b2",
+    "../../src/ggml/src/ggml-cuda/allreduce-p2p.cu": "b0790248c39350d862e09d0841575a8c7bad1e3c5de19fe50e55c8c9ad311b19",
+    "../relay6-ordered-20261016/relay6-dispatcher-10m.cu": "fa92ced502ff3b48a4c32873ef99d499797ad84b35a89933a4ca9536c4e54e23",
+    "../relay6-ordered-20261016/build-v92.sh": "12bb92c03c43e729cf22471e9267e4d68bb2f002c731f57abb7c61ccaf739a0f",
+    "../relay6-ordered-20261016/run-bounded.sh": "89042e6abb902548100d6e328cafd70c6982ce4b29d38283465051abfec01fc7",
+    "../relay6-ordered-20261016/validate-relay6-ordered.py": "cee8a577543565f2f66f0d4c79f08d78a7f7450f5b1f71c94da5baa9ed6e2bd1",
+    "../dual-context-v38-flatmeta6-combined-20261016/dual-context-v38-flatmeta6.cpp": "6716ee3ffde573f1f8c5739e460618e0469787e94de89734de156cbf4dc6c2c9",
+    "../dual-context-v38-flatmeta6-combined-20261016/make_v38_profile.py": "42d7d039950bc934324f8145613cc5e24e5d602ec98c9202012807c570cffa3e",
+    "../dual-context-v38-flatmeta6-combined-20261016/v38-flatmeta6-combined-exact-env.json": "2c03b6db4d4d422038a2cc22b6a327f8bead031b29db8ea89a77710aca5f4ee7",
+    "../dual-context-v38-flatmeta6-combined-20261016/v38-micro-gates.json": "2742bc298374316665c97d9d2a20025b2b6ab502f10f990fa684906ddf22d550",
+    "../dual-context-v38-flatmeta6-combined-20261016/run-v38-flatmeta6.sh": "b1a59337f73846d7d915f3759e42b50919d0659830b8787bc40eb2735fd677f7",
+    "../dual-context-v38-flatmeta6-combined-20261016/run-v38-supervisor.py": "448a4a89e45ef4746e37fb2e956c87c1ab20d1c1d537c19e36c419b226862f0c",
+    "../dual-context-v38-flatmeta6-combined-20261016/verify_v38_activation.py": "6192ee9405bb81386ef8624ab610cb72ceb53849b800d2cb6b013ad0349dd1b6",
+    "../dual-context-v38-flatmeta6-combined-20261016/compare_v38_results.py": "ee9ade805a12a3310983b05093ccf29eeb09f4172ffb3a7d3e96dd80b45e44c4",
+    "../dual-context-v38-flatmeta6-combined-20261016/compare_v38_vs_v37_token_arrays.py": "03a66ed502c6939a9fe93d22f6c1dc86d8dc1f986bc978128e895f1442318f18",
+    "../dual-context-v38-flatmeta6-combined-20261016/write_run_manifest_v38.py": "04c6b3a629cce4653efb35272caa55be8aa188b1672856cbd809b1a39e7ab7f7",
+    "../dual-context-v38-flatmeta6-combined-20261016/build-v38-runner-v89.sh": "ce125813d42eb807191566db966c45a02bb0c5ab51937302de0014886851e57b",
+    "../dual-context-v37-flatmeta6-20261016/dual-context-v37-flatmeta6.cpp": "18201fa63ffbf942876a33678c8bb5cd7ba4e95697296dcd514fe6eac13195aa",
+    "../dual-context-v37-flatmeta6-20261016/make_v37_profile.py": "7601d5ccdc9ea08340e62c5d06e5052e3c41785bce4fc5e293db5f8056448f5c",
+    "../dual-context-v37-flatmeta6-20261016/v37-flatmeta6-exact-env.json": "5f947b1ac7d965bc5cec5405bb6431cdd2e1ae6f0355b3c73a2d2db4b1e290e0",
+    "../dual-context-v37-flatmeta6-20261016/plan-v37-flatmeta6d3.json": "a6bfb5cda3a2011b43fcead76b017e3eb9c34e597d6bcf4b4f7055d6fea36172",
+    "../dual-context-v37-flatmeta6-20261016/scenarios.json": "0696a6c100a209ae97fda17c80a8f951d246c9c871ed69478d48e092eb6f4ac4",
+    "../dual-context-v37-flatmeta6-20261016/prepare_variant_v37.py": "001b06b1482b1318840cbc38d0f968ebfdf3fcd2babd01065a07cd8e41d3b967",
+    "../dual-context-v37-flatmeta6-20261016/compare_v37_results.py": "c69381bc1f4bda9c9af2af182101ec6f5669c8ecd92bf3c486cc2fb344af4087",
+    "../dual-context-v37-flatmeta6-20261016/compare_v37_vs_v27_token_arrays.py": "4ae59b51603b3a4b8e3f98a830b80a6d16a963e1ff74a4b2a217e723ba7b3f02",
+    "../dual-context-v37-flatmeta6-20261016/verify_v37_activation.py": "92f82658a00b33c9617dc5469a77587ec04c9cf68f94934a9ad1c83647601508",
+    "../dual-context-v35-onebank4-combined-20261016/write_run_manifest_v35.py": "68275aeaaf8e8a7eb2a97bb5acb09b84e926412ad25609c0ebae909aa110f509",
+    "../dual-context-v35-onebank4-combined-20261016/semantic_gate_v14.py": "60735017c01411d0e1e5826ca19bd9cb9d7f57c738dbbca1619c914a6d7399a4",
+    "../dual-context-v35-onebank4-combined-20261016/preclean_quality_gate_v22.py": "4b97209a30737eea347ef3d5293019254b9b42180ba5b5e5f55f076c06224fbc",
+    "../dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py": "8933b4f343df5cc699161b01e257f4466670abb0c50e930b237287dae21d4921",
+    "../dual-context-v35-onebank4-combined-20261016/summarize_v35_clean_prefill.py": "2ecb9a80ad7092fd1c9d5ad80e5539d37063eaf8be7de8b5827dfb8705962ae9",
+    "../dual-context-v35-onebank4-combined-20261016/dual-context-v14-results.h": "47bd1bc701d95ea6f8d4f6af1ec8940284cf8826b3283281c1b44b7889f83410",
+    "../dual-context-v35-onebank4-combined-20261016/dual-context-v15-owner.h": "172cf33efed70365032bf476a822953a13b6fe6313520d40d8fede5acde64030",
+    "../dual-context-v35-onebank4-combined-20261016/target-verify-pad-plan-v35.h": "db2a89eb1b137d8c9364a67e1c22c10e2e128743d515e8d20ccb965cecaf5802",
+    "../dual-context-v35-onebank4-combined-20261016/kv-layout-policy-v35.h": "69824869c9d74dcd710e332ed76d20923e80dfe19c08c3869efca2fff718961e",
+    "../dual-context-v34-standard-qsa-20261016/v34-supervisor-config.json": "50e30a3767844a2c59d719e4e2a144ecfb1d9e00757e1c16a77d75c3b7664e10",
+    "../flatmeta6-cold-flat-ar-20261016/results/v89-force1-sync0-20261016T110835Z.log": "4b8518096d987c34ce6e85df300c2a87ac99107472857e492eae940c593059e1",
+    "../flatmeta6-cold-flat-ar-20261016/results/v91-depth-force1-sync0-20261016T113821Z.log": "800245bc91230c3f0a761fbd211d722b760111266558f5fec615cfd67e3a9b39",
+    "../relay6-ordered-20261016/results/v92-ordered-v92-host3-eventwait-20261016T114500Z/summary.json": "586fed0b3e086dab753059d8de8a60ce02c4b87e4846c6cc1de9f2db0528c605",
+    "../relay6-ordered-20261016/results/v92-ordered-v92-host3-eventwait-20261016T114500Z/run.log": "d00796bc82df2c29c89b9e2e5bdaa3629d5d67264bee9c365f129877cf27bdbd",
+    "../sm70-packed-dense-mulmat-20261016/results/v89-dense-shapes-v89-nine-formats-gpu3-20261016T1910Z/validation.log": "78d1e28178980a751d3fa347a28801c5e74d170960b73ff61ed52753e8a4e63d"
+  },
+  "micro_gate_artifacts": {
+    "mtp": {
+      "status": "PASS",
+      "artifacts": [
+        {
+          "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mtp-d3-four-lane-20261016/results/mtp-d3-four-lane-20261016T034003Z-128380.log",
+          "sha256": "eca71aa3f9f21fb0fb198090f3e5c5a10f386750a5d7d458fef090aa8e52a5a5"
+        }
+      ]
+    },
+    "cpu_async_copy_32m": {
+      "status": "PASS",
+      "artifacts": [
+        {
+          "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cpu-meta-large-shapes-20261016/results/gpu-v80-large-shapes-20261016T100423Z-201536/run.log",
+          "sha256": "819e6814e575a5cfea249d4d8a3d8558d4ed8a7c1bcde511c8e67c583331cef8"
+        }
+      ]
+    },
+    "decode_linear_packed": {
+      "status": "PASS",
+      "artifacts": [
+        {
+          "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/q5k-v87-linear-packed-20261016/results/v87-linear-packed-v87-corrected-20261016T101424Z/run.log",
+          "sha256": "70672eb00d63cc5d7d1e548a63145bb1f98ff907074f41c4ded1fcb80d98348c"
+        }
+      ]
+    },
+    "ple12_policy_and_reserves": {
+      "status": "PASS",
+      "artifacts": [
+        {
+          "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V89-build.json",
+          "sha256": "4f1d5799decf78e8139dc10a6d7296ee6af5b8f81dddbdf1deba36f10b0afc47"
+        }
+      ]
+    },
+    "single_chunk_cold_drain": {
+      "status": "PASS",
+      "artifacts": [
+        {
+          "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/flatmeta6-cold-flat-ar-20261016/results/v89-force1-sync0-20261016T110835Z.log",
+          "sha256": "4b8518096d987c34ce6e85df300c2a87ac99107472857e492eae940c593059e1"
+        }
+      ]
+    },
+    "packed_dense_nine_formats_t24_t64": {
+      "status": "PASS",
+      "artifacts": [
+        {
+          "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/sm70-packed-dense-mulmat-20261016/results/v89-dense-shapes-v89-nine-formats-gpu3-20261016T1910Z/validation.log",
+          "sha256": "78d1e28178980a751d3fa347a28801c5e74d170960b73ff61ed52753e8a4e63d"
+        }
+      ]
+    },
+    "ordered_relay6_kind4_and_small_fallback": {
+      "status": "PASS",
+      "artifacts": [
+        {
+          "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-20261016/results/v92-ordered-v92-host3-eventwait-20261016T114500Z/summary.json",
+          "sha256": "586fed0b3e086dab753059d8de8a60ce02c4b87e4846c6cc1de9f2db0528c605"
+        },
+        {
+          "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-20261016/results/v92-ordered-v92-host3-eventwait-20261016T114500Z/run.log",
+          "sha256": "d00796bc82df2c29c89b9e2e5bdaa3629d5d67264bee9c365f129877cf27bdbd"
+        }
+      ]
+    }
+  },
+  "profile_path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v40-chunked-ordered-20261016/v40-exact-env.json",
+  "profile_sha256": "006374a1556355c05b2f3f3ac2149768a89fab7b82ac100b87379683299eff31",
+  "micro_report_sha256": "bc58e4c5499504634c4d34072ba33eabc43e8c1a9c6edbe2426036ab294d4b5d",
+  "initial_safety_gate": {
+    "host": {
+      "via": "ac922",
+      "gpu": [
+        {
+          "uuid": "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f",
+          "free_mib": 16121,
+          "temp_c": 38,
+          "util_pct": 0
+        },
+        {
+          "uuid": "GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+          "free_mib": 16120,
+          "temp_c": 37,
+          "util_pct": 0
+        },
+        {
+          "uuid": "GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+          "free_mib": 16119,
+          "temp_c": 38,
+          "util_pct": 0
+        },
+        {
+          "uuid": "GPU-fadb0459-4d30-907b-289a-862b3014f165",
+          "free_mib": 16120,
+          "temp_c": 38,
+          "util_pct": 0
+        },
+        {
+          "uuid": "GPU-760ce501-32f6-69b6-215b-1020da68bbfc",
+          "free_mib": 16116,
+          "temp_c": 38,
+          "util_pct": 0
+        },
+        {
+          "uuid": "GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+          "free_mib": 16117,
+          "temp_c": 38,
+          "util_pct": 0
+        }
+      ],
+      "compute_pids": []
+    },
+    "bmc": {
+      "air_max_c": 40.0,
+      "bmc_utc": "2026-10-16T12:05:08.978403Z",
+      "chassis": "On",
+      "fan": {
+        "fan0": {
+          "alarm": 0,
+          "fault": 0,
+          "rpm": 2862,
+          "rpm_secondary": 3104,
+          "target": 3000
+        },
+        "fan2": {
+          "alarm": 0,
+          "fault": 0,
+          "rpm": 2873,
+          "rpm_secondary": 3106,
+          "target": 3000
+        },
+        "fan3": {
+          "alarm": 0,
+          "fault": 0,
+          "rpm": 2851,
+          "rpm_secondary": 3099,
+          "target": 3000
+        }
+      },
+      "host": "Running",
+      "inventory_functional": {
+        "fan0": true,
+        "fan2": true,
+        "fan3": true
+      },
+      "masks_ok": true,
+      "max_c": 40.0,
+      "temperatures_c": {
+        "ambient": 31.193,
+        "dimm11_temp": 38.0,
+        "dimm3_temp": 39.0,
+        "gpu0_core_temp": 38.0,
+        "gpu1_core_temp": 37.0,
+        "gpu2_core_temp": 38.0,
+        "gpu3_core_temp": 38.0,
+        "gpu4_core_temp": 38.0,
+        "gpu5_core_temp": 38.0,
+        "p0_core0_temp": 36.0,
+        "p0_core10_temp": 36.0,
+        "p0_core11_temp": 37.0,
+        "p0_core12_temp": 36.0,
+        "p0_core13_temp": 36.0,
+        "p0_core14_temp": 38.0,
+        "p0_core15_temp": 38.0,
+        "p0_core16_temp": 36.0,
+        "p0_core17_temp": 37.0,
+        "p0_core18_temp": 36.0,
+        "p0_core19_temp": 36.0,
+        "p0_core20_temp": 37.0,
+        "p0_core22_temp": 36.0,
+        "p0_core23_temp": 36.0,
+        "p0_core2_temp": 36.0,
+        "p0_core3_temp": 36.0,
+        "p0_core4_temp": 36.0,
+        "p0_core5_temp": 36.0,
+        "p0_core6_temp": 36.0,
+        "p0_core7_temp": 37.0,
+        "p0_core8_temp": 36.0,
+        "p0_core9_temp": 36.0,
+        "p0_vdd_temp": 39.0,
+        "p0_vddr_temp": 39.0,
+        "p1_core0_temp": 37.0,
+        "p1_core10_temp": 36.0,
+        "p1_core11_temp": 36.0,
+        "p1_core12_temp": 37.0,
+        "p1_core13_temp": 37.0,
+        "p1_core14_temp": 37.0,
+        "p1_core15_temp": 36.0,
+        "p1_core18_temp": 36.0,
+        "p1_core19_temp": 37.0,
+        "p1_core1_temp": 36.0,
+        "p1_core20_temp": 37.0,
+        "p1_core21_temp": 36.0,
+        "p1_core22_temp": 36.0,
+        "p1_core23_temp": 37.0,
+        "p1_core2_temp": 37.0,
+        "p1_core3_temp": 36.0,
+        "p1_core4_temp": 36.0,
+        "p1_core5_temp": 37.0,
+        "p1_core6_temp": 37.0,
+        "p1_core7_temp": 37.0,
+        "p1_core8_temp": 37.0,
+        "p1_core9_temp": 36.0,
+        "p1_vdd_temp": 39.0,
+        "p1_vddr_temp": 40.0,
+        "pcie": 39.25
+      },
+      "uptime": 1647106.59
+    },
+    "bmc_age_seconds": 7.89090895652771,
+    "watch_root": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/notes/boot-watch-20261016T003420Z",
+    "watcher_process": "37332",
+    "fan_monitor_watchdog": [
+      "inactive",
+      "active"
+    ],
+    "bmc_ssh_via": "ac922-bmc6"
+  },
+  "hardware_caps_at_launch": {
+    "status": "PASS",
+    "via": "ac922",
+    "sampled_at_utc": "2026-10-16T11:55:42.862406+00:00",
+    "gpu_caps": [
+      {
+        "uuid": "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f",
+        "power_limit_w": 300.0,
+        "temperature_c": 38
+      },
+      {
+        "uuid": "GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+        "power_limit_w": 300.0,
+        "temperature_c": 37
+      },
+      {
+        "uuid": "GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+        "power_limit_w": 300.0,
+        "temperature_c": 38
+      },
+      {
+        "uuid": "GPU-fadb0459-4d30-907b-289a-862b3014f165",
+        "power_limit_w": 300.0,
+        "temperature_c": 38
+      },
+      {
+        "uuid": "GPU-760ce501-32f6-69b6-215b-1020da68bbfc",
+        "power_limit_w": 300.0,
+        "temperature_c": 38
+      },
+      {
+        "uuid": "GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+        "power_limit_w": 300.0,
+        "temperature_c": 38
+      }
+    ],
+    "cpu_scaling": {
+      "max": 2600000,
+      "min": 2300000,
+      "governor": "ondemand"
+    }
+  },
+  "environment": {
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_VISIBLE_DEVICES": "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+    "LD_LIBRARY_PATH": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib",
+    "LLAMA_ISLAND_SPLIT": "6",
+    "GGML_CUDA_P2P": "1",
+    "GGML_CUDA_ALLREDUCE": "nccl",
+    "LLAMA_QSA_INDEXER_IMPL": "standard",
+    "GGML_SM70_BF16_GEMV": "1",
+    "GGML_SM70_MOE_REWORK": "1",
+    "GGML_CUDA_MOE_GROUPED": "1",
+    "GGML_CUDA_VOLTA_GDN_X4": "1",
+    "LLAMA_QSA_SPARSE_KERNEL": "1",
+    "LLAMA_QSA_GATHER_MAX_TOKENS": "32",
+    "GGML_CUDA_TOPK_STABLE": "1",
+    "LLAMA_MTP_FOLD": "1",
+    "LLAMA_MTP_GPU_CHAIN": "1",
+    "LLAMA_MTP_GPU_EMBED": "1",
+    "LLAMA_MTP_FIFO": "1",
+    "LLAMA_MTP_N_UBATCH": "512",
+    "LLAMA_MTP_PAD": "6",
+    "LLAMA_DRAFT_DETP": "0",
+    "LLAMA_GPU_ARGMAX": "1",
+    "GGML_CUDA_GRAPH_OPT": "1",
+    "GGML_FT_GRAPH_CACHE": "1",
+    "GGML_FT_GRAPH_CACHE_MIN_NODES": "32",
+    "GGML_META_ASYNC_COPY": "1",
+    "GGML_META_FIFO_PIPELINE": "1",
+    "GGML_META_COMPACT_ARENA": "1",
+    "GGML_META_PACKED_CACHE": "1",
+    "LLAMA_QWEN4EXP_HC_FUSION": "0",
+    "LLAMA_HC_FUSED": "1",
+    "LLAMA_PREFILL_KV_PAD": "8192",
+    "LLAMA_PLE_SHARD": "0",
+    "LLAMA_PLE_SHARD_ROWS": "0",
+    "MONSTER_MONPACK": "0",
+    "LLAMA_PLE_ONECAT": "0",
+    "GGML_CUDA_FATTN_ONECAT": "1",
+    "LLAMA_MONOMOE_SM70": "0",
+    "GGML_CUDA_VOLTA_Q8_HEAD_TC": "0",
+    "GGML_CPU_PLE_PAGE_BATCH": "1",
+    "GGML_CPU_PLE_PAGE_BATCH_LOG_PERIOD": "1",
+    "LLAMA_LOAD_RECLAIM_GPU_PAGES": "1",
+    "LLAMA_SPEC_PAD_MULTI": "20",
+    "LLAMA_SPEC_PAD_MULTI_AUTO": "1",
+    "LLAMA_MTP_DRAFT_GRAPH_CACHE": "0",
+    "LLAMA_MTP_DRAFT_GRAPH_CACHE_LOG": "1",
+    "LLAMA_MTP_SEQ_LAYOUT": "1",
+    "LLAMA_MTP_FOLD_MULTI": "1",
+    "LLAMA_MTP_GPU_CHAIN_MULTI": "1",
+    "GGML_SM70_DECODE_LINEAR_CHUNKS": "4",
+    "GGML_CPU_PLE_GET_ROWS_THREADS": "32",
+    "GGML_CPU_PLE_DECODE_THREADS": "4",
+    "LLAMA_PREFILL_FAIR_SHARE": "1",
+    "GGML_CUDA_GRAPH_STRUCTURAL": "1",
+    "GGML_CUDA_GRAPH_PATH_LOG": "1",
+    "GGML_OPTIMIZATION_PATH_LOG": "1",
+    "LLAMA_GREEDY_SUPPRESSION_FAST": "1",
+    "LLAMA_PLE_PREFETCH": "1",
+    "GGML_CPU_PLE_ROW_CACHE": "1",
+    "LLAMA_MTP_KV_ONLY_PREFILL": "1",
+    "LLAMA_PLE_NUMA_HYBRID": "1",
+    "LLAMA_MTP_VERIFY_ROW_BUDGET": "16",
+    "GGML_CUDA_META_COPY_GPU_WAIT": "1",
+    "GGML_META_GPU_EVENT_WAIT": "1",
+    "GGML_CUDA_META_COPY_TOPOLOGY": "1",
+    "LLAMA_DECODE_KV_PAD": "8192",
+    "LLAMA_TARGET_FIFO_MULTI": "1",
+    "GGML_CUDA_MOE_ADAPTIVE_J": "1",
+    "LLAMA_MTP_GPU_CHAIN_SINGLE": "0",
+    "LLAMA_EXPERT_PARALLEL": "1",
+    "GGML_META_P2P_COLD": "1",
+    "LLAMA_ARGMAX_PINNED_OUTPUT": "1",
+    "LLAMA_GPU_ARGMAX_UNIQUE": "1",
+    "LLAMA_MTP_FUSE_CATCHUP_SEED": "1",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED": "1",
+    "LLAMA_MTP_FIXED_PREFIX_ROWS": "6",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED_DEPTH": "3",
+    "LLAMA_PREFILL_FRAME_PIPELINE": "0",
+    "LLAMA_PREFILL_LAZY_RESERVE": "1",
+    "GGML_META_REPLAY_GUARD": "1",
+    "GGML_SCHED_CPU_GATHER_PIPELINE": "1",
+    "GGML_CUDA_NCCL_F32": "1",
+    "GGML_SCHED_META_SINGLE_COPY_EVENTS": "1",
+    "LLAMA_MTP_UNROLL_VARIABLE_LANES": "1",
+    "GGML_CUDA_IQ2S_VOLTA_EP": "1",
+    "LLAMA_PLE_NUMA_CPU_BALANCE": "1",
+    "LLAMA_TURBOPREFILL": "0",
+    "ROOT_MTP_DEPTH": "3",
+    "ROOT_BANK_LANES": "4",
+    "ROOT_META_CPU_COPY_VARIANTS": "1",
+    "ROOT_UBATCH": "1024",
+    "ROOT_TURBOPREFILL": "0",
+    "ROOT_KV_UNIFIED": "0",
+    "ROOT_BANK_CTX": "65536",
+    "LLAMA_PREFILL_SEPARATE_STREAM_RESERVE": "1",
+    "ROOT_FATAL_BACKTRACE": "1",
+    "LLAMA_QSA_BIAS_DEVICE": "1",
+    "GGML_CUDA_GRAPH_SNAPSHOT_CACHE": "1",
+    "GGML_CUDA_P2P_AR_BLOCKS": "64",
+    "GGML_META_NESTED_EXPERIMENTAL": "0",
+    "GGML_META_CONTEXT_VIEWS": "1",
+    "LLAMA_QSA_POOLED_MULTI": "0",
+    "LLAMA_QSA_MULTI_CELL_SEL": "0",
+    "GGML_TURBOPREFILL_PINNED_CAP_MIB": "512",
+    "GGML_META_CPU_ASYNC_COPY": "1",
+    "GGML_META_NCCL_MIN_BYTES": "0",
+    "GGML_META_ASYNC_INPUTS": "0",
+    "GGML_META_CPU_ASYNC_COPY_MAX_BYTES": "33554432",
+    "ROOT_DYNAMIC_LIB_DIR": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib",
+    "ROOT_BUILD_REPORT": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V92-build.json",
+    "ROOT_RUNTIME_SOURCE": "/home/debian/ac922-monster/experiments/standard-opt-20261014/src",
+    "ROOT_MTP_UBATCH": "512",
+    "ROOT_WARMUP_FRAMES": "4",
+    "ROOT_PREFILL_LOGITS_BEFORE_MTP": "1",
+    "ROOT_SERIAL_CPU_SUBMIT": "0",
+    "ROOT_SERVER_MTP_KV_POLICY": "1",
+    "LLAMA_HIERARCHICAL_EP6": "0",
+    "GGML_META_NESTED_GPU_AR": "0",
+    "LLAMA_PLE_NUMA_GPU_NODES": "6",
+    "LLAMA_PLE_NUMA_GPU_GIB": "12",
+    "ROOT_KV_VARIANT": "per_seq_16k_x4",
+    "ROOT_PREFILL_BATCH": "8192",
+    "LD_PRELOAD": "",
+    "AC922_SYNC_AUDIT": "0",
+    "ROOT_CUPTI_PHASE": "off",
+    "GGML_META_TIMING": "1",
+    "LLAMA_STEP_TIMING": "1",
+    "LLAMA_STEP_TIMING_PERIOD": "32",
+    "GGML_CUDA_GRAPH_STRUCTURAL_TRACE": "1",
+    "GGML_META_FRAGMENT_CACHE": "1",
+    "GGML_META_FRAGMENT_CACHE_CAP": "64",
+    "GGML_META_FRAGMENT_CACHE_MIB": "128",
+    "V27_BASELINE_RESULT_ROOT": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v27-shortctx16k-hierarchical-20261016/results/root-p4-v27-shortctx16k-hierarchical-ep6-d3-20261016t022431z/copy1",
+    "V27_BASELINE_DIAGNOSTIC_SHA256": "16cb38688dc2e4581c0f5990dcf432949f431dad842e44ac5560c082cdf6f994",
+    "V27_BASELINE_CLEAN_SHA256": "beee7b03194cea10d8f56225bf2f8bae83c014f461324b8b9603bb746b95ae36",
+    "LLAMA_MTP_UNROLL_D3_LANES4": "1",
+    "GGML_META_FRAGMENT_PARENT_SIG": "1",
+    "LLAMA_QSA_STANDARD_SPARSE": "1",
+    "ROOT_TARGET_VERIFY_PAD_PER_ACTIVE_LANE": "1",
+    "GGML_META_NESTED_COMPOSE": "0",
+    "GGML_META_PARENT_WALK_FAST": "1",
+    "ROOT_NSYS_PREFILL_PROFILE": "0",
+    "LLAMA_QSA_STANDARD_HEAD_LOOP": "1",
+    "GGML_CUDA_GET_ROWS_NARROW": "1",
+    "GGML_CUDA_MOE_FUSED_T16": "1",
+    "GGML_SM70_FUSED_PROJ": "0",
+    "LLAMA_HC_COMBINE_SMALL_MAX_TOKENS": "32",
+    "GGML_META_NESTED_ASYNC": "0",
+    "GGML_CUDA_QSA_PREFILL_DIRECT_LIST": "1",
+    "GGML_CUDA_P2P_AR_RELAY6": "1",
+    "GGML_CUDA_P2P_AR_RELAY_MAX_BYTES": "10485760",
+    "GGML_CUDA_P2P_AR_COMPACT_STAGE": "1",
+    "GGML_CUDA_P2P_AR_RING_MIN_BYTES": "4194304",
+    "ROOT_RUNTIME_REVISION": "20261016T112235.532285Z",
+    "LLAMA_FIFO_SINGLE_ISLAND": "1",
+    "GGML_META_DEBUG": "1",
+    "GGML_META_CHUNK_NODES": "512",
+    "GGML_CUDA_GRAPH_STRUCTURAL_MAX_NODES": "16384",
+    "GGML_SM70_DECODE_LINEAR_PACKED": "1",
+    "GGML_CUDA_GRAPHS_FORCE": "0",
+    "GGML_META_SINGLE_CHUNK_COLD_DRAIN": "1",
+    "GGML_CUDA_P2P_AR_RELAY6_ORDERED": "1",
+    "V40_MICRO_GATES_PASSED": "1",
+    "V40_GPU_WINDOW_AUTHORIZED": "1",
+    "ROOT_VARIANT_DIR": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v40-chunked-ordered-20261016/results/root-p4-v40-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t115542862782z/copy1/diagnostic",
+    "ROOT_PROFILE_KIND": "diagnostic",
+    "ROOT_META_CPU_COPY_MODE": "1"
+  },
+  "geometry": {
+    "bank_count": 1,
+    "lanes": 4,
+    "mtp_depth": 3,
+    "per_sequence_context": 16384,
+    "target_ubatch": 1024,
+    "mtp_ubatch": 512,
+    "n_batch": 8192,
+    "model_topology": "flat Meta6 dense TP6 + EP6"
+  },
+  "quality_contract": [
+    "12 native semantic scenarios / 32 cases",
+    "40/40 serial-P4 F32 exact pairs; 42/42 before/after-MTP exact pairs",
+    "same-run serial/P4 generated-token comparisons and clean single-8K prefix comparison",
+    "one clean single-8K prefill and one clean four-stream P4 workload",
+    "V27 token-array comparison retained and reported; mismatches are not certified quality-safe"
+  ],
+  "prior_v39_failure": {
+    "status": "unresolved; do not claim V40 fixes the V39/V38 failure",
+    "evidence": "V39 whole-capture/FORCE run exited 139 with SIGSEGV in cuGraphLaunch during the first parallel semantic scenario and Xid43 on GPU0.",
+    "candidate_boundary": "V40 selects the established 512-node chunk route and FORCE=0 while testing V92 ordered Relay6 separately."
+  },
+  "monitor_policy": {
+    "poll_seconds": 15,
+    "runtime_max_seconds": 900,
+    "gpu_free_floor_mib": 512,
+    "gpu_temperature_limit_c": 58,
+    "bmc_temperature_limit_c": 58,
+    "allowed_fan_targets": [
+      3000,
+      3500,
+      4000,
+      4300
+    ],
+    "tach_low_samples_before_stop": 2,
+    "DDR_threshold": null,
+    "fan_monitor_policy": "reuse existing watcher and preserve current fan-monitor masks; watchdog remains active",
+    "no_gpu_reset": true
+  }
+}

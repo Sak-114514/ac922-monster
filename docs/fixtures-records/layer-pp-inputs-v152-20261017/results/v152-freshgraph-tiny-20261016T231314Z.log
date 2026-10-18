@@ -1,0 +1,21 @@
+ggml_cuda_init: found 2 CUDA devices (Total VRAM: 32256 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+PP pinned inputs requested=1 selected=1 scheduler=0x1001ff00ae0 copies=4 cap=268435456 reset_preserves_slots=1
+PP pinned inputs requested=1 selected=1 scheduler=0x7fff53f3ec90 copies=4 cap=268435456 reset_preserves_slots=1
+V152_START cuda_devices=2 cpu_devices=1 feature=GGML_SCHED_LAYER_PINNED_INPUTS requested=1 expected_copies=4 main_cap_mib=256
+SCHEDULER_READY scheduler=0x1001ff00ae0 order=CUDA0,CUDA1,CPU copies=4 cap_mib=256
+SCHEDULER_READY scheduler=0x7fff53f3ec90 order=CUDA0,CUDA1,CPU copies=4 cap_mib=256
+CASE_PLAN label=A-small width=32 batch=16 row_bytes=2048 gpu0_inputs_per_copy=6144 gpu1_inputs_per_copy=2048 expected_stage_ring_bytes=32768 output_sink_bytes=16448 fresh_graph_per_frame=1
+CASE_PLAN label=B-small width=32 batch=16 row_bytes=2048 gpu0_inputs_per_copy=6144 gpu1_inputs_per_copy=2048 expected_stage_ring_bytes=32768 output_sink_bytes=16448 fresh_graph_per_frame=1
+FRAME_BEGIN scheduler=0x1001ff00ae0 case=A-small frame=0 seed=0 graph=0x7fff51c20900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+PP pinned inputs active scheduler=0x1001ff00ae0 backend=CUDA0 slot=0 source=A-small.frame0.cpu_embedding_rows bytes=2048 private_source=1 device_event_wait=1
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfa00000
+PP pinned inputs active scheduler=0x1001ff00ae0 backend=CUDA1 slot=0 source=A-small.frame0.input.host1 bytes=2048 private_source=1 device_event_wait=1
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfc00000
+FRAME_QUEUED scheduler=0x1001ff00ae0 case=A-small frame=0 seed=0 source_overwrite_after_submit=1 output_sink_slot=0 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x7fff53f3ec90 case=B-small frame=0 seed=7 graph=0x7fff0e840900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+PP pinned inputs active scheduler=0x7fff53f3ec90 backend=CUDA0 slot=0 source=B-small.frame0.cpu_embedding_rows bytes=2048 private_source=1 device_event_wait=1
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfa01000
+PP pinned inputs active scheduler=0x7fff53f3ec90 backend=CUDA1 slot=0 source=B-small.frame0.input.host1 bytes=2048 private_source=1 device_event_wait=1
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfc01000

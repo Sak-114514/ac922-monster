@@ -1,0 +1,45 @@
+start=2026-10-16T20:56:34Z
+base=/home/debian/ac922-monster/experiments/standard-opt-20261014
+runtime=runtime-perf-v123
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qwen4exp-input-gpu-v123-20261017/qwen4exp-input-gpu-v123-host2
+mode=layout
+model_loaded=0
+timeout_seconds=20
+1839ea109da7e343b4a5c0279b2d1f2fca364d069cee4bb22ceb3c593f03148e  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qwen4exp-input-gpu-v123-20261017/qwen4exp-input-gpu-v123-host2
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 1 MiB, 16126 MiB, 39
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 1 MiB, 16126 MiB, 38
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 1 MiB, 16126 MiB, 38
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 0 MiB, 16128 MiB, 38
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 13 MiB, 16114 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 10 MiB, 16117 MiB, 39
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+CUDA_BACKENDS visible=6 MetaA=Meta(CUDA0,CUDA1,CUDA2) MetaB=Meta(CUDA3,CUDA4,CUDA5)
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp:3564: GGML_ASSERT(ggml_backend_dev_type(ggml_backend_get_device(backends[n_backends - 1])) == GGML_BACKEND_DEVICE_TYPE_CPU) failed
+runtime-perf-v123/lib/libggml-base.so.0(+0x29068)[0x7fffa9069068]
+runtime-perf-v123/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fffa9069668]
+runtime-perf-v123/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fffa9069804]
+runtime-perf-v123/lib/libggml-base.so.0(ggml_backend_sched_new+0xcc8)[0x7fffa909a818]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qwen4exp-input-gpu-v123-20261017/qwen4exp-input-gpu-v123-host2(+0x47d0)[0x10e2947d0]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fffa8a64d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fffa8a64f6c]
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 2 MiB, 16125 MiB, 40
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 16125 MiB, 39
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 2 MiB, 16125 MiB, 39
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 0 MiB, 16127 MiB, 40
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 13 MiB, 16114 MiB, 39
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 10 MiB, 16117 MiB, 40
+end=2026-10-16T20:56:38Z
+elapsed_seconds=4
+exit_status=134

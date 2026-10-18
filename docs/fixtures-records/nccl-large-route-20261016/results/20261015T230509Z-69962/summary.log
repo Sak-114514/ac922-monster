@@ -1,0 +1,18 @@
+ROUTE_COMPARE tag=20261015T230509Z-69962 runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v57 device_set=GPU0-2 context_views=1 graph_capture=disabled
+BINARY_SHA256=5f9ce8edab66469a68728d9d5151454618f4c58f1db9eb55c434ba1c4486b6f0
+SOURCE_SHA256=3563c74443c6bec1e2912b90d4ae8b639c145d82e82b35e27c555b395a0bcbf3
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 00000004:04:00.0, 3 MiB, 38
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 00000004:05:00.0, 3 MiB, 37
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 00000004:06:00.0, 3 MiB, 38
+GPU_WINDOW routes=p2p64,nccl-f32,hybrid4m timeout_each=18s overall_expected_under=65s
+ROUTE_START mode=p2p64 timeout=18s log=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nccl-large-route-20261016/results/20261015T230509Z-69962/p2p64.log
+ROUTE_START mode=nccl-f32 timeout=18s log=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nccl-large-route-20261016/results/20261015T230509Z-69962/nccl-f32.log
+ROUTE_START mode=hybrid4m timeout=18s log=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nccl-large-route-20261016/results/20261015T230509Z-69962/hybrid4m.log
+OUTPUT_HASHES_BITWISE_EQUAL=p2p64,nccl-f32,hybrid4m
+GPU-fadb0459-4d30-907b-289a-862b3014f165, 70219, /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/meta-async-input-gpu-20261016/bin/meta-async-input-gpu-fixture, 410 MiB
+GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 70219, /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/meta-async-input-gpu-20261016/bin/meta-async-input-gpu-fixture, 410 MiB
+GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 70219, /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/meta-async-input-gpu-20261016/bin/meta-async-input-gpu-fixture, 410 MiB
+0, 0 %, 5 MiB, 40
+1, 0 %, 5 MiB, 39
+2, 0 %, 5 MiB, 39
+ROUTE_COMPARE_PASS result_dir=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nccl-large-route-20261016/results/20261015T230509Z-69962

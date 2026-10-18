@@ -1,0 +1,13 @@
+fatal-backtrace-v15 enabled=1 prewarmed=1 main_altstack=1 handlers=SIGSEGV,SIGBUS
+runner-environment ld_preload=<unset> sync_audit=<unset>
+runner-diagnostics common_log_threshold=4 ggml_info_verbosity=4 ggml_info_visible=1
+cupti-marker phase=off dso_loaded=0 profiled=0
+fatal-backtrace-v15 reinstalled point=before-backend-init
+0.00.240.410 I ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+0.00.240.903 I   Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.00.241.383 I   Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.00.241.849 I   Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.00.242.310 I   Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.00.242.770 I   Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.00.243.230 I   Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+dual-context error: V199 four-bank depth-family requires LLAMA_MTP_N_UBATCH=512 for the draft context

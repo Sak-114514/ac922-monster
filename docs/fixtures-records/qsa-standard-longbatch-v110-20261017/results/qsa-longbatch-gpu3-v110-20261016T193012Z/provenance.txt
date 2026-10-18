@@ -1,0 +1,36 @@
+fixture_binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-standard-longbatch-v110-20261017/qsa_standard_longbatch_cuda_fixture
+fixture_binary_sha256=fc8ef4394072a95923b3024a762839b560764b25c4745e04424518eb27a49189
+cuda_fixture_source=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-standard-longbatch-v110-20261017/qsa_standard_longbatch_cuda_fixture.cpp
+cuda_fixture_source_sha256=a3f16bf7e006a32cfada45bcfd6b16d6ad9c38385d2e42678ab2da0f3fc669bb
+graph_fixture_source=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-standard-longbatch-v110-20261017/qsa_standard_longbatch_graph.cpp
+graph_fixture_source_sha256=75b7a6543fb443c822ac433fdf7963fd3888e0b95ccc23ce13c0b435321f3d47
+helper_header=/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-qsa-standard-sparse.h
+helper_header_sha256=3d22f9e4db55c0f139b112dc8dcc9707401b97dc86a859165e73f55a9af7c478
+qsa_kernel_source=/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-cuda/qsa-attn.cu
+qsa_kernel_source_sha256=34da3b22663dfb4df17b36b76b9dc2314188b16b1f13c1fddfe21e1427c81b99
+v110_build_report=/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V110-build.json
+v110_build_report_sha256=12527c5304175971588aa1276a867c6b2fd4062220a925e08093b9c6d0bac2b6
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v110/lib
+models_loaded=0
+gpu_index=3
+gpu_uuid=GPU-fadb0459-4d30-907b-289a-862b3014f165
+query_shapes=4096x513x4096,8192x2051x8192
+
+ldd:
+linux-vdso64.so.1 (0x00007fff819c0000)
+	libggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v110/lib/libggml-cuda.so.0 (0x00007fff73de0000)
+	libggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v110/lib/libggml-base.so.0 (0x00007fff73c50000)
+	libstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fff73920000)
+	libgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fff738e0000)
+	libc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fff73680000)
+	libcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fff735a0000)
+	libcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fff6c880000)
+	libcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fff6aac0000)
+	libnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff68c60000)
+	libm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fff68b30000)
+	/lib64/ld64.so.2 (0x00007fff819e0000)
+	libgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fff68ab0000)
+	libdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff68a80000)
+	libpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff68a50000)
+	librt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff68a20000)
+	libcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff54b90000)

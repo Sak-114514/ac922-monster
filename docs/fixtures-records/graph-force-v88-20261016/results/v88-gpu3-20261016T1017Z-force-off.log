@@ -1,0 +1,33 @@
+start=2026-10-16T10:17:03Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v88
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/graph-force-v88-20261016/build/graph-force-v88
+force=0
+gpu=GPU-fadb0459-4d30-907b-289a-862b3014f165
+9036bf356e48ed45e95a0da4c70372c93801205f0d6fd0db6ab121057806826b  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/graph-force-v88-20261016/build/graph-force-v88
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 3 MiB, 38
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA graph path config ctx=0x100275d53f0 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x100275d53f0 device=0 uid=1 nodes=2 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x10017400000
+CUDA Graph id 1 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x100275d53f0 device=0 uid=1 nodes=2 mode=capture count=1
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x10017400000
+CUDA graph fallback ctx=0x100275d53f0 device=0 uid=2 nodes=2 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+[mp-dbg] mul_mat hook: type=0 ne11=8 reg=0 ptr=0x10017401a00
+CUDA Graph id 2 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x100275d53f0 device=0 uid=2 nodes=2 mode=capture count=2
+[mp-dbg] mul_mat hook: type=0 ne11=8 reg=0 ptr=0x10017401a00
+CUDA Graph id 1 reused
+CUDA graph path active ctx=0x100275d53f0 device=0 uid=1 nodes=2 mode=replay count=1
+GRAPH_FORCE_FIXTURE device=CUDA0 buft=CUDA0 force=0 structural=1
+FRAME uid=1 cols=4 seed=10 nodes=2 exact=1 canary=ok
+FRAME uid=1 cols=4 seed=11 nodes=2 exact=1 canary=ok
+FRAME uid=2 cols=8 seed=20 nodes=2 exact=1 canary=ok
+FRAME uid=2 cols=8 seed=21 nodes=2 exact=1 canary=ok
+FRAME uid=1 cols=4 seed=12 nodes=2 exact=1 canary=ok
+PASS graph_force_fixture frames=5 shapes=2 changed_uid=1 changed_values=1 sequence=A/B/A exact=1 canary=1
+exit_status=0
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 3 MiB, 39

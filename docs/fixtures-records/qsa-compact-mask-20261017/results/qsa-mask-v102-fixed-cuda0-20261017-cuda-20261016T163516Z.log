@@ -1,0 +1,48 @@
+start=2026-10-16T16:35:16Z
+base=/home/debian/ac922-monster/experiments/standard-opt-20261014
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v102
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-compact-mask-20261017/qsa-compact-mask-v102-host6
+mode=cuda
+timeout=20
+model_loaded=0
+b1e4ead07bc4a812bda108ec1a906957c75b4ff5fb6f6e9a53596609065d4da0  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-compact-mask-20261017/qsa-compact-mask-v102-host6
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 1 MiB, 16126 MiB, 40
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 1 MiB, 16126 MiB, 39
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 1 MiB, 16126 MiB, 39
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 1 MiB, 16126 MiB, 39
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 5 MiB, 16122 MiB, 39
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 4 MiB, 16123 MiB, 40
+PASS_HOST_METADATA bounds_signed=1 reject_atomic=1 ignored_empty=1
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+BACKEND_MODE cuda device=CUDA0
+OP_PLACEMENT op=RESHAPE assigned=CPU target=CUDA0 supports=1 view=1
+OP_PLACEMENT op=RESHAPE assigned=CPU target=CUDA0 supports=1 view=1
+OP_PLACEMENT op=REPEAT assigned=CUDA0 target=CUDA0 supports=1 view=0
+OP_PLACEMENT op=SUB assigned=CUDA0 target=CUDA0 supports=1 view=0
+OP_PLACEMENT op=SCALE assigned=CUDA0 target=CUDA0 supports=1 view=0
+OP_PLACEMENT op=UNARY assigned=CUDA0 target=CUDA0 supports=1 view=0
+OP_PLACEMENT op=LOG assigned=CUDA0 target=CUDA0 supports=1 view=0
+OP_PLACEMENT op=RESHAPE assigned=CPU target=CUDA0 supports=1 view=1
+OP_PLACEMENT op=RESHAPE assigned=CPU target=CUDA0 supports=1 view=1
+OP_PLACEMENT op=REPEAT assigned=CUDA0 target=CUDA0 supports=1 view=0
+OP_PLACEMENT op=SUB assigned=CUDA0 target=CUDA0 supports=1 view=0
+OP_PLACEMENT op=SCALE assigned=CUDA0 target=CUDA0 supports=1 view=0
+OP_PLACEMENT op=UNARY assigned=CUDA0 target=CUDA0 supports=1 view=0
+OP_PLACEMENT op=LOG assigned=CUDA0 target=CUDA0 supports=1 view=0
+OP_PLACEMENT op=CPY assigned=CUDA0 target=CUDA0 supports=1 view=0
+GRAPH_READY nodes=15 n_kv=6 n_query=3 mask_types=F32,F16 uid=1
+PASS_MASK phase=A exact_f32=1 exact_f16=1 uid=1 graph_nodes=15
+PASS_INVALID_UPDATE no_partial_host_or_device_mutation=1 uid_stable=1
+PASS_MASK phase=B exact_f32=1 exact_f16=1 uid=1 graph_nodes=15
+PASS_MASK phase=A exact_f32=1 exact_f16=1 uid=1 graph_nodes=15
+PASS_QSA_COMPACT_MASK cpu_or_target_graph=1 f32_f16=1 A_B_A=1 reused_shape_uid=1 model_loaded=0
+end=2026-10-16T16:35:17Z
+elapsed_seconds=1
+exit_status=0
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 2 MiB, 16126 MiB, 41
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 1 MiB, 16126 MiB, 39
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 1 MiB, 16126 MiB, 39
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 1 MiB, 16126 MiB, 39
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 5 MiB, 16122 MiB, 39
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 4 MiB, 16123 MiB, 40

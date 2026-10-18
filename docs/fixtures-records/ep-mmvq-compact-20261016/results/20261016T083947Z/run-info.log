@@ -1,0 +1,15 @@
+utc_tag=20261016T083947Z
+build_id=20261016T082325.972432Z
+source_root=/home/debian/ac922-monster/experiments/standard-opt-20261014/src
+runtime_lib=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v84/lib
+cuda_visible_devices=3
+GGML_CUDA_EP_MMVQ_COMPACT=off/on
+preflight used=1MiB free=16126MiB temp=38C util=0% pids=none
+limits case_timeout=15s total_timeout=180s free_floor=512MiB temp<58C
+20b7ddbb68bd8ad09c265f1417fbfb74642ae4a41a20d5b3304b7dc133738e97  ./ep-mmvq-compact-v84-timing
+d3d7e6f0e125b9f94585ec2e6263dbffe5717e683c80a505682c39e468b345ae  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ep-mmvq-compact-20261016/ep-mmvq-compact.cpp
+dbd6e23d0063b8871f1bc4e8b3a36c5512134c96f1a55d9a1efc067a355bb2ce  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v84/lib/libggml-cuda.so.0
+cfadc4181bf9762c5f6038cedeb91f9f830f4c03f5b509c40dedccdfaaed6e39  /home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-cuda/mmvq.cu
+reuse_prior_result format=IQ2_XXS source=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ep-mmvq-compact-20261016/results/20261016T083459Z; no GPU rerun
+resource_exception format=IQ2_S unchanged specialized path; parity tested, compact marker not required
+PASS format-count=7 shapes=4,8 frames=A/B/A exact-files=42 free_floor=512MiB post_used=9MiB post_temp=40C

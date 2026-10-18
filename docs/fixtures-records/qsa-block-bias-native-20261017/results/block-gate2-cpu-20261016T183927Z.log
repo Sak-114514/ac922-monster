@@ -1,0 +1,21 @@
+start=2026-10-16T18:39:27Z
+base=/home/debian/ac922-monster/experiments/standard-opt-20261014
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-block-bias-native-20261017/qsa-block-bias-native-gate2
+mode=cpu
+timeout=20
+model_loaded=0
+21c816e4505ae28e8804051531e490dae39e1740d38000064529fcb969a97ae6  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-block-bias-native-20261017/qsa-block-bias-native-gate2
+GRAPH_READY name=A ratio=4 B=6 Q=8 S=2 uid=1 nodes=21 full_shape_f32_nodes=5 output_bytes=384 root_bytes=2656 reference=1 native_op=DIAG_MASK_INF
+PASS_SMALL ratio=4 phase=A1 exact_native=1 exact_old_expression=1 helper_optin=1 oracle=1 input_immutable=1 poison_fullwrite=1 canary=1 dead_foreign_spare=1 querytail_edges=1 float_cast_tie=1 uid=1
+PASS_SMALL ratio=4 phase=B exact_native=1 exact_old_expression=1 helper_optin=1 oracle=1 input_immutable=1 poison_fullwrite=1 canary=1 dead_foreign_spare=1 querytail_edges=1 float_cast_tie=1 uid=1
+PASS_SMALL ratio=4 phase=A2 exact_native=1 exact_old_expression=1 helper_optin=1 oracle=1 input_immutable=1 poison_fullwrite=1 canary=1 dead_foreign_spare=1 querytail_edges=1 float_cast_tie=1 uid=1
+GRAPH_READY name=A ratio=64 B=6 Q=8 S=2 uid=3 nodes=21 full_shape_f32_nodes=5 output_bytes=384 root_bytes=2656 reference=1 native_op=DIAG_MASK_INF
+PASS_SMALL ratio=64 phase=A1 exact_native=1 exact_old_expression=1 helper_optin=1 oracle=1 input_immutable=1 poison_fullwrite=1 canary=1 dead_foreign_spare=1 querytail_edges=1 float_cast_tie=1 uid=3
+PASS_SMALL ratio=64 phase=B exact_native=1 exact_old_expression=1 helper_optin=1 oracle=1 input_immutable=1 poison_fullwrite=1 canary=1 dead_foreign_spare=1 querytail_edges=1 float_cast_tie=1 uid=3
+PASS_SMALL ratio=64 phase=A2 exact_native=1 exact_old_expression=1 helper_optin=1 oracle=1 input_immutable=1 poison_fullwrite=1 canary=1 dead_foreign_spare=1 querytail_edges=1 float_cast_tie=1 uid=3
+PASS_QSA_BLOCK_BIAS_NATIVE mode=cpu model_loaded=0
+end=2026-10-16T18:39:27Z
+elapsed_seconds=0
+exit_status=0
+peak_sampled_gpu_memory_delta_mib=0

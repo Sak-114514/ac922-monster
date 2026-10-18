@@ -1,0 +1,61 @@
+{
+  "schema": "v325-device-tail-replay-microtest-v1",
+  "status": "R2_SOURCE_STATIC_PASS_PENDING_CPU_HOSTLINK_NO_GPU_RUN",
+  "scope": "one V100 SM70, 128 and 1024 trivial integer-oracle kernel nodes per child graph, 8 replay invocations per mode",
+  "comparison": {
+    "host_mode": "eight host cudaGraphLaunch calls for the normal child executable graph",
+    "device_tail_mode": "one host cudaGraphLaunch call for a controller graph; device-side tail launches the same device-enabled child graph eight times",
+    "metrics": [
+      "host_api_ms",
+      "whole_wall_ms",
+      "cuda_event_ms"
+    ],
+    "quality_gate": "every node counter equals exactly eight; device controller reports eight child launches; status is zero"
+  },
+  "bounds": {
+    "max_nodes": 1024,
+    "measured_repeats": 8,
+    "host_deadline_seconds": 85,
+    "gpu_temperature_ceiling_c": 58,
+    "gpu_free_floor_mib": 512
+  },
+  "provenance": {
+    "v322_source": "fixtures/device-graph-launch-v322-20261018/device_graph_launch_v322.cu",
+    "v322_source_sha256": "7fa5d8c7cede0491d0d20d579d94b2061ed089e5ee046db25da6d033cc116260",
+    "v322_actual_result": "fixtures/device-graph-launch-v322-20261018/results/v322-20261017t184358z.json",
+    "v322_actual_control_gate": "PASS"
+  },
+  "execution": {
+    "host_build": false,
+    "gpu_touched": false,
+    "binary_executed": false,
+    "launch_released_by_fixture": false
+  },
+  "files": {
+    "device_graph_replay_overhead_v325.cu": {
+      "sha256": "41dcb77e32b51be99a2bb943ff5b221d825c444931b898268f7318fd3ca5b133",
+      "bytes": 13033
+    },
+    "README.md": {
+      "sha256": "876055a12ef7f73d400448a7a5cb9efb4119dbffb4ec0e2dc2dbb26f9aee4b1c",
+      "bytes": 3708
+    },
+    "verify_v325_static.py": {
+      "sha256": "63c7f0621b75e644736b042b25cc7d103d0f731d50f8f5dcffcc5a804190e1b1",
+      "bytes": 2924
+    },
+    "root-host-link-v325.sh": {
+      "sha256": "4696f8ed31603cd04eee752b8d490e063b9001b991d63a58958bc09c986c6daf",
+      "bytes": 3263
+    },
+    "run-v325-bounded.py": {
+      "sha256": "01fe64550c5d21c713a141e2b266872dde58ef2f12f08245b32ca5e7879704a1",
+      "bytes": 4268
+    }
+  },
+  "r1_compile_failure": {
+    "log": "results/v325-r1-compile-failure.log",
+    "reason": "nvcc diagnosed a parameter/local variable name collision before link; no GPU code executed",
+    "fixed_in_r2": "renamed run_one_case parameter device to device_id"
+  }
+}

@@ -1,0 +1,60 @@
+start=2026-10-16T02:22:46Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v64
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/meta-merge-lifetime-20261016/meta-merge-lifetime-v64-final
+expectation=mutation
+125378e0ce14d8b8d8fc58a3597beb0dd34375817b56cacb5a07b34ab687be77  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/meta-merge-lifetime-20261016/meta-merge-lifetime-v64-final
+visible=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb
+limits temp<58C preexisting<=512MiB runtime<=1024MiB timeout=120s
+before:
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 3 MiB, 38
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 3 MiB, 37
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 3 MiB, 38
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 1 MiB, 38
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 2 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 2 MiB, 38
+ggml[2] ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+ggml[2]   Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2] P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml[2] ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml[2] ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml[2] ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml[2] meta-context-submit FIFO active context=0x1002dbea4d0 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe3d026600
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe3d226600
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe3d426600
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe3d026700
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe3d226700
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe3d426700
+FIXTURE_META_MERGED nodes=6 subgraphs=3
+ggml[3] ggml_backend_meta_graph_compute: graph 6 nodes, 3 subgraphs: merged, 1 chunks
+DESCRIPTOR_MUTATED phase=A-after-merge rank=0 tensor=mergeA.add1 tensor_ptr=0x7ffec06801d0 src0_before=0x7ffec0680060 src0_after=0x10034457100 view_before=(nil) view_after=(nil) view_offs_before=0 view_offs_after=0
+DESCRIPTOR_MUTATED phase=A-after-merge rank=0 tensor=mergeA.add2 tensor_ptr=0x7ffec0680620 src0_before=0x7ffec06804b0 src0_after=0x10034457270 view_before=(nil) view_after=(nil) view_offs_before=0 view_offs_after=0
+DESCRIPTOR_MUTATED phase=A-after-merge rank=1 tensor=mergeA.add1 tensor_ptr=0x7ffe1d7e01d0 src0_before=0x7ffe1d7e0060 src0_after=0x100344576c0 view_before=(nil) view_after=(nil) view_offs_before=0 view_offs_after=0
+DESCRIPTOR_MUTATED phase=A-after-merge rank=1 tensor=mergeA.add2 tensor_ptr=0x7ffe1d7e0620 src0_before=0x7ffe1d7e04b0 src0_after=0x10034457830 view_before=(nil) view_after=(nil) view_offs_before=0 view_offs_after=0
+DESCRIPTOR_MUTATED phase=A-after-merge rank=2 tensor=mergeA.add1 tensor_ptr=0x7ffe1cfd01d0 src0_before=0x7ffe1cfd0060 src0_after=0x10034457c80 view_before=(nil) view_after=(nil) view_offs_before=0 view_offs_after=0
+DESCRIPTOR_MUTATED phase=A-after-merge rank=2 tensor=mergeA.add2 tensor_ptr=0x7ffe1cfd0620 src0_before=0x7ffe1cfd04b0 src0_after=0x10034457df0 view_before=(nil) view_after=(nil) view_offs_before=0 view_offs_after=0
+ggml[2] CUDA graph structural stats device=0 attempts=4 built=4 reject_too_large=0 reject_graph=0 reject_external=0 reject_missing=0 active_matches=0 variant_matches=0 lookup_misses=4 cross_descriptor_replays=0 flat_snapshot_hits=0 flat_snapshot_misses=4 signature_build_us=114 lookup_us=4
+ggml[2] CUDA graph structural stats device=1 attempts=4 built=4 reject_too_large=0 reject_graph=0 reject_external=0 reject_missing=0 active_matches=0 variant_matches=0 lookup_misses=4 cross_descriptor_replays=0 flat_snapshot_hits=0 flat_snapshot_misses=4 signature_build_us=93 lookup_us=3
+ggml[2] CUDA graph structural stats device=2 attempts=4 built=4 reject_too_large=0 reject_graph=0 reject_external=0 reject_missing=0 active_matches=0 variant_matches=0 lookup_misses=4 cross_descriptor_replays=0 flat_snapshot_hits=0 flat_snapshot_misses=4 signature_build_us=78 lookup_us=4
+SPLIT_NODE name=A.partial1 axis=10 n_segments=1 ne0=0 ne1=0 ne2=0
+SPLIT_NODE name=A.add1 axis=10 n_segments=1 ne0=0 ne1=0 ne2=0
+SPLIT_NODE name=A.partial2 axis=10 n_segments=1 ne0=0 ne1=0 ne2=0
+SPLIT_NODE name=A.add2 axis=10 n_segments=1 ne0=0 ne1=0 ne2=0
+SPLIT_NODE name=A.output axis=10 n_segments=1 ne0=0 ne1=0 ne2=0
+FIXTURE_SETUP topology=Meta3 ranks=3 graph_buffer=0x1002fca1f50 uidA=1 uidB=2 nodesA=6 nodesB=6
+PASS_OUTPUT phase=A-unmerged-warmup frame=0 exact=1 max_abs=0 canary=1 uid=1 nodes=6
+CAPTURED_ORIGINAL_DESCRIPTORS ranks=3 entries=18
+PASS_OUTPUT phase=A-merge frame=1 exact=1 max_abs=0 canary=1 uid=1 nodes=6
+DESCRIPTOR_SNAPSHOT phase=A-after-merge entries=18 mutations=6
+SOURCE_VIEW_IMMUTABILITY phase=A-after-merge result=FAIL
+EXPECTED_LEGACY_DESCRIPTOR_MUTATION observed=1
+exit_status=0
+after:
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 4 MiB, 39
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 4 MiB, 38
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 4 MiB, 39
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 1 MiB, 38
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 2 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 2 MiB, 38

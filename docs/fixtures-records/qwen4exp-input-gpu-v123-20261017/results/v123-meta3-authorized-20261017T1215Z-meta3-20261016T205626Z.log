@@ -1,0 +1,42 @@
+start=2026-10-16T20:56:26Z
+base=/home/debian/ac922-monster/experiments/standard-opt-20261014
+runtime=runtime-perf-v123
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qwen4exp-input-gpu-v123-20261017/qwen4exp-input-gpu-v123-host2
+mode=meta3
+model_loaded=0
+timeout_seconds=20
+1839ea109da7e343b4a5c0279b2d1f2fca364d069cee4bb22ceb3c593f03148e  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qwen4exp-input-gpu-v123-20261017/qwen4exp-input-gpu-v123-host2
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 1 MiB, 16126 MiB, 39
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 1 MiB, 16126 MiB, 38
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 1 MiB, 16126 MiB, 38
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 0 MiB, 16127 MiB, 38
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 14 MiB, 16113 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 10 MiB, 16117 MiB, 39
+SOURCE_ROWS type=iq3_s ne0=2560 vocab=248320 row_bytes=1100 payload_offset=461217728 compact_rows=8 original_global_ids=0,248319,124160,1,248318,82773,49664,3 original_first_last_selected=1 compact_index_remap=1 full_vocab_index_addressing=not_tested
+GET_ROWS phase=A1 backend=CPU rows=8 ids=32 output_bytes=327680 input_immutable=1 canaries=1
+GET_ROWS phase=B backend=CPU rows=8 ids=32 output_bytes=327680 input_immutable=1 canaries=1
+GET_ROWS phase=A2 backend=CPU rows=8 ids=32 output_bytes=327680 input_immutable=1 canaries=1
+ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+CUDA_BACKENDS visible=3 MetaA=Meta(CUDA0,CUDA1,CUDA2) MetaB=none
+GET_ROWS phase=A1 backend=Meta3 rows=8 ids=32 output_bytes=327680 input_immutable=1 canaries=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GET_ROWS phase=B backend=Meta3 rows=8 ids=32 output_bytes=327680 input_immutable=1 canaries=1
+GET_ROWS phase=A2 backend=Meta3 rows=8 ids=32 output_bytes=327680 input_immutable=1 canaries=1
+PASS_QWEN4EXP_INPUT_GET_ROWS mode=meta3 type=iq3_s ne0=2560 vocab=248320 sampled_original_rows=8 exact_f32=1 A_B_A=1 repeated_ids=1 original_first_last_selected=1 compact_index_remap=1 table_immutable=1 ids_immutable=1 canary=1
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 1 MiB, 16126 MiB, 40
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 1 MiB, 16126 MiB, 39
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 1 MiB, 16126 MiB, 40
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 0 MiB, 16128 MiB, 38
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 13 MiB, 16114 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 10 MiB, 16117 MiB, 39
+end=2026-10-16T20:56:30Z
+elapsed_seconds=4
+exit_status=0

@@ -1,0 +1,22 @@
+[
+  {
+    "source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/src/common/speculative.cpp",
+    "code": 0,
+    "out": ""
+  },
+  {
+    "source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp",
+    "code": 0,
+    "out": "/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp: In member function \u2018llama_token llama_context::inspect_mtp_gpu_chain_step(int32_t, bool)\u2019:\n/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:2081:35: warning: comparison of integer expressions of different signedness: \u2018llama_token\u2019 {aka \u2018int\u2019} and \u2018uint32_t\u2019 {aka \u2018unsigned int\u2019} [-Wsign-compare]\n 2081 |         for (llama_token j = 1; j < model.vocab.n_tokens(); ++j) {\n      |                                 ~~^~~~~~~~~~~~~~~~~~~~~~~~\n/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp: In member function \u2018int32_t llama_context::end_mtp_gpu_chain(llama_token*, int32_t)\u2019:\n/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:2107:34: warning: comparison of integer expressions of different signedness: \u2018const int\u2019 and \u2018uint32_t\u2019 {aka \u2018unsigned int\u2019} [-Wsign-compare]\n 2107 |         if (ids[i] < 0 || ids[i] >= model.vocab.n_tokens()) {\n      |                           ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~\n/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp: In member function \u2018llm_graph_result* llama_context::process_ubatch_mtp_unrolled(const llama_ubatch&, std::shared_ptr<llama_memory_context_i>, ggml_status&, bool)\u2019:\n/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:2618:79: warning: comparison of integer expressions of different signedness: \u2018uint32_t\u2019 {aka \u2018unsigned int\u2019} and \u2018int32_t\u2019 {aka \u2018int\u2019} [-Wsign-compare]\n 2618 |             ubatch.n_seqs != lanes || ubatch.n_seqs_unq != lanes || n_outputs != (int32_t) lanes ||\n      |                                                                     ~~~~~~~~~~^~~~~~~~~~~~~~~~~~\n/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp: In member function \u2018llm_graph_result* llama_context::process_ubatch(const llama_ubatch&, llm_graph_type, llama_memory_context_i*, ggml_status&, bool)\u2019:\n/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:3039:27: warning: comparison of integer expressions of different signedness: \u2018uint32_t\u2019 {aka \u2018unsigned int\u2019} and \u2018int32_t\u2019 {aka \u2018int\u2019} [-Wsign-compare]\n 3039 |                 n_outputs == (int32_t) mtp_chain_multi_lanes.size() : n_outputs == 1;\n      |                 ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp: In member function \u2018int llama_context::decode(const llama_batch&)\u2019:\n/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:3673:59: warning: comparison of integer expressions of different signedness: \u2018uint32_t\u2019 {aka \u2018unsigned int\u2019} and \u2018int32_t\u2019 {aka \u2018int\u2019} [-Wsign-compare]\n 3673 |                 if (!res->mtp_token_feedback || n_outputs != (int32_t) mtp_chain_multi_lanes.size() ||\n      |                                                 ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp: In member function \u2018llm_graph_params llama_context::graph_params(llm_graph_result*, const llama_ubatch&, const llama_memory_context_i*, llm_graph_type, bool) const\u2019:\n/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:4496:5: warning: missing initializer for member \u2018llm_graph_params::mtp_unrolled_steps\u2019 [-Wmissing-field-initializers]\n 4496 |     };\n      |     ^\n"
+  },
+  {
+    "source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-graph.cpp",
+    "code": 0,
+    "out": ""
+  },
+  {
+    "source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-memory.cpp",
+    "code": 0,
+    "out": ""
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "fixture": "mtp-head-host-uva-v243-20261017",
+  "state": "completed_tiny_uva_feedback_passed",
+  "runtime": "runtime-perf-v235",
+  "devices": {
+    "fixed_visible_uuid_order": [
+      "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f",
+      "GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+      "GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+      "GPU-fadb0459-4d30-907b-289a-862b3014f165",
+      "GPU-760ce501-32f6-69b6-215b-1020da68bbfc",
+      "GPU-d3558623-deca-c702-3cc0-01b4aa9c667a"
+    ],
+    "uva_required": true,
+    "pointer_width_bytes": 8,
+    "head_visible_ordinal": 5,
+    "body_visible_ordinal": 0
+  },
+  "host_buffer": {
+    "allocation_api": "ggml_backend_dev_host_buffer_type + ggml_backend_alloc_ctx_tensors_from_buft",
+    "current_cuda_device_during_allocation": 0,
+    "actual_attributes_reported": [
+      "buffer type name",
+      "cudaPointerGetAttributes.type/hostPointer/devicePointer",
+      "cudaHostGetFlags.flags"
+    ],
+    "portable_flag_assumed": false
+  },
+  "copy_loop": {
+    "rounds": 100,
+    "bytes_per_round": 512,
+    "head_fill": "cudaMemsetAsync with distinct per-round byte value on GPU5",
+    "path": [
+      "GPU5 device buffer to actual GGML CUDA host buft by nonblocking D2H stream",
+      "same host buffer to GPU0 body buffer by nonblocking H2D stream",
+      "GPU0 device buffer readback and exact 512-byte comparison"
+    ],
+    "compute_kernels": 0
+  },
+  "safety": {
+    "temperature_max_c": 58,
+    "minimum_free_mib_pre_post": 512,
+    "timeout_seconds": 60
+  },
+  "host_link_r1_failure": "cuda_runtime_api.h was not found because the build script omitted CUDA include directory; original compiler log is preserved in results/v243-host-link-r1.log; corrected r2 adds /usr/local/cuda-12.4/include and uses build-v243-r2.",
+  "host_link_r2_failure": "std::all_of was not declared because <algorithm> was omitted; original compiler log is preserved in results/v243-host-link-r2.log; corrected r3 adds the standard header and uses build-v243-r3.",
+  "host_link_r3_success": {
+    "binary": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mtp-head-host-uva-v243-20261017/build-v243-r3/mtp-head-host-uva",
+    "sha256": "3e13a273d5f901e696c86dd4beaa900c100a7498c8c2ed64b15d2d8c77abb010",
+    "ldd_report": "results/v243-ldd-v235.txt",
+    "all_libraries_resolved": true
+  },
+  "run_result": {
+    "json": "results/v243-uva-20261017T103647Z.json",
+    "log": "results/v243-uva-20261017T103647Z.log",
+    "returncode": 0,
+    "exact_roundtrips": 100,
+    "host_buffer_flags_hex": "0x2",
+    "cuda_host_memory_type": 1,
+    "portable_flag_set": false,
+    "max_observed_temp_c": 39,
+    "min_observed_free_mib": 16108,
+    "elapsed_ms": 6.414,
+    "nonfatal_warning": "ggml_backend_load_all logged that GGML_BACKEND_PATH was a directory; the linked CUDA backend initialized and the guarded fixture passed."
+  },
+  "claim_boundary": "Tiny UVA/page-locked-host feedback correctness proof only; no large-body-copy or throughput result."
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "v233-static-contract-v1",
+  "status": "PASS",
+  "compiled": false,
+  "model_loaded": false,
+  "gpu_touched": false,
+  "launch_eligible": false,
+  "checks": [
+    {
+      "name": "v228_runtime_identity",
+      "status": "pass",
+      "detail": "frozen runtime-perf-v228 report hash/build ID"
+    },
+    {
+      "name": "v219_source_parent",
+      "status": "pass",
+      "detail": "parent runner bytes match the passed V219 source"
+    },
+    {
+      "name": "v233_source_hash",
+      "status": "pass",
+      "detail": "derived runner hash matches profile"
+    },
+    {
+      "name": "two_ub_families",
+      "status": "pass",
+      "detail": "runner selects UB256 then UB512 and no other target family"
+    },
+    {
+      "name": "64k_context_two_chunks",
+      "status": "pass",
+      "detail": "one 64K request uses 66048 context and two ordered 32768-token chunks"
+    },
+    {
+      "name": "property_and_pinned_contract",
+      "status": "pass",
+      "detail": "V228 property cache and 16 MiB floor under unchanged 1024 MiB cap are required"
+    },
+    {
+      "name": "requested_prefill_and_graph_paths",
+      "status": "pass",
+      "detail": "65536 K padding, forced graph capture, binding keys, F32 indexer and virtual TopK remain gated"
+    },
+    {
+      "name": "single_request_metrics_are_generic",
+      "status": "pass",
+      "detail": "single-flow rates use actual token count and measured wall/target time, independent of legacy labels"
+    },
+    {
+      "name": "ub256_scenarios",
+      "status": "pass",
+      "detail": "Paris semantic canary then one 65536-token/8-output unscored case"
+    },
+    {
+      "name": "ub256_scenario_hash",
+      "status": "pass",
+      "detail": "prepared scenario hash matches profile"
+    },
+    {
+      "name": "ub512_scenarios",
+      "status": "pass",
+      "detail": "Paris semantic canary then one 65536-token/8-output unscored case"
+    },
+    {
+      "name": "ub512_scenario_hash",
+      "status": "pass",
+      "detail": "prepared scenario hash matches profile"
+    },
+    {
+      "name": "no_cupti_or_nsys",
+      "status": "pass",
+      "detail": "the V233 run does not enable CUPTI or Nsight"
+    },
+    {
+      "name": "root_owned_guard_pending",
+      "status": "pass",
+      "detail": "launch remains pending root guard, with no retries and no model/GPU touched during preparation"
+    },
+    {
+      "name": "runtime_runner_pins",
+      "status": "pass",
+      "detail": "hostlink and launch wrapper pin V228 runtime and required root-v233-inband unit prefix"
+    }
+  ]
+}

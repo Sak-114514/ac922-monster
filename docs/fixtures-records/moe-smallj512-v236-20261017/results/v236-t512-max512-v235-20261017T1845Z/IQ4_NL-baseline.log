@@ -1,0 +1,34 @@
+V236_FIXTURE mode=baseline format=IQ4_NL tensor=blk.0.ffn_down_exps.weight quant=iq4_nl K=640 source_N=2560 tested_N=64 E=512 T=512 raw_expert170_171_bytes=921600 prefix_bytes_per_expert=23040 bank_bytes=11796480 synthetic_bank=alternating_exact_raw_slices requantize=0 model_load=0 grouped=1 small_j=0 adaptive_j=0 grouped_j_override=unset mmq_moe_j_override=unset small_j_max_tokens=unset expected_global_j32_baseline=E512_totalAssignments5120_avg10
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ROUTE_EXPECTED mode=baseline format=IQ4_NL distribution=uniform10 E=512 T=512 topk=10 assignments=5120 active_experts=512 inactive_experts=0 min_nonzero=10 max_count=10 cold_nonempty_count_le16=512 hot_count_gt16=0 count16=0 count17=0 count20=0 expected_j16_tiles=512 expected_j32_tiles=0 global_j32_tiles=512 classification=CPU_EXPECTATION_ONLY
+[mp-dbg] mul_mat_id hook: type=20 ne11=1 reg=0 ptr=0x10017400000 ne=[640,64,512]
+optimization path device=3 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=512 width=64 auxiliary=512 count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+[mp-dbg] mul_mat_id hook: type=20 ne11=1 reg=0 ptr=0x10017400000 ne=[640,64,512]
+optimization path device=3 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=512 width=64 auxiliary=512 count=2
+MUL_MAT_ID_TIMING mode=baseline format=IQ4_NL distribution=uniform10 K=640 N=64 E=512 T=512 topk=10 output_elements=327680 warmups=1 samples=5 median_us=262.439 min_us=260.741 max_us=461.914 scope=full_graph_compute_ids_helper_classify_and_matmul bank_buffer_bytes=11796736 graph_buffer_bytes=10567680 result=REPORT_ONLY
+BASELINE_REFERENCE_SAVED format=IQ4_NL distribution=uniform10 elements=327680 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/moe-smallj512-v236-20261017/results/v236-t512-max512-v235-20261017T1845Z/reference/IQ4_NL/IQ4_NL-uniform10.f32ref
+ROUTE_EXPECTED mode=baseline format=IQ4_NL distribution=skew_hot20 E=512 T=512 topk=10 assignments=5120 active_experts=512 inactive_experts=0 min_nonzero=8 max_count=52 cold_nonempty_count_le16=492 hot_count_gt16=20 count16=0 count17=0 count20=0 expected_j16_tiles=492 expected_j32_tiles=40 global_j32_tiles=532 classification=CPU_EXPECTATION_ONLY
+[mp-dbg] mul_mat_id hook: type=20 ne11=1 reg=0 ptr=0x10017400000 ne=[640,64,512]
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+[mp-dbg] mul_mat_id hook: type=20 ne11=1 reg=0 ptr=0x10017400000 ne=[640,64,512]
+MUL_MAT_ID_TIMING mode=baseline format=IQ4_NL distribution=skew_hot20 K=640 N=64 E=512 T=512 topk=10 output_elements=327680 warmups=1 samples=5 median_us=262.265 min_us=261.822 max_us=362.795 scope=full_graph_compute_ids_helper_classify_and_matmul bank_buffer_bytes=11796736 graph_buffer_bytes=10567680 result=REPORT_ONLY
+BASELINE_REFERENCE_SAVED format=IQ4_NL distribution=skew_hot20 elements=327680 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/moe-smallj512-v236-20261017/results/v236-t512-max512-v235-20261017T1845Z/reference/IQ4_NL/IQ4_NL-skew_hot20.f32ref
+ROUTE_EXPECTED mode=baseline format=IQ4_NL distribution=allhot10 E=512 T=512 topk=10 assignments=5120 active_experts=10 inactive_experts=502 min_nonzero=512 max_count=512 cold_nonempty_count_le16=0 hot_count_gt16=10 count16=0 count17=0 count20=0 expected_j16_tiles=0 expected_j32_tiles=160 global_j32_tiles=160 classification=CPU_EXPECTATION_ONLY
+[mp-dbg] mul_mat_id hook: type=20 ne11=1 reg=0 ptr=0x10017400000 ne=[640,64,512]
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+[mp-dbg] mul_mat_id hook: type=20 ne11=1 reg=0 ptr=0x10017400000 ne=[640,64,512]
+MUL_MAT_ID_TIMING mode=baseline format=IQ4_NL distribution=allhot10 K=640 N=64 E=512 T=512 topk=10 output_elements=327680 warmups=1 samples=5 median_us=133.302 min_us=132.111 max_us=237.556 scope=full_graph_compute_ids_helper_classify_and_matmul bank_buffer_bytes=11796736 graph_buffer_bytes=10567680 result=REPORT_ONLY
+BASELINE_REFERENCE_SAVED format=IQ4_NL distribution=allhot10 elements=327680 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/moe-smallj512-v236-20261017/results/v236-t512-max512-v235-20261017T1845Z/reference/IQ4_NL/IQ4_NL-allhot10.f32ref
+ROUTE_EXPECTED mode=baseline format=IQ4_NL distribution=boundary16_17_20 E=512 T=512 topk=10 assignments=5120 active_experts=512 inactive_experts=0 min_nonzero=9 max_count=20 cold_nonempty_count_le16=510 hot_count_gt16=2 count16=2 count17=1 count20=1 expected_j16_tiles=510 expected_j32_tiles=2 global_j32_tiles=512 classification=CPU_EXPECTATION_ONLY
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+MUL_MAT_ID_TIMING mode=baseline format=IQ4_NL distribution=boundary16_17_20 K=640 N=64 E=512 T=512 topk=10 output_elements=327680 warmups=1 samples=5 median_us=263.710 min_us=261.997 max_us=348.318 scope=full_graph_compute_ids_helper_classify_and_matmul bank_buffer_bytes=11796736 graph_buffer_bytes=10567680 result=REPORT_ONLY
+BASELINE_REFERENCE_SAVED format=IQ4_NL distribution=boundary16_17_20 elements=327680 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/moe-smallj512-v236-20261017/results/v236-t512-max512-v235-20261017T1845Z/reference/IQ4_NL/IQ4_NL-boundary16_17_20.f32ref
+V236_FIXTURE COMPLETE mode=baseline format=IQ4_NL distributions=4 verdict=REPORT_ONLY
+optimization path summary device=3 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=8 selected=8

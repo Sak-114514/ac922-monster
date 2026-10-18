@@ -1,0 +1,9 @@
+patching file ggml/src/ggml-backend-meta.cpp
+patching file ggml/src/ggml-ep-private.h
+PASS: patch applies cleanly to private baseline copies and matches candidate
+PASS: nested EP offset composition covers 0..511 exactly once; repeated materialization is stable
+PASS: nested Meta2{Meta3A,Meta3B} GPU scaffold syntax
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-meta-ep6-20261016/candidate/src/ggml/src/ggml-backend-meta.cpp: In function ‘ggml_status ggml_backend_meta_buffer_init_tensor_impl(ggml_backend_meta_simple_tensor_container&, ggml_tensor*, const ggml_meta_owner_private::owner_ref&)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-meta-ep6-20261016/candidate/src/ggml/src/ggml-backend-meta.cpp:2503:39: error: ‘set_composed’ is not a member of ‘ggml_ep_private’
+ 2503 |                 if (!ggml_ep_private::set_composed(t_ij, tensor,
+      |                                       ^~~~~~~~~~~~

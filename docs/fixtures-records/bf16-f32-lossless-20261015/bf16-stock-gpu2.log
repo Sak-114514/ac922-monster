@@ -1,0 +1,52 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA graph path config ctx=0x10023b3b8b0 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=0 structural_active=0 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x10023b3b8b0 device=0 uid=2 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=30 ne11=8 reg=0 ptr=0x10017400000
+CUDA Graph id 2 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10023b3b8b0 device=0 uid=2 nodes=1 mode=capture count=1
+[mp-dbg] mul_mat hook: type=30 ne11=8 reg=0 ptr=0x10017400000
+CUDA Graph id 2 reused
+CUDA graph path active ctx=0x10023b3b8b0 device=0 uid=2 nodes=1 mode=replay count=1
+CUDA Graph id 2 reused
+CUDA graph path active ctx=0x10023b3b8b0 device=0 uid=2 nodes=1 mode=replay count=2
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+CUDA Graph id 2 reused
+BF16_F32_FIXTURE_BEGIN mode=bf16-stock GGML_SM70_BF16_GEMV=0
+DEVICE name=CUDA0 id=0004:06:00.0 visible_count=1
+RESULT mode=bf16-stock shape=down K=10240 N=320 batch=8 route=stock_bf16_mmvf exact=36/2560 max_abs=1.57952309e-06 max_rel=0.00312845631 nrmse=1.83871782e-06 median_ms=0.063444 p90_ms=0.064394 graph_opt=1
+CUDA graph path config ctx=0x10023b3b8b0 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=0 structural_active=0 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x10023b3b8b0 device=0 uid=4 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=30 ne11=8 reg=0 ptr=0x10017400000
+CUDA Graph id 4 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10023b3b8b0 device=0 uid=4 nodes=1 mode=capture count=1
+[mp-dbg] mul_mat hook: type=30 ne11=8 reg=0 ptr=0x10017400000
+CUDA Graph id 4 reused
+CUDA graph path active ctx=0x10023b3b8b0 device=0 uid=4 nodes=1 mode=replay count=1
+CUDA Graph id 4 reused
+CUDA graph path active ctx=0x10023b3b8b0 device=0 uid=4 nodes=1 mode=replay count=2
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+CUDA Graph id 4 reused
+DEVICE name=CUDA0 id=0004:06:00.0 visible_count=1
+RESULT mode=bf16-stock shape=up K=320 N=10240 batch=8 route=stock_bf16_mmvf exact=7473/81920 max_abs=1.49011612e-07 max_rel=0.169995032 nrmse=3.27589048e-07 median_ms=0.120696 p90_ms=0.121126 graph_opt=1
+BF16_F32_FIXTURE_END mode=bf16-stock status=PASS

@@ -1,0 +1,43 @@
+{
+  "status": "HOST_LINKED_V135_VALID_SEVEN_DSO_CLOSURE",
+  "runtime_build_id": "20261016T213259.513817Z",
+  "runtime_report": "notes/V135-build.json",
+  "runtime_report_sha256": "75a0a3a651a0f8a1b1fbd115a391e19289de10ffcca0959497c4e52b65c2b519",
+  "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v135",
+  "runtime_dso_sha256": {
+    "libllama-common.so.0": "c331b4e27d74fdc4ea295676985c1ae1d8b8ad296feee0715164e37a96d395ac",
+    "libmtmd.so.0": "02b78e109820e28de208363e3f6d8f3cde8f43a452ec8770972d3565caed8e23",
+    "libllama.so.0": "9cfe867acf27dc4bc48c7132c5db9796c4b4813cf1e8df1ab323067925b029b9",
+    "libggml.so.0": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+    "libggml-cpu.so.0": "d51a3e28fafe2fc03584d790512d4dcb88583f9949647602e5cbef1fc0d71781",
+    "libggml-cuda.so.0": "5f663e079037bee6fe0d9cf1246433566e7103d53699ca659574f5efcbd6e53a",
+    "libggml-base.so.0": "beee6adf3e5fc7801e3e2291e039119707f0a8cfbee4ac75555192bf3182279a"
+  },
+  "profile_at_link_remote": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/build-v131-20261016T213259.513817Z-51427a9a5896/v131-profile-at-link.json",
+  "profile_sha256_at_link": "e10e8cd5dd0cb085430ba7f00182c6845c4e2daf7e3b0955a99069d100c6b431",
+  "runner_source_remote": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/dual-context-v131-layer-longprefill.cpp",
+  "runner_source_sha256": "51427a9a58965d82b92c3f714a29ae588bb4c8a573df83fee1bff43a8998e920",
+  "runner_binary": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/build-v131-20261016T213259.513817Z-51427a9a5896/dual-context-v131-layer-longprefill",
+  "runner_sha256": "97ce54874d07022974f713b06ea8d6801ab8fb8c809ee829176e6bff8a21023f",
+  "runner_file": "ELF 64-bit LSB pie executable, 64-bit PowerPC OpenPOWER ELF V2 ABI, dynamically linked",
+  "runner_build_mode": "compiled_single_translation_unit_host_harness",
+  "build_owner": "debian",
+  "build_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/build-v131-20261016T213259.513817Z-51427a9a5896",
+  "ldd_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/build-v131-20261016T213259.513817Z-51427a9a5896/ldd.txt",
+  "ldd_sha256": "87755832ef65dc4e1ddcece9d6432c2924bf8ca9c49d59262f5d0f17fca4f229",
+  "ldd_status": "PASS_SEVEN_PRIVATE_RUNTIME_DSOS_NO_MISSING_DEPENDENCIES",
+  "compile_log": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/build-v131-20261016T213259.513817Z-51427a9a5896/compile.log",
+  "compile_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "compiler_link_status": "PASS_BINARY_PRODUCED_AND_RELOCATED",
+  "wrapper_exit_status": 1,
+  "wrapper_exit_reason": "The initial post-link validator incorrectly required libllama-server-impl.so; it is not a dependency of this runner. The actual seven-DSO closure resolves cleanly.",
+  "compile_scope": "V131 runner translation unit only, linked to frozen V135 DSOs; no engine/CUDA rebuild or model/GPU execution",
+  "model_loads": 0,
+  "gpu_touched": false,
+  "prior_attempt": {
+    "status": "FIXTURE_COMPILE_ERROR_CORRECTED",
+    "log": "fixtures/layer6-longprefill-v58-20261017/results/host-build-v135/initial-invalid-common-params.log",
+    "log_sha256": "18e333102ef455bca025a39c71d28ea5a247ddacefb5802c364732c3aa16f76d",
+    "error": "common_params has no member named offload_kqv; assignment removed and pipeline prerequisite verified against llama_context_default_params"
+  }
+}

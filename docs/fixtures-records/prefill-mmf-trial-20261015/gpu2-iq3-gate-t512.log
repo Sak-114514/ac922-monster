@@ -1,0 +1,50 @@
+CASE_BEGIN name=IQ3_XXS/blk.35.ffn_gate_exps.weight tokens=512 quick=1
+ROUTE name=balanced_uniform tokens=512 topk=10 assignments=5120 experts=512 min=10 max=10
+PHASE_BEGIN name=copy_route_ids wall_ms=97119407
+PHASE_END name=copy_route_ids wall_ms=97119407
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+PHASE_BEGIN name=kernel_attributes wall_ms=97119408
+PHASE_END name=kernel_attributes wall_ms=97119409
+PHASE_NODE name=dequant_f16 wall_ms=97119409
+PHASE_NODE name=mmf_id_compact wall_ms=97119410
+PHASE_NODE name=mmf_grouped_core wall_ms=97119410
+PHASE_NODE name=mmq_id_offsets_q8_scatter wall_ms=97119410
+PHASE_NODE name=mmq_grouped_core wall_ms=97119417
+PHASE_BEGIN name=dequant_f16 wall_ms=97119417
+PHASE_END name=dequant_f16 gpu_ms=4.155
+PHASE_BEGIN name=mmf_id_compact wall_ms=97119437
+PHASE_END name=mmf_id_compact gpu_ms=0.055
+PHASE_BEGIN name=maps_dtoh_validate wall_ms=97119458
+MAPS_DTOH_PASS tokens=512 assignments=5120 experts_nonzero=512 bounds_tail=5120 exact=1
+PHASE_END name=maps_dtoh_validate wall_ms=97119458
+PHASE_BEGIN name=mmf_grouped_core wall_ms=97119458
+PHASE_END name=mmf_grouped_core gpu_ms=0.969
+PHASE_BEGIN name=mmq_id_offsets_q8_scatter wall_ms=97119478
+PHASE_END name=mmq_id_offsets_q8_scatter gpu_ms=0.097
+PHASE_BEGIN name=mmq_grouped_core wall_ms=97119498
+PHASE_END name=mmq_grouped_core gpu_ms=1.013
+PHASE_BEGIN name=quick_accuracy_reference wall_ms=97119518
+CPU_REF_BEGIN case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=1/8
+CPU_REF_END case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=1/8 wall_ms=5.794
+CPU_REF_BEGIN case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=2/8
+CPU_REF_END case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=2/8 wall_ms=5.784
+CPU_REF_BEGIN case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=3/8
+CPU_REF_END case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=3/8 wall_ms=5.761
+CPU_REF_BEGIN case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=4/8
+CPU_REF_END case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=4/8 wall_ms=5.221
+CPU_REF_BEGIN case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=5/8
+CPU_REF_END case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=5/8 wall_ms=3.849
+CPU_REF_BEGIN case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=6/8
+CPU_REF_END case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=6/8 wall_ms=3.859
+CPU_REF_BEGIN case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=7/8
+CPU_REF_END case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=7/8 wall_ms=3.855
+CPU_REF_BEGIN case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=8/8
+CPU_REF_END case=IQ3_XXS/blk.35.ffn_gate_exps.weight sample=8/8 wall_ms=3.856
+ACCURACY case=IQ3_XXS/blk.35.ffn_gate_exps.weight tokens=512 samples=8 mmf_rel_l2=0.0002908666 mmf_max_abs=0.00016212463 mmq_rel_l2=0.0050196972 mmq_max_abs=0.0027872473 weight_f16_rel_l2=0.00020403355 weight_f16_max_abs=2.849102e-05 status=PASS_SCREEN
+PHASE_END name=quick_accuracy_reference wall_ms=97119556
+MEMORY case=IQ3_XXS/blk.35.ffn_gate_exps.weight tokens=512 gpu_total=16911433728 gpu_free_after=15808659456 fixture_buffers=728846344 quant_weights=112394240 f16_weights=587202560 f16_mib=560.00
+PHASE_BEGIN name=final_stream_sync wall_ms=97119556
+PHASE_END name=final_stream_sync wall_ms=97119556
+CASE_END name=IQ3_XXS/blk.35.ffn_gate_exps.weight tokens=512 wall_ms=195.529
+PREFILL_MMF_FIXTURE_DONE no_model_load=1 engine_source_unchanged=1

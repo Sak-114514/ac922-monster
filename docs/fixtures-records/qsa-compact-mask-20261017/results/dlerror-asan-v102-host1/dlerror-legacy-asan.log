@@ -1,0 +1,16 @@
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==265964==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7ffff6bcc410 bp 0x7fffffffe870 sp 0x7fffffffe870 T0)
+==265964==The signal is caused by a UNKNOWN memory access.
+==265964==Hint: address points to the zero page.
+    #0 0x7ffff6bcc410  (/usr/lib/powerpc64le-linux-gnu/libc.so.6+0xdc410)
+    #1 0x7ffff78a800c in __interceptor_strlen ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:387
+    #2 0x7ffff77190b8 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(char const*) (/usr/lib/powerpc64le-linux-gnu/libstdc++.so.6+0x1e90b8)
+    #3 0x1000042c4 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, char const*) /usr/include/c++/12/bits/basic_string.h:3555
+    #4 0x1000042c4 in main /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-compact-mask-20261017/test-dlerror-null-guard.cpp:15
+    #5 0x7ffff6b14d28  (/usr/lib/powerpc64le-linux-gnu/libc.so.6+0x24d28)
+    #6 0x7ffff6b14f68 in __libc_start_main (/usr/lib/powerpc64le-linux-gnu/libc.so.6+0x24f68)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (/usr/lib/powerpc64le-linux-gnu/libc.so.6+0xdc410) 
+==265964==ABORTING

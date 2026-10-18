@@ -1,0 +1,699 @@
+{
+  "fixture": "mtp-q8-grouped-v250",
+  "run_tag": "v250-mtp-q8-grouped-v251-20261017T1940Z",
+  "runtime": "runtime-perf-v251",
+  "device": "CUDA device 3, Tesla V100-SXM2-16GB",
+  "model_loaded": false,
+  "matrix": {
+    "formats": [
+      "Q8_0_UP",
+      "Q8_0_DOWN"
+    ],
+    "tokens": [
+      256,
+      512
+    ],
+    "distributions": [
+      "uniform",
+      "skew_hot20",
+      "allhot10",
+      "boundary16_17_20"
+    ],
+    "full_output_comparisons": 16,
+    "fresh_processes": 8,
+    "output_compare_scope": "entire F32 MUL_MAT_ID output after warmups/samples"
+  },
+  "gates": {
+    "baseline_runs_complete": 4,
+    "candidate_runs_complete": 4,
+    "baseline_reference_outputs_finite": true,
+    "candidate_outputs_finite": true,
+    "candidate_vs_baseline_all_exact": true,
+    "candidate_selected_markers_per_process": {
+      "mmq_moe_grouped": 8,
+      "mmq_moe_q8_grouped": 8,
+      "mmq_moe_small_j": 8
+    },
+    "route_histogram_scope": "CPU_EXPECTATION_ONLY; not a GPU readback",
+    "baseline_grouped_route_fell_back_unsupported_quant_type_per_process": true
+  },
+  "telemetry": {
+    "postflight_all_six_gpus_idle": true,
+    "temperature_c_observed_range": [
+      38,
+      39
+    ],
+    "free_mib_observed_range": [
+      16108,
+      16120
+    ],
+    "utilization_percent": 0,
+    "compute_pids": 0
+  },
+  "timing_interpretation": "REPORT_ONLY fixture-level wall timings; not a full-model performance claim",
+  "pairs": [
+    {
+      "format": "Q8_0_UP",
+      "tokens": 256,
+      "distribution": "uniform",
+      "elements": 163840,
+      "compare": {
+        "elements": 163840,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 665.95,
+        "min_us": 664.213,
+        "max_us": 878.451,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 13148160
+      },
+      "candidate_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 515.019,
+        "min_us": 514.123,
+        "max_us": 831.65,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 13148160
+      },
+      "candidate_over_baseline_median_ratio": 0.77336
+    },
+    {
+      "format": "Q8_0_UP",
+      "tokens": 256,
+      "distribution": "skew_hot20",
+      "elements": 163840,
+      "compare": {
+        "elements": 163840,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 665.284,
+        "min_us": 663.514,
+        "max_us": 758.279,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 13148160
+      },
+      "candidate_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 597.658,
+        "min_us": 587.171,
+        "max_us": 764.296,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 13148160
+      },
+      "candidate_over_baseline_median_ratio": 0.89835
+    },
+    {
+      "format": "Q8_0_UP",
+      "tokens": 256,
+      "distribution": "allhot10",
+      "elements": 163840,
+      "compare": {
+        "elements": 163840,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 193.89,
+        "min_us": 191.779,
+        "max_us": 321.368,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 13148160
+      },
+      "candidate_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 152.711,
+        "min_us": 150.807,
+        "max_us": 292.859,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 13148160
+      },
+      "candidate_over_baseline_median_ratio": 0.787617
+    },
+    {
+      "format": "Q8_0_UP",
+      "tokens": 256,
+      "distribution": "boundary16_17_20",
+      "elements": 163840,
+      "compare": {
+        "elements": 163840,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 667.179,
+        "min_us": 666.101,
+        "max_us": 753.392,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 13148160
+      },
+      "candidate_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 599.843,
+        "min_us": 587.598,
+        "max_us": 728.292,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 13148160
+      },
+      "candidate_over_baseline_median_ratio": 0.899074
+    },
+    {
+      "format": "Q8_0_UP",
+      "tokens": 512,
+      "distribution": "uniform",
+      "elements": 327680,
+      "compare": {
+        "elements": 327680,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 765.01,
+        "min_us": 762.189,
+        "max_us": 953.356,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 26296320
+      },
+      "candidate_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 541.939,
+        "min_us": 540.856,
+        "max_us": 873.556,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 26296320
+      },
+      "candidate_over_baseline_median_ratio": 0.708408
+    },
+    {
+      "format": "Q8_0_UP",
+      "tokens": 512,
+      "distribution": "skew_hot20",
+      "elements": 327680,
+      "compare": {
+        "elements": 327680,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 781.286,
+        "min_us": 780.37,
+        "max_us": 867.301,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 26296320
+      },
+      "candidate_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 631.776,
+        "min_us": 624.111,
+        "max_us": 786.673,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 26296320
+      },
+      "candidate_over_baseline_median_ratio": 0.808636
+    },
+    {
+      "format": "Q8_0_UP",
+      "tokens": 512,
+      "distribution": "allhot10",
+      "elements": 327680,
+      "compare": {
+        "elements": 327680,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 366.089,
+        "min_us": 365.222,
+        "max_us": 459.319,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 26296320
+      },
+      "candidate_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 276.083,
+        "min_us": 274.659,
+        "max_us": 432.036,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 26296320
+      },
+      "candidate_over_baseline_median_ratio": 0.754142
+    },
+    {
+      "format": "Q8_0_UP",
+      "tokens": 512,
+      "distribution": "boundary16_17_20",
+      "elements": 327680,
+      "compare": {
+        "elements": 327680,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 762.765,
+        "min_us": 760.666,
+        "max_us": 834.931,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 26296320
+      },
+      "candidate_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 626.051,
+        "min_us": 623.912,
+        "max_us": 760.437,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 89128960,
+        "graph_buffer_bytes": 26296320
+      },
+      "candidate_over_baseline_median_ratio": 0.820765
+    },
+    {
+      "format": "Q8_0_DOWN",
+      "tokens": 256,
+      "distribution": "uniform",
+      "elements": 163840,
+      "compare": {
+        "elements": 163840,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 265.6,
+        "min_us": 264.01,
+        "max_us": 468.123,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 5283840
+      },
+      "candidate_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 199.893,
+        "min_us": 196.335,
+        "max_us": 421.775,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 5283840
+      },
+      "candidate_over_baseline_median_ratio": 0.752609
+    },
+    {
+      "format": "Q8_0_DOWN",
+      "tokens": 256,
+      "distribution": "skew_hot20",
+      "elements": 163840,
+      "compare": {
+        "elements": 163840,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 264.411,
+        "min_us": 262.821,
+        "max_us": 349.606,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 5283840
+      },
+      "candidate_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 219.567,
+        "min_us": 218.882,
+        "max_us": 332.123,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 5283840
+      },
+      "candidate_over_baseline_median_ratio": 0.8304
+    },
+    {
+      "format": "Q8_0_DOWN",
+      "tokens": 256,
+      "distribution": "allhot10",
+      "elements": 163840,
+      "compare": {
+        "elements": 163840,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 117.11,
+        "min_us": 115.015,
+        "max_us": 205.407,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 5283840
+      },
+      "candidate_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 75.666,
+        "min_us": 73.037,
+        "max_us": 180.674,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 5283840
+      },
+      "candidate_over_baseline_median_ratio": 0.64611
+    },
+    {
+      "format": "Q8_0_DOWN",
+      "tokens": 256,
+      "distribution": "boundary16_17_20",
+      "elements": 163840,
+      "compare": {
+        "elements": 163840,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 264.88,
+        "min_us": 263.821,
+        "max_us": 334.559,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 5283840
+      },
+      "candidate_timing": {
+        "output_elements": 163840,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 223.592,
+        "min_us": 222.487,
+        "max_us": 317.489,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 5283840
+      },
+      "candidate_over_baseline_median_ratio": 0.844126
+    },
+    {
+      "format": "Q8_0_DOWN",
+      "tokens": 512,
+      "distribution": "uniform",
+      "elements": 327680,
+      "compare": {
+        "elements": 327680,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 338.023,
+        "min_us": 337.577,
+        "max_us": 538.843,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 10567680
+      },
+      "candidate_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 227.389,
+        "min_us": 225.637,
+        "max_us": 450.276,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 10567680
+      },
+      "candidate_over_baseline_median_ratio": 0.672703
+    },
+    {
+      "format": "Q8_0_DOWN",
+      "tokens": 512,
+      "distribution": "skew_hot20",
+      "elements": 327680,
+      "compare": {
+        "elements": 327680,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 343.521,
+        "min_us": 342.838,
+        "max_us": 464.724,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 10567680
+      },
+      "candidate_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 248.528,
+        "min_us": 247.974,
+        "max_us": 373.396,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 10567680
+      },
+      "candidate_over_baseline_median_ratio": 0.723473
+    },
+    {
+      "format": "Q8_0_DOWN",
+      "tokens": 512,
+      "distribution": "allhot10",
+      "elements": 327680,
+      "compare": {
+        "elements": 327680,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 222.297,
+        "min_us": 221.315,
+        "max_us": 322.132,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 10567680
+      },
+      "candidate_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 136.947,
+        "min_us": 135.927,
+        "max_us": 253.165,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 10567680
+      },
+      "candidate_over_baseline_median_ratio": 0.616054
+    },
+    {
+      "format": "Q8_0_DOWN",
+      "tokens": 512,
+      "distribution": "boundary16_17_20",
+      "elements": 327680,
+      "compare": {
+        "elements": 327680,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rms": 0.0,
+        "nonfinite": 0,
+        "verdict": "REPORT_ONLY"
+      },
+      "baseline_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 340.217,
+        "min_us": 339.924,
+        "max_us": 418.941,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 10567680
+      },
+      "candidate_timing": {
+        "output_elements": 327680,
+        "warmups": 1,
+        "samples": 5,
+        "median_us": 254.683,
+        "min_us": 253.013,
+        "max_us": 352.725,
+        "scope": "full_graph_compute_ids_helper_classify_quantize_and_matmul",
+        "bank_buffer_bytes": 22282752,
+        "graph_buffer_bytes": 10567680
+      },
+      "candidate_over_baseline_median_ratio": 0.74859
+    }
+  ],
+  "logs": {
+    "Q8_0_DOWN-T256-baseline.log": "350df5f0cab760949a9f4a4fe6ca8aedae88ef1e02e01141bf3102820bc83f0a",
+    "Q8_0_DOWN-T256-candidate.log": "6f924497dc1d3f3ac24d91e9e8487de92d24fdce945a61269f9c6ee06ea1141a",
+    "Q8_0_DOWN-T512-baseline.log": "73435d901e1f94dbf71d82bef69178dc7fcec0953fb3e2cd08f26cdf6f4adf7c",
+    "Q8_0_DOWN-T512-candidate.log": "ed1a9ece037ef3660ad05f24921f238a3e13e84ff11b1037d7469ebeb34d5c27",
+    "Q8_0_UP-T256-baseline.log": "c41811b65b644d6109965da8d2f5a0bbaac7682420663ae9abd02f9c58adf238",
+    "Q8_0_UP-T256-candidate.log": "42d6a298c56e605bf12f689a629c675faa0a95990faaa1dfeaa301f47672566b",
+    "Q8_0_UP-T512-baseline.log": "2ad3b57e0d8073e1afb2e29b6c00f600933c34547dd0d96ea11724d0cfd81ee7",
+    "Q8_0_UP-T512-candidate.log": "daca252962606449d82eeb8b075ef8d51cee07e8da63fa368f40bc4e9e68ea5e"
+  },
+  "host_link_provenance": {
+    "binary_sha256": "dbe29db978c9297ee650bd795f30cf8e68a334af5b1b21724a7fc5ada60c480b",
+    "fixture_cpp_sha256_at_link": "eb7070009f0307428d41bdad81ddd145594018db1f16b1d5a158fb63c96c8c9c",
+    "link_runtime": "runtime-perf-v241",
+    "loaded_runtime": "runtime-perf-v251",
+    "cuda_objects_rebuilt": 0
+  },
+  "candidate_environment": {
+    "GGML_CUDA_MOE_GROUPED": "1",
+    "GGML_CUDA_MOE_GROUPED_Q8_0": "1",
+    "GGML_CUDA_MOE_SMALL_J": "1",
+    "GGML_CUDA_MOE_SMALL_J_MAX_TOKENS": "512",
+    "GGML_CUDA_MOE_ADAPTIVE_J": "0",
+    "GGML_CUDA_MOE_GROUPED_J": "unset",
+    "GGML_CUDA_MMQ_MOE_J": "unset"
+  },
+  "baseline_environment": {
+    "GGML_CUDA_MOE_GROUPED": "1",
+    "GGML_CUDA_MOE_GROUPED_Q8_0": "0",
+    "GGML_CUDA_MOE_SMALL_J": "0",
+    "GGML_CUDA_MOE_SMALL_J_MAX_TOKENS": "unset",
+    "GGML_CUDA_MOE_ADAPTIVE_J": "0",
+    "GGML_CUDA_MOE_GROUPED_J": "unset",
+    "GGML_CUDA_MMQ_MOE_J": "unset"
+  }
+}

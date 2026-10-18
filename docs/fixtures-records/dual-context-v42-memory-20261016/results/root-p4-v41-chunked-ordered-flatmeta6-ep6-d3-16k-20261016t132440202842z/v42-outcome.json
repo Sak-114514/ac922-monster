@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "candidate": "V42 V96 leader-only Relay6 staging + unused-segment elision + CUDA graph variant cap 1; target ubatch 4096 / draft ubatch 512",
+  "unit": "root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z",
+  "run_complete": true,
+  "model_run_rc": 0,
+  "model_loads": 1,
+  "automatic_retry": false,
+  "performance_valid": true,
+  "performance_validity_basis": "Observed clean workload measurements; user override says cross-revision token differences alone do not invalidate performance. Native semantic, same-run F32/P4, and activation gates passed.",
+  "supervisor_exit_code": 1,
+  "systemd_exec_main_status": "2",
+  "supervisor_final_state": {
+    "MainPID": "0",
+    "Result": "exit-code",
+    "ExecMainStatus": "2",
+    "ActiveState": "failed",
+    "SubState": "failed"
+  },
+  "postrun_supervisor_error": "The C++ runner returned 0 for diagnostic and clean context families. The launcher then exited after it tried to invoke the absent V41-specific V37 comparator; the canonical V40 comparator was run offline and found the cross-revision token differences recorded below. The V27 comparator also reports the separate existing V27 delta.",
+  "safety": {
+    "guard_seen": false,
+    "runtime_bound_hit": false,
+    "max_runtime_seconds": 900,
+    "gpu_free_floor_mib": 512,
+    "minimum_gpu_free_mib_observed": 711,
+    "gpu_temperature_limit_c": 58,
+    "maximum_gpu_temperature_c_observed": 50.0,
+    "bmc_temperature_limit_c": 58,
+    "maximum_bmc_temperature_c_observed": 50.0,
+    "minimum_node0_plus_node8_memfree_mib_record_only": 208.9,
+    "node0_plus_node8_memory_policy": "record-only, no stop threshold; system telemetry global MemAvailable includes GPU NUMA nodes",
+    "swap_used_at_preflight_mib": 366,
+    "no_gpu_reset": true,
+    "fan": {
+      "fan0": {
+        "rpm_min": 2838,
+        "rpm_max": 2856,
+        "target_rpm": 3000,
+        "alarm_max": 0,
+        "fault_max": 0
+      },
+      "fan2": {
+        "rpm_min": 2853,
+        "rpm_max": 2902,
+        "target_rpm": 3000,
+        "alarm_max": 0,
+        "fault_max": 0
+      },
+      "fan3": {
+        "rpm_min": 2840,
+        "rpm_max": 2860,
+        "target_rpm": 3000,
+        "alarm_max": 0,
+        "fault_max": 0
+      }
+    },
+    "fan_monitor_watchdog_state_at_initial_safety_gate": null,
+    "postflight_all_gpus_released": true
+  },
+  "profile_and_runtime": {
+    "profile_sha256": "ab510ee320c9a85cbed674970b6185dda9561848a1dce98b785dd5737f44e0a1",
+    "runtime_build_id": "20261016T125920.508355Z",
+    "runtime_report_sha256": "c17cbcfc2b940bc982fff61d1a3606c380cfdd5c90c2c4de33b9da82e3b554f8",
+    "runner_binary": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v41-ub4096-20261016/build-runtime-v94/dual-context-v41-ub4096",
+    "runner_sha256": "f209106346c135335b96b7413c6d60f68665a376606ef50bf033cc49df630dfc",
+    "target_ubatch": 4096,
+    "draft_ubatch": 512,
+    "environment": {
+      "GGML_CUDA_P2P_AR_ELIDE_UNUSED_SEGMENT": "1",
+      "GGML_CUDA_P2P_AR_RELAY_LEADER_STAGE": "1",
+      "GGML_CUDA_GRAPH_VARIANTS_CAP": "1",
+      "GGML_CUDA_P2P_AR_RELAY_MAX_BYTES": "41943040",
+      "GGML_META_CHUNK_NODES": "0",
+      "GGML_CUDA_GRAPHS_FORCE": "0",
+      "GGML_META_COLD_PREPARE_COHORT": "1"
+    }
+  },
+  "completed_work": {
+    "native_semantic_status": "PASS",
+    "native_semantic_scenarios": 12,
+    "native_semantic_cases": 32,
+    "f32_pair_gate": "PASS",
+    "f32_serial_p4_pairs": {
+      "exact": 40,
+      "total": 40
+    },
+    "f32_before_after_mtp_pairs": {
+      "exact": 42,
+      "total": 42
+    },
+    "same_run_s1_p4_gate": "PASS",
+    "activation_status": "PASS",
+    "activation_snapshot_devices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "activation_checks": {
+      "cpu_copy_32m_context_policy_observed": true,
+      "cpu_copy_dispatch_observed": true,
+      "flat_meta_wholegraph_merge_selected": true,
+      "flat_six_device_p2p_initialized": true,
+      "graphs_force_disabled_when_not_requested": true,
+      "ordered_relay6_kind4_all_six_large_payload": true,
+      "packed_dense_decode_selected_when_requested": true,
+      "ple_12_gib_prefix_selected": true,
+      "single_chunk_cold_drain_observed_when_requested": true,
+      "structural_snapshot_stats_all_six_devices": true,
+      "v96_cold_cohort_all_six_runtime": true
+    },
+    "v37_token_comparator": {
+      "status": "FAIL_EXACT_TOKEN_PARITY_INFORMATIONAL",
+      "blocking_for_performance": false,
+      "compared_flows": 47,
+      "exact_token_arrays": 32,
+      "mismatches": 15,
+      "diagnostic": {
+        "compared": 42,
+        "exact": 32,
+        "mismatches": 10
+      },
+      "clean": {
+        "compared": 5,
+        "exact": 0,
+        "mismatches": 5
+      },
+      "representative_first_divergences": [
+        {
+          "label": "flatmeta6d3-copy1-diagnostic-real8k-p4-1x4",
+          "flow": "real8k-0",
+          "first_diff_index": 3,
+          "baseline_token": 510,
+          "candidate_token": 248068
+        },
+        {
+          "label": "flatmeta6d3-copy1-clean-real8k-p4-1x4-clean",
+          "flow": "real8k-0",
+          "first_diff_index": 3,
+          "baseline_token": 510,
+          "candidate_token": 248068
+        }
+      ],
+      "investigation_status": "Recorded for separate cross-revision analysis; no additional model load was done."
+    },
+    "v27_token_comparator_separate": {
+      "status": "FAIL",
+      "diagnostic_exact": 32,
+      "diagnostic_total": 42,
+      "clean_exact": 1,
+      "clean_total": 4,
+      "used_as_v42_gate": false
+    }
+  },
+  "performance": {
+    "scope": "Clean, uncached, single 8K and one-bank four-lane 4x8K; no load-test or repeat model load.",
+    "single8k": {
+      "input_tokens": 8192,
+      "target_only_prefill_tok_s": 1910.11,
+      "whole_prefill_tok_s": 1624.18,
+      "target_prefill_seconds": 4.288755,
+      "whole_prefill_seconds": 5.043763,
+      "clean_performance_eligible": true
+    },
+    "p4_4x8k": {
+      "input_tokens_total": 32768,
+      "target_only_prefill_tok_s": 1529.67,
+      "whole_prefill_tok_s": 1329.66,
+      "target_prefill_seconds": 21.421568,
+      "whole_prefill_seconds": 24.641944,
+      "shared_decode_tokens": 900,
+      "shared_decode_seconds": 5.705611,
+      "shared_decode_tok_s": 157.74,
+      "clean_performance_eligible": true
+    }
+  },
+  "artifacts": {
+    "supervisor_manifest": {
+      "path": "fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z-supervisor-manifest.json",
+      "sha256": "98d0651583fae0d88cf347e0f9578f7d6e66ee862192456d6f5c4ff7f1eaf944",
+      "bytes": 30858
+    },
+    "monitor_summary": {
+      "path": "fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z-monitor-summary.json",
+      "sha256": "13ee4050ff7666c73eccaef27bc8a76e83c64c2b6a4c607097bbe2fb7e4c11b6",
+      "bytes": 6117
+    },
+    "telemetry": {
+      "path": "fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z-telemetry.jsonl",
+      "sha256": "25a941340d304f62e1bb151a2b4093ed1b7a40ea59545e345ce9d38a66de05a9",
+      "bytes": 113327
+    },
+    "diagnostic_results": {
+      "path": "fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z/copy1/diagnostic/results.json",
+      "sha256": "11b512c4966436fbce4c069464adf9f77af6461ab86cc689e6f029eb9125dc9c",
+      "bytes": 895266
+    },
+    "clean_results": {
+      "path": "fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z/copy1/clean/results.json",
+      "sha256": "bd072a04bfa274bd9c4b3e7933ce74526b2a19aa85cc53c46707b82f014eaac2",
+      "bytes": 61580
+    },
+    "diagnostic_semantic_report": {
+      "path": "fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z/copy1/diagnostic/results.json.semantic-gate.json",
+      "sha256": "77f71724f69c1d380ee0281c8775785268f04f4eec26141eca3d187a13442b9c",
+      "bytes": 14032
+    },
+    "clean_semantic_report": {
+      "path": "fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z/copy1/clean/results.json.semantic-gate.json",
+      "sha256": "77f71724f69c1d380ee0281c8775785268f04f4eec26141eca3d187a13442b9c",
+      "bytes": 14032
+    },
+    "preclean_quality_report": {
+      "path": "fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z/copy1/diagnostic/preclean-quality-gate.json",
+      "sha256": "f3f8d4c8f9372c7c5f273304a1c98290320ebe928e0d01a354e7240408db5a8a",
+      "bytes": 14766
+    },
+    "diagnostic_run_manifest": {
+      "path": "fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z/copy1/diagnostic/run-manifest.json",
+      "sha256": "4ed0d9fe10290b36303677bf922255e8899530b9aadd49fd08116e3394d345cb",
+      "bytes": 69355
+    },
+    "clean_run_manifest": {
+      "path": "fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z/copy1/clean/run-manifest.json",
+      "sha256": "a7bbaa2ef5bec219e9dc3f080b1b98cd89a7437fa852449c15e8761df0bd4bd4",
+      "bytes": 31228
+    },
+    "single8k_prefill_measurement": {
+      "path": "fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z/copy1/clean/single8k-prefill-measurement.json",
+      "sha256": "1988fce2564537c8c5934c2f12333c5c5e751792cb9896fc3e0556ab480c938d",
+      "bytes": 1099
+    },
+    "activation_report": {
+      "path": "fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z/v42-flatmeta6-activation-evidence.json",
+      "sha256": "014d904962ca8d1f96e7b904a635bfbc7f150852a86fc79989d3fd8f01ae5746",
+      "bytes": 20836
+    },
+    "v37_offline_comparator": {
+      "path": "fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z/v37-token-comparison-offline.json",
+      "sha256": "16335c500668dfe0c8268d2a49df1f05ef0c739838a0247f524f60c56d1e9cd6",
+      "bytes": 6378
+    },
+    "v27_comparator_separate": {
+      "path": "fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z/v42-v27-token-array-comparison.json",
+      "sha256": "a2c54ad9e92c277e9f1eaeee30b360a77d418672ad9ee7004693f021b2ae249f",
+      "bytes": 29720
+    },
+    "v96_gate_bundle": {
+      "path": "fixtures/dual-context-v42-memory-20261016/v96-gate-bundle.json",
+      "sha256": "c956ff6a4f595a82b60eb0ffb6e6b974949dde9a789ad5eba6659a8a42327a7b",
+      "bytes": 5652
+    }
+  },
+  "applied_source_sha256s": {
+    "generate_v42_launcher.py": "fe28e3e4b50e5f61faed030e7b6bfe35cb39c92156d68d2ee96c7a878912224d",
+    "write_run_manifest_v42.py": "b84287a5e916007859012a7ff43ebcf096d4a9a5a4932e27718a49a115f7b9fd",
+    "run-v42-flatmeta6.sh": "90ccdef89899733fe74fce2adc022af344af065bfdd1fc1ee33bc8f23342d6f2",
+    "run-v42-supervisor.py": "f0d32d00ee75c8ac7ffae2165d0b12af74710f70bca8de0d65d16bd28d0d46ec",
+    "verify_v42_activation.py": "48a47ab63a875770ad8dd966db9389856010a0a0c6ee3daef8897fd026b29a6b",
+    "make_v42_profile.py": "330ab67c41191474209c0673e01bccb326c488028aff9a0b85f36f9ff6e4eae3",
+    "v42-local-gate-evidence.json": "64c170ef3d85037229c9d521b25698d8668edad04e4b1e5955aae4a2c69b213c"
+  },
+  "postrun_launcher_source_fix": {
+    "reason": "The model run completed, then the V41-derived shell called a missing V41-specific V37 comparator path.",
+    "future_generator": "generate_v42_launcher.py now targets the canonical V40/V37 exact-token comparator and manifest source map.",
+    "applied_run_unchanged": true,
+    "applied_launcher_sha256": "90ccdef89899733fe74fce2adc022af344af065bfdd1fc1ee33bc8f23342d6f2",
+    "future_generator_source_sha256": "837df8e96e2493a9067575110e12b3739115b5b34f1805b75bd17288ed924dd3",
+    "future_manifest_writer_sha256": "664c83cc1b8dd052f548125662e865db1c61a97b6f7fb8df3bb68e5ae0e7c54d",
+    "canonical_offline_comparison_artifact": "results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z/v37-token-comparison-offline.json"
+  }
+}

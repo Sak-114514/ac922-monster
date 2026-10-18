@@ -1,0 +1,67 @@
+{
+  "fixture": "layer-pp-inputs-v152-20261017",
+  "tag": "v152-galloc-badleaf-20261016T232954Z",
+  "status": "bad-leaf-identified-before-allocation-query",
+  "run": {
+    "mode": "stage-off",
+    "runtime_id": "runtime-perf-v155",
+    "exit_status": 134,
+    "runner_sha256": "be0fd64d4d4e16b515a6e1bc113b33d1460106d2b2546b7db3c2cdbe2c1968b7",
+    "graph_progress": [
+      {"scheduler": "A-small", "frame": 0, "expected_copy": 0, "queued": true},
+      {"scheduler": "B-small", "frame": 0, "expected_copy": 0, "queued": true},
+      {"scheduler": "A-small", "frame": 1, "expected_copy": 1, "entered_alloc": true}
+    ],
+    "bad_leaf": {
+      "name": "CPU#A-small.frame1.input.token_ids#0",
+      "type": "i32",
+      "ne": [16, 1, 1, 1],
+      "flags": 3,
+      "tensor_data": null,
+      "view_src": null,
+      "buffer_id": -1,
+      "n_buffers": 3,
+      "buft": null,
+      "addr_chunk": -1,
+      "addr_offset": 18446744073709551615,
+      "size_max": 0
+    },
+    "guard": "ggml_gallocr_init_tensor, before allocation-size assert; emitted leaf details and aborted",
+    "raw_log": "v152-galloc-badleaf-20261016T20261016T232954Z.log",
+    "raw_log_sha256": "c8c34d6992322606425d3c44360393e9718530862752cb0fdff4a7b7e35cba2f",
+    "output_exactness": "NOT_REACHED"
+  },
+  "provenance": {
+    "original_ggml_alloc_source_sha256": "213b48d6ef6d6ffef55c438db837116105de72cdae3dd152673035e61508d384",
+    "guarded_debug_copy_sha256": "7f0ff8809ec5ee7bed5aeaaca79d93fcc6394d48e627a2f2783913afa7d7423d",
+    "guard_debug_library_sha256": "e2c0f8d161b5ce18831083ad759fce8c58ffab9b8f1da49dc5d8db732a62d6f1",
+    "v155_core_backend_sha256": "77090a924f2b61f2d774675cd7965732cd13f436bf6abb1fe55d0e80e532a07c",
+    "runtime_v155_report_sha256": "b5f4884cef3df093d45f2fbe7be3bcfb1caa0ea1943e7344c8cf4bf14fe28d92",
+    "ldd_r": "PASS"
+  },
+  "safety": {
+    "preflight": {
+      "gpus": [
+        {"index": 0, "temperature_c": 38, "memory_free_mib": 16125, "memory_used_mib": 2, "utilization_percent": 0},
+        {"index": 1, "temperature_c": 37, "memory_free_mib": 16125, "memory_used_mib": 2, "utilization_percent": 0},
+        {"index": 2, "temperature_c": 37, "memory_free_mib": 16128, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 3, "temperature_c": 37, "memory_free_mib": 16128, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 4, "temperature_c": 37, "memory_free_mib": 16118, "memory_used_mib": 9, "utilization_percent": 0},
+        {"index": 5, "temperature_c": 38, "memory_free_mib": 16123, "memory_used_mib": 4, "utilization_percent": 0}
+      ],
+      "bmc": {"sample_utc": "2026-10-16T23:39:27.923347Z", "max_c": 39.062, "host": "Running", "chassis": "On", "masks_ok": true, "fan_target_rpm": 3000, "faults": 0, "alarms": 0}
+    },
+    "postflight": {
+      "all_six_compute_pids": 0,
+      "gpus": [
+        {"index": 0, "temperature_c": 38, "memory_free_mib": 16124, "memory_used_mib": 3, "utilization_percent": 0},
+        {"index": 1, "temperature_c": 37, "memory_free_mib": 16125, "memory_used_mib": 2, "utilization_percent": 0},
+        {"index": 2, "temperature_c": 37, "memory_free_mib": 16128, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 3, "temperature_c": 37, "memory_free_mib": 16128, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 4, "temperature_c": 37, "memory_free_mib": 16118, "memory_used_mib": 9, "utilization_percent": 0},
+        {"index": 5, "temperature_c": 38, "memory_free_mib": 16123, "memory_used_mib": 4, "utilization_percent": 0}
+      ],
+      "bmc": {"sample_utc": "2026-10-16T23:39:43.844560Z", "max_c": 40, "host": "Running", "chassis": "On", "masks_ok": true, "fan_target_rpm": 3000, "faults": 0, "alarms": 0}
+    }
+  }
+}

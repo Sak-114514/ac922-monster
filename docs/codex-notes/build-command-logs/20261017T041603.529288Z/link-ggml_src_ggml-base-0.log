@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "cmake",
+    "-E",
+    "cmake_link_script",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/build-link-scripts/ggml__src__ggml-base.link.txt",
+    "--verbose=1"
+  ],
+  "cwd": "/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/ggml/src",
+  "display": "cmake -E cmake_link_script /home/debian/ac922-monster/experiments/standard-opt-20261014/notes/build-link-scripts/ggml__src__ggml-base.link.txt --verbose=1",
+  "kind": "link-script",
+  "output_tail": "/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libggml-base.so.0 -o ../../bin/libggml-base.so.0.25.1 \"CMakeFiles/ggml-base.dir/ggml.c.o\" \"CMakeFiles/ggml-base.dir/ggml.cpp.o\" \"CMakeFiles/ggml-base.dir/ggml-alloc.c.o\" \"CMakeFiles/ggml-base.dir/ggml-backend.cpp.o\" \"CMakeFiles/ggml-base.dir/ggml-backend-meta.cpp.o\" \"CMakeFiles/ggml-base.dir/ggml-opt.cpp.o\" \"CMakeFiles/ggml-base.dir/ggml-threading.cpp.o\" \"CMakeFiles/ggml-base.dir/ggml-quants.c.o\" \"CMakeFiles/ggml-base.dir/gguf.cpp.o\"  -lm /usr/lib/gcc/powerpc64le-linux-gnu/12/libgomp.so /usr/lib/powerpc64le-linux-gnu/libpthread.a\n",
+  "returncode": 0,
+  "target": "ggml/src:ggml-base"
+}
+
+--- combined stdout/stderr ---
+/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libggml-base.so.0 -o ../../bin/libggml-base.so.0.25.1 "CMakeFiles/ggml-base.dir/ggml.c.o" "CMakeFiles/ggml-base.dir/ggml.cpp.o" "CMakeFiles/ggml-base.dir/ggml-alloc.c.o" "CMakeFiles/ggml-base.dir/ggml-backend.cpp.o" "CMakeFiles/ggml-base.dir/ggml-backend-meta.cpp.o" "CMakeFiles/ggml-base.dir/ggml-opt.cpp.o" "CMakeFiles/ggml-base.dir/ggml-threading.cpp.o" "CMakeFiles/ggml-base.dir/ggml-quants.c.o" "CMakeFiles/ggml-base.dir/gguf.cpp.o"  -lm /usr/lib/gcc/powerpc64le-linux-gnu/12/libgomp.so /usr/lib/powerpc64le-linux-gnu/libpthread.a

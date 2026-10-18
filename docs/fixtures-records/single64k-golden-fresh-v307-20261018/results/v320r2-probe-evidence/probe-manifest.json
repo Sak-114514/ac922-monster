@@ -1,0 +1,52 @@
+{
+  "out": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nsys-nvtx-probe-v320-20261018/results/r1-20261017T182347Z",
+  "argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "90s",
+    "env",
+    "CUDA_VISIBLE_DEVICES=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f",
+    "LD_PRELOAD=",
+    "/usr/local/cuda-12.4/nsight-systems-2023.4.4/target-linux-ppc64le/nsys",
+    "profile",
+    "--force-overwrite=false",
+    "--output",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nsys-nvtx-probe-v320-20261018/results/r1-20261017T182347Z/probe",
+    "--capture-range=cudaProfilerApi",
+    "--capture-range-end=stop",
+    "--trace=cuda,nvtx,osrt",
+    "--cuda-graph-trace=node",
+    "--sample=none",
+    "--cpuctxsw=none",
+    "/tmp/ac922-v320-nvtx-probe"
+  ],
+  "returncode": 0,
+  "preflight_gpu": [
+    [
+      16120,
+      40
+    ],
+    [
+      16120,
+      38
+    ],
+    [
+      16120,
+      39
+    ],
+    [
+      16120,
+      39
+    ],
+    [
+      16107,
+      39
+    ],
+    [
+      16110,
+      39
+    ]
+  ],
+  "scope": "4byte-memset/NVTX instrument smoke, no model/no inference kernel"
+}

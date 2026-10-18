@@ -1,0 +1,286 @@
+V333_CONFIG cuda_graphs_force=1 graphs_disabled=0 device_tail=1 hardware_policy=4 helper=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/device-tail-bridge-v328-20261018/build-r1/libac922-tail-bridge.so capture_hint=actual_submit_thread
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+V333_DEVICE rank=0 name=CUDA0 free=16582639616 total=16911433728
+V333_DEVICE rank=1 name=CUDA1 free=16584736768 total=16911433728
+V333_DEVICE rank=2 name=CUDA2 free=16584736768 total=16911433728
+V333_DEVICE rank=3 name=CUDA3 free=16584605696 total=16911433728
+V333_DEVICE rank=4 name=CUDA4 free=16571301888 total=16911433728
+V333_DEVICE rank=5 name=CUDA5 free=16574054400 total=16911433728
+PP pinned inputs requested=1 selected=1 scheduler=0x100426dd3c0 copies=4 cap=268435456 reset_preserves_slots=1 host_slots=4 device_ring_unchanged=1
+V333_CAPTURE slot=0 label=A graph_object=0x7ffe6ddd1a40 uid=0 nodes=18 leaves=3
+V333_NODE slot=0 uid=0 index=0 ptr=0x7ffe6ddd0060 name=A_cpu_get_rows_prefix op=GET_ROWS owner=CPU flags=16 src=0x7ffecc330060,0x7ffe6ede01d0
+V333_NODE slot=0 uid=0 index=1 ptr=0x7ffe6ddd01d0 name=A_cuda_stage_sum_0 op=ADD owner=AUTO flags=16 src=0x7ffe6ede0060,0x7ffe6ddd0060
+V333_NODE slot=0 uid=0 index=2 ptr=0x7ffe6ddd0340 name=A_cuda_stage_0 op=SCALE owner=CUDA0 flags=18 src=0x7ffe6ddd01d0
+V333_NODE slot=0 uid=0 index=3 ptr=0x7ffe6ddd04b0 name=A_cuda_stage_sum_1 op=ADD owner=AUTO flags=16 src=0x7ffe6ddd0340,0x7ffe6ede0060
+V333_NODE slot=0 uid=0 index=4 ptr=0x7ffe6ddd0620 name=A_cuda_stage_prefix_1 op=ADD owner=AUTO flags=16 src=0x7ffe6ddd04b0,0x7ffe6ddd0060
+V333_NODE slot=0 uid=0 index=5 ptr=0x7ffe6ddd0790 name=A_cuda_stage_1 op=SCALE owner=CUDA1 flags=18 src=0x7ffe6ddd0620
+V333_NODE slot=0 uid=0 index=6 ptr=0x7ffe6ddd0900 name=A_cuda_stage_sum_2 op=ADD owner=AUTO flags=16 src=0x7ffe6ddd0790,0x7ffe6ede0060
+V333_NODE slot=0 uid=0 index=7 ptr=0x7ffe6ddd0a70 name=A_cuda_stage_prefix_2 op=ADD owner=AUTO flags=16 src=0x7ffe6ddd0900,0x7ffe6ddd0060
+V333_NODE slot=0 uid=0 index=8 ptr=0x7ffe6ddd0be0 name=A_cuda_stage_2 op=SCALE owner=CUDA2 flags=18 src=0x7ffe6ddd0a70
+V333_NODE slot=0 uid=0 index=9 ptr=0x7ffe6ddd0d50 name=A_cuda_stage_sum_3 op=ADD owner=AUTO flags=16 src=0x7ffe6ddd0be0,0x7ffe6ede0060
+V333_NODE slot=0 uid=0 index=10 ptr=0x7ffe6ddd0ec0 name=A_cuda_stage_prefix_3 op=ADD owner=AUTO flags=16 src=0x7ffe6ddd0d50,0x7ffe6ddd0060
+V333_NODE slot=0 uid=0 index=11 ptr=0x7ffe6ddd1030 name=A_cuda_stage_3 op=SCALE owner=CUDA3 flags=18 src=0x7ffe6ddd0ec0
+V333_NODE slot=0 uid=0 index=12 ptr=0x7ffe6ddd11a0 name=A_cuda_stage_sum_4 op=ADD owner=AUTO flags=16 src=0x7ffe6ddd1030,0x7ffe6ede0060
+V333_NODE slot=0 uid=0 index=13 ptr=0x7ffe6ddd1310 name=A_cuda_stage_prefix_4 op=ADD owner=AUTO flags=16 src=0x7ffe6ddd11a0,0x7ffe6ddd0060
+V333_NODE slot=0 uid=0 index=14 ptr=0x7ffe6ddd1480 name=A_cuda_stage_4 op=SCALE owner=CUDA4 flags=18 src=0x7ffe6ddd1310
+V333_NODE slot=0 uid=0 index=15 ptr=0x7ffe6ddd15f0 name=A_cuda_stage_sum_5 op=ADD owner=AUTO flags=16 src=0x7ffe6ddd1480,0x7ffe6ede0060
+V333_NODE slot=0 uid=0 index=16 ptr=0x7ffe6ddd1760 name=A_cuda_stage_prefix_5 op=ADD owner=AUTO flags=16 src=0x7ffe6ddd15f0,0x7ffe6ddd0060
+V333_NODE slot=0 uid=0 index=17 ptr=0x7ffe6ddd18d0 name=A_cuda_stage_5 op=SCALE owner=CUDA5 flags=18 src=0x7ffe6ddd1760
+V333_STAGE_OWNER slot=0 uid=0 stage=0 tensor=0x7ffe6ddd0340 backend=CUDA0 device=CUDA0
+V333_STAGE_OWNER slot=0 uid=0 stage=1 tensor=0x7ffe6ddd0790 backend=CUDA1 device=CUDA1
+V333_STAGE_OWNER slot=0 uid=0 stage=2 tensor=0x7ffe6ddd0be0 backend=CUDA2 device=CUDA2
+V333_STAGE_OWNER slot=0 uid=0 stage=3 tensor=0x7ffe6ddd1030 backend=CUDA3 device=CUDA3
+V333_STAGE_OWNER slot=0 uid=0 stage=4 tensor=0x7ffe6ddd1480 backend=CUDA4 device=CUDA4
+V333_STAGE_OWNER slot=0 uid=0 stage=5 tensor=0x7ffe6ddd18d0 backend=CUDA5 device=CUDA5
+V333_CAPTURE slot=1 label=B graph_object=0x7ffe6cdc1a40 uid=0 nodes=18 leaves=3
+V333_NODE slot=1 uid=0 index=0 ptr=0x7ffe6cdc0060 name=B_cpu_get_rows_prefix op=GET_ROWS owner=CPU flags=16 src=0x7ffecc330060,0x7ffe6ede01d0
+V333_NODE slot=1 uid=0 index=1 ptr=0x7ffe6cdc01d0 name=B_cuda_stage_sum_0 op=ADD owner=AUTO flags=16 src=0x7ffe6ede0060,0x7ffe6cdc0060
+V333_NODE slot=1 uid=0 index=2 ptr=0x7ffe6cdc0340 name=B_cuda_stage_0 op=SCALE owner=CUDA0 flags=18 src=0x7ffe6cdc01d0
+V333_NODE slot=1 uid=0 index=3 ptr=0x7ffe6cdc04b0 name=B_cuda_stage_sum_1 op=ADD owner=AUTO flags=16 src=0x7ffe6cdc0340,0x7ffe6ede0060
+V333_NODE slot=1 uid=0 index=4 ptr=0x7ffe6cdc0620 name=B_cuda_stage_prefix_1 op=ADD owner=AUTO flags=16 src=0x7ffe6cdc04b0,0x7ffe6cdc0060
+V333_NODE slot=1 uid=0 index=5 ptr=0x7ffe6cdc0790 name=B_cuda_stage_1 op=SCALE owner=CUDA1 flags=18 src=0x7ffe6cdc0620
+V333_NODE slot=1 uid=0 index=6 ptr=0x7ffe6cdc0900 name=B_cuda_stage_sum_2 op=ADD owner=AUTO flags=16 src=0x7ffe6cdc0790,0x7ffe6ede0060
+V333_NODE slot=1 uid=0 index=7 ptr=0x7ffe6cdc0a70 name=B_cuda_stage_prefix_2 op=ADD owner=AUTO flags=16 src=0x7ffe6cdc0900,0x7ffe6cdc0060
+V333_NODE slot=1 uid=0 index=8 ptr=0x7ffe6cdc0be0 name=B_cuda_stage_2 op=SCALE owner=CUDA2 flags=18 src=0x7ffe6cdc0a70
+V333_NODE slot=1 uid=0 index=9 ptr=0x7ffe6cdc0d50 name=B_cuda_stage_sum_3 op=ADD owner=AUTO flags=16 src=0x7ffe6cdc0be0,0x7ffe6ede0060
+V333_NODE slot=1 uid=0 index=10 ptr=0x7ffe6cdc0ec0 name=B_cuda_stage_prefix_3 op=ADD owner=AUTO flags=16 src=0x7ffe6cdc0d50,0x7ffe6cdc0060
+V333_NODE slot=1 uid=0 index=11 ptr=0x7ffe6cdc1030 name=B_cuda_stage_3 op=SCALE owner=CUDA3 flags=18 src=0x7ffe6cdc0ec0
+V333_NODE slot=1 uid=0 index=12 ptr=0x7ffe6cdc11a0 name=B_cuda_stage_sum_4 op=ADD owner=AUTO flags=16 src=0x7ffe6cdc1030,0x7ffe6ede0060
+V333_NODE slot=1 uid=0 index=13 ptr=0x7ffe6cdc1310 name=B_cuda_stage_prefix_4 op=ADD owner=AUTO flags=16 src=0x7ffe6cdc11a0,0x7ffe6cdc0060
+V333_NODE slot=1 uid=0 index=14 ptr=0x7ffe6cdc1480 name=B_cuda_stage_4 op=SCALE owner=CUDA4 flags=18 src=0x7ffe6cdc1310
+V333_NODE slot=1 uid=0 index=15 ptr=0x7ffe6cdc15f0 name=B_cuda_stage_sum_5 op=ADD owner=AUTO flags=16 src=0x7ffe6cdc1480,0x7ffe6ede0060
+V333_NODE slot=1 uid=0 index=16 ptr=0x7ffe6cdc1760 name=B_cuda_stage_prefix_5 op=ADD owner=AUTO flags=16 src=0x7ffe6cdc15f0,0x7ffe6cdc0060
+V333_NODE slot=1 uid=0 index=17 ptr=0x7ffe6cdc18d0 name=B_cuda_stage_5 op=SCALE owner=CUDA5 flags=18 src=0x7ffe6cdc1760
+V333_STAGE_OWNER slot=1 uid=0 stage=0 tensor=0x7ffe6cdc0340 backend=CUDA0 device=CUDA0
+V333_STAGE_OWNER slot=1 uid=0 stage=1 tensor=0x7ffe6cdc0790 backend=CUDA1 device=CUDA1
+V333_STAGE_OWNER slot=1 uid=0 stage=2 tensor=0x7ffe6cdc0be0 backend=CUDA2 device=CUDA2
+V333_STAGE_OWNER slot=1 uid=0 stage=3 tensor=0x7ffe6cdc1030 backend=CUDA3 device=CUDA3
+V333_STAGE_OWNER slot=1 uid=0 stage=4 tensor=0x7ffe6cdc1480 backend=CUDA4 device=CUDA4
+V333_STAGE_OWNER slot=1 uid=0 stage=5 tensor=0x7ffe6cdc18d0 backend=CUDA5 device=CUDA5
+CUDA graph structural rejected binding device=0 name=CUDA0#v318_external_cpu_input#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=0 name=CUDA0#A_cpu_get_rows_prefix#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=0 reason=unsupported_external nodes=4 external=2 uid=0
+CUDA graph structural rejected binding device=1 name=CUDA1#A_cuda_stage_prefix_1#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=1 name=CUDA1#v318_external_cpu_input#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=1 name=CUDA1#A_cpu_get_rows_prefix#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=1 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=2 name=CUDA2#A_cuda_stage_prefix_2#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=2 name=CUDA2#v318_external_cpu_input#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=2 name=CUDA2#A_cpu_get_rows_prefix#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=2 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=3 name=CUDA3#A_cuda_stage_prefix_3#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=3 name=CUDA3#v318_external_cpu_input#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=3 name=CUDA3#A_cpu_get_rows_prefix#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=3 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=4 name=CUDA4#A_cuda_stage_prefix_4#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=4 name=CUDA4#v318_external_cpu_input#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=4 name=CUDA4#A_cpu_get_rows_prefix#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=4 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=5 name=CUDA5#A_cuda_stage_prefix_5#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=5 reason=unsupported_external nodes=1 external=1 uid=0
+V333_HINT enter frame=0 requested=1 previous=-1 scope=actual_submit_thread thread=4829317545627211843
+PP pinned input allocation scheduler=0x100426dd3c0 backend=0 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=5099520 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x100426dd3c0 backend=CUDA0 slot=0 source=v318_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+CUDA graph binding key requested=1 selected=1 device=0 raw_key=0x7ffe6ddd01d0 key=0x100429d9230 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=4 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x1003e8dc540 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=4 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x1003e8dc540 device=0 uid=3 nodes=4 mode=capture count=1
+CUDA device-tail helper requested=1 loaded=1 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/device-tail-bridge-v328-20261018/build-r1/libac922-tail-bridge.so scope=sm70_prefill_hint_no_cold_cohort_unchanged_graph
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=1
+optimization path device=0 path=cuda_graph_device_tail scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=4 width=0 auxiliary=0 count=1
+PP pinned input allocation scheduler=0x100426dd3c0 backend=1 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=10199040 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x100426dd3c0 backend=CUDA1 slot=0 source=v318_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x100426dd3c0 source=CUDA0 destination=CUDA1 slot=0 waits=1
+CUDA graph binding key requested=1 selected=1 device=1 raw_key=0x7ffe6ddd0790 key=0x100432a63f0 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=3 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x1003f5a2a70 device=1 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=4 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x1003f5a2a70 device=1 uid=4 nodes=3 mode=capture count=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=1
+optimization path device=1 path=cuda_graph_device_tail scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=1
+PP pinned input allocation scheduler=0x100426dd3c0 backend=2 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=15298560 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x100426dd3c0 backend=CUDA2 slot=0 source=v318_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x100426dd3c0 source=CUDA1 destination=CUDA2 slot=0 waits=2
+CUDA graph binding key requested=1 selected=1 device=2 raw_key=0x7ffe6ddd0be0 key=0x10043875b70 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=2 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=3 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x1004026e680 device=2 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=4 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x1004026e680 device=2 uid=5 nodes=3 mode=capture count=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=1
+optimization path device=2 path=cuda_graph_device_tail scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=1
+PP pinned input allocation scheduler=0x100426dd3c0 backend=3 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=20398080 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x100426dd3c0 backend=CUDA3 slot=0 source=v318_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+CUDA graph binding key requested=1 selected=1 device=3 raw_key=0x7ffe6ddd1030 key=0x10043e45390 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=3 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=3 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x10040f43510 device=3 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=4 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x10040f43510 device=3 uid=6 nodes=3 mode=capture count=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=1
+optimization path device=3 path=cuda_graph_device_tail scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=1
+PP pinned input allocation scheduler=0x100426dd3c0 backend=4 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=25497600 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x100426dd3c0 backend=CUDA4 slot=0 source=v318_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+CUDA graph binding key requested=1 selected=1 device=4 raw_key=0x7ffe6ddd1480 key=0x10044414ae0 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=4 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=3 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x10041c21c30 device=4 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=4 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x10041c21c30 device=4 uid=7 nodes=3 mode=capture count=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=1
+optimization path device=4 path=cuda_graph_device_tail scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=1
+CUDA graph binding key requested=1 selected=1 device=5 raw_key=0x7ffe6ddd18d0 key=0x100449ddea0 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=5 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=1 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x1004290a9e0 device=5 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=4 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x1004290a9e0 device=5 uid=8 nodes=1 mode=capture count=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=1
+optimization path device=5 path=cuda_graph_device_tail scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=1 width=0 auxiliary=0 count=1
+V333_HINT restore frame=0 restored=-1 prior_current=1 scope=actual_submit_thread thread=4829317545627211843
+V333_SUBMIT frame=0 slot=0 label=A root_graph=0x7ffe6ddd1a40 uid=1 same_object_reused=0 sched_copies=4 copy_index_inferred_from_alloc_order=0 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V333_RESTORE slot=0 label=A uid=1 owner_match=1 node_src_restored=1 pending_prior_frames=1
+CUDA graph structural rejected binding device=0 name=CUDA0#v318_external_cpu_input#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=0 name=CUDA0#B_cpu_get_rows_prefix#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=0 reason=unsupported_external nodes=4 external=2 uid=0
+CUDA graph structural rejected binding device=1 name=CUDA1#B_cuda_stage_prefix_1#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=1 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=2 name=CUDA2#B_cuda_stage_prefix_2#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=2 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=3 name=CUDA3#B_cuda_stage_prefix_3#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=3 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=4 name=CUDA4#B_cuda_stage_prefix_4#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=4 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=5 name=CUDA5#B_cuda_stage_prefix_5#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=5 reason=unsupported_external nodes=1 external=1 uid=0
+V333_HINT enter frame=1 requested=1 previous=-1 scope=actual_submit_thread thread=4829317545627211843
+PP pinned input allocation scheduler=0x100426dd3c0 backend=0 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=30597120 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x1003e8dc540 device=0 raw_key=0x7ffe6cdc01d0 section=node index=0 old_name=A_cuda_stage_sum_0 new_name=B_cuda_stage_sum_0 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdd0d74000 new_data=0x7ffdd0d74000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1003e8dc540 device=0 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=1/16
+CUDA graph binding key requested=1 selected=1 device=0 raw_key=0x7ffe6cdc01d0 key=0x10045db2950 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=4 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x1003e8dc540 device=0 uid=11 nodes=4 mode=capture count=2
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=2
+optimization path device=0 path=cuda_graph_device_tail scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=4 width=0 auxiliary=0 count=2
+PP pinned input allocation scheduler=0x100426dd3c0 backend=1 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=35696640 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x1003f5a2a70 device=1 raw_key=0x7ffe6cdc0790 section=node index=0 old_name=A_cuda_stage_1 new_name=B_cuda_stage_1 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdd312e000 new_data=0x7ffdd312e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1003f5a2a70 device=1 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=1/16
+CUDA graph binding key requested=1 selected=1 device=1 raw_key=0x7ffe6cdc0790 key=0x10045dd1020 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=3 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x1003f5a2a70 device=1 uid=12 nodes=3 mode=capture count=2
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=2
+optimization path device=1 path=cuda_graph_device_tail scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=2
+PP pinned input allocation scheduler=0x100426dd3c0 backend=2 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=40796160 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x1004026e680 device=2 raw_key=0x7ffe6cdc0be0 section=node index=0 old_name=A_cuda_stage_2 new_name=B_cuda_stage_2 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdd552e000 new_data=0x7ffdd552e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1004026e680 device=2 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=1/16
+CUDA graph binding key requested=1 selected=1 device=2 raw_key=0x7ffe6cdc0be0 key=0x10045debac0 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=2 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=3 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x1004026e680 device=2 uid=13 nodes=3 mode=capture count=2
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=2
+optimization path device=2 path=cuda_graph_device_tail scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=2
+PP pinned input allocation scheduler=0x100426dd3c0 backend=3 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=45895680 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x10040f43510 device=3 raw_key=0x7ffe6cdc1030 section=node index=0 old_name=A_cuda_stage_3 new_name=B_cuda_stage_3 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdd792e000 new_data=0x7ffdd792e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10040f43510 device=3 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=1/16
+CUDA graph binding key requested=1 selected=1 device=3 raw_key=0x7ffe6cdc1030 key=0x10045e06780 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=3 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=3 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x10040f43510 device=3 uid=14 nodes=3 mode=capture count=2
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=2
+optimization path device=3 path=cuda_graph_device_tail scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=2
+PP pinned input allocation scheduler=0x100426dd3c0 backend=4 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=50995200 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x10041c21c30 device=4 raw_key=0x7ffe6cdc1480 section=node index=0 old_name=A_cuda_stage_4 new_name=B_cuda_stage_4 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdd9d2e000 new_data=0x7ffdd9d2e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10041c21c30 device=4 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=1/16
+CUDA graph binding key requested=1 selected=1 device=4 raw_key=0x7ffe6cdc1480 key=0x10045e211c0 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=4 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=3 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x10041c21c30 device=4 uid=15 nodes=3 mode=capture count=2
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=2
+optimization path device=4 path=cuda_graph_device_tail scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=2
+CUDA graph signature detail ctx=0x1004290a9e0 device=5 raw_key=0x7ffe6cdc18d0 section=node index=0 old_name=A_cuda_stage_5 new_name=B_cuda_stage_5 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffddadba000 new_data=0x7ffddadba000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1004290a9e0 device=5 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=1/16
+CUDA graph binding key requested=1 selected=1 device=5 raw_key=0x7ffe6cdc18d0 key=0x10045e35920 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=5 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=1 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x1004290a9e0 device=5 uid=16 nodes=1 mode=capture count=2
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=2
+optimization path device=5 path=cuda_graph_device_tail scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=1 width=0 auxiliary=0 count=2
+V333_HINT restore frame=1 restored=-1 prior_current=1 scope=actual_submit_thread thread=4829317545627211843
+V333_SUBMIT frame=1 slot=1 label=B root_graph=0x7ffe6cdc1a40 uid=9 same_object_reused=0 sched_copies=4 copy_index_inferred_from_alloc_order=1 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V333_RESTORE slot=1 label=B uid=9 owner_match=1 node_src_restored=1 pending_prior_frames=1
+CUDA graph structural rejected binding device=5 name=CUDA5#A_cuda_stage_prefix_5#2 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+V333_HINT enter frame=2 requested=1 previous=-1 scope=actual_submit_thread thread=4829317545627211843
+PP pinned input allocation scheduler=0x100426dd3c0 backend=0 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=56094720 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x1003e8dc540 device=0 raw_key=0x7ffe6ddd01d0 section=node index=0 old_name=B_cuda_stage_sum_0 new_name=A_cuda_stage_sum_0 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdd0d74000 new_data=0x7ffdd0d74000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1003e8dc540 device=0 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=2/16
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=3
+PP pinned input allocation scheduler=0x100426dd3c0 backend=1 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=61194240 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x1003f5a2a70 device=1 raw_key=0x7ffe6ddd0790 section=node index=0 old_name=B_cuda_stage_1 new_name=A_cuda_stage_1 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdd312e000 new_data=0x7ffdd312e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1003f5a2a70 device=1 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=2/16
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=3
+PP pinned input allocation scheduler=0x100426dd3c0 backend=2 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=66293760 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x1004026e680 device=2 raw_key=0x7ffe6ddd0be0 section=external index=0 old_name=CUDA2#A_cuda_stage_prefix_2#0 new_name=CUDA2#A_cuda_stage_prefix_2#2 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdd3800000 new_data=0x7ffdd3cdd000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1004026e680 device=2 reference=same_size_owned_signature section=external index=0 field=data same_data=0 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=2/16
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=3
+PP pinned input allocation scheduler=0x100426dd3c0 backend=3 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=71393280 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x10040f43510 device=3 raw_key=0x7ffe6ddd1030 section=node index=0 old_name=B_cuda_stage_3 new_name=A_cuda_stage_3 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdd792e000 new_data=0x7ffdd792e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10040f43510 device=3 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=2/16
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=3
+PP pinned input allocation scheduler=0x100426dd3c0 backend=4 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=76492800 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x10041c21c30 device=4 raw_key=0x7ffe6ddd1480 section=external index=0 old_name=CUDA4#A_cuda_stage_prefix_4#0 new_name=CUDA4#A_cuda_stage_prefix_4#2 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdd8000000 new_data=0x7ffdd84dd000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10041c21c30 device=4 reference=same_size_owned_signature section=external index=0 field=data same_data=0 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=2/16
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=3
+CUDA graph signature detail ctx=0x1004290a9e0 device=5 raw_key=0x7ffe6ddd18d0 section=external index=0 old_name=CUDA5#A_cuda_stage_prefix_5#0 new_name=CUDA5#A_cuda_stage_prefix_5#2 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdda400000 new_data=0x7ffdda8dd000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1004290a9e0 device=5 reference=same_size_owned_signature section=external index=0 field=data same_data=0 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=2/16
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=3
+V333_HINT restore frame=2 restored=-1 prior_current=1 scope=actual_submit_thread thread=4829317545627211843
+V333_SUBMIT frame=2 slot=0 label=A root_graph=0x7ffe6ddd1a40 uid=17 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=2 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V333_RESTORE slot=0 label=A uid=17 owner_match=1 node_src_restored=1 pending_prior_frames=1
+CUDA graph structural rejected binding device=5 name=CUDA5#B_cuda_stage_prefix_5#3 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+V333_HINT enter frame=3 requested=1 previous=-1 scope=actual_submit_thread thread=4829317545627211843
+PP pinned input allocation scheduler=0x100426dd3c0 backend=0 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=81592320 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x1003e8dc540 device=0 raw_key=0x7ffe6cdc01d0 section=node index=0 old_name=A_cuda_stage_sum_0 new_name=B_cuda_stage_sum_0 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdd0d74000 new_data=0x7ffdd0d74000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1003e8dc540 device=0 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=3/16
+CUDA graph binding key requested=1 selected=1 device=0 raw_key=0x7ffe6cdc01d0 key=0x10044ad6aa0 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=4
+PP pinned input allocation scheduler=0x100426dd3c0 backend=1 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=86691840 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x1003f5a2a70 device=1 raw_key=0x7ffe6cdc0790 section=node index=0 old_name=A_cuda_stage_1 new_name=B_cuda_stage_1 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdd312e000 new_data=0x7ffdd312e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1003f5a2a70 device=1 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=3/16
+CUDA graph binding key requested=1 selected=1 device=1 raw_key=0x7ffe6cdc0790 key=0x10044af7530 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=4
+PP pinned input allocation scheduler=0x100426dd3c0 backend=2 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=91791360 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x1004026e680 device=2 raw_key=0x7ffe6cdc0be0 section=node index=0 old_name=A_cuda_stage_2 new_name=B_cuda_stage_2 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdd552e000 new_data=0x7ffdd552e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1004026e680 device=2 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=3/16
+CUDA graph binding key requested=1 selected=1 device=2 raw_key=0x7ffe6cdc0be0 key=0x10044b11e50 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=4
+PP pinned input allocation scheduler=0x100426dd3c0 backend=3 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=96890880 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x10040f43510 device=3 raw_key=0x7ffe6cdc1030 section=node index=0 old_name=A_cuda_stage_3 new_name=B_cuda_stage_3 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdd792e000 new_data=0x7ffdd792e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10040f43510 device=3 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=3/16
+CUDA graph binding key requested=1 selected=1 device=3 raw_key=0x7ffe6cdc1030 key=0x10044b2c7d0 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=4
+PP pinned input allocation scheduler=0x100426dd3c0 backend=4 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=101990400 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x10041c21c30 device=4 raw_key=0x7ffe6cdc1480 section=node index=0 old_name=A_cuda_stage_4 new_name=B_cuda_stage_4 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdd9d2e000 new_data=0x7ffdd9d2e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10041c21c30 device=4 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=3/16
+CUDA graph binding key requested=1 selected=1 device=4 raw_key=0x7ffe6cdc1480 key=0x10044b47150 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=4
+CUDA graph signature detail ctx=0x1004290a9e0 device=5 raw_key=0x7ffe6cdc18d0 section=node index=0 old_name=A_cuda_stage_5 new_name=B_cuda_stage_5 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffddadba000 new_data=0x7ffddadba000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1004290a9e0 device=5 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=3/16
+CUDA graph binding key requested=1 selected=1 device=5 raw_key=0x7ffe6cdc18d0 key=0x10044b5b7f0 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=4
+V333_HINT restore frame=3 restored=-1 prior_current=1 scope=actual_submit_thread thread=4829317545627211843
+V333_SUBMIT frame=3 slot=1 label=B root_graph=0x7ffe6cdc1a40 uid=25 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=3 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V333_WINDOW_PASS window=0 submitted=4 drained=1 exact=24/24 canaries=all
+V333_RESTORE slot=1 label=B uid=25 owner_match=1 node_src_restored=1 pending_prior_frames=0
+V333_HINT enter frame=4 requested=1 previous=-1 scope=actual_submit_thread thread=4829317545627211843
+CUDA graph path active ctx=0x1003e8dc540 device=0 uid=35 nodes=4 mode=replay count=1
+CUDA graph path active ctx=0x1003f5a2a70 device=1 uid=36 nodes=3 mode=replay count=1
+CUDA graph path active ctx=0x1004026e680 device=2 uid=37 nodes=3 mode=replay count=1
+CUDA graph path active ctx=0x10040f43510 device=3 uid=38 nodes=3 mode=replay count=1
+CUDA graph path active ctx=0x10041c21c30 device=4 uid=39 nodes=3 mode=replay count=1
+CUDA graph path active ctx=0x1004290a9e0 device=5 uid=40 nodes=1 mode=replay count=1
+V333_HINT restore frame=4 restored=-1 prior_current=1 scope=actual_submit_thread thread=4829317545627211843
+V333_SUBMIT frame=4 slot=0 label=A root_graph=0x7ffe6ddd1a40 uid=33 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=0 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V333_RESTORE slot=0 label=A uid=33 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V333_HINT enter frame=5 requested=1 previous=-1 scope=actual_submit_thread thread=4829317545627211843
+CUDA graph path active ctx=0x1003e8dc540 device=0 uid=43 nodes=4 mode=replay count=2
+CUDA graph path active ctx=0x1003f5a2a70 device=1 uid=44 nodes=3 mode=replay count=2
+CUDA graph path active ctx=0x1004026e680 device=2 uid=45 nodes=3 mode=replay count=2
+CUDA graph path active ctx=0x10040f43510 device=3 uid=46 nodes=3 mode=replay count=2
+CUDA graph path active ctx=0x10041c21c30 device=4 uid=47 nodes=3 mode=replay count=2
+CUDA graph path active ctx=0x1004290a9e0 device=5 uid=48 nodes=1 mode=replay count=2
+V333_HINT restore frame=5 restored=-1 prior_current=1 scope=actual_submit_thread thread=4829317545627211843
+V333_SUBMIT frame=5 slot=1 label=B root_graph=0x7ffe6cdc1a40 uid=41 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=1 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V333_RESTORE slot=1 label=B uid=41 owner_match=1 node_src_restored=1 pending_prior_frames=1

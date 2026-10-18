@@ -1,0 +1,7 @@
+# V32: V77 parent-walk fast path on the two-bank D3 profile
+
+V32 reuses the V29-qualified PPC64LE runner unchanged (SHA-256 `8f25242b2c8bb8fe09eba2002386d5d98f5b8de08886e9e491a6499b76a5c44d`) and the V29 two-bank × two-lane D3 geometry. It keeps the explicit 16K per-sequence test capacity, Q8_0 target/draft KV, all experts, standard QSA indexer, target UB1024, draft UB512, V67 fragment cache, and the original native semantic, full-F32 prefill logits, exact generated-token, auxiliary-prefix, clean-window, and V27 token-array gates.
+
+The runtime is frozen V77 (`20261016T051430.291943Z`, report SHA-256 `dc3d61c8228e40aa2135e087b02429d15905cce59306c1b5edd759dbf0d48a12`). The sole new feature flag relative to the V31 parent-signature/compose profile is `GGML_META_PARENT_WALK_FAST=1`. The V77 nested+PLE fixture showed 16 stable selected parent-walk records, +16 original/prepared hits, +16 composed replays, zero ordinary/async AR and cold drains, with exact/canary, UID/buffer invalidation, and PLE-owner-reset gates passing. The separate large-shape AR control passed all six ranks. Evidence hashes and paths are in `v77-parent-walk-tiny-gate-evidence.txt`.
+
+The full-model run is bounded to one model load and 30 minutes, preserves all runtime reserves, and does not retry automatically. The corrected V23 safety monitor observes GPU floor/temperature and fresh BMC/fan telemetry without changing fan state. A successful fixture or tiny gate does not establish full-model correctness or a performance gain; those require the retained full-run gates and artifacts.

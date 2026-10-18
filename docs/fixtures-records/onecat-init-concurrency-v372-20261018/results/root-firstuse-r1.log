@@ -1,0 +1,33 @@
+GPU_PREFLIGHT phase=before uuid=GPU-d3558623-deca-c702-3cc0-01b4aa9c667a used_mib=10 free_mib=16117 temp_c=40 util=0 compute_pids=none
+runtime_libdir=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/onecat-init-concurrency-v372-20261018/onecat-init-concurrency-v372-root-r368r2-r3
+	linux-vdso64.so.1 (0x00007fff91f90000)
+	libggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib/libggml-cuda.so.0 (0x00007fff842a0000)
+	libggml.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib/libggml.so.0 (0x00007fff84270000)
+	libggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib/libggml-base.so.0 (0x00007fff840e0000)
+	libstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fff83db0000)
+	libm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fff83c80000)
+	libgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fff83c40000)
+	libc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fff839e0000)
+	libcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fff83900000)
+	libcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fff7cbe0000)
+	libcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fff7ae20000)
+	libnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff78fc0000)
+	/lib64/ld64.so.2 (0x00007fff91fb0000)
+	libggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib/libggml-cpu.so.0 (0x00007fff78e00000)
+	libgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fff78d80000)
+	libdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff78d50000)
+	libpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff78d20000)
+	librt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff78cf0000)
+	libcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff64e60000)
+V372_RUNTIME_CLOSURE_PASS libdir=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+V372_RUNTIME_GATE GGML_CUDA_FATTN_ONECAT=1 GGML_CUDA_ONECAT_INIT_READY=1 cuda_device_index=0 visible_gpu_count=1 first_graph_computes=concurrent
+ggml_cuda_get_best_fattn_kernel: using opt-in Onecat Flash-V100 XQA decode path (QH=24 KVH=2 T=1 S=1 n_kv=2303)
+CASE name=v372_t1_s1 t=1 streams=1 total_query_rows=1 nkv=2303 partial_tail=1 gathered=1 kv=q8_0/q8_0 mask=causal-triangular max_bias=0.0 prefix=2299 env=1 onecat_supported=1 expected_path=onecat alloc=4865728 buft=4865728
+CASE name=v372_t1_s4 t=1 streams=4 total_query_rows=4 nkv=2303 partial_tail=1 gathered=1 kv=q8_0/q8_0 mask=causal-triangular max_bias=0.0 prefix=2299 env=1 onecat_supported=1 expected_path=onecat alloc=19462912 buft=19462912
+V372_FAIL initial graph UID is zero
+V372 fixture process failed status=1; no automatic retry
+GPU_PREFLIGHT phase=after uuid=GPU-d3558623-deca-c702-3cc0-01b4aa9c667a used_mib=11 free_mib=16116 temp_c=41 util=1 compute_pids=none
+exit_status=1

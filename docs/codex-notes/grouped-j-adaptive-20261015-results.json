@@ -1,0 +1,253 @@
+{
+  "schema": "grouped-mmq-adaptive-j-v1",
+  "label": "grouped-j-adaptive-20261015",
+  "finished_utc": "2026-10-15T04:09:46Z",
+  "device": {
+    "uuid": "GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+    "model": "Tesla V100-SXM2-16GB",
+    "compute_capability": "sm_70"
+  },
+  "distribution": {
+    "kind": "synthetic_zipf_like",
+    "counts": {
+      "experts_0_15": 128,
+      "experts_16_63": 64,
+      "experts_64_175": 24,
+      "experts_176_335": 12,
+      "experts_336_495": 3,
+      "experts_496_511": 2
+    },
+    "total_assignments": 10240,
+    "cold_threshold": 32,
+    "cold_experts": 448,
+    "cold_assignments": 5120,
+    "hot_experts": 64,
+    "hot_assignments": 5120
+  },
+  "weights": {
+    "source": "fixtures/volta-tc-real/manifest.json",
+    "packed_real_rows": true,
+    "expert_id": 0,
+    "sample_rows_per_format": 16,
+    "repeated_across_output_rows_and_experts": true,
+    "model_hash": null,
+    "full_model_loaded": false
+  },
+  "activations": {
+    "format": "Q8_1_MMQ",
+    "same_global_token_bytes_repacked_to_queues": true,
+    "random_fp32_scale_mantissas": true
+  },
+  "timing": {
+    "baseline_graph_nodes": 1,
+    "adaptive_graph_nodes": 2,
+    "warmup_graph_replays": 8,
+    "timed_graph_replays": 120,
+    "method": "CUDA events around repeated graph launches",
+    "host_routing_quantization_prefix_time_included": false
+  },
+  "correctness_reference": "J64 for all experts; adaptive outputs mapped back to the same global token IDs",
+  "correctness": {
+    "IQ2_XXS": {
+      "N": 192,
+      "K": 2560,
+      "exact": true,
+      "bitdiff": 0,
+      "max_abs": 0.0,
+      "nonfinite": 0
+    },
+    "IQ2_XS": {
+      "N": 224,
+      "K": 2560,
+      "exact": true,
+      "bitdiff": 0,
+      "max_abs": 0.0,
+      "nonfinite": 0
+    },
+    "IQ2_S": {
+      "N": 192,
+      "K": 2560,
+      "exact": true,
+      "bitdiff": 0,
+      "max_abs": 0.0,
+      "nonfinite": 0
+    },
+    "IQ3_XXS": {
+      "N": 224,
+      "K": 2560,
+      "exact": true,
+      "bitdiff": 0,
+      "max_abs": 0.0,
+      "nonfinite": 0
+    },
+    "IQ3_S": {
+      "N": 192,
+      "K": 2560,
+      "exact": true,
+      "bitdiff": 0,
+      "max_abs": 0.0,
+      "nonfinite": 0
+    },
+    "IQ4_NL": {
+      "N": 768,
+      "K": 640,
+      "exact": true,
+      "bitdiff": 0,
+      "max_abs": 0.0,
+      "nonfinite": 0
+    },
+    "Q2_0": {
+      "N": 768,
+      "K": 640,
+      "exact": true,
+      "bitdiff": 0,
+      "max_abs": 0.0,
+      "nonfinite": 0
+    }
+  },
+  "performance": {
+    "IQ2_XXS": {
+      "tensor": "blk.1.ffn_gate_exps.weight",
+      "N": 192,
+      "K": 2560,
+      "route": "zipf_like",
+      "experts": 512,
+      "assignments": 10240,
+      "threshold": 32,
+      "baseline": {
+        "policy": "all_J64",
+        "graph_nodes": 1,
+        "avg_us": 1479.6202
+      },
+      "adaptive": {
+        "policy": "cold_le_32_J32_hot_gt_32_J64",
+        "graph_nodes": 2,
+        "avg_us": 966.0587
+      },
+      "adaptive_speedup_vs_baseline": 1.5316
+    },
+    "IQ2_XS": {
+      "tensor": "blk.0.ffn_gate_exps.weight",
+      "N": 224,
+      "K": 2560,
+      "route": "zipf_like",
+      "experts": 512,
+      "assignments": 10240,
+      "threshold": 32,
+      "baseline": {
+        "policy": "all_J64",
+        "graph_nodes": 1,
+        "avg_us": 1733.4357
+      },
+      "adaptive": {
+        "policy": "cold_le_32_J32_hot_gt_32_J64",
+        "graph_nodes": 2,
+        "avg_us": 1048.704
+      },
+      "adaptive_speedup_vs_baseline": 1.6529
+    },
+    "IQ2_S": {
+      "tensor": "blk.12.ffn_gate_exps.weight",
+      "N": 192,
+      "K": 2560,
+      "route": "zipf_like",
+      "experts": 512,
+      "assignments": 10240,
+      "threshold": 32,
+      "baseline": {
+        "policy": "all_J64",
+        "graph_nodes": 1,
+        "avg_us": 1744.7765
+      },
+      "adaptive": {
+        "policy": "cold_le_32_J32_hot_gt_32_J64",
+        "graph_nodes": 2,
+        "avg_us": 1053.0389
+      },
+      "adaptive_speedup_vs_baseline": 1.6569
+    },
+    "IQ3_XXS": {
+      "tensor": "blk.35.ffn_gate_exps.weight",
+      "N": 224,
+      "K": 2560,
+      "route": "zipf_like",
+      "experts": 512,
+      "assignments": 10240,
+      "threshold": 32,
+      "baseline": {
+        "policy": "all_J64",
+        "graph_nodes": 1,
+        "avg_us": 1298.2955
+      },
+      "adaptive": {
+        "policy": "cold_le_32_J32_hot_gt_32_J64",
+        "graph_nodes": 2,
+        "avg_us": 954.6752
+      },
+      "adaptive_speedup_vs_baseline": 1.3599
+    },
+    "IQ3_S": {
+      "tensor": "blk.8.ffn_gate_exps.weight",
+      "N": 192,
+      "K": 2560,
+      "route": "zipf_like",
+      "experts": 512,
+      "assignments": 10240,
+      "threshold": 32,
+      "baseline": {
+        "policy": "all_J64",
+        "graph_nodes": 1,
+        "avg_us": 1357.8922
+      },
+      "adaptive": {
+        "policy": "cold_le_32_J32_hot_gt_32_J64",
+        "graph_nodes": 2,
+        "avg_us": 985.1477
+      },
+      "adaptive_speedup_vs_baseline": 1.3784
+    },
+    "IQ4_NL": {
+      "tensor": "blk.0.ffn_down_exps.weight",
+      "N": 768,
+      "K": 640,
+      "route": "zipf_like",
+      "experts": 512,
+      "assignments": 10240,
+      "threshold": 32,
+      "baseline": {
+        "policy": "all_J64",
+        "graph_nodes": 1,
+        "avg_us": 1123.328
+      },
+      "adaptive": {
+        "policy": "cold_le_32_J32_hot_gt_32_J64",
+        "graph_nodes": 2,
+        "avg_us": 824.6955
+      },
+      "adaptive_speedup_vs_baseline": 1.3621
+    },
+    "Q2_0": {
+      "tensor": "blk.1.ffn_down_exps.weight",
+      "N": 768,
+      "K": 640,
+      "route": "zipf_like",
+      "experts": 512,
+      "assignments": 10240,
+      "threshold": 32,
+      "baseline": {
+        "policy": "all_J64",
+        "graph_nodes": 1,
+        "avg_us": 1325.0304
+      },
+      "adaptive": {
+        "policy": "cold_le_32_J32_hot_gt_32_J64",
+        "graph_nodes": 2,
+        "avg_us": 801.0155
+      },
+      "adaptive_speedup_vs_baseline": 1.6542
+    }
+  },
+  "raw_log": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/grouped-j-adaptive-20261015-results.log",
+  "summary_line": "SUMMARY cases=7 failed_exact_comparisons=0 route=synthetic_zipf_like real_weights=packed_rows_only full_model=0",
+  "caveat": "Packed-real-weights / synthetic Zipf-like route kernel fixture only; not observed production routing, not a model benchmark, and not end-to-end throughput."
+}

@@ -1,0 +1,32 @@
+start=2026-10-16T20:57:16Z
+base=/home/debian/ac922-monster/experiments/standard-opt-20261014
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v120
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-prefill-path-screen-v125-20261017/qsa-prefill-path-screen-v125-host3
+run_tag=v125-gpu3-32k-20261016T2057Z
+limit_s=60
+1a3750189bf54c051d735018d5fcf9b0436ceb9ffdca76896515202ea465890c  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-prefill-path-screen-v125-20261017/qsa-prefill-path-screen-v125-host3
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 0 MiB, 16127 MiB, 38
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+V125_START device=0 backend=CUDA0 models_loaded=0 capture=disabled dense=canonical_qwen4exp_mask_plus_FLASH_ATTN_EXT sparse=llama_qsa_standard_sparse
+GPU_PREFLIGHT total_mib=16128 free_mib=15818 reserve_mib=512 peak_budget_mib=4096
+STARTUP backend_init_ms=154.666
+ALLOC_PREFLIGHT shape=q1024-k32768 estimated_graph_peak_mib=1138.1 budget_mib=4096
+ALLOC shape=q1024-k32768 graph_buffer_mib=325.3 host_alloc_ms=6.398 budget_mib=4096
+NUMERIC shape=q1024-k32768 seed=A count=2097152 bitdiff=2097137 max_abs=0.0319442749 max_rel=4.49284329e+26 rms=0.00179412067 within_atol_1e-4_rtol_1e-4=332567 tolerance=record_only
+NUMERIC shape=q1024-k32768 seed=B count=2097152 bitdiff=2097143 max_abs=0.0293873549 max_rel=4.4460647e+26 rms=0.00179965577 within_atol_1e-4_rtol_1e-4=334567 tolerance=record_only
+PERF shape=q1024-k32768 reps=3 dense_graph_event_us=14749.696 sparse_graph_event_us=11089.920 event_speedup=1.3300 dense_host_inclusive_us=14768.699 sparse_host_inclusive_us=11108.277 host_speedup=1.3295 preparation_included_in_graph=1 cuda_graph_capture=disabled
+PERF_SAMPLES shape=q1024-k32768 dense_event=14749.696,14749.696,14746.624, sparse_event=11089.920,11100.160,11089.920, dense_host=14768.699,14770.755,14766.794, sparse_host=11108.277,11120.351,11108.267,
+CASE_END shape=q1024-k32768 ABA=PASS finite=PASS inputs_immutable=PASS Q8_cache_tail_canary=PASS observed_delta_mib=366
+ALLOC_PREFLIGHT shape=q4096-k32768 estimated_graph_peak_mib=2962.1 budget_mib=4096
+ALLOC shape=q4096-k32768 graph_buffer_mib=1153.6 host_alloc_ms=19.924 budget_mib=4096
+NUMERIC shape=q4096-k32768 seed=A count=8388608 bitdiff=8388554 max_abs=0.0421037674 max_rel=4.42166871e+26 rms=0.00174716702 within_atol_1e-4_rtol_1e-4=1374189 tolerance=record_only
+NUMERIC shape=q4096-k32768 seed=B count=8388608 bitdiff=8388554 max_abs=0.0289022923 max_rel=7.60542345e+26 rms=0.00176023968 within_atol_1e-4_rtol_1e-4=1374811 tolerance=record_only
+PERF shape=q4096-k32768 reps=3 dense_graph_event_us=47948.799 sparse_graph_event_us=39997.440 event_speedup=1.1988 dense_host_inclusive_us=47967.160 sparse_host_inclusive_us=40015.622 host_speedup=1.1987 preparation_included_in_graph=1 cuda_graph_capture=disabled
+PERF_SAMPLES shape=q4096-k32768 dense_event=47930.367,47948.799,47990.784, sparse_event=40260.609,39997.440,39965.694, dense_host=47950.773,47967.160,48008.002, sparse_host=40279.030,40015.622,39983.014,
+CASE_END shape=q4096-k32768 ABA=PASS finite=PASS inputs_immutable=PASS Q8_cache_tail_canary=PASS observed_delta_mib=1194
+SUMMARY scope=standalone_operator_screen models_loaded=0 engine_integration=0 q8_kv_unchanged=1 sparse_vs_dense_numeric_recorded=1 graph_capture=disabled
+end=2026-10-16T20:57:24Z
+elapsed_s=8
+exit_status=0
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 1 MiB, 16126 MiB, 42

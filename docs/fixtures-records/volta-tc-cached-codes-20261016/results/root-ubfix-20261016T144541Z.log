@@ -1,0 +1,1068 @@
+STAGE main-entry argc=4
+STAGE argv/mode-ready mode=all manifest=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tc-cached-codes-20261016/manifest.json samples=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tc-real
+STAGE cudaSetDevice-before visible_index=0
+STAGE cudaSetDevice-after
+STAGE cudaGetDevice-before
+STAGE cudaGetDevice-after device=0
+STAGE cudaGetDeviceProperties-before device=0
+STAGE cudaGetDeviceProperties-after name=Tesla V100-SXM2-16GB cc=7.0
+STAGE cudaMemGetInfo-before
+STAGE cudaMemGetInfo-after free=16586178560 total=16911433728
+DEVICE visible_index=0 name=Tesla V100-SXM2-16GB cc=7.0 free_bytes=16586178560 total_bytes=16911433728 l2_bytes=6291456 cuda_visible_devices=GPU-fadb0459-4d30-907b-289a-862b3014f165
+STAGE formats-load-before
+STAGE formats-load-after count=7
+STAGE oracle-case-before type=IQ2_XXS Ksrc=2560 N=16 cols=7
+STAGE oracle-host-weights-before type=IQ2_XXS N=16 cols=7
+STAGE oracle-host-weights-after type=IQ2_XXS bytes=1267200
+STAGE oracle-device-buffers-before type=IQ2_XXS
+STAGE oracle-device-buffers-after type=IQ2_XXS
+STAGE oracle-stream-create-before type=IQ2_XXS
+STAGE oracle-stream-create-after type=IQ2_XXS
+STAGE oracle-upload-inputs-before type=IQ2_XXS
+STAGE oracle-upload-sync-before type=IQ2_XXS
+STAGE oracle-upload-inputs-after type=IQ2_XXS
+STAGE oracle-prepare-before type=IQ2_XXS K=2560 N=16 E=3
+STAGE oracle-prepare-after type=IQ2_XXS
+STAGE oracle-prepare-sync-before type=IQ2_XXS
+STAGE oracle-prepare-sync-after type=IQ2_XXS
+STAGE oracle-cache-snapshot-before type=IQ2_XXS
+STAGE oracle-cache-snapshot-after type=IQ2_XXS
+STAGE oracle-reference-before type=IQ2_XXS input=0 seed=17
+STAGE oracle-reference-after type=IQ2_XXS input=0 seed=17
+STAGE oracle-cached-before type=IQ2_XXS input=0 seed=17
+STAGE oracle-cached-after type=IQ2_XXS input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_XXS input=0
+STAGE oracle-consumer-sync-after type=IQ2_XXS input=0
+STAGE oracle-output-copy-before type=IQ2_XXS input=0
+STAGE oracle-output-copy-after type=IQ2_XXS input=0
+NUMERIC ORACLE type=IQ2_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=16 cols=7 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_XXS input=1 seed=921
+STAGE oracle-reference-after type=IQ2_XXS input=1 seed=921
+STAGE oracle-cached-before type=IQ2_XXS input=1 seed=921
+STAGE oracle-cached-after type=IQ2_XXS input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ2_XXS input=1
+STAGE oracle-consumer-sync-after type=IQ2_XXS input=1
+STAGE oracle-output-copy-before type=IQ2_XXS input=1
+STAGE oracle-output-copy-after type=IQ2_XXS input=1
+NUMERIC ORACLE type=IQ2_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=16 cols=7 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_XXS input=2 seed=17
+STAGE oracle-reference-after type=IQ2_XXS input=2 seed=17
+STAGE oracle-cached-before type=IQ2_XXS input=2 seed=17
+STAGE oracle-cached-after type=IQ2_XXS input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_XXS input=2
+STAGE oracle-consumer-sync-after type=IQ2_XXS input=2
+STAGE oracle-output-copy-before type=IQ2_XXS input=2
+STAGE oracle-output-copy-after type=IQ2_XXS input=2
+NUMERIC ORACLE type=IQ2_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=16 cols=7 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ2_XXS Ksrc=2560 Kexec=2560 N=16 cols=7 E=3 added_bytes=1673024
+STAGE oracle-case-after type=IQ2_XXS Ksrc=2560 N=16 cols=7
+STAGE oracle-case-before type=IQ2_XXS Ksrc=2560 N=113 cols=16
+STAGE oracle-host-weights-before type=IQ2_XXS N=113 cols=16
+STAGE oracle-host-weights-after type=IQ2_XXS bytes=1267200
+STAGE oracle-device-buffers-before type=IQ2_XXS
+STAGE oracle-device-buffers-after type=IQ2_XXS
+STAGE oracle-stream-create-before type=IQ2_XXS
+STAGE oracle-stream-create-after type=IQ2_XXS
+STAGE oracle-upload-inputs-before type=IQ2_XXS
+STAGE oracle-upload-sync-before type=IQ2_XXS
+STAGE oracle-upload-inputs-after type=IQ2_XXS
+STAGE oracle-prepare-before type=IQ2_XXS K=2560 N=113 E=3
+STAGE oracle-prepare-after type=IQ2_XXS
+STAGE oracle-prepare-sync-before type=IQ2_XXS
+STAGE oracle-prepare-sync-after type=IQ2_XXS
+STAGE oracle-cache-snapshot-before type=IQ2_XXS
+STAGE oracle-cache-snapshot-after type=IQ2_XXS
+STAGE oracle-reference-before type=IQ2_XXS input=0 seed=17
+STAGE oracle-reference-after type=IQ2_XXS input=0 seed=17
+STAGE oracle-cached-before type=IQ2_XXS input=0 seed=17
+STAGE oracle-cached-after type=IQ2_XXS input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_XXS input=0
+STAGE oracle-consumer-sync-after type=IQ2_XXS input=0
+STAGE oracle-output-copy-before type=IQ2_XXS input=0
+STAGE oracle-output-copy-after type=IQ2_XXS input=0
+NUMERIC ORACLE type=IQ2_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=113 cols=16 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_XXS input=1 seed=921
+STAGE oracle-reference-after type=IQ2_XXS input=1 seed=921
+STAGE oracle-cached-before type=IQ2_XXS input=1 seed=921
+STAGE oracle-cached-after type=IQ2_XXS input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ2_XXS input=1
+STAGE oracle-consumer-sync-after type=IQ2_XXS input=1
+STAGE oracle-output-copy-before type=IQ2_XXS input=1
+STAGE oracle-output-copy-after type=IQ2_XXS input=1
+NUMERIC ORACLE type=IQ2_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=113 cols=16 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_XXS input=2 seed=17
+STAGE oracle-reference-after type=IQ2_XXS input=2 seed=17
+STAGE oracle-cached-before type=IQ2_XXS input=2 seed=17
+STAGE oracle-cached-after type=IQ2_XXS input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_XXS input=2
+STAGE oracle-consumer-sync-after type=IQ2_XXS input=2
+STAGE oracle-output-copy-before type=IQ2_XXS input=2
+STAGE oracle-output-copy-after type=IQ2_XXS input=2
+NUMERIC ORACLE type=IQ2_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=113 cols=16 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ2_XXS Ksrc=2560 Kexec=2560 N=113 cols=16 E=3 added_bytes=3296768
+STAGE oracle-case-after type=IQ2_XXS Ksrc=2560 N=113 cols=16
+STAGE oracle-case-before type=IQ2_XXS Ksrc=2560 N=640 cols=80
+STAGE oracle-host-weights-before type=IQ2_XXS N=640 cols=80
+STAGE oracle-host-weights-after type=IQ2_XXS bytes=1267200
+STAGE oracle-device-buffers-before type=IQ2_XXS
+STAGE oracle-device-buffers-after type=IQ2_XXS
+STAGE oracle-stream-create-before type=IQ2_XXS
+STAGE oracle-stream-create-after type=IQ2_XXS
+STAGE oracle-upload-inputs-before type=IQ2_XXS
+STAGE oracle-upload-sync-before type=IQ2_XXS
+STAGE oracle-upload-inputs-after type=IQ2_XXS
+STAGE oracle-prepare-before type=IQ2_XXS K=2560 N=640 E=3
+STAGE oracle-prepare-after type=IQ2_XXS
+STAGE oracle-prepare-sync-before type=IQ2_XXS
+STAGE oracle-prepare-sync-after type=IQ2_XXS
+STAGE oracle-cache-snapshot-before type=IQ2_XXS
+STAGE oracle-cache-snapshot-after type=IQ2_XXS
+STAGE oracle-reference-before type=IQ2_XXS input=0 seed=17
+STAGE oracle-reference-after type=IQ2_XXS input=0 seed=17
+STAGE oracle-cached-before type=IQ2_XXS input=0 seed=17
+STAGE oracle-cached-after type=IQ2_XXS input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_XXS input=0
+STAGE oracle-consumer-sync-after type=IQ2_XXS input=0
+STAGE oracle-output-copy-before type=IQ2_XXS input=0
+STAGE oracle-output-copy-after type=IQ2_XXS input=0
+NUMERIC ORACLE type=IQ2_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=640 cols=80 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_XXS input=1 seed=921
+STAGE oracle-reference-after type=IQ2_XXS input=1 seed=921
+STAGE oracle-cached-before type=IQ2_XXS input=1 seed=921
+STAGE oracle-cached-after type=IQ2_XXS input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ2_XXS input=1
+STAGE oracle-consumer-sync-after type=IQ2_XXS input=1
+STAGE oracle-output-copy-before type=IQ2_XXS input=1
+STAGE oracle-output-copy-after type=IQ2_XXS input=1
+NUMERIC ORACLE type=IQ2_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=640 cols=80 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_XXS input=2 seed=17
+STAGE oracle-reference-after type=IQ2_XXS input=2 seed=17
+STAGE oracle-cached-before type=IQ2_XXS input=2 seed=17
+STAGE oracle-cached-after type=IQ2_XXS input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_XXS input=2
+STAGE oracle-consumer-sync-after type=IQ2_XXS input=2
+STAGE oracle-output-copy-before type=IQ2_XXS input=2
+STAGE oracle-output-copy-after type=IQ2_XXS input=2
+NUMERIC ORACLE type=IQ2_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=640 cols=80 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 cols=80 E=3 added_bytes=13636544
+STAGE oracle-case-after type=IQ2_XXS Ksrc=2560 N=640 cols=80
+STAGE oracle-case-before type=IQ2_XS Ksrc=2560 N=16 cols=7
+STAGE oracle-host-weights-before type=IQ2_XS N=16 cols=7
+STAGE oracle-host-weights-after type=IQ2_XS bytes=1420800
+STAGE oracle-device-buffers-before type=IQ2_XS
+STAGE oracle-device-buffers-after type=IQ2_XS
+STAGE oracle-stream-create-before type=IQ2_XS
+STAGE oracle-stream-create-after type=IQ2_XS
+STAGE oracle-upload-inputs-before type=IQ2_XS
+STAGE oracle-upload-sync-before type=IQ2_XS
+STAGE oracle-upload-inputs-after type=IQ2_XS
+STAGE oracle-prepare-before type=IQ2_XS K=2560 N=16 E=3
+STAGE oracle-prepare-after type=IQ2_XS
+STAGE oracle-prepare-sync-before type=IQ2_XS
+STAGE oracle-prepare-sync-after type=IQ2_XS
+STAGE oracle-cache-snapshot-before type=IQ2_XS
+STAGE oracle-cache-snapshot-after type=IQ2_XS
+STAGE oracle-reference-before type=IQ2_XS input=0 seed=17
+STAGE oracle-reference-after type=IQ2_XS input=0 seed=17
+STAGE oracle-cached-before type=IQ2_XS input=0 seed=17
+STAGE oracle-cached-after type=IQ2_XS input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_XS input=0
+STAGE oracle-consumer-sync-after type=IQ2_XS input=0
+STAGE oracle-output-copy-before type=IQ2_XS input=0
+STAGE oracle-output-copy-after type=IQ2_XS input=0
+NUMERIC ORACLE type=IQ2_XS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=16 cols=7 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_XS input=1 seed=921
+STAGE oracle-reference-after type=IQ2_XS input=1 seed=921
+STAGE oracle-cached-before type=IQ2_XS input=1 seed=921
+STAGE oracle-cached-after type=IQ2_XS input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ2_XS input=1
+STAGE oracle-consumer-sync-after type=IQ2_XS input=1
+STAGE oracle-output-copy-before type=IQ2_XS input=1
+STAGE oracle-output-copy-after type=IQ2_XS input=1
+NUMERIC ORACLE type=IQ2_XS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=16 cols=7 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_XS input=2 seed=17
+STAGE oracle-reference-after type=IQ2_XS input=2 seed=17
+STAGE oracle-cached-before type=IQ2_XS input=2 seed=17
+STAGE oracle-cached-after type=IQ2_XS input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_XS input=2
+STAGE oracle-consumer-sync-after type=IQ2_XS input=2
+STAGE oracle-output-copy-before type=IQ2_XS input=2
+STAGE oracle-output-copy-after type=IQ2_XS input=2
+NUMERIC ORACLE type=IQ2_XS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=16 cols=7 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ2_XS Ksrc=2560 Kexec=2560 N=16 cols=7 E=3 added_bytes=1841984
+STAGE oracle-case-after type=IQ2_XS Ksrc=2560 N=16 cols=7
+STAGE oracle-case-before type=IQ2_XS Ksrc=2560 N=113 cols=16
+STAGE oracle-host-weights-before type=IQ2_XS N=113 cols=16
+STAGE oracle-host-weights-after type=IQ2_XS bytes=1420800
+STAGE oracle-device-buffers-before type=IQ2_XS
+STAGE oracle-device-buffers-after type=IQ2_XS
+STAGE oracle-stream-create-before type=IQ2_XS
+STAGE oracle-stream-create-after type=IQ2_XS
+STAGE oracle-upload-inputs-before type=IQ2_XS
+STAGE oracle-upload-sync-before type=IQ2_XS
+STAGE oracle-upload-inputs-after type=IQ2_XS
+STAGE oracle-prepare-before type=IQ2_XS K=2560 N=113 E=3
+STAGE oracle-prepare-after type=IQ2_XS
+STAGE oracle-prepare-sync-before type=IQ2_XS
+STAGE oracle-prepare-sync-after type=IQ2_XS
+STAGE oracle-cache-snapshot-before type=IQ2_XS
+STAGE oracle-cache-snapshot-after type=IQ2_XS
+STAGE oracle-reference-before type=IQ2_XS input=0 seed=17
+STAGE oracle-reference-after type=IQ2_XS input=0 seed=17
+STAGE oracle-cached-before type=IQ2_XS input=0 seed=17
+STAGE oracle-cached-after type=IQ2_XS input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_XS input=0
+STAGE oracle-consumer-sync-after type=IQ2_XS input=0
+STAGE oracle-output-copy-before type=IQ2_XS input=0
+STAGE oracle-output-copy-after type=IQ2_XS input=0
+NUMERIC ORACLE type=IQ2_XS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=113 cols=16 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_XS input=1 seed=921
+STAGE oracle-reference-after type=IQ2_XS input=1 seed=921
+STAGE oracle-cached-before type=IQ2_XS input=1 seed=921
+STAGE oracle-cached-after type=IQ2_XS input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ2_XS input=1
+STAGE oracle-consumer-sync-after type=IQ2_XS input=1
+STAGE oracle-output-copy-before type=IQ2_XS input=1
+STAGE oracle-output-copy-after type=IQ2_XS input=1
+NUMERIC ORACLE type=IQ2_XS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=113 cols=16 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_XS input=2 seed=17
+STAGE oracle-reference-after type=IQ2_XS input=2 seed=17
+STAGE oracle-cached-before type=IQ2_XS input=2 seed=17
+STAGE oracle-cached-after type=IQ2_XS input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_XS input=2
+STAGE oracle-consumer-sync-after type=IQ2_XS input=2
+STAGE oracle-output-copy-before type=IQ2_XS input=2
+STAGE oracle-output-copy-after type=IQ2_XS input=2
+NUMERIC ORACLE type=IQ2_XS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=113 cols=16 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ2_XS Ksrc=2560 Kexec=2560 N=113 cols=16 E=3 added_bytes=3558848
+STAGE oracle-case-after type=IQ2_XS Ksrc=2560 N=113 cols=16
+STAGE oracle-case-before type=IQ2_XS Ksrc=2560 N=640 cols=80
+STAGE oracle-host-weights-before type=IQ2_XS N=640 cols=80
+STAGE oracle-host-weights-after type=IQ2_XS bytes=1420800
+STAGE oracle-device-buffers-before type=IQ2_XS
+STAGE oracle-device-buffers-after type=IQ2_XS
+STAGE oracle-stream-create-before type=IQ2_XS
+STAGE oracle-stream-create-after type=IQ2_XS
+STAGE oracle-upload-inputs-before type=IQ2_XS
+STAGE oracle-upload-sync-before type=IQ2_XS
+STAGE oracle-upload-inputs-after type=IQ2_XS
+STAGE oracle-prepare-before type=IQ2_XS K=2560 N=640 E=3
+STAGE oracle-prepare-after type=IQ2_XS
+STAGE oracle-prepare-sync-before type=IQ2_XS
+STAGE oracle-prepare-sync-after type=IQ2_XS
+STAGE oracle-cache-snapshot-before type=IQ2_XS
+STAGE oracle-cache-snapshot-after type=IQ2_XS
+STAGE oracle-reference-before type=IQ2_XS input=0 seed=17
+STAGE oracle-reference-after type=IQ2_XS input=0 seed=17
+STAGE oracle-cached-before type=IQ2_XS input=0 seed=17
+STAGE oracle-cached-after type=IQ2_XS input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_XS input=0
+STAGE oracle-consumer-sync-after type=IQ2_XS input=0
+STAGE oracle-output-copy-before type=IQ2_XS input=0
+STAGE oracle-output-copy-after type=IQ2_XS input=0
+NUMERIC ORACLE type=IQ2_XS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=640 cols=80 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_XS input=1 seed=921
+STAGE oracle-reference-after type=IQ2_XS input=1 seed=921
+STAGE oracle-cached-before type=IQ2_XS input=1 seed=921
+STAGE oracle-cached-after type=IQ2_XS input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ2_XS input=1
+STAGE oracle-consumer-sync-after type=IQ2_XS input=1
+STAGE oracle-output-copy-before type=IQ2_XS input=1
+STAGE oracle-output-copy-after type=IQ2_XS input=1
+NUMERIC ORACLE type=IQ2_XS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=640 cols=80 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_XS input=2 seed=17
+STAGE oracle-reference-after type=IQ2_XS input=2 seed=17
+STAGE oracle-cached-before type=IQ2_XS input=2 seed=17
+STAGE oracle-cached-after type=IQ2_XS input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_XS input=2
+STAGE oracle-consumer-sync-after type=IQ2_XS input=2
+STAGE oracle-output-copy-before type=IQ2_XS input=2
+STAGE oracle-output-copy-after type=IQ2_XS input=2
+NUMERIC ORACLE type=IQ2_XS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=640 cols=80 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 cols=80 E=3 added_bytes=14404544
+STAGE oracle-case-after type=IQ2_XS Ksrc=2560 N=640 cols=80
+STAGE oracle-case-before type=IQ2_S Ksrc=2560 N=16 cols=7
+STAGE oracle-host-weights-before type=IQ2_S N=16 cols=7
+STAGE oracle-host-weights-after type=IQ2_S bytes=1574400
+STAGE oracle-device-buffers-before type=IQ2_S
+STAGE oracle-device-buffers-after type=IQ2_S
+STAGE oracle-stream-create-before type=IQ2_S
+STAGE oracle-stream-create-after type=IQ2_S
+STAGE oracle-upload-inputs-before type=IQ2_S
+STAGE oracle-upload-sync-before type=IQ2_S
+STAGE oracle-upload-inputs-after type=IQ2_S
+STAGE oracle-prepare-before type=IQ2_S K=2560 N=16 E=3
+STAGE oracle-prepare-after type=IQ2_S
+STAGE oracle-prepare-sync-before type=IQ2_S
+STAGE oracle-prepare-sync-after type=IQ2_S
+STAGE oracle-cache-snapshot-before type=IQ2_S
+STAGE oracle-cache-snapshot-after type=IQ2_S
+STAGE oracle-reference-before type=IQ2_S input=0 seed=17
+STAGE oracle-reference-after type=IQ2_S input=0 seed=17
+STAGE oracle-cached-before type=IQ2_S input=0 seed=17
+STAGE oracle-cached-after type=IQ2_S input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_S input=0
+STAGE oracle-consumer-sync-after type=IQ2_S input=0
+STAGE oracle-output-copy-before type=IQ2_S input=0
+STAGE oracle-output-copy-after type=IQ2_S input=0
+NUMERIC ORACLE type=IQ2_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=16 cols=7 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_S input=1 seed=921
+STAGE oracle-reference-after type=IQ2_S input=1 seed=921
+STAGE oracle-cached-before type=IQ2_S input=1 seed=921
+STAGE oracle-cached-after type=IQ2_S input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ2_S input=1
+STAGE oracle-consumer-sync-after type=IQ2_S input=1
+STAGE oracle-output-copy-before type=IQ2_S input=1
+STAGE oracle-output-copy-after type=IQ2_S input=1
+NUMERIC ORACLE type=IQ2_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=16 cols=7 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_S input=2 seed=17
+STAGE oracle-reference-after type=IQ2_S input=2 seed=17
+STAGE oracle-cached-before type=IQ2_S input=2 seed=17
+STAGE oracle-cached-after type=IQ2_S input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_S input=2
+STAGE oracle-consumer-sync-after type=IQ2_S input=2
+STAGE oracle-output-copy-before type=IQ2_S input=2
+STAGE oracle-output-copy-after type=IQ2_S input=2
+NUMERIC ORACLE type=IQ2_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=16 cols=7 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ2_S Ksrc=2560 Kexec=2560 N=16 cols=7 E=3 added_bytes=1995584
+STAGE oracle-case-after type=IQ2_S Ksrc=2560 N=16 cols=7
+STAGE oracle-case-before type=IQ2_S Ksrc=2560 N=113 cols=16
+STAGE oracle-host-weights-before type=IQ2_S N=113 cols=16
+STAGE oracle-host-weights-after type=IQ2_S bytes=1574400
+STAGE oracle-device-buffers-before type=IQ2_S
+STAGE oracle-device-buffers-after type=IQ2_S
+STAGE oracle-stream-create-before type=IQ2_S
+STAGE oracle-stream-create-after type=IQ2_S
+STAGE oracle-upload-inputs-before type=IQ2_S
+STAGE oracle-upload-sync-before type=IQ2_S
+STAGE oracle-upload-inputs-after type=IQ2_S
+STAGE oracle-prepare-before type=IQ2_S K=2560 N=113 E=3
+STAGE oracle-prepare-after type=IQ2_S
+STAGE oracle-prepare-sync-before type=IQ2_S
+STAGE oracle-prepare-sync-after type=IQ2_S
+STAGE oracle-cache-snapshot-before type=IQ2_S
+STAGE oracle-cache-snapshot-after type=IQ2_S
+STAGE oracle-reference-before type=IQ2_S input=0 seed=17
+STAGE oracle-reference-after type=IQ2_S input=0 seed=17
+STAGE oracle-cached-before type=IQ2_S input=0 seed=17
+STAGE oracle-cached-after type=IQ2_S input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_S input=0
+STAGE oracle-consumer-sync-after type=IQ2_S input=0
+STAGE oracle-output-copy-before type=IQ2_S input=0
+STAGE oracle-output-copy-after type=IQ2_S input=0
+NUMERIC ORACLE type=IQ2_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=113 cols=16 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_S input=1 seed=921
+STAGE oracle-reference-after type=IQ2_S input=1 seed=921
+STAGE oracle-cached-before type=IQ2_S input=1 seed=921
+STAGE oracle-cached-after type=IQ2_S input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ2_S input=1
+STAGE oracle-consumer-sync-after type=IQ2_S input=1
+STAGE oracle-output-copy-before type=IQ2_S input=1
+STAGE oracle-output-copy-after type=IQ2_S input=1
+NUMERIC ORACLE type=IQ2_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=113 cols=16 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_S input=2 seed=17
+STAGE oracle-reference-after type=IQ2_S input=2 seed=17
+STAGE oracle-cached-before type=IQ2_S input=2 seed=17
+STAGE oracle-cached-after type=IQ2_S input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_S input=2
+STAGE oracle-consumer-sync-after type=IQ2_S input=2
+STAGE oracle-output-copy-before type=IQ2_S input=2
+STAGE oracle-output-copy-after type=IQ2_S input=2
+NUMERIC ORACLE type=IQ2_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=113 cols=16 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ2_S Ksrc=2560 Kexec=2560 N=113 cols=16 E=3 added_bytes=3712448
+STAGE oracle-case-after type=IQ2_S Ksrc=2560 N=113 cols=16
+STAGE oracle-case-before type=IQ2_S Ksrc=2560 N=640 cols=80
+STAGE oracle-host-weights-before type=IQ2_S N=640 cols=80
+STAGE oracle-host-weights-after type=IQ2_S bytes=1574400
+STAGE oracle-device-buffers-before type=IQ2_S
+STAGE oracle-device-buffers-after type=IQ2_S
+STAGE oracle-stream-create-before type=IQ2_S
+STAGE oracle-stream-create-after type=IQ2_S
+STAGE oracle-upload-inputs-before type=IQ2_S
+STAGE oracle-upload-sync-before type=IQ2_S
+STAGE oracle-upload-inputs-after type=IQ2_S
+STAGE oracle-prepare-before type=IQ2_S K=2560 N=640 E=3
+STAGE oracle-prepare-after type=IQ2_S
+STAGE oracle-prepare-sync-before type=IQ2_S
+STAGE oracle-prepare-sync-after type=IQ2_S
+STAGE oracle-cache-snapshot-before type=IQ2_S
+STAGE oracle-cache-snapshot-after type=IQ2_S
+STAGE oracle-reference-before type=IQ2_S input=0 seed=17
+STAGE oracle-reference-after type=IQ2_S input=0 seed=17
+STAGE oracle-cached-before type=IQ2_S input=0 seed=17
+STAGE oracle-cached-after type=IQ2_S input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_S input=0
+STAGE oracle-consumer-sync-after type=IQ2_S input=0
+STAGE oracle-output-copy-before type=IQ2_S input=0
+STAGE oracle-output-copy-after type=IQ2_S input=0
+NUMERIC ORACLE type=IQ2_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=640 cols=80 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_S input=1 seed=921
+STAGE oracle-reference-after type=IQ2_S input=1 seed=921
+STAGE oracle-cached-before type=IQ2_S input=1 seed=921
+STAGE oracle-cached-after type=IQ2_S input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ2_S input=1
+STAGE oracle-consumer-sync-after type=IQ2_S input=1
+STAGE oracle-output-copy-before type=IQ2_S input=1
+STAGE oracle-output-copy-after type=IQ2_S input=1
+NUMERIC ORACLE type=IQ2_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=640 cols=80 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ2_S input=2 seed=17
+STAGE oracle-reference-after type=IQ2_S input=2 seed=17
+STAGE oracle-cached-before type=IQ2_S input=2 seed=17
+STAGE oracle-cached-after type=IQ2_S input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ2_S input=2
+STAGE oracle-consumer-sync-after type=IQ2_S input=2
+STAGE oracle-output-copy-before type=IQ2_S input=2
+STAGE oracle-output-copy-after type=IQ2_S input=2
+NUMERIC ORACLE type=IQ2_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=640 cols=80 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ2_S Ksrc=2560 Kexec=2560 N=640 cols=80 E=3 added_bytes=14558144
+STAGE oracle-case-after type=IQ2_S Ksrc=2560 N=640 cols=80
+STAGE oracle-case-before type=IQ3_XXS Ksrc=2560 N=16 cols=7
+STAGE oracle-host-weights-before type=IQ3_XXS N=16 cols=7
+STAGE oracle-host-weights-after type=IQ3_XXS bytes=1881600
+STAGE oracle-device-buffers-before type=IQ3_XXS
+STAGE oracle-device-buffers-after type=IQ3_XXS
+STAGE oracle-stream-create-before type=IQ3_XXS
+STAGE oracle-stream-create-after type=IQ3_XXS
+STAGE oracle-upload-inputs-before type=IQ3_XXS
+STAGE oracle-upload-sync-before type=IQ3_XXS
+STAGE oracle-upload-inputs-after type=IQ3_XXS
+STAGE oracle-prepare-before type=IQ3_XXS K=2560 N=16 E=3
+STAGE oracle-prepare-after type=IQ3_XXS
+STAGE oracle-prepare-sync-before type=IQ3_XXS
+STAGE oracle-prepare-sync-after type=IQ3_XXS
+STAGE oracle-cache-snapshot-before type=IQ3_XXS
+STAGE oracle-cache-snapshot-after type=IQ3_XXS
+STAGE oracle-reference-before type=IQ3_XXS input=0 seed=17
+STAGE oracle-reference-after type=IQ3_XXS input=0 seed=17
+STAGE oracle-cached-before type=IQ3_XXS input=0 seed=17
+STAGE oracle-cached-after type=IQ3_XXS input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ3_XXS input=0
+STAGE oracle-consumer-sync-after type=IQ3_XXS input=0
+STAGE oracle-output-copy-before type=IQ3_XXS input=0
+STAGE oracle-output-copy-after type=IQ3_XXS input=0
+NUMERIC ORACLE type=IQ3_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=16 cols=7 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ3_XXS input=1 seed=921
+STAGE oracle-reference-after type=IQ3_XXS input=1 seed=921
+STAGE oracle-cached-before type=IQ3_XXS input=1 seed=921
+STAGE oracle-cached-after type=IQ3_XXS input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ3_XXS input=1
+STAGE oracle-consumer-sync-after type=IQ3_XXS input=1
+STAGE oracle-output-copy-before type=IQ3_XXS input=1
+STAGE oracle-output-copy-after type=IQ3_XXS input=1
+NUMERIC ORACLE type=IQ3_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=16 cols=7 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ3_XXS input=2 seed=17
+STAGE oracle-reference-after type=IQ3_XXS input=2 seed=17
+STAGE oracle-cached-before type=IQ3_XXS input=2 seed=17
+STAGE oracle-cached-after type=IQ3_XXS input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ3_XXS input=2
+STAGE oracle-consumer-sync-after type=IQ3_XXS input=2
+STAGE oracle-output-copy-before type=IQ3_XXS input=2
+STAGE oracle-output-copy-after type=IQ3_XXS input=2
+NUMERIC ORACLE type=IQ3_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=16 cols=7 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ3_XXS Ksrc=2560 Kexec=2560 N=16 cols=7 E=3 added_bytes=2287424
+STAGE oracle-case-after type=IQ3_XXS Ksrc=2560 N=16 cols=7
+STAGE oracle-case-before type=IQ3_XXS Ksrc=2560 N=113 cols=16
+STAGE oracle-host-weights-before type=IQ3_XXS N=113 cols=16
+STAGE oracle-host-weights-after type=IQ3_XXS bytes=1881600
+STAGE oracle-device-buffers-before type=IQ3_XXS
+STAGE oracle-device-buffers-after type=IQ3_XXS
+STAGE oracle-stream-create-before type=IQ3_XXS
+STAGE oracle-stream-create-after type=IQ3_XXS
+STAGE oracle-upload-inputs-before type=IQ3_XXS
+STAGE oracle-upload-sync-before type=IQ3_XXS
+STAGE oracle-upload-inputs-after type=IQ3_XXS
+STAGE oracle-prepare-before type=IQ3_XXS K=2560 N=113 E=3
+STAGE oracle-prepare-after type=IQ3_XXS
+STAGE oracle-prepare-sync-before type=IQ3_XXS
+STAGE oracle-prepare-sync-after type=IQ3_XXS
+STAGE oracle-cache-snapshot-before type=IQ3_XXS
+STAGE oracle-cache-snapshot-after type=IQ3_XXS
+STAGE oracle-reference-before type=IQ3_XXS input=0 seed=17
+STAGE oracle-reference-after type=IQ3_XXS input=0 seed=17
+STAGE oracle-cached-before type=IQ3_XXS input=0 seed=17
+STAGE oracle-cached-after type=IQ3_XXS input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ3_XXS input=0
+STAGE oracle-consumer-sync-after type=IQ3_XXS input=0
+STAGE oracle-output-copy-before type=IQ3_XXS input=0
+STAGE oracle-output-copy-after type=IQ3_XXS input=0
+NUMERIC ORACLE type=IQ3_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=113 cols=16 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ3_XXS input=1 seed=921
+STAGE oracle-reference-after type=IQ3_XXS input=1 seed=921
+STAGE oracle-cached-before type=IQ3_XXS input=1 seed=921
+STAGE oracle-cached-after type=IQ3_XXS input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ3_XXS input=1
+STAGE oracle-consumer-sync-after type=IQ3_XXS input=1
+STAGE oracle-output-copy-before type=IQ3_XXS input=1
+STAGE oracle-output-copy-after type=IQ3_XXS input=1
+NUMERIC ORACLE type=IQ3_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=113 cols=16 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ3_XXS input=2 seed=17
+STAGE oracle-reference-after type=IQ3_XXS input=2 seed=17
+STAGE oracle-cached-before type=IQ3_XXS input=2 seed=17
+STAGE oracle-cached-after type=IQ3_XXS input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ3_XXS input=2
+STAGE oracle-consumer-sync-after type=IQ3_XXS input=2
+STAGE oracle-output-copy-before type=IQ3_XXS input=2
+STAGE oracle-output-copy-after type=IQ3_XXS input=2
+NUMERIC ORACLE type=IQ3_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=113 cols=16 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE fallback-reference-before type=IQ3_XXS
+STAGE fallback-reference-after type=IQ3_XXS
+NUMERIC FALLBACK reason=cache_absent route=reference bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ3_XXS Ksrc=2560 Kexec=2560 N=113 cols=16 E=3 added_bytes=3911168
+STAGE oracle-case-after type=IQ3_XXS Ksrc=2560 N=113 cols=16
+STAGE oracle-case-before type=IQ3_XXS Ksrc=2560 N=640 cols=80
+STAGE oracle-host-weights-before type=IQ3_XXS N=640 cols=80
+STAGE oracle-host-weights-after type=IQ3_XXS bytes=1881600
+STAGE oracle-device-buffers-before type=IQ3_XXS
+STAGE oracle-device-buffers-after type=IQ3_XXS
+STAGE oracle-stream-create-before type=IQ3_XXS
+STAGE oracle-stream-create-after type=IQ3_XXS
+STAGE oracle-upload-inputs-before type=IQ3_XXS
+STAGE oracle-upload-sync-before type=IQ3_XXS
+STAGE oracle-upload-inputs-after type=IQ3_XXS
+STAGE oracle-prepare-before type=IQ3_XXS K=2560 N=640 E=3
+STAGE oracle-prepare-after type=IQ3_XXS
+STAGE oracle-prepare-sync-before type=IQ3_XXS
+STAGE oracle-prepare-sync-after type=IQ3_XXS
+STAGE oracle-cache-snapshot-before type=IQ3_XXS
+STAGE oracle-cache-snapshot-after type=IQ3_XXS
+STAGE oracle-reference-before type=IQ3_XXS input=0 seed=17
+STAGE oracle-reference-after type=IQ3_XXS input=0 seed=17
+STAGE oracle-cached-before type=IQ3_XXS input=0 seed=17
+STAGE oracle-cached-after type=IQ3_XXS input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ3_XXS input=0
+STAGE oracle-consumer-sync-after type=IQ3_XXS input=0
+STAGE oracle-output-copy-before type=IQ3_XXS input=0
+STAGE oracle-output-copy-after type=IQ3_XXS input=0
+NUMERIC ORACLE type=IQ3_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=640 cols=80 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ3_XXS input=1 seed=921
+STAGE oracle-reference-after type=IQ3_XXS input=1 seed=921
+STAGE oracle-cached-before type=IQ3_XXS input=1 seed=921
+STAGE oracle-cached-after type=IQ3_XXS input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ3_XXS input=1
+STAGE oracle-consumer-sync-after type=IQ3_XXS input=1
+STAGE oracle-output-copy-before type=IQ3_XXS input=1
+STAGE oracle-output-copy-after type=IQ3_XXS input=1
+NUMERIC ORACLE type=IQ3_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=640 cols=80 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ3_XXS input=2 seed=17
+STAGE oracle-reference-after type=IQ3_XXS input=2 seed=17
+STAGE oracle-cached-before type=IQ3_XXS input=2 seed=17
+STAGE oracle-cached-after type=IQ3_XXS input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ3_XXS input=2
+STAGE oracle-consumer-sync-after type=IQ3_XXS input=2
+STAGE oracle-output-copy-before type=IQ3_XXS input=2
+STAGE oracle-output-copy-after type=IQ3_XXS input=2
+NUMERIC ORACLE type=IQ3_XXS expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=640 cols=80 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 cols=80 E=3 added_bytes=14250944
+STAGE oracle-case-after type=IQ3_XXS Ksrc=2560 N=640 cols=80
+STAGE oracle-case-before type=IQ3_S Ksrc=2560 N=16 cols=7
+STAGE oracle-host-weights-before type=IQ3_S N=16 cols=7
+STAGE oracle-host-weights-after type=IQ3_S bytes=2112000
+STAGE oracle-device-buffers-before type=IQ3_S
+STAGE oracle-device-buffers-after type=IQ3_S
+STAGE oracle-stream-create-before type=IQ3_S
+STAGE oracle-stream-create-after type=IQ3_S
+STAGE oracle-upload-inputs-before type=IQ3_S
+STAGE oracle-upload-sync-before type=IQ3_S
+STAGE oracle-upload-inputs-after type=IQ3_S
+STAGE oracle-prepare-before type=IQ3_S K=2560 N=16 E=3
+STAGE oracle-prepare-after type=IQ3_S
+STAGE oracle-prepare-sync-before type=IQ3_S
+STAGE oracle-prepare-sync-after type=IQ3_S
+STAGE oracle-cache-snapshot-before type=IQ3_S
+STAGE oracle-cache-snapshot-after type=IQ3_S
+STAGE oracle-reference-before type=IQ3_S input=0 seed=17
+STAGE oracle-reference-after type=IQ3_S input=0 seed=17
+STAGE oracle-cached-before type=IQ3_S input=0 seed=17
+STAGE oracle-cached-after type=IQ3_S input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ3_S input=0
+STAGE oracle-consumer-sync-after type=IQ3_S input=0
+STAGE oracle-output-copy-before type=IQ3_S input=0
+STAGE oracle-output-copy-after type=IQ3_S input=0
+NUMERIC ORACLE type=IQ3_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=16 cols=7 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ3_S input=1 seed=921
+STAGE oracle-reference-after type=IQ3_S input=1 seed=921
+STAGE oracle-cached-before type=IQ3_S input=1 seed=921
+STAGE oracle-cached-after type=IQ3_S input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ3_S input=1
+STAGE oracle-consumer-sync-after type=IQ3_S input=1
+STAGE oracle-output-copy-before type=IQ3_S input=1
+STAGE oracle-output-copy-after type=IQ3_S input=1
+NUMERIC ORACLE type=IQ3_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=16 cols=7 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ3_S input=2 seed=17
+STAGE oracle-reference-after type=IQ3_S input=2 seed=17
+STAGE oracle-cached-before type=IQ3_S input=2 seed=17
+STAGE oracle-cached-after type=IQ3_S input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ3_S input=2
+STAGE oracle-consumer-sync-after type=IQ3_S input=2
+STAGE oracle-output-copy-before type=IQ3_S input=2
+STAGE oracle-output-copy-after type=IQ3_S input=2
+NUMERIC ORACLE type=IQ3_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=16 cols=7 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ3_S Ksrc=2560 Kexec=2560 N=16 cols=7 E=3 added_bytes=2517824
+STAGE oracle-case-after type=IQ3_S Ksrc=2560 N=16 cols=7
+STAGE oracle-case-before type=IQ3_S Ksrc=2560 N=113 cols=16
+STAGE oracle-host-weights-before type=IQ3_S N=113 cols=16
+STAGE oracle-host-weights-after type=IQ3_S bytes=2112000
+STAGE oracle-device-buffers-before type=IQ3_S
+STAGE oracle-device-buffers-after type=IQ3_S
+STAGE oracle-stream-create-before type=IQ3_S
+STAGE oracle-stream-create-after type=IQ3_S
+STAGE oracle-upload-inputs-before type=IQ3_S
+STAGE oracle-upload-sync-before type=IQ3_S
+STAGE oracle-upload-inputs-after type=IQ3_S
+STAGE oracle-prepare-before type=IQ3_S K=2560 N=113 E=3
+STAGE oracle-prepare-after type=IQ3_S
+STAGE oracle-prepare-sync-before type=IQ3_S
+STAGE oracle-prepare-sync-after type=IQ3_S
+STAGE oracle-cache-snapshot-before type=IQ3_S
+STAGE oracle-cache-snapshot-after type=IQ3_S
+STAGE oracle-reference-before type=IQ3_S input=0 seed=17
+STAGE oracle-reference-after type=IQ3_S input=0 seed=17
+STAGE oracle-cached-before type=IQ3_S input=0 seed=17
+STAGE oracle-cached-after type=IQ3_S input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ3_S input=0
+STAGE oracle-consumer-sync-after type=IQ3_S input=0
+STAGE oracle-output-copy-before type=IQ3_S input=0
+STAGE oracle-output-copy-after type=IQ3_S input=0
+NUMERIC ORACLE type=IQ3_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=113 cols=16 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ3_S input=1 seed=921
+STAGE oracle-reference-after type=IQ3_S input=1 seed=921
+STAGE oracle-cached-before type=IQ3_S input=1 seed=921
+STAGE oracle-cached-after type=IQ3_S input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ3_S input=1
+STAGE oracle-consumer-sync-after type=IQ3_S input=1
+STAGE oracle-output-copy-before type=IQ3_S input=1
+STAGE oracle-output-copy-after type=IQ3_S input=1
+NUMERIC ORACLE type=IQ3_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=113 cols=16 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ3_S input=2 seed=17
+STAGE oracle-reference-after type=IQ3_S input=2 seed=17
+STAGE oracle-cached-before type=IQ3_S input=2 seed=17
+STAGE oracle-cached-after type=IQ3_S input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ3_S input=2
+STAGE oracle-consumer-sync-after type=IQ3_S input=2
+STAGE oracle-output-copy-before type=IQ3_S input=2
+STAGE oracle-output-copy-after type=IQ3_S input=2
+NUMERIC ORACLE type=IQ3_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=113 cols=16 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ3_S Ksrc=2560 Kexec=2560 N=113 cols=16 E=3 added_bytes=4141568
+STAGE oracle-case-after type=IQ3_S Ksrc=2560 N=113 cols=16
+STAGE oracle-case-before type=IQ3_S Ksrc=2560 N=640 cols=80
+STAGE oracle-host-weights-before type=IQ3_S N=640 cols=80
+STAGE oracle-host-weights-after type=IQ3_S bytes=2112000
+STAGE oracle-device-buffers-before type=IQ3_S
+STAGE oracle-device-buffers-after type=IQ3_S
+STAGE oracle-stream-create-before type=IQ3_S
+STAGE oracle-stream-create-after type=IQ3_S
+STAGE oracle-upload-inputs-before type=IQ3_S
+STAGE oracle-upload-sync-before type=IQ3_S
+STAGE oracle-upload-inputs-after type=IQ3_S
+STAGE oracle-prepare-before type=IQ3_S K=2560 N=640 E=3
+STAGE oracle-prepare-after type=IQ3_S
+STAGE oracle-prepare-sync-before type=IQ3_S
+STAGE oracle-prepare-sync-after type=IQ3_S
+STAGE oracle-cache-snapshot-before type=IQ3_S
+STAGE oracle-cache-snapshot-after type=IQ3_S
+STAGE oracle-reference-before type=IQ3_S input=0 seed=17
+STAGE oracle-reference-after type=IQ3_S input=0 seed=17
+STAGE oracle-cached-before type=IQ3_S input=0 seed=17
+STAGE oracle-cached-after type=IQ3_S input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ3_S input=0
+STAGE oracle-consumer-sync-after type=IQ3_S input=0
+STAGE oracle-output-copy-before type=IQ3_S input=0
+STAGE oracle-output-copy-after type=IQ3_S input=0
+NUMERIC ORACLE type=IQ3_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=640 cols=80 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ3_S input=1 seed=921
+STAGE oracle-reference-after type=IQ3_S input=1 seed=921
+STAGE oracle-cached-before type=IQ3_S input=1 seed=921
+STAGE oracle-cached-after type=IQ3_S input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ3_S input=1
+STAGE oracle-consumer-sync-after type=IQ3_S input=1
+STAGE oracle-output-copy-before type=IQ3_S input=1
+STAGE oracle-output-copy-after type=IQ3_S input=1
+NUMERIC ORACLE type=IQ3_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=640 cols=80 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ3_S input=2 seed=17
+STAGE oracle-reference-after type=IQ3_S input=2 seed=17
+STAGE oracle-cached-before type=IQ3_S input=2 seed=17
+STAGE oracle-cached-after type=IQ3_S input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ3_S input=2
+STAGE oracle-consumer-sync-after type=IQ3_S input=2
+STAGE oracle-output-copy-before type=IQ3_S input=2
+STAGE oracle-output-copy-after type=IQ3_S input=2
+NUMERIC ORACLE type=IQ3_S expert_global=0,17,511 Ksrc=2560 Kexec=2560 N=640 cols=80 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ3_S Ksrc=2560 Kexec=2560 N=640 cols=80 E=3 added_bytes=14481344
+STAGE oracle-case-after type=IQ3_S Ksrc=2560 N=640 cols=80
+STAGE oracle-case-before type=IQ4_NL Ksrc=640 N=16 cols=7
+STAGE oracle-host-weights-before type=IQ4_NL N=16 cols=7
+STAGE oracle-host-weights-after type=IQ4_NL bytes=3317760
+STAGE oracle-device-buffers-before type=IQ4_NL
+STAGE oracle-device-buffers-after type=IQ4_NL
+STAGE oracle-stream-create-before type=IQ4_NL
+STAGE oracle-stream-create-after type=IQ4_NL
+STAGE oracle-upload-inputs-before type=IQ4_NL
+STAGE oracle-upload-sync-before type=IQ4_NL
+STAGE oracle-upload-inputs-after type=IQ4_NL
+STAGE oracle-prepare-before type=IQ4_NL K=768 N=16 E=3
+STAGE oracle-prepare-after type=IQ4_NL
+STAGE oracle-prepare-sync-before type=IQ4_NL
+STAGE oracle-prepare-sync-after type=IQ4_NL
+STAGE oracle-cache-snapshot-before type=IQ4_NL
+STAGE oracle-cache-snapshot-after type=IQ4_NL
+STAGE oracle-reference-before type=IQ4_NL input=0 seed=17
+STAGE oracle-reference-after type=IQ4_NL input=0 seed=17
+STAGE oracle-cached-before type=IQ4_NL input=0 seed=17
+STAGE oracle-cached-after type=IQ4_NL input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ4_NL input=0
+STAGE oracle-consumer-sync-after type=IQ4_NL input=0
+STAGE oracle-output-copy-before type=IQ4_NL input=0
+STAGE oracle-output-copy-after type=IQ4_NL input=0
+NUMERIC ORACLE type=IQ4_NL expert_global=0,17,511 Ksrc=640 Kexec=768 N=16 cols=7 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ4_NL input=1 seed=921
+STAGE oracle-reference-after type=IQ4_NL input=1 seed=921
+STAGE oracle-cached-before type=IQ4_NL input=1 seed=921
+STAGE oracle-cached-after type=IQ4_NL input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ4_NL input=1
+STAGE oracle-consumer-sync-after type=IQ4_NL input=1
+STAGE oracle-output-copy-before type=IQ4_NL input=1
+STAGE oracle-output-copy-after type=IQ4_NL input=1
+NUMERIC ORACLE type=IQ4_NL expert_global=0,17,511 Ksrc=640 Kexec=768 N=16 cols=7 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ4_NL input=2 seed=17
+STAGE oracle-reference-after type=IQ4_NL input=2 seed=17
+STAGE oracle-cached-before type=IQ4_NL input=2 seed=17
+STAGE oracle-cached-after type=IQ4_NL input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ4_NL input=2
+STAGE oracle-consumer-sync-after type=IQ4_NL input=2
+STAGE oracle-output-copy-before type=IQ4_NL input=2
+STAGE oracle-output-copy-after type=IQ4_NL input=2
+NUMERIC ORACLE type=IQ4_NL expert_global=0,17,511 Ksrc=640 Kexec=768 N=16 cols=7 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ4_NL Ksrc=640 Kexec=768 N=16 cols=7 E=3 added_bytes=3444032
+STAGE oracle-case-after type=IQ4_NL Ksrc=640 N=16 cols=7
+STAGE oracle-case-before type=IQ4_NL Ksrc=640 N=113 cols=16
+STAGE oracle-host-weights-before type=IQ4_NL N=113 cols=16
+STAGE oracle-host-weights-after type=IQ4_NL bytes=3317760
+STAGE oracle-device-buffers-before type=IQ4_NL
+STAGE oracle-device-buffers-after type=IQ4_NL
+STAGE oracle-stream-create-before type=IQ4_NL
+STAGE oracle-stream-create-after type=IQ4_NL
+STAGE oracle-upload-inputs-before type=IQ4_NL
+STAGE oracle-upload-sync-before type=IQ4_NL
+STAGE oracle-upload-inputs-after type=IQ4_NL
+STAGE oracle-prepare-before type=IQ4_NL K=768 N=113 E=3
+STAGE oracle-prepare-after type=IQ4_NL
+STAGE oracle-prepare-sync-before type=IQ4_NL
+STAGE oracle-prepare-sync-after type=IQ4_NL
+STAGE oracle-cache-snapshot-before type=IQ4_NL
+STAGE oracle-cache-snapshot-after type=IQ4_NL
+STAGE oracle-reference-before type=IQ4_NL input=0 seed=17
+STAGE oracle-reference-after type=IQ4_NL input=0 seed=17
+STAGE oracle-cached-before type=IQ4_NL input=0 seed=17
+STAGE oracle-cached-after type=IQ4_NL input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ4_NL input=0
+STAGE oracle-consumer-sync-after type=IQ4_NL input=0
+STAGE oracle-output-copy-before type=IQ4_NL input=0
+STAGE oracle-output-copy-after type=IQ4_NL input=0
+NUMERIC ORACLE type=IQ4_NL expert_global=0,17,511 Ksrc=640 Kexec=768 N=113 cols=16 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ4_NL input=1 seed=921
+STAGE oracle-reference-after type=IQ4_NL input=1 seed=921
+STAGE oracle-cached-before type=IQ4_NL input=1 seed=921
+STAGE oracle-cached-after type=IQ4_NL input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ4_NL input=1
+STAGE oracle-consumer-sync-after type=IQ4_NL input=1
+STAGE oracle-output-copy-before type=IQ4_NL input=1
+STAGE oracle-output-copy-after type=IQ4_NL input=1
+NUMERIC ORACLE type=IQ4_NL expert_global=0,17,511 Ksrc=640 Kexec=768 N=113 cols=16 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ4_NL input=2 seed=17
+STAGE oracle-reference-after type=IQ4_NL input=2 seed=17
+STAGE oracle-cached-before type=IQ4_NL input=2 seed=17
+STAGE oracle-cached-after type=IQ4_NL input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ4_NL input=2
+STAGE oracle-consumer-sync-after type=IQ4_NL input=2
+STAGE oracle-output-copy-before type=IQ4_NL input=2
+STAGE oracle-output-copy-after type=IQ4_NL input=2
+NUMERIC ORACLE type=IQ4_NL expert_global=0,17,511 Ksrc=640 Kexec=768 N=113 cols=16 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ4_NL Ksrc=640 Kexec=768 N=113 cols=16 E=3 added_bytes=3959648
+STAGE oracle-case-after type=IQ4_NL Ksrc=640 N=113 cols=16
+STAGE oracle-case-before type=IQ4_NL Ksrc=640 N=640 cols=80
+STAGE oracle-host-weights-before type=IQ4_NL N=640 cols=80
+STAGE oracle-host-weights-after type=IQ4_NL bytes=3317760
+STAGE oracle-device-buffers-before type=IQ4_NL
+STAGE oracle-device-buffers-after type=IQ4_NL
+STAGE oracle-stream-create-before type=IQ4_NL
+STAGE oracle-stream-create-after type=IQ4_NL
+STAGE oracle-upload-inputs-before type=IQ4_NL
+STAGE oracle-upload-sync-before type=IQ4_NL
+STAGE oracle-upload-inputs-after type=IQ4_NL
+STAGE oracle-prepare-before type=IQ4_NL K=768 N=640 E=3
+STAGE oracle-prepare-after type=IQ4_NL
+STAGE oracle-prepare-sync-before type=IQ4_NL
+STAGE oracle-prepare-sync-after type=IQ4_NL
+STAGE oracle-cache-snapshot-before type=IQ4_NL
+STAGE oracle-cache-snapshot-after type=IQ4_NL
+STAGE oracle-reference-before type=IQ4_NL input=0 seed=17
+STAGE oracle-reference-after type=IQ4_NL input=0 seed=17
+STAGE oracle-cached-before type=IQ4_NL input=0 seed=17
+STAGE oracle-cached-after type=IQ4_NL input=0 seed=17
+STAGE oracle-consumer-sync-before type=IQ4_NL input=0
+STAGE oracle-consumer-sync-after type=IQ4_NL input=0
+STAGE oracle-output-copy-before type=IQ4_NL input=0
+STAGE oracle-output-copy-after type=IQ4_NL input=0
+NUMERIC ORACLE type=IQ4_NL expert_global=0,17,511 Ksrc=640 Kexec=768 N=640 cols=80 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ4_NL input=1 seed=921
+STAGE oracle-reference-after type=IQ4_NL input=1 seed=921
+STAGE oracle-cached-before type=IQ4_NL input=1 seed=921
+STAGE oracle-cached-after type=IQ4_NL input=1 seed=921
+STAGE oracle-consumer-sync-before type=IQ4_NL input=1
+STAGE oracle-consumer-sync-after type=IQ4_NL input=1
+STAGE oracle-output-copy-before type=IQ4_NL input=1
+STAGE oracle-output-copy-after type=IQ4_NL input=1
+NUMERIC ORACLE type=IQ4_NL expert_global=0,17,511 Ksrc=640 Kexec=768 N=640 cols=80 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=IQ4_NL input=2 seed=17
+STAGE oracle-reference-after type=IQ4_NL input=2 seed=17
+STAGE oracle-cached-before type=IQ4_NL input=2 seed=17
+STAGE oracle-cached-after type=IQ4_NL input=2 seed=17
+STAGE oracle-consumer-sync-before type=IQ4_NL input=2
+STAGE oracle-consumer-sync-after type=IQ4_NL input=2
+STAGE oracle-output-copy-before type=IQ4_NL input=2
+STAGE oracle-output-copy-after type=IQ4_NL input=2
+NUMERIC ORACLE type=IQ4_NL expert_global=0,17,511 Ksrc=640 Kexec=768 N=640 cols=80 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=IQ4_NL Ksrc=640 Kexec=768 N=640 cols=80 E=3 added_bytes=7891904
+STAGE oracle-case-after type=IQ4_NL Ksrc=640 N=640 cols=80
+STAGE oracle-case-before type=Q2_0 Ksrc=640 N=16 cols=7
+STAGE oracle-host-weights-before type=Q2_0 N=16 cols=7
+STAGE oracle-host-weights-after type=Q2_0 bytes=1658880
+STAGE oracle-device-buffers-before type=Q2_0
+STAGE oracle-device-buffers-after type=Q2_0
+STAGE oracle-stream-create-before type=Q2_0
+STAGE oracle-stream-create-after type=Q2_0
+STAGE oracle-upload-inputs-before type=Q2_0
+STAGE oracle-upload-sync-before type=Q2_0
+STAGE oracle-upload-inputs-after type=Q2_0
+STAGE oracle-prepare-before type=Q2_0 K=768 N=16 E=3
+STAGE oracle-prepare-after type=Q2_0
+STAGE oracle-prepare-sync-before type=Q2_0
+STAGE oracle-prepare-sync-after type=Q2_0
+STAGE oracle-cache-snapshot-before type=Q2_0
+STAGE oracle-cache-snapshot-after type=Q2_0
+STAGE oracle-reference-before type=Q2_0 input=0 seed=17
+STAGE oracle-reference-after type=Q2_0 input=0 seed=17
+STAGE oracle-cached-before type=Q2_0 input=0 seed=17
+STAGE oracle-cached-after type=Q2_0 input=0 seed=17
+STAGE oracle-consumer-sync-before type=Q2_0 input=0
+STAGE oracle-consumer-sync-after type=Q2_0 input=0
+STAGE oracle-output-copy-before type=Q2_0 input=0
+STAGE oracle-output-copy-after type=Q2_0 input=0
+NUMERIC ORACLE type=Q2_0 expert_global=0,17,511 Ksrc=640 Kexec=768 N=16 cols=7 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=Q2_0 input=1 seed=921
+STAGE oracle-reference-after type=Q2_0 input=1 seed=921
+STAGE oracle-cached-before type=Q2_0 input=1 seed=921
+STAGE oracle-cached-after type=Q2_0 input=1 seed=921
+STAGE oracle-consumer-sync-before type=Q2_0 input=1
+STAGE oracle-consumer-sync-after type=Q2_0 input=1
+STAGE oracle-output-copy-before type=Q2_0 input=1
+STAGE oracle-output-copy-after type=Q2_0 input=1
+NUMERIC ORACLE type=Q2_0 expert_global=0,17,511 Ksrc=640 Kexec=768 N=16 cols=7 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=Q2_0 input=2 seed=17
+STAGE oracle-reference-after type=Q2_0 input=2 seed=17
+STAGE oracle-cached-before type=Q2_0 input=2 seed=17
+STAGE oracle-cached-after type=Q2_0 input=2 seed=17
+STAGE oracle-consumer-sync-before type=Q2_0 input=2
+STAGE oracle-consumer-sync-after type=Q2_0 input=2
+STAGE oracle-output-copy-before type=Q2_0 input=2
+STAGE oracle-output-copy-after type=Q2_0 input=2
+NUMERIC ORACLE type=Q2_0 expert_global=0,17,511 Ksrc=640 Kexec=768 N=16 cols=7 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=Q2_0 Ksrc=640 Kexec=768 N=16 cols=7 E=3 added_bytes=1785152
+STAGE oracle-case-after type=Q2_0 Ksrc=640 N=16 cols=7
+STAGE oracle-case-before type=Q2_0 Ksrc=640 N=113 cols=16
+STAGE oracle-host-weights-before type=Q2_0 N=113 cols=16
+STAGE oracle-host-weights-after type=Q2_0 bytes=1658880
+STAGE oracle-device-buffers-before type=Q2_0
+STAGE oracle-device-buffers-after type=Q2_0
+STAGE oracle-stream-create-before type=Q2_0
+STAGE oracle-stream-create-after type=Q2_0
+STAGE oracle-upload-inputs-before type=Q2_0
+STAGE oracle-upload-sync-before type=Q2_0
+STAGE oracle-upload-inputs-after type=Q2_0
+STAGE oracle-prepare-before type=Q2_0 K=768 N=113 E=3
+STAGE oracle-prepare-after type=Q2_0
+STAGE oracle-prepare-sync-before type=Q2_0
+STAGE oracle-prepare-sync-after type=Q2_0
+STAGE oracle-cache-snapshot-before type=Q2_0
+STAGE oracle-cache-snapshot-after type=Q2_0
+STAGE oracle-reference-before type=Q2_0 input=0 seed=17
+STAGE oracle-reference-after type=Q2_0 input=0 seed=17
+STAGE oracle-cached-before type=Q2_0 input=0 seed=17
+STAGE oracle-cached-after type=Q2_0 input=0 seed=17
+STAGE oracle-consumer-sync-before type=Q2_0 input=0
+STAGE oracle-consumer-sync-after type=Q2_0 input=0
+STAGE oracle-output-copy-before type=Q2_0 input=0
+STAGE oracle-output-copy-after type=Q2_0 input=0
+NUMERIC ORACLE type=Q2_0 expert_global=0,17,511 Ksrc=640 Kexec=768 N=113 cols=16 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=Q2_0 input=1 seed=921
+STAGE oracle-reference-after type=Q2_0 input=1 seed=921
+STAGE oracle-cached-before type=Q2_0 input=1 seed=921
+STAGE oracle-cached-after type=Q2_0 input=1 seed=921
+STAGE oracle-consumer-sync-before type=Q2_0 input=1
+STAGE oracle-consumer-sync-after type=Q2_0 input=1
+STAGE oracle-output-copy-before type=Q2_0 input=1
+STAGE oracle-output-copy-after type=Q2_0 input=1
+NUMERIC ORACLE type=Q2_0 expert_global=0,17,511 Ksrc=640 Kexec=768 N=113 cols=16 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=Q2_0 input=2 seed=17
+STAGE oracle-reference-after type=Q2_0 input=2 seed=17
+STAGE oracle-cached-before type=Q2_0 input=2 seed=17
+STAGE oracle-cached-after type=Q2_0 input=2 seed=17
+STAGE oracle-consumer-sync-before type=Q2_0 input=2
+STAGE oracle-consumer-sync-after type=Q2_0 input=2
+STAGE oracle-output-copy-before type=Q2_0 input=2
+STAGE oracle-output-copy-after type=Q2_0 input=2
+NUMERIC ORACLE type=Q2_0 expert_global=0,17,511 Ksrc=640 Kexec=768 N=113 cols=16 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=Q2_0 Ksrc=640 Kexec=768 N=113 cols=16 E=3 added_bytes=2300768
+STAGE oracle-case-after type=Q2_0 Ksrc=640 N=113 cols=16
+STAGE oracle-case-before type=Q2_0 Ksrc=640 N=640 cols=80
+STAGE oracle-host-weights-before type=Q2_0 N=640 cols=80
+STAGE oracle-host-weights-after type=Q2_0 bytes=1658880
+STAGE oracle-device-buffers-before type=Q2_0
+STAGE oracle-device-buffers-after type=Q2_0
+STAGE oracle-stream-create-before type=Q2_0
+STAGE oracle-stream-create-after type=Q2_0
+STAGE oracle-upload-inputs-before type=Q2_0
+STAGE oracle-upload-sync-before type=Q2_0
+STAGE oracle-upload-inputs-after type=Q2_0
+STAGE oracle-prepare-before type=Q2_0 K=768 N=640 E=3
+STAGE oracle-prepare-after type=Q2_0
+STAGE oracle-prepare-sync-before type=Q2_0
+STAGE oracle-prepare-sync-after type=Q2_0
+STAGE oracle-cache-snapshot-before type=Q2_0
+STAGE oracle-cache-snapshot-after type=Q2_0
+STAGE oracle-reference-before type=Q2_0 input=0 seed=17
+STAGE oracle-reference-after type=Q2_0 input=0 seed=17
+STAGE oracle-cached-before type=Q2_0 input=0 seed=17
+STAGE oracle-cached-after type=Q2_0 input=0 seed=17
+STAGE oracle-consumer-sync-before type=Q2_0 input=0
+STAGE oracle-consumer-sync-after type=Q2_0 input=0
+STAGE oracle-output-copy-before type=Q2_0 input=0
+STAGE oracle-output-copy-after type=Q2_0 input=0
+NUMERIC ORACLE type=Q2_0 expert_global=0,17,511 Ksrc=640 Kexec=768 N=640 cols=80 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=Q2_0 input=1 seed=921
+STAGE oracle-reference-after type=Q2_0 input=1 seed=921
+STAGE oracle-cached-before type=Q2_0 input=1 seed=921
+STAGE oracle-cached-after type=Q2_0 input=1 seed=921
+STAGE oracle-consumer-sync-before type=Q2_0 input=1
+STAGE oracle-consumer-sync-after type=Q2_0 input=1
+STAGE oracle-output-copy-before type=Q2_0 input=1
+STAGE oracle-output-copy-after type=Q2_0 input=1
+NUMERIC ORACLE type=Q2_0 expert_global=0,17,511 Ksrc=640 Kexec=768 N=640 cols=80 q8_seed=921 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE oracle-reference-before type=Q2_0 input=2 seed=17
+STAGE oracle-reference-after type=Q2_0 input=2 seed=17
+STAGE oracle-cached-before type=Q2_0 input=2 seed=17
+STAGE oracle-cached-after type=Q2_0 input=2 seed=17
+STAGE oracle-consumer-sync-before type=Q2_0 input=2
+STAGE oracle-consumer-sync-after type=Q2_0 input=2
+STAGE oracle-output-copy-before type=Q2_0 input=2
+STAGE oracle-output-copy-after type=Q2_0 input=2
+NUMERIC ORACLE type=Q2_0 expert_global=0,17,511 Ksrc=640 Kexec=768 N=640 cols=80 q8_seed=17 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+ORACLE_CASE type=Q2_0 Ksrc=640 Kexec=768 N=640 cols=80 E=3 added_bytes=6233024
+STAGE oracle-case-after type=Q2_0 Ksrc=640 N=640 cols=80
+STAGE performance-case-before type=IQ3_XXS Ksrc=2560 N=640 cols=80 E=16
+STAGE performance-host-weights-before type=IQ3_XXS
+STAGE performance-host-weights-after type=IQ3_XXS bytes=10035200
+STAGE performance-device-buffers-before type=IQ3_XXS
+STAGE performance-device-buffers-after type=IQ3_XXS
+STAGE performance-prepare-before type=IQ3_XXS K=2560 N=640 E=16
+STAGE performance-prepare-after type=IQ3_XXS
+STAGE performance-reference-before type=IQ3_XXS
+STAGE performance-reference-after type=IQ3_XXS
+STAGE performance-cached-before type=IQ3_XXS
+STAGE performance-cached-after type=IQ3_XXS
+NUMERIC PERF_CORRECTNESS type=IQ3_XXS q8=full_f32 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE graph-capture-begin kind=reference type=IQ3_XXS
+STAGE graph-reference-before type=IQ3_XXS
+STAGE graph-reference-after type=IQ3_XXS
+STAGE graph-capture-end kind=reference type=IQ3_XXS
+STAGE graph-capture-begin kind=cached type=IQ3_XXS
+STAGE graph-cached-before type=IQ3_XXS
+STAGE graph-cached-after type=IQ3_XXS
+STAGE graph-capture-end kind=cached type=IQ3_XXS
+STAGE graph-capture-begin kind=prepare-cached type=IQ3_XXS
+STAGE graph-prepare-before type=IQ3_XXS
+STAGE graph-prepare-after type=IQ3_XXS
+STAGE graph-cached-before type=IQ3_XXS
+STAGE graph-cached-after type=IQ3_XXS
+STAGE graph-capture-end kind=prepare-cached type=IQ3_XXS
+STAGE performance-time-reference-before type=IQ3_XXS
+STAGE performance-time-reference-after type=IQ3_XXS
+STAGE performance-time-cached-before type=IQ3_XXS
+STAGE performance-time-cached-after type=IQ3_XXS
+STAGE performance-time-prepare-cached-before type=IQ3_XXS
+STAGE performance-time-prepare-cached-after type=IQ3_XXS
+NUMERIC PERF_POSTTIMING type=IQ3_XXS bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+PERF type=IQ3_XXS expert_slots=16 source_experts=0,17,511,0,... Ksrc=2560 Kexec=2560 N=640 cols=80 cache_bytes=52428800 l2_bytes=6291456 added_bytes=75989504 reps=5 reference_us=313.3440 cached_only_us=1739.7760 prepare_plus_cached_us=1881.0880 consumer_speedup=0.1801 inclusive_speedup=0.1666
+STAGE performance-case-after type=IQ3_XXS
+STAGE performance-case-before type=IQ2_XS Ksrc=2560 N=640 cols=80 E=16
+STAGE performance-host-weights-before type=IQ2_XS
+STAGE performance-host-weights-after type=IQ2_XS bytes=7577600
+STAGE performance-device-buffers-before type=IQ2_XS
+STAGE performance-device-buffers-after type=IQ2_XS
+STAGE performance-prepare-before type=IQ2_XS K=2560 N=640 E=16
+STAGE performance-prepare-after type=IQ2_XS
+STAGE performance-reference-before type=IQ2_XS
+STAGE performance-reference-after type=IQ2_XS
+STAGE performance-cached-before type=IQ2_XS
+STAGE performance-cached-after type=IQ2_XS
+NUMERIC PERF_CORRECTNESS type=IQ2_XS q8=full_f32 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE graph-capture-begin kind=reference type=IQ2_XS
+STAGE graph-reference-before type=IQ2_XS
+STAGE graph-reference-after type=IQ2_XS
+STAGE graph-capture-end kind=reference type=IQ2_XS
+STAGE graph-capture-begin kind=cached type=IQ2_XS
+STAGE graph-cached-before type=IQ2_XS
+STAGE graph-cached-after type=IQ2_XS
+STAGE graph-capture-end kind=cached type=IQ2_XS
+STAGE graph-capture-begin kind=prepare-cached type=IQ2_XS
+STAGE graph-prepare-before type=IQ2_XS
+STAGE graph-prepare-after type=IQ2_XS
+STAGE graph-cached-before type=IQ2_XS
+STAGE graph-cached-after type=IQ2_XS
+STAGE graph-capture-end kind=prepare-cached type=IQ2_XS
+STAGE performance-time-reference-before type=IQ2_XS
+STAGE performance-time-reference-after type=IQ2_XS
+STAGE performance-time-cached-before type=IQ2_XS
+STAGE performance-time-cached-after type=IQ2_XS
+STAGE performance-time-prepare-cached-before type=IQ2_XS
+STAGE performance-time-prepare-cached-after type=IQ2_XS
+NUMERIC PERF_POSTTIMING type=IQ2_XS bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+PERF type=IQ2_XS expert_slots=16 source_experts=0,17,511,0,... Ksrc=2560 Kexec=2560 N=640 cols=80 cache_bytes=52428800 l2_bytes=6291456 added_bytes=76808704 reps=5 reference_us=356.3520 cached_only_us=1867.7760 prepare_plus_cached_us=2024.4479 consumer_speedup=0.1908 inclusive_speedup=0.1760
+STAGE performance-case-after type=IQ2_XS
+STAGE performance-case-before type=IQ4_NL Ksrc=640 N=2560 cols=80 E=16
+STAGE performance-host-weights-before type=IQ4_NL
+STAGE performance-host-weights-after type=IQ4_NL bytes=17694720
+STAGE performance-device-buffers-before type=IQ4_NL
+STAGE performance-device-buffers-after type=IQ4_NL
+STAGE performance-prepare-before type=IQ4_NL K=768 N=2560 E=16
+STAGE performance-prepare-after type=IQ4_NL
+STAGE performance-reference-before type=IQ4_NL
+STAGE performance-reference-after type=IQ4_NL
+STAGE performance-cached-before type=IQ4_NL
+STAGE performance-cached-after type=IQ4_NL
+NUMERIC PERF_CORRECTNESS type=IQ4_NL q8=full_f32 bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+STAGE graph-capture-begin kind=reference type=IQ4_NL
+STAGE graph-reference-before type=IQ4_NL
+STAGE graph-reference-after type=IQ4_NL
+STAGE graph-capture-end kind=reference type=IQ4_NL
+STAGE graph-capture-begin kind=cached type=IQ4_NL
+STAGE graph-cached-before type=IQ4_NL
+STAGE graph-cached-after type=IQ4_NL
+STAGE graph-capture-end kind=cached type=IQ4_NL
+STAGE graph-capture-begin kind=prepare-cached type=IQ4_NL
+STAGE graph-prepare-before type=IQ4_NL
+STAGE graph-prepare-after type=IQ4_NL
+STAGE graph-cached-before type=IQ4_NL
+STAGE graph-cached-after type=IQ4_NL
+STAGE graph-capture-end kind=prepare-cached type=IQ4_NL
+STAGE performance-time-reference-before type=IQ4_NL
+STAGE performance-time-reference-after type=IQ4_NL
+STAGE performance-time-cached-before type=IQ4_NL
+STAGE performance-time-cached-after type=IQ4_NL
+STAGE performance-time-prepare-cached-before type=IQ4_NL
+STAGE performance-time-prepare-cached-after type=IQ4_NL
+NUMERIC PERF_POSTTIMING type=IQ4_NL bitdiff=0 max_abs=0 max_rel=0 status=PASS_BITEXACT
+PERF type=IQ4_NL expert_slots=16 source_experts=0,17,511,0,... Ksrc=640 Kexec=768 N=2560 cols=80 cache_bytes=62914560 l2_bytes=6291456 added_bytes=111870464 reps=5 reference_us=381.9520 cached_only_us=1801.2161 prepare_plus_cached_us=1998.8479 consumer_speedup=0.2121 inclusive_speedup=0.1911
+STAGE performance-case-after type=IQ4_NL
+STAGE summary-before numeric_status=PASS_BITEXACT
+SUMMARY mode=all oracle_cases=21 input_comparisons=63 performance_cases=3 outputs_checked=3346560 numerical_outputs=13182384 bitdiff=0 max_abs=0 max_rel=0 numeric_status=PASS_BITEXACT hardware_faults=0 model_load=0 engine_integration=0

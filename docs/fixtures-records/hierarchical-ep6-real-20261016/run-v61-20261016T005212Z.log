@@ -1,0 +1,78 @@
+start=2026-10-16T00:52:13Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61
+binary_sha256=133d398dac86bb3c6b80b7fdb91d1bb3aee405abead258013512a8e931716b10  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/hierarchical-ep6-real-20261016/hierarchical-ep6-real-fixture
+visible=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a
+model=/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf
+temp_limit=58C memory_limit=2048MiB timeout=600s
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_backend_meta_context: nested native GPU AllReduce opt-in requested; unsupported PARTIAL boundaries fail closed
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+meta-nested-gpu-ar opt-in=1 topology=2x3 leaves=6 order=A0,A1,A2,B0,B1,B2 p2p6=1 nccl6_f32=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=0/6 first=0 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=1/6 first=85 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=2/6 first=170 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=3/6 first=256 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=4/6 first=341 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=5/6 first=426 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=0/2 first=0 local=256 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=1/2 first=256 local=256 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=0/3 first=0 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=1/3 first=85 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=2/3 first=170 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=0/3 first=256 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=1/3 first=341 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=2/3 first=426 local=86 total=512 final-output-only-reduction=1
+meta-context-submit FIFO active context=0x100379de0f0 members=6 CPU_enqueue_atomic=1 GPU_tail_wait=1
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=0 ptr=0x7ffd76400000 ne=[2560,640,85]
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=0 ptr=0x7ffd78800000 ne=[2560,640,85]
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=0 ptr=0x7ffd7ac00000 ne=[2560,640,86]
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=0 ptr=0x7ffd7d000000 ne=[2560,640,85]
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=0 ptr=0x7ffd93800000 ne=[2560,640,85]
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=0 ptr=0x7ffd95c00000 ne=[2560,640,86]
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GGUF_CASE name=blk.1.ffn_gate_exps.weight type=iq2_xxs ne=2560,640,512 bytes=216268800 offset=2016154944
+GGUF_CASE name=blk.0.ffn_gate_exps.weight type=iq2_xs ne=2560,640,512 bytes=242483200 offset=1227835328
+GGUF_CASE name=blk.12.ffn_gate_exps.weight type=iq2_s ne=2560,640,512 bytes=268697600 offset=11190584128
+GGUF_CASE name=blk.35.ffn_gate_exps.weight type=iq3_xxs ne=2560,640,512 bytes=321126400 offset=33501050944
+GGUF_CASE name=blk.8.ffn_gate_exps.weight type=iq3_s ne=2560,640,512 bytes=360448000 offset=7846859968
+GGUF_CASE name=blk.0.ffn_down_exps.weight type=iq4_nl ne=640,2560,512 bytes=471859200 offset=755054528
+GGUF_CASE name=blk.1.ffn_down_exps.weight type=q2_0 ne=640,2560,512 bytes=235929600 offset=1779303744
+PASS blk.1.ffn_gate_exps.weight/flat6/A foreign_zero=1 owners=6 routes=640
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp:3328: GGML_ASSERT(tail != nullptr) failed
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-base.so.0(+0x247a8)[0x7fff837947a8]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fff83794da8]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fff83794f44]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-base.so.0(+0x8e2c8)[0x7fff837fe2c8]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-base.so.0(ggml_backend_graph_compute_async+0x2c)[0x7fff837ba8cc]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-base.so.0(+0x55c80)[0x7fff837c5c80]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-base.so.0(ggml_backend_sched_graph_compute_async+0x54)[0x7fff837cd464]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-base.so.0(ggml_backend_sched_graph_compute+0x24)[0x7fff837cd524]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/hierarchical-ep6-real-20261016/hierarchical-ep6-real-fixture(+0xd020)[0x12993d020]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/hierarchical-ep6-real-20261016/hierarchical-ep6-real-fixture(+0xe3d8)[0x12993e3d8]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/hierarchical-ep6-real-20261016/hierarchical-ep6-real-fixture(+0x4c0c)[0x129934c0c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fff831c4d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fff831c4f6c]

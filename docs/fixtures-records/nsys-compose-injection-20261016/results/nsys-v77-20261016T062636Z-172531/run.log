@@ -1,0 +1,41 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA Graph id 1 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 2 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 3 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 4 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 5 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 6 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 1 reused
+CUDA Graph id 2 reused
+CUDA Graph id 3 reused
+CUDA Graph id 4 reused
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+PASS_DIRECT_AR label=ordinary-segmented bytes=4195328 ranks=6 exact=1 canary=1
+CUDA Graph id 1 reused
+CUDA Graph id 2 reused
+CUDA Graph id 3 reused
+CUDA Graph id 4 reused
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+DIRECT_COMPOSE_SHAPE children=49 scalar_nodes_per_child=150 ar6=48
+CUDA compose uploaded ranks=6 persistent_host_launchers=6
+CUDA compose ready ranks=6 children_per_rank=49 ar6_per_rank=48 expected_ar6=48
+PASS_DIRECT_AR label=composed-segmented-first bytes=4195328 ranks=6 exact=1 canary=1
+PASS_DIRECT_AR label=composed-segmented-changed-input bytes=4195328 ranks=6 exact=1 canary=1
+DIRECT_SEGMENTED_AR_AND_COMPOSE_PASS
+Generated:

@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "status": "prepared_waiting_for_v68_nested_async_hot_gate_and_root_gpu_grant",
+  "candidate": "V29: frozen V68 nested-async candidate plus V28 fragment cache CAP64/MIB128; all other V28 settings unchanged",
+  "runner_source": "dual-context-v24-shortctx.cpp",
+  "runner_binary_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v28-shortctx16k-hierarchical-20261016/build-runtime-v28-shortctx/dual-context-v28-shortctx",
+  "runner_sha256": "8f25242b2c8bb8fe09eba2002386d5d98f5b8de08886e9e491a6499b76a5c44d",
+  "runtime": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v68",
+    "build_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V68-build.json",
+    "build_id": "20261016T030341.209070Z",
+    "report_sha256": "b006d4287cf062b360daa35d5ab51910d05d368231e5e0d314a06ba8a0f5d3fc",
+    "dynamic_closure": "V28 runner SHA/BuildID reused; supervisor rechecks all seven app libraries resolve from runtime-perf-v68/lib by ldd and records their hashes",
+    "changed_runtime_objects": "V68-specific nested asynchronous Meta dispatch only; no runner rebuild",
+    "preserve_runtime_reserves": true
+  },
+  "model": {
+    "path": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+    "size_bytes": 78615622080,
+    "weights": "IQ3_XXS; all 512 experts retained",
+    "kv_precision": "Q8_0 K/V target and draft",
+    "sha256": "not recomputed"
+  },
+  "topology": {
+    "hierarchical_ep6": "Meta2 -> 2 Meta3 islands -> six physical V100 leaves",
+    "island_split": "3,3",
+    "model_level_meta_device_count": 1,
+    "experts_pruned": false,
+    "PLE_lookup_precision_changed": false
+  },
+  "contexts": {
+    "variant": "per_seq_16k",
+    "kv_unified": false,
+    "bank_count": 2,
+    "lanes_per_bank": 2,
+    "bank_context": 32768,
+    "sequence_count_per_bank": 2,
+    "kv_streams_per_bank": 2,
+    "per_sequence_capacity": 16384,
+    "aggregate_four_stream_capacity": 65536,
+    "maximum_request_context": 16384,
+    "target_ubatch": 1024,
+    "mtp_depth": 3,
+    "mtp_ubatch": 512,
+    "prefill_batch": 8192,
+    "output_tokens_per_real_prompt": 256
+  },
+  "ple": {
+    "hybrid_numa_enabled": true,
+    "gpu_numa_nodes": 6,
+    "gpu_prefix_total_gib": 8,
+    "gpu_prefix_per_node_gib": 1.3333333333333333,
+    "cpu_lookup": "unchanged full precision path",
+    "gpu_runtime_reserve_gib_per_card": 4,
+    "cpu_ddr_runtime_reserve_gib_total": 3,
+    "reserve_modified": false
+  },
+  "capacity_review": {
+    "usable_hbm_gib_per_card": 15.47,
+    "weight_estimate_gib_per_card": [
+      9.22,
+      9.34
+    ],
+    "ple_gib_per_card": 1.3333333333333333,
+    "post_weights_and_ple_room_gib_per_card": [
+      4.8,
+      4.92
+    ],
+    "64k_tracked_lower_bound_mib_per_card": 4924.86,
+    "64k_basis": "2 banks * (748 KV/indexer + 381 RS + 908.15 target compute) + 2*425.28 MTP compute; excludes additional MTP KV/indexer and graph/allocator overhead",
+    "16k_tracked_lower_bound_mib_per_card": 3802.86,
+    "16k_basis": "2 banks * (187 KV/indexer at quarter context + 381 RS unchanged + 908.15 target compute conservatively unchanged) + 2*425.28 MTP compute; excludes additional MTP KV/indexer and graph/allocator overhead",
+    "16k_estimated_headroom_gib_per_card": [
+      1.09,
+      1.21
+    ],
+    "fit_claim": "none; V68 loader and graph gates must pass with unchanged reserves"
+  },
+  "quality_gates": {
+    "native_semantics": true,
+    "full_f32_prefill_logits_preclean": true,
+    "exact_token_parity_preserved": true,
+    "clean_four_stream_measurement": true,
+    "gate_source": "reused V23 wrapper/checkers with a strict 16K context-shape policy"
+  },
+  "launch_safety": {
+    "requires_root_gpu_grant": true,
+    "gpu_free_floor_mib": 512,
+    "gpu_temp_ceiling_c": 58,
+    "corrected_v23_bmc_gpu_monitor": true,
+    "ddr_node0_8_and_unit_rss": "record-only; no DDR MemFree stop threshold",
+    "autorun": false,
+    "CUPTI": false,
+    "LD_PRELOAD": false,
+    "runtime_build": "V68; actual full-model loader/graph reserve checks remain authoritative",
+    "root_gpu_grant": "not yet received for V29; no full-model launch before explicit root grant",
+    "runtime_max_minutes": 30,
+    "requires_v68_nested_async_hot_gate": true,
+    "automatic_retry": false,
+    "requires_cached_fragment_parent_uid_gate": true,
+    "cache_parent_uid_prequalification_runtime": "V67; unchanged cache implementation inherited from V28",
+    "requires_v68_nested_async_runtime_proof": true
+  },
+  "previous_v23_result": {
+    "clean_tg_tok_s": 132.5790328725751,
+    "native_semantics": "pass",
+    "preclean_f32": "pass",
+    "exact_token_gate": "fail; not certified"
+  },
+  "open_risk": "The two V27 auxiliary prefix failures remain enforced. V29 must preserve them; a successful clean token-array comparison does not suppress them. V68 hot async selection is not proven until the fifth-frame fixture gate passes.",
+  "host_link_evidence": {
+    "status": "V28 runner binary byte-for-byte reused; V68 whole closure is runtime-only and launch supervisor revalidates ldd/hashes",
+    "runner_sha256": "8f25242b2c8bb8fe09eba2002386d5d98f5b8de08886e9e491a6499b76a5c44d",
+    "elf_build_id": "8560fce4abedc573a22840fd81d9dfdf9dc34546",
+    "v68_build_report": "v68-build.json",
+    "v68_report_sha256": "b006d4287cf062b360daa35d5ab51910d05d368231e5e0d314a06ba8a0f5d3fc",
+    "v68_runner_evidence": "v68-reused-runner.evidence.txt",
+    "v68_build_report_local_copy": "v68-build.json"
+  },
+  "timing": {
+    "GGML_CUDA_GRAPH_STRUCTURAL_TRACE": "1",
+    "GGML_META_TIMING": "1",
+    "LLAMA_STEP_TIMING": "1",
+    "LLAMA_STEP_TIMING_PERIOD": "32",
+    "GGML_META_NESTED_ASYNC": "1",
+    "CUPTI": "off",
+    "LD_PRELOAD": "empty",
+    "direct_compute_measure": "LLAMA_STEP_TIMING compute=... microseconds; report clean P4 window directly, no tok/s conversion",
+    "cold_probe_policy": "do not claim first/cold 8K probe as a speed result",
+    "GGML_META_FRAGMENT_CACHE": "1",
+    "GGML_META_FRAGMENT_CACHE_CAP": "64",
+    "GGML_META_FRAGMENT_CACHE_MIB": "128"
+  },
+  "tiny_qualification": {
+    "status": "PASS; V67 fragment-cache parent-UID tiny gate completed",
+    "log": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/meta-fragment-cache-20261016/results/v67-host-r2-on-20261016T024529Z.log",
+    "sha256": "96afe9ca8e48495220bfb3a5fa7c5a343a8d51296dfde9acaab7bb501a91c9bf",
+    "actual_cache": {
+      "inner_cache_hits_per_context": 3,
+      "inner_cache_misses_per_context": 9,
+      "parent_invalidations": 2,
+      "outer_ar": 8,
+      "inner_merged_graphs": 12,
+      "max_inner_subgraphs": 2
+    },
+    "oracle": "A warm -> B same UID/input -> A restored -> parent new UID/input binding; exact outputs, canary pass"
+  },
+  "previous_v25_attempt": {
+    "status": "failed_exit139_in_cuda_graph_structural_signature; prior V25 result, not a V27 result",
+    "status_file": "../dual-context-v25-shortctx16k-hierarchical-20261016/STATUS.md"
+  },
+  "previous_v26_attempt": {
+    "status": "failed_exit139_in_ggml_cuda_graph_tensor_input_structural_signature",
+    "status_file": "../dual-context-v26-shortctx16k-hierarchical-20261016/STATUS.md"
+  },
+  "v65_runtime_metadata": {
+    "core_delta": "one CPP, zero CUDA objects",
+    "graph_descriptors": "clone merged physical graph descriptors and all internal view/src mappings",
+    "allreduce_rewrite": "temporary AR rewrites stay in owned ctx_m; original bcj.nodes are not mutated",
+    "opaque_extra": "fail-closed",
+    "raw_graph_uid": "retained in CUDA structural signature",
+    "root_note": "V26 crash log showed stale allreduce_1 garbage descriptors; V65 adds this layer fix; regression is pending",
+    "build_id": "20261016T021234.138365Z",
+    "report_sha256": "d3210b011c29160e8cf2c2f0d3722356cbb7358b90db6841d27fc8b9977b85db"
+  },
+  "prior_v64_runtime_metadata": {
+    "build_id": "20261016T015610.271139Z",
+    "report_sha256": "8818d4831179db364702a1720c849dfb04b836d6c37e7ae3e6671d9ed5aefc1e",
+    "opaque_extra": "explicit opaque input is fail-closed",
+    "cuda_graph_structural_signature": "raw graph UID retained",
+    "build_delta": "1 CUDA object; no runner ABI change"
+  },
+  "run_outcome": {
+    "unit": "root-p4-v27-shortctx16k-hierarchical-ep6-d3-20261016t022431z",
+    "unit_result": "exit-code 1; runner run_rc=0 and wrapper final_rc=1",
+    "result_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v27-shortctx16k-hierarchical-20261016/results/root-p4-v27-shortctx16k-hierarchical-ep6-d3-20261016t022431z",
+    "model_loads": 1,
+    "diagnostic_comparator_failures": [
+      "single8k-pp-probe-prefix",
+      "pp-warm-prefix"
+    ],
+    "preclean_quality_gate": "PASS; native semantics 12/12 scenarios, 32 native cases; 40/40 full-logit serial/P4 pairs exact; 42/42 before/after-MTP pairs exact; no token-parity failures",
+    "clean_comparator": "PASS; clean_performance_eligible=true; all four 256-token P4 flows exactly matched serial references",
+    "clean_performance_record": {
+      "shared_tokens": 847,
+      "shared_window_seconds": 79.783215,
+      "shared_tg_tok_s": 10.616268095989865,
+      "prefill_input_tokens": 32768,
+      "prefill_wall_seconds": 62.189831,
+      "scenario_whole_wall_seconds": 181.557128,
+      "measurement_note": "V27 configuration with structural trace and sparse timing; not a production performance claim"
+    },
+    "structural_trace": {
+      "opaque_external_rows": 0,
+      "rejected_graph_rows": 48,
+      "segfault": false
+    },
+    "supervisor_telemetry": {
+      "samples": 62,
+      "utc_start": "2026-10-16T02:24:33Z",
+      "utc_end": "2026-10-16T02:39:27Z",
+      "gpu_free_min_mib": 830,
+      "gpu_temp_max_c": 46,
+      "unit_rss_peak_mib": 34416.3,
+      "ddr_node0_8_memfree_min_mib_record_only": 174.6,
+      "fan_target_rpm": 3000,
+      "fan_alarm_fault_samples": 0,
+      "bmc_temp_max_c": 46,
+      "final_gpus_idle": true
+    },
+    "automatic_retry": false
+  },
+  "fragment_cache": {
+    "enabled": true,
+    "env": "GGML_META_FRAGMENT_CACHE=1",
+    "entry_cap": 64,
+    "budget_mib": 128,
+    "comparison_baseline_tag": "root-p4-v27-shortctx16k-hierarchical-ep6-d3-20261016t022431z",
+    "baseline_diagnostic_results_sha256": "16cb38688dc2e4581c0f5990dcf432949f431dad842e44ac5560c082cdf6f994",
+    "baseline_clean_results_sha256": "beee7b03194cea10d8f56225bf2f8bae83c014f461324b8b9603bb746b95ae36",
+    "comparison": "case-by-case exact generated-token arrays per scenario/flow in diagnostic and clean, in addition to the original comparator"
+  },
+  "previous_v27_result": {
+    "status": "12/12 semantic PASS; preclean F32 exact; clean main P4 exact and comparator PASS; total wrapper exit1 due two auxiliary prefix checks",
+    "status_file": "../dual-context-v27-shortctx16k-hierarchical-20261016/STATUS.md"
+  },
+  "cache_tiny_gate": {
+    "status": "PASS per root; V67 cache and parent-UID gate passed",
+    "log": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/meta-fragment-cache-20261016/results/v67-host-r2-on-20261016T024529Z.log",
+    "sha256": "96afe9ca8e48495220bfb3a5fa7c5a343a8d51296dfde9acaab7bb501a91c9bf",
+    "metrics": {
+      "inner_cache_hits_per_context": 3,
+      "inner_cache_misses_per_context": 9,
+      "parent_invalidations": 2,
+      "outer_ar": 8,
+      "inner_merged_graphs": 12,
+      "max_inner_subgraphs": 2
+    },
+    "oracle": "A/B/A/new-parent-UID outputs exact, canary pass"
+  },
+  "token_array_comparator": {
+    "status": "implemented_and_self-tested_against_frozen_V27_baseline",
+    "self_compare": "42/42 diagnostic and 4/4 clean arrays exact",
+    "baseline_diagnostic_sha256": "16cb38688dc2e4581c0f5990dcf432949f431dad842e44ac5560c082cdf6f994",
+    "baseline_clean_sha256": "beee7b03194cea10d8f56225bf2f8bae83c014f461324b8b9603bb746b95ae36",
+    "original_aux_prefix_failures": "remain enforced; no suppression"
+  },
+  "nested_async_gate": {
+    "flag": "GGML_META_NESTED_ASYNC=1",
+    "local_source_ABA_and_new_UID_numeric_gate": "PASS per root",
+    "current_hot_path_evidence": "prior 3 warmup frames showed cold_drains=10 and async_calls=10; insufficient to prove hot path avoids six-rank drains",
+    "required_next_fixture": "authorized fifth frame: at least 3 warmup frames, then ready A4 and new-UID B; must show actual hot async operation without six-rank cold drain",
+    "status": "pending root/ep_cuda_routes qualification; do not full-model launch yet"
+  },
+  "previous_v28_result": {
+    "status": "native semantic and preclean full-logit gates pass; clean P4 comparator pass; overall unit exit1 retained two auxiliary probe-prefix failures",
+    "token_array_comparison_vs_v27": "42/42 diagnostic and 4/4 clean arrays exact",
+    "clean_four_stream": {
+      "shared_tokens": 847,
+      "shared_window_seconds": 36.903702,
+      "shared_tg_tok_s": 22.951626912660416,
+      "prefill_input_tokens": 32768,
+      "prefill_wall_seconds": 73.83117,
+      "clean_performance_eligible": true
+    },
+    "v27_comparison": {
+      "shared_tg_tok_s": 10.616268095989865,
+      "prefill_wall_seconds": 62.189831
+    },
+    "interpretation": "single short-context clean sample; decode improved, prefill regressed; not a target throughput claim",
+    "source": "V28 result directory root-p4-v28-shortctx16k-hierarchical-ep6-d3-20261016t025409z"
+  }
+}

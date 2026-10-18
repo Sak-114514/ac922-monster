@@ -1,0 +1,65 @@
+utc_tag=20261016T072028Z
+source_root=/home/debian/ac922-monster/experiments/standard-opt-20261014/src
+runtime_lib=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v79/lib
+runtime_build_id=20261016T070400.271089Z
+cuda_visible_devices=3
+GGML_CUDA_MOE_FUSED_T16=1
+GGML_OPTIMIZATION_PATH_LOG=1
+8e05999f70fd56fe557cd6e5e32b9180cda95875f84f685f3a75984d4391dcf4  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/moe-t16-fused-chunks-20261016/moe-t16-fused-chunks.cpp
+ce738204fde83a6c35dfc1e13212ee054293ed2a7ecafdd47bc821b558154e15  /home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-cuda/ggml-cuda.cu
+579749e762f7cf1fd3cf4c2db942f2d41cc34cbc9140bbac43509961c7904d98  /home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-cuda/moe-t16-chunks-private.h
+2336febdc57e436a21aae38f105d9747428380f6a23f49b86394ae5d0b673f89  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v79/lib/libggml-cuda.so.0
+sample=IQ2_XXS-expert170.ggml.bin sha256=3072ad7ed5ff7c3b25ab044737d6574fa4871060de4843d9c02399cd022451c7 bytes=422400 PASS
+sample=IQ2_XS-expert170.ggml.bin sha256=3b59bc7b22011c251b51bacaba6dc6f86d267d741c0adbfa25802c4cffc8dc6b bytes=473600 PASS
+sample=IQ2_S-expert170.ggml.bin sha256=a4b7b1633afc9e32483dc0953e54fe28b5d45faf4b8bf768f620600350c70299 bytes=524800 PASS
+sample=IQ3_XXS-expert170.ggml.bin sha256=be386047742229171f83855275ec6df83c3f90540e1844080e543febbd51daf6 bytes=627200 PASS
+sample=IQ3_S-expert170.ggml.bin sha256=2df7a119f5098f016b3f5daa7f9194cbb50241e3616f7e58f744023be8030d20 bytes=704000 PASS
+sample=IQ4_NL-expert170.ggml.bin sha256=bcc38824216b30dc6ed43e114e8371b5af42ff15f08d9391638fe51996453785 bytes=921600 PASS
+sample=Q2_0-expert170.ggml.bin sha256=77519106f81911a105c33519d5288f2d287c00f03a659e8d2ee0f63aa6e68f6b bytes=460800 PASS
+PASS seven original raw expert samples; no GGUF/model scan
+built /tmp/moe-t16-fused.Dom9Ap/moe-t16-fused-chunks against /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v79/lib (host C++ only; no NVCC)
+04e82d25fcb8f63c112a1c3e8aa731b76dde7f567e639e3129842eb4f08425c6  /tmp/moe-t16-fused.Dom9Ap/moe-t16-fused-chunks
+preflight memory=2MiB temp=39C util=0% compute_pids=none
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+optimization path device=0 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=12 width=640 auxiliary=16 count=1
+optimization path device=0 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=8 width=640 auxiliary=1 count=1
+optimization path device=0 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=4 width=640 auxiliary=1 count=2
+optimization path device=0 path=ep_fused_mmvq_t16 scope=host_dispatch_or_capture requested=1 selected=1 reason=original_T8_plus_T4_or_T8_same_stream_EP_range_preserved tokens=12 width=640 auxiliary=1 count=1
+optimization path device=0 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=8 width=640 auxiliary=16 count=2
+optimization path device=0 path=ep_fused_mmvq_t16 scope=host_dispatch_or_capture requested=1 selected=1 reason=original_T8_plus_T4_or_T8_same_stream_EP_range_preserved tokens=16 width=640 auxiliary=1 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+EP fallback: IQ2S Volta-specialized MMVQ skipped; standard MMVQ maps global routes to local expert slices
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path summary device=0 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=56 selected=56
+optimization path summary device=0 path=ep_fused_mmvq_t16 scope=host_dispatch_or_capture requested=14 selected=14
+optimization path summary device=0 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=42 selected=42
+mode=operator-fixture backend=CUDA0 optin=GGML_CUDA_MOE_FUSED_T16:1 formats=7 shapes=12,16 owner_offset=170 global_experts=512 route_ids=170,169,341,511
+case format=IQ2_XXS tokens=12 reference_chunks=8+4 bitwise=yes unequal=0 max_abs=0 finite=yes foreign_route_zero=yes pass=yes
+case format=IQ2_XXS tokens=16 reference_chunks=8+8 bitwise=yes unequal=0 max_abs=0 finite=yes foreign_route_zero=yes pass=yes
+case format=IQ2_XS tokens=12 reference_chunks=8+4 bitwise=yes unequal=0 max_abs=0 finite=yes foreign_route_zero=yes pass=yes
+case format=IQ2_XS tokens=16 reference_chunks=8+8 bitwise=yes unequal=0 max_abs=0 finite=yes foreign_route_zero=yes pass=yes
+case format=IQ2_S tokens=12 reference_chunks=8+4 bitwise=yes unequal=0 max_abs=0 finite=yes foreign_route_zero=yes pass=yes
+case format=IQ2_S tokens=16 reference_chunks=8+8 bitwise=yes unequal=0 max_abs=0 finite=yes foreign_route_zero=yes pass=yes
+case format=IQ3_XXS tokens=12 reference_chunks=8+4 bitwise=yes unequal=0 max_abs=0 finite=yes foreign_route_zero=yes pass=yes
+case format=IQ3_XXS tokens=16 reference_chunks=8+8 bitwise=yes unequal=0 max_abs=0 finite=yes foreign_route_zero=yes pass=yes
+case format=IQ3_S tokens=12 reference_chunks=8+4 bitwise=yes unequal=0 max_abs=0 finite=yes foreign_route_zero=yes pass=yes
+case format=IQ3_S tokens=16 reference_chunks=8+8 bitwise=yes unequal=0 max_abs=0 finite=yes foreign_route_zero=yes pass=yes
+case format=IQ4_NL tokens=12 reference_chunks=8+4 bitwise=yes unequal=0 max_abs=0 finite=yes foreign_route_zero=yes pass=yes
+case format=IQ4_NL tokens=16 reference_chunks=8+8 bitwise=yes unequal=0 max_abs=0 finite=yes foreign_route_zero=yes pass=yes
+case format=Q2_0 tokens=12 reference_chunks=8+4 bitwise=yes unequal=0 max_abs=0 finite=yes foreign_route_zero=yes pass=yes
+case format=Q2_0 tokens=16 reference_chunks=8+8 bitwise=yes unequal=0 max_abs=0 finite=yes foreign_route_zero=yes pass=yes
+PASS operator parity only; no full-model/production-EP/performance claim
+postflight memory=2MiB temp=39C compute_pids=none
+PASS actual T12/T16 dispatch summary and 14 strict operator cases

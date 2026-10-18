@@ -1,0 +1,6 @@
+RUN_CONFIG tag=20261015T231122Z-70921 routes=off,on devices=GPU3-5 timeout_each=30s
+GPU_GUARD GPU-fadb0459-4d30-907b-289a-862b3014f165:38C/16125MiB GPU-760ce501-32f6-69b6-215b-1020da68bbfc:38C/16125MiB GPU-d3558623-deca-c702-3cc0-01b4aa9c667a:38C/16125MiB
+MODE_PASS mode=off copy_only_results=4 readbacks>=6
+MODE_PASS mode=on copy_only_results=4 readbacks>=6
+GPU_GUARD GPU-fadb0459-4d30-907b-289a-862b3014f165:39C/16124MiB GPU-760ce501-32f6-69b6-215b-1020da68bbfc:39C/16124MiB GPU-d3558623-deca-c702-3cc0-01b4aa9c667a:40C/16124MiB
+META_ASYNC_INPUT_ROUTE_FIXTURE_PASS tag=20261015T231122Z-70921 result_dir=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/meta-async-input-gpu-20261016/results/20261015T231122Z-70921

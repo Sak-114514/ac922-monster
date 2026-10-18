@@ -1,0 +1,40 @@
+start=2026-10-16T18:05:56Z
+base=/home/debian/ac922-monster/experiments/standard-opt-20261014
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v107
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-native-mask-20261017/qsa-native-mask-gate2
+mode=cpu
+timeout=20
+model_loaded=0
+c7349d7a1c691ff7c3ff427d9d1c4ebf147778129d4035adda8bb729b9bfad73  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-native-mask-20261017/qsa-native-mask-gate2
+PASS_CONSTRUCTOR_CONTRACT named_api=1 mode_tag=1 source_ports=1 legacy_unary_separate=1 malformed_layout_rejected=1
+/home/debian/ac922-monster/src/ggml/src/ggml-alloc.c:624: GGML_ASSERT(buffer_id >= 0) failed
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v107/lib/libggml-base.so.0(+0x28f88)[0x7fffa1548f88]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v107/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fffa1549588]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v107/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fffa1549724]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v107/lib/libggml-base.so.0(+0x46e38)[0x7fffa1566e38]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v107/lib/libggml-base.so.0(+0x46fd8)[0x7fffa1566fd8]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v107/lib/libggml-base.so.0(ggml_backend_sched_alloc_graph+0x58c)[0x7fffa158497c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-native-mask-20261017/qsa-native-mask-gate2(_ZN11NativeGraphC1EP18ggml_backend_schedP12ggml_backendllb+0x4f0)[0x11de25150]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-native-mask-20261017/qsa-native-mask-gate2(+0x4074)[0x11de24074]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-native-mask-20261017/qsa-native-mask-gate2(main+0x12c)[0x11de22d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fffa0f44d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fffa0f44f6c]
+QSA_NATIVE_FIXTURE_SIGNAL backtrace follows
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-native-mask-20261017/qsa-native-mask-gate2(+0x3048)[0x11de23048]
+linux-vdso64.so.1(__kernel_sigtramp_rt64+0x0)[0x7fffa1870504]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0xa6aac)[0x7fffa0fc6aac]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(gsignal+0x2c)[0x7fffa0f647dc]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(abort+0x154)[0x7fffa0f4497c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v107/lib/libggml-base.so.0(ggml_abort+0xbc)[0x7fffa15496fc]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v107/lib/libggml-base.so.0(+0x46e38)[0x7fffa1566e38]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v107/lib/libggml-base.so.0(+0x46fd8)[0x7fffa1566fd8]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v107/lib/libggml-base.so.0(ggml_backend_sched_alloc_graph+0x58c)[0x7fffa158497c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-native-mask-20261017/qsa-native-mask-gate2(_ZN11NativeGraphC1EP18ggml_backend_schedP12ggml_backendllb+0x4f0)[0x11de25150]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-native-mask-20261017/qsa-native-mask-gate2(+0x4074)[0x11de24074]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-native-mask-20261017/qsa-native-mask-gate2(main+0x12c)[0x11de22d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fffa0f44d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fffa0f44f6c]
+end=2026-10-16T18:05:56Z
+elapsed_seconds=0
+exit_status=134
+peak_sampled_gpu_memory_delta_mib=0

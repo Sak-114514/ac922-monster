@@ -1,0 +1,5 @@
+compiler=/usr/bin/cc
+source=/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-alloc.c
+source_sha256=213b48d6ef6d6ffef55c438db837116105de72cdae3dd152673035e61508d384
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v155
+command=/usr/bin/cc -std=c11 -O1 -g -fPIC -Wall -Wextra -DGGML_SHARED -DGGML_BACKEND_SHARED -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/include -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/include -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src -shared /home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-alloc.c -o /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer-pp-inputs-v152-20261017/build-v155-galloc-debug/libggml-galloc-debug.so -L/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v155/lib -Wl,-rpath,/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v155/lib -Wl,--no-as-needed -l:libggml-base.so.0

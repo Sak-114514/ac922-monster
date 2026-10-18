@@ -1,0 +1,24 @@
+V270_CASE format=IQ2_XS tensor=blk.0.ffn_gate_exps.weight type=iq2_xs K=2560 N=64 T=256 topk=10 route=uniform10 raw_experts=170,171 raw_prefix_rows=64 synthetic_bank=alternate_two_real_expert_templates repeated_rows=0 requantize=0 model_load=0 route_prepare_ms=0.300 cpu_f32_reference_ms=32.277 bank_bytes=24248320 estimated_gpu_bytes=323518976 gpu_free_mib=15812 gpu_total_mib=16128 device=3 sm=7.0
+V270_ROUTE_PREPARED tiles=512 associations=2560 max_tile_columns=16 validation=PASS
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+[mp-dbg] mul_mat_id hook: type=17 ne11=1 reg=0 ptr=0x10037400000 ne=[2560,64,512]
+optimization path device=3 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=256 width=64 auxiliary=512 count=1
+QUALITY method=ggml_grouped_mmq_vs_fp32 format=IQ2_XS N=64 K=2560 T=256 topk=10 distribution=uniform10 elements=163840 rms=0.000805209008 rel_l2=0.0036169301 max_abs=0.00317491591 nonfinite=0 closer_rms_than_mmq=no verdict=REPORT_ONLY
+QUALITY method=dualhalf_terms3_vs_fp32 format=IQ2_XS N=64 K=2560 T=256 topk=10 distribution=uniform10 elements=163840 rms=3.76836187e-07 rel_l2=1.69271597e-06 max_abs=1.66893005e-06 nonfinite=0 closer_rms_than_mmq=yes verdict=REPORT_ONLY
+QUALITY method=dualhalf_terms4_vs_fp32 format=IQ2_XS N=64 K=2560 T=256 topk=10 distribution=uniform10 elements=163840 rms=3.7677484e-07 rel_l2=1.6924404e-06 max_abs=1.66893005e-06 nonfinite=0 closer_rms_than_mmq=yes verdict=REPORT_ONLY
+V270_CORE_CORRECTNESS_PASS format=IQ2_XS N=64 K=2560 T=256 route=uniform10 baseline=grouped_mmq dualhalf_terms=3,4
+[mp-dbg] mul_mat_id hook: type=17 ne11=1 reg=0 ptr=0x7ffb72000000 ne=[2560,64,512]
+optimization path device=3 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=256 width=64 auxiliary=512 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+[mp-dbg] mul_mat_id hook: type=17 ne11=1 reg=0 ptr=0x7ffb72000000 ne=[2560,64,512]
+TIMING method=ggml_grouped_mmq_full_graph format=IQ2_XS N=64 K=2560 T=256 route=uniform10 median_ms=0.5977 warmups=1 samples=5 scope=MUL_MAT_ID_grouped_dispatch_quantize_and_matmul weights_buffer_bytes=24248320 graph_buffer_bytes=3287040 actual_gpu_bytes=29360128 free_gpu_bytes=16503472128
+TIMING method=dualhalf_custom_terms3 format=IQ2_XS N=64 K=2560 T=256 route=uniform10 kernel_event_median_ms=1.2554 api_launch_sync_wall_median_ms=1.2880 warmups=1 samples=5 actual_gpu_bytes=31457280 free_gpu_bytes=16501374976 scope=custom_kernel_only route_prepared_on_cpu=true
+TIMING method=dualhalf_custom_terms4 format=IQ2_XS N=64 K=2560 T=256 route=uniform10 kernel_event_median_ms=1.2493 api_launch_sync_wall_median_ms=1.2817 warmups=1 samples=5 actual_gpu_bytes=31457280 free_gpu_bytes=16501374976 scope=custom_kernel_only route_prepared_on_cpu=true
+V270_CASE_COMPLETE format=IQ2_XS N=64 K=2560 T=256 route=uniform10 baseline=grouped_mmq custom_terms=3,4 timing=complete
+optimization path summary device=3 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=3 selected=3

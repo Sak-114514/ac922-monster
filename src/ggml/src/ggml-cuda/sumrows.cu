@@ -1,0 +1,99 @@
+#include "reduce_rows.cuh"
+#include "sumrows.cuh"
+
+void sum_rows_f32_cuda(const float * x, float * dst, const int ncols, const int nrows, cudaStream_t stream) {
+    const int  id  = ggml_cuda_get_device();
+    const int  nsm = ggml_cuda_info().devices[id].nsm;
+    const dim3 block_nums(nrows, 1, 1);
+    if ((nrows / nsm) < 2) {
+        const dim3 block_dims(512, 1, 1);
+        const ggml_cuda_kernel_launch_params launch_params = ggml_cuda_kernel_launch_params(block_nums, block_dims, 0, stream);
+        ggml_cuda_kernel_launch(reduce_rows_f32</*norm=*/false>, launch_params, x, dst, ncols);
+    } else {
+        const dim3 block_dims(ncols < 1024 ? 32 : 128, 1, 1);
+        const ggml_cuda_kernel_launch_params launch_params = ggml_cuda_kernel_launch_params(block_nums, block_dims, 0, stream);
+        ggml_cuda_kernel_launch(reduce_rows_f32</*norm=*/false>, launch_params, x, dst, ncols);
+    }
+}
+
+void ggml_cuda_op_sum_rows(ggml_backend_cuda_context & ctx, ggml_tensor * dst) {
+    const ggml_tensor * src0 = dst->src[0];
+    const float * src0_d = (const float *)src0->data;
+    float * dst_d = (float *)dst->data;
+    cudaStream_t stream = ctx.stream();
+
+    GGML_ASSERT(src0->type == GGML_TYPE_F32);
+    GGML_ASSERT( dst->type == GGML_TYPE_F32);
+    GGML_ASSERT(ggml_is_contiguous_rows(src0));
+
+    const int64_t ncols = src0->ne[0];
+    const int64_t nrows = ggml_nrows(src0);
+
+    if (ggml_is_contiguous(src0)) {
+        sum_rows_f32_cuda(src0_d, dst_d, ncols, nrows, stream);
+        return;
+    }
+
+    const dim3 block_nums(nrows, 1, 1);
+
+    const int id  = ggml_cuda_get_device();
+    const int nsm = ggml_cuda_info().devices[id].nsm;
+    dim3 block_dims;
+    if ((nrows / nsm) < 2) {
+        // Increase num threads to 512 for small nrows to better hide the latency
+        block_dims = dim3(512, 1, 1);
+    } else {
+        // Enough active SMs to hide latency, use smaller blocks to allow better scheduling
+        block_dims = dim3(ncols < 1024 ? 32 : 128, 1, 1);
+    }
+    const ggml_cuda_kernel_launch_params launch_params = ggml_cuda_kernel_launch_params(block_nums, block_dims, 0, stream);
+    const char * src0_d_bytes = (const char *) src0->data;
+    ggml_cuda_kernel_launch(reduce_rows_f32_strided</*norm=*/false>, launch_params, src0_d_bytes, dst_d, ncols,
+            src0->ne[1], src0->ne[2], src0->nb[1], src0->nb[2], src0->nb[3]);
+}
+
+// Qwen4Exp QSA score reduction.  The marked graph has a contiguous ReLU
+// result laid out as [n_blocks, 4 heads, n_queries, n_stream].  Keep the
+// existing left-associative reduction order used by the generic add chain.
+static __global__ void qsa_relu4_sum_f32(
+        const float * src, float * dst, int64_t n_blocks, int64_t n_queries, int64_t n_stream) {
+    const int64_t i = (int64_t) blockIdx.x * blockDim.x + threadIdx.x;
+    const int64_t n = n_blocks * n_queries * n_stream;
+    if (i >= n) {
+        return;
+    }
+
+    const int64_t block  = i % n_blocks;
+    const int64_t qstream = i / n_blocks;
+    const int64_t base   = block + qstream * (4 * n_blocks);
+
+    const float x0 = fmaxf(src[base + 0*n_blocks], 0.0f);
+    const float x1 = fmaxf(src[base + 1*n_blocks], 0.0f);
+    const float x2 = fmaxf(src[base + 2*n_blocks], 0.0f);
+    const float x3 = fmaxf(src[base + 3*n_blocks], 0.0f);
+
+    const float s01 = __fadd_rn(x0, x1);
+    const float s012 = __fadd_rn(s01, x2);
+    dst[i] = __fadd_rn(s012, x3);
+}
+
+void ggml_cuda_op_qsa_relu4_sum(ggml_backend_cuda_context & ctx, const ggml_tensor * relu, ggml_tensor * dst) {
+    const ggml_tensor * src = relu->src[0];
+    GGML_ASSERT(src != nullptr);
+    GGML_ASSERT(src->type == GGML_TYPE_F32 && dst->type == GGML_TYPE_F32);
+    GGML_ASSERT(src->ne[1] == 4);
+    GGML_ASSERT(ggml_is_contiguous(src));
+
+    const int64_t n_blocks  = src->ne[0];
+    const int64_t n_queries = src->ne[2];
+    const int64_t n_stream  = src->ne[3];
+    GGML_ASSERT(ggml_nelements(dst) == n_blocks * n_queries * n_stream);
+
+    constexpr int threads = 256;
+    const int64_t n = n_blocks * n_queries * n_stream;
+    const dim3 blocks((unsigned int) ((n + threads - 1) / threads), 1, 1);
+    const dim3 block_dims(threads, 1, 1);
+    const ggml_cuda_kernel_launch_params launch_params(blocks, block_dims, 0, ctx.stream());
+    ggml_cuda_kernel_launch(qsa_relu4_sum_f32, launch_params,
+            (const float *) src->data, (float *) dst->data, n_blocks, n_queries, n_stream);
+}

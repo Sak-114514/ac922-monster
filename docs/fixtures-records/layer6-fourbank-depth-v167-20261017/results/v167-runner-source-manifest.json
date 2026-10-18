@@ -1,0 +1,32 @@
+{
+  "schema": "v167-runner-source-manifest-v1",
+  "status": "PREPARED_LOCAL_ONLY",
+  "base_runner": "fixtures/layer6-fourbank-v146-20261017/dual-context-v146-fourbank-layer6.cpp",
+  "base_runner_sha256": "9a5a6671618ab15138bb3fd40fe3b8711fc8ef35bf07e1de2d86711361fe6740",
+  "generated_runner": "dual-context-v167-fourbank-depth.cpp",
+  "generated_runner_sha256": "995bf73ac492c936b74a5dfc25feca2199ea2b915193f1f98779757001d525dd",
+  "families_ordered": [
+    {
+      "name": "fourbank16k-d4",
+      "depth": 4,
+      "context_tokens": 17152
+    },
+    {
+      "name": "fourbank16k-d5",
+      "depth": 5,
+      "context_tokens": 17152
+    }
+  ],
+  "changes": [
+    "swap V146 geometry policy for D4/D5 PAD6 policy",
+    "allow D4/D5 family depths while retaining generic GPU chain and PAD6",
+    "require structural-signature guarded force-capture and actual draft ubatch 256",
+    "construct fresh D4 then D5 bank families under one loaded model",
+    "derive prefill metadata from nonempty banks and explicitly disclaim GPU overlap",
+    "record all-token first-to-last rate including serialized warmup and tail",
+    "require actual GPU chain steps when the family scenario requests it"
+  ],
+  "model_loads": 0,
+  "host_build": "not run",
+  "gpu_touched": false
+}

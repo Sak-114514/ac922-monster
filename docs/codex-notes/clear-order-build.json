@@ -1,0 +1,51 @@
+{
+  "status": "built-not-model-validated",
+  "runtime": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-clear-order",
+  "changed_files": [
+    "lib/libllama-common.so.0"
+  ],
+  "cuda_objects_recompiled": 0,
+  "compile_objects": 1,
+  "compile": {
+    "argv": [
+      "/usr/bin/c++",
+      "-DGGML_BACKEND_SHARED",
+      "-DGGML_SHARED",
+      "-DGGML_USE_CPU",
+      "-DGGML_USE_CUDA",
+      "-DLLAMA_SHARED",
+      "-Dllama_common_EXPORTS",
+      "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/common/.",
+      "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/vendor/nlohmann/..",
+      "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/vendor/sheredom/..",
+      "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/../include",
+      "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/../include",
+      "-O3",
+      "-DNDEBUG",
+      "-fPIC",
+      "-Wmissing-declarations",
+      "-Wmissing-noreturn",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-Wcast-qual",
+      "-Wno-unused-function",
+      "-Wno-array-bounds",
+      "-Wextra-semi",
+      "-o",
+      "CMakeFiles/llama-common.dir/common.cpp.o",
+      "-c",
+      "/home/debian/ac922-monster/experiments/standard-opt-20261014/src/common/common.cpp"
+    ],
+    "cwd": "/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/common",
+    "dependency_file": "/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/common/CMakeFiles/llama-common.dir/common.cpp.o.d",
+    "display": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -DGGML_USE_CUDA -DLLAMA_SHARED -Dllama_common_EXPORTS -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/common/. -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/vendor/nlohmann/.. -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/vendor/sheredom/.. -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/../include -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/../include -O3 -DNDEBUG -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama-common.dir/common.cpp.o -c /home/debian/ac922-monster/experiments/standard-opt-20261014/src/common/common.cpp",
+    "matched_changed_dependencies": [
+      "common/common.cpp"
+    ],
+    "object": "common/CMakeFiles/llama-common.dir/common.cpp.o",
+    "source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/src/common/common.cpp",
+    "target": "common:llama-common"
+  },
+  "ldd": "\tlinux-vdso64.so.1 (0x00007fff9ab50000)\n\tlibllama-server-impl.so => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-clear-order/lib/libllama-server-impl.so (0x00007fff9a7c0000)\n\tlibstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fff9a490000)\n\tlibgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fff9a450000)\n\tlibc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fff9a1f0000)\n\tlibllama-common.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-clear-order/lib/libllama-common.so.0 (0x00007fff99ca0000)\n\tlibmtmd.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-clear-order/lib/libmtmd.so.0 (0x00007fff99aa0000)\n\tlibllama.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-clear-order/lib/libllama.so.0 (0x00007fff99760000)\n\tlibggml.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-clear-order/lib/libggml.so.0 (0x00007fff99730000)\n\tlibggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-clear-order/lib/libggml-base.so.0 (0x00007fff99600000)\n\tlibm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fff994d0000)\n\t/lib64/ld64.so.2 (0x00007fff9ab70000)\n\tlibggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-clear-order/lib/libggml-cpu.so.0 (0x00007fff99310000)\n\tlibggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-clear-order/lib/libggml-cuda.so.0 (0x00007fff8ba20000)\n\tlibgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fff8b9a0000)\n\tlibcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fff8b8c0000)\n\tlibcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fff84ba0000)\n\tlibcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fff82de0000)\n\tlibnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff80f80000)\n\tlibdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff80f50000)\n\tlibpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff80f20000)\n\tlibrt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff80ef0000)\n\tlibcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff6d060000)\n"
+}

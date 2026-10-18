@@ -1,0 +1,82 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=0/6 first=0 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=1/6 first=85 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=2/6 first=170 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=3/6 first=256 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=4/6 first=341 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=5/6 first=426 local=86 total=512 final-output-only-reduction=1
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_backend_meta_context: nested native GPU AllReduce opt-in requested; unsupported PARTIAL boundaries fail closed
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+meta-nested-gpu-ar opt-in=1 topology=2x3 leaves=6 order=A0,A1,A2,B0,B1,B2 p2p6=1 nccl6_f32=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=0/2 first=0 local=256 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=1/2 first=256 local=256 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=0/3 first=0 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=1/3 first=85 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=2/3 first=170 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=0/3 first=256 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=1/3 first=341 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=2/3 first=426 local=86 total=512 final-output-only-reduction=1
+[mp-dbg] mul_mat_id hook: type=8 ne11=1 reg=0 ptr=0x7ffcddc2c600 ne=[32,32,85]
+[mp-dbg] mul_mat_id hook: type=8 ne11=1 reg=0 ptr=0x7ffcdde2c600 ne=[32,32,85]
+[mp-dbg] mul_mat_id hook: type=8 ne11=1 reg=0 ptr=0x7ffcde02c600 ne=[32,32,86]
+[mp-dbg] mul_mat_id hook: type=8 ne11=1 reg=0 ptr=0x7ffcde22c600 ne=[32,32,85]
+[mp-dbg] mul_mat_id hook: type=8 ne11=1 reg=0 ptr=0x7ffcde42c600 ne=[32,32,85]
+[mp-dbg] mul_mat_id hook: type=8 ne11=1 reg=0 ptr=0x7ffcde62c600 ne=[32,32,86]
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-nested-gpu-ar sequence=1 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1049600 tensors=6 host_stage=0
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+meta-nested-gpu-ar sequence=2 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1049600 tensors=6 host_stage=0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-nested-gpu-ar sequence=3 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1049600 tensors=6 host_stage=0
+PASS flat6-local foreign_zero=1 owner_count=1 tokens=8200 canaries=8
+PASS nested2x3-local foreign_zero=1 owner_count=1 tokens=8200 canaries=8
+PASS initial exact=1 values=262400
+INFO initial cpu_dequant_aux_max_abs flat=7.15255737e-07 nested=7.15255737e-07
+PASS flat6-local foreign_zero=1 owner_count=1 tokens=8200 canaries=8
+PASS nested2x3-local foreign_zero=1 owner_count=1 tokens=8200 canaries=8
+PASS zero-rank exact=1 values=262400
+INFO zero-rank cpu_dequant_aux_max_abs flat=7.15255737e-07 nested=7.15255737e-07
+PASS flat6-local foreign_zero=1 owner_count=1 tokens=8200 canaries=8
+PASS nested2x3-local foreign_zero=1 owner_count=1 tokens=8200 canaries=8
+PASS ABA-restored exact=1 values=262400
+INFO ABA-restored cpu_dequant_aux_max_abs flat=7.15255737e-07 nested=7.15255737e-07

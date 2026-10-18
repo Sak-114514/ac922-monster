@@ -1,0 +1,67 @@
+ROUTE name=skew experts=512 assignments=10240 cold_experts=448 cold_tokens=5120 hot_experts=64 hot_tokens=5120 zero_experts=0 dst_ids=shuffled_global
+PREFIX route=skew type=IQ2_XXS legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=528 cold_tiles=448 hot_tiles=80
+CORRECTNESS route=skew type=IQ2_XXS N=192 K=2560 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=skew type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight N=192 K=2560 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1390.2421 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=939.6736 speedup=1.4795 prep_included=0
+PREFIX route=skew type=IQ2_XS legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=528 cold_tiles=448 hot_tiles=80
+CORRECTNESS route=skew type=IQ2_XS N=224 K=2560 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=skew type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight N=224 K=2560 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1738.4448 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=1050.3510 speedup=1.6551 prep_included=0
+PREFIX route=skew type=IQ2_S legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=528 cold_tiles=448 hot_tiles=80
+CORRECTNESS route=skew type=IQ2_S N=192 K=2560 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=skew type=IQ2_S tensor=blk.12.ffn_gate_exps.weight N=192 K=2560 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1744.5546 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=1054.5835 speedup=1.6543 prep_included=0
+PREFIX route=skew type=IQ3_XXS legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=528 cold_tiles=448 hot_tiles=80
+CORRECTNESS route=skew type=IQ3_XXS N=224 K=2560 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=skew type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight N=224 K=2560 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1300.8555 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=957.1157 speedup=1.3591 prep_included=0
+PREFIX route=skew type=IQ3_S legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=528 cold_tiles=448 hot_tiles=80
+CORRECTNESS route=skew type=IQ3_S N=192 K=2560 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=skew type=IQ3_S tensor=blk.8.ffn_gate_exps.weight N=192 K=2560 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1355.3664 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=987.4091 speedup=1.3726 prep_included=0
+PREFIX route=skew type=IQ4_NL legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=528 cold_tiles=448 hot_tiles=80
+CORRECTNESS route=skew type=IQ4_NL N=768 K=640 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=skew type=IQ4_NL tensor=blk.0.ffn_down_exps.weight N=768 K=640 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1123.3621 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=817.7493 speedup=1.3737 prep_included=0
+PREFIX route=skew type=Q2_0 legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=528 cold_tiles=448 hot_tiles=80
+CORRECTNESS route=skew type=Q2_0 N=768 K=640 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=skew type=Q2_0 tensor=blk.1.ffn_down_exps.weight N=768 K=640 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1322.4790 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=807.3899 speedup=1.6380 prep_included=0
+ROUTE name=uniform20 experts=512 assignments=10240 cold_experts=512 cold_tokens=10240 hot_experts=0 hot_tokens=0 zero_experts=0 dst_ids=shuffled_global
+PREFIX route=uniform20 type=IQ2_XXS legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=512 cold_tiles=512 hot_tiles=0
+CORRECTNESS route=uniform20 type=IQ2_XXS N=192 K=2560 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=uniform20 type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight N=192 K=2560 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1266.2017 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=814.1312 speedup=1.5553 prep_included=0
+PREFIX route=uniform20 type=IQ2_XS legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=512 cold_tiles=512 hot_tiles=0
+CORRECTNESS route=uniform20 type=IQ2_XS N=224 K=2560 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=uniform20 type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight N=224 K=2560 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1619.8655 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=915.4730 speedup=1.7694 prep_included=0
+PREFIX route=uniform20 type=IQ2_S legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=512 cold_tiles=512 hot_tiles=0
+CORRECTNESS route=uniform20 type=IQ2_S N=192 K=2560 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=uniform20 type=IQ2_S tensor=blk.12.ffn_gate_exps.weight N=192 K=2560 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1638.0160 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=917.9050 speedup=1.7845 prep_included=0
+PREFIX route=uniform20 type=IQ3_XXS legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=512 cold_tiles=512 hot_tiles=0
+CORRECTNESS route=uniform20 type=IQ3_XXS N=224 K=2560 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=uniform20 type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight N=224 K=2560 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1311.0186 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=871.4752 speedup=1.5044 prep_included=0
+PREFIX route=uniform20 type=IQ3_S legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=512 cold_tiles=512 hot_tiles=0
+CORRECTNESS route=uniform20 type=IQ3_S N=192 K=2560 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=uniform20 type=IQ3_S tensor=blk.8.ffn_gate_exps.weight N=192 K=2560 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1343.5649 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=903.6203 speedup=1.4869 prep_included=0
+PREFIX route=uniform20 type=IQ4_NL legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=512 cold_tiles=512 hot_tiles=0
+CORRECTNESS route=uniform20 type=IQ4_NL N=768 K=640 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=uniform20 type=IQ4_NL tensor=blk.0.ffn_down_exps.weight N=768 K=640 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1095.9189 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=735.1808 speedup=1.4907 prep_included=0
+PREFIX route=uniform20 type=Q2_0 legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=512 cold_tiles=512 hot_tiles=0
+CORRECTNESS route=uniform20 type=Q2_0 N=768 K=640 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=uniform20 type=Q2_0 tensor=blk.1.ffn_down_exps.weight N=768 K=640 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1297.5616 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=678.5792 speedup=1.9122 prep_included=0
+ROUTE name=zeros experts=512 assignments=10240 cold_experts=384 cold_tokens=5120 hot_experts=128 hot_tokens=5120 zero_experts=128 dst_ids=shuffled_global
+PREFIX route=zeros type=IQ2_XXS legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=384 cold_tiles=256 hot_tiles=128
+CORRECTNESS route=zeros type=IQ2_XXS N=192 K=2560 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=zeros type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight N=192 K=2560 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=918.5280 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=820.0619 speedup=1.1201 prep_included=0
+PREFIX route=zeros type=IQ2_XS legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=384 cold_tiles=256 hot_tiles=128
+CORRECTNESS route=zeros type=IQ2_XS N=224 K=2560 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=zeros type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight N=224 K=2560 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1253.1115 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=985.8133 speedup=1.2711 prep_included=0
+PREFIX route=zeros type=IQ2_S legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=384 cold_tiles=256 hot_tiles=128
+CORRECTNESS route=zeros type=IQ2_S N=192 K=2560 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=zeros type=IQ2_S tensor=blk.12.ffn_gate_exps.weight N=192 K=2560 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=1255.7142 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=984.6614 speedup=1.2753 prep_included=0
+PREFIX route=zeros type=IQ3_XXS legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=384 cold_tiles=256 hot_tiles=128
+CORRECTNESS route=zeros type=IQ3_XXS N=224 K=2560 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=zeros type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight N=224 K=2560 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=937.7878 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=847.0699 speedup=1.1071 prep_included=0
+PREFIX route=zeros type=IQ3_S legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=384 cold_tiles=256 hot_tiles=128
+CORRECTNESS route=zeros type=IQ3_S N=192 K=2560 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=zeros type=IQ3_S tensor=blk.8.ffn_gate_exps.weight N=192 K=2560 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=975.6928 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=873.5915 speedup=1.1169 prep_included=0
+PREFIX route=zeros type=IQ4_NL legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=384 cold_tiles=256 hot_tiles=128
+CORRECTNESS route=zeros type=IQ4_NL N=768 K=640 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=zeros type=IQ4_NL tensor=blk.0.ffn_down_exps.weight N=768 K=640 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=834.1590 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=679.8336 speedup=1.2270 prep_included=0
+PREFIX route=zeros type=Q2_0 legacy_J64_exact=1 adaptive_cold_hot_exact=1 baseline_tiles=384 cold_tiles=256 hot_tiles=128
+CORRECTNESS route=zeros type=Q2_0 N=768 K=640 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF route=zeros type=Q2_0 tensor=blk.1.ffn_down_exps.weight N=768 K=640 experts=512 assignments=10240 threshold=32 legacy_prefix_J64 nodes=2 avg_us=976.1536 adaptive_prefix_J32cold_J64hot nodes=3 avg_us=699.5883 speedup=1.3953 prep_included=0
+SUMMARY routes=3 types_per_route=7 cases=21 failed=0 baseline=legacy_prefix_plus_J64 adaptive=actual_dual_prefix_plus_J32_cold_J64_hot full_model=0

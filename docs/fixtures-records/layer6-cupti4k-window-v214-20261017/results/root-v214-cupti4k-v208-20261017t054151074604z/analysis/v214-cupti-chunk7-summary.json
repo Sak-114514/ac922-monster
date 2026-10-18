@@ -1,0 +1,2013 @@
+{
+  "activity_event_counts": {
+    "concurrent_kernel": 129037,
+    "memcpy": 3636,
+    "memcpy2_p2p": 160,
+    "runtime_api": 376641
+  },
+  "analysis_scope": "One selected V214 logical 4096-token target+MTP chunk only; not a full 32K prompt occupancy profile",
+  "any_gpu_kernel_union_ns": 5556024714,
+  "clock": "CUPTI nanoseconds",
+  "device_memcpy_activity": {
+    "by_activity_type": {
+      "memcpy": {
+        "bytes": 3239195276,
+        "count": 3636,
+        "duration_max_ns": 899587,
+        "duration_sum_ns": 38000128
+      },
+      "memcpy2_p2p": {
+        "bytes": 1677721600,
+        "count": 160,
+        "duration_max_ns": 383424,
+        "duration_sum_ns": 40920587
+      }
+    },
+    "by_copy_kind": {
+      "1": {
+        "bytes": 385876356,
+        "count": 1681,
+        "duration_sum_ns": 16505042
+      },
+      "10": {
+        "bytes": 1677721600,
+        "count": 160,
+        "duration_sum_ns": 40920587
+      },
+      "2": {
+        "bytes": 167772168,
+        "count": 18,
+        "duration_sum_ns": 12020083
+      },
+      "8": {
+        "bytes": 2685546752,
+        "count": 1937,
+        "duration_sum_ns": 9475003
+      }
+    },
+    "interpretation": "CUPTI MEMCPY activity duration/bytes are reported separately from host runtime API intervals."
+  },
+  "devices": {
+    "0": {
+      "compute_capability": [
+        7,
+        0
+      ],
+      "global_memory_size": 16911433728,
+      "name": "Tesla V100-SXM2-16GB",
+      "uuid": "80452dace8c199fd225cea846276ae6f"
+    },
+    "1": {
+      "compute_capability": [
+        7,
+        0
+      ],
+      "global_memory_size": 16911433728,
+      "name": "Tesla V100-SXM2-16GB",
+      "uuid": "ac5b33c1276dc1ae15a646f7894daefb"
+    },
+    "2": {
+      "compute_capability": [
+        7,
+        0
+      ],
+      "global_memory_size": 16911433728,
+      "name": "Tesla V100-SXM2-16GB",
+      "uuid": "e6529eb8aa1f1d025d63dfb7995bf1eb"
+    },
+    "3": {
+      "compute_capability": [
+        7,
+        0
+      ],
+      "global_memory_size": 16911433728,
+      "name": "Tesla V100-SXM2-16GB",
+      "uuid": "fadb04594d30907b289a862b3014f165"
+    },
+    "4": {
+      "compute_capability": [
+        7,
+        0
+      ],
+      "global_memory_size": 16911433728,
+      "name": "Tesla V100-SXM2-16GB",
+      "uuid": "760ce50132f669b6215b1020da68bbfc"
+    },
+    "5": {
+      "compute_capability": [
+        7,
+        0
+      ],
+      "global_memory_size": 16911433728,
+      "name": "Tesla V100-SXM2-16GB",
+      "uuid": "d3558623decac7023cc001b4aa9c667a"
+    }
+  },
+  "interpretation_limits": [
+    "Per-device kernel union removes overlap among kernels on that device.",
+    "Six-GPU concurrency is a sweep over the six per-device kernel unions, not a count of kernel records.",
+    "Kernel duration sums may exceed window wall time and are not busy percentages.",
+    "Runtime API host duration and device memcpy duration are separate measurements.",
+    "No host scheduler, driver API, or CUPTI OSRT activity is inferred."
+  ],
+  "kernel_activity": {
+    "categories_nonexclusive": true,
+    "category_duration_sum_ns_may_overlap": {
+      "GDN": {
+        "count": 1152,
+        "duration_max_ns": 368380,
+        "duration_sum_ns": 213101647
+      },
+      "MoE": {
+        "count": 6144,
+        "duration_max_ns": 1982807,
+        "duration_sum_ns": 3183708411
+      },
+      "QSA": {
+        "count": 480,
+        "duration_max_ns": 3064065,
+        "duration_sum_ns": 519595536
+      },
+      "comm": {
+        "count": 0,
+        "duration_max_ns": 0,
+        "duration_sum_ns": 0
+      },
+      "indexer": {
+        "count": 0,
+        "duration_max_ns": 0,
+        "duration_sum_ns": 0
+      },
+      "other": {
+        "count": 113289,
+        "duration_max_ns": 1596435,
+        "duration_sum_ns": 2008551238
+      },
+      "unknown_name_truncated": {
+        "count": 7972,
+        "duration_max_ns": 44444,
+        "duration_sum_ns": 67838586
+      }
+    },
+    "duration_sum_ns_not_wall_time": 5992795418,
+    "event_count": 129037,
+    "graph_or_graph_node_event_count": 432,
+    "kernel_name_truncated_event_count": 7972,
+    "top_kernel_names_by_duration_sum": [
+      {
+        "count": 480,
+        "duration_max_ns": 1742897,
+        "duration_sum_ns": 625809545,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type42ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "name_truncated": false
+      },
+      {
+        "count": 416,
+        "duration_max_ns": 1894679,
+        "duration_sum_ns": 578868673,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type21ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "name_truncated": false
+      },
+      {
+        "count": 192,
+        "duration_max_ns": 3064065,
+        "duration_sum_ns": 511565885,
+        "name": "_Z15qsa_attn_kernelILi3ELi4ELb1ELb0EEvPKcS1_S1_PK6__halfPKiPfS7_P6float2iiiimmmmmmmmf",
+        "name_truncated": false
+      },
+      {
+        "count": 320,
+        "duration_max_ns": 1774674,
+        "duration_sum_ns": 447575973,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type22ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "name_truncated": false
+      },
+      {
+        "count": 288,
+        "duration_max_ns": 1982807,
+        "duration_sum_ns": 438883957,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type20ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "name_truncated": false
+      },
+      {
+        "count": 320,
+        "duration_max_ns": 1857744,
+        "duration_sum_ns": 434749747,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type17ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "name_truncated": false
+      },
+      {
+        "count": 2144,
+        "duration_max_ns": 1095703,
+        "duration_sum_ns": 372860092,
+        "name": "_ZN7cutlass7Kernel2I50cutlass_70_tensorop_s884gemm_f16_128x128_tn_align8EEvNT_6ParamsE",
+        "name_truncated": false
+      },
+      {
+        "count": 288,
+        "duration_max_ns": 1636529,
+        "duration_sum_ns": 348014965,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type16ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "name_truncated": false
+      },
+      {
+        "count": 3104,
+        "duration_max_ns": 189185,
+        "duration_sum_ns": 303791852,
+        "name": "volta_s884gemm_fp16_256x128_ldg8_tn",
+        "name_truncated": false
+      },
+      {
+        "count": 192,
+        "duration_max_ns": 1569278,
+        "duration_sum_ns": 262356555,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type18ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "name_truncated": false
+      },
+      {
+        "count": 576,
+        "duration_max_ns": 368380,
+        "duration_sum_ns": 184779029,
+        "name": "_Z32gated_delta_net_cuda_128x4_voltaILb1EEvPKfS1_S1_S1_S1_S1_PfS2_llllllllllll5uint3S3_fliPKilll",
+        "name_truncated": false
+      },
+      {
+        "count": 12592,
+        "duration_max_ns": 41856,
+        "duration_sum_ns": 114750813,
+        "name": "_Z27convert_unary_cont_sat_vec4IfEvPKvP6__halfl",
+        "name_truncated": false
+      },
+      {
+        "count": 1136,
+        "duration_max_ns": 182939,
+        "duration_sum_ns": 96889707,
+        "name": "_Z21dequantize_block_q6_KI6__halfEvPKvPT_",
+        "name_truncated": false
+      },
+      {
+        "count": 1072,
+        "duration_max_ns": 232988,
+        "duration_sum_ns": 90019813,
+        "name": "_Z23dequantize_block_iq4_xsI6__halfEvPKvPT_",
+        "name_truncated": false
+      },
+      {
+        "count": 2144,
+        "duration_max_ns": 55168,
+        "duration_sum_ns": 78508255,
+        "name": "volta_s884gemm_fp16_64x64_ldg8_tn",
+        "name_truncated": false
+      },
+      {
+        "count": 720,
+        "duration_max_ns": 247835,
+        "duration_sum_ns": 65451622,
+        "name": "_Z21dequantize_block_q4_KI6__halfEvPKvPT_",
+        "name_truncated": false
+      },
+      {
+        "count": 880,
+        "duration_max_ns": 1596435,
+        "duration_sum_ns": 64562945,
+        "name": "_Z22dequantize_block_iq3_sI6__halfEvPKvPT_",
+        "name_truncated": false
+      },
+      {
+        "count": 7712,
+        "duration_max_ns": 131675,
+        "duration_sum_ns": 62692192,
+        "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+        "name_truncated": false
+      },
+      {
+        "count": 1536,
+        "duration_max_ns": 46428,
+        "duration_sum_ns": 61614776,
+        "name": "_Z16dsv4_hc_post_f32ILb0EEvPKfS1_S1_S1_Pfllllllllllllllll",
+        "name_truncated": false
+      },
+      {
+        "count": 1553,
+        "duration_max_ns": 42206,
+        "duration_sum_ns": 59025533,
+        "name": "_Z12rms_norm_f32ILi1024ELb1ELb0EEvPKfPfilllfS1_lll5uint3S3_S3_S3_S1_lllS3_S3_S3_S3_",
+        "name_truncated": false
+      },
+      {
+        "count": 768,
+        "duration_max_ns": 104924,
+        "duration_sum_ns": 58915399,
+        "name": "_Z28top_k_radix_histogram_selectILi256ELi8EEvPKfP17top_k_radix_statePiPjiiiibb",
+        "name_truncated": false
+      },
+      {
+        "count": 1552,
+        "duration_max_ns": 35421,
+        "duration_sum_ns": 51592625,
+        "name": "_Z15dsv4_hc_pre_f32ILb1EEvPKfS1_Pflllllllllllf",
+        "name_truncated": false
+      },
+      {
+        "count": 49168,
+        "duration_max_ns": 87872,
+        "duration_sum_ns": 48300496,
+        "name": "_Z11concat_contIjLi0EEvPKT_S2_PS0_llllll",
+        "name_truncated": false
+      },
+      {
+        "count": 2304,
+        "duration_max_ns": 23068,
+        "duration_sum_ns": 44793481,
+        "name": "_Z13mm_ids_helperILi10EEvPKiPiS2_S2_iiiiibi",
+        "name_truncated": false
+      },
+      {
+        "count": 768,
+        "duration_max_ns": 65179,
+        "duration_sum_ns": 41366104,
+        "name": "volta_sgemm_128x64_tn",
+        "name_truncated": false
+      },
+      {
+        "count": 592,
+        "duration_max_ns": 65564,
+        "duration_sum_ns": 34138636,
+        "name": "_Z17concat_copies_f3218concat_copies_args",
+        "name_truncated": false
+      },
+      {
+        "count": 1536,
+        "duration_max_ns": 28189,
+        "duration_sum_ns": 34104332,
+        "name": "volta_s884gemm_fp16_128x64_ldg8_tn",
+        "name_truncated": false
+      },
+      {
+        "count": 192,
+        "duration_max_ns": 190302,
+        "duration_sum_ns": 32060195,
+        "name": "_Z18expand_rows_kernelI6__halfEv16expand_rows_args",
+        "name_truncated": false
+      },
+      {
+        "count": 576,
+        "duration_max_ns": 53467,
+        "duration_sum_ns": 28322618,
+        "name": "_Z23ssm_conv_long_token_f32ILb1ELm128ELm4ELl32EEvPKfS1_S1_iiiiPfiiil",
+        "name_truncated": false
+      },
+      {
+        "count": 1536,
+        "duration_max_ns": 22142,
+        "duration_sum_ns": 28154040,
+        "name": "_ZN7cutlass7Kernel2I61cutlass_70_wmma_tensorop_s161616gemm_f16_32x32_64x2_tn_align2EEvNT_6ParamsE",
+        "name_truncated": false
+      },
+      {
+        "count": 1536,
+        "duration_max_ns": 18589,
+        "duration_sum_ns": 24713212,
+        "name": "_Z17quantize_mmq_q8_1IL18mmq_q8_1_ds_layout0ELb1EEvPKfPKiPvllllliii",
+        "name_truncated": false
+      },
+      {
+        "count": 755,
+        "duration_max_ns": 41085,
+        "duration_sum_ns": 23763454,
+        "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_addEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj [truncated]",
+        "name_truncated": true
+      },
+      {
+        "count": 192,
+        "duration_max_ns": 117947,
+        "duration_sum_ns": 20198325,
+        "name": "_Z19top_k_stable_gatherILi256EEvPKfPiPK17top_k_radix_statePKiiii",
+        "name_truncated": false
+      },
+      {
+        "count": 224,
+        "duration_max_ns": 170588,
+        "duration_sum_ns": 19906440,
+        "name": "_Z21dequantize_block_q5_KI6__halfEvPKvPT_",
+        "name_truncated": false
+      },
+      {
+        "count": 1536,
+        "duration_max_ns": 24475,
+        "duration_sum_ns": 19827083,
+        "name": "_Z21unary_gated_op_kernelIXadL_ZN38_INTERNAL_9b06fd10_8_unary_cu_eb6d53667op_siluEfEEfEvPKT0_S3_PS1_llll",
+        "name_truncated": false
+      },
+      {
+        "count": 368,
+        "duration_max_ns": 47358,
+        "duration_sum_ns": 16955583,
+        "name": "_Z12moe_tail_f32PKfS0_S0_S0_S0_Pfli",
+        "name_truncated": false
+      },
+      {
+        "count": 5184,
+        "duration_max_ns": 8476,
+        "duration_sum_ns": 16608623,
+        "name": "_ZN8cublasLt19splitKreduce_kernelILi32ELi16EiffffLb1ELb0ELb0EEEvNS_18cublasSplitKParamsIT4_EEPKT2_PKT3_PS7_PKS2_SC_PKT5_S6_PSD_ [truncated]",
+        "name_truncated": true
+      },
+      {
+        "count": 400,
+        "duration_max_ns": 41788,
+        "duration_sum_ns": 16134626,
+        "name": "_Z26moe_weighted_reduction_f32PKfS0_S0_Pfli",
+        "name_truncated": false
+      },
+      {
+        "count": 768,
+        "duration_max_ns": 21117,
+        "duration_sum_ns": 15453161,
+        "name": "_Z15unary_op_kernelIXadL_ZN38_INTERNAL_9b06fd10_8_unary_cu_eb6d53667op_reluEfEEfEvPKT0_PS1_i",
+        "name_truncated": false
+      },
+      {
+        "count": 480,
+        "duration_max_ns": 36700,
+        "duration_sum_ns": 14701598,
+        "name": "_Z12rms_norm_f32ILi256ELb1ELb0EEvPKfPfilllfS1_lll5uint3S3_S3_S3_S1_lllS3_S3_S3_S3_",
+        "name_truncated": false
+      },
+      {
+        "count": 1152,
+        "duration_max_ns": 13564,
+        "duration_sum_ns": 12988730,
+        "name": "_Z18rms_norm_scale_f32ILi256EEvPKfPfilllff",
+        "name_truncated": false
+      },
+      {
+        "count": 256,
+        "duration_max_ns": 66908,
+        "duration_sum_ns": 12127741,
+        "name": "_Z10cpy_scalarIXadL_ZN36_INTERNAL_319e1a36_6_cpy_cu_bfba63e212cpy_1_scalarIffEEvPKcPcEEEvS3_S4_lllllllllllllll",
+        "name_truncated": false
+      },
+      {
+        "count": 288,
+        "duration_max_ns": 45340,
+        "duration_sum_ns": 11763419,
+        "name": "_Z29rms_norm_mul_sigmoid_gate_f32PKfS0_S0_PfilllfP10block_q8_1l",
+        "name_truncated": false
+      },
+      {
+        "count": 480,
+        "duration_max_ns": 25693,
+        "duration_sum_ns": 11433797,
+        "name": "_Z21unary_gated_op_kernelIXadL_ZN38_INTERNAL_9b06fd10_8_unary_cu_eb6d536610op_sigmoidEfEEfEvPKT0_S3_PS1_llll",
+        "name_truncated": false
+      },
+      {
+        "count": 1344,
+        "duration_max_ns": 14013,
+        "duration_sum_ns": 10382508,
+        "name": "_ZN7cutlass7Kernel2I61cutlass_70_wmma_tensorop_s161616gemm_f16_32x32_64x2_tn_align8EEvNT_6ParamsE",
+        "name_truncated": false
+      },
+      {
+        "count": 768,
+        "duration_max_ns": 14332,
+        "duration_sum_ns": 9401958,
+        "name": "_Z13topk_moe_cudaILi512ELb0EEvPKfPfPiS2_iiff15topk_moe_config",
+        "name_truncated": false
+      },
+      {
+        "count": 768,
+        "duration_max_ns": 13851,
+        "duration_sum_ns": 9380785,
+        "name": "_Z17quantize_mmq_q8_1IL18mmq_q8_1_ds_layout0ELb0EEvPKfPKiPvllllliii",
+        "name_truncated": false
+      },
+      {
+        "count": 640,
+        "duration_max_ns": 17083,
+        "duration_sum_ns": 9281402,
+        "name": "_Z23dequantize_block_iq4_nlI6__halfEvPKvPT_",
+        "name_truncated": false
+      },
+      {
+        "count": 592,
+        "duration_max_ns": 41276,
+        "duration_sum_ns": 9263824,
+        "name": "_Z27rms_norm_mul_rope_multi_f32ILb0EEvPKfPfillliilllfS1_iiPKifff14rope_corr_dimsfS1_14mrope_sectionsb",
+        "name_truncated": false
+      },
+      {
+        "count": 608,
+        "duration_max_ns": 18815,
+        "duration_sum_ns": 8915484,
+        "name": "_Z16k_set_rows_quantIl10block_q8_0Li32EXadL_ZN42_INTERNAL_fb76a24c_11_set_rows_cu_7ddb16fd23quantize_f32_q8_0_blockEPKfPS0_EEEv [truncated]",
+        "name_truncated": true
+      }
+    ]
+  },
+  "metadata_gates": {
+    "bad_buffers_selected_window": 0,
+    "buffer_starvation_selected_window": 0,
+    "context_stream_pair_overflow": 0,
+    "device_table_overflow": 0,
+    "drop_query_scope": "global_queue_null_context_stream_zero_v1",
+    "dropped_selected_window_phase": 0,
+    "event_capacity": 1048576,
+    "parse_errors_selected_window": 0,
+    "per_context_stream_drop_counts_available": false,
+    "record_overflow": 0,
+    "untimed_activity_records_during_window": 0
+  },
+  "name_truncated_records": 7972,
+  "per_device_kernel_union_fraction_of_window": {
+    "0": 0.20211323061801326,
+    "1": 0.19359652051640552,
+    "2": 0.1781294232538559,
+    "3": 0.1499955009039658,
+    "4": 0.1603068650474482,
+    "5": 0.0932264512141154
+  },
+  "per_device_kernel_union_ns": {
+    "0": 1239270421,
+    "1": 1187049659,
+    "2": 1092212146,
+    "3": 919707171,
+    "4": 982931971,
+    "5": 571624050
+  },
+  "runtime_api_host_time": {
+    "any_thread_api_vs_any_gpu_kernel_union": {
+      "api_only_ns": 295606675,
+      "gpu_kernel_only_ns": 1044021446,
+      "interpretation": "Temporal interval comparison only; API activity does not establish a host stall or causal GPU wait.",
+      "neither_ns": 279933661,
+      "overlap_ns": 4512003268
+    },
+    "any_thread_interval_union_ns": 4807609943,
+    "api_name_distributions_ns": {
+      "cudaDeviceGetAttribute_v5000": {
+        "count": 5008,
+        "max_ns": 1897,
+        "mean_ns": 435.85762779552715,
+        "p50_ns": 426,
+        "p95_ns": 518,
+        "p99_ns": 576,
+        "sum_ns": 2182775
+      },
+      "cudaEventRecord_v3020": {
+        "count": 1936,
+        "max_ns": 12795,
+        "mean_ns": 1410.126549586777,
+        "p50_ns": 1281,
+        "p95_ns": 2056,
+        "p99_ns": 3184,
+        "sum_ns": 2730005
+      },
+      "cudaEventSynchronize_v3020": {
+        "count": 96,
+        "max_ns": 49875,
+        "mean_ns": 23664.520833333332,
+        "p50_ns": 21827,
+        "p95_ns": 36831,
+        "p99_ns": 49875,
+        "sum_ns": 2271794
+      },
+      "cudaFreeHost_v3020": {
+        "count": 1,
+        "max_ns": 42572333,
+        "mean_ns": 42572333.0,
+        "p50_ns": 42572333,
+        "p95_ns": 42572333,
+        "p99_ns": 42572333,
+        "sum_ns": 42572333
+      },
+      "cudaGetDeviceProperties_v2_v12000": {
+        "count": 416,
+        "max_ns": 801608,
+        "mean_ns": 477508.1514423077,
+        "p50_ns": 466663,
+        "p95_ns": 524662,
+        "p99_ns": 566535,
+        "sum_ns": 198643391
+      },
+      "cudaGetDevice_v3020": {
+        "count": 114013,
+        "max_ns": 154628,
+        "mean_ns": 286.9918254935841,
+        "p50_ns": 265,
+        "p95_ns": 406,
+        "p99_ns": 475,
+        "sum_ns": 32720799
+      },
+      "cudaGetLastError_v3020": {
+        "count": 117828,
+        "max_ns": 261746,
+        "mean_ns": 260.2543028821672,
+        "p50_ns": 256,
+        "p95_ns": 318,
+        "p99_ns": 348,
+        "sum_ns": 30665244
+      },
+      "cudaGraphLaunch_v10000": {
+        "count": 16,
+        "max_ns": 157879,
+        "mean_ns": 129904.4375,
+        "p50_ns": 126755,
+        "p95_ns": 157879,
+        "p99_ns": 157879,
+        "sum_ns": 2078471
+      },
+      "cudaLaunchKernel_v7000": {
+        "count": 123597,
+        "max_ns": 38787456,
+        "mean_ns": 34855.53269092292,
+        "p50_ns": 8235,
+        "p95_ns": 27962,
+        "p99_ns": 193839,
+        "sum_ns": 4308039274
+      },
+      "cudaMallocHost_v3020": {
+        "count": 1,
+        "max_ns": 83534,
+        "mean_ns": 83534.0,
+        "p50_ns": 83534,
+        "p95_ns": 83534,
+        "p99_ns": 83534,
+        "sum_ns": 83534
+      },
+      "cudaMemcpy2DAsync_v3020": {
+        "count": 864,
+        "max_ns": 176707,
+        "mean_ns": 13887.22800925926,
+        "p50_ns": 12486,
+        "p95_ns": 17021,
+        "p99_ns": 35243,
+        "sum_ns": 11998565
+      },
+      "cudaMemcpyAsync_v3020": {
+        "count": 2883,
+        "max_ns": 203525,
+        "mean_ns": 13805.752341311134,
+        "p50_ns": 10353,
+        "p95_ns": 19201,
+        "p99_ns": 170131,
+        "sum_ns": 39801984
+      },
+      "cudaMemcpyPeerAsync_v4000": {
+        "count": 160,
+        "max_ns": 41177,
+        "mean_ns": 17241.64375,
+        "p50_ns": 17812,
+        "p95_ns": 21868,
+        "p99_ns": 33505,
+        "sum_ns": 2758663
+      },
+      "cudaMemsetAsync_v3020": {
+        "count": 3664,
+        "max_ns": 310103,
+        "mean_ns": 7995.716703056769,
+        "p50_ns": 5804,
+        "p95_ns": 9843,
+        "p99_ns": 50669,
+        "sum_ns": 29296306
+      },
+      "cudaOccupancyMaxActiveBlocksPerMultiprocessor_v6050": {
+        "count": 3664,
+        "max_ns": 4605,
+        "mean_ns": 1220.0302947598254,
+        "p50_ns": 1154,
+        "p95_ns": 1785,
+        "p99_ns": 2527,
+        "sum_ns": 4470191
+      },
+      "cudaSetDevice_v3020": {
+        "count": 192,
+        "max_ns": 5585,
+        "mean_ns": 2096.8697916666665,
+        "p50_ns": 2016,
+        "p95_ns": 3314,
+        "p99_ns": 4711,
+        "sum_ns": 402599
+      },
+      "cudaStreamSynchronize_v3020": {
+        "count": 142,
+        "max_ns": 37307877,
+        "mean_ns": 643089.9154929577,
+        "p50_ns": 15042,
+        "p95_ns": 497444,
+        "p99_ns": 29345635,
+        "sum_ns": 91318768
+      },
+      "cudaStreamWaitEvent_v3020": {
+        "count": 2160,
+        "max_ns": 13511,
+        "mean_ns": 2581.1328703703703,
+        "p50_ns": 1236,
+        "p95_ns": 9957,
+        "p99_ns": 11513,
+        "sum_ns": 5575247
+      }
+    },
+    "category_distributions_ns": {
+      "graph_launch": {
+        "count": 16,
+        "max_ns": 157879,
+        "mean_ns": 129904.4375,
+        "p50_ns": 126755,
+        "p95_ns": 157879,
+        "p99_ns": 157879,
+        "sum_ns": 2078471
+      },
+      "kernel_launch": {
+        "count": 123597,
+        "max_ns": 38787456,
+        "mean_ns": 34855.53269092292,
+        "p50_ns": 8235,
+        "p95_ns": 27962,
+        "p99_ns": 193839,
+        "sum_ns": 4308039274
+      },
+      "other": {
+        "count": 250630,
+        "max_ns": 42572333,
+        "mean_ns": 1589.300518692894,
+        "p50_ns": 266,
+        "p95_ns": 1121,
+        "p99_ns": 12217,
+        "sum_ns": 398326389
+      },
+      "sync_wait": {
+        "count": 2398,
+        "max_ns": 37307877,
+        "mean_ns": 41353.548373644706,
+        "p50_ns": 1258,
+        "p95_ns": 20568,
+        "p99_ns": 82771,
+        "sum_ns": 99165809
+      }
+    },
+    "category_interval_union_ns": {
+      "graph_launch": 2078471,
+      "kernel_launch": 4308039274,
+      "other": 398326389,
+      "sync_wait": 99165809
+    },
+    "interpretation": "CUPTI runtime API intervals are host API durations; they are not device memcpy durations or GPU busy time.",
+    "interval_union_by_thread_ns": {
+      "2939516992": 4807609943
+    },
+    "longest_calls": [
+      {
+        "api_name": "cudaFreeHost_v3020",
+        "correlation_id": 3075370,
+        "device_id": 0,
+        "duration_ns": 42572333,
+        "end_ns_clipped": 1792215939688108070,
+        "gap_after_api_or_active_busy_union_ns": 3834321,
+        "gpu_devices_with_kernel_active_at_api_end": [],
+        "gpu_kernel_records_overlapping_api": 967,
+        "next_gpu_busy_union_start_ns": 1792215939691942391,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 3075467,
+            "device_id": 5,
+            "gap_after_api_end_ns": 3834321,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939691942391
+          }
+        ],
+        "start_ns_clipped": 1792215939645535737,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 3061115,
+        "device_id": 0,
+        "duration_ns": 38787456,
+        "end_ns_clipped": 1792215939398316456,
+        "gap_after_api_or_active_busy_union_ns": 2500,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          1
+        ],
+        "gpu_kernel_records_overlapping_api": 695,
+        "next_gpu_busy_union_start_ns": 1792215939398340979,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 3058313,
+            "device_id": 1,
+            "gap_after_api_end_ns": 24523,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215939398340979
+          },
+          {
+            "correlation_id": 3063663,
+            "device_id": 2,
+            "gap_after_api_end_ns": 83290359,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939481606815
+          },
+          {
+            "correlation_id": 3067850,
+            "device_id": 3,
+            "gap_after_api_end_ns": 159357615,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939557674071
+          },
+          {
+            "correlation_id": 3071541,
+            "device_id": 4,
+            "gap_after_api_end_ns": 223021481,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939621337937
+          },
+          {
+            "correlation_id": 3075467,
+            "device_id": 5,
+            "gap_after_api_end_ns": 293625935,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939691942391
+          }
+        ],
+        "start_ns_clipped": 1792215939359529000,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 2989619,
+        "device_id": 0,
+        "duration_ns": 38334291,
+        "end_ns_clipped": 1792215938244272646,
+        "gap_after_api_or_active_busy_union_ns": 2435,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          1
+        ],
+        "gpu_kernel_records_overlapping_api": 695,
+        "next_gpu_busy_union_start_ns": 1792215938244297810,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 2986817,
+            "device_id": 1,
+            "gap_after_api_end_ns": 25164,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215938244297810
+          },
+          {
+            "correlation_id": 2992167,
+            "device_id": 2,
+            "gap_after_api_end_ns": 83892144,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938328164790
+          },
+          {
+            "correlation_id": 2996354,
+            "device_id": 3,
+            "gap_after_api_end_ns": 161954612,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938406227258
+          },
+          {
+            "correlation_id": 3000045,
+            "device_id": 4,
+            "gap_after_api_end_ns": 227733718,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938472006364
+          },
+          {
+            "correlation_id": 3003969,
+            "device_id": 5,
+            "gap_after_api_end_ns": 296576486,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938540849132
+          },
+          {
+            "correlation_id": 3006035,
+            "device_id": 0,
+            "gap_after_api_end_ns": 296722122,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938540994768
+          }
+        ],
+        "start_ns_clipped": 1792215938205938355,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 2965789,
+        "device_id": 0,
+        "duration_ns": 37971786,
+        "end_ns_clipped": 1792215937862834361,
+        "gap_after_api_or_active_busy_union_ns": 2467,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          1
+        ],
+        "gpu_kernel_records_overlapping_api": 695,
+        "next_gpu_busy_union_start_ns": 1792215937862859556,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 2962987,
+            "device_id": 1,
+            "gap_after_api_end_ns": 25195,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215937862859556
+          },
+          {
+            "correlation_id": 2968337,
+            "device_id": 2,
+            "gap_after_api_end_ns": 84402941,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215937947237302
+          },
+          {
+            "correlation_id": 2972524,
+            "device_id": 3,
+            "gap_after_api_end_ns": 161278142,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938024112503
+          },
+          {
+            "correlation_id": 2976215,
+            "device_id": 4,
+            "gap_after_api_end_ns": 225858221,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938088692582
+          },
+          {
+            "correlation_id": 2980139,
+            "device_id": 5,
+            "gap_after_api_end_ns": 294229162,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938157063523
+          },
+          {
+            "correlation_id": 2982205,
+            "device_id": 0,
+            "gap_after_api_end_ns": 294400715,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938157235076
+          }
+        ],
+        "start_ns_clipped": 1792215937824862575,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaStreamSynchronize_v3020",
+        "correlation_id": 3053573,
+        "device_id": 0,
+        "duration_ns": 37307877,
+        "end_ns_clipped": 1792215939291047209,
+        "gap_after_api_or_active_busy_union_ns": 20200150,
+        "gpu_devices_with_kernel_active_at_api_end": [],
+        "gpu_kernel_records_overlapping_api": 668,
+        "next_gpu_busy_union_start_ns": 1792215939311247359,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 3053701,
+            "device_id": 0,
+            "gap_after_api_end_ns": 20200150,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939311247359
+          },
+          {
+            "correlation_id": 3058310,
+            "device_id": 1,
+            "gap_after_api_end_ns": 107259210,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939398306419
+          },
+          {
+            "correlation_id": 3063663,
+            "device_id": 2,
+            "gap_after_api_end_ns": 190559606,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939481606815
+          },
+          {
+            "correlation_id": 3067850,
+            "device_id": 3,
+            "gap_after_api_end_ns": 266626862,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939557674071
+          },
+          {
+            "correlation_id": 3071541,
+            "device_id": 4,
+            "gap_after_api_end_ns": 330290728,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939621337937
+          },
+          {
+            "correlation_id": 3075467,
+            "device_id": 5,
+            "gap_after_api_end_ns": 400895182,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939691942391
+          }
+        ],
+        "start_ns_clipped": 1792215939253739332,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 2798979,
+        "device_id": 0,
+        "duration_ns": 36080179,
+        "end_ns_clipped": 1792215935359070847,
+        "gap_after_api_or_active_busy_union_ns": 2405,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          1
+        ],
+        "gpu_kernel_records_overlapping_api": 691,
+        "next_gpu_busy_union_start_ns": 1792215935359092011,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 2796177,
+            "device_id": 1,
+            "gap_after_api_end_ns": 21164,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215935359092011
+          },
+          {
+            "correlation_id": 2801527,
+            "device_id": 2,
+            "gap_after_api_end_ns": 81257456,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215935440328303
+          },
+          {
+            "correlation_id": 2805714,
+            "device_id": 3,
+            "gap_after_api_end_ns": 156289067,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215935515359914
+          },
+          {
+            "correlation_id": 2809405,
+            "device_id": 4,
+            "gap_after_api_end_ns": 220148095,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215935579218942
+          },
+          {
+            "correlation_id": 2813329,
+            "device_id": 5,
+            "gap_after_api_end_ns": 286771785,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215935645842632
+          },
+          {
+            "correlation_id": 2815395,
+            "device_id": 0,
+            "gap_after_api_end_ns": 287732580,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215935646803427
+          }
+        ],
+        "start_ns_clipped": 1792215935322990668,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 3037279,
+        "device_id": 0,
+        "duration_ns": 35387186,
+        "end_ns_clipped": 1792215938981931188,
+        "gap_after_api_or_active_busy_union_ns": 2598,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          1
+        ],
+        "gpu_kernel_records_overlapping_api": 695,
+        "next_gpu_busy_union_start_ns": 1792215938981955504,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 3034477,
+            "device_id": 1,
+            "gap_after_api_end_ns": 24316,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215938981955504
+          },
+          {
+            "correlation_id": 3039827,
+            "device_id": 2,
+            "gap_after_api_end_ns": 78355491,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939060286679
+          },
+          {
+            "correlation_id": 3044014,
+            "device_id": 3,
+            "gap_after_api_end_ns": 148717633,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939130648821
+          },
+          {
+            "correlation_id": 3047705,
+            "device_id": 4,
+            "gap_after_api_end_ns": 207359001,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939189290189
+          },
+          {
+            "correlation_id": 3051629,
+            "device_id": 5,
+            "gap_after_api_end_ns": 271807900,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939253739088
+          },
+          {
+            "correlation_id": 3053701,
+            "device_id": 0,
+            "gap_after_api_end_ns": 329316171,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939311247359
+          }
+        ],
+        "start_ns_clipped": 1792215938946544002,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 3013449,
+        "device_id": 0,
+        "duration_ns": 35349066,
+        "end_ns_clipped": 1792215938624286932,
+        "gap_after_api_or_active_busy_union_ns": 2469,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          1
+        ],
+        "gpu_kernel_records_overlapping_api": 695,
+        "next_gpu_busy_union_start_ns": 1792215938624310569,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 3010647,
+            "device_id": 1,
+            "gap_after_api_end_ns": 23637,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215938624310569
+          },
+          {
+            "correlation_id": 3015997,
+            "device_id": 2,
+            "gap_after_api_end_ns": 79143654,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938703430586
+          },
+          {
+            "correlation_id": 3020184,
+            "device_id": 3,
+            "gap_after_api_end_ns": 150262863,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938774549795
+          },
+          {
+            "correlation_id": 3023875,
+            "device_id": 4,
+            "gap_after_api_end_ns": 208506396,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938832793328
+          },
+          {
+            "correlation_id": 3027799,
+            "device_id": 5,
+            "gap_after_api_end_ns": 273440116,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938897727048
+          },
+          {
+            "correlation_id": 3029865,
+            "device_id": 0,
+            "gap_after_api_end_ns": 275051969,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938899338901
+          }
+        ],
+        "start_ns_clipped": 1792215938588937866,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 2894299,
+        "device_id": 0,
+        "duration_ns": 35070503,
+        "end_ns_clipped": 1792215936774729625,
+        "gap_after_api_or_active_busy_union_ns": 2531,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          1
+        ],
+        "gpu_kernel_records_overlapping_api": 691,
+        "next_gpu_busy_union_start_ns": 1792215936774755747,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 2891497,
+            "device_id": 1,
+            "gap_after_api_end_ns": 26122,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215936774755747
+          },
+          {
+            "correlation_id": 2896847,
+            "device_id": 2,
+            "gap_after_api_end_ns": 79438305,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215936854167930
+          },
+          {
+            "correlation_id": 2901034,
+            "device_id": 3,
+            "gap_after_api_end_ns": 152880647,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215936927610272
+          },
+          {
+            "correlation_id": 2904725,
+            "device_id": 4,
+            "gap_after_api_end_ns": 215337932,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215936990067557
+          },
+          {
+            "correlation_id": 2908649,
+            "device_id": 5,
+            "gap_after_api_end_ns": 280416895,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215937055146520
+          },
+          {
+            "correlation_id": 2910715,
+            "device_id": 0,
+            "gap_after_api_end_ns": 281844659,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215937056574284
+          }
+        ],
+        "start_ns_clipped": 1792215936739659122,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 2703659,
+        "device_id": 0,
+        "duration_ns": 34833482,
+        "end_ns_clipped": 1792215933917581447,
+        "gap_after_api_or_active_busy_union_ns": 2437,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          1
+        ],
+        "gpu_kernel_records_overlapping_api": 691,
+        "next_gpu_busy_union_start_ns": 1792215933917605490,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 2700857,
+            "device_id": 1,
+            "gap_after_api_end_ns": 24043,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215933917605490
+          },
+          {
+            "correlation_id": 2706207,
+            "device_id": 2,
+            "gap_after_api_end_ns": 80301058,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215933997882505
+          },
+          {
+            "correlation_id": 2710394,
+            "device_id": 3,
+            "gap_after_api_end_ns": 154479814,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215934072061261
+          },
+          {
+            "correlation_id": 2714085,
+            "device_id": 4,
+            "gap_after_api_end_ns": 217972106,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215934135553553
+          },
+          {
+            "correlation_id": 2718009,
+            "device_id": 5,
+            "gap_after_api_end_ns": 283279025,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215934200860472
+          },
+          {
+            "correlation_id": 2720075,
+            "device_id": 0,
+            "gap_after_api_end_ns": 285286788,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215934202868235
+          }
+        ],
+        "start_ns_clipped": 1792215933882747965,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 2918129,
+        "device_id": 0,
+        "duration_ns": 34401123,
+        "end_ns_clipped": 1792215937138752409,
+        "gap_after_api_or_active_busy_union_ns": 2404,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          1
+        ],
+        "gpu_kernel_records_overlapping_api": 691,
+        "next_gpu_busy_union_start_ns": 1792215937138774920,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 2915327,
+            "device_id": 1,
+            "gap_after_api_end_ns": 22511,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215937138774920
+          },
+          {
+            "correlation_id": 2920677,
+            "device_id": 2,
+            "gap_after_api_end_ns": 78442488,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215937217194897
+          },
+          {
+            "correlation_id": 2924864,
+            "device_id": 3,
+            "gap_after_api_end_ns": 150594052,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215937289346461
+          },
+          {
+            "correlation_id": 2928555,
+            "device_id": 4,
+            "gap_after_api_end_ns": 209723374,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215937348475783
+          },
+          {
+            "correlation_id": 2932479,
+            "device_id": 5,
+            "gap_after_api_end_ns": 274385118,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215937413137527
+          },
+          {
+            "correlation_id": 2934545,
+            "device_id": 0,
+            "gap_after_api_end_ns": 276186681,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215937414939090
+          }
+        ],
+        "start_ns_clipped": 1792215937104351286,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 2941959,
+        "device_id": 0,
+        "duration_ns": 34302328,
+        "end_ns_clipped": 1792215937496609570,
+        "gap_after_api_or_active_busy_union_ns": 2564,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          1
+        ],
+        "gpu_kernel_records_overlapping_api": 691,
+        "next_gpu_busy_union_start_ns": 1792215937496630058,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 2939157,
+            "device_id": 1,
+            "gap_after_api_end_ns": 20488,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215937496630058
+          },
+          {
+            "correlation_id": 2944507,
+            "device_id": 2,
+            "gap_after_api_end_ns": 79953546,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215937576563116
+          },
+          {
+            "correlation_id": 2948694,
+            "device_id": 3,
+            "gap_after_api_end_ns": 152819324,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215937649428894
+          },
+          {
+            "correlation_id": 2952385,
+            "device_id": 4,
+            "gap_after_api_end_ns": 213212310,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215937709821880
+          },
+          {
+            "correlation_id": 2956309,
+            "device_id": 5,
+            "gap_after_api_end_ns": 278382522,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215937774992092
+          },
+          {
+            "correlation_id": 2958375,
+            "device_id": 0,
+            "gap_after_api_end_ns": 279477764,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215937776087334
+          }
+        ],
+        "start_ns_clipped": 1792215937462307242,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 2870469,
+        "device_id": 0,
+        "duration_ns": 34145060,
+        "end_ns_clipped": 1792215936410579323,
+        "gap_after_api_or_active_busy_union_ns": 2436,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          1
+        ],
+        "gpu_kernel_records_overlapping_api": 691,
+        "next_gpu_busy_union_start_ns": 1792215936410600415,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 2867667,
+            "device_id": 1,
+            "gap_after_api_end_ns": 21092,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215936410600415
+          },
+          {
+            "correlation_id": 2873017,
+            "device_id": 2,
+            "gap_after_api_end_ns": 79309291,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215936489888614
+          },
+          {
+            "correlation_id": 2877204,
+            "device_id": 3,
+            "gap_after_api_end_ns": 152846383,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215936563425706
+          },
+          {
+            "correlation_id": 2880895,
+            "device_id": 4,
+            "gap_after_api_end_ns": 213794290,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215936624373613
+          },
+          {
+            "correlation_id": 2884819,
+            "device_id": 5,
+            "gap_after_api_end_ns": 279192116,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215936689771439
+          },
+          {
+            "correlation_id": 2886885,
+            "device_id": 0,
+            "gap_after_api_end_ns": 281605231,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215936692184554
+          }
+        ],
+        "start_ns_clipped": 1792215936376434263,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 2751319,
+        "device_id": 0,
+        "duration_ns": 33950766,
+        "end_ns_clipped": 1792215934636402392,
+        "gap_after_api_or_active_busy_union_ns": 2564,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          1
+        ],
+        "gpu_kernel_records_overlapping_api": 691,
+        "next_gpu_busy_union_start_ns": 1792215934636425576,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 2748517,
+            "device_id": 1,
+            "gap_after_api_end_ns": 23184,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215934636425576
+          },
+          {
+            "correlation_id": 2753867,
+            "device_id": 2,
+            "gap_after_api_end_ns": 78643689,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215934715046081
+          },
+          {
+            "correlation_id": 2758054,
+            "device_id": 3,
+            "gap_after_api_end_ns": 150198920,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215934786601312
+          },
+          {
+            "correlation_id": 2761745,
+            "device_id": 4,
+            "gap_after_api_end_ns": 210986936,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215934847389328
+          },
+          {
+            "correlation_id": 2765669,
+            "device_id": 5,
+            "gap_after_api_end_ns": 276090133,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215934912492525
+          },
+          {
+            "correlation_id": 2767735,
+            "device_id": 0,
+            "gap_after_api_end_ns": 276904324,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215934913306716
+          }
+        ],
+        "start_ns_clipped": 1792215934602451626,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 2999108,
+        "device_id": 0,
+        "duration_ns": 33720498,
+        "end_ns_clipped": 1792215938406239049,
+        "gap_after_api_or_active_busy_union_ns": 2339,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          3
+        ],
+        "gpu_kernel_records_overlapping_api": 635,
+        "next_gpu_busy_union_start_ns": 1792215938406258233,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 2996357,
+            "device_id": 3,
+            "gap_after_api_end_ns": 19184,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215938406258233
+          },
+          {
+            "correlation_id": 3000045,
+            "device_id": 4,
+            "gap_after_api_end_ns": 65767315,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938472006364
+          },
+          {
+            "correlation_id": 3003969,
+            "device_id": 5,
+            "gap_after_api_end_ns": 134610083,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938540849132
+          },
+          {
+            "correlation_id": 3006035,
+            "device_id": 0,
+            "gap_after_api_end_ns": 134755719,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938540994768
+          },
+          {
+            "correlation_id": 3010644,
+            "device_id": 1,
+            "gap_after_api_end_ns": 218036896,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938624275945
+          },
+          {
+            "correlation_id": 3015997,
+            "device_id": 2,
+            "gap_after_api_end_ns": 297191537,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938703430586
+          }
+        ],
+        "start_ns_clipped": 1792215938372518551,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 2775149,
+        "device_id": 0,
+        "duration_ns": 33171596,
+        "end_ns_clipped": 1792215934994297637,
+        "gap_after_api_or_active_busy_union_ns": 2531,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          1
+        ],
+        "gpu_kernel_records_overlapping_api": 691,
+        "next_gpu_busy_union_start_ns": 1792215934994316170,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 2772347,
+            "device_id": 1,
+            "gap_after_api_end_ns": 18533,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215934994316170
+          },
+          {
+            "correlation_id": 2777697,
+            "device_id": 2,
+            "gap_after_api_end_ns": 77855675,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215935072153312
+          },
+          {
+            "correlation_id": 2781884,
+            "device_id": 3,
+            "gap_after_api_end_ns": 149872194,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215935144169831
+          },
+          {
+            "correlation_id": 2785575,
+            "device_id": 4,
+            "gap_after_api_end_ns": 210673554,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215935204971191
+          },
+          {
+            "correlation_id": 2789499,
+            "device_id": 5,
+            "gap_after_api_end_ns": 275716901,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215935270014538
+          },
+          {
+            "correlation_id": 2791565,
+            "device_id": 0,
+            "gap_after_api_end_ns": 278105370,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215935272403007
+          }
+        ],
+        "start_ns_clipped": 1792215934961126041,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 2975278,
+        "device_id": 0,
+        "duration_ns": 32878748,
+        "end_ns_clipped": 1792215938024121199,
+        "gap_after_api_or_active_busy_union_ns": 2340,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          3
+        ],
+        "gpu_kernel_records_overlapping_api": 633,
+        "next_gpu_busy_union_start_ns": 1792215938024143350,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 2972527,
+            "device_id": 3,
+            "gap_after_api_end_ns": 22151,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215938024143350
+          },
+          {
+            "correlation_id": 2976215,
+            "device_id": 4,
+            "gap_after_api_end_ns": 64571383,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938088692582
+          },
+          {
+            "correlation_id": 2980139,
+            "device_id": 5,
+            "gap_after_api_end_ns": 132942324,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938157063523
+          },
+          {
+            "correlation_id": 2982205,
+            "device_id": 0,
+            "gap_after_api_end_ns": 133113877,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938157235076
+          },
+          {
+            "correlation_id": 2986814,
+            "device_id": 1,
+            "gap_after_api_end_ns": 220142021,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938244263220
+          },
+          {
+            "correlation_id": 2992167,
+            "device_id": 2,
+            "gap_after_api_end_ns": 304043591,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215938328164790
+          }
+        ],
+        "start_ns_clipped": 1792215937991242451,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 2727489,
+        "device_id": 0,
+        "duration_ns": 32490890,
+        "end_ns_clipped": 1792215934283010443,
+        "gap_after_api_or_active_busy_union_ns": 2531,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          1
+        ],
+        "gpu_kernel_records_overlapping_api": 691,
+        "next_gpu_busy_union_start_ns": 1792215934283034703,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 2724687,
+            "device_id": 1,
+            "gap_after_api_end_ns": 24260,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215934283034703
+          },
+          {
+            "correlation_id": 2730037,
+            "device_id": 2,
+            "gap_after_api_end_ns": 76241175,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215934359251618
+          },
+          {
+            "correlation_id": 2734224,
+            "device_id": 3,
+            "gap_after_api_end_ns": 146606025,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215934429616468
+          },
+          {
+            "correlation_id": 2737915,
+            "device_id": 4,
+            "gap_after_api_end_ns": 206510304,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215934489520747
+          },
+          {
+            "correlation_id": 2741839,
+            "device_id": 5,
+            "gap_after_api_end_ns": 270977027,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215934553987470
+          },
+          {
+            "correlation_id": 2743905,
+            "device_id": 0,
+            "gap_after_api_end_ns": 272635687,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215934555646130
+          }
+        ],
+        "start_ns_clipped": 1792215934250519553,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 3070604,
+        "device_id": 0,
+        "duration_ns": 32428943,
+        "end_ns_clipped": 1792215939557684650,
+        "gap_after_api_or_active_busy_union_ns": 2404,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          3
+        ],
+        "gpu_kernel_records_overlapping_api": 635,
+        "next_gpu_busy_union_start_ns": 1792215939557705207,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 3067853,
+            "device_id": 3,
+            "gap_after_api_end_ns": 20557,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215939557705207
+          },
+          {
+            "correlation_id": 3071541,
+            "device_id": 4,
+            "gap_after_api_end_ns": 63653287,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939621337937
+          },
+          {
+            "correlation_id": 3075467,
+            "device_id": 5,
+            "gap_after_api_end_ns": 134257741,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215939691942391
+          }
+        ],
+        "start_ns_clipped": 1792215939525255707,
+        "thread_id": 2939516992
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "correlation_id": 2808468,
+        "device_id": 0,
+        "duration_ns": 31961395,
+        "end_ns_clipped": 1792215935515371971,
+        "gap_after_api_or_active_busy_union_ns": 2500,
+        "gpu_devices_with_kernel_active_at_api_end": [
+          3
+        ],
+        "gpu_kernel_records_overlapping_api": 627,
+        "next_gpu_busy_union_start_ns": 1792215935515391081,
+        "next_kernel_start_by_device": [
+          {
+            "correlation_id": 2805717,
+            "device_id": 3,
+            "gap_after_api_end_ns": 19110,
+            "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+            "name_truncated": false,
+            "start_ns": 1792215935515391081
+          },
+          {
+            "correlation_id": 2809405,
+            "device_id": 4,
+            "gap_after_api_end_ns": 63846971,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215935579218942
+          },
+          {
+            "correlation_id": 2813329,
+            "device_id": 5,
+            "gap_after_api_end_ns": 130470661,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215935645842632
+          },
+          {
+            "correlation_id": 2815395,
+            "device_id": 0,
+            "gap_after_api_end_ns": 131431456,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215935646803427
+          },
+          {
+            "correlation_id": 2820004,
+            "device_id": 1,
+            "gap_after_api_end_ns": 207656909,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215935723028880
+          },
+          {
+            "correlation_id": 2825357,
+            "device_id": 2,
+            "gap_after_api_end_ns": 282227017,
+            "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+            "name_truncated": true,
+            "start_ns": 1792215935797598988
+          }
+        ],
+        "start_ns_clipped": 1792215935483410576,
+        "thread_id": 2939516992
+      }
+    ]
+  },
+  "six_gpu_concurrency_fraction_of_window": {
+    "0": 0.09386516024974732,
+    "1": 0.8349016879467013,
+    "2": 0.07123315180355136,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0
+  },
+  "six_gpu_concurrency_ns": {
+    "0": 575540336,
+    "1": 5119254010,
+    "2": 436770704,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0
+  },
+  "stored_activity_records": 509474,
+  "trace_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-cupti4k-window-v214-20261017/results/root-v214-cupti4k-v208-20261017t054151074604z/cupti/prefill32k-chunk7.jsonl",
+  "trace_sha256": "791d0fe8e940e444307ac5b881a2f070375aa5ab62208eeef655d05101427aab",
+  "trace_valid": true,
+  "window_ns": 6131565050,
+  "window_seconds": 6.13156505,
+  "window_start_ns": 1792215933796522230,
+  "window_stop_ns": 1792215939928087280
+}

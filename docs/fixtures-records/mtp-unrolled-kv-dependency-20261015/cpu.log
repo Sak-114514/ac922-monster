@@ -1,0 +1,83 @@
+MTP_UNROLLED_KV_DEPENDENCY_BEGIN mode=cpu lanes=4 depth=2 GGML_CUDA_GRAPH_OPT=unset
+BACKEND_CHECK label=seq-depth0 op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=seq-depth0 op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=seq-depth0 op=ARGMAX assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=seq-depth1 op=GET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=seq-depth1 op=GET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=seq-depth1 op=ARGMAX assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=seq-depth1 op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=seq-depth1 op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+DEBUG_TENSOR label=seq-input-h0 name=depth0_seed_hidden data=0x10038619280 type=f32 ne=8,4 first=0.07,0.083,0.096,0.109
+DEBUG_TENSOR label=seq-s0-v0 name=depth0_v_values data=0x10038718c40 type=f32 ne=8,4 first=0.1,0.106,0.112,0.118
+DEBUG_TENSOR label=seq-s0-h1 name=depth0_hidden1 data=0x10038718c40 type=f32 ne=8,4 first=0.1,0.106,0.112,0.118
+DEBUG_TENSOR label=seq-s0-logits name=depth0_logits data=0x10038718cc0 type=f32 ne=16,4 first=0.07961,-0.037304,0.007472,0.056466
+DEBUG_TENSOR label=seq-input-h0 name=depth0_seed_hidden data=0x10038619280 type=f32 ne=8,4 first=-0.07,-0.082,-0.094,-0.106
+DEBUG_TENSOR label=seq-s0-v0 name=depth0_v_values data=0x10038718c40 type=f32 ne=8,4 first=-0.18,-0.224,-0.268,-0.312
+DEBUG_TENSOR label=seq-s0-h1 name=depth0_hidden1 data=0x10038718c40 type=f32 ne=8,4 first=-0.18,-0.224,-0.268,-0.312
+DEBUG_TENSOR label=seq-s0-logits name=depth0_logits data=0x10038718cc0 type=f32 ne=16,4 first=-0.23078,0.078236,-0.020488,-0.150144
+SEQUENTIAL_REFERENCE mode=cpu D=2 lanes=4 tokens1=4 tokens2=4 cache_cells=16 poisoned_future_cells=verified
+BACKEND_CHECK label=alias-model-order op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=alias-model-order op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=alias-model-order op=GET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=alias-model-order op=GET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=alias-model-order op=ARGMAX assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=alias-model-order op=ARGMAX assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=alias-model-order op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=alias-model-order op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+GRAPH_LAYOUT label=alias-model-order nodes=20 set_k_node=1 read_k_node=9 set_v_node=3 read_v_node=11 direct_write_read_edge_k=0 direct_write_read_edge_v=0 set_rows_src2_alias_k=1 set_rows_src2_alias_v=1 cache_tensor_data_alias_k=1 cache_tensor_data_alias_v=1
+GRAPH_NODE label=alias-model-order index=1 op=SET_ROWS name=unrolled_depth0_SET_ROWS_K
+GRAPH_NODE label=alias-model-order index=3 op=SET_ROWS name=unrolled_depth0_SET_ROWS_V
+GRAPH_NODE label=alias-model-order index=6 op=ARGMAX name=unrolled_depth0_GPU_ARGMAX_token1
+GRAPH_NODE label=alias-model-order index=7 op=GET_ROWS name=node_7
+GRAPH_NODE label=alias-model-order index=9 op=GET_ROWS name=depth1_GET_ROWS_K_base_alias
+GRAPH_NODE label=alias-model-order index=11 op=GET_ROWS name=depth1_GET_ROWS_V_base_alias
+GRAPH_NODE label=alias-model-order index=15 op=ARGMAX name=unrolled_depth1_GPU_ARGMAX_token2
+GRAPH_NODE label=alias-model-order index=17 op=SET_ROWS name=unrolled_depth1_SET_ROWS_K
+GRAPH_NODE label=alias-model-order index=19 op=SET_ROWS name=unrolled_depth1_SET_ROWS_V
+PARITY label=alias-model-order-A h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=0.1/0.1 first_tok=0/0 first_k=0.1/0.1 first_v=0.03/0.03 first_h2=0.3314/0.3314 first_ck=0.1/0.1 first_cv=0.03/0.03
+PARITY label=alias-model-order-B h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=-0.18/-0.18 first_tok=13/13 first_k=-0.04/-0.04 first_v=-0.11/-0.11 first_h2=-0.322256/-0.322256 first_ck=700/700 first_cv=-900/-900
+PARITY label=alias-model-order-A2 h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=0.1/0.1 first_tok=0/0 first_k=0.1/0.1 first_v=0.03/0.03 first_h2=0.3314/0.3314 first_ck=0.1/0.1 first_cv=0.03/0.03
+PARITY label=alias-model-order-A_B_A replay h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=0.1/0.1 first_tok=0/0 first_k=0.1/0.1 first_v=0.03/0.03 first_h2=0.3314/0.3314 first_ck=0.1/0.1 first_cv=0.03/0.03
+BACKEND_CHECK label=alias-read-first op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=alias-read-first op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=alias-read-first op=GET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=alias-read-first op=GET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=alias-read-first op=ARGMAX assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=alias-read-first op=ARGMAX assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=alias-read-first op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=alias-read-first op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+GRAPH_LAYOUT label=alias-read-first nodes=20 set_k_node=18 read_k_node=6 set_v_node=19 read_v_node=8 direct_write_read_edge_k=0 direct_write_read_edge_v=0 set_rows_src2_alias_k=1 set_rows_src2_alias_v=1 cache_tensor_data_alias_k=1 cache_tensor_data_alias_v=1
+GRAPH_NODE label=alias-read-first index=3 op=ARGMAX name=unrolled_depth0_GPU_ARGMAX_token1
+GRAPH_NODE label=alias-read-first index=4 op=GET_ROWS name=node_4
+GRAPH_NODE label=alias-read-first index=6 op=GET_ROWS name=depth1_GET_ROWS_K_base_alias
+GRAPH_NODE label=alias-read-first index=8 op=GET_ROWS name=depth1_GET_ROWS_V_base_alias
+GRAPH_NODE label=alias-read-first index=12 op=ARGMAX name=unrolled_depth1_GPU_ARGMAX_token2
+GRAPH_NODE label=alias-read-first index=14 op=SET_ROWS name=unrolled_depth1_SET_ROWS_K
+GRAPH_NODE label=alias-read-first index=16 op=SET_ROWS name=unrolled_depth1_SET_ROWS_V
+GRAPH_NODE label=alias-read-first index=18 op=SET_ROWS name=unrolled_depth0_SET_ROWS_K
+GRAPH_NODE label=alias-read-first index=19 op=SET_ROWS name=unrolled_depth0_SET_ROWS_V
+ALIAS_HAZARD outcome=REPRODUCED cache_write_read_direct_edge=0 matches_sequential=0 set0_node=18 read_node=6 set0_node_before_read=0
+BACKEND_CHECK label=versioned-cache-edge op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=versioned-cache-edge op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=versioned-cache-edge op=GET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=versioned-cache-edge op=GET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=versioned-cache-edge op=ARGMAX assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=versioned-cache-edge op=ARGMAX assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=versioned-cache-edge op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+BACKEND_CHECK label=versioned-cache-edge op=SET_ROWS assigned=CPU dev_type=0 expected_type=0 status=PASS
+GRAPH_LAYOUT label=versioned-cache-edge nodes=20 set_k_node=7 read_k_node=8 set_v_node=10 read_v_node=11 direct_write_read_edge_k=1 direct_write_read_edge_v=1 set_rows_src2_alias_k=1 set_rows_src2_alias_v=1 cache_tensor_data_alias_k=1 cache_tensor_data_alias_v=1
+GRAPH_NODE label=versioned-cache-edge index=3 op=ARGMAX name=unrolled_depth0_GPU_ARGMAX_token1
+GRAPH_NODE label=versioned-cache-edge index=4 op=GET_ROWS name=node_4
+GRAPH_NODE label=versioned-cache-edge index=7 op=SET_ROWS name=unrolled_depth0_SET_ROWS_K
+GRAPH_NODE label=versioned-cache-edge index=8 op=GET_ROWS name=depth1_GET_ROWS_K_versioned
+GRAPH_NODE label=versioned-cache-edge index=10 op=SET_ROWS name=unrolled_depth0_SET_ROWS_V
+GRAPH_NODE label=versioned-cache-edge index=11 op=GET_ROWS name=depth1_GET_ROWS_V_versioned
+GRAPH_NODE label=versioned-cache-edge index=15 op=ARGMAX name=unrolled_depth1_GPU_ARGMAX_token2
+GRAPH_NODE label=versioned-cache-edge index=17 op=SET_ROWS name=unrolled_depth1_SET_ROWS_K
+GRAPH_NODE label=versioned-cache-edge index=19 op=SET_ROWS name=unrolled_depth1_SET_ROWS_V
+PARITY label=versioned-edge-A h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=0.1/0.1 first_tok=0/0 first_k=0.1/0.1 first_v=0.03/0.03 first_h2=0.3314/0.3314 first_ck=0.1/0.1 first_cv=0.03/0.03
+PARITY label=versioned-edge-B h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=-0.18/-0.18 first_tok=13/13 first_k=-0.04/-0.04 first_v=-0.11/-0.11 first_h2=-0.322256/-0.322256 first_ck=700/700 first_cv=-900/-900
+PARITY label=versioned-edge-A2 h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=0.1/0.1 first_tok=0/0 first_k=0.1/0.1 first_v=0.03/0.03 first_h2=0.3314/0.3314 first_ck=0.1/0.1 first_cv=0.03/0.03
+PARITY label=versioned-edge-A_B_A replay h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=0.1/0.1 first_tok=0/0 first_k=0.1/0.1 first_v=0.03/0.03 first_h2=0.3314/0.3314 first_ck=0.1/0.1 first_cv=0.03/0.03
+MODE_PASS mode=cpu exact_sequential=1 alias_node_order=1 explicit_edge=1 A_B_A=1 GGML_CUDA_GRAPH_OPT=unset
+MTP_UNROLLED_KV_DEPENDENCY_END status=PASS mode=cpu

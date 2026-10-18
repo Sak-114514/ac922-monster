@@ -1,0 +1,22 @@
+ggml_cuda_init: found 2 CUDA devices (Total VRAM: 32256 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+V152_START cuda_devices=2 cpu_devices=1 feature=GGML_SCHED_LAYER_PINNED_INPUTS requested=0 expected_copies=4 main_cap_mib=256
+SCHEDULER_READY scheduler=0x1003a5d0d00 order=CUDA0,CUDA1,CPU copies=4 cap_mib=256
+SCHEDULER_READY scheduler=0x1003bbedb50 order=CUDA0,CUDA1,CPU copies=4 cap_mib=256
+CASE_PLAN label=A-small width=32 batch=16 row_bytes=2048 gpu0_inputs_per_copy=6144 gpu1_inputs_per_copy=2048 expected_stage_ring_bytes=32768 output_sink_bytes=16448 fresh_graph_per_frame=1
+CASE_PLAN label=B-small width=32 batch=16 row_bytes=2048 gpu0_inputs_per_copy=6144 gpu1_inputs_per_copy=2048 expected_stage_ring_bytes=32768 output_sink_bytes=16448 fresh_graph_per_frame=1
+BEFORE_ALLOC scheduler=0x1003a5d0d00 frame=0 expected_copy=0 graph=0x7fff603b0900 ids=0x7fff607c0060 ids_data=0x1003be7fb80 rows=0x7fff603b0060 mm0=0x7fff603b01d0 mm0_src1=0x7fff603b0060 mm0_src1_ne=32x16
+AFTER_ALLOC scheduler=0x1003a5d0d00 frame=0 copy=0 graph=0x7fff603b0900 splits=3
+FRAME_BEGIN scheduler=0x1003a5d0d00 case=A-small frame=0 seed=0 graph=0x7fff603b0900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfa00000
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfc00000
+FRAME_QUEUED scheduler=0x1003a5d0d00 case=A-small frame=0 seed=0 source_overwrite_after_submit=1 output_sink_slot=0 fresh_graph_retained=1
+BEFORE_ALLOC scheduler=0x1003bbedb50 frame=0 expected_copy=0 graph=0x7fff2efc0900 ids=0x7fff2f3d0060 ids_data=0x1003e8fb580 rows=0x7fff2efc0060 mm0=0x7fff2efc01d0 mm0_src1=0x7fff2efc0060 mm0_src1_ne=32x16
+AFTER_ALLOC scheduler=0x1003bbedb50 frame=0 copy=0 graph=0x7fff2efc0900 splits=3
+FRAME_BEGIN scheduler=0x1003bbedb50 case=B-small frame=0 seed=7 graph=0x7fff2efc0900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfa01000
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfc01000
+FRAME_QUEUED scheduler=0x1003bbedb50 case=B-small frame=0 seed=7 source_overwrite_after_submit=1 output_sink_slot=0 fresh_graph_retained=1
+BEFORE_ALLOC scheduler=0x1003a5d0d00 frame=1 expected_copy=1 graph=0x7fff2e3a0900 ids=0x7fff2e7b0060 ids_data=0x1003e934e80 rows=0x7fff2e3a0060 mm0=0x7fff2e3a01d0 mm0_src1=0x7fff2e3a0060 mm0_src1_ne=32x16
+V152_BAD_GALLOC_LEAF name=CPU#A-small.frame1.input.token_ids#0 type=i32 ne=[16,1,1,1] flags=3 tensor=0x7fff6d420030 data=(nil) view_src=(nil) buffer_id=-1 n_buffers=3 buft=(nil) addr_chunk=-1 addr_offset=18446744073709551615 size_max=0

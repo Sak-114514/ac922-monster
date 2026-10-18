@@ -1,0 +1,56 @@
+{
+  "format": "prefill-mmf-trial-real-tp-shards-v1",
+  "model_path": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+  "model_size_bytes": 78615622080,
+  "model_mtime_ns": 1790833321720010216,
+  "no_model_runtime_loaded": true,
+  "entries": [
+    {
+      "tensor": "blk.35.ffn_gate_exps.weight",
+      "type": "IQ3_XXS",
+      "ggml_type_id": 18,
+      "shape_k_n_e": [
+        2560,
+        640,
+        512
+      ],
+      "tp_local_k_n_e": [
+        2560,
+        224,
+        512
+      ],
+      "kernel_k": 2560,
+      "local_n_start": 192,
+      "row_stride_bytes": 980,
+      "expert_stride_bytes": 627200,
+      "tensor_data_offset": 33501050944,
+      "payload_bytes": 112394240,
+      "file": "iq3xxs-gate-k2560-n224-e512.qbytes"
+    },
+    {
+      "tensor": "blk.35.ffn_down_exps.weight",
+      "type": "IQ4_NL",
+      "ggml_type_id": 20,
+      "shape_k_n_e": [
+        640,
+        2560,
+        512
+      ],
+      "tp_local_k_n_e": [
+        224,
+        2560,
+        512
+      ],
+      "kernel_k": 224,
+      "local_k_start": 192,
+      "block_elements": 32,
+      "block_bytes": 18,
+      "row_stride_bytes": 126,
+      "expert_stride_bytes": 322560,
+      "source_row_stride_bytes": 360,
+      "tensor_data_offset": 33028270144,
+      "payload_bytes": 165150720,
+      "file": "iq4nl-down-k224-n2560-e512.qbytes"
+    }
+  ]
+}

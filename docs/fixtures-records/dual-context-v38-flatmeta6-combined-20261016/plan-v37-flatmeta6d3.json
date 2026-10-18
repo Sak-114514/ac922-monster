@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "parallel_labels": [
+    "dual-sem-00",
+    "dual-sem-01",
+    "dual-sem-02",
+    "dual-sem-03",
+    "real8k-p4-1x4"
+  ],
+  "pairs": [
+    {
+      "id": "capital-en",
+      "serial_label": "serial-sem-00-0",
+      "parallel_label": "dual-sem-00",
+      "parallel_bank": 0
+    },
+    {
+      "id": "arithmetic-zh",
+      "serial_label": "serial-sem-00-0",
+      "parallel_label": "dual-sem-00",
+      "parallel_bank": 0
+    },
+    {
+      "id": "logic-en",
+      "serial_label": "serial-sem-00-1",
+      "parallel_label": "dual-sem-00",
+      "parallel_bank": 0
+    },
+    {
+      "id": "strict-json-zh",
+      "serial_label": "serial-sem-00-1",
+      "parallel_label": "dual-sem-00",
+      "parallel_bank": 0
+    },
+    {
+      "id": "python-clamp",
+      "serial_label": "serial-sem-01-0",
+      "parallel_label": "dual-sem-01",
+      "parallel_bank": 0
+    },
+    {
+      "id": "vocabulary-en-zh",
+      "serial_label": "serial-sem-01-0",
+      "parallel_label": "dual-sem-01",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel2-add-en",
+      "serial_label": "serial-sem-01-1",
+      "parallel_label": "dual-sem-01",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel2-subtract-zh",
+      "serial_label": "serial-sem-01-1",
+      "parallel_label": "dual-sem-01",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel4-add",
+      "serial_label": "serial-sem-02-0",
+      "parallel_label": "dual-sem-02",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel4-subtract",
+      "serial_label": "serial-sem-02-0",
+      "parallel_label": "dual-sem-02",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel4-multiply",
+      "serial_label": "serial-sem-02-1",
+      "parallel_label": "dual-sem-02",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel4-divide",
+      "serial_label": "serial-sem-02-1",
+      "parallel_label": "dual-sem-02",
+      "parallel_bank": 0
+    },
+    {
+      "id": "slot-reuse-0",
+      "serial_label": "serial-sem-03-0",
+      "parallel_label": "dual-sem-03",
+      "parallel_bank": 0
+    },
+    {
+      "id": "slot-reuse-1",
+      "serial_label": "serial-sem-03-0",
+      "parallel_label": "dual-sem-03",
+      "parallel_bank": 0
+    },
+    {
+      "id": "slot-reuse-2",
+      "serial_label": "serial-sem-03-1",
+      "parallel_label": "dual-sem-03",
+      "parallel_bank": 0
+    },
+    {
+      "id": "slot-reuse-3",
+      "serial_label": "serial-sem-03-1",
+      "parallel_label": "dual-sem-03",
+      "parallel_bank": 0
+    },
+    {
+      "id": "real8k-0",
+      "serial_label": "serial-real8k-0",
+      "parallel_label": "real8k-p4-1x4",
+      "parallel_bank": 0
+    },
+    {
+      "id": "real8k-1",
+      "serial_label": "serial-real8k-0",
+      "parallel_label": "real8k-p4-1x4",
+      "parallel_bank": 0
+    },
+    {
+      "id": "real8k-2",
+      "serial_label": "serial-real8k-1",
+      "parallel_label": "real8k-p4-1x4",
+      "parallel_bank": 0
+    },
+    {
+      "id": "real8k-3",
+      "serial_label": "serial-real8k-1",
+      "parallel_label": "real8k-p4-1x4",
+      "parallel_bank": 0
+    }
+  ],
+  "prefix_checks": [
+    {
+      "id": "single8k-pp-probe-prefix",
+      "probe_label": "single8k-pp-probe-32",
+      "probe_flow_id": "real8k0-pp-probe-32",
+      "reference_label": "serial-real8k-0",
+      "reference_flow_id": "real8k-0",
+      "prefix_tokens": 32,
+      "warm_graph_probe": false
+    },
+    {
+      "id": "pp-warm-prefix",
+      "probe_label": "single8k-pp-warm-32",
+      "probe_flow_id": "real8k0-pp-warm-32",
+      "reference_label": "serial-real8k-0",
+      "reference_flow_id": "real8k-0",
+      "prefix_tokens": 32,
+      "warm_graph_probe": true
+    }
+  ],
+  "required_config": {
+    "bank_count": 1,
+    "bank_lanes": 4,
+    "mtp_depth_default": 3,
+    "mtp_depth_allowed": [
+      3
+    ],
+    "mtp_draft_ubatch": 512,
+    "target_verify_rows_for_d3": 16,
+    "mtp_fixed_prefix_rows_per_lane": 6,
+    "mtp_fixed_prefix_rows_total": 24,
+    "logical_prefill_batch_capacity": 8192,
+    "max_verify_rows": 16,
+    "serial_cpu_submit": false,
+    "server_mtp_kv_policy": true,
+    "expert_parallel": "1",
+    "mtp_chain_multi": true,
+    "mtp_unrolled": true,
+    "mtp_fixed_prefix_rows": 6,
+    "mtp_variable_lanes": true,
+    "model_load_count": 1,
+    "model_load_count_per_process": 1,
+    "context_family_recreated_between_copy_modes": true,
+    "ubatch_default": 1024,
+    "ubatch_allowed": [
+      1024
+    ],
+    "turboprefill_default": false,
+    "turboprefill_optional": false,
+    "island_split": "6",
+    "qsa_indexer_impl": "standard",
+    "kv_variant": "per_seq_16k_x4",
+    "bank_context": 65536,
+    "n_seq_max": 4,
+    "context_per_sequence": 16384,
+    "kv_streams_per_bank": 4,
+    "aggregate_kv_streams": 4,
+    "maximum_request_context": 16384,
+    "meta_cpu_async_copy_mode_default": 1,
+    "meta_cpu_async_copy_env": "GGML_META_CPU_ASYNC_COPY",
+    "meta_cpu_async_copy_max_bytes": 10485760,
+    "qsa_standard_sparse": true,
+    "qsa_standard_head_loop": true,
+    "cuda_get_rows_narrow": true,
+    "cuda_moe_fused_t16": true,
+    "target_verify_pad_enabled": true,
+    "target_verify_pad_rows_per_active_lane": 4,
+    "legacy_meta_async_inputs": 0,
+    "nccl_min_bytes": 0,
+    "cuda_nccl_f32": 1,
+    "diagnostic_profile_gpu_spans": 1,
+    "clean_profile_gpu_spans": 0,
+    "diagnostic_full_logits_capture": true,
+    "clean_full_logits_capture": false,
+    "clean_scenario_count": 2,
+    "clean_single_prefill_probe": {
+      "label_suffix": "clean-single8k-pp-probe-32",
+      "flow_id": "real8k0-pp-clean-32",
+      "same_prompt_as_diagnostic_label": "single8k-pp-probe-32",
+      "input_tokens": 8192,
+      "output_tokens": 32,
+      "uncached": true,
+      "single_active_request_in_four_lane_bank": true,
+      "full_logit_diagnostics": false,
+      "gpu_spans": false
+    },
+    "runtime_path_activations": {
+      "qsa_standard_head_loop": "selected=1 streams=4 tokens_per_stream>=64",
+      "narrow_get_rows": "selected=1 width=1 tokens>=256",
+      "cuda_moe_fused_t16": "selected=requested>0",
+      "flat_p2p_merge": "GGML_META_DEBUG logs merged status and actual chunk count",
+      "graph_snapshot": "GGML_CUDA_GRAPH_STRUCTURAL_TRACE logs flat_snapshot_hits and flat_snapshot_misses"
+    },
+    "effective_ld_preload": null,
+    "context_profiles": [
+      "diagnostic",
+      "clean"
+    ],
+    "diagnostic_clean_contexts_must_not_coexist": true,
+    "bank_topology": "one_bank_four_lanes_per_seq_16k",
+    "mtp_unroll_d3_lanes4": true,
+    "hierarchical_ep6_profile": false,
+    "capacity_qualification_only": true,
+    "flat_meta6_ep6_profile": true,
+    "fifo_single_island": true
+  },
+  "require_full_output_label": "real8k-p4-1x4",
+  "require_runtime_diagnostics_for_label": "real8k-p4-1x4",
+  "kv_variants_allowed": [
+    "per_seq_16k_x4"
+  ],
+  "kv_layouts": {
+    "per_seq_16k_x4": {
+      "kv_unified": false,
+      "bank_context": 65536,
+      "n_seq_max": 4,
+      "context_per_sequence": 16384,
+      "kv_streams": 4,
+      "bank_count": 1,
+      "aggregate_context_capacity": 65536,
+      "maximum_request_context": 16384
+    }
+  },
+  "topology": {
+    "variant": "flat_meta6_ep6_one_bank_four_lanes_per_seq_16k",
+    "bank_count": 1,
+    "lanes_per_bank": 4,
+    "all_parallel_flows_by_bank": {
+      "0": 4
+    },
+    "capacity_note": "one non-unified bank with four independent 16384-cell KV streams; 65536 aggregate cells are not per-request context",
+    "mode_variants_allowed": [
+      1
+    ],
+    "mode_default": [
+      1
+    ],
+    "model_load_count_per_process": 1,
+    "context_family_recreated_between_modes": true,
+    "flat_meta6_ep6_profile": true,
+    "hierarchical_ep6_profile": false
+  },
+  "variant_label_prefix": "v35-onebank4d3-copy1-",
+  "context_capacity_note": "four independent 16384-cell streams in one bank; 65536 aggregate cells are not a per-request guarantee",
+  "context_capacity_review": {
+    "real_prompt_tokens": 8192,
+    "output_tokens_target": 256,
+    "per_request_capacity": 16384,
+    "aggregate_four_stream_capacity": 65536,
+    "fit_claim": "8K+256 prompt/output fits numerically; actual single-bank target/draft context and D3x4 graph allocation still require the existing V69 reserve and context-init gates"
+  },
+  "profile": "v37-flat-meta6-ep6-onebank4d3-shortctx16k",
+  "capacity_qualification_only": true,
+  "target_verify_rows_for_d3": 16,
+  "target_verify_padding": {
+    "enabled": true,
+    "rows_per_active_lane": 4,
+    "max_target_rows": 16
+  }
+}

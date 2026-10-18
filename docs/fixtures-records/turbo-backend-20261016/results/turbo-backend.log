@@ -1,0 +1,216 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+DEVICE ordinal=0 name=CUDA0 pci=0004:04:00.0
+DEVICE ordinal=1 name=CUDA1 pci=0004:05:00.0
+DEVICE ordinal=2 name=CUDA2 pci=0004:06:00.0
+DEVICE ordinal=3 name=CUDA3 pci=0035:03:00.0
+DEVICE ordinal=4 name=CUDA4 pci=0035:04:00.0
+DEVICE ordinal=5 name=CUDA5 pci=0035:05:00.0
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+GGML_SCHED_META_SINGLE_COPY_EVENTS active scheduler=0x100315b0d70 copies=1 Meta backends=0,1 members=3,3 fifo=1 gpu_event_wait=1
+GRAPH nodes=14 backends=3 splits=3 copies=1 cpu_get_rows=1 A_gemms=4 B_gemms=4 mirrored_bridge_expected=1
+FIFO prefill host snapshots enabled, stable device input addresses
+meta-replay-ready backend=0x10030041cd0 graph_uid=3 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+TurboPrefill requested=1 selected=0 scheduler=0x100315b0d70 reason=Meta_graph_not_warmed_and_replay_ready
+CPU result staging active: pinned FIFO snapshots
+meta-replay-ready backend=0x10030041cd0 graph_uid=3 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffcd6200000
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffcd6220000
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffcd7220000
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffcd8220000
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffcd9400000
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffcd9420000
+meta-replay-ready backend=0x10030041cd0 graph_uid=3 ctx_uid=3 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x1003109b070 graph_uid=4 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x1003109b070 graph_uid=4 ctx_uid=4 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x10030041cd0 graph_uid=3 ctx_uid=3 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+TurboPrefill requested=1 selected=0 scheduler=0x100315b0d70 reason=Meta_graph_not_warmed_and_replay_ready
+meta-replay-ready backend=0x10030041cd0 graph_uid=3 ctx_uid=3 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+CUDA Graph id 5 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 6 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 7 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-replay-ready backend=0x10030041cd0 graph_uid=3 ctx_uid=3 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x1003109b070 graph_uid=4 ctx_uid=4 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+CUDA Graph id 8 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 9 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 10 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-replay-ready backend=0x1003109b070 graph_uid=4 ctx_uid=4 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x10030041cd0 graph_uid=3 ctx_uid=3 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x1003109b070 graph_uid=4 ctx_uid=4 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+REPLAY_READY warm_serial=1 graph_uid=1
+meta-replay-ready backend=0x10030041cd0 graph_uid=3 ctx_uid=3 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+meta-replay-ready backend=0x1003109b070 graph_uid=4 ctx_uid=4 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+meta-replay-ready backend=0x10030041cd0 graph_uid=3 ctx_uid=3 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+meta-replay-ready backend=0x1003109b070 graph_uid=4 ctx_uid=4 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+ADMISSION selected=1 reason=ready topology=CPU_MetaA3_MetaB3 single_copy=1
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+TurboPrefill selected=1 scheduler=0x100315b0d70 frame=0 seq=17 range=0..16 cpu_prelude=serial A=enqueued B=awaiting_seal pinned_ring=264192 pinned_high_water=264192 cap=268435456
+HOST_CANARY frame=0 changed_immediately_after_submit=1
+meta cross-device event wait active: CUDA stream dependencies
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+FRAME_QUEUED frame=0 sequence=17 range=0..16 owner_live_after_seal=1
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+TurboPrefill selected=1 scheduler=0x100315b0d70 frame=2 seq=17 range=16..32 cpu_prelude=serial A=enqueued B=awaiting_seal pinned_ring=264192 pinned_high_water=264192 cap=268435456
+HOST_CANARY frame=1 changed_immediately_after_submit=1
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+FRAME_QUEUED frame=1 sequence=17 range=16..32 owner_live_after_seal=1
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+TurboPrefill selected=1 scheduler=0x100315b0d70 frame=3 seq=17 range=32..48 cpu_prelude=serial A=enqueued B=awaiting_seal pinned_ring=264192 pinned_high_water=264192 cap=268435456
+HOST_CANARY frame=2 changed_immediately_after_submit=1
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+FRAME_QUEUED frame=2 sequence=17 range=32..48 owner_live_after_seal=1
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+TurboPrefill selected=1 scheduler=0x100315b0d70 frame=4 seq=17 range=48..64 cpu_prelude=serial A=enqueued B=awaiting_seal pinned_ring=264192 pinned_high_water=264192 cap=268435456
+HOST_CANARY frame=3 changed_immediately_after_submit=1
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+FRAME_QUEUED frame=3 sequence=17 range=48..64 owner_live_after_seal=1
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+TurboPrefill selected=1 scheduler=0x100315b0d70 frame=5 seq=17 range=64..80 cpu_prelude=serial A=enqueued B=awaiting_seal pinned_ring=264192 pinned_high_water=264192 cap=268435456
+HOST_CANARY frame=4 changed_immediately_after_submit=1
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+FRAME_QUEUED frame=4 sequence=17 range=64..80 owner_live_after_seal=1
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+TurboPrefill selected=1 scheduler=0x100315b0d70 frame=6 seq=17 range=80..96 cpu_prelude=serial A=enqueued B=awaiting_seal pinned_ring=264192 pinned_high_water=264192 cap=268435456
+HOST_CANARY frame=5 changed_immediately_after_submit=1
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+FRAME_QUEUED frame=5 sequence=17 range=80..96 owner_live_after_seal=1
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+TurboPrefill selected=1 scheduler=0x100315b0d70 frame=7 seq=17 range=96..112 cpu_prelude=serial A=enqueued B=awaiting_seal pinned_ring=264192 pinned_high_water=264192 cap=268435456
+HOST_CANARY frame=6 changed_immediately_after_submit=1
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+FRAME_QUEUED frame=6 sequence=17 range=96..112 owner_live_after_seal=1
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+TurboPrefill selected=1 scheduler=0x100315b0d70 frame=8 seq=17 range=112..128 cpu_prelude=serial A=enqueued B=awaiting_seal pinned_ring=264192 pinned_high_water=264192 cap=268435456
+HOST_CANARY frame=7 changed_immediately_after_submit=1
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+FRAME_QUEUED frame=7 sequence=17 range=112..128 owner_live_after_seal=1
+TurboPrefill drained scheduler=0x100315b0d70 frames=1 pinned_high_water=264192 cap=268435456 cpu_prelude=serial
+OWNER_RETIRED frame=0 b_event_ready=1 weak_expired=1
+OWNER_RETIRED frame=1 b_event_ready=1 weak_expired=1
+OWNER_RETIRED frame=2 b_event_ready=1 weak_expired=1
+OWNER_RETIRED frame=3 b_event_ready=1 weak_expired=1
+OWNER_RETIRED frame=4 b_event_ready=1 weak_expired=1
+OWNER_RETIRED frame=5 b_event_ready=1 weak_expired=1
+OWNER_RETIRED frame=6 b_event_ready=1 weak_expired=1
+OWNER_RETIRED frame=7 b_event_ready=1 weak_expired=1
+FRAME_EXACT frame=0 a_echo=1 b_state=1
+FRAME_EXACT frame=1 a_echo=1 b_state=1
+FRAME_EXACT frame=2 a_echo=1 b_state=1
+FRAME_EXACT frame=3 a_echo=1 b_state=1
+FRAME_EXACT frame=4 a_echo=1 b_state=1
+FRAME_EXACT frame=5 a_echo=1 b_state=1
+FRAME_EXACT frame=6 a_echo=1 b_state=1
+FRAME_EXACT frame=7 a_echo=1 b_state=1
+FINAL_STATE_EXACT meta_a=1 meta_b=1
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+TurboPrefill selected=1 scheduler=0x100315b0d70 frame=1 seq=17 range=0..16 cpu_prelude=serial A=enqueued B=awaiting_seal pinned_ring=264192 pinned_high_water=264192 cap=268435456
+TurboPrefill finish found a poisoned or unsealed frame
+TurboPrefill aborted and drained scheduler=0x100315b0d70; context must invalidate the logical batch state
+UNSEALED_FINISH rejected=1 drained=1 owner_released=1
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+TurboPrefill selected=1 scheduler=0x100315b0d70 frame=2 seq=17 range=0..16 cpu_prelude=serial A=enqueued B=awaiting_seal pinned_ring=264192 pinned_high_water=264192 cap=268435456
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+TurboPrefill drained scheduler=0x100315b0d70 frames=1 pinned_high_water=264192 cap=268435456 cpu_prelude=serial
+ABA same_sequence=17 same_position=0 after_abort=1 exact=1
+PASS fixture=turbo_backend frames=8 stateful=1 two_slot_ring_reuse=1 exact_serial=1 canary=1 unsealed_drain=1 aba=1
+FIFO prefill: frames=20 staged_inputs=20 cross_copies=10 cpu_gathers=0 host_results=20

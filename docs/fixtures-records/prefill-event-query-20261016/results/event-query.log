@@ -1,0 +1,32 @@
+ggml_cuda_init: found 4 CUDA devices (Total VRAM: 64512 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+INVALID_QUERY name=null_event_query status=-1 PASS
+SUPPORT name=null_device supported=0 PASS
+SUPPORT name=cpu_device supported=0 PASS
+INVALID_QUERY name=cpu_unsupported_event supported=0 event_new_callback=none status=-1 PASS
+SUPPORT name=cuda_simple device=CUDA0 supported=1 PASS
+SUPPORT name=meta3 members=3 supported=1 all_children_supported=1 PASS
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+WORKLOAD name=cuda-simple matmuls=8 shape=4096x4096 input_type=f16 output_type=f32 buffer_bytes=603979776 device0_delta_mib=576.00
+UNRECORDED name=simple-cuda event=A published_generation=0 query=skipped
+EVENT_PUBLISHED name=simple-cuda/A1 generation=1 after_record=1
+EVENT_QUERY name=simple-cuda/A1 backend=CUDA0 generation=1 first=0 final=1 pending_queries=40 elapsed_us=12580 PASS
+EVENT_PUBLISHED name=simple-cuda/B1 generation=1 after_record=1
+EVENT_QUERY name=simple-cuda/B1 backend=CUDA0 generation=1 first=0 final=1 pending_queries=41 elapsed_us=12952 PASS
+EVENT_PUBLISHED name=simple-cuda/A2 generation=2 after_record=1
+EVENT_QUERY name=simple-cuda/A2 backend=CUDA0 generation=2 first=0 final=1 pending_queries=40 elapsed_us=12882 PASS
+ABA name=simple-cuda event_sequence=A1,B1,A2 generations=A:1,2 B:1 published_only_after_record=1 PASS
+WORKLOAD name=meta3-mirrored matmuls=8 shape=4096x4096 input_type=f16 output_type=f32 buffer_bytes=603979776 device1_delta_mib=576.00 device2_delta_mib=576.00 device3_delta_mib=576.00
+UNRECORDED name=meta3-cuda-fanout event=A published_generation=0 query=skipped
+EVENT_PUBLISHED name=meta3-cuda-fanout/A1 generation=1 after_record=1
+EVENT_QUERY name=meta3-cuda-fanout/A1 backend=CUDA-Meta3 generation=1 first=0 final=1 pending_queries=39 elapsed_us=12742 PASS
+EVENT_PUBLISHED name=meta3-cuda-fanout/B1 generation=1 after_record=1
+EVENT_QUERY name=meta3-cuda-fanout/B1 backend=CUDA-Meta3 generation=1 first=0 final=1 pending_queries=41 elapsed_us=13476 PASS
+EVENT_PUBLISHED name=meta3-cuda-fanout/A2 generation=2 after_record=1
+EVENT_QUERY name=meta3-cuda-fanout/A2 backend=CUDA-Meta3 generation=2 first=0 final=1 pending_queries=43 elapsed_us=14049 PASS
+ABA name=meta3-cuda-fanout event_sequence=A1,B1,A2 generations=A:1,2 B:1 published_only_after_record=1 PASS
+PASS fixture=prefill_event_query v35 simple_cuda=1 meta3_fanout=1 null_cpu_unsupported=-1 pending_to_ready=1 re_record_ABA=1 results=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/prefill-event-query-20261016/results/event-query-results.json

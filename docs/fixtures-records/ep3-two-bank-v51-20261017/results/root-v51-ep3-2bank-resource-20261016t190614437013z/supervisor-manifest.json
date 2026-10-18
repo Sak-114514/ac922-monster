@@ -1,0 +1,284 @@
+{
+  "phase": "start",
+  "tag": "root-v51-ep3-2bank-resource-20261016t190614437013z",
+  "unit": "root-v51-ep3-2bank-resource-20261016t190614437013z",
+  "output": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ep3-two-bank-v51-20261017/results/root-v51-ep3-2bank-resource-20261016t190614437013z",
+  "runtime_build_id": "20261016T183414.662729Z",
+  "runtime_report_sha256": "3e90e390e8689b8680f1408232a0ecc57ac9f0da00cdaff3f4de669432cb2bc7",
+  "runner": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ep3-two-bank-v51-resource-20261017/build-v51-20261016T183414.662729Z-d425850d3953/dual-context-v51-resource",
+  "runner_build_record": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ep3-two-bank-v51-resource-20261017/build-v51-20261016T183414.662729Z-d425850d3953/v51-runner-build.json",
+  "runner_source_sha256": "d425850d3953a85345e4f82a95f7f080c8c678d2452c700c1495dc8dd1363bbb",
+  "runner_sha256": "c51d7df9da948703335022c3f448177b8e653e36980733382c963d6cf852805c",
+  "host_instrumentation": {
+    "frames": "each target frame logs host decode-return/synchronize intervals and getrusage SELF/THREAD deltas",
+    "timing_warning": "host elapsed and synchronize wait are not GPU compute time",
+    "decode_windows": [
+      "one-bank 2x8K/512",
+      "two-bank 4x8K/512"
+    ],
+    "raw_outputs_are_semantically_scored": false
+  },
+  "scenario_sha256": "5920e664106a06adf9bb049bd62ea0a76165c78f98be674b9515b8d18c30c636",
+  "model": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+  "model_loads": 1,
+  "automatic_retry": false,
+  "runtime_max_seconds": 1800,
+  "geometry": {
+    "island_split": "3,3",
+    "expert_parallel": 1,
+    "hierarchical_ep6": false,
+    "nested_meta": false,
+    "banks": 2,
+    "lanes_per_bank": 2,
+    "per_sequence_context": 16384,
+    "bank_context": 32768,
+    "mtp_depth": 3,
+    "target_ubatch": 1024,
+    "draft_ubatch": 512,
+    "verify_rows_per_bank": 8,
+    "graph_variants_cap": 4
+  },
+  "hardware_safety": {
+    "host": {
+      "via": "ac922",
+      "gpu": [
+        {
+          "uuid": "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f",
+          "free_mib": 16124,
+          "temp_c": 39,
+          "util_pct": 0
+        },
+        {
+          "uuid": "GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+          "free_mib": 16126,
+          "temp_c": 38,
+          "util_pct": 0
+        },
+        {
+          "uuid": "GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+          "free_mib": 16126,
+          "temp_c": 38,
+          "util_pct": 0
+        },
+        {
+          "uuid": "GPU-fadb0459-4d30-907b-289a-862b3014f165",
+          "free_mib": 16127,
+          "temp_c": 39,
+          "util_pct": 0
+        },
+        {
+          "uuid": "GPU-760ce501-32f6-69b6-215b-1020da68bbfc",
+          "free_mib": 16123,
+          "temp_c": 38,
+          "util_pct": 0
+        },
+        {
+          "uuid": "GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+          "free_mib": 16124,
+          "temp_c": 39,
+          "util_pct": 0
+        }
+      ],
+      "compute_pids": []
+    },
+    "bmc": {
+      "air_max_c": 41.0,
+      "bmc_utc": "2026-10-16T19:15:34.537023Z",
+      "chassis": "On",
+      "fan": {
+        "fan0": {
+          "alarm": 0,
+          "fault": 0,
+          "rpm": 2853,
+          "rpm_secondary": 3094,
+          "target": 3000
+        },
+        "fan2": {
+          "alarm": 0,
+          "fault": 0,
+          "rpm": 2886,
+          "rpm_secondary": 3088,
+          "target": 3000
+        },
+        "fan3": {
+          "alarm": 0,
+          "fault": 0,
+          "rpm": 2836,
+          "rpm_secondary": 3091,
+          "target": 3000
+        }
+      },
+      "host": "Running",
+      "inventory_functional": {
+        "fan0": true,
+        "fan2": true,
+        "fan3": true
+      },
+      "masks_ok": true,
+      "max_c": 41.0,
+      "temperatures_c": {
+        "ambient": 32.481,
+        "dimm11_temp": 40.0,
+        "dimm3_temp": 40.0,
+        "gpu0_core_temp": 39.0,
+        "gpu1_core_temp": 38.0,
+        "gpu2_core_temp": 39.0,
+        "gpu3_core_temp": 38.0,
+        "gpu4_core_temp": 38.0,
+        "gpu5_core_temp": 39.0,
+        "p0_core0_temp": 37.0,
+        "p0_core10_temp": 37.0,
+        "p0_core11_temp": 37.0,
+        "p0_core12_temp": 37.0,
+        "p0_core13_temp": 38.0,
+        "p0_core14_temp": 38.0,
+        "p0_core15_temp": 38.0,
+        "p0_core16_temp": 38.0,
+        "p0_core17_temp": 38.0,
+        "p0_core18_temp": 37.0,
+        "p0_core19_temp": 38.0,
+        "p0_core20_temp": 38.0,
+        "p0_core22_temp": 37.0,
+        "p0_core23_temp": 38.0,
+        "p0_core2_temp": 38.0,
+        "p0_core3_temp": 37.0,
+        "p0_core4_temp": 37.0,
+        "p0_core5_temp": 37.0,
+        "p0_core6_temp": 38.0,
+        "p0_core7_temp": 37.0,
+        "p0_core8_temp": 37.0,
+        "p0_core9_temp": 37.0,
+        "p0_vdd_temp": 40.0,
+        "p0_vddr_temp": 41.0,
+        "p1_core0_temp": 37.0,
+        "p1_core10_temp": 38.0,
+        "p1_core11_temp": 37.0,
+        "p1_core12_temp": 37.0,
+        "p1_core13_temp": 37.0,
+        "p1_core14_temp": 38.0,
+        "p1_core15_temp": 37.0,
+        "p1_core18_temp": 38.0,
+        "p1_core19_temp": 38.0,
+        "p1_core1_temp": 37.0,
+        "p1_core20_temp": 37.0,
+        "p1_core21_temp": 38.0,
+        "p1_core22_temp": 37.0,
+        "p1_core23_temp": 37.0,
+        "p1_core2_temp": 38.0,
+        "p1_core3_temp": 38.0,
+        "p1_core4_temp": 36.0,
+        "p1_core5_temp": 38.0,
+        "p1_core6_temp": 37.0,
+        "p1_core7_temp": 37.0,
+        "p1_core8_temp": 37.0,
+        "p1_core9_temp": 37.0,
+        "p1_vdd_temp": 40.0,
+        "p1_vddr_temp": 41.0,
+        "pcie": 40.375
+      },
+      "uptime": 1672932.15
+    },
+    "bmc_age_seconds": 11.396347284317017,
+    "watch_root": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/notes/boot-watch-20261016T003420Z",
+    "watcher_process": "37332",
+    "fan_monitor_watchdog": [
+      "inactive",
+      "active"
+    ],
+    "bmc_ssh_via": "ac922-bmc6"
+  },
+  "hardware_caps": {
+    "ssh_via": "ac922",
+    "gpu_power_limits_w": [
+      [
+        "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f",
+        300
+      ],
+      [
+        "GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+        300
+      ],
+      [
+        "GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+        300
+      ],
+      [
+        "GPU-fadb0459-4d30-907b-289a-862b3014f165",
+        300
+      ],
+      [
+        "GPU-760ce501-32f6-69b6-215b-1020da68bbfc",
+        300
+      ],
+      [
+        "GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+        300
+      ]
+    ],
+    "cpu_scaling_max_khz": 2600000,
+    "physical_ddr_free_record_only": [
+      "/sys/devices/system/node/node0/meminfo:Node 0 MemFree:        13522688 kB",
+      "/sys/devices/system/node/node8/meminfo:Node 8 MemFree:        13063232 kB"
+    ],
+    "physical_ddr_free_stop_threshold": false
+  },
+  "ldd": "linux-vdso64.so.1 (0x00007fffb3c30000)\n\tlibllama-common.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108/lib/libllama-common.so.0 (0x00007fffb3650000)\n\tlibmtmd.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108/lib/libmtmd.so.0 (0x00007fffb3450000)\n\tlibllama.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108/lib/libllama.so.0 (0x00007fffb30c0000)\n\tlibggml.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108/lib/libggml.so.0 (0x00007fffb3090000)\n\tlibggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108/lib/libggml-cpu.so.0 (0x00007fffb2ed0000)\n\tlibggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108/lib/libggml-cuda.so.0 (0x00007fffa5320000)\n\tlibggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108/lib/libggml-base.so.0 (0x00007fffa5190000)\n\tlibstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fffa4e60000)\n\tlibgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fffa4e20000)\n\tlibc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fffa4bc0000)\n\tlibm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fffa4a90000)\n\t/lib64/ld64.so.2 (0x00007fffb3c50000)\n\tlibgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fffa4a10000)\n\tlibcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fffa4930000)\n\tlibcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fff9dc10000)\n\tlibcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fff9be50000)\n\tlibnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff99ff0000)\n\tlibdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff99fc0000)\n\tlibpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff99f90000)\n\tlibrt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff99f60000)\n\tlibcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff860d0000)",
+  "process_memory_policy": {
+    "numactl_cpu_nodebind": [
+      0
+    ],
+    "numactl_memory_interleave": [
+      0,
+      8
+    ],
+    "sysctl_or_kernel_changes": false,
+    "ple_mbind_policy": "loader keeps strict GPU-node/DDR-node stripes over its continuous allocation",
+    "reason": "interleave ordinary runtime allocations across DDR NUMA nodes 0 and 8; avoid concentrating first-touch pages on node 0"
+  },
+  "ple_placement_contract": {
+    "gpu_node_count": 3,
+    "total_gpu_ple_gib": 12,
+    "expected_logical_gpus": [
+      0,
+      1,
+      2
+    ],
+    "expected_numa_nodes": [
+      255,
+      254,
+      253
+    ],
+    "expected_bytes_per_gpu": 4294967296,
+    "cpu_ddr_nodes": [
+      0,
+      8
+    ],
+    "copy_chunks_required": 859,
+    "each_copy_chunk_memcmp_exact": true,
+    "whole_copy_memcmp_exact": true
+  },
+  "runner_build_proof": {
+    "status": "V108_HOST_RUNNER_LINK_AND_LDD_PASS",
+    "local_build_record": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-v51-resource-20261017/results/v51-host-build-v108/v51-runner-build.json",
+    "build_record_sha256": "d93314f219148db11982e308ab71ccab049e5f5b14ab1d45131c5978fd665289",
+    "local_ldd_report": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-v51-resource-20261017/results/v51-host-build-v108/ldd.txt",
+    "ldd_sha256": "c05b44761b0f12a65097e157aaf1c7a6efc717b9dbd3cba962bab95be55889c9",
+    "runner_sha256": "c51d7df9da948703335022c3f448177b8e653e36980733382c963d6cf852805c",
+    "build_profile_sha256": "638f95d42940619ffff9e4a7fea62ef0e824f310f82be5d9785affe96bf4cb82",
+    "runtime_build_id": "20261016T183414.662729Z",
+    "runtime_report_sha256": "3e90e390e8689b8680f1408232a0ecc57ac9f0da00cdaff3f4de669432cb2bc7",
+    "runner_source_sha256": "d425850d3953a85345e4f82a95f7f080c8c678d2452c700c1495dc8dd1363bbb",
+    "scenario_sha256": "5920e664106a06adf9bb049bd62ea0a76165c78f98be674b9515b8d18c30c636",
+    "libraries": [
+      "libllama-common.so.0",
+      "libllama.so.0",
+      "libmtmd.so.0",
+      "libggml.so.0",
+      "libggml-cpu.so.0",
+      "libggml-cuda.so.0",
+      "libggml-base.so.0"
+    ],
+    "model_loads": 0,
+    "gpu_touched": false
+  }
+}

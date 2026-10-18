@@ -1,0 +1,36 @@
+{
+  "status": "PASS_OPERATOR_ONLY",
+  "runtime": "runtime-perf-v110",
+  "build_id": "20261016T192227.106762Z",
+  "build_report_sha256": "12527c5304175971588aa1276a867c6b2fd4062220a925e08093b9c6d0bac2b6",
+  "helper_sha256": "3d22f9e4db55c0f139b112dc8dcc9707401b97dc86a859165e73f55a9af7c478",
+  "files": {
+    "host-gates.txt": "c2a252fadc0a398ee7a51a455b314844ee5f741307f55a33073eb384e916b8a3",
+    "summary.md": "3b592ca12cf64137361d22bf3a393c4e4fe15cdfd90af6177a9c8827e2606c22",
+    "provenance.txt": "126f8bb40769d55edff18c2a0370f2cc83754ee68bfb32e7fd1460f647a505d1",
+    "source-hashes.txt": "be8b283ec21fbbcdd99590659c794dbaea62340e1213678de06365634374ba3d",
+    "preflight.txt": "c88eb8b90bcedccda5dadcafdd16fb5476fd03d668a129532e51b25c31a1822a",
+    "gpu.log": "bad0a73268ce1fca8f7fed967c69eefaecb1e26ab72bb70e6ba1cbd322e001ec",
+    "postflight.txt": "645ea1156bf389df7ce55e076e9b038977521acc549a98a476e46a8f493e116d"
+  },
+  "cpu_graph_old_reject_new_accept_and_limit": true,
+  "cuda_full_vs_1024_chunks_bitexact": true,
+  "cuda_cases": [
+    {
+      "queries": 4096,
+      "n_kv": 4096,
+      "width": 513,
+      "output_values": 4194304
+    },
+    {
+      "queries": 8192,
+      "n_kv": 8192,
+      "width": 2051,
+      "output_values": 8388608
+    }
+  ],
+  "graph_update_fallback": "8192 exec_update_failed→reinstantiate then PASS",
+  "models_loaded": 0,
+  "fullmodel_speedup_claim": false,
+  "gpu_released": true
+}

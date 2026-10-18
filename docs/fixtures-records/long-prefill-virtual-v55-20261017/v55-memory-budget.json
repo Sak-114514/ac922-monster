@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "candidate": "V55 V120 virtual TopK + fresh graph exec + full step timing; PLE12 long-only",
+  "status": "ESTIMATES_ONLY_NOT_A_FIT_PROOF",
+  "exact_native_mask_payload": {
+    "formula": "65536 keys * 4096 queries * 2 bytes per F16 output",
+    "bytes": 536870912,
+    "mib": 512,
+    "scope": "Per active QSA mask output/card as specified by the V50 candidate geometry",
+    "f32_full_shape_temporary_expected": false,
+    "native_dispatch_gate": "V107 runtime must emit its exact native mask kernel selection marker; profile contains a placeholder until V107 freezes"
+  },
+  "upload_pool": {
+    "budget_mib": 512,
+    "default_budget_mib": 64,
+    "additional_host_ddr_mib_over_default": 448,
+    "per_copy_max_bytes": 67108864,
+    "ring_slots": 2,
+    "ring_owner_capacity_estimate_mib": 384,
+    "ring_owner_capacity_formula": "3 owners * 2 ring slots * 64 MiB",
+    "headroom_mib_over_ring_owner_capacity": 128,
+    "note": "V107 candidate extends slot/per-copy maximum to exactly 64 MiB and uses the existing shared broker capped at 512 MiB. This is host DDR, separate from TurboPrefill's pinned-memory cap. Actual owner count and upload allocation/use must be confirmed in runtime logs."
+  },
+  "ple_rebalance": {
+    "gpu_numa_nodes": 3,
+    "gpu_gib_per_node": 4,
+    "aggregate_gpu_ple_prefix_gib": 12,
+    "remaining_gpu_nodes": 3,
+    "remaining_ple_placement": "CPU/DDR under NUMA interleave nodes 0,8",
+    "status": "V52 PLE12 placement retained; V55 runtime copy marker remains required",
+    "llama_ple_numa_gpu_gib_environment_value": 12,
+    "environment_semantics": "LLAMA_PLE_NUMA_GPU_GIB is the aggregate GPU prefix in GiB; 12 total across three nodes gives 4 GiB per node.",
+    "expected_stripe_bytes": [
+      4294967296,
+      4294967296,
+      4294967296
+    ],
+    "expected_stripe_sum_bytes": 12884901888
+  },
+  "context_memory_reference": {
+    "aggregate_target_kv_cells": 65536,
+    "target_kv_plus_indexer_historical_mib": 918,
+    "draft_kv_plus_indexer_historical_mib": 153,
+    "target_plus_draft_kv_historical_mib": 1071,
+    "historical_four_sequence_recurrent_state_mib": 2251.41,
+    "single_sequence_recurrent_state_linear_estimate_mib": 562.85,
+    "warning": "Historical aggregate values do not prove per-device headroom; actual per-GPU memory samples govern admission."
+  },
+  "workspace_reference": {
+    "target_ubatch": 4096,
+    "target_compute_historical_estimate_mib_at_ub4096": 953.76,
+    "target_compute_historical_mib_at_ub1024": 238.44,
+    "draft_ubatch": 512,
+    "draft_compute_historical_mib": 249.28,
+    "logical_prefill_batch": {
+      "n_batch_tokens": 32768,
+      "previous_n_batch_tokens": 8192,
+      "capacity_ratio": 4,
+      "n_ubatch_tokens": 4096,
+      "draft_n_ubatch_tokens": 512,
+      "logical_chunks": {
+        "single32k": 1,
+        "single64k": 2
+      },
+      "memory_estimate": "Unquantified: host batch metadata and any target/MTP row buffers keyed to n_batch may grow with the 4x capacity. Compute workspace is still shaped by n_ubatch, but full-model peak memory must be measured; do not infer fit from the old 8K profile."
+    },
+    "warning": "Historical V42/V45 estimates are not V107 measurements and do not account for native mask, PLE rebalance placement, or the larger n_batch. Keep the 512 MiB per-GPU free guard unchanged; estimates are not a fit proof."
+  },
+  "admission": {
+    "per_gpu_free_floor_mib": 512,
+    "gpu_temperature_ceiling_c": 58,
+    "bmc_temperature_ceiling_c": 58,
+    "automatic_retry": false,
+    "gpu_reset": false,
+    "not_a_fit_proof": true
+  }
+}

@@ -1,0 +1,156 @@
+start=2026-10-16T05:19:29Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/parent-walk-linear-20261016/integration/parent-walk-ple-fixture-v77-parent-walk-host1
+model=/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf
+parent_manifest_expected=1
+08cb74ede6ba7fec7950c2b9014099160918493e7a7b3136a0f6102738b5fcf1  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/parent-walk-linear-20261016/integration/parent-walk-ple-fixture-v77-parent-walk-host1
+visible=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a
+limits temp<58C preexisting<=512MiB runtime<=1024MiB timeout=10s
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 3 MiB, 39
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 39
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 2 MiB, 40
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 3 MiB, 40
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 6 MiB, 40
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 6 MiB, 40
+ggml[2] ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+ggml[2]   Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2] P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml[2] ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml[2] ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml[2] meta-context-view owner-create owner=4 epoch=1 backend-context=1
+ggml[2] meta-context-view bind owner=4 epoch=1 buffer=2 view=ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=4 epoch=1 buffer=2 view=ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=4 epoch=1 buffer=2 view=ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=4 epoch=1 buffer=2 view=ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-fragment-cache context=0x10045cfabc0 requested=1 enabled=0 reason=ineligible_parent_or_topology scope=0 members=3
+ggml[2] meta-replay-ready backend=0x10046d04930 graph_uid=2 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+ggml[2] meta-context-submit FIFO active context=0x10045cfabc0 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+ggml[2] meta-replay-ready backend=0x10046d04930 graph_uid=2 ctx_uid=2 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+ggml[2] meta-fragment-cache context=0x10045cfabc0 requested=1 enabled=0 reason=ineligible_parent_or_topology scope=0 members=3
+ggml[2] meta-replay-ready backend=0x10046d04930 graph_uid=2 ctx_uid=2 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+ggml[2] meta-replay-ready backend=0x10046d04930 graph_uid=2 ctx_uid=2 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+ggml[2] meta-fragment-cache context=0x10045cfabc0 requested=1 enabled=0 reason=ineligible_parent_or_topology scope=0 members=3
+ggml[2] meta-replay-ready backend=0x10046d04930 graph_uid=2 ctx_uid=2 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+ggml[2] meta-context-view owner-unbind owner=4 epoch=1 removed=4
+ggml[2] meta-context-view owner-retire owner=4 epoch=1
+ggml[2] P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml[2] ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml[2] ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml[2] P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml[2] ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml[2] ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml[2] ggml_backend_meta_context: nested native GPU AllReduce opt-in requested; unsupported PARTIAL boundaries fail closed
+ggml[2] P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml[2] ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml[3] initialize_nested_gpu_ar: nested NCCL fallback rejected; strict F32 NCCL is not active
+ggml[2] meta-nested-gpu-ar opt-in=1 topology=2x3 leaves=6 order=A0,A1,A2,B0,B1,B2 p2p6=1 nccl6_f32=0
+ggml[2] meta-context-view owner-create owner=15 epoch=1 backend-context=6
+ggml[2] meta-context-view bind owner=15 epoch=1 buffer=9 view=ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=15 epoch=1 buffer=9 view=ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=15 epoch=1 buffer=9 view=ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=15 epoch=1 buffer=9 view=ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view owner-create owner=19 epoch=1 backend-context=7
+ggml[2] meta-context-view bind owner=19 epoch=1 buffer=10 view=ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view owner-create owner=20 epoch=1 backend-context=8
+ggml[2] meta-context-view bind owner=20 epoch=1 buffer=11 view=ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=19 epoch=1 buffer=10 view=ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=20 epoch=1 buffer=11 view=ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=19 epoch=1 buffer=10 view=ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=20 epoch=1 buffer=11 view=ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=19 epoch=1 buffer=10 view=ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=20 epoch=1 buffer=11 view=ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-fragment-cache context=0x10049523e40 requested=1 enabled=0 reason=ineligible_parent_or_topology scope=0 members=2
+ggml[2] meta-replay-ready backend=0x10047117f40 graph_uid=7 ctx_uid=0 subgraphs=0 backends=2 p2p=0 merge_tried=0 ready_cb=0 merged=0 chunks=0
+ggml[2] meta-context-submit FIFO active context=0x10049523e40 members=2 CPU_enqueue_atomic=1 GPU_tail_wait=1
+ggml[2] meta-parent-manifest context=0x10049523e40 selected=1 calls=1 generation=1 forced_rebuilds=0 validation_us=248
+ggml[2] meta-fragment-cache context=0x10049522ad0 requested=1 enabled=1 parent=7 fragment=0/1 child_uid=8 hit=0 hits=0 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-replay-ready backend=0x10046d04930 graph_uid=8 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+ggml[2] meta-context-submit FIFO active context=0x10049522ad0 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+ggml[2] meta-replay-ready backend=0x10046d04930 graph_uid=8 ctx_uid=8 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+ggml[2] meta-fragment-cache context=0x1004679e2d0 requested=1 enabled=1 parent=7 fragment=0/1 child_uid=9 hit=0 hits=0 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-replay-ready backend=0x10047117fe0 graph_uid=9 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+ggml[2] meta-context-submit FIFO active context=0x1004679e2d0 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+ggml[2] meta-replay-ready backend=0x10047117fe0 graph_uid=9 ctx_uid=9 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+ggml[2] meta-replay-ready backend=0x10047117f40 graph_uid=7 ctx_uid=7 subgraphs=1 backends=2 p2p=0 merge_tried=0 ready_cb=0 merged=0 chunks=0
+ggml[2] meta-fragment-cache context=0x10049523e40 requested=1 enabled=0 reason=ineligible_parent_or_topology scope=0 members=2
+ggml[2] meta-replay-ready backend=0x10047117f40 graph_uid=7 ctx_uid=7 subgraphs=1 backends=2 p2p=0 merge_tried=0 ready_cb=0 merged=0 chunks=0
+ggml[2] meta-parent-walk context=0x10049523e40 selected=1 original_hits=1 prepared_hits=1 full=1 bytes=60480 generation=1
+ggml[2] meta-fragment-cache context=0x10049522ad0 requested=1 enabled=1 parent=7 fragment=0/1 child_uid=8 hit=1 hits=1 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-replay-ready backend=0x10046d04930 graph_uid=8 ctx_uid=8 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+ggml[2] meta-replay-ready backend=0x10046d04930 graph_uid=8 ctx_uid=8 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+ggml[2] meta-fragment-cache context=0x1004679e2d0 requested=1 enabled=1 parent=7 fragment=0/1 child_uid=9 hit=1 hits=1 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-replay-ready backend=0x10047117fe0 graph_uid=9 ctx_uid=9 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+ggml[2] meta-replay-ready backend=0x10047117fe0 graph_uid=9 ctx_uid=9 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+ggml[2] meta-fragment-cache context=0x10049523e40 requested=1 enabled=0 reason=ineligible_parent_or_topology scope=0 members=2
+ggml[2] meta-parent-walk context=0x10049523e40 selected=1 original_hits=2 prepared_hits=2 full=1 bytes=60480 generation=1
+ggml[2] meta-fragment-cache context=0x10049522ad0 requested=1 enabled=1 parent=7 fragment=0/1 child_uid=8 hit=1 hits=2 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-fragment-cache context=0x1004679e2d0 requested=1 enabled=1 parent=7 fragment=0/1 child_uid=9 hit=1 hits=2 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-fragment-cache context=0x10049523e40 requested=1 enabled=0 reason=ineligible_parent_or_topology scope=0 members=2
+ggml[2] meta-parent-walk context=0x10049523e40 selected=1 original_hits=3 prepared_hits=3 full=1 bytes=60480 generation=1
+ggml[2] meta-fragment-cache context=0x10049522ad0 requested=1 enabled=1 parent=7 fragment=0/1 child_uid=8 hit=1 hits=3 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-fragment-cache context=0x1004679e2d0 requested=1 enabled=1 parent=7 fragment=0/1 child_uid=9 hit=1 hits=3 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-parent-walk context=0x10049523e40 selected=1 original_hits=4 prepared_hits=4 full=1 bytes=60480 generation=1
+ggml[2] meta-fragment-cache context=0x10049522ad0 requested=1 enabled=1 parent=7 fragment=0/1 child_uid=8 hit=1 hits=4 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-fragment-cache context=0x1004679e2d0 requested=1 enabled=1 parent=7 fragment=0/1 child_uid=9 hit=1 hits=4 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-parent-walk context=0x10049523e40 selected=1 original_hits=5 prepared_hits=5 full=1 bytes=60480 generation=1
+ggml[2] meta-fragment-cache context=0x10049522ad0 requested=1 enabled=1 parent=7 fragment=0/1 child_uid=8 hit=1 hits=5 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-fragment-cache context=0x1004679e2d0 requested=1 enabled=1 parent=7 fragment=0/1 child_uid=9 hit=1 hits=5 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-context-view owner-unbind owner=19 epoch=1 removed=4
+ggml[2] meta-context-view owner-unbind owner=20 epoch=1 removed=4
+ggml[2] meta-context-view owner-unbind owner=15 epoch=1 removed=4
+ggml[2] meta-context-view owner-create owner=21 epoch=1 backend-context=6
+ggml[2] meta-context-view bind owner=21 epoch=1 buffer=9 view=ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=21 epoch=1 buffer=9 view=ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=21 epoch=1 buffer=9 view=ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=21 epoch=1 buffer=9 view=ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view owner-create owner=25 epoch=1 backend-context=7
+ggml[2] meta-context-view bind owner=25 epoch=1 buffer=10 view=ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view owner-create owner=26 epoch=1 backend-context=8
+ggml[2] meta-context-view bind owner=26 epoch=1 buffer=11 view=ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=25 epoch=1 buffer=10 view=ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=26 epoch=1 buffer=11 view=ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=25 epoch=1 buffer=10 view=ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=26 epoch=1 buffer=11 view=ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=25 epoch=1 buffer=10 view=ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view bind owner=26 epoch=1 buffer=11 view=ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+ggml[2] meta-context-view owner-retire owner=15 epoch=1
+ggml[2] meta-fragment-cache invalidate context=0x10049522ad0 reason=parent_generation
+ggml[2] meta-context-view owner-retire owner=19 epoch=1
+ggml[2] meta-fragment-cache context=0x10049522ad0 requested=1 enabled=1 parent=17 fragment=0/1 child_uid=18 hit=0 hits=5 misses=2 retained=0 bytes=0 evictions=0
+ggml[2] meta-fragment-cache invalidate context=0x1004679e2d0 reason=parent_generation
+ggml[2] meta-context-view owner-retire owner=20 epoch=1
+ggml[2] meta-fragment-cache context=0x1004679e2d0 requested=1 enabled=1 parent=17 fragment=0/1 child_uid=19 hit=0 hits=5 misses=2 retained=0 bytes=0 evictions=0
+ggml[2] meta-parent-walk context=0x10049523e40 selected=1 original_hits=6 prepared_hits=6 full=2 bytes=60480 generation=2
+ggml[2] meta-fragment-cache context=0x10049522ad0 requested=1 enabled=1 parent=17 fragment=0/1 child_uid=18 hit=1 hits=6 misses=2 retained=0 bytes=0 evictions=0
+ggml[2] meta-fragment-cache context=0x1004679e2d0 requested=1 enabled=1 parent=17 fragment=0/1 child_uid=19 hit=1 hits=6 misses=2 retained=0 bytes=0 evictions=0
+ggml[2] meta-context-view owner-unbind owner=25 epoch=1 removed=4
+ggml[2] meta-context-view owner-unbind owner=26 epoch=1 removed=4
+ggml[2] meta-context-view owner-unbind owner=21 epoch=1 removed=4
+ggml[2] meta-parent-manifest summary context=0x10049523e40 calls=8 generations=2 forced_rebuilds=1 validation_us=705
+ggml[2] meta-parent-walk summary context=0x10049523e40 original_hits=6 prepared_hits=6 full=2
+ggml[2] meta-context-view owner-retire owner=21 epoch=1
+ggml[2] meta-nested-gpu-ar-summary context=0x10049523e40 calls=0 log_first=8 topology=2x3
+ggml[2] meta-fragment-cache summary context=0x10049522ad0 hits=6 misses=2 invalidations=1 evictions=0 retained=0
+ggml[2] meta-fragment-signature summary context=0x10049522ad0 trusted_hits=6 full_describes=2
+ggml[2] meta-context-view owner-retire owner=25 epoch=1
+ggml[2] meta-fragment-cache summary context=0x1004679e2d0 hits=6 misses=2 invalidations=1 evictions=0 retained=0
+ggml[2] meta-fragment-signature summary context=0x1004679e2d0 trusted_hits=6 full_describes=2
+ggml[2] meta-context-view owner-retire owner=26 epoch=1
+PLE_WEIGHT name=blk.1.ple_conv1d.weight type=f16 ne=4,10240,1,1 bytes=81920 offset=2479353664
+PASS PLE_WEIGHT_VIEW layout=standalone3 taps=4 output_values=30720 ABA=1
+PLE_SCHEDULER_RESET uid_before=6 uid_after=16 fresh_uid=1
+PASS PLE_WEIGHT_VIEW layout=nested2x3 taps=4 output_values=30720 owner_A_B_A=1 owner_reset=1 parent_manifest_expected=1 island_mirror=1 canary=1
+PLE_WEIGHT_VIEW_GPU_FIXTURE_PASS full_model_loaded=0 parent_manifest_expected=1 parent_manifest_selected=1 parent_manifest_calls=8 parent_manifest_forced_rebuilds=1
+exit_status=0
+after:
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 3 MiB, 40
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 39
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 2 MiB, 40
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 3 MiB, 40
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 6 MiB, 40
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 7 MiB, 40

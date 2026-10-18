@@ -1,0 +1,25 @@
+ggml_backend_meta_context: nested Meta experimental path uses generic 2-member AllReduce fallback; outer CUDA/NCCL/P2P is disabled
+ggml_backend_meta_context: nested Meta experimental path uses generic 2-member AllReduce fallback; outer CUDA/NCCL/P2P is disabled
+meta-context-view owner-create owner=10 epoch=1 backend-context=1
+meta-context-view bind owner=10 epoch=1 buffer=7 view=A.ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=10 epoch=1 buffer=7 view=A.ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=10 epoch=1 buffer=7 view=A.ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=10 epoch=1 buffer=7 view=A.ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+SETUP nested=Meta2{Meta3CPU,Meta3CPU} duplicate_cpu_leaves=1 root_backends=2 schedulers=2 shared_weights=1 graph_compute=0
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp:2690: GGML_META_CONTEXT_VIEWS=1: init_tensor reached unregistered non-static WEIGHTS tensor A.ple.tap_view.0
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v62/lib/libggml-base.so.0(+0x247a8)[0x7fff8fc647a8]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v62/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fff8fc64da8]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v62/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fff8fc64f44]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v62/lib/libggml-base.so.0(+0x78c24)[0x7fff8fcb8c24]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v62/lib/libggml-base.so.0(ggml_backend_buffer_init_tensor+0x38)[0x7fff8fc88918]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v62/lib/libggml-base.so.0(+0x76b44)[0x7fff8fcb6b44]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v62/lib/libggml-base.so.0(+0x787f4)[0x7fff8fcb87f4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v62/lib/libggml-base.so.0(ggml_backend_buffer_init_tensor+0x38)[0x7fff8fc88918]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v62/lib/libggml-base.so.0(ggml_backend_view_init+0x64)[0x7fff8fc91404]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v62/lib/libggml-base.so.0(ggml_gallocr_alloc_graph+0x974)[0x7fff8fc850f4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v62/lib/libggml-base.so.0(ggml_backend_sched_alloc_graph+0x5b4)[0x7fff8fc9ced4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-owner-cpu-20261016/nested-owner-cpu-v62(+0x3eb8)[0x10d673eb8]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-owner-cpu-20261016/nested-owner-cpu-v62(+0x2618)[0x10d672618]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fff8f564d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fff8f564f6c]
+run-cpu-only.sh: line 27: 98049 Aborted                 env -i PATH="${PATH:-/usr/bin:/bin}" LD_LIBRARY_PATH="$RUNTIME_LIB" GGML_META_NESTED_EXPERIMENTAL=1 GGML_META_NESTED_GPU_AR=0 GGML_META_CONTEXT_VIEWS=1 GGML_META_CONTEXT_VIEWS_TRACE=1 GGML_META_REPLAY_GUARD=1 GGML_META_FIFO_PIPELINE=0 GGML_META_GPU_SPANS=0 GGML_META_ASYNC_COPY=0 GGML_META_ASYNC_INPUTS=0 GGML_META_CPU_ASYNC_COPY=0 GGML_META_GPU_EVENT_WAIT=0 GGML_CUDA_META_COPY_GPU_WAIT=0 GGML_SCHED_META_SINGLE_COPY_EVENTS=0 GGML_META_P2P_COLD=0 GGML_META_NCCL_MIN_BYTES=0 "$BIN"

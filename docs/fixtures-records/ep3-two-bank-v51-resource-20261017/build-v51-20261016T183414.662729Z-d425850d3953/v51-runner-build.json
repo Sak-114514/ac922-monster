@@ -1,0 +1,64 @@
+{
+  "runtime_build_id": "20261016T183414.662729Z",
+  "runtime_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V108-build.json",
+  "runtime_report_sha256": "3e90e390e8689b8680f1408232a0ecc57ac9f0da00cdaff3f4de669432cb2bc7",
+  "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108",
+  "profile": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ep3-two-bank-v51-resource-20261017/v51-exact-env.json",
+  "profile_sha256": "638f95d42940619ffff9e4a7fea62ef0e824f310f82be5d9785affe96bf4cb82",
+  "runner_source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ep3-two-bank-v51-resource-20261017/dual-context-v51-resource.cpp",
+  "runner_source_sha256": "d425850d3953a85345e4f82a95f7f080c8c678d2452c700c1495dc8dd1363bbb",
+  "scenario_file": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ep3-two-bank-v51-resource-20261017/v51-scenarios.json",
+  "scenario_sha256": "5920e664106a06adf9bb049bd62ea0a76165c78f98be674b9515b8d18c30c636",
+  "runner_binary": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ep3-two-bank-v51-resource-20261017/build-v51-20261016T183414.662729Z-d425850d3953/dual-context-v51-resource",
+  "runner_sha256": "c51d7df9da948703335022c3f448177b8e653e36980733382c963d6cf852805c",
+  "runner_owner": "debian",
+  "runner_build_mode": "compiled_host_harness",
+  "runner_reuse_provenance": null,
+  "build_owner": "debian",
+  "core_header_sha256s": {
+    "include/llama.h": "e1a792e434090382b2b07b84151855a6a211bf03d5845154070a4f49581ef806",
+    "src/llama-ext.h": "80221e526f6e51f75708267c547f464a25d43d8d9834a43bcbcc37cc97463ca9",
+    "src/llama-context.h": "575bf93c2aae5e91f8de6a22178453b8f90a14cd9c54ea31324c5b5f1ce21d78",
+    "common/common.h": "e1f4622f2c34c26e19aae364b24bad4bebb541ec44bebdc35542b61f48bc5b43",
+    "common/speculative.h": "d164e26b44790bc83176f7726c71611a4a6d3b0261f040fc34dd71835012f4b8"
+  },
+  "ple_placement": {
+    "gpu_node_count": 3,
+    "total_gpu_ple_gib": 12,
+    "expected_logical_gpus": [
+      0,
+      1,
+      2
+    ],
+    "expected_numa_nodes": [
+      255,
+      254,
+      253
+    ],
+    "expected_bytes_per_gpu": 4294967296,
+    "cpu_ddr_nodes": [
+      0,
+      8
+    ],
+    "copy_chunks_required": 859,
+    "each_copy_chunk_memcmp_exact": true,
+    "whole_copy_memcmp_exact": true
+  },
+  "process_memory_policy": {
+    "numactl_cpu_nodebind": [
+      0
+    ],
+    "numactl_memory_interleave": [
+      0,
+      8
+    ],
+    "sysctl_or_kernel_changes": false,
+    "ple_mbind_policy": "loader keeps strict GPU-node/DDR-node stripes over its continuous allocation",
+    "reason": "interleave ordinary runtime allocations across DDR NUMA nodes 0 and 8; avoid concentrating first-touch pages on node 0"
+  },
+  "ldd_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ep3-two-bank-v51-resource-20261017/build-v51-20261016T183414.662729Z-d425850d3953/ldd.txt",
+  "ldd_sha256": "c05b44761b0f12a65097e157aaf1c7a6efc717b9dbd3cba962bab95be55889c9",
+  "compile_scope": "V51 host harness only, linked to selected runtime DSOs; no engine/CUDA rebuild or model/GPU execution",
+  "model_loads": 0,
+  "gpu_touched": false
+}

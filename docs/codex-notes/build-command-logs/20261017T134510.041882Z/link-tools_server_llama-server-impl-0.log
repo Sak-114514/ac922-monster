@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "cmake",
+    "-E",
+    "cmake_link_script",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/build-link-scripts/tools__server__llama-server-impl.link.txt",
+    "--verbose=1"
+  ],
+  "cwd": "/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/tools/server",
+  "display": "cmake -E cmake_link_script /home/debian/ac922-monster/experiments/standard-opt-20261014/notes/build-link-scripts/tools__server__llama-server-impl.link.txt --verbose=1",
+  "kind": "link-script",
+  "output_tail": "/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libllama-server-impl.so -o ../../bin/libllama-server-impl.so \"CMakeFiles/llama-server-impl.dir/server.cpp.o\" \"CMakeFiles/llama-server-impl.dir/server-http.cpp.o\" \"CMakeFiles/llama-server-impl.dir/server-models.cpp.o\"  -Wl,-rpath,/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin: libserver-context.a ../../vendor/cpp-httplib/libcpp-httplib.a ../../bin/libllama-common.so.0.5.0 ../../common/libllama-common-base.a ../../bin/libmtmd.so.0.5.0 ../../bin/libllama.so.0.5.0 ../../bin/libggml.so.0.25.1 ../../bin/libggml-cpu.so.0.25.1 ../../bin/libggml-cuda.so.0.25.1 ../../bin/libggml-base.so.0.25.1 /usr/local/cuda/targets/ppc64le-linux/lib/stubs/libcuda.so\n",
+  "returncode": 0,
+  "target": "tools/server:llama-server-impl"
+}
+
+--- combined stdout/stderr ---
+/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libllama-server-impl.so -o ../../bin/libllama-server-impl.so "CMakeFiles/llama-server-impl.dir/server.cpp.o" "CMakeFiles/llama-server-impl.dir/server-http.cpp.o" "CMakeFiles/llama-server-impl.dir/server-models.cpp.o"  -Wl,-rpath,/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin: libserver-context.a ../../vendor/cpp-httplib/libcpp-httplib.a ../../bin/libllama-common.so.0.5.0 ../../common/libllama-common-base.a ../../bin/libmtmd.so.0.5.0 ../../bin/libllama.so.0.5.0 ../../bin/libggml.so.0.25.1 ../../bin/libggml-cpu.so.0.25.1 ../../bin/libggml-cuda.so.0.25.1 ../../bin/libggml-base.so.0.25.1 /usr/local/cuda/targets/ppc64le-linux/lib/stubs/libcuda.so

@@ -1,0 +1,9 @@
+# V216 exact-source F32 prefill indexer candidate
+
+Current existing 4-head tile narrows even F32 pooled keys into shared half2. The decode vector does not; preserve it unchanged. Root will keep F32 keys as shared float2 in the prefill tile and use32 keys x8queries (33,152 shared bytes, within48KiB SM70 per-block static limit). Other key types keep64key tiles and existing arithmetic. No quantized-weight format change.
+
+Add default-off LLAMA_QSA_PREFILL_F32_INDEXER=1 limited to ordinary CUDA LAYER, D128/H4/single stream and8..8192 queries; actual supports probe and backend pin must succeed, otherwise existing standard-headloop fallback. Complete score output and original selector/masks retained. This avoids four head GEMM/relu/add intermediates; no memory/speed claim before actualfixture/model. Backups before edits.
+
+Gates: V215 actual full score errors/topk agreement vs standard F32headloop, measuredwall/workspace and decodeunchanged; independent static review; incremental twoCPU/CUDA units only; bounded native semantics+longrequest performance. Keep V208 frozen and feature off in V214 trace. V209 remains running on frozenV208 while preparing source; no heavybuild while model work active.
+
+Existing V119/V120 virtual cell TopK is already implemented and locally exact-ID validated, but absent from current LAYER6 recipe. Compose via LLAMA_QSA_VIRTUAL_TOPK=1 after operator gates: permit the new pinned F32-prefill fused-score producer through its old standard-only guard; retain rejection for legacy unpinned full-fused path and all causal/stream/order/shape guards. This reuses the exact lazy cell selector and avoids expanded/cast/add F32 cell matrices, potentially the larger workspace saving for high UB; do not claim it fits until allocation succeeds. No new selector or quantization.

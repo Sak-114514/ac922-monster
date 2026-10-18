@@ -1,0 +1,5 @@
+# V89 short-context PLE placement
+
+V37 telemetry minimum sampled GPU free2724MiB, process SwapPss peak5101.2MiB. Original PLE26.822GiB anonymous mapping has8GiB on sixGPU NUMA nodes+18.822GiB DDR0/8. Permit existing12GiB prefix as an explicit placement option (default8 unchanged); original row bytes/hash/lookup remain unchanged. Six stripes2GiB each instead1.333GiB, +682.67MiB/card; DDR remainder drops4GiB to14.822GiB. Estimated sampled-workload GPUfree~2041MiB, not a guarantee under new wholegraphcapture. Existing4GiB perGPU context reserve,3GiB DDR reserve, aggregate/pernode checks, page alignment and perchunk memcmp ALL unchanged. No force migration, mlock, driver, kernel or NUMA policy change. Actual capacity rejection falls back by a separate safe launch profile8, never by relaxing reserve.
+
+CPU gate: production parsing whitelist(default6/8 unchanged,12 added, invalid rejected), 64KiB stripe sum/percard geometry at3/6cards, original resource guard constants. Existing loader will validate every copied chunk in actualmodel. Build one modelCPP consumer only; noCUDAobjects.

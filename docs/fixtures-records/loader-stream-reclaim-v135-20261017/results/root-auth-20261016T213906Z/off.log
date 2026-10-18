@@ -1,0 +1,19 @@
+ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+llama_model_loader: loaded meta data with 2 key-value pairs and 2 tensors from /tmp/loader-stream-reclaim-v135-295957-off.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = qwen4exp
+llama_model_loader: - kv   1:                          general.alignment u32              = 32
+llama_model_loader: - type  f32:    2 tensors
+init_mappings: GPU source-page reclaim enabled (page granularity 64 KiB; lazy and CPU ranges protected)
+monpack: disabled via MONSTER_MONPACK=0, using original GGUF path
+load_all_data: file[0] gpu_source=224 KiB cpu_tensors=128 KiB lazy_cpu=0 KiB candidate=4 pages safe=2 pages excluded_cpu_shared=2 pages madvise=128 KiB fadvise=128 KiB madvise_errors=0 fadvise_errors=0 fadvise_fallback_ranges=0
+PASS planner page=4096 inward_edges=1 future_cpu_alias=1 overflow=1
+PASS planner page=65536 inward_edges=1 future_cpu_alias=1 overflow=1
+PASS loader mode=off meta3_exact=1 cpu_exact=1 before_cpu_reclaim_probe=1 gpu_bytes=229376 cpu_bytes=131072
+PASS loader mode=off cpu_shared_page_resident_after_load=1 gguf_bytes_identical=1 source=224

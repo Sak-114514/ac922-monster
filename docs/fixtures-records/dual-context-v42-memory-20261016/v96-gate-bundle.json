@@ -1,0 +1,182 @@
+{
+  "schema": "relay6-stage-elision-v96-evidence-bundle/v1",
+  "result": "PASS",
+  "runtime": {
+    "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v96",
+    "build_id": "20261016T125920.508355Z",
+    "build_note": "notes/V96-build.json",
+    "build_note_sha256": "c17cbcfc2b940bc982fff61d1a3606c380cfdd5c90c2c4de33b9da82e3b554f8",
+    "build_run_completed": true,
+    "blocked": [],
+    "fixture_binary": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-stage-elision-v96-20261016/relay6-stage-elision-v96-v96-host1",
+      "sha256": "a06753ae4dd4d6e0ba802800bb45517f77897adcc3938601d1c900798791ffbd"
+    },
+    "p2p_source_snapshot": {
+      "path": "fixtures/relay6-stage-elision-v96-20261016/snapshot-v96/allreduce-p2p.cu",
+      "sha256": "940eeffcd61285779c08aae49feaaf5a89ad64f88b8fb36d7991e0cfe2fb5109"
+    }
+  },
+  "cases": {
+    "off": {
+      "tag": "v96-combined-stage-elision-20261016T1309Z",
+      "status": 0,
+      "elapsed_seconds": 19,
+      "log": "results/off.log",
+      "log_sha256": "b8b7e7f73b7e17586c428a9ecca4305835448cc6261dfd0a38d9f6d2e5743662",
+      "validator_summary_sha256": "c694dea67e5ab9cc2e33c29dbdd35d39e9710b4511e0c1d5db22a0d1b7909bd6",
+      "runner_log_sha256": "3ebcadb5cad3a94ffbb6e814ea4e4d31bda342f4a7f5a009774f8105244e6551",
+      "provenance_sha256": "569b31e0a2e3389356971ada63eb5e9aa84ccacf523215e10b3c014eafe91675"
+    },
+    "on": {
+      "tag": "v96-stage-elision-ononly-20261016T1320Z",
+      "status": 0,
+      "elapsed_seconds": 18,
+      "log": "results/v96-stage-elision-ononly-20261016T1320Z/on.log",
+      "log_sha256": "f073601812a5c8ff924f51bf1d2455a54788966efcb5a39c7936a7d816a9c6d5",
+      "validator_summary_sha256": "66f80de2a76835f0e3a09a20048c0d927991b976f02bdd8082ae2c3d5850f170",
+      "runner_log_sha256": "4a4f77897cac5b47aea03a139b2eeeac244d04d1973f053701e62aa1d6dbd1a5",
+      "provenance_sha256": "1702eda9b6b56f78dcf1c99b2b368b7f5cf0fe769097f27b9abaf6da553060f1"
+    }
+  },
+  "gate_summary": {
+    "path": "results/v96-stage-elision-ononly-20261016T1320Z/summary.json",
+    "sha256": "5acf43837e116bd6251256ec4f3f70f52c2ca9382971eee13a54caff44653116",
+    "combined_case_log_sha256": {
+      "off": "b8b7e7f73b7e17586c428a9ecca4305835448cc6261dfd0a38d9f6d2e5743662",
+      "on": "f073601812a5c8ff924f51bf1d2455a54788966efcb5a39c7936a7d816a9c6d5"
+    }
+  },
+  "gate": {
+    "communicators_per_process": 1,
+    "six_ranks": true,
+    "mixed_same_communicator_bytes": [
+      163840,
+      41943040,
+      163840
+    ],
+    "mixed_kinds": [
+      0,
+      4,
+      0
+    ],
+    "graph_dispatch_and_append_relay6_exact_aba": true,
+    "all_six_graph_append_rank_order_exact": true,
+    "negative_zero_and_canary_checks_pass": true,
+    "segment_fallback_after_graph_retirement_at_bytes": 42991616,
+    "error_or_xid_markers": 0,
+    "v95_standalone_gpu_tested": false
+  },
+  "initial_reserve_memory": {
+    "off_total_bytes": 3535798272,
+    "on_total_bytes": 1031798784,
+    "off_minus_on_saved_bytes": 2503999488,
+    "per_rank": [
+      {
+        "rank": 0,
+        "off_added_bytes": 589299712,
+        "on_added_bytes": 507510784,
+        "off_minus_on_bytes": 81788928,
+        "leader": true
+      },
+      {
+        "rank": 1,
+        "off_added_bytes": 589299712,
+        "on_added_bytes": 4194304,
+        "off_minus_on_bytes": 585105408,
+        "leader": false
+      },
+      {
+        "rank": 2,
+        "off_added_bytes": 589299712,
+        "on_added_bytes": 4194304,
+        "off_minus_on_bytes": 585105408,
+        "leader": false
+      },
+      {
+        "rank": 3,
+        "off_added_bytes": 589299712,
+        "on_added_bytes": 507510784,
+        "off_minus_on_bytes": 81788928,
+        "leader": true
+      },
+      {
+        "rank": 4,
+        "off_added_bytes": 589299712,
+        "on_added_bytes": 4194304,
+        "off_minus_on_bytes": 585105408,
+        "leader": false
+      },
+      {
+        "rank": 5,
+        "off_added_bytes": 589299712,
+        "on_added_bytes": 4194304,
+        "off_minus_on_bytes": 585105408,
+        "leader": false
+      }
+    ]
+  },
+  "gpu_postflight_on": {
+    "all_six_idle_assertion_passed": true,
+    "observed_utilization_percent": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "max_temperature_c": 39,
+    "min_free_mib": 16121,
+    "observed": [
+      {
+        "rank": 0,
+        "uuid": "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f",
+        "used_mib": 2,
+        "free_mib": 16125,
+        "temperature_c": 39,
+        "utilization_percent": 0
+      },
+      {
+        "rank": 1,
+        "uuid": "GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+        "used_mib": 2,
+        "free_mib": 16125,
+        "temperature_c": 38,
+        "utilization_percent": 0
+      },
+      {
+        "rank": 2,
+        "uuid": "GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+        "used_mib": 2,
+        "free_mib": 16125,
+        "temperature_c": 39,
+        "utilization_percent": 0
+      },
+      {
+        "rank": 3,
+        "uuid": "GPU-fadb0459-4d30-907b-289a-862b3014f165",
+        "used_mib": 4,
+        "free_mib": 16123,
+        "temperature_c": 39,
+        "utilization_percent": 0
+      },
+      {
+        "rank": 4,
+        "uuid": "GPU-760ce501-32f6-69b6-215b-1020da68bbfc",
+        "used_mib": 6,
+        "free_mib": 16121,
+        "temperature_c": 38,
+        "utilization_percent": 0
+      },
+      {
+        "rank": 5,
+        "uuid": "GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+        "used_mib": 6,
+        "free_mib": 16121,
+        "temperature_c": 39,
+        "utilization_percent": 0
+      }
+    ]
+  }
+}

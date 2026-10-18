@@ -1,0 +1,25 @@
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/fourbank-d4-combo-v301-20261017/dual-context-v301-fourbank-d4.cpp: In function ‘int main(int, char**)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/fourbank-d4-combo-v301-20261017/dual-context-v301-fourbank-d4.cpp:1285:37: error: redeclaration of ‘const std::filesystem::__cxx11::path corpus_source_path’
+ 1285 |         const std::filesystem::path corpus_source_path = std::filesystem::path(env_value("ROOT_V131_CORPUS_SOURCE"));
+      |                                     ^~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/fourbank-d4-combo-v301-20261017/dual-context-v301-fourbank-d4.cpp:1245:37: note: ‘const std::filesystem::__cxx11::path corpus_source_path’ previously declared here
+ 1245 |         const std::filesystem::path corpus_source_path = std::filesystem::path(env_value("ROOT_V131_CORPUS_SOURCE"));
+      |                                     ^~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/fourbank-d4-combo-v301-20261017/dual-context-v301-fourbank-d4.cpp:1286:23: error: redeclaration of ‘std::ifstream corpus_source_input’
+ 1286 |         std::ifstream corpus_source_input(corpus_source_path);
+      |                       ^~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/fourbank-d4-combo-v301-20261017/dual-context-v301-fourbank-d4.cpp:1248:23: note: ‘std::ifstream corpus_source_input’ previously declared here
+ 1248 |         std::ifstream corpus_source_input(corpus_source_path);
+      |                       ^~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/fourbank-d4-combo-v301-20261017/dual-context-v301-fourbank-d4.cpp:1288:14: error: redeclaration of ‘json corpus_source_record’
+ 1288 |         json corpus_source_record;
+      |              ^~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/fourbank-d4-combo-v301-20261017/dual-context-v301-fourbank-d4.cpp:1250:14: note: ‘json corpus_source_record’ previously declared here
+ 1250 |         json corpus_source_record;
+      |              ^~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/fourbank-d4-combo-v301-20261017/dual-context-v301-fourbank-d4.cpp:1293:27: error: redeclaration of ‘const std::string corpus_source_sha256’
+ 1293 |         const std::string corpus_source_sha256 = corpus_record.at("assembled_text_sha256").get<std::string>();
+      |                           ^~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/fourbank-d4-combo-v301-20261017/dual-context-v301-fourbank-d4.cpp:1263:27: note: ‘const std::string corpus_source_sha256’ previously declared here
+ 1263 |         const std::string corpus_source_sha256 = corpus_source_record.at("corpus").at("assembled_text_sha256").get<std::string>();
+      |                           ^~~~~~~~~~~~~~~~~~~~

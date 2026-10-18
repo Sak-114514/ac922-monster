@@ -1,0 +1,47 @@
+{
+  "schema": "v146-scenario-provenance-v1",
+  "status": "PREPARED_LOCAL_ONLY",
+  "scenario_file": "v146-scenarios.json",
+  "scenario_sha256": "49a9fd8c564866ab0e6f23309618c5596357d730702d89bb099192cd2edfa3f3",
+  "semantic_source": "fixtures/ep3-two-bank-v51-resource-20261017/v51-scenarios.json",
+  "semantic_source_sha256": "5920e664106a06adf9bb049bd62ea0a76165c78f98be674b9515b8d18c30c636",
+  "corpus_source": "fixtures/long-prefill-combo-v45-20261016/v45-real-corpus-source.json",
+  "corpus_source_sha256": "bd231acb8ce9423222dd0e5b043b2c274163106dc99af8d5a2380916b7df957c",
+  "runtime_token_count_proof": "fixtures/layer6-longprefill-v58-20261017/results/root-v131-layer6-longprefill-20261016t223610299893z/single32k-results.json",
+  "runtime_token_count_proof_sha256": "55b9bc066c60d2937567dda49693152f135af039d0e96857482b74b2cecb0e0f",
+  "runtime_token_count_proven": 92037,
+  "corpus_tokenization": "runner tokenizes the pinned real-corpus segments with the loaded model vocabulary",
+  "performance_geometry": {
+    "banks": 4,
+    "requests_per_bank": 1,
+    "prompt_tokens_per_request": 16384,
+    "output_tokens_per_request": 512,
+    "corpus_token_slices": [
+      [
+        0,
+        16384
+      ],
+      [
+        16384,
+        32768
+      ],
+      [
+        32768,
+        49152
+      ],
+      [
+        49152,
+        65536
+      ]
+    ],
+    "slices_disjoint": true
+  },
+  "native_semantic_gate": {
+    "requests": 4,
+    "one_request_per_bank": true,
+    "source_label": "v49-ordinary-ep3-four-lane-semantic-canary"
+  },
+  "raw_performance_outputs_semantically_scored": false,
+  "model_loads": 1,
+  "gpu_touched": false
+}

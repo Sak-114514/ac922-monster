@@ -1,0 +1,44 @@
+2026-10-16T11:59:01+0800 192 systemd[1562]: Started root-p4-v30-onebank4d3-hierarchical-ep6-shortctx16k-20261016t035857z.service - V30 one-bank four-lane D3 capacity qualification.
+2026-10-16T11:59:02+0800 192 numactl[130263]: {
+2026-10-16T11:59:02+0800 192 numactl[130263]:   "modes": [
+2026-10-16T11:59:02+0800 192 numactl[130263]:     1
+2026-10-16T11:59:02+0800 192 numactl[130263]:   ],
+2026-10-16T11:59:02+0800 192 numactl[130263]:   "profile_dirs": [
+2026-10-16T11:59:02+0800 192 numactl[130263]:     "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30-onebank4d3-hierarchical-ep6-shortctx16k-20261016t035857z/copy1/diagnostic",
+2026-10-16T11:59:02+0800 192 numactl[130263]:     "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30-onebank4d3-hierarchical-ep6-shortctx16k-20261016t035857z/copy1/clean"
+2026-10-16T11:59:02+0800 192 numactl[130263]:   ]
+2026-10-16T11:59:02+0800 192 numactl[130263]: }
+2026-10-16T12:02:49+0800 192 numactl[131603]: Traceback (most recent call last):
+2026-10-16T12:02:49+0800 192 numactl[131603]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/extract_variant_log_v22.py", line 51, in <module>
+2026-10-16T12:02:49+0800 192 numactl[131603]:     raise SystemExit(main())
+2026-10-16T12:02:49+0800 192 numactl[131603]:                      ^^^^^^
+2026-10-16T12:02:49+0800 192 numactl[131603]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/extract_variant_log_v22.py", line 45, in main
+2026-10-16T12:02:49+0800 192 numactl[131603]:     result = extract(args.input.read_text(encoding="utf-8", errors="replace"), args.mode, args.profile)
+2026-10-16T12:02:49+0800 192 numactl[131603]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T12:02:49+0800 192 numactl[131603]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/extract_variant_log_v22.py", line 26, in extract
+2026-10-16T12:02:49+0800 192 numactl[131603]:     raise ValueError(f"mode {mode}/{name}: expected one complete family, starts={starts}, ends={stops}")
+2026-10-16T12:02:49+0800 192 numactl[131603]: ValueError: mode 1/diagnostic: expected one complete family, starts=[1943], ends=[]
+2026-10-16T12:02:49+0800 192 numactl[131605]: Traceback (most recent call last):
+2026-10-16T12:02:49+0800 192 numactl[131605]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/extract_variant_log_v22.py", line 51, in <module>
+2026-10-16T12:02:49+0800 192 numactl[131605]:     raise SystemExit(main())
+2026-10-16T12:02:49+0800 192 numactl[131605]:                      ^^^^^^
+2026-10-16T12:02:49+0800 192 numactl[131605]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/extract_variant_log_v22.py", line 45, in main
+2026-10-16T12:02:49+0800 192 numactl[131605]:     result = extract(args.input.read_text(encoding="utf-8", errors="replace"), args.mode, args.profile)
+2026-10-16T12:02:49+0800 192 numactl[131605]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T12:02:49+0800 192 numactl[131605]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/extract_variant_log_v22.py", line 26, in extract
+2026-10-16T12:02:49+0800 192 numactl[131605]:     raise ValueError(f"mode {mode}/{name}: expected one complete family, starts={starts}, ends={stops}")
+2026-10-16T12:02:49+0800 192 numactl[131605]: ValueError: mode 1/clean: expected one complete family, starts=[], ends=[]
+2026-10-16T12:02:49+0800 192 numactl[131607]: Traceback (most recent call last):
+2026-10-16T12:02:49+0800 192 numactl[131607]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/extract_variant_log_v22.py", line 51, in <module>
+2026-10-16T12:02:49+0800 192 numactl[131607]:     raise SystemExit(main())
+2026-10-16T12:02:49+0800 192 numactl[131607]:                      ^^^^^^
+2026-10-16T12:02:49+0800 192 numactl[131607]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/extract_variant_log_v22.py", line 45, in main
+2026-10-16T12:02:49+0800 192 numactl[131607]:     result = extract(args.input.read_text(encoding="utf-8", errors="replace"), args.mode, args.profile)
+2026-10-16T12:02:49+0800 192 numactl[131607]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T12:02:49+0800 192 numactl[131607]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/extract_variant_log_v22.py", line 26, in extract
+2026-10-16T12:02:49+0800 192 numactl[131607]:     raise ValueError(f"mode {mode}/{name}: expected one complete family, starts={starts}, ends={stops}")
+2026-10-16T12:02:49+0800 192 numactl[131607]: ValueError: mode 1/diagnostic: expected one complete family, starts=[1943], ends=[]
+2026-10-16T12:02:49+0800 192 numactl[130249]: run_rc=1 final_rc=1 output=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30-onebank4d3-hierarchical-ep6-shortctx16k-20261016t035857z variants=1
+2026-10-16T12:02:49+0800 192 systemd[1562]: root-p4-v30-onebank4d3-hierarchical-ep6-shortctx16k-20261016t035857z.service: Main process exited, code=exited, status=1/FAILURE
+2026-10-16T12:02:49+0800 192 systemd[1562]: root-p4-v30-onebank4d3-hierarchical-ep6-shortctx16k-20261016t035857z.service: Failed with result 'exit-code'.
+2026-10-16T12:02:49+0800 192 systemd[1562]: root-p4-v30-onebank4d3-hierarchical-ep6-shortctx16k-20261016t035857z.service: Consumed 1min 12.938s CPU time.

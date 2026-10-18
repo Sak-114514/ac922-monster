@@ -1,0 +1,421 @@
+V342_CONFIG cuda_graphs_force=1 graphs_disabled=0 device_tail=1 hardware_policy=4 helper=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/device-tail-bridge-v328-20261018/build-r3-cap32/libac922-tail-bridge.so decode_tail_hint=independent_tls actual_submit_thread
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+V342_DEVICE rank=0 name=CUDA0 free=16581525504 total=16911433728
+V342_DEVICE rank=1 name=CUDA1 free=16582967296 total=16911433728
+V342_DEVICE rank=2 name=CUDA2 free=16583163904 total=16911433728
+V342_DEVICE rank=3 name=CUDA3 free=16583098368 total=16911433728
+V342_DEVICE rank=4 name=CUDA4 free=16569794560 total=16911433728
+V342_DEVICE rank=5 name=CUDA5 free=16572350464 total=16911433728
+PP pinned inputs requested=1 selected=1 scheduler=0x100168bd7e0 copies=4 cap=268435456 reset_preserves_slots=1 host_slots=4 device_ring_unchanged=1
+V342_CAPTURE slot=0 label=A graph_object=0x7fff71fe1a40 uid=0 nodes=18 leaves=3
+V342_NODE slot=0 uid=0 index=0 ptr=0x7fff71fe0060 name=A_cpu_get_rows_prefix op=GET_ROWS owner=CPU flags=16 src=0x7fff785e0060,0x7fff72ff01d0
+V342_NODE slot=0 uid=0 index=1 ptr=0x7fff71fe01d0 name=A_cuda_stage_sum_0 op=ADD owner=AUTO flags=16 src=0x7fff72ff0060,0x7fff71fe0060
+V342_NODE slot=0 uid=0 index=2 ptr=0x7fff71fe0340 name=A_cuda_stage_0 op=SCALE owner=CUDA0 flags=18 src=0x7fff71fe01d0
+V342_NODE slot=0 uid=0 index=3 ptr=0x7fff71fe04b0 name=A_cuda_stage_sum_1 op=ADD owner=AUTO flags=16 src=0x7fff71fe0340,0x7fff72ff0060
+V342_NODE slot=0 uid=0 index=4 ptr=0x7fff71fe0620 name=A_cuda_stage_prefix_1 op=ADD owner=AUTO flags=16 src=0x7fff71fe04b0,0x7fff71fe0060
+V342_NODE slot=0 uid=0 index=5 ptr=0x7fff71fe0790 name=A_cuda_stage_1 op=SCALE owner=CUDA1 flags=18 src=0x7fff71fe0620
+V342_NODE slot=0 uid=0 index=6 ptr=0x7fff71fe0900 name=A_cuda_stage_sum_2 op=ADD owner=AUTO flags=16 src=0x7fff71fe0790,0x7fff72ff0060
+V342_NODE slot=0 uid=0 index=7 ptr=0x7fff71fe0a70 name=A_cuda_stage_prefix_2 op=ADD owner=AUTO flags=16 src=0x7fff71fe0900,0x7fff71fe0060
+V342_NODE slot=0 uid=0 index=8 ptr=0x7fff71fe0be0 name=A_cuda_stage_2 op=SCALE owner=CUDA2 flags=18 src=0x7fff71fe0a70
+V342_NODE slot=0 uid=0 index=9 ptr=0x7fff71fe0d50 name=A_cuda_stage_sum_3 op=ADD owner=AUTO flags=16 src=0x7fff71fe0be0,0x7fff72ff0060
+V342_NODE slot=0 uid=0 index=10 ptr=0x7fff71fe0ec0 name=A_cuda_stage_prefix_3 op=ADD owner=AUTO flags=16 src=0x7fff71fe0d50,0x7fff71fe0060
+V342_NODE slot=0 uid=0 index=11 ptr=0x7fff71fe1030 name=A_cuda_stage_3 op=SCALE owner=CUDA3 flags=18 src=0x7fff71fe0ec0
+V342_NODE slot=0 uid=0 index=12 ptr=0x7fff71fe11a0 name=A_cuda_stage_sum_4 op=ADD owner=AUTO flags=16 src=0x7fff71fe1030,0x7fff72ff0060
+V342_NODE slot=0 uid=0 index=13 ptr=0x7fff71fe1310 name=A_cuda_stage_prefix_4 op=ADD owner=AUTO flags=16 src=0x7fff71fe11a0,0x7fff71fe0060
+V342_NODE slot=0 uid=0 index=14 ptr=0x7fff71fe1480 name=A_cuda_stage_4 op=SCALE owner=CUDA4 flags=18 src=0x7fff71fe1310
+V342_NODE slot=0 uid=0 index=15 ptr=0x7fff71fe15f0 name=A_cuda_stage_sum_5 op=ADD owner=AUTO flags=16 src=0x7fff71fe1480,0x7fff72ff0060
+V342_NODE slot=0 uid=0 index=16 ptr=0x7fff71fe1760 name=A_cuda_stage_prefix_5 op=ADD owner=AUTO flags=16 src=0x7fff71fe15f0,0x7fff71fe0060
+V342_NODE slot=0 uid=0 index=17 ptr=0x7fff71fe18d0 name=A_cuda_stage_5 op=SCALE owner=CUDA5 flags=18 src=0x7fff71fe1760
+V342_STAGE_OWNER slot=0 uid=0 stage=0 tensor=0x7fff71fe0340 backend=CUDA0 device=CUDA0
+V342_STAGE_OWNER slot=0 uid=0 stage=1 tensor=0x7fff71fe0790 backend=CUDA1 device=CUDA1
+V342_STAGE_OWNER slot=0 uid=0 stage=2 tensor=0x7fff71fe0be0 backend=CUDA2 device=CUDA2
+V342_STAGE_OWNER slot=0 uid=0 stage=3 tensor=0x7fff71fe1030 backend=CUDA3 device=CUDA3
+V342_STAGE_OWNER slot=0 uid=0 stage=4 tensor=0x7fff71fe1480 backend=CUDA4 device=CUDA4
+V342_STAGE_OWNER slot=0 uid=0 stage=5 tensor=0x7fff71fe18d0 backend=CUDA5 device=CUDA5
+V342_CAPTURE slot=1 label=B graph_object=0x7fff70fd1a40 uid=0 nodes=18 leaves=3
+V342_NODE slot=1 uid=0 index=0 ptr=0x7fff70fd0060 name=B_cpu_get_rows_prefix op=GET_ROWS owner=CPU flags=16 src=0x7fff785e0060,0x7fff72ff01d0
+V342_NODE slot=1 uid=0 index=1 ptr=0x7fff70fd01d0 name=B_cuda_stage_sum_0 op=ADD owner=AUTO flags=16 src=0x7fff72ff0060,0x7fff70fd0060
+V342_NODE slot=1 uid=0 index=2 ptr=0x7fff70fd0340 name=B_cuda_stage_0 op=SCALE owner=CUDA0 flags=18 src=0x7fff70fd01d0
+V342_NODE slot=1 uid=0 index=3 ptr=0x7fff70fd04b0 name=B_cuda_stage_sum_1 op=ADD owner=AUTO flags=16 src=0x7fff70fd0340,0x7fff72ff0060
+V342_NODE slot=1 uid=0 index=4 ptr=0x7fff70fd0620 name=B_cuda_stage_prefix_1 op=ADD owner=AUTO flags=16 src=0x7fff70fd04b0,0x7fff70fd0060
+V342_NODE slot=1 uid=0 index=5 ptr=0x7fff70fd0790 name=B_cuda_stage_1 op=SCALE owner=CUDA1 flags=18 src=0x7fff70fd0620
+V342_NODE slot=1 uid=0 index=6 ptr=0x7fff70fd0900 name=B_cuda_stage_sum_2 op=ADD owner=AUTO flags=16 src=0x7fff70fd0790,0x7fff72ff0060
+V342_NODE slot=1 uid=0 index=7 ptr=0x7fff70fd0a70 name=B_cuda_stage_prefix_2 op=ADD owner=AUTO flags=16 src=0x7fff70fd0900,0x7fff70fd0060
+V342_NODE slot=1 uid=0 index=8 ptr=0x7fff70fd0be0 name=B_cuda_stage_2 op=SCALE owner=CUDA2 flags=18 src=0x7fff70fd0a70
+V342_NODE slot=1 uid=0 index=9 ptr=0x7fff70fd0d50 name=B_cuda_stage_sum_3 op=ADD owner=AUTO flags=16 src=0x7fff70fd0be0,0x7fff72ff0060
+V342_NODE slot=1 uid=0 index=10 ptr=0x7fff70fd0ec0 name=B_cuda_stage_prefix_3 op=ADD owner=AUTO flags=16 src=0x7fff70fd0d50,0x7fff70fd0060
+V342_NODE slot=1 uid=0 index=11 ptr=0x7fff70fd1030 name=B_cuda_stage_3 op=SCALE owner=CUDA3 flags=18 src=0x7fff70fd0ec0
+V342_NODE slot=1 uid=0 index=12 ptr=0x7fff70fd11a0 name=B_cuda_stage_sum_4 op=ADD owner=AUTO flags=16 src=0x7fff70fd1030,0x7fff72ff0060
+V342_NODE slot=1 uid=0 index=13 ptr=0x7fff70fd1310 name=B_cuda_stage_prefix_4 op=ADD owner=AUTO flags=16 src=0x7fff70fd11a0,0x7fff70fd0060
+V342_NODE slot=1 uid=0 index=14 ptr=0x7fff70fd1480 name=B_cuda_stage_4 op=SCALE owner=CUDA4 flags=18 src=0x7fff70fd1310
+V342_NODE slot=1 uid=0 index=15 ptr=0x7fff70fd15f0 name=B_cuda_stage_sum_5 op=ADD owner=AUTO flags=16 src=0x7fff70fd1480,0x7fff72ff0060
+V342_NODE slot=1 uid=0 index=16 ptr=0x7fff70fd1760 name=B_cuda_stage_prefix_5 op=ADD owner=AUTO flags=16 src=0x7fff70fd15f0,0x7fff70fd0060
+V342_NODE slot=1 uid=0 index=17 ptr=0x7fff70fd18d0 name=B_cuda_stage_5 op=SCALE owner=CUDA5 flags=18 src=0x7fff70fd1760
+V342_STAGE_OWNER slot=1 uid=0 stage=0 tensor=0x7fff70fd0340 backend=CUDA0 device=CUDA0
+V342_STAGE_OWNER slot=1 uid=0 stage=1 tensor=0x7fff70fd0790 backend=CUDA1 device=CUDA1
+V342_STAGE_OWNER slot=1 uid=0 stage=2 tensor=0x7fff70fd0be0 backend=CUDA2 device=CUDA2
+V342_STAGE_OWNER slot=1 uid=0 stage=3 tensor=0x7fff70fd1030 backend=CUDA3 device=CUDA3
+V342_STAGE_OWNER slot=1 uid=0 stage=4 tensor=0x7fff70fd1480 backend=CUDA4 device=CUDA4
+V342_STAGE_OWNER slot=1 uid=0 stage=5 tensor=0x7fff70fd18d0 backend=CUDA5 device=CUDA5
+CUDA graph structural rejected binding device=0 name=CUDA0#v318_external_cpu_input#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=0 name=CUDA0#A_cpu_get_rows_prefix#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=0 reason=unsupported_external nodes=4 external=2 uid=0
+CUDA graph structural rejected binding device=1 name=CUDA1#A_cuda_stage_prefix_1#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=1 name=CUDA1#v318_external_cpu_input#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=1 name=CUDA1#A_cpu_get_rows_prefix#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=1 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=2 name=CUDA2#A_cuda_stage_prefix_2#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=2 name=CUDA2#v318_external_cpu_input#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=2 name=CUDA2#A_cpu_get_rows_prefix#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=2 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=3 name=CUDA3#A_cuda_stage_prefix_3#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=3 name=CUDA3#v318_external_cpu_input#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=3 name=CUDA3#A_cpu_get_rows_prefix#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=3 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=4 name=CUDA4#A_cuda_stage_prefix_4#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=4 name=CUDA4#v318_external_cpu_input#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=4 name=CUDA4#A_cpu_get_rows_prefix#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=4 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=5 name=CUDA5#A_cuda_stage_prefix_5#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=5 reason=unsupported_external nodes=1 external=1 uid=0
+V342_DECODE_HINT enter frame=0 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+PP pinned input allocation scheduler=0x100168bd7e0 backend=0 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=5099520 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x100168bd7e0 backend=CUDA0 slot=0 source=v318_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+CUDA graph binding key requested=1 selected=1 device=0 raw_key=0x7fff71fe01d0 key=0x10016bb96b0 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=4 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x10012abc5d0 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=4 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x10012abc5d0 device=0 uid=3 nodes=4 mode=capture count=1
+PP pinned input allocation scheduler=0x100168bd7e0 backend=1 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=10199040 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x100168bd7e0 backend=CUDA1 slot=0 source=v318_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x100168bd7e0 source=CUDA0 destination=CUDA1 slot=0 waits=1
+CUDA graph binding key requested=1 selected=1 device=1 raw_key=0x7fff71fe0790 key=0x10017451480 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=3 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x10013782c40 device=1 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=4 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x10013782c40 device=1 uid=4 nodes=3 mode=capture count=1
+PP pinned input allocation scheduler=0x100168bd7e0 backend=2 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=15298560 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x100168bd7e0 backend=CUDA2 slot=0 source=v318_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x100168bd7e0 source=CUDA1 destination=CUDA2 slot=0 waits=2
+CUDA graph binding key requested=1 selected=1 device=2 raw_key=0x7fff71fe0be0 key=0x100179f66f0 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=2 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=3 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x1001444e980 device=2 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=4 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x1001444e980 device=2 uid=5 nodes=3 mode=capture count=1
+PP pinned input allocation scheduler=0x100168bd7e0 backend=3 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=20398080 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x100168bd7e0 backend=CUDA3 slot=0 source=v318_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+CUDA graph binding key requested=1 selected=1 device=3 raw_key=0x7fff71fe1030 key=0x10017f9ba10 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=3 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=3 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x100151238d0 device=3 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=4 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x100151238d0 device=3 uid=6 nodes=3 mode=capture count=1
+PP pinned input allocation scheduler=0x100168bd7e0 backend=4 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=25497600 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x100168bd7e0 backend=CUDA4 slot=0 source=v318_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+CUDA graph binding key requested=1 selected=1 device=4 raw_key=0x7fff71fe1480 key=0x10018540dc0 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=4 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=3 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x10015e02180 device=4 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=4 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x10015e02180 device=4 uid=7 nodes=3 mode=capture count=1
+CUDA graph binding key requested=1 selected=1 device=5 raw_key=0x7fff71fe18d0 key=0x10018adfbf0 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=5 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=1 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x10016aeb010 device=5 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=4 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x10016aeb010 device=5 uid=8 nodes=1 mode=capture count=1
+V342_DECODE_HINT restore frame=0 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_DECODE_HINT enter frame=0 phase=stable_replay requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+PP pinned input allocation scheduler=0x100168bd7e0 backend=0 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=30597120 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_graph_replay tokens=4 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x10012abc5d0 device=0 uid=3 nodes=4 mode=replay count=1
+CUDA device-tail helper requested=1 loaded=1 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/device-tail-bridge-v328-20261018/build-r3-cap32/libac922-tail-bridge.so scope=sm70_explicit_hint_no_cold_cohort_unchanged_graph
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=1 owner=0x10012abc5d0 key=0x10016bb9560
+optimization path device=0 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=4 width=0 auxiliary=0 count=1
+PP pinned input allocation scheduler=0x100168bd7e0 backend=1 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=35696640 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+optimization path device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_graph_replay tokens=3 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x10013782c40 device=1 uid=4 nodes=3 mode=replay count=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=1 owner=0x10013782c40 key=0x10011fa06f0
+optimization path device=1 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=1
+PP pinned input allocation scheduler=0x100168bd7e0 backend=2 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=40796160 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+optimization path device=2 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_graph_replay tokens=3 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x1001444e980 device=2 uid=5 nodes=3 mode=replay count=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=1 owner=0x1001444e980 key=0x10012c95850
+optimization path device=2 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=1
+PP pinned input allocation scheduler=0x100168bd7e0 backend=3 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=45895680 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+optimization path device=3 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_graph_replay tokens=3 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x100151238d0 device=3 uid=6 nodes=3 mode=replay count=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=1 owner=0x100151238d0 key=0x1001395be30
+optimization path device=3 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=1
+PP pinned input allocation scheduler=0x100168bd7e0 backend=4 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=50995200 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+optimization path device=4 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_graph_replay tokens=3 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x10015e02180 device=4 uid=7 nodes=3 mode=replay count=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=1 owner=0x10015e02180 key=0x10014627b70
+optimization path device=4 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=1
+optimization path device=5 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_graph_replay tokens=1 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x10016aeb010 device=5 uid=8 nodes=1 mode=replay count=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=1 owner=0x10016aeb010 key=0x100152fcac0
+optimization path device=5 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=1 width=0 auxiliary=0 count=1
+V342_DECODE_HINT restore frame=0 phase=stable_replay restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_STABLE_REPLAY frame=0 same_graph=1 same_bindings=1 synchronized_before_replay=1
+V342_SUBMIT frame=0 slot=0 label=A root_graph=0x7fff71fe1a40 uid=1 same_object_reused=0 sched_copies=4 copy_index_inferred_from_alloc_order=0 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_RESTORE slot=0 label=A uid=1 owner_match=1 node_src_restored=1 pending_prior_frames=1
+CUDA graph structural rejected binding device=0 name=CUDA0#v318_external_cpu_input#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected binding device=0 name=CUDA0#B_cpu_get_rows_prefix#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=0 reason=unsupported_external nodes=4 external=2 uid=0
+CUDA graph structural rejected binding device=1 name=CUDA1#B_cuda_stage_prefix_1#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=1 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=2 name=CUDA2#B_cuda_stage_prefix_2#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=2 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=3 name=CUDA3#B_cuda_stage_prefix_3#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=3 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=4 name=CUDA4#B_cuda_stage_prefix_4#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=4 reason=unsupported_external nodes=3 external=3 uid=0
+CUDA graph structural rejected binding device=5 name=CUDA5#B_cuda_stage_prefix_5#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+CUDA graph structural rejected graph device=5 reason=unsupported_external nodes=1 external=1 uid=0
+V342_DECODE_HINT enter frame=1 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+PP pinned input allocation scheduler=0x100168bd7e0 backend=0 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=56094720 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x10012abc5d0 device=0 raw_key=0x7fff70fd01d0 section=node index=0 old_name=A_cuda_stage_sum_0 new_name=B_cuda_stage_sum_0 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdb0d74000 new_data=0x7ffdb0d74000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10012abc5d0 device=0 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=1/16
+CUDA graph binding key requested=1 selected=1 device=0 raw_key=0x7fff70fd01d0 key=0x10019fad2e0 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph path active ctx=0x10012abc5d0 device=0 uid=11 nodes=4 mode=capture count=2
+PP pinned input allocation scheduler=0x100168bd7e0 backend=1 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=61194240 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x10013782c40 device=1 raw_key=0x7fff70fd0790 section=node index=0 old_name=A_cuda_stage_1 new_name=B_cuda_stage_1 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdb312e000 new_data=0x7ffdb312e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10013782c40 device=1 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=1/16
+CUDA graph binding key requested=1 selected=1 device=1 raw_key=0x7fff70fd0790 key=0x10019fc2970 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph path active ctx=0x10013782c40 device=1 uid=12 nodes=3 mode=capture count=2
+PP pinned input allocation scheduler=0x100168bd7e0 backend=2 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=66293760 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x1001444e980 device=2 raw_key=0x7fff70fd0be0 section=node index=0 old_name=A_cuda_stage_2 new_name=B_cuda_stage_2 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdb552e000 new_data=0x7ffdb552e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1001444e980 device=2 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=1/16
+CUDA graph binding key requested=1 selected=1 device=2 raw_key=0x7fff70fd0be0 key=0x10019fd59c0 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph path active ctx=0x1001444e980 device=2 uid=13 nodes=3 mode=capture count=2
+PP pinned input allocation scheduler=0x100168bd7e0 backend=3 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=71393280 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x100151238d0 device=3 raw_key=0x7fff70fd1030 section=node index=0 old_name=A_cuda_stage_3 new_name=B_cuda_stage_3 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdb792e000 new_data=0x7ffdb792e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x100151238d0 device=3 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=1/16
+CUDA graph binding key requested=1 selected=1 device=3 raw_key=0x7fff70fd1030 key=0x10019fe8a10 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph path active ctx=0x100151238d0 device=3 uid=14 nodes=3 mode=capture count=2
+PP pinned input allocation scheduler=0x100168bd7e0 backend=4 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=76492800 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x10015e02180 device=4 raw_key=0x7fff70fd1480 section=node index=0 old_name=A_cuda_stage_4 new_name=B_cuda_stage_4 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdb9d2e000 new_data=0x7ffdb9d2e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10015e02180 device=4 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=1/16
+CUDA graph binding key requested=1 selected=1 device=4 raw_key=0x7fff70fd1480 key=0x10019ffba60 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph path active ctx=0x10015e02180 device=4 uid=15 nodes=3 mode=capture count=2
+CUDA graph signature detail ctx=0x10016aeb010 device=5 raw_key=0x7fff70fd18d0 section=node index=0 old_name=A_cuda_stage_5 new_name=B_cuda_stage_5 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdbadba000 new_data=0x7ffdbadba000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10016aeb010 device=5 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=1/16
+CUDA graph binding key requested=1 selected=1 device=5 raw_key=0x7fff70fd18d0 key=0x1001a0085f0 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph path active ctx=0x10016aeb010 device=5 uid=16 nodes=1 mode=capture count=2
+V342_DECODE_HINT restore frame=1 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=1 slot=1 label=B root_graph=0x7fff70fd1a40 uid=9 same_object_reused=0 sched_copies=4 copy_index_inferred_from_alloc_order=1 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_RESTORE slot=1 label=B uid=9 owner_match=1 node_src_restored=1 pending_prior_frames=1
+CUDA graph structural rejected binding device=5 name=CUDA5#A_cuda_stage_prefix_5#2 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+V342_DECODE_HINT enter frame=2 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+PP pinned input allocation scheduler=0x100168bd7e0 backend=0 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=81592320 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x10012abc5d0 device=0 raw_key=0x7fff71fe01d0 section=node index=0 old_name=B_cuda_stage_sum_0 new_name=A_cuda_stage_sum_0 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdb0d74000 new_data=0x7ffdb0d74000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10012abc5d0 device=0 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=2/16
+PP pinned input allocation scheduler=0x100168bd7e0 backend=1 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=86691840 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x10013782c40 device=1 raw_key=0x7fff71fe0790 section=node index=0 old_name=B_cuda_stage_1 new_name=A_cuda_stage_1 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdb312e000 new_data=0x7ffdb312e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10013782c40 device=1 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=2/16
+PP pinned input allocation scheduler=0x100168bd7e0 backend=2 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=91791360 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x1001444e980 device=2 raw_key=0x7fff71fe0be0 section=external index=0 old_name=CUDA2#A_cuda_stage_prefix_2#0 new_name=CUDA2#A_cuda_stage_prefix_2#2 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdb3800000 new_data=0x7ffdb3cdd000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1001444e980 device=2 reference=same_size_owned_signature section=external index=0 field=data same_data=0 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=2/16
+PP pinned input allocation scheduler=0x100168bd7e0 backend=3 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=96890880 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x100151238d0 device=3 raw_key=0x7fff71fe1030 section=external index=0 old_name=CUDA3#A_cuda_stage_prefix_3#0 new_name=CUDA3#A_cuda_stage_prefix_3#2 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdb5c00000 new_data=0x7ffdb60dd000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x100151238d0 device=3 reference=same_size_owned_signature section=external index=0 field=data same_data=0 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=2/16
+PP pinned input allocation scheduler=0x100168bd7e0 backend=4 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=101990400 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+CUDA graph signature detail ctx=0x10015e02180 device=4 raw_key=0x7fff71fe1480 section=node index=0 old_name=B_cuda_stage_4 new_name=A_cuda_stage_4 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdb9d2e000 new_data=0x7ffdb9d2e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10015e02180 device=4 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=2/16
+CUDA graph signature detail ctx=0x10016aeb010 device=5 raw_key=0x7fff71fe18d0 section=external index=0 old_name=CUDA5#A_cuda_stage_prefix_5#0 new_name=CUDA5#A_cuda_stage_prefix_5#2 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdba400000 new_data=0x7ffdba8dd000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10016aeb010 device=5 reference=same_size_owned_signature section=external index=0 field=data same_data=0 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=2/16
+V342_DECODE_HINT restore frame=2 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=2 slot=0 label=A root_graph=0x7fff71fe1a40 uid=17 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=2 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_RESTORE slot=0 label=A uid=17 owner_match=1 node_src_restored=1 pending_prior_frames=1
+CUDA graph structural rejected binding device=5 name=CUDA5#B_cuda_stage_prefix_5#3 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=2560,249,1,1
+V342_DECODE_HINT enter frame=3 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+CUDA graph signature detail ctx=0x10012abc5d0 device=0 raw_key=0x7fff70fd01d0 section=node index=0 old_name=A_cuda_stage_sum_0 new_name=B_cuda_stage_sum_0 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdb0d74000 new_data=0x7ffdb0d74000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10012abc5d0 device=0 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=3/16
+CUDA graph binding key requested=1 selected=1 device=0 raw_key=0x7fff70fd01d0 key=0x10018c8bae0 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph signature detail ctx=0x10013782c40 device=1 raw_key=0x7fff70fd0790 section=node index=0 old_name=A_cuda_stage_1 new_name=B_cuda_stage_1 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdb312e000 new_data=0x7ffdb312e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10013782c40 device=1 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=3/16
+CUDA graph binding key requested=1 selected=1 device=1 raw_key=0x7fff70fd0790 key=0x10018c93230 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph signature detail ctx=0x1001444e980 device=2 raw_key=0x7fff70fd0be0 section=node index=0 old_name=A_cuda_stage_2 new_name=B_cuda_stage_2 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdb552e000 new_data=0x7ffdb552e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1001444e980 device=2 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=3/16
+CUDA graph binding key requested=1 selected=1 device=2 raw_key=0x7fff70fd0be0 key=0x10018c98640 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph signature detail ctx=0x100151238d0 device=3 raw_key=0x7fff70fd1030 section=node index=0 old_name=A_cuda_stage_3 new_name=B_cuda_stage_3 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdb792e000 new_data=0x7ffdb792e000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x100151238d0 device=3 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=3/16
+CUDA graph binding key requested=1 selected=1 device=3 raw_key=0x7fff70fd1030 key=0x10018c9da50 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph signature detail ctx=0x10015e02180 device=4 raw_key=0x7fff70fd1480 section=external index=0 old_name=CUDA4#B_cuda_stage_prefix_4#1 new_name=CUDA4#B_cuda_stage_prefix_4#3 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdb826e800 new_data=0x7ffdb874b800 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10015e02180 device=4 reference=same_size_owned_signature section=external index=0 field=data same_data=0 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=3/16
+CUDA graph binding key requested=1 selected=1 device=4 raw_key=0x7fff70fd1480 key=0x10018ca2ec0 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph signature detail ctx=0x10016aeb010 device=5 raw_key=0x7fff70fd18d0 section=node index=0 old_name=A_cuda_stage_5 new_name=B_cuda_stage_5 old_ne=[2560,249,1,1] new_ne=[2560,249,1,1] old_data=0x7ffdbadba000 new_data=0x7ffdbadba000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x10016aeb010 device=5 reference=same_size_owned_signature section=node index=0 field=name same_data=1 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=3/16
+CUDA graph binding key requested=1 selected=1 device=5 raw_key=0x7fff70fd18d0 key=0x10018ca7360 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+V342_DECODE_HINT restore frame=3 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=3 slot=1 label=B root_graph=0x7fff70fd1a40 uid=25 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=3 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_WINDOW_PASS window=0 submitted=4 drained=1 exact=24/24 canaries=all
+V342_RESTORE slot=1 label=B uid=25 owner_match=1 node_src_restored=1 pending_prior_frames=0
+V342_DECODE_HINT enter frame=4 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+CUDA graph path active ctx=0x10012abc5d0 device=0 uid=35 nodes=4 mode=replay count=2
+optimization path device=0 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=4 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x10013782c40 device=1 uid=36 nodes=3 mode=replay count=2
+optimization path device=1 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x1001444e980 device=2 uid=37 nodes=3 mode=replay count=2
+optimization path device=2 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x100151238d0 device=3 uid=38 nodes=3 mode=replay count=2
+optimization path device=3 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x10015e02180 device=4 uid=39 nodes=3 mode=replay count=2
+optimization path device=4 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=3 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x10016aeb010 device=5 uid=40 nodes=1 mode=replay count=2
+optimization path device=5 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=1 width=0 auxiliary=0 count=2
+V342_DECODE_HINT restore frame=4 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=4 slot=0 label=A root_graph=0x7fff71fe1a40 uid=33 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=0 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_RESTORE slot=0 label=A uid=33 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V342_DECODE_HINT enter frame=5 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=2 owner=0x10012abc5d0 key=0x1001286e250
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=2 owner=0x10013782c40 key=0x10019fc1880
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=2 owner=0x1001444e980 key=0x10019fd48d0
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=2 owner=0x100151238d0 key=0x10019fe7920
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=2 owner=0x10015e02180 key=0x10019ffa970
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=2 owner=0x10016aeb010 key=0x1001a008500
+V342_DECODE_HINT restore frame=5 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=5 slot=1 label=B root_graph=0x7fff70fd1a40 uid=41 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=1 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_RESTORE slot=1 label=B uid=41 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V342_DECODE_HINT enter frame=6 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=3 owner=0x10012abc5d0 key=0x10018c15850
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=3 owner=0x10013782c40 key=0x10018c45420
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=3 owner=0x1001444e980 key=0x10018c4f970
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=3 owner=0x100151238d0 key=0x10018c59fe0
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=3 owner=0x10015e02180 key=0x10018c64650
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=3 owner=0x10016aeb010 key=0x10018c696f0
+V342_DECODE_HINT restore frame=6 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=6 slot=0 label=A root_graph=0x7fff71fe1a40 uid=49 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=2 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_RESTORE slot=0 label=A uid=49 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V342_DECODE_HINT enter frame=7 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=4 owner=0x10012abc5d0 key=0x10018c6c540
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=4 owner=0x10013782c40 key=0x10018c92140
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=4 owner=0x1001444e980 key=0x10018c975b0
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=4 owner=0x100151238d0 key=0x10018c9ca40
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=4 owner=0x10015e02180 key=0x10018ca1ed0
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=4 owner=0x10016aeb010 key=0x10018ca6f20
+V342_DECODE_HINT restore frame=7 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=7 slot=1 label=B root_graph=0x7fff70fd1a40 uid=57 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=3 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_WINDOW_PASS window=1 submitted=4 drained=1 exact=24/24 canaries=all
+V342_RESTORE slot=1 label=B uid=57 owner_match=1 node_src_restored=1 pending_prior_frames=0
+V342_DECODE_HINT enter frame=8 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+V342_DECODE_HINT restore frame=8 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=8 slot=0 label=A root_graph=0x7fff71fe1a40 uid=65 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=0 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_RESTORE slot=0 label=A uid=65 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V342_DECODE_HINT enter frame=9 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+V342_DECODE_HINT restore frame=9 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=9 slot=1 label=B root_graph=0x7fff70fd1a40 uid=73 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=1 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_RESTORE slot=1 label=B uid=73 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V342_DECODE_HINT enter frame=10 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+V342_DECODE_HINT restore frame=10 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=10 slot=0 label=A root_graph=0x7fff71fe1a40 uid=81 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=2 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_RESTORE slot=0 label=A uid=81 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V342_DECODE_HINT enter frame=11 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+V342_DECODE_HINT restore frame=11 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=11 slot=1 label=B root_graph=0x7fff70fd1a40 uid=89 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=3 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_WINDOW_PASS window=2 submitted=4 drained=1 exact=24/24 canaries=all
+V342_RESTORE slot=1 label=B uid=89 owner_match=1 node_src_restored=1 pending_prior_frames=0
+V342_DECODE_HINT enter frame=12 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+V342_DECODE_HINT restore frame=12 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=12 slot=0 label=A root_graph=0x7fff71fe1a40 uid=97 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=0 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_RESTORE slot=0 label=A uid=97 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V342_DECODE_HINT enter frame=13 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+V342_DECODE_HINT restore frame=13 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=13 slot=1 label=B root_graph=0x7fff70fd1a40 uid=105 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=1 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_RESTORE slot=1 label=B uid=105 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V342_DECODE_HINT enter frame=14 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+V342_DECODE_HINT restore frame=14 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=14 slot=0 label=A root_graph=0x7fff71fe1a40 uid=113 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=2 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_RESTORE slot=0 label=A uid=113 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V342_DECODE_HINT enter frame=15 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+V342_DECODE_HINT restore frame=15 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=15 slot=1 label=B root_graph=0x7fff70fd1a40 uid=121 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=3 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_WINDOW_PASS window=3 submitted=4 drained=1 exact=24/24 canaries=all
+V342_RESTORE slot=1 label=B uid=121 owner_match=1 node_src_restored=1 pending_prior_frames=0
+V342_DECODE_HINT enter frame=16 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+V342_DECODE_HINT restore frame=16 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=16 slot=0 label=A root_graph=0x7fff71fe1a40 uid=129 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=0 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_RESTORE slot=0 label=A uid=129 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V342_DECODE_HINT enter frame=17 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+V342_DECODE_HINT restore frame=17 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=17 slot=1 label=B root_graph=0x7fff70fd1a40 uid=137 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=1 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_RESTORE slot=1 label=B uid=137 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V342_DECODE_HINT enter frame=18 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+V342_DECODE_HINT restore frame=18 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=18 slot=0 label=A root_graph=0x7fff71fe1a40 uid=145 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=2 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_RESTORE slot=0 label=A uid=145 owner_match=1 node_src_restored=1 pending_prior_frames=1
+V342_DECODE_HINT enter frame=19 phase=frame_submit requested=1 previous=0 scope=actual_submit_thread thread=13150998922612641899
+V342_DECODE_HINT restore frame=19 phase=frame_submit restored=0 prior_current=1 scope=actual_submit_thread thread=13150998922612641899
+V342_SUBMIT frame=19 slot=1 label=B root_graph=0x7fff70fd1a40 uid=153 same_object_reused=1 sched_copies=4 copy_index_inferred_from_alloc_order=3 copy_index_runtime_observed=0 cpu_external=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 pending_readbacks=6
+V342_WINDOW_PASS window=4 submitted=4 drained=1 exact=24/24 canaries=all
+V342_PASS frames=20 root_graph_objects=2 distinct_allocated_uids=20 alternating_ABAB=1 scheduler_copies=4 reuse_restores=19 cleanup_restores=1 seals=20 six_stages=1 cpu_external=20 cpu_get_rows=20 four_submit_windows=5 exact=120/120 canaries=all decode_hint_scopes=21/21 stable_replay_submit=1 query_supported_readbacks=120 pending_at_submit=120 max_pending_prior_frames=1 copy_index_claim=alloc-order-inference-only
+PP pinned inputs summary scheduler=0x100168bd7e0 copies=210 declines=0 pinned_high_water=101990400 cap=268435456
+PP pinned source wait summary scheduler=0x100168bd7e0 backend=0 host_slots=4 count=17 total_us=366 max_us=52
+PP pinned source wait summary scheduler=0x100168bd7e0 backend=1 host_slots=4 count=17 total_us=248 max_us=21
+PP pinned source wait summary scheduler=0x100168bd7e0 backend=2 host_slots=4 count=17 total_us=417 max_us=88
+PP pinned source wait summary scheduler=0x100168bd7e0 backend=3 host_slots=4 count=17 total_us=354 max_us=84
+PP pinned source wait summary scheduler=0x100168bd7e0 backend=4 host_slots=4 count=17 total_us=702 max_us=84
+CUDA graph structural stats device=5 attempts=41 built=21 reject_too_large=0 reject_graph=0 reject_external=20 reject_missing=0 active_matches=17 variant_matches=0 lookup_misses=4 cross_descriptor_replays=17 flat_snapshot_hits=0 flat_snapshot_misses=0 signature_build_us=209 lookup_us=186
+FreeToken host ctx=0x10016aeb010 kind=eager calls=0 total_us=0 nodes=0
+FreeToken host ctx=0x10016aeb010 kind=capture calls=4 total_us=1175 nodes=4
+FreeToken host ctx=0x10016aeb010 kind=replay calls=17 total_us=10432 nodes=17
+FreeToken host ctx=0x10016aeb010 kind=launch calls=21 total_us=9684 nodes=0
+FreeToken host ctx=0x10016aeb010 kind=synchronize calls=26 total_us=457 nodes=0
+FreeToken host ctx=0x10016aeb010 kind=instantiate calls=4 total_us=159 nodes=0
+FreeToken host ctx=0x10016aeb010 kind=exec_update calls=4 total_us=11 nodes=0
+FreeToken host ctx=0x10016aeb010 kind=reinstantiate calls=0 total_us=0 nodes=0
+CUDA graph structural stats device=4 attempts=41 built=21 reject_too_large=0 reject_graph=0 reject_external=20 reject_missing=0 active_matches=17 variant_matches=0 lookup_misses=4 cross_descriptor_replays=17 flat_snapshot_hits=0 flat_snapshot_misses=0 signature_build_us=372 lookup_us=248
+FreeToken host ctx=0x10015e02180 kind=eager calls=0 total_us=0 nodes=0
+FreeToken host ctx=0x10015e02180 kind=capture calls=4 total_us=3148 nodes=12
+FreeToken host ctx=0x10015e02180 kind=replay calls=17 total_us=10943 nodes=51
+FreeToken host ctx=0x10015e02180 kind=launch calls=21 total_us=9954 nodes=0
+FreeToken host ctx=0x10015e02180 kind=synchronize calls=26 total_us=216 nodes=0
+FreeToken host ctx=0x10015e02180 kind=instantiate calls=4 total_us=179 nodes=0
+FreeToken host ctx=0x10015e02180 kind=exec_update calls=4 total_us=12 nodes=0
+FreeToken host ctx=0x10015e02180 kind=reinstantiate calls=0 total_us=0 nodes=0
+CUDA graph structural stats device=3 attempts=41 built=21 reject_too_large=0 reject_graph=0 reject_external=20 reject_missing=0 active_matches=17 variant_matches=0 lookup_misses=4 cross_descriptor_replays=17 flat_snapshot_hits=0 flat_snapshot_misses=0 signature_build_us=375 lookup_us=269
+FreeToken host ctx=0x100151238d0 kind=eager calls=0 total_us=0 nodes=0
+FreeToken host ctx=0x100151238d0 kind=capture calls=4 total_us=3159 nodes=12
+FreeToken host ctx=0x100151238d0 kind=replay calls=17 total_us=10791 nodes=51
+FreeToken host ctx=0x100151238d0 kind=launch calls=21 total_us=9830 nodes=0
+FreeToken host ctx=0x100151238d0 kind=synchronize calls=26 total_us=418 nodes=0
+FreeToken host ctx=0x100151238d0 kind=instantiate calls=4 total_us=199 nodes=0
+FreeToken host ctx=0x100151238d0 kind=exec_update calls=4 total_us=15 nodes=0
+FreeToken host ctx=0x100151238d0 kind=reinstantiate calls=0 total_us=0 nodes=0
+CUDA graph structural stats device=2 attempts=41 built=21 reject_too_large=0 reject_graph=0 reject_external=20 reject_missing=0 active_matches=17 variant_matches=0 lookup_misses=4 cross_descriptor_replays=17 flat_snapshot_hits=0 flat_snapshot_misses=0 signature_build_us=417 lookup_us=452
+FreeToken host ctx=0x1001444e980 kind=eager calls=0 total_us=0 nodes=0
+FreeToken host ctx=0x1001444e980 kind=capture calls=4 total_us=3198 nodes=12
+FreeToken host ctx=0x1001444e980 kind=replay calls=17 total_us=11423 nodes=51
+FreeToken host ctx=0x1001444e980 kind=launch calls=21 total_us=10236 nodes=0
+FreeToken host ctx=0x1001444e980 kind=synchronize calls=26 total_us=594 nodes=0
+FreeToken host ctx=0x1001444e980 kind=instantiate calls=4 total_us=207 nodes=0
+FreeToken host ctx=0x1001444e980 kind=exec_update calls=4 total_us=13 nodes=0
+FreeToken host ctx=0x1001444e980 kind=reinstantiate calls=0 total_us=0 nodes=0
+CUDA graph structural stats device=1 attempts=41 built=21 reject_too_large=0 reject_graph=0 reject_external=20 reject_missing=0 active_matches=17 variant_matches=0 lookup_misses=4 cross_descriptor_replays=17 flat_snapshot_hits=0 flat_snapshot_misses=0 signature_build_us=532 lookup_us=560
+FreeToken host ctx=0x10013782c40 kind=eager calls=0 total_us=0 nodes=0
+FreeToken host ctx=0x10013782c40 kind=capture calls=4 total_us=3206 nodes=12
+FreeToken host ctx=0x10013782c40 kind=replay calls=17 total_us=11342 nodes=51
+FreeToken host ctx=0x10013782c40 kind=launch calls=21 total_us=9878 nodes=0
+FreeToken host ctx=0x10013782c40 kind=synchronize calls=26 total_us=457 nodes=0
+FreeToken host ctx=0x10013782c40 kind=instantiate calls=4 total_us=199 nodes=0
+FreeToken host ctx=0x10013782c40 kind=exec_update calls=4 total_us=15 nodes=0
+FreeToken host ctx=0x10013782c40 kind=reinstantiate calls=0 total_us=0 nodes=0
+CUDA graph structural stats device=0 attempts=41 built=21 reject_too_large=0 reject_graph=0 reject_external=20 reject_missing=0 active_matches=17 variant_matches=0 lookup_misses=4 cross_descriptor_replays=17 flat_snapshot_hits=0 flat_snapshot_misses=0 signature_build_us=630 lookup_us=250
+FreeToken host ctx=0x10012abc5d0 kind=eager calls=0 total_us=0 nodes=0
+FreeToken host ctx=0x10012abc5d0 kind=capture calls=4 total_us=5141 nodes=16
+FreeToken host ctx=0x10012abc5d0 kind=replay calls=17 total_us=11962 nodes=68
+FreeToken host ctx=0x10012abc5d0 kind=launch calls=21 total_us=10226 nodes=0
+FreeToken host ctx=0x10012abc5d0 kind=synchronize calls=26 total_us=825 nodes=0
+FreeToken host ctx=0x10012abc5d0 kind=instantiate calls=4 total_us=199 nodes=0
+FreeToken host ctx=0x10012abc5d0 kind=exec_update calls=4 total_us=19 nodes=0
+FreeToken host ctx=0x10012abc5d0 kind=reinstantiate calls=0 total_us=0 nodes=0
+optimization path summary device=0 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=17 selected=17
+optimization path summary device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=21 selected=21
+optimization path summary device=1 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=17 selected=17
+optimization path summary device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=21 selected=21
+optimization path summary device=2 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=17 selected=17
+optimization path summary device=2 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=21 selected=21
+optimization path summary device=3 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=17 selected=17
+optimization path summary device=3 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=21 selected=21
+optimization path summary device=4 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=17 selected=17
+optimization path summary device=4 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=21 selected=21
+optimization path summary device=5 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=17 selected=17
+optimization path summary device=5 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=21 selected=21

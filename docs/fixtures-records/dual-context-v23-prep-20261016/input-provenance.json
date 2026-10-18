@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-15T19:59:47.847820+00:00",
+  "semantic_source": {
+    "path": "native-semantic/case-input.json",
+    "sha256": "f2487f90c32d0e383494dc5ae68bec24d6bf0c8d31a065dfbf614447fb6b53fd",
+    "case_count": 16
+  },
+  "semantic_checkers": [
+    {
+      "id": "capital-en",
+      "checker": "exact_text",
+      "expected_sha256": "6e36e9be37fd72568e933e2f3c2b51a98a769dd51b2560be58a2ac656e1767e1"
+    },
+    {
+      "id": "arithmetic-zh",
+      "checker": "exact_text",
+      "expected_sha256": "8dd66cf16453e6c8049a661dbfbc50d4190e4a943e4d682f4ce70c5617360054"
+    },
+    {
+      "id": "logic-en",
+      "checker": "exact_text",
+      "expected_sha256": "8715f26d0d6e170f900e60938fedd70eb9b8b227166bb66a99ace161a7f936bf"
+    },
+    {
+      "id": "strict-json-zh",
+      "checker": "strict_json",
+      "expected_sha256": "56eeeaa959dcbc646cc0698efd824887cec641f968d2f1cef9d7853775037182"
+    },
+    {
+      "id": "python-clamp",
+      "checker": "clamp_ast",
+      "expected_sha256": "88c3bf52d3d6682f86c4239dc469854f7ed51b34cd8abfd580608e22bedb98d4"
+    },
+    {
+      "id": "vocabulary-en-zh",
+      "checker": "exact_text",
+      "expected_sha256": "3aae004f448787fcf06c2d53933fff00a45fc5117c21e1070f967e37d43760ef"
+    },
+    {
+      "id": "parallel2-add-en",
+      "checker": "strict_json",
+      "expected_sha256": "d67abbde61e315ed336ac2fcfba0378c1d90ff598e6f9fe342ebabc57b7b91fa"
+    },
+    {
+      "id": "parallel2-subtract-zh",
+      "checker": "strict_json",
+      "expected_sha256": "d8c360ed869c2a6078685cee8671e09c46d3d6dbacb00ef2ac7139ea158a96d8"
+    },
+    {
+      "id": "parallel4-add",
+      "checker": "strict_json",
+      "expected_sha256": "ca35dbf67cecfa786317e4106f7c8b6956a314911a183a79ae61e03ad07a7d14"
+    },
+    {
+      "id": "parallel4-subtract",
+      "checker": "strict_json",
+      "expected_sha256": "ce5b215cf6d88681f312f4a7eae0d88aec71d7d601719a10ff7d131e5185beac"
+    },
+    {
+      "id": "parallel4-multiply",
+      "checker": "strict_json",
+      "expected_sha256": "b599e93a9ebec4e4d1297fb658f9158967f646e7ae1aa9402e9b7d03d1db352e"
+    },
+    {
+      "id": "parallel4-divide",
+      "checker": "strict_json",
+      "expected_sha256": "42bee64308a6847d1d2ea2c10c910da6c85821f64f589ecc9bd1fc8690d37736"
+    },
+    {
+      "id": "slot-reuse-0",
+      "checker": "strict_json",
+      "expected_sha256": "9a2dee13153686e6cc9f91e45b377d5249859890584ae271c1a3a692628f4976"
+    },
+    {
+      "id": "slot-reuse-1",
+      "checker": "strict_json",
+      "expected_sha256": "804b82cf5cf963e6184a3898674a043125a42e70c1772690b60ab649fbd53a9f"
+    },
+    {
+      "id": "slot-reuse-2",
+      "checker": "strict_json",
+      "expected_sha256": "c355210186885300543a2c72ecbd6b77ca2b0884aa255c8dee40797347ada023"
+    },
+    {
+      "id": "slot-reuse-3",
+      "checker": "strict_json",
+      "expected_sha256": "ee58b287c5ba66bb90efcc7c21909f608e1d1f672bcdfbb50f7300b36e05e9ba"
+    }
+  ],
+  "semantic_gate": "run_semantic_native.evaluate_case (AST parse only; no generated code execution)",
+  "semantic_runner_id_slot_policy": "null; these local bank/lane IDs are not HTTP id_slot values",
+  "single8k_prefill_probe": {
+    "label": "single8k-pp-probe-32",
+    "input_tokens": 8192,
+    "output_tokens": 32,
+    "prompt_cache_enabled": false,
+    "uncached_prompt": true,
+    "fresh_context_state": "bank.reset clears target and MTP memory before each scenario"
+  },
+  "real_corpus_source": {
+    "path": "real-corpus-token-ids.json",
+    "sha256": "1b85382068bee8ed9108db3e5b924f020dedf00d43d6da80c9d218099d428a02",
+    "recording_type": "r19_real_corpus_token_ids",
+    "tokenizer_server": "http://127.0.0.1:18002",
+    "corpus_id": "llama-v100-v3-repository-mixed-prose-code-v1",
+    "assembled_text_sha256": "4beb8354e7e5a8622b9e65e7021164a985a61ad991e2077ff84b5ad32f48da21",
+    "source_token_count": 89149,
+    "task_suffix_token_sha256": "ca865819d0bd92a5bf0a2ce30231a5280aef94ca42f3127b8e260fe8d3ac6e35"
+  },
+  "derived_8k_windows": [
+    {
+      "id": "real8k-0",
+      "input_tokens": 8192,
+      "body_start_in_two_saved_flows": 0,
+      "body_end_exclusive_in_two_saved_flows": 8155,
+      "task_suffix_tokens": 37,
+      "token_sha256": "eb693b9eea64c6b60325dfd7329b1df8faa31295bc13ba5f943d67be4ae203b5"
+    },
+    {
+      "id": "real8k-1",
+      "input_tokens": 8192,
+      "body_start_in_two_saved_flows": 2718,
+      "body_end_exclusive_in_two_saved_flows": 10873,
+      "task_suffix_tokens": 37,
+      "token_sha256": "9c47f2ec264ca4702a7dcab71f87de26bf881052bda47fd947849b8b5b202147"
+    },
+    {
+      "id": "real8k-2",
+      "input_tokens": 8192,
+      "body_start_in_two_saved_flows": 5436,
+      "body_end_exclusive_in_two_saved_flows": 13591,
+      "task_suffix_tokens": 37,
+      "token_sha256": "11bde497b6144c4051df7ad7428922ae972cc13be4cae8f857a69d7caa72b6a1"
+    },
+    {
+      "id": "real8k-3",
+      "input_tokens": 8192,
+      "body_start_in_two_saved_flows": 8155,
+      "body_end_exclusive_in_two_saved_flows": 16310,
+      "task_suffix_tokens": 37,
+      "token_sha256": "72da55c75fccd86e2541c38ba4877b7be2c1016cfb385c1811538086310c0cef"
+    }
+  ],
+  "window_overlap_note": "four unique 8K token arrays are sliding windows over the two adjacent saved 8K corpus flows; windows overlap by design because the saved token recording contains only c1/c2 profiles, not the full corpus token array",
+  "model_token_ids_are_precomputed": true,
+  "runner_does_not_retokenize_raw_8k_prompt": true
+}

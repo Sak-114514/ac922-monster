@@ -1,0 +1,47 @@
+{
+  "schema": "v307-original-v50-checker-read-closure-v1",
+  "status": "PASS_BOTH_SAVED_NATIVE_CANARIES",
+  "checker_copy": "verify_v50_semantic_canary.py",
+  "canonical_checker": "fixtures/long-prefill-native-v50-20261017/verify_v50_semantic_canary.py",
+  "checker_sha256": "44460c6cd37a38e4b32cc968fd722d7475945a477fb442e44dbb48380eb3873e",
+  "checker_is_byte_identical_to_canonical": true,
+  "transitive_source_reads": [
+    {
+      "path": "fixtures/dual-context-v32-parent-walkfast-2bank2-20261016/native-semantic/run_semantic_native.py",
+      "sha256": "85b56838258de35eb492425a0286f1078ac836b1826b9f8885fe331cd92cc2ad"
+    },
+    {
+      "path": "fixtures/dual-context-v32-parent-walkfast-2bank2-20261016/native-semantic/run_semantic_chat.py",
+      "sha256": "08ef9fa3704e3b9b9e2f0530890a48c51041165eb65260efa51d57a2f2c82194"
+    },
+    {
+      "path": "fixtures/dual-context-v32-parent-walkfast-2bank2-20261016/hardware-next-20261014/semantic-checks.py",
+      "sha256": "9dcd040ef8f2b8dd157c8ab44dbabb5715078a8db2f1585319811b8a1311058c"
+    }
+  ],
+  "side_effects": "local report/result copies only; no network, model, or GPU",
+  "cases": [
+    {
+      "family": "single64k-ub256",
+      "source_scenario_sha256": "26564aaa9f76af0de84778f6f190838cf5eed1c264060f60bfc606d3ec0d62b2",
+      "source_saved_results_sha256": "df257801ed6e65782f68d4abf8a89b3245d048aaa9b4aa4067a8ad8ed264d374",
+      "checked_results_sha256": "df257801ed6e65782f68d4abf8a89b3245d048aaa9b4aa4067a8ad8ed264d374",
+      "report_sha256": "1ee23ae528d24300ad58f9e205c75771616e0c8ca69c6d918f1f9e04aa9dea73",
+      "gate_status": "pass",
+      "actual": "Paris",
+      "model_loaded": false,
+      "gpu_touched": false
+    },
+    {
+      "family": "single64k-ub512",
+      "source_scenario_sha256": "38e8dab100dfde55fe795d470b8abbd71a348cfb1f92add384d20474d052485f",
+      "source_saved_results_sha256": "9c01ae05d650355e5c7b375d1b0419929772c9378b896af9c5de694c3bc6ba38",
+      "checked_results_sha256": "9c01ae05d650355e5c7b375d1b0419929772c9378b896af9c5de694c3bc6ba38",
+      "report_sha256": "dabb535706543afb5c2950ba3db4bd8797db4996a3fa6366f522d2ba8cf1007d",
+      "gate_status": "pass",
+      "actual": "Paris",
+      "model_loaded": false,
+      "gpu_touched": false
+    }
+  ]
+}

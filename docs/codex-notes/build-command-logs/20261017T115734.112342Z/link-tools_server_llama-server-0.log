@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "cmake",
+    "-E",
+    "cmake_link_script",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/build-link-scripts/tools__server__llama-server.link.txt",
+    "--verbose=1"
+  ],
+  "cwd": "/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/tools/server",
+  "display": "cmake -E cmake_link_script /home/debian/ac922-monster/experiments/standard-opt-20261014/notes/build-link-scripts/tools__server__llama-server.link.txt --verbose=1",
+  "kind": "link-script",
+  "output_tail": "/usr/bin/c++ -O3 -DNDEBUG \"CMakeFiles/llama-server.dir/main.cpp.o\" -o ../../bin/llama-server  -Wl,-rpath,/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin: ../../bin/libllama-server-impl.so libserver-context.a ../../bin/libllama-common.so.0.5.0 ../../common/libllama-common-base.a ../../bin/libmtmd.so.0.5.0 ../../bin/libllama.so.0.5.0 ../../bin/libggml.so.0.25.1 ../../bin/libggml-cpu.so.0.25.1 ../../bin/libggml-cuda.so.0.25.1 ../../bin/libggml-base.so.0.25.1 /usr/local/cuda/targets/ppc64le-linux/lib/stubs/libcuda.so ../../vendor/cpp-httplib/libcpp-httplib.a\n",
+  "returncode": 0,
+  "target": "tools/server:llama-server"
+}
+
+--- combined stdout/stderr ---
+/usr/bin/c++ -O3 -DNDEBUG "CMakeFiles/llama-server.dir/main.cpp.o" -o ../../bin/llama-server  -Wl,-rpath,/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin: ../../bin/libllama-server-impl.so libserver-context.a ../../bin/libllama-common.so.0.5.0 ../../common/libllama-common-base.a ../../bin/libmtmd.so.0.5.0 ../../bin/libllama.so.0.5.0 ../../bin/libggml.so.0.25.1 ../../bin/libggml-cpu.so.0.25.1 ../../bin/libggml-cuda.so.0.25.1 ../../bin/libggml-base.so.0.25.1 /usr/local/cuda/targets/ppc64le-linux/lib/stubs/libcuda.so ../../vendor/cpp-httplib/libcpp-httplib.a

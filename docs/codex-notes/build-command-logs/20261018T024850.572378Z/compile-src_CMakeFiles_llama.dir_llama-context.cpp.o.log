@@ -1,0 +1,61 @@
+{
+  "argv": [
+    "/usr/bin/c++",
+    "-DGGML_BACKEND_SHARED",
+    "-DGGML_SHARED",
+    "-DGGML_USE_CPU",
+    "-DGGML_USE_CUDA",
+    "-DLLAMA_BUILD",
+    "-DLLAMA_SHARED",
+    "-DMONPACK_AVAILABLE=1",
+    "-Dllama_EXPORTS",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/.",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/src",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/../include",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/../include",
+    "-O3",
+    "-DNDEBUG",
+    "-fPIC",
+    "-Wmissing-declarations",
+    "-Wmissing-noreturn",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Wcast-qual",
+    "-Wno-unused-function",
+    "-Wno-array-bounds",
+    "-Wextra-semi",
+    "-o",
+    "CMakeFiles/llama.dir/llama-context.cpp.o",
+    "-c",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp"
+  ],
+  "cwd": "/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/src",
+  "display": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -DGGML_USE_CUDA -DLLAMA_BUILD -DLLAMA_SHARED -DMONPACK_AVAILABLE=1 -Dllama_EXPORTS -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/. -I/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/src -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/../include -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/../include -O3 -DNDEBUG -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-context.cpp.o -c /home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp",
+  "error": null,
+  "error_repr": null,
+  "error_type": null,
+  "object": "src/CMakeFiles/llama.dir/llama-context.cpp.o",
+  "returncode": 1,
+  "traceback": null
+}
+
+--- combined stdout/stderr ---
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp: In member function ‘llama_token llama_context::inspect_mtp_gpu_chain_step(int32_t, bool)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:2648:35: warning: comparison of integer expressions of different signedness: ‘llama_token’ {aka ‘int’} and ‘uint32_t’ {aka ‘unsigned int’} [-Wsign-compare]
+ 2648 |         for (llama_token j = 1; j < model.vocab.n_tokens(); ++j) {
+      |                                 ~~^~~~~~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp: In member function ‘int32_t llama_context::end_mtp_gpu_chain(llama_token*, int32_t)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:2674:34: warning: comparison of integer expressions of different signedness: ‘const int’ and ‘uint32_t’ {aka ‘unsigned int’} [-Wsign-compare]
+ 2674 |         if (ids[i] < 0 || ids[i] >= model.vocab.n_tokens()) {
+      |                           ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp: In member function ‘int llama_context::decode_impl(const llama_batch&, bool)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:4813:59: warning: comparison of integer expressions of different signedness: ‘uint32_t’ {aka ‘unsigned int’} and ‘int32_t’ {aka ‘int’} [-Wsign-compare]
+ 4813 |                 if (!res->mtp_token_feedback || n_outputs != (int32_t) mtp_chain_multi_lanes.size() ||
+      |                                                 ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp: In member function ‘llm_graph_params llama_context::graph_params(llm_graph_result*, const llama_ubatch&, const llama_memory_context_i*, llm_graph_type, bool) const’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:5667:5: error: could not convert ‘{((const llama_context*)this)->llama_context::model.llama_model::arch, ((const llama_context*)this)->llama_context::model.llama_model::hparams, ((const llama_context*)this)->llama_context::cparams, ubatch, gtype, ((const llama_context*)this)->llama_context::sched.std::unique_ptr<ggml_backend_sched, ggml_backend_sched_deleter>::get(), ((const llama_context*)this)->llama_context::backend_cpu, ((const llama_context*)this)->llama_context::moe_cache.std::unique_ptr<llama_moe_cache>::get(), ((const llama_context*)this)->llama_context::ft_moe.std::unique_ptr<llama_ft_moe>::get(), ((const llama_context*)this)->llama_context::cvec.std::shared_ptr<llama_adapter_cvec>::<anonymous>.std::__shared_ptr<llama_adapter_cvec, __gnu_cxx::_S_atomic>::get(), ((const llama_context*)this)->llama_context::loras.std::unique_ptr<std::unordered_map<llama_adapter_lora*, float> >::get(), mctx, (&((const llama_context*)this)->llama_context::cross), ((const llama_context*)this)->llama_context::sampling.llama_context::sampling_info::samplers, ((const llama_context*)this)->llama_context::n_outputs, llama_context::graph_get_cb() const(), res, (((bool)multi_chain) ? (((bool)((const llama_context*)this)->llama_context::mtp_carry_keep) ? ((ggml_tensor*)multi_slot->llama_context::mtp_gpu_chain_multi_slot::hidden) : 0) : (((bool)per_seq_carry) ? ((ggml_tensor*)((const llama_context*)this)->llama_context::mtp_carry_ps_hidden) : ((((((((ggml_tensor*)((const llama_context*)this)->llama_context::mtp_carry_input) != 0) && ((bool)((const llama_context*)this)->llama_context::cparams.llama_cparams::embeddings_nextn_masked)) && (((unsigned int)((const llama_context*)this)->llama_context::n_outputs) == 1)) && (((unsigned int)ubatch.llama_ubatch::n_seqs) == 1)) && (((int64_t)((unsigned int)ubatch.llama_ubatch::n_tokens)) == ((ggml_tensor*)((const llama_context*)this)->llama_context::mtp_carry_input)->ggml_tensor::ne[1])) ? ((ggml_tensor*)((const llama_context*)this)->llama_context::mtp_carry_input) : 0))), (((bool)multi_chain) ? ((ggml_tensor*)multi_slot->llama_context::mtp_gpu_chain_multi_slot::hidden) : (((bool)per_seq_feedback) ? ((ggml_tensor*)((const llama_context*)this)->llama_context::mtp_carry_ps_hidden) : 0)), (((bool)per_seq_carry) ? 0 : (&((const llama_context*)this)->llama_context::mtp_carry_keep)), (((bool)per_seq_carry) ? ((ggml_tensor*)((const llama_context*)this)->llama_context::mtp_carry_ps_rows) : 0), (((bool)per_seq_feedback) ? ((ggml_tensor*)((const llama_context*)this)->llama_context::mtp_carry_ps_fb_rows) : 0), (((bool)per_seq_carry) ? ((const llama_context*)this)->llama_context::mtp_carry_ps_keep.std::vector<unsigned char>::data() : 0), (((bool)multi_chain) ? (((bool)((const llama_context*)this)->llama_context::mtp_carry_keep) ? ((ggml_tensor*)multi_slot->llama_context::mtp_gpu_chain_multi_slot::tokens) : 0) : ((((((bool)((const llama_context*)this)->llama_context::mtp_chain_active) && (((unsigned int)((const llama_context*)this)->llama_context::n_outputs) == 1)) && (((ggml_tensor*)((const llama_context*)this)->llama_context::mtp_carry_input) != 0)) && (((int64_t)((unsigned int)ubatch.llama_ubatch::n_tokens)) == ((ggml_tensor*)((const llama_context*)this)->llama_context::mtp_carry_input)->ggml_tensor::ne[1])) ? ((ggml_tensor*)((const llama_context*)this)->llama_context::mtp_chain_tokens) : 0)), (((bool)multi_chain) ? ((ggml_tensor*)multi_slot->llama_context::mtp_gpu_chain_multi_slot::tokens) : 0), (((bool)multi_chain) ? ((ggml_tensor*)multi_slot->llama_context::mtp_gpu_chain_multi_slot::history) : 0), (((bool)multi_chain) ? ((ggml_tensor*)multi_slot->llama_context::mtp_gpu_chain_multi_slot::lane_indices) : 0), (((bool)multi_chain) ? ((ggml_tensor*)multi_slot->llama_context::mtp_gpu_chain_multi_slot::step) : 0), (((bool)multi_chain) ? ((ggml_tensor*)((const llama_context*)this)->llama_context::mtp_chain_multi_embedding) : (((bool)((const llama_context*)this)->llama_context::mtp_chain_active) ? ((ggml_tensor*)((const llama_context*)this)->llama_context::mtp_chain_embedding) : 0)), 0, false, <brace-enclosed initializer list>(), ((((((((bool)((const llama_context*)this)->llama_context::mtp_vocab_active) && (((unsigned int)((const llama_context*)this)->llama_context::n_outputs) == 1)) && ((const llama_context*)this)->llama_context::loras.std::unique_ptr<std::unordered_map<llama_adapter_lora*, float> >::operator->()->std::unordered_map<llama_adapter_lora*, float>::empty()) && (((ggml_opt_context_t)((const llama_context*)this)->llama_context::opt_ctx) == 0)) && (!((const llama_context*)this)->llama_context::moe_cache.std::unique_ptr<llama_moe_cache>::operator bool())) && (!((const llama_context*)this)->llama_context::ft_moe.std::unique_ptr<llama_ft_moe>::operator bool())) ? std::vector<ggml_tensor*>(((const llama_context*)this)->llama_context::mtp_vocab_weights) : std::vector<ggml_tensor*>()), ((((((((bool)((const llama_context*)this)->llama_context::mtp_vocab_active) && (((unsigned int)((const llama_context*)this)->llama_context::n_outputs) == 1)) && ((const llama_context*)this)->llama_context::loras.std::unique_ptr<std::unordered_map<llama_adapter_lora*, float> >::operator->()->std::unordered_map<llama_adapter_lora*, float>::empty()) && (((ggml_opt_context_t)((const llama_context*)this)->llama_context::opt_ctx) == 0)) && (!((const llama_context*)this)->llama_context::moe_cache.std::unique_ptr<llama_moe_cache>::operator bool())) && (!((const llama_context*)this)->llama_context::ft_moe.std::unique_ptr<llama_ft_moe>::operator bool())) ? std::vector<ggml_backend*>(((const llama_context*)this)->llama_context::mtp_vocab_backends) : std::vector<ggml_backend*>()), ((const llama_context*)this)->llama_context::mtp_body_layer_view.std::unique_ptr<llama_layer>::get(), ((const llama_context*)this)->llama_context::mtp_body_device_override}’ from ‘<brace-enclosed initializer list>’ to ‘llm_graph_params’
+ 5667 |     };
+      |     ^
+      |     |
+      |     <brace-enclosed initializer list>

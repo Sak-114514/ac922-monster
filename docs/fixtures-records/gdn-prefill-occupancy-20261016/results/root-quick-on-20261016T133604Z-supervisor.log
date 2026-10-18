@@ -1,0 +1,41 @@
+gdn-prefill-occupancy.cpp: OK
+build-gdn-prefill-occupancy.sh: OK
+run-gdn-prefill-occupancy.sh: OK
+run-gdn-prefill-occupancy-quick.sh: OK
+build/gdn-prefill-cuda0: OK
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-cuda/gated_delta_net.cu: OK
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-cuda/gated_delta_net.cuh: OK
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-cuda/ggml-cuda.cu: OK
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v95/lib/libggml.so.0: OK
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v95/lib/libggml-cuda.so.0: OK
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v95/lib/libggml-base.so.0: OK
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/gdn-prefill-occupancy-20261016/results/root-gpu3-20261016T130844Z/off.bin: OK
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+fixture=gdn-prefill-occupancy-v1 backend=CUDA0 width=128 gate=scalar K-cases=1,5 x4_width=128 generic_grid_z=32 x4_grid_z=8 cases=8 f64_atol=5.0e-04 f64_rtol=5.0e-04
+optimization path device=0 path=gdn_state_gather scope=host_dispatch_or_capture requested=1 selected=0 reason=materialized_ineligible tokens=1024 width=6 auxiliary=0 count=1
+optimization path device=0 path=volta_gdn_x4 scope=host_dispatch_or_capture requested=1 selected=1 reason=selected tokens=1024 width=128 auxiliary=1 count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=0 path=gdn_state_gather scope=host_dispatch_or_capture requested=1 selected=0 reason=materialized_ineligible tokens=1024 width=6 auxiliary=0 count=2
+optimization path device=0 path=volta_gdn_x4 scope=host_dispatch_or_capture requested=1 selected=1 reason=selected tokens=1024 width=128 auxiliary=1 count=2
+case mode=quick heads=6 sequences=1 tokens=1024 K=1 bytes=16.55MiB grid_stock=(6,1,32) grid_x4=(6,1,8) stock_ctas=192 x4_ctas=48 x4_grid_fraction=0.25 A_B_A=bitwise F64=skipped_long_shapes F64_max_abs=0 F64_max_rel=0 B_F64_max_abs=0 B_F64_max_rel=0 median_compute_sync_ms=0.899424 reps=7
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+case mode=quick heads=6 sequences=1 tokens=4096 K=1 bytes=61.69MiB grid_stock=(6,1,32) grid_x4=(6,1,8) stock_ctas=192 x4_ctas=48 x4_grid_fraction=0.25 A_B_A=bitwise F64=skipped_long_shapes F64_max_abs=0 F64_max_rel=0 B_F64_max_abs=0 B_F64_max_rel=0 median_compute_sync_ms=3.517102 reps=7
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+case mode=quick heads=12 sequences=1 tokens=1024 K=1 bytes=33.09MiB grid_stock=(12,1,32) grid_x4=(12,1,8) stock_ctas=384 x4_ctas=96 x4_grid_fraction=0.25 A_B_A=bitwise F64=skipped_long_shapes F64_max_abs=0 F64_max_rel=0 B_F64_max_abs=0 B_F64_max_rel=0 median_compute_sync_ms=0.927412 reps=7
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+case mode=quick heads=12 sequences=1 tokens=4096 K=1 bytes=123.38MiB grid_stock=(12,1,32) grid_x4=(12,1,8) stock_ctas=384 x4_ctas=96 x4_grid_fraction=0.25 A_B_A=bitwise F64=skipped_long_shapes F64_max_abs=0 F64_max_rel=0 B_F64_max_abs=0 B_F64_max_rel=0 median_compute_sync_ms=3.609116 reps=7
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+case mode=quick heads=6 sequences=4 tokens=1024 K=1 bytes=65.06MiB grid_stock=(6,4,32) grid_x4=(6,4,8) stock_ctas=768 x4_ctas=192 x4_grid_fraction=0.25 A_B_A=bitwise F64=skipped_long_shapes F64_max_abs=0 F64_max_rel=0 B_F64_max_abs=0 B_F64_max_rel=0 median_compute_sync_ms=1.076776 reps=7
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+case mode=quick heads=12 sequences=4 tokens=1024 K=1 bytes=130.13MiB grid_stock=(12,4,32) grid_x4=(12,4,8) stock_ctas=1536 x4_ctas=384 x4_grid_fraction=0.25 A_B_A=bitwise F64=skipped_long_shapes F64_max_abs=0 F64_max_rel=0 B_F64_max_abs=0 B_F64_max_rel=0 median_compute_sync_ms=1.479727 reps=7
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+case mode=quick heads=12 sequences=4 tokens=1025 K=1 bytes=130.24MiB grid_stock=(12,4,32) grid_x4=(12,4,8) stock_ctas=1536 x4_ctas=384 x4_grid_fraction=0.25 A_B_A=bitwise F64=skipped_long_shapes F64_max_abs=0 F64_max_rel=0 B_F64_max_abs=0 B_F64_max_rel=0 median_compute_sync_ms=1.471686 reps=7
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+case mode=quick heads=12 sequences=4 tokens=1024 K=5 bytes=154.13MiB grid_stock=(12,4,32) grid_x4=(12,4,8) stock_ctas=1536 x4_ctas=384 x4_grid_fraction=0.25 A_B_A=bitwise F64=skipped_long_shapes F64_max_abs=0 F64_max_rel=0 B_F64_max_abs=0 B_F64_max_rel=0 median_compute_sync_ms=1.522825 reps=7
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+quick_f64 heads=6 sequences=4 tokens=128 K=5 A_F64_max_abs=1.73735041e-08 A_F64_max_rel=8.02250748 B_F64_max_abs=1.78443105e-08 B_F64_max_rel=14.9995353 A_B_A=bitwise F64=pass
+optimization path summary device=0 path=gdn_state_gather scope=host_dispatch_or_capture requested=18 selected=0 fallback_materialized_ineligible=18
+optimization path summary device=0 path=volta_gdn_x4 scope=host_dispatch_or_capture requested=18 selected=18
+quick ON output matches the full-F64 OFF reference bitwise: /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/gdn-prefill-occupancy-20261016/results/root-gpu3-20261016T130844Z/off.bin

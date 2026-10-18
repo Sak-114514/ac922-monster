@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "status": "V59_ABORTED_BEFORE_SCENARIOS_INPUT_PLACEMENT_MTP_BACKEND_REGISTRATION",
+  "unit": "root-v59-ep3-tailpad-20261016t214613470600z",
+  "runtime_build_id": "20261016T213259.513817Z",
+  "runtime_report_sha256": "75a0a3a651a0f8a1b1fbd115a391e19289de10ffcca0959497c4e52b65c2b519",
+  "profile_sha256_at_run": "12e3c80165f305ce69b0f26caaeafacfbc22bf7589a18ddda380c727a761e5c3",
+  "runner_sha256": "44f57a98c7798e4e8e26e3967c65b7cc931dfbd10f3ea80e4db37fa6df06a61c",
+  "failure_class": "input-placement/MTP backend registration incompatibility",
+  "failure_evidence": [
+    "3.08.287.939 I common_speculative_init_result: creating MTP draft context against the target model '/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf'",
+    "3.08.288.022 I llama_context: skip unused MTP backend Meta()",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp:1328: pre-allocated tensor (token_embd.weight) in a buffer (Meta()) that cannot run the operation (NONE)"
+  ],
+  "runner_load": {
+    "full_weight_load_completed": true,
+    "qwen4exp_input_loaded_selected": true,
+    "scenario_start_count": 0,
+    "native_canary": "NOT_RUN",
+    "tail_gate": "NOT_RUN",
+    "performance_windows": "NOT_RUN",
+    "quality_claim": false,
+    "performance_claim": false
+  },
+  "stream_reclaim": {
+    "per_stage": [
+      {
+        "selected": 1,
+        "tensors": 445,
+        "ranges": 445,
+        "madvise_advised_bytes": 21968846848,
+        "fadvise_advised_bytes": 21968846848,
+        "madvise_errors": 0,
+        "fadvise_errors": 0,
+        "actual_freed_bytes": "not_measured"
+      },
+      {
+        "selected": 1,
+        "tensors": 424,
+        "ranges": 424,
+        "madvise_advised_bytes": 27769634816,
+        "fadvise_advised_bytes": 27769634816,
+        "madvise_errors": 0,
+        "fadvise_errors": 0,
+        "actual_freed_bytes": "not_measured"
+      },
+      {
+        "selected": 1,
+        "tensors": 0,
+        "ranges": 0,
+        "madvise_advised_bytes": 0,
+        "fadvise_advised_bytes": 0,
+        "madvise_errors": 0,
+        "fadvise_errors": 0,
+        "actual_freed_bytes": "not_measured"
+      }
+    ],
+    "selected_tensor_ranges": 869,
+    "total_madvise_advised_bytes": 49738481664,
+    "total_fadvise_advised_bytes": 49738481664,
+    "errors": 0,
+    "actual_freed_bytes": "not measured; advice bytes are not claimed as freed memory"
+  },
+  "ple": {
+    "status": "PASS",
+    "actual_wired_gpu_gib": 12,
+    "actual_wired_gpu_nodes": 6,
+    "actual_wired_cpu_gib": 14.82,
+    "gpu_stripes_verified_marker": true,
+    "ordered_exact_chunks": true,
+    "whole_copy_exact": true
+  },
+  "systemd": {
+    "result": "signal",
+    "exit_status": "6",
+    "active_state": "failed",
+    "guard_seen": false,
+    "automatic_retry": false
+  },
+  "hbm_record_only": {
+    "nodes": [
+      250,
+      251,
+      252,
+      253,
+      254,
+      255
+    ],
+    "fields": [
+      "FilePages",
+      "AnonPages",
+      "MemFree"
+    ],
+    "stop_threshold": null,
+    "sample_count": 10,
+    "first_sample": {
+      "sample_utc": "2026-10-16T21:46:20.669848+00:00",
+      "nodes": {
+        "250": {
+          "MemFree": 16509376,
+          "FilePages": 4288,
+          "AnonPages": 0
+        },
+        "251": {
+          "MemFree": 16495040,
+          "FilePages": 16512,
+          "AnonPages": 0
+        },
+        "252": {
+          "MemFree": 16499584,
+          "FilePages": 64,
+          "AnonPages": 0
+        },
+        "253": {
+          "MemFree": 16200960,
+          "FilePages": 0,
+          "AnonPages": 0
+        },
+        "254": {
+          "MemFree": 16205056,
+          "FilePages": 0,
+          "AnonPages": 0
+        },
+        "255": {
+          "MemFree": 16203008,
+          "FilePages": 0,
+          "AnonPages": 0
+        }
+      }
+    },
+    "last_sample": {
+      "sample_utc": "2026-10-16T21:49:34.037407+00:00",
+      "nodes": {
+        "250": {
+          "MemFree": 16507648,
+          "FilePages": 4288,
+          "AnonPages": 0
+        },
+        "251": {
+          "MemFree": 16493312,
+          "FilePages": 16512,
+          "AnonPages": 0
+        },
+        "252": {
+          "MemFree": 16507456,
+          "FilePages": 64,
+          "AnonPages": 0
+        },
+        "253": {
+          "MemFree": 16511168,
+          "FilePages": 0,
+          "AnonPages": 0
+        },
+        "254": {
+          "MemFree": 16511232,
+          "FilePages": 0,
+          "AnonPages": 0
+        },
+        "255": {
+          "MemFree": 16511040,
+          "FilePages": 0,
+          "AnonPages": 0
+        }
+      }
+    },
+    "scope": "diagnostic distinction between HBM file cache and anonymous use; not a safety threshold"
+  },
+  "artifacts": {
+    "runtime.log": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v59-launch-20261017/results/root-v59-ep3-tailpad-20261016t214613470600z-runtime.log",
+      "sha256": "8657e94cfd4573d4c09c28cb88cf26d8fd976190fc1cdd2c8944b9d2ac180622",
+      "bytes": 205366
+    },
+    "telemetry.jsonl": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v59-launch-20261017/results/root-v59-ep3-tailpad-20261016t214613470600z-telemetry.jsonl",
+      "sha256": "0cfe4c7640ed1b09a0e37ba208a54097da2b7e43741dc661904793ae8f856c5f",
+      "bytes": 50733
+    },
+    "summary.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v59-launch-20261017/results/root-v59-ep3-tailpad-20261016t214613470600z-summary.json",
+      "sha256": "16e1bb3ad15cf1e4530ae46782d59733f42d65a1dc4cebbb984e22d1825c6cc8",
+      "bytes": 8024
+    },
+    "monitor-summary.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v59-launch-20261017/results/root-v59-ep3-tailpad-20261016t214613470600z-monitor-summary.json",
+      "sha256": "fe97eca11eacaa5595a0f097820a02897d01baf516d4a4fdac823cf24626775e",
+      "bytes": 739
+    },
+    "ple-wiring.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v59-launch-20261017/results/root-v59-ep3-tailpad-20261016t214613470600z-ple-wiring.json",
+      "sha256": "db3893ca5b1876b83b06d9d5f5d53515ac313d053f58eefe59fdc984b42ed218",
+      "bytes": 552
+    },
+    "unit-journal.txt": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v59-launch-20261017/results/root-v59-ep3-tailpad-20261016t214613470600z-unit-journal.txt",
+      "sha256": "10c86958166e78fb0a2f2252739d922e6a56624082159e74cf67daf72a406344",
+      "bytes": 557
+    },
+    "supervisor-manifest.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v59-launch-20261017/results/root-v59-ep3-tailpad-20261016t214613470600z-supervisor-manifest.json",
+      "sha256": "3e3d33f2c0a431472b900a2b17f9632cfbc9d1841c3fff082f0c80c092f272e9",
+      "bytes": 21064
+    },
+    "remote-supervisor-manifest.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v59-launch-20261017/results/root-v59-ep3-tailpad-20261016t214613470600z-remote-supervisor-manifest.json",
+      "sha256": "3e3d33f2c0a431472b900a2b17f9632cfbc9d1841c3fff082f0c80c092f272e9",
+      "bytes": 21064
+    },
+    "remote-scenarios.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v59-launch-20261017/results/root-v59-ep3-tailpad-20261016t214613470600z-remote-scenarios.json",
+      "sha256": "72ba30c2d0e8096bd1b48a96ac3d58b8fd102cda4bb620917753f9d516389834",
+      "bytes": 6308
+    },
+    "frame-host-resources.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v59-launch-20261017/results/root-v59-ep3-tailpad-20261016t214613470600z-frame-host-resources.json",
+      "sha256": "0c792b287f744dc3cc58c37f9dd853fc5923088680ee37b033f6dcfb6f5d3dd1",
+      "bytes": 117
+    }
+  }
+}

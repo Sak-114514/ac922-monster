@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "parallel_labels": [
+    "dual-sem-00",
+    "dual-sem-01",
+    "dual-sem-02",
+    "dual-sem-03",
+    "real8k-p4-2x2"
+  ],
+  "pairs": [
+    {
+      "id": "capital-en",
+      "serial_label": "serial-sem-00-0",
+      "parallel_label": "dual-sem-00",
+      "parallel_bank": 0
+    },
+    {
+      "id": "arithmetic-zh",
+      "serial_label": "serial-sem-00-0",
+      "parallel_label": "dual-sem-00",
+      "parallel_bank": 1
+    },
+    {
+      "id": "logic-en",
+      "serial_label": "serial-sem-00-1",
+      "parallel_label": "dual-sem-00",
+      "parallel_bank": 0
+    },
+    {
+      "id": "strict-json-zh",
+      "serial_label": "serial-sem-00-1",
+      "parallel_label": "dual-sem-00",
+      "parallel_bank": 1
+    },
+    {
+      "id": "python-clamp",
+      "serial_label": "serial-sem-01-0",
+      "parallel_label": "dual-sem-01",
+      "parallel_bank": 0
+    },
+    {
+      "id": "vocabulary-en-zh",
+      "serial_label": "serial-sem-01-0",
+      "parallel_label": "dual-sem-01",
+      "parallel_bank": 1
+    },
+    {
+      "id": "parallel2-add-en",
+      "serial_label": "serial-sem-01-1",
+      "parallel_label": "dual-sem-01",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel2-subtract-zh",
+      "serial_label": "serial-sem-01-1",
+      "parallel_label": "dual-sem-01",
+      "parallel_bank": 1
+    },
+    {
+      "id": "parallel4-add",
+      "serial_label": "serial-sem-02-0",
+      "parallel_label": "dual-sem-02",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel4-subtract",
+      "serial_label": "serial-sem-02-0",
+      "parallel_label": "dual-sem-02",
+      "parallel_bank": 1
+    },
+    {
+      "id": "parallel4-multiply",
+      "serial_label": "serial-sem-02-1",
+      "parallel_label": "dual-sem-02",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel4-divide",
+      "serial_label": "serial-sem-02-1",
+      "parallel_label": "dual-sem-02",
+      "parallel_bank": 1
+    },
+    {
+      "id": "slot-reuse-0",
+      "serial_label": "serial-sem-03-0",
+      "parallel_label": "dual-sem-03",
+      "parallel_bank": 0
+    },
+    {
+      "id": "slot-reuse-1",
+      "serial_label": "serial-sem-03-0",
+      "parallel_label": "dual-sem-03",
+      "parallel_bank": 1
+    },
+    {
+      "id": "slot-reuse-2",
+      "serial_label": "serial-sem-03-1",
+      "parallel_label": "dual-sem-03",
+      "parallel_bank": 0
+    },
+    {
+      "id": "slot-reuse-3",
+      "serial_label": "serial-sem-03-1",
+      "parallel_label": "dual-sem-03",
+      "parallel_bank": 1
+    },
+    {
+      "id": "real8k-0",
+      "serial_label": "serial-real8k-0",
+      "parallel_label": "real8k-p4-2x2",
+      "parallel_bank": 0
+    },
+    {
+      "id": "real8k-1",
+      "serial_label": "serial-real8k-0",
+      "parallel_label": "real8k-p4-2x2",
+      "parallel_bank": 1
+    },
+    {
+      "id": "real8k-2",
+      "serial_label": "serial-real8k-1",
+      "parallel_label": "real8k-p4-2x2",
+      "parallel_bank": 0
+    },
+    {
+      "id": "real8k-3",
+      "serial_label": "serial-real8k-1",
+      "parallel_label": "real8k-p4-2x2",
+      "parallel_bank": 1
+    }
+  ],
+  "prefix_checks": [
+    {
+      "id": "single8k-pp-probe-prefix",
+      "probe_label": "single8k-pp-probe-32",
+      "probe_flow_id": "real8k0-pp-probe-32",
+      "reference_label": "serial-real8k-0",
+      "reference_flow_id": "real8k-0",
+      "prefix_tokens": 32,
+      "warm_graph_probe": false
+    },
+    {
+      "id": "pp-warm-prefix",
+      "probe_label": "single8k-pp-warm-32",
+      "probe_flow_id": "real8k0-pp-warm-32",
+      "reference_label": "serial-real8k-0",
+      "reference_flow_id": "real8k-0",
+      "prefix_tokens": 32,
+      "warm_graph_probe": true
+    }
+  ],
+  "required_config": {
+    "bank_count": 2,
+    "bank_lanes": 2,
+    "mtp_depth_default": 3,
+    "mtp_depth_allowed": [
+      3
+    ],
+    "mtp_draft_ubatch": 512,
+    "target_verify_rows_for_d3": 8,
+    "mtp_fixed_prefix_rows_per_lane": 6,
+    "mtp_fixed_prefix_rows_total": 12,
+    "logical_prefill_batch_capacity": 8192,
+    "max_verify_rows": 8,
+    "serial_cpu_submit": false,
+    "server_mtp_kv_policy": true,
+    "expert_parallel": "1",
+    "mtp_chain_multi": true,
+    "mtp_unrolled": true,
+    "mtp_fixed_prefix_rows": 6,
+    "mtp_variable_lanes": true,
+    "model_load_count": 1,
+    "model_load_count_per_process": 1,
+    "context_family_recreated_between_copy_modes": true,
+    "ubatch_default": 1024,
+    "ubatch_allowed": [
+      1024
+    ],
+    "turboprefill_default": false,
+    "turboprefill_optional": false,
+    "island_split": "3,3",
+    "qsa_indexer_impl": "standard",
+    "kv_variant": "per_seq_64k",
+    "bank_context": 131072,
+    "n_seq_max": 2,
+    "context_per_sequence": 65536,
+    "kv_streams_per_bank": 2,
+    "aggregate_kv_streams": 4,
+    "maximum_request_context": 65536,
+    "meta_cpu_async_copy_mode_default": 1,
+    "meta_cpu_async_copy_env": "GGML_META_CPU_ASYNC_COPY",
+    "legacy_meta_async_inputs": 0,
+    "nccl_min_bytes": 0,
+    "cuda_nccl_f32": 1
+  },
+  "require_full_output_label": "real8k-p4-2x2",
+  "require_runtime_diagnostics_for_label": "real8k-p4-2x2",
+  "kv_variants_allowed": [
+    "per_seq_64k"
+  ],
+  "kv_layouts": {
+    "per_seq_64k": {
+      "kv_unified": false,
+      "bank_context": 131072,
+      "n_seq_max": 2,
+      "context_per_sequence": 65536,
+      "kv_streams": 2,
+      "bank_count": 2,
+      "aggregate_context_capacity": 262144,
+      "maximum_request_context": 65536
+    }
+  },
+  "topology": {
+    "variant": "two_banks_two_lanes_per_seq_64k",
+    "bank_count": 2,
+    "lanes_per_bank": 2,
+    "all_parallel_flows_by_bank": {
+      "0": 2,
+      "1": 2
+    },
+    "capacity_note": "two banks x two independent 65536-cell KV streams per bank; 262144 aggregate cells are not per-request context",
+    "mode_variants_allowed": [
+      1,
+      0
+    ],
+    "mode_default": [
+      1
+    ],
+    "model_load_count_per_process": 1,
+    "context_family_recreated_between_modes": true
+  }
+}

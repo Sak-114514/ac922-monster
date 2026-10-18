@@ -1,0 +1,38 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA graph path config ctx=0x1000cf37a00 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=0 structural_active=0 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x1000cf37a00 device=0 uid=2 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=13 ne11=4 reg=0 ptr=0x10037400000
+CUDA Graph id 2 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000cf37a00 device=0 uid=2 nodes=1 mode=capture count=1
+[mp-dbg] mul_mat hook: type=13 ne11=4 reg=0 ptr=0x10037400000
+CUDA Graph id 2 reused
+CUDA graph path active ctx=0x1000cf37a00 device=0 uid=2 nodes=1 mode=replay count=1
+CUDA Graph id 2 reused
+CUDA graph path active ctx=0x1000cf37a00 device=0 uid=2 nodes=1 mode=replay count=2
+CUDA graph fallback ctx=0x1000cf37a00 device=0 uid=4 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+sm70 decode linear chunks active: dense columns=16 chunk=4 type=q5_K
+[mp-dbg] mul_mat hook: type=13 ne11=4 reg=0 ptr=0x10037400000
+[mp-dbg] mul_mat hook: type=13 ne11=4 reg=0 ptr=0x10037400000
+[mp-dbg] mul_mat hook: type=13 ne11=4 reg=0 ptr=0x10037400000
+[mp-dbg] mul_mat hook: type=13 ne11=4 reg=0 ptr=0x10037400000
+sm70 decode linear chunks active: dense columns=12 chunk=4 type=q5_K
+sm70 decode linear chunks active: dense columns=8 chunk=4 type=q5_K
+CUDA Graph id 8 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000cf37a00 device=0 uid=8 nodes=1 mode=capture count=2
+FIXTURE_FAIL shape-prefix comparison size mismatch
+RUNTIME_MAP 7fff8c8f0000-7fff9a430000 r-xp 00000000 08:04 33496189                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v87/lib/libggml-cuda.so.0
+RUNTIME_MAP 7fff9a430000-7fff9a440000 r--p 0db30000 08:04 33496189                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v87/lib/libggml-cuda.so.0
+RUNTIME_MAP 7fff9a440000-7fff9a450000 rw-p 0db40000 08:04 33496189                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v87/lib/libggml-cuda.so.0
+FIXTURE_START mode=off device=CUDA0 Tesla V100-SXM2-16GB tensor=output.weight type=Q5_K K=2560 M=2048 rows=2048 bytes=3604480 weight_ne2=1 shapes=T4x4,T16,T12,T8x2,T6 input=A/B/A
+SHAPE_RESULT mode=off name=T4x4 frame=A0 tokens=16 calls=4 input_readback=exact canary=PASS
+FP64_SAMPLE mode=off shape=T4x4 tokens=4 count=32 max_gpu_vs_f64=0.000921905959 max_serial_f32_vs_f64=3.27319134e-07
+SHAPE_RESULT mode=off name=T16 frame=A0 tokens=16 calls=1 input_readback=exact canary=PASS
+BITWISE_REF mode=off frame=A0 ref=T4x4 shape=T16 rms=0 max_abs=0 bitdiff=0
+FP64_SAMPLE mode=off shape=T16 tokens=16 count=40 max_gpu_vs_f64=0.00137855702 max_serial_f32_vs_f64=4.74962257e-07
+SHAPE_RESULT mode=off name=T12 frame=A0 tokens=12 calls=1 input_readback=exact canary=PASS
+BITWISE_REF mode=off frame=A0 ref=T4x4 shape=T12 rms=0 max_abs=0 bitdiff=0
+FP64_SAMPLE mode=off shape=T12 tokens=12 count=40 max_gpu_vs_f64=0.000983646607 max_serial_f32_vs_f64=4.74962257e-07
+SHAPE_RESULT mode=off name=T8x2 frame=A0 tokens=16 calls=2 input_readback=exact canary=PASS

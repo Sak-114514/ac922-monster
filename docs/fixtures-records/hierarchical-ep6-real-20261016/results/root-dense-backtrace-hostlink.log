@@ -1,0 +1,29 @@
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/hierarchical-ep6-real-20261016/hierarchical-ep6-real-fixture
+binary_sha256=129734628bca7ee238f39bf366ed98d6f1908cddc7219243ae4e14167b9d7f78  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/hierarchical-ep6-real-20261016/hierarchical-ep6-real-fixture
+runtime_lib_sha256:
+73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml.so.0
+9b072ec410e4c85be819d0e5c6e901fc934c001e13dcb18d52d1cafba4abb602  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-base.so.0
+c1fd8d19e54df03e97f1c71c8c95565626ec73f44f7d4f3e334bfe3e74f464fc  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-cpu.so.0
+e5a91189f18dce2eed73369a36088696542ee09ebdf94cde195ed3c6c226f983  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-cuda.so.0
+ldd:
+	linux-vdso64.so.1 (0x00007fff86ff0000)
+	libggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-cpu.so.0 (0x00007fff86df0000)
+	libggml.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml.so.0 (0x00007fff86dc0000)
+	libggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-base.so.0 (0x00007fff86c50000)
+	libstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fff86920000)
+	libgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fff868e0000)
+	libc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fff86680000)
+	libgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fff86600000)
+	libm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fff864d0000)
+	/lib64/ld64.so.2 (0x00007fff87010000)
+	libggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-cuda.so.0 (0x00007fff78a40000)
+	libcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fff78960000)
+	libcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fff71c40000)
+	libcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fff6fe80000)
+	libnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff6e020000)
+	libdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff6dff0000)
+	libpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff6dfc0000)
+	librt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff6df90000)
+	libcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff5a100000)
+PASS host-link only; no CUDA initialization or GPU execution

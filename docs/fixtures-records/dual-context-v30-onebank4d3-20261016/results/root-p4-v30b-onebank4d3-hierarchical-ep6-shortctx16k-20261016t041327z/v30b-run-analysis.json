@@ -1,0 +1,273 @@
+{
+  "schema": "ac922-v30b-onebank4d3-run-analysis-v1",
+  "run_tag": "root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z",
+  "run_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z",
+  "runtime": {
+    "build_id": "20261016T040204.430535Z",
+    "closure": "runtime-perf-v71",
+    "parent_signature_env": "1",
+    "runner_sha256": "9f114e7101e909a3d30d1bb7d7c0823160b25e55520294b9dd30b51e3449b24c"
+  },
+  "terminal": {
+    "run_rc": 0,
+    "final_rc": 1,
+    "unit_state": "failed/exit-code",
+    "gpu_released": true,
+    "model_retries": 0
+  },
+  "shape": {
+    "bank_count": 1,
+    "lanes": 4,
+    "mtp_depth": 3,
+    "verify_capacity": 16,
+    "fixed_prefix_rows": 24,
+    "context_per_sequence": 16384,
+    "kv_streams": 4,
+    "clean_flow_output_tokens": [
+      [
+        "real8k-0",
+        256
+      ],
+      [
+        "real8k-1",
+        256
+      ],
+      [
+        "real8k-2",
+        256
+      ],
+      [
+        "real8k-3",
+        256
+      ]
+    ]
+  },
+  "quality": {
+    "preclean_status": "pass",
+    "serial_p4_full_logit_pairs": [
+      40,
+      40
+    ],
+    "same_flow_before_after_mtp_pairs": [
+      42,
+      42
+    ],
+    "finite_logit_rows": 42,
+    "native_semantic_diagnostic": {
+      "status": "pass",
+      "scenario_count": 12
+    },
+    "native_semantic_clean": {
+      "status": "pass",
+      "scenario_count": 12
+    },
+    "same_candidate_serial_vs_p4_failures": [
+      "FAIL: real8k-0: generated token IDs differ between serial and P4 runs",
+      "FAIL: real8k-1: generated token IDs differ between serial and P4 runs"
+    ],
+    "original_auxiliary_prefix_failures": [
+      "FAIL: single8k-pp-probe-prefix: probe token IDs differ from the serial output prefix",
+      "FAIL: pp-warm-prefix: probe token IDs differ from the serial output prefix"
+    ],
+    "normalized_v27_comparison": {
+      "status": "fail",
+      "profiles": {
+        "diagnostic": {
+          "status": "fail",
+          "exact": 40,
+          "matching": 42,
+          "mismatches": [
+            {
+              "flow_id": "real8k-0",
+              "first_diff_index_zero_based": 2
+            },
+            {
+              "flow_id": "real8k-1",
+              "first_diff_index_zero_based": 13
+            }
+          ]
+        },
+        "clean": {
+          "status": "fail",
+          "exact": 2,
+          "matching": 4,
+          "mismatches": [
+            {
+              "flow_id": "real8k-0",
+              "first_diff_index_zero_based": 2
+            },
+            {
+              "flow_id": "real8k-1",
+              "first_diff_index_zero_based": 13
+            }
+          ]
+        }
+      }
+    },
+    "token_review_artifact": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/v30b-real8k-token-review.json",
+    "token_review_diffs_vs_own_serial": {
+      "real8k-0": {
+        "v27_serial": {
+          "first_diff_index_zero_based": null,
+          "token_arrays_equal": true,
+          "text_equal_to_own_serial": true
+        },
+        "v27_diagnostic_p4": {
+          "first_diff_index_zero_based": null,
+          "token_arrays_equal": true,
+          "text_equal_to_own_serial": true
+        },
+        "v27_clean_p4": {
+          "first_diff_index_zero_based": null,
+          "token_arrays_equal": true,
+          "text_equal_to_own_serial": true
+        },
+        "v30_diagnostic_p4": {
+          "first_diff_index_zero_based": 2,
+          "token_arrays_equal": false,
+          "text_equal_to_own_serial": false
+        },
+        "v30_clean_p4": {
+          "first_diff_index_zero_based": 2,
+          "token_arrays_equal": false,
+          "text_equal_to_own_serial": false
+        }
+      },
+      "real8k-1": {
+        "v27_serial": {
+          "first_diff_index_zero_based": null,
+          "token_arrays_equal": true,
+          "text_equal_to_own_serial": true
+        },
+        "v27_diagnostic_p4": {
+          "first_diff_index_zero_based": null,
+          "token_arrays_equal": true,
+          "text_equal_to_own_serial": true
+        },
+        "v27_clean_p4": {
+          "first_diff_index_zero_based": null,
+          "token_arrays_equal": true,
+          "text_equal_to_own_serial": true
+        },
+        "v30_diagnostic_p4": {
+          "first_diff_index_zero_based": 13,
+          "token_arrays_equal": false,
+          "text_equal_to_own_serial": false
+        },
+        "v30_clean_p4": {
+          "first_diff_index_zero_based": 13,
+          "token_arrays_equal": false,
+          "text_equal_to_own_serial": false
+        }
+      }
+    },
+    "overall_quality_certified": false
+  },
+  "clean_performance": {
+    "shared_generation": {
+      "tokens": 879,
+      "seconds": 17.414982,
+      "tok_per_s": 50.47378171278041,
+      "start_utc_mapped": "2026-10-16T04:23:37.711913+00:00",
+      "end_utc_mapped": "2026-10-16T04:23:55.126895+00:00"
+    },
+    "parallel_window": {
+      "start_utc_mapped": "2026-10-16T04:23:37.524599+00:00",
+      "end_utc_mapped": "2026-10-16T04:24:11.480669+00:00"
+    },
+    "aggregate_prefill": {
+      "input_tokens": 32768,
+      "wall_seconds": 45.339863,
+      "tok_per_s": 722.7194312430984,
+      "scope": "four-request aggregate; not single-request PP"
+    },
+    "direct_step_timing": {
+      "source": "LLAMA_STEP_TIMING avg_us.compute; mixed shapes, no tok/s conversion",
+      "sample_count": 6,
+      "mean_ms": 268.19416666666666,
+      "median_ms": 96.339,
+      "p90_ms": 1185.422,
+      "min_ms": 11.91,
+      "max_ms": 1185.422,
+      "samples": [
+        {
+          "context": "0x7ffed448f660",
+          "n": 32,
+          "rebuilt": 87981,
+          "tokens": "512..512",
+          "compute_ms": 21.141,
+          "total_ms": 25.607,
+          "compute_per_rebuilt_ms": 87.981,
+          "compute_per_reused_ms": 16.685
+        },
+        {
+          "context": "0x7ff8ac77bdd0",
+          "n": 32,
+          "rebuilt": 1746978,
+          "tokens": "1024..1024",
+          "compute_ms": 1185.422,
+          "total_ms": 1295.381,
+          "compute_per_rebuilt_ms": 1746.978,
+          "compute_per_reused_ms": 848.488
+        },
+        {
+          "context": "0x7ffed448f660",
+          "n": 64,
+          "rebuilt": 22658,
+          "tokens": "512..512",
+          "compute_ms": 17.445,
+          "total_ms": 21.838,
+          "compute_per_rebuilt_ms": 22.658,
+          "compute_per_reused_ms": 17.097
+        },
+        {
+          "context": "0x7ff8ac77bdd0",
+          "n": 64,
+          "rebuilt": 1194829,
+          "tokens": "16..16",
+          "compute_ms": 201.71,
+          "total_ms": 211.628,
+          "compute_per_rebuilt_ms": 1194.829,
+          "compute_per_reused_ms": 169.674
+        },
+        {
+          "context": "0x7ff8ac77bdd0",
+          "n": 96,
+          "rebuilt": 0,
+          "tokens": "16..16",
+          "compute_ms": 171.537,
+          "total_ms": 172.923,
+          "compute_per_rebuilt_ms": 0.0,
+          "compute_per_reused_ms": 171.537
+        },
+        {
+          "context": "0x7ffed448f660",
+          "n": 96,
+          "rebuilt": 14020,
+          "tokens": "1..20",
+          "compute_ms": 11.91,
+          "total_ms": 16.538,
+          "compute_per_rebuilt_ms": 14.02,
+          "compute_per_reused_ms": 4.374
+        }
+      ]
+    }
+  },
+  "parent_signature": {
+    "requested": true,
+    "clean_selected_markers": 11,
+    "clean_parent_fragment_markers": 130,
+    "clean_summary_lines": [
+      "10.36.356.267 I meta-parent-manifest summary context=0x7ffed4481b10 calls=175 generations=35 forced_rebuilds=34 validation_us=206578",
+      "10.37.087.408 I meta-parent-manifest summary context=0x1001fface00 calls=122 generations=25 forced_rebuilds=24 validation_us=3883146"
+    ]
+  },
+  "v72_build_overlap": {
+    "build_id": "20261016T041802.090136Z",
+    "started_utc": "2026-10-16T04:17:56Z",
+    "completed_utc": "2026-10-16T04:19:20.368194Z",
+    "clean_shared_window_overlaps_build": false,
+    "note": "V72 overlapped earlier diagnostic work; clean P4 shared generation window began after V72 froze"
+  },
+  "conclusion": "Preclean logits and native semantics passed, but four-lane D3 P4 generation diverged from its own serial reference on real8k-0/1 and from V27 arrays on the same two flows. Original cold/warm auxiliary-prefix checks also fail. Metrics are recorded for review only; no performance win or quality certification is claimed."
+}

@@ -1,0 +1,92 @@
+{
+  "schema": "v160-layer-runner-reuse-v143-v1",
+  "compiler_link_status": "REUSED_EXISTING_BINARY_NO_COMPILE",
+  "reuse_binary": true,
+  "reuse_reason": "V160 changes only ggml/src/ggml-alloc.c in the frozen build report. The existing V143 runner resolves all seven private DSOs from V160 via ldd; defined dynamic-symbol sets are identical between V155 and V160 across all seven libraries.",
+  "compiled_runtime_build_id": "20261016T222818.660641Z",
+  "runtime_build_id": "20261016T232842.692185Z",
+  "runtime_report": "notes/V160-build.json",
+  "runtime_report_sha256": "76bccf22d9a755bdabc2ce3bec817eccdd5cd46e4b72b6ff5dd2034b91982aca",
+  "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v160",
+  "runtime_dso_sha256": {
+    "libllama-common.so.0": "c331b4e27d74fdc4ea295676985c1ae1d8b8ad296feee0715164e37a96d395ac",
+    "libmtmd.so.0": "02b78e109820e28de208363e3f6d8f3cde8f43a452ec8770972d3565caed8e23",
+    "libllama.so.0": "843b17da8b7348462315baa88a1006acc51457253431d9a1e78c24a841e0bc99",
+    "libggml.so.0": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+    "libggml-cpu.so.0": "d51a3e28fafe2fc03584d790512d4dcb88583f9949647602e5cbef1fc0d71781",
+    "libggml-cuda.so.0": "5f663e079037bee6fe0d9cf1246433566e7103d53699ca659574f5efcbd6e53a",
+    "libggml-base.so.0": "cb3e9a17ad475ccfae3ad6fe3be0e83d0e7d8b53a99c53ba5ed495075e2ca21d"
+  },
+  "runtime_dso_changes_from_v155": [
+    "libggml-base.so.0"
+  ],
+  "profile_at_link_remote": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/build-v131-20261016T222818.660641Z-51427a9a5896/v131-profile-at-link.json",
+  "profile_at_link_local": "fixtures/layer6-longprefill-v58-20261017/results/host-build-v143/v131-profile-at-link.json",
+  "profile_sha256_at_link": "814e41ea48c01822e5aab2e913b7850b713a5aefc3a8b039024bad1a0245db04",
+  "runner_source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/dual-context-v131-layer-longprefill.cpp",
+  "runner_source_sha256": "51427a9a58965d82b92c3f714a29ae588bb4c8a573df83fee1bff43a8998e920",
+  "runner_binary": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/build-v131-20261016T222818.660641Z-51427a9a5896/dual-context-v131-layer-longprefill",
+  "runner_sha256": "d8795719980275d6ade4f7a40473672677614f1ad29769884291cd226666e1cf",
+  "runner_owner": "debian",
+  "runner_build_mode": "reused_existing_v143_single_translation_unit_harness",
+  "build_owner": "debian",
+  "build_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/build-v131-20261016T222818.660641Z-51427a9a5896",
+  "ldd_report_remote": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/results/host-build-v160/ldd-reused-v143-runner.txt",
+  "ldd_report_local": "fixtures/layer6-longprefill-v58-20261017/results/host-build-v160/ldd-reused-v143-runner.txt",
+  "ldd_sha256": "bc254ab141b1d8a5a3397e59834e3c282ae6382de64e722651466269867b4693",
+  "ldd_status": "PASS_SEVEN_PRIVATE_RUNTIME_DSOS_NO_MISSING_DEPENDENCIES",
+  "resolved_private_dsos": {
+    "libllama-common.so.0": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v160/lib/libllama-common.so.0",
+    "libmtmd.so.0": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v160/lib/libmtmd.so.0",
+    "libllama.so.0": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v160/lib/libllama.so.0",
+    "libggml.so.0": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v160/lib/libggml.so.0",
+    "libggml-cpu.so.0": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v160/lib/libggml-cpu.so.0",
+    "libggml-cuda.so.0": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v160/lib/libggml-cuda.so.0",
+    "libggml-base.so.0": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v160/lib/libggml-base.so.0"
+  },
+  "dynamic_symbol_comparison": {
+    "path": "fixtures/layer6-longprefill-v58-20261017/results/host-build-v160/abi-symbol-set-compare-v155-v160.json",
+    "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-longprefill-v58-20261017/results/host-build-v160/abi-symbol-set-compare-v155-v160.json",
+    "sha256": "df973b2c31a99b2118757dd8a2e23a65637bb34c3b1f5825ecf9a8e6703428b5",
+    "libraries_compared": 7,
+    "removed_symbols": 0,
+    "added_symbols": 0,
+    "status": "PASS_IDENTICAL_DEFINED_DYNAMIC_SYMBOL_SETS"
+  },
+  "compile_log": null,
+  "compile_scope": "No runner compile performed; reused the V143 binary and verified the V160 seven-DSO closure and V155-to-V160 defined dynamic-symbol sets.",
+  "model_loads": 0,
+  "gpu_touched": false,
+  "engine_cuda_rebuild": false,
+  "reused_binary": true,
+  "reuse_pending_gate": "PASS: V160 tinygreen 25/25 GPU frames CPU-bitexact with canary/reset-growth/ABA/free/invalid-cap checks",
+  "qualification_gate": {
+    "status": "PASS",
+    "tag": "v152-v160-stage-on-20261017T001438Z",
+    "summary_local_path": "fixtures/layer-pp-inputs-v152-20261017/results/v152-v160-stage-on-20261017T001438Z-summary.json",
+    "summary_remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer-pp-inputs-v152-20261017/results/v152-v160-stage-on-20261017T001438Z-summary.json",
+    "summary_sha256": "8bceeb11a62da8f06649ed44c1e1734c73e22c69971beec2ac7e876b5f5c707e",
+    "raw_log_local_path": "fixtures/layer-pp-inputs-v152-20261017/results/v152-v160-stage-on-20261017T001438Z.log",
+    "raw_log_remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer-pp-inputs-v152-20261017/results/v152-v160-stage-on-20261017T001438Z.log",
+    "raw_log_sha256": "2315792f1e6b29f771217b30f66c84f0f0f3e746b2c569cdc142575b3994d1aa",
+    "runtime_build_id": "20261016T232842.692185Z",
+    "runtime_report_sha256": "76bccf22d9a755bdabc2ce3bec817eccdd5cd46e4b72b6ff5dd2034b91982aca",
+    "model_loaded": false,
+    "gpu_exact_frames": 25,
+    "cpu_oracle_exact": true,
+    "canaries_passed": true,
+    "scheduler_copies": 4,
+    "stage_copies_by_scheduler": {
+      "A": 64,
+      "B": 32
+    },
+    "stage_declines_by_scheduler": {
+      "A": 0,
+      "B": 0
+    },
+    "reset_growth_and_ABA": true,
+    "invalid_cap_fallback_passed": true,
+    "free_event_path": "PASS; stage event slots remained recorded through teardown",
+    "safety_postflight_compute_pids": 0
+  }
+}

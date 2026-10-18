@@ -1,0 +1,23 @@
+RUNTIME_MAP 7fff99eb0000-7fffa79f0000 r-xp 00000000 08:04 33496339                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v89/lib/libggml-cuda.so.0
+RUNTIME_MAP 7fffa79f0000-7fffa7a00000 r--p 0db30000 08:04 33496339                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v89/lib/libggml-cuda.so.0
+RUNTIME_MAP 7fffa7a00000-7fffa7a10000 rw-p 0db40000 08:04 33496339                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v89/lib/libggml-cuda.so.0
+FIXTURE_START mode=on device=CUDA0 Tesla V100-SXM2-16GB layout=2d ordinary_quantized_mul_mat ep_ids=none model_load=none
+DENSE_FIXTURE_START mode=on format=IQ2_XS type=iq2_xs K=2560 N=640 weight_bytes=473600 layout=2d ordinary_mul_mat source=original_expert170_raw_as_matrix semantic_claim=none shapes=32,24,48,64
+SHAPE_RESULT mode=on format=IQ2_XS tokens=32 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=on format=IQ2_XS tokens=32 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=on format=IQ2_XS tokens=32 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=on format=IQ2_XS tokens=32 A_vs_B=changed A2_exact=1
+SHAPE_RESULT mode=on format=IQ2_XS tokens=24 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=on format=IQ2_XS tokens=24 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=on format=IQ2_XS tokens=24 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=on format=IQ2_XS tokens=24 A_vs_B=changed A2_exact=1
+SHAPE_RESULT mode=on format=IQ2_XS tokens=48 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=on format=IQ2_XS tokens=48 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=on format=IQ2_XS tokens=48 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=on format=IQ2_XS tokens=48 A_vs_B=changed A2_exact=1
+SHAPE_RESULT mode=on format=IQ2_XS tokens=64 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=on format=IQ2_XS tokens=64 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=on format=IQ2_XS tokens=64 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=on format=IQ2_XS tokens=64 A_vs_B=changed A2_exact=1
+PASS_DTYPE mode=on format=IQ2_XS shapes=4 layout=2d weights_unchanged=1 canary=PASS
+PASS_DENSE_MULMAT_FIXTURE mode=on dtype=IQ2_XS source=raw_bytes output=F32 exact_gates=PASS

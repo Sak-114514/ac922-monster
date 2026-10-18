@@ -1,0 +1,12 @@
+PASS axis2_full_k format=IQ2_XXS K=2560 N=640 expert_stride=422400 E=170/171/171
+PASS axis2_full_k format=IQ2_XS K=2560 N=640 expert_stride=473600 E=170/171/171
+PASS axis2_full_k format=IQ2_S K=2560 N=640 expert_stride=524800 E=170/171/171
+PASS axis2_full_k format=IQ3_XXS K=2560 N=640 expert_stride=627200 E=170/171/171
+PASS axis2_full_k format=IQ3_S K=2560 N=640 expert_stride=704000 E=170/171/171
+PASS axis2_full_k format=IQ4_NL K=640 N=2560 expert_stride=921600 E=170/171/171
+PASS axis2_full_k format=Q2_0 K=640 N=2560 expert_stride=460800 E=170/171/171
+PASS owner ranges, global-to-local mapping, foreign +0, fused gate/up + SwiGLU
+PASS tc_worklist rank=0 E=170 owned=4 foreign_inrange_trap=0 foreign_oob_trap=12
+PASS tc_worklist rank=1 E=171 owned=4 foreign_inrange_trap=4 foreign_oob_trap=8
+PASS tc_worklist rank=2 E=171 owned=4 foreign_inrange_trap=6 foreign_oob_trap=6
+PASS CPU-only EP axis-2 contract; no model/core/CUDA

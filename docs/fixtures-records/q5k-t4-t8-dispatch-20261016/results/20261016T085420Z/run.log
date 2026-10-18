@@ -1,0 +1,19 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+RUNTIME_MAP 7fff891e0000-7fff96d20000 r-xp 00000000 08:04 33495429                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v83/lib/libggml-cuda.so.0
+RUNTIME_MAP 7fff96d20000-7fff96d30000 r--p 0db30000 08:04 33495429                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v83/lib/libggml-cuda.so.0
+RUNTIME_MAP 7fff96d30000-7fff96d40000 rw-p 0db40000 08:04 33495429                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v83/lib/libggml-cuda.so.0
+FIXTURE_START device=CUDA0 Tesla V100-SXM2-16GB tensor=output.weight type=Q5_K K=2560 M=2048 rows=2048 bytes=3604480 T4x4_vs_T8x2_vs_T16_chunk8 input=16xK
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp:3507: GGML_ASSERT(ggml_backend_dev_type(ggml_backend_get_device(backends[n_backends - 1])) == GGML_BACKEND_DEVICE_TYPE_CPU) failed
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v83/lib/libggml-base.so.0(+0x28468)[0x7fff97768468]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v83/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fff97768a68]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v83/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fff97768c04]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v83/lib/libggml-base.so.0(ggml_backend_sched_new+0xcc0)[0x7fff97797830]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/q5k-t4-t8-dispatch-20261016/q5k-dispatch-fixture(+0x5050)[0x13cff5050]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/q5k-t4-t8-dispatch-20261016/q5k-dispatch-fixture(+0x3604)[0x13cff3604]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fff97064d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fff97064f6c]
+Generating '/tmp/nsys-report-6674.qdstrm'
+[1/1] [0%                          ] q5k-dispatch.nsys-rep[1/1] [0%                          ] q5k-dispatch.nsys-rep[1/1] [==21%                       ] q5k-dispatch.nsys-rep[1/1] [===23%                      ] q5k-dispatch.nsys-rep[1/1] [====25%                     ] q5k-dispatch.nsys-rep[1/1] [==========47%               ] q5k-dispatch.nsys-rep[1/1] [===============67%          ] q5k-dispatch.nsys-rep[1/1] [=====================88%    ] q5k-dispatch.nsys-rep[1/1] [=======================93%  ] q5k-dispatch.nsys-rep[1/1] [========================99% ] q5k-dispatch.nsys-rep[1/1] [========================100%] q5k-dispatch.nsys-rep[1/1] [========================100%] q5k-dispatch.nsys-rep
+Generated:
+    /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/q5k-t4-t8-dispatch-20261016/results/20261016T085420Z/q5k-dispatch.nsys-rep

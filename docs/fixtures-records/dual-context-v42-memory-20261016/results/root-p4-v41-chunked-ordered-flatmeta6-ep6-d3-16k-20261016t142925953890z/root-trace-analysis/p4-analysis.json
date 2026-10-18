@@ -1,0 +1,499 @@
+{
+  "schema_version": 1,
+  "input": {
+    "sqlite": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t142925953890z/v96-p4-two-ranges-p4.sqlite",
+    "processes": [
+      {
+        "global_pid": 285716609236992,
+        "pid": 252821,
+        "name": "explicit globalPid"
+      }
+    ],
+    "process_match": "dual-context",
+    "target_global_pids": [
+      285716609236992
+    ],
+    "target_local_pids": [
+      252821
+    ],
+    "island_a_devices": [
+      0,
+      1,
+      2
+    ],
+    "island_b_devices": [
+      3,
+      4,
+      5
+    ],
+    "gpu_info": {
+      "0": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0004:04:00.0",
+        "uuid": "80452dac-e8c1-99fd-225c-ea846276ae6f"
+      },
+      "1": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0004:05:00.0",
+        "uuid": "ac5b33c1-276d-c1ae-15a6-46f7894daefb"
+      },
+      "2": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0004:06:00.0",
+        "uuid": "e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb"
+      },
+      "3": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0035:03:00.0",
+        "uuid": "fadb0459-4d30-907b-289a-862b3014f165"
+      },
+      "4": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0035:04:00.0",
+        "uuid": "760ce501-32f6-69b6-215b-1020da68bbfc"
+      },
+      "5": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0035:05:00.0",
+        "uuid": "d3558623-deca-c702-3cc0-01b4aa9c667a"
+      }
+    }
+  },
+  "window": {
+    "source_file": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t142925953890z/root-trace-analysis/p4-workload-window.json",
+    "request_start_monotonic_ns": 1,
+    "request_end_monotonic_ns": 5014317074,
+    "request_duration_ms": 5014.317,
+    "nsys_session_start_utc_epoch_ns": 1792161410637985263,
+    "nsys_session_start_utc": "2026-10-16T14:36:50",
+    "nsys_session_start_local": "2026-10-16T22:36:50",
+    "window_start_nsys_ns": 152028927,
+    "window_end_nsys_ns": 5166346000,
+    "profile_start_nsys_ns": 440456820799,
+    "profile_end_nsys_ns": 445835108076,
+    "clock_mapping": "request realtime_ns minus Nsight session UTC epoch",
+    "clock_warnings": [
+      "request starts before Nsight ANALYSIS_DETAILS.startTime"
+    ]
+  },
+  "graph_capture": {
+    "graph_node_kernel_events": {
+      "kernel_events_in_window": 72949,
+      "kernel_events_with_graph_node_id": 27429
+    },
+    "cuda_graph_node_event_rows": null,
+    "node_granularity_observed_in_window": true,
+    "note": "Node rows are evidence that graph-node capture was present in this window; they do not independently prove the profile started at process launch."
+  },
+  "gpu_activity": {
+    "request_window_ms": 5014.317,
+    "kernel_events": 72949,
+    "memcpy_events": 3108,
+    "memset_events": 0,
+    "per_device_kernel": {
+      "0": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0004:04:00.0",
+        "uuid": "80452dac-e8c1-99fd-225c-ea846276ae6f",
+        "event_count": 12087,
+        "union_ms": 205.814
+      },
+      "1": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0004:05:00.0",
+        "uuid": "ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+        "event_count": 12087,
+        "union_ms": 200.467
+      },
+      "2": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0004:06:00.0",
+        "uuid": "e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+        "event_count": 12311,
+        "union_ms": 192.576
+      },
+      "3": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0035:03:00.0",
+        "uuid": "fadb0459-4d30-907b-289a-862b3014f165",
+        "event_count": 12088,
+        "union_ms": 160.811
+      },
+      "4": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0035:04:00.0",
+        "uuid": "760ce501-32f6-69b6-215b-1020da68bbfc",
+        "event_count": 12065,
+        "union_ms": 186.514
+      },
+      "5": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0035:05:00.0",
+        "uuid": "d3558623-deca-c702-3cc0-01b4aa9c667a",
+        "event_count": 12311,
+        "union_ms": 179.887
+      }
+    },
+    "per_device_all_activity": {
+      "0": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0004:04:00.0",
+        "uuid": "80452dac-e8c1-99fd-225c-ea846276ae6f",
+        "event_count": 12624,
+        "union_ms": 207.862
+      },
+      "1": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0004:05:00.0",
+        "uuid": "ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+        "event_count": 12597,
+        "union_ms": 202.426
+      },
+      "2": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0004:06:00.0",
+        "uuid": "e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+        "event_count": 12821,
+        "union_ms": 194.692
+      },
+      "3": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0035:03:00.0",
+        "uuid": "fadb0459-4d30-907b-289a-862b3014f165",
+        "event_count": 12597,
+        "union_ms": 163.292
+      },
+      "4": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0035:04:00.0",
+        "uuid": "760ce501-32f6-69b6-215b-1020da68bbfc",
+        "event_count": 12597,
+        "union_ms": 189.384
+      },
+      "5": {
+        "name": "Tesla V100-SXM2-16GB",
+        "bus_location": "0035:05:00.0",
+        "uuid": "d3558623-deca-c702-3cc0-01b4aa9c667a",
+        "event_count": 12821,
+        "union_ms": 182.447
+      }
+    },
+    "islands": {
+      "A_kernels": {
+        "devices": [
+          0,
+          1,
+          2
+        ],
+        "union_ms": 351.663,
+        "share_of_request_window_pct": 7.013
+      },
+      "B_kernels": {
+        "devices": [
+          3,
+          4,
+          5
+        ],
+        "union_ms": 335.977,
+        "share_of_request_window_pct": 6.7
+      },
+      "A_all_activity": {
+        "devices": [
+          0,
+          1,
+          2
+        ],
+        "union_ms": 356.289,
+        "share_of_request_window_pct": 7.105
+      },
+      "B_all_activity": {
+        "devices": [
+          3,
+          4,
+          5
+        ],
+        "union_ms": 341.21,
+        "share_of_request_window_pct": 6.805
+      }
+    },
+    "cross_island": {
+      "kernel_overlap_ms": 125.245,
+      "kernel_overlap_share_of_request_window_pct": 2.498,
+      "all_activity_overlap_ms": 125.921,
+      "all_activity_overlap_share_of_request_window_pct": 2.511
+    },
+    "all_gpu": {
+      "kernel_union_ms": 562.395,
+      "any_activity_union_ms": 571.578,
+      "idle_ms": 4442.739,
+      "idle_share_of_request_window_pct": 88.601,
+      "idle_gaps_gt_1ms": 1146,
+      "idle_gaps_gt_10ms": 8,
+      "longest_idle_gap_ms": 159.476,
+      "missing_kernel_devices": [],
+      "missing_activity_devices": []
+    },
+    "accounting_note": "Island union, overlap, API union, and idle are separate wall-time measures. Per-device and per-island percentages overlap and must not be added."
+  },
+  "cuda_host_apis": {
+    "available": true,
+    "calls": 51530,
+    "nonzero_return_calls": 0,
+    "all_api_sum_call_ms": 1133.553,
+    "all_api_wall_union_ms": 698.294,
+    "categories": {
+      "launch": {
+        "calls": 45526,
+        "sum_call_ms": 1019.544,
+        "wall_union_ms": 584.763
+      },
+      "other": {
+        "calls": 3460,
+        "sum_call_ms": 60.365,
+        "wall_union_ms": 60.137
+      },
+      "sync_wait": {
+        "calls": 2544,
+        "sum_call_ms": 53.644,
+        "wall_union_ms": 53.644
+      }
+    },
+    "top_apis_by_summed_call_time": [
+      {
+        "api": "cudaLaunchKernel_v7000",
+        "category": "launch",
+        "calls": 45520,
+        "sum_call_ms": 520.864,
+        "wall_union_ms": 500.325
+      },
+      {
+        "api": "cudaGraphLaunch_v10000",
+        "category": "launch",
+        "calls": 6,
+        "sum_call_ms": 498.68,
+        "wall_union_ms": 84.438
+      },
+      {
+        "api": "cudaMemcpyAsync_v3020",
+        "category": "other",
+        "calls": 2445,
+        "sum_call_ms": 56.887,
+        "wall_union_ms": 56.736
+      },
+      {
+        "api": "cudaStreamSynchronize_v3020",
+        "category": "sync_wait",
+        "calls": 2472,
+        "sum_call_ms": 53.454,
+        "wall_union_ms": 53.454
+      },
+      {
+        "api": "cudaEventRecord_v3020",
+        "category": "other",
+        "calls": 883,
+        "sum_call_ms": 2.033,
+        "wall_union_ms": 2.033
+      },
+      {
+        "api": "cudaMemcpy2DAsync_v3020",
+        "category": "other",
+        "calls": 42,
+        "sum_call_ms": 0.832,
+        "wall_union_ms": 0.755
+      },
+      {
+        "api": "cudaEventQuery_v3020",
+        "category": "other",
+        "calls": 90,
+        "sum_call_ms": 0.613,
+        "wall_union_ms": 0.613
+      },
+      {
+        "api": "cudaStreamWaitEvent_v3020",
+        "category": "sync_wait",
+        "calls": 72,
+        "sum_call_ms": 0.19,
+        "wall_union_ms": 0.19
+      }
+    ],
+    "accounting_note": "Host API sums overlap across threads. Wall-union is reported separately; launch and sync category percentages are not additive."
+  },
+  "cpu_sampling": {
+    "available": false,
+    "reason": "CPU samples absent; capture with --sample=process-tree"
+  },
+  "diagnostics_in_window": [],
+  "warnings": [
+    "request window is not fully covered by Nsight profile timing",
+    "CPU samples absent; capture with --sample=process-tree"
+  ],
+  "interpretation_limits": [
+    "Kernel union is a wall-time union, not a sum of kernel durations.",
+    "Island overlap and all-GPU idle are distinct measures; percentages may overlap and are not additive.",
+    "CUDA host API call-time sums overlap across CPU threads; use interval union for their wall-time footprint.",
+    "CPU stack sample hotspots are sampled attribution, not exact function wall time.",
+    "Uncaptured devices or missing graph-node events must be reported as coverage gaps, not treated as idle work."
+  ],
+  "kernel_categories": [
+    {
+      "category": "other_unattributed",
+      "sum_across_devices_ms": 632.00867,
+      "share_kernel_sum_pct": 56.125217614109445,
+      "wall_union_ms": 402.698581
+    },
+    {
+      "category": "collective_including_rank_wait",
+      "sum_across_devices_ms": 338.583277,
+      "share_kernel_sum_pct": 30.067720593331888,
+      "wall_union_ms": 80.70513
+    },
+    {
+      "category": "moe_explicit_names_only",
+      "sum_across_devices_ms": 134.922205,
+      "share_kernel_sum_pct": 11.98169973934137,
+      "wall_union_ms": 88.638798
+    },
+    {
+      "category": "attention_indexer",
+      "sum_across_devices_ms": 12.585108,
+      "share_kernel_sum_pct": 1.1176142966473384,
+      "wall_union_ms": 10.086822
+    },
+    {
+      "category": "gdn",
+      "sum_across_devices_ms": 7.969728,
+      "share_kernel_sum_pct": 0.7077477565699554,
+      "wall_union_ms": 6.046366
+    }
+  ],
+  "top_kernels_by_device_sum": [
+    {
+      "name": "k_allreduce_p2p(float *, long, p2p_ar_args)",
+      "sum_ms": 338.583277,
+      "share_kernel_sum_pct": 30.067720593331888
+    },
+    {
+      "name": "void gemv_sm70::gemv_sm70_bf16_kernel<(int)4, (int)4, (int)256, (bool)0, (int)1024>(const unsigned short *, const float *, float *, int, int, long, long, long)",
+      "sum_ms": 282.186167,
+      "share_kernel_sum_pct": 25.059403110033966
+    },
+    {
+      "name": "void mul_mat_vec_f<__nv_bfloat16, float, (int)4, (int)256, (bool)0, (bool)0>(const T1 *, const float *, const int *, ggml_cuda_mm_fusion_args_device, float *, int, uint3, int, int, int, uint3, int, int, int, uint3, int, int, int, int)",
+      "sum_ms": 66.314364,
+      "share_kernel_sum_pct": 5.889014323871958
+    },
+    {
+      "name": "void cpy_scalar<&cpy_1_scalar<float, float>>(const char *, char *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",
+      "sum_ms": 35.894385,
+      "share_kernel_sum_pct": 3.1875831216834825
+    },
+    {
+      "name": "void mul_mat_vec_q_moe<(ggml_type)21, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+      "sum_ms": 30.909486,
+      "share_kernel_sum_pct": 2.744901629419529
+    },
+    {
+      "name": "void mul_mat_vec_q_moe<(ggml_type)42, (int)2, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+      "sum_ms": 27.642891,
+      "share_kernel_sum_pct": 2.4548132747262907
+    },
+    {
+      "name": "void mul_mat_vec_q<(ggml_type)14, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+      "sum_ms": 21.541072,
+      "share_kernel_sum_pct": 1.9129442538204418
+    },
+    {
+      "name": "void k_bin_bcast<&op_add, float, float, float, const float *>(const T2 *, const T3 *, T4 *, unsigned int, unsigned int, unsigned int, uint3, uint3, uint3, uint3, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, T5...)",
+      "sum_ms": 18.371201,
+      "share_kernel_sum_pct": 1.63144542614826
+    },
+    {
+      "name": "void k_get_rows<(int)32, (int)1, &dequantize_q8_0, float>(const void *, const int *, T4 *, long, long, uint3, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)",
+      "sum_ms": 17.965877,
+      "share_kernel_sum_pct": 1.5954508286307587
+    },
+    {
+      "name": "void mul_mat_vec_q_moe<(ggml_type)17, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+      "sum_ms": 16.500899,
+      "share_kernel_sum_pct": 1.4653541813017232
+    },
+    {
+      "name": "void mul_mat_vec_q_moe<(ggml_type)20, (int)8, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+      "sum_ms": 15.292113,
+      "share_kernel_sum_pct": 1.358008537928051
+    },
+    {
+      "name": "void rms_norm_mul_rope_multi_f32<(bool)0>(const float *, float *, int, long, long, long, int, int, long, long, long, float, const float *, int, int, const int *, float, float, float, rope_corr_dims, float, const float *, mrope_sections, bool)",
+      "sum_ms": 14.715624,
+      "share_kernel_sum_pct": 1.3068137171716516
+    },
+    {
+      "name": "void mul_mat_vec_q<(ggml_type)23, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+      "sum_ms": 14.676359,
+      "share_kernel_sum_pct": 1.3033268082505793
+    },
+    {
+      "name": "void mul_mat_vec_q<(ggml_type)13, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+      "sum_ms": 13.36516,
+      "share_kernel_sum_pct": 1.1868864290222332
+    },
+    {
+      "name": "void mul_mat_vec_q_moe<(ggml_type)16, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+      "sum_ms": 13.133841,
+      "share_kernel_sum_pct": 1.1663442595401623
+    },
+    {
+      "name": "void mul_mat_vec_q<(ggml_type)12, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+      "sum_ms": 10.968713,
+      "share_kernel_sum_pct": 0.9740711374603631
+    },
+    {
+      "name": "void mul_mat_vec_q<(ggml_type)21, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+      "sum_ms": 10.653429,
+      "share_kernel_sum_pct": 0.9460724976470092
+    },
+    {
+      "name": "void qsa_attn_kernel<(int)3, (int)4, (bool)1, (bool)0>(const char *, const char *, const char *, const __half *, const int *, float *, float *, float2 *, int, int, int, int, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, float)",
+      "sum_ms": 10.061468,
+      "share_kernel_sum_pct": 0.8935036935765431
+    },
+    {
+      "name": "quantize_q8_1(const float *, void *, long, long, long, long, long, unsigned int, uint3)",
+      "sum_ms": 9.951526,
+      "share_kernel_sum_pct": 0.8837403485975408
+    },
+    {
+      "name": "void mul_mat_vec_q_moe<(ggml_type)18, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+      "sum_ms": 9.907183,
+      "share_kernel_sum_pct": 0.8798024903959082
+    },
+    {
+      "name": "void mul_mat_vec_iq2_s_moe_volta<(bool)1>(const void *, const void *, const void *, const int *, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, block_q8_1 *, int, int, int)",
+      "sum_ms": 9.231138,
+      "share_kernel_sum_pct": 0.8197666482579662
+    },
+    {
+      "name": "void mul_mat_vec_q<(ggml_type)20, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+      "sum_ms": 8.907597,
+      "share_kernel_sum_pct": 0.791034749640046
+    },
+    {
+      "name": "void topk_moe_cuda<(int)512, (bool)0>(const float *, float *, int *, float *, int, int, float, float, topk_moe_config)",
+      "sum_ms": 8.384644,
+      "share_kernel_sum_pct": 0.7445941669072943
+    },
+    {
+      "name": "void rms_norm_f32<(int)1024, (bool)1, (bool)0>(const float *, float *, int, long, long, long, float, const float *, long, long, long, uint3, uint3, uint3, uint3, const float *, long, long, long, uint3, uint3, uint3, uint3)",
+      "sum_ms": 8.374342,
+      "share_kernel_sum_pct": 0.7436793028883236
+    },
+    {
+      "name": "void top_k_radix_histogram_select<(int)256, (int)8>(const float *, top_k_radix_state *, int *, unsigned int *, int, int, int, int, bool, bool)",
+      "sum_ms": 8.077315,
+      "share_kernel_sum_pct": 0.7173019669377486
+    }
+  ],
+  "category_cautions": [
+    "Device sums are not wall time. Collective intervals include rank wait. Explicit MoE names may omit generic GEMM work. Node tracing adds overhead. P4 scope is the captured kernel envelope, not one selected steady frame."
+  ]
+}

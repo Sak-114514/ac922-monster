@@ -1,0 +1,112 @@
+{
+  "schema": "v170-nsys-supervisor-manifest-v1",
+  "phase": "start",
+  "unit": "root-v170-layer6-nsys-single64k-ub1024-20261017t023804000987z",
+  "output": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-nsys-long-v170-20261017/results/root-v170-layer6-nsys-single64k-ub1024-20261017t023804000987z",
+  "launch_eligible": true,
+  "profile": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-nsys-long-v170-20261017/v170-profile-overlay.json",
+  "profile_sha256": "7818bfd3223aa28296f83770493c148a3540fb67b48a074ebdcbd24327d88c48",
+  "runner_source_sha256": "4714ba0722ed6a4dcdfed94fe62619b23fbac325d72b48d0811b0ae4738ab1d9",
+  "runner_binary": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-nsys-long-v170-20261017/build-v170-20261017t022853581441439z-4714ba0722ed/dual-context-v170-single64k-nsys",
+  "runner_sha256": "f1029f9b98e18046894ea6dd122fac2ba29ab0fc2b5dbdfeefed097483261945",
+  "ldd_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-nsys-long-v170-20261017/build-v170-20261017t022853581441439z-4714ba0722ed/ldd.txt",
+  "ldd_sha256": "7f898fe1042c535ae94697377313dd725e3478f004696d0f74e13d240f4b96e2",
+  "build_record": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-nsys-long-v170-20261017/build-v170-20261017t022853581441439z-4714ba0722ed/v170-runner-build.json",
+  "build_record_sha256": "b68dc515d35fd16e8e71155417f808bb234f705a04f77cf5b7a95cadd5d4d8b3",
+  "runtime_build_id": "20261017T013609.676118Z",
+  "runtime_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V169-build.json",
+  "runtime_report_sha256": "d4451cb0c16ccbb2fa569955c0aaaa4b276c76449ef786c1a7b68552a46c7c0b",
+  "runtime_closure": {
+    "status": "V131_FROZEN_RUNTIME_CLOSURE_PASS",
+    "runner": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-nsys-long-v170-20261017/build-v170-20261017t022853581441439z-4714ba0722ed/dual-context-v170-single64k-nsys",
+    "runner_sha256": "f1029f9b98e18046894ea6dd122fac2ba29ab0fc2b5dbdfeefed097483261945",
+    "build_record_sha256": "b68dc515d35fd16e8e71155417f808bb234f705a04f77cf5b7a95cadd5d4d8b3",
+    "runtime_id": "20261017T013609.676118Z",
+    "runtime_name": "runtime-perf-v169",
+    "dso_count": 7,
+    "model_size_bytes": 78615622080,
+    "model_hashing": "not performed",
+    "ldd": "\tlinux-vdso64.so.1 (0x00007fff9b990000)\n\tlibllama-common.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v169/lib/libllama-common.so.0 (0x00007fff9b3a0000)\n\tlibmtmd.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v169/lib/libmtmd.so.0 (0x00007fff9b1a0000)\n\tlibllama.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v169/lib/libllama.so.0 (0x00007fff9ae10000)\n\tlibggml.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v169/lib/libggml.so.0 (0x00007fff9ade0000)\n\tlibggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v169/lib/libggml-cpu.so.0 (0x00007fff9ac20000)\n\tlibggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v169/lib/libggml-cuda.so.0 (0x00007fff8d060000)\n\tlibggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v169/lib/libggml-base.so.0 (0x00007fff8ced0000)\n\tlibstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fff8cba0000)\n\tlibgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fff8cb60000)\n\tlibc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fff8c900000)\n\tlibm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fff8c7d0000)\n\t/lib64/ld64.so.2 (0x00007fff9b9b0000)\n\tlibgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fff8c750000)\n\tlibcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fff8c670000)\n\tlibcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fff85950000)\n\tlibcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fff83b90000)\n\tlibnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff81d30000)\n\tlibdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff81d00000)\n\tlibpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff81cd0000)\n\tlibrt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff81ca0000)\n\tlibcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff6de10000)\n",
+    "ssh_via": "ac922"
+  },
+  "nsys_wrapper": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-nsys-long-v170-20261017/run-v170-nsys-prefill-4f3feee54ba6.sh",
+  "nsys_wrapper_sha256": "4f3feee54ba6fdfc39fa3753cfe8b272e9bf9ae37e077fe3b0165882f4471623",
+  "preflight": {
+    "remote_checker_status": "PASS",
+    "remote_checker_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-nsys-long-v170-20261017/results/root-v170-layer6-nsys-single64k-ub1024-20261017t023804000987z/checker-preflight/work/checker-report.json",
+    "remote_checker_report_sha256": "513e3d09f7b20bf1b5f466341513d2eb8a2d21830399f5828305662a24eb80c6",
+    "hardware_gate_passed": true,
+    "root_gpu_window_authorized": true,
+    "fan_targets_rpm": {
+      "fan0": {
+        "target": 3000,
+        "rpm": 2851,
+        "alarm": 0,
+        "fault": 0
+      },
+      "fan2": {
+        "target": 3000,
+        "rpm": 2747,
+        "alarm": 0,
+        "fault": 0
+      },
+      "fan3": {
+        "target": 3000,
+        "rpm": 2751,
+        "alarm": 0,
+        "fault": 0
+      }
+    },
+    "gpu_power_limits_w_record_only": [
+      {
+        "uuid": "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f",
+        "power_limit_w_record_only": 300.0
+      },
+      {
+        "uuid": "GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+        "power_limit_w_record_only": 300.0
+      },
+      {
+        "uuid": "GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+        "power_limit_w_record_only": 300.0
+      },
+      {
+        "uuid": "GPU-fadb0459-4d30-907b-289a-862b3014f165",
+        "power_limit_w_record_only": 300.0
+      },
+      {
+        "uuid": "GPU-760ce501-32f6-69b6-215b-1020da68bbfc",
+        "power_limit_w_record_only": 300.0
+      },
+      {
+        "uuid": "GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+        "power_limit_w_record_only": 300.0
+      }
+    ],
+    "cpu_scaling_max_khz_record_only": 2600000,
+    "physical_ddr_free_record_only": [
+      "/sys/devices/system/node/node0/meminfo:Node 0 MemFree:        13362816 kB",
+      "/sys/devices/system/node/node8/meminfo:Node 8 MemFree:        13386432 kB"
+    ]
+  },
+  "scenario_sha256": "4cf69e197092287cac19d9d041fd9cf60c265adbb3400025dca8d905d2a3d04f",
+  "scenario_order": [
+    "v170-single64k-ub1024-native-semantic-canary",
+    "v170-single64k-ub1024-native-mask-long-prefill"
+  ],
+  "target_ubatch": 1024,
+  "draft_ubatch": 512,
+  "mtp_depth": 3,
+  "context_per_sequence": 66048,
+  "prompt_tokens": 65536,
+  "output_tokens": 32,
+  "model_loads": 1,
+  "automatic_retry": false,
+  "runtime_max_seconds": 1800,
+  "gpu_free_floor_mib": 512,
+  "gpu_temp_ceiling_c": 58,
+  "bmc_critical_temp_ceiling_c": 58,
+  "fan_state_read_only": true,
+  "physical_ddr_free_stop_threshold": false,
+  "raw_nsys_rep_sqlite_local_copy": false
+}

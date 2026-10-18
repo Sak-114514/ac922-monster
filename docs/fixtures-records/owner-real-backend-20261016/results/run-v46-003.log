@@ -1,0 +1,66 @@
+ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+meta-context-view owner-create owner=7 epoch=1 backend-context=2
+meta-context-view bind owner=7 epoch=1 buffer=4 view=context_A_stride_view root=shared_static_f32_weights capacity=1
+meta-context-view owner-create owner=9 epoch=1 backend-context=3
+meta-context-view bind owner=9 epoch=1 buffer=4 view=context_B_stride_view root=shared_static_f32_weights capacity=1
+meta-context-submit FIFO active context=0x10038f7a7d0 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe5d400680
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe5d600680
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe5d800680
+meta-context-submit FIFO active context=0x1003b40a7d0 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe5d400880
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe5d600880
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe5d800880
+CUDA Graph id 5 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 6 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 7 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-context-view owner-unbind owner=9 epoch=1 removed=1
+meta-context-view owner-create owner=11 epoch=2 backend-context=3
+meta-context-view bind owner=11 epoch=2 buffer=4 view=context_B_stride_view root=shared_static_f32_weights capacity=1
+meta-context-view owner-retire owner=9 epoch=1
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+meta-context-view owner-unbind owner=7 epoch=1 removed=1
+meta-context-view owner-unbind owner=11 epoch=2 removed=1
+meta-context-view owner-retire owner=7 epoch=1
+meta-context-view owner-retire owner=11 epoch=2
+CUDA Graph id 20 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 22 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 24 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 21 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 23 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 25 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ENV CUDA_VISIBLE_DEVICES=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb GGML_META_CONTEXT_VIEWS=1 GGML_META_CONTEXT_VIEWS_TRACE=1
+DEVICE member=0 name=CUDA0 pci=0004:04:00.0
+DEVICE member=1 name=CUDA1 pci=0004:05:00.0
+DEVICE member=2 name=CUDA2 pci=0004:06:00.0
+IDENTITY root=0x1003bb0cb60 weight_buffer=0x1003a95af10 A_sched=0x1003b728390 A_meta=0x1003a7039d0 A_view=0x1003c83e7a0 B_sched=0x1003b91a570 B_meta=0x10039c6e8f0 B_view=0x1003d143160 W0=0x1003bb0ccd0 bias=0x1003bb0ce40 root_shared=1 owner_contexts_distinct=1
+ALLOC phase=MIRRORED family=context_A reset=0 graph=0x1003c83eed0 root=0x1003bb0cb60 buffer=0x1003a95af10 view=0x1003c83e7a0 meta=0x1003a7039d0 splits=1 nodes=5
+ALLOC phase=MIRRORED family=context_B reset=0 graph=0x1003d143890 root=0x1003bb0cb60 buffer=0x1003a95af10 view=0x1003d143160 meta=0x10039c6e8f0 splits=1 nodes=5
+RESULT family=context_A phase=MIRRORED-A0 frame=0 actual=14702.0 expected=14702.0 exact=1 canary=1
+RESULT family=context_B phase=MIRRORED-B0 frame=1 actual=16105.0 expected=16105.0 exact=1 canary=1
+RESULT family=context_A phase=MIRRORED-A1 frame=2 actual=17514.0 expected=17514.0 exact=1 canary=1
+ABA family=context_B old_view=0x1003d143160 new_view=0x1003d143160 same_address=1
+ALLOC phase=MIRRORED family=context_B reset=1 graph=0x1003d143890 root=0x1003bb0cb60 buffer=0x1003a95af10 view=0x1003d143160 meta=0x10039c6e8f0 splits=1 nodes=5
+RESULT family=context_B phase=MIRRORED-ABA-B frame=3 actual=13607.0 expected=13607.0 exact=1 canary=1
+RESULT family=context_A phase=MIRRORED-A-after-ABA frame=4 actual=19876.0 expected=19876.0 exact=1 canary=1
+ALLOC phase=TP-AR family=context_A graph=0x1003ca3ede0 W0=0x1003bb0ccd0 x0=0x1003c43abe0 matmul_sync=MIRRORED add_sync=MIRRORED splits=1 nodes=4
+ALLOC phase=TP-AR family=context_B graph=0x1003d343760 W0=0x1003bb0ccd0 x0=0x1003cd3eaa0 matmul_sync=MIRRORED add_sync=MIRRORED splits=1 nodes=4
+RESULT family=context_A phase=TP-AR-concurrent-A frame=5 actual=66496.0 expected=66496.0 exact=1 canary=1
+RESULT family=context_B phase=TP-AR-concurrent-B frame=6 actual=67296.0 expected=67296.0 exact=1 canary=1
+DESTROY order=B-before-A root=0x1003bb0cb60 weight_buffer=0x1003a95af10 A_after_B_teardown=1
+RESULT family=context_A phase=TP-AR-A-after-B-destroy frame=7 actual=66496.0 expected=66496.0 exact=1 canary=1
+OWNER_SHARED_WEIGHT_AND_TP_AR_FIXTURE: PASS

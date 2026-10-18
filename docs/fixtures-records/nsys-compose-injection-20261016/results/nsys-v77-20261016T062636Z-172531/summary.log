@@ -1,0 +1,16 @@
+RUN_CONFIG tag=20261016T062636Z-172531 runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77 manifest_sha=5d5570afb0bd16cc765232020387b615d7466c3cca20cd23c7b2d1b1c518a9bd probe_sha=2f2ad8d36f49003123a36320e4cd64ccaed9ea4bb1921c78165d818726ca2d42 nsys="NVIDIA Nsight Systems version 2023.4.4.54-234433681190v0" capture_range=cudaProfilerApi application_calls_start_stop=none p2p_blocks=64 children=49 ar6=48 timeout=60s
+7737f46cb6688c119c6674f0a4e67fdfadd88ed9055390b435b2e59a163166a3  /home/debian/ac922-monster/experiments/standard-opt-20261014/notes/direct-ar-compose-probe.cpp
+2f2ad8d36f49003123a36320e4cd64ccaed9ea4bb1921c78165d818726ca2d42  /home/debian/ac922-monster/experiments/standard-opt-20261014/notes/direct-ar-compose-shape-probe
+a46c81f27a338132e9750296b0ee9d685ef8e98f6292c2d64b4f7c018ec58835  /home/debian/ac922-monster/experiments/standard-opt-20261014/notes/direct-ar-compose-shape-v77-20261016T051738Z.log
+5d5570afb0bd16cc765232020387b615d7466c3cca20cd23c7b2d1b1c518a9bd  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/runtime-manifest.json
+GPU_GUARD GPU-80452dac-e8c1-99fd-225c-ea846276ae6f:39C/16126MiB GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb:38C/16126MiB GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb:39C/16126MiB GPU-fadb0459-4d30-907b-289a-862b3014f165:39C/16126MiB GPU-760ce501-32f6-69b6-215b-1020da68bbfc:39C/16121MiB GPU-d3558623-deca-c702-3cc0-01b4aa9c667a:39C/16121MiB
+COMMAND /usr/local/cuda-12.4/nsight-systems-2023.4.4/target-linux-ppc64le/nsys profile --trace=cuda --sample=none --cpuctxsw=none --capture-range=cudaProfilerApi --force-overwrite=true --output=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nsys-compose-injection-20261016/results/nsys-v77-20261016T062636Z-172531/v77-compose-cudaProfilerApi /home/debian/ac922-monster/experiments/standard-opt-20261014/notes/direct-ar-compose-shape-probe
+GPU_GUARD GPU-80452dac-e8c1-99fd-225c-ea846276ae6f:41C/16125MiB GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb:40C/16125MiB GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb:41C/16125MiB GPU-fadb0459-4d30-907b-289a-862b3014f165:41C/16125MiB GPU-760ce501-32f6-69b6-215b-1020da68bbfc:41C/16121MiB GPU-d3558623-deca-c702-3cc0-01b4aa9c667a:41C/16120MiB
+PASS_DIRECT_AR label=ordinary-segmented bytes=4195328 ranks=6 exact=1 canary=1
+DIRECT_COMPOSE_SHAPE children=49 scalar_nodes_per_child=150 ar6=48
+CUDA compose ready ranks=6 children_per_rank=49 ar6_per_rank=48 expected_ar6=48
+PASS_DIRECT_AR label=composed-segmented-first bytes=4195328 ranks=6 exact=1 canary=1
+PASS_DIRECT_AR label=composed-segmented-changed-input bytes=4195328 ranks=6 exact=1 canary=1
+DIRECT_SEGMENTED_AR_AND_COMPOSE_PASS
+f21e46e42ea6360d9cfe734300359290574ed52fb7c76213f50096f1474f5134  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nsys-compose-injection-20261016/results/nsys-v77-20261016T062636Z-172531/run.log
+V77_NSYS_CUDA_PROFILER_API_PASS tag=20261016T062636Z-172531 result_dir=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nsys-compose-injection-20261016/results/nsys-v77-20261016T062636Z-172531

@@ -1,0 +1,52 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+[mp-dbg] mul_mat_id hook: type=18 ne11=1 reg=0 ptr=0x10017400100 ne=[2560,224,512]
+optimization path device=0 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=4096 width=224 auxiliary=512 count=1
+[mp-dbg] mul_mat_id hook: type=18 ne11=1 reg=0 ptr=0x10017400100 ne=[2560,224,512]
+optimization path device=0 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=4096 width=224 auxiliary=512 count=2
+[mp-dbg] mul_mat_id hook: type=18 ne11=1 reg=0 ptr=0x10017400100 ne=[2560,224,512]
+[mp-dbg] mul_mat_id hook: type=18 ne11=1 reg=0 ptr=0x10017400100 ne=[2560,224,512]
+[mp-dbg] mul_mat_id hook: type=18 ne11=1 reg=0 ptr=0x10017400100 ne=[2560,224,512]
+[mp-dbg] mul_mat_id hook: type=18 ne11=1 reg=0 ptr=0x10017400100 ne=[2560,224,512]
+STARTUP model_load=0 shard_bytes=112394240 setup_ms=1062.911 visible_device_index=0 stream=backend_default free_mib=15818 total_mib=16128
+FIXTURE source_weight=IQ3_XXS K=2560 N=224 E=512 row_bytes=980 expert_stride_bytes=219520 topk=10
+SETUP shape=balanced-t4096-j128 startup_ms=111.325 model_load=0 graph=GGML_MUL_MAT_ID_plus_regular_MUL_MAT
+SHAPE shape=balanced-t4096-j128 K=2560 N=224 E=512 tokens=4096 topk=10 panel=128 mean_columns_per_global_expert=80
+MEMORY shape=balanced-t4096-j128 accounted_fixture_payload_mib=1153.75 graph_backend_scratch_excluded=1
+CUBLAS_PATH shape=balanced-t4096-j128 op=GGML_OP_MUL_MAT W=F16 X=F16 Y=F32 accum=F32_SM70 batch=512 static_dispatch=F16_CUBLAS_strided_batched expected_MMF=0
+PACK_COVERAGE tokens=4096 panel=128 expected_per_expert=80 assignments=40960 overflow=0 status=PASS
+NUMERIC shape=balanced-t4096-j128 case=A_candidate_vs_mmq values=9175040 bitdiff=9174981 max_abs=0.00312252436 max_rel=20761.9359 rms=0.000495178349 finite=1
+NUMERIC_STATUS shape=balanced-t4096-j128 input=A status=NUMERIC_SHIFT_PENDING_F64 quality_gate=F64_and_model_pending
+F64_SAMPLE shape=balanced-t4096-j128 case=MMQ_vs_F64_original_dequant values=3584 max_abs=0.00262141608 max_rel=9.56683949 rms=0.000575485346 finite=1
+F64_SAMPLE shape=balanced-t4096-j128 case=F16_TC_vs_F64_original_dequant values=3584 max_abs=0.000183562725 max_rel=0.41173566 rms=4.60254068e-05 finite=1
+PACK_COVERAGE tokens=4096 panel=128 expected_per_expert=80 assignments=40960 overflow=0 status=PASS
+NUMERIC shape=balanced-t4096-j128 case=B_candidate_vs_mmq values=9175040 bitdiff=9174973 max_abs=0.00284975767 max_rel=14644.362 rms=0.000494948744 finite=1
+NUMERIC_STATUS shape=balanced-t4096-j128 input=B status=NUMERIC_SHIFT_PENDING_F64 quality_gate=F64_and_model_pending
+PACK_COVERAGE tokens=4096 panel=128 expected_per_expert=80 assignments=40960 overflow=0 status=PASS
+NUMERIC shape=balanced-t4096-j128 case=A_candidate_vs_mmq values=9175040 bitdiff=9174981 max_abs=0.00312252436 max_rel=20761.9359 rms=0.000495178349 finite=1
+NUMERIC_STATUS shape=balanced-t4096-j128 input=A status=NUMERIC_SHIFT_PENDING_F64 quality_gate=F64_and_model_pending
+PERF shape=balanced-t4096-j128 reps=5 mmq_mul_mat_id_us=3841.0239 f16_dequant_pack_batched_mul_mat_scatter_us=8458.2396 speedup=0.4541 startup_ms_excluded=1
+PERF_SAMPLES shape=balanced-t4096-j128 mmq_us=3860.4801,3851.2640,3835.9039,3841.0239,3835.9039, tc_inclusive_us=8467.4559,8454.1435,8467.4559,8440.8321,8458.2396,
+CASE_END shape=balanced-t4096-j128 route_coverage=PASS canary=PASS input_immutable=PASS quant_weight_immutable=PASS
+ROUTE_OVERFLOW tokens=4096 panel=128 assignments=40960 head=16384 tail=24576 status=NOT_INTEGRATED_OVERFLOW
+SETUP shape=balanced-t8192-j256 startup_ms=190.624 model_load=0 graph=GGML_MUL_MAT_ID_plus_regular_MUL_MAT
+SHAPE shape=balanced-t8192-j256 K=2560 N=224 E=512 tokens=8192 topk=10 panel=256 mean_columns_per_global_expert=160
+MEMORY shape=balanced-t8192-j256 accounted_fixture_payload_mib=1640.31 graph_backend_scratch_excluded=1
+CUBLAS_PATH shape=balanced-t8192-j256 op=GGML_OP_MUL_MAT W=F16 X=F16 Y=F32 accum=F32_SM70 batch=512 static_dispatch=F16_CUBLAS_strided_batched expected_MMF=0
+PACK_COVERAGE tokens=8192 panel=256 expected_per_expert=160 assignments=81920 overflow=0 status=PASS
+NUMERIC shape=balanced-t8192-j256 case=A_candidate_vs_mmq values=18350080 bitdiff=18349960 max_abs=0.00312252436 max_rel=38652.5111 rms=0.000494999326 finite=1
+NUMERIC_STATUS shape=balanced-t8192-j256 input=A status=NUMERIC_SHIFT_PENDING_F64 quality_gate=F64_and_model_pending
+F64_SAMPLE shape=balanced-t8192-j256 case=MMQ_vs_F64_original_dequant values=3584 max_abs=0.0022488425 max_rel=9.45008585 rms=0.000558808785 finite=1
+F64_SAMPLE shape=balanced-t8192-j256 case=F16_TC_vs_F64_original_dequant values=3584 max_abs=0.000212644629 max_rel=0.627753845 rms=4.66097327e-05 finite=1
+PACK_COVERAGE tokens=8192 panel=256 expected_per_expert=160 assignments=81920 overflow=0 status=PASS
+NUMERIC shape=balanced-t8192-j256 case=B_candidate_vs_mmq values=18350080 bitdiff=18349953 max_abs=0.00301599503 max_rel=14644.362 optimization path summary device=0 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=18 selected=18
+rms=0.000494789175 finite=1
+NUMERIC_STATUS shape=balanced-t8192-j256 input=B status=NUMERIC_SHIFT_PENDING_F64 quality_gate=F64_and_model_pending
+PACK_COVERAGE tokens=8192 panel=256 expected_per_expert=160 assignments=81920 overflow=0 status=PASS
+NUMERIC shape=balanced-t8192-j256 case=A_candidate_vs_mmq values=18350080 bitdiff=18349960 max_abs=0.00312252436 max_rel=38652.5111 rms=0.000494999326 finite=1
+NUMERIC_STATUS shape=balanced-t8192-j256 input=A status=NUMERIC_SHIFT_PENDING_F64 quality_gate=F64_and_model_pending
+PERF shape=balanced-t8192-j256 reps=5 mmq_mul_mat_id_us=8042.4957 f16_dequant_pack_batched_mul_mat_scatter_us=10832.8962 speedup=0.7424 startup_ms_excluded=1
+PERF_SAMPLES shape=balanced-t8192-j256 mmq_us=8046.5918,8042.4957,8043.5200,7769.0878,7696.3840, tc_inclusive_us=10832.8962,10929.1515,10858.4957,10568.7037,10552.3195,
+CASE_END shape=balanced-t8192-j256 route_coverage=PASS canary=PASS input_immutable=PASS quant_weight_immutable=PASS
+ROUTE_OVERFLOW tokens=8192 panel=256 assignments=81920 head=32768 tail=49152 status=NOT_INTEGRATED_OVERFLOW
+SUMMARY status=FIXTURE_ONLY model_load=0 engine_integration=0 quality_claim=none skew_tail=NOT_INTEGRATED

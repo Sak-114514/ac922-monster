@@ -1,0 +1,45 @@
+start=2026-10-16T20:59:32Z
+base=/home/debian/ac922-monster/experiments/standard-opt-20261014
+runtime=runtime-perf-v123
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qwen4exp-input-gpu-v123-20261017/qwen4exp-input-gpu-v123-host3
+mode=layout
+model_loaded=0
+timeout_seconds=20
+bdeeb193ef1b09c7ebe9a06cfc50a3b0f5927b1da3ff74e65b1281b9fbb3c128  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qwen4exp-input-gpu-v123-20261017/qwen4exp-input-gpu-v123-host3
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 2 MiB, 16125 MiB, 39
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 16125 MiB, 38
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 2 MiB, 16125 MiB, 38
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 1 MiB, 16126 MiB, 38
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 13 MiB, 16114 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 10 MiB, 16117 MiB, 39
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+CUDA_BACKENDS visible=6 MetaA=Meta(CUDA0,CUDA1,CUDA2) MetaB=Meta(CUDA3,CUDA4,CUDA5)
+TurboPrefill stage-plan scheduler=0x7ffd94ada5a0 sample=1 prefix_ids=512 splits=3 topology_eligible=1 bridge_bytes=512 adapter_installed=1 execution_decision=see_submit_result reason=two_Meta3_frame_topology_admitted
+TurboPrefill stage-map scheduler=0x7ffd94ada5a0 split=0 backend=CPU nodes=1 inputs=0 range=0..1
+TurboPrefill stage-map scheduler=0x7ffd94ada5a0 split=1 backend=Meta(CUDA0,CUDA1,CUDA2) nodes=2 inputs=1 range=1..3
+TurboPrefill stage-map scheduler=0x7ffd94ada5a0 split=2 backend=Meta(CUDA3,CUDA4,CUDA5) nodes=1 inputs=1 range=3..4
+TurboPrefill stage-host scheduler=0x7ffd94ada5a0 split=0 backend=CPU begin_us=103360311747 end_us=103360311790 span_us=43 includes_input_wait_copy_and_enqueue=1
+TurboPrefill stage-host scheduler=0x7ffd94ada5a0 split=1 backend=Meta(CUDA0,CUDA1,CUDA2) begin_us=103360311800 end_us=103360320122 span_us=8322 includes_input_wait_copy_and_enqueue=1
+TurboPrefill stage-host scheduler=0x7ffd94ada5a0 split=2 backend=Meta(CUDA3,CUDA4,CUDA5) begin_us=103360320142 end_us=103360322076 span_us=1934 includes_input_wait_copy_and_enqueue=1
+PASS_TURBO_TOPOLOGY backend_count=3 split_count=3 copies=1 cpu_ple_ids=512 token_get_rows=MetaA MetaA_to_MetaB=1 classifier_trace_requested=1 outputs_exact=1
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 2 MiB, 16125 MiB, 40
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 16125 MiB, 39
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 2 MiB, 16125 MiB, 40
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 2 MiB, 16125 MiB, 39
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 13 MiB, 16115 MiB, 39
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 10 MiB, 16117 MiB, 40
+end=2026-10-16T20:59:37Z
+elapsed_seconds=4
+exit_status=0

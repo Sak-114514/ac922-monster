@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "status": "V56_PARTIAL_STOPPED_BY_GPU_FREE_GUARD",
+  "unit": "root-v56-ep3-tailpad-20261016t211100619533z",
+  "scope": "single authorized attempt; no automatic retry",
+  "runtime_build_id": "20261016T205939.687891Z",
+  "runtime_report_sha256": "a9d7e464819a1c03622c261f4f5af3351349e061074e0430899addcad373c3f5",
+  "profile_sha256_at_run": "6ade9e638993587610efb4b67694dda9febfd2519b3d95fe021a0100a914bc9e",
+  "runner_sha256": "725d99645f6579d5458e9a362d617aae3bf8b29ea0c5ab873e0ea0996e037e3a",
+  "host_build_record_sha256": "5b39a487f03641583e64dfd6c1e2e99a40cee406a2da7acc430295cd63dde5f6",
+  "run": {
+    "model_load_attempts": 1,
+    "systemd_result": "success",
+    "systemd_active_state": "inactive",
+    "monitor_guard_seen": true,
+    "supervisor_exit_code": 1,
+    "automatic_retry": false
+  },
+  "stop_reason": {
+    "guard_failure": {
+      "gpu": true,
+      "bmc": false,
+      "tach": false
+    },
+    "sample_utc": "2026-10-16T21:13:01.593006+00:00",
+    "action": "stop-requested via=ac922 ",
+    "gpu_free_floor_mib": 512,
+    "observed_gpu_free_mib": [
+      {
+        "uuid": "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f",
+        "free_mib": 6113
+      },
+      {
+        "uuid": "GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+        "free_mib": 6071
+      },
+      {
+        "uuid": "GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+        "free_mib": 6073
+      },
+      {
+        "uuid": "GPU-fadb0459-4d30-907b-289a-862b3014f165",
+        "free_mib": 1365
+      },
+      {
+        "uuid": "GPU-760ce501-32f6-69b6-215b-1020da68bbfc",
+        "free_mib": 25
+      },
+      {
+        "uuid": "GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+        "free_mib": 35
+      }
+    ],
+    "below_floor_cards": [
+      {
+        "uuid": "GPU-760ce501-32f6-69b6-215b-1020da68bbfc",
+        "free_mib": 25
+      },
+      {
+        "uuid": "GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+        "free_mib": 35
+      }
+    ],
+    "bmc_max_c": 41.0,
+    "tach_low_streak": {
+      "fan0": 0,
+      "fan2": 0,
+      "fan3": 0
+    }
+  },
+  "progress": {
+    "scenario_start_count": 0,
+    "native_canary": "NOT_RUN",
+    "tail_gate_complete": false,
+    "performance_windows": [
+      {
+        "label": "v56-two-flow-2x12k-512",
+        "request_count_expected": 2,
+        "request_count_observed": 0,
+        "flows": [],
+        "geometry_and_full_output_pass": false,
+        "clean_performance_eligible": false,
+        "ordinary_ep3_profile": false,
+        "shared_tg": null,
+        "shared_tokens": null,
+        "shared_window_seconds": null,
+        "aggregate_prefill_tok_s": null,
+        "frame_host_resource_observations": 0,
+        "raw_output_semantic_status": "unscored"
+      },
+      {
+        "label": "v56-four-flow-4x12k-512",
+        "request_count_expected": 4,
+        "request_count_observed": 0,
+        "flows": [],
+        "geometry_and_full_output_pass": false,
+        "clean_performance_eligible": false,
+        "ordinary_ep3_profile": false,
+        "shared_tg": null,
+        "shared_tokens": null,
+        "shared_window_seconds": null,
+        "aggregate_prefill_tok_s": null,
+        "frame_host_resource_observations": 0,
+        "raw_output_semantic_status": "unscored"
+      }
+    ],
+    "v56_tailpad_runtime_gate": "FAIL",
+    "input_gpu_load_selected_marker": false,
+    "input_gpu_placement_marker_lines": [
+      "0.03.542.209 I Qwen4exp input placement requested=1 eligible=1 destination=Meta() base_token_table_only=1 PLE_and_output_placement_unchanged=1"
+    ],
+    "ple_gate": {
+      "status": "PASS",
+      "requested_gpu_gib": 12,
+      "expected_selected_gpu_gib": 12,
+      "expected_gpu_nodes": 6,
+      "actual_wired_gpu_gib": 12,
+      "actual_wired_cpu_gib": 14.82,
+      "actual_wired_gpu_nodes": 6,
+      "activation_marker_count": 1,
+      "gpu_marker_values_gib": [
+        12.0
+      ],
+      "cpu_marker_values_gib": [
+        14.82
+      ],
+      "request_matches_actual": true,
+      "expected_prefix_matches_actual": true,
+      "expected_nodes_match_actual": true,
+      "ordered_exact_chunks": true,
+      "whole_copy_exact": true,
+      "actual_cpu_ddr_nodes_0_8": true,
+      "pass": true
+    }
+  },
+  "memory_record_only": {
+    "node0_free_kib": 172032,
+    "node8_free_kib": 60352,
+    "scope": "physical DDR headroom recorded only; no DDR-specific stop threshold was added"
+  },
+  "postflight_nvidia_smi": {
+    "compute_processes": "none reported",
+    "gpu_utilization_pct": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "gpu_temperature_c": [
+      39,
+      38,
+      39,
+      39,
+      39,
+      39
+    ],
+    "memory_used_mib": [
+      1,
+      1,
+      1,
+      3397,
+      4411,
+      4395
+    ],
+    "note": "no running compute process, but cards 3-5 still showed residual memory at the captured sample"
+  },
+  "artifacts": {
+    "runtime_log": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v56-launch-20261017/results/root-v56-ep3-tailpad-20261016t211100619533z-runtime.log",
+    "runtime_log_sha256": "74c01e355888b2ced33bf3607924ca3226827253c7903800c0d6771b98f2f4e1",
+    "telemetry": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v56-launch-20261017/results/root-v56-ep3-tailpad-20261016t211100619533z-telemetry.jsonl",
+    "telemetry_sha256": "3e6772a24c21c5d64e703c4a8c588ee66e7718f68a7d3febac9cb401b7737106",
+    "summary": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v56-launch-20261017/results/root-v56-ep3-tailpad-20261016t211100619533z-summary.json",
+    "summary_sha256": "27344664601de572d661b06c5aeaf4446b7503d0ddefaf85f21edcac0fb5f586",
+    "ple_wiring": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v56-launch-20261017/results/root-v56-ep3-tailpad-20261016t211100619533z-ple-wiring.json",
+    "ple_wiring_sha256": "db3893ca5b1876b83b06d9d5f5d53515ac313d053f58eefe59fdc984b42ed218"
+  }
+}

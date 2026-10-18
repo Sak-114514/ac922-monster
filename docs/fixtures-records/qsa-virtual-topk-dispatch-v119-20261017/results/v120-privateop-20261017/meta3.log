@@ -1,0 +1,94 @@
+ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+CUDA graph path config ctx=0x10021e13c50 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x10021e13c50 device=0 uid=1 nodes=10 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x10021e14ed0 device=1 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x10021e14ed0 device=1 uid=2 nodes=10 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x10021e16150 device=2 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x10021e16150 device=2 uid=3 nodes=10 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph fallback ctx=0x10021e13c50 device=0 uid=4 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+optimization path device=0 path=qsa_virtual_cell_topk scope=host_dispatch_or_capture requested=1 selected=1 reason=typed_block_score_cellmap_f16mask_stable_ids_owned_scratch tokens=4 width=1025 auxiliary=16384 count=1
+CUDA graph fallback ctx=0x10021e14ed0 device=1 uid=5 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+optimization path device=1 path=qsa_virtual_cell_topk scope=host_dispatch_or_capture requested=1 selected=1 reason=typed_block_score_cellmap_f16mask_stable_ids_owned_scratch tokens=4 width=1025 auxiliary=16384 count=1
+CUDA graph fallback ctx=0x10021e16150 device=2 uid=6 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+optimization path device=2 path=qsa_virtual_cell_topk scope=host_dispatch_or_capture requested=1 selected=1 reason=typed_block_score_cellmap_f16mask_stable_ids_owned_scratch tokens=4 width=1025 auxiliary=16384 count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10021e13c50 device=0 uid=7 nodes=10 mode=capture count=1
+optimization path device=0 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=1
+CUDA graph executable rebuild ctx=0x10021e13c50 device=0 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x10028285c60 instance=0x10028294190
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10021e14ed0 device=1 uid=8 nodes=10 mode=capture count=1
+optimization path device=1 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=1
+CUDA graph executable rebuild ctx=0x10021e14ed0 device=1 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x1002828f1a0 instance=0x100282aa230
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10021e16150 device=2 uid=9 nodes=10 mode=capture count=1
+optimization path device=2 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=1
+CUDA graph executable rebuild ctx=0x10021e16150 device=2 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x100282a5c40 instance=0x100282c02b0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10021e13c50 device=0 uid=10 nodes=1 mode=capture count=2
+optimization path device=0 path=qsa_virtual_cell_topk scope=host_dispatch_or_capture requested=1 selected=1 reason=typed_block_score_cellmap_f16mask_stable_ids_owned_scratch tokens=4 width=1025 auxiliary=16384 count=2
+optimization path device=0 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=2
+CUDA graph executable rebuild ctx=0x10021e13c50 device=0 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x100282bc810 instance=0x100282d38b0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10021e14ed0 device=1 uid=11 nodes=1 mode=capture count=2
+optimization path device=1 path=qsa_virtual_cell_topk scope=host_dispatch_or_capture requested=1 selected=1 reason=typed_block_score_cellmap_f16mask_stable_ids_owned_scratch tokens=4 width=1025 auxiliary=16384 count=2
+optimization path device=1 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=2
+CUDA graph executable rebuild ctx=0x10021e14ed0 device=1 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x100282bc480 instance=0x100282e0020
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10021e16150 device=2 uid=12 nodes=1 mode=capture count=2
+optimization path device=2 path=qsa_virtual_cell_topk scope=host_dispatch_or_capture requested=1 selected=1 reason=typed_block_score_cellmap_f16mask_stable_ids_owned_scratch tokens=4 width=1025 auxiliary=16384 count=2
+optimization path device=2 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=2
+CUDA graph executable rebuild ctx=0x10021e16150 device=2 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x100282e56f0 instance=0x100282ec570
+CUDA graph path active ctx=0x10021e13c50 device=0 uid=13 nodes=10 mode=replay count=1
+CUDA graph path active ctx=0x10021e14ed0 device=1 uid=14 nodes=10 mode=replay count=1
+CUDA graph path active ctx=0x10021e16150 device=2 uid=15 nodes=10 mode=replay count=1
+CUDA graph path active ctx=0x10021e13c50 device=0 uid=16 nodes=1 mode=replay count=2
+CUDA graph path active ctx=0x10021e14ed0 device=1 uid=17 nodes=1 mode=replay count=2
+CUDA graph path active ctx=0x10021e16150 device=2 uid=18 nodes=1 mode=replay count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10021e13c50 device=0 uid=19 nodes=10 mode=eager reason=shape_or_binding_changed node= op=none count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10021e14ed0 device=1 uid=20 nodes=10 mode=eager reason=shape_or_binding_changed node= op=none count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10021e16150 device=2 uid=21 nodes=10 mode=eager reason=shape_or_binding_changed node= op=none count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10021e13c50 device=0 uid=22 nodes=1 mode=eager reason=shape_or_binding_changed node= op=none count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10021e14ed0 device=1 uid=23 nodes=1 mode=eager reason=shape_or_binding_changed node= op=none count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph executable rebuild ctx=0x10021e13c50 device=0 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x100283382c0 instance=0x100282a3b20
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph executable rebuild ctx=0x10021e14ed0 device=1 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x10028379d80 instance=0x100282b9af0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph executable rebuild ctx=0x10021e16150 device=2 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x100282a75f0 instance=0x100282cfb10
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph executable rebuild ctx=0x10021e13c50 device=0 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x1002837a4b0 instance=0x100282d9d60
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph executable rebuild ctx=0x10021e14ed0 device=1 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x100282daec0 instance=0x100282e6490
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph executable rebuild ctx=0x10021e16150 device=2 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x100282e7610 instance=0x100282c35b0
+optimization path summary device=0 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=4 selected=4
+optimization path summary device=0 path=qsa_virtual_cell_topk scope=host_dispatch_or_capture requested=4 selected=4
+optimization path summary device=1 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=4 selected=4
+optimization path summary device=1 path=qsa_virtual_cell_topk scope=host_dispatch_or_capture requested=4 selected=4
+optimization path summary device=2 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=4 selected=4
+optimization path summary device=2 path=qsa_virtual_cell_topk scope=host_dispatch_or_capture requested=4 selected=4
+PRIVATE_SUPPORT mode=meta3-probe valid=1 cpu_supports=0 cuda_supports=na meta3_all_child_supports=1 bad_magic_valid=0 extra_src_valid=0 extra_src_cuda_supports=na extra_src_meta_supports=0 width_oob_build=null
+ID_COMPARE mode=meta3 step=A1 exact=PASS ids=128
+ID_COMPARE mode=meta3 step=B exact=PASS ids=128
+ID_COMPARE mode=meta3 step=A2 exact=PASS ids=128
+ID_COMPARE mode=meta3 step=reference-A1-A2 exact=PASS ids=128
+ID_COMPARE mode=meta3 step=private-A1-A2 exact=PASS ids=128
+DISPATCH_CASE mode=meta3 B=257 K=1025 Q=4 S=2 W=16 exact_ids=PASS A_B_A=1 b_output_changed=1 poison_mask=-inf host_read_canary=PASS input_immutable=PASS meta_output_readback=rank0_mirrored_copy_only meta_input_readback=rank0_mirrored_copy_only
+ID_COMPARE mode=meta3 step=A1 exact=PASS ids=1050112
+ID_COMPARE mode=meta3 step=B exact=PASS ids=1050112
+ID_COMPARE mode=meta3 step=A2 exact=PASS ids=1050112
+ID_COMPARE mode=meta3 step=reference-A1-A2 exact=PASS ids=1050112
+ID_COMPARE mode=meta3 step=private-A1-A2 exact=PASS ids=1050112
+DISPATCH_CASE mode=meta3 B=16384 K=65536 Q=512 S=1 W=2051 exact_ids=PASS A_B_A=1 b_output_changed=1 poison_mask=-inf host_read_canary=PASS input_immutable=PASS meta_output_readback=rank0_mirrored_copy_only meta_input_readback=rank0_mirrored_copy_only
+META3_RESULT exact_ids=PASS all_child_support_probe=PASS child_devices=3 output_readback=rank0_mirrored_copy_only

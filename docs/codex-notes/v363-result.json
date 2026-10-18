@@ -1,0 +1,44 @@
+{
+  "unit": "root-v363-inband-20261017t225012587589z",
+  "guard": {
+    "Result": "success",
+    "ExecMainStatus": "0",
+    "ActiveState": "inactive"
+  },
+  "rows": [
+    {
+      "ub": 512,
+      "native_semantic": "pass",
+      "native_tokens": 4096,
+      "native_cached_rebind_observed": true,
+      "complete": true,
+      "whole_pp": 3997.7644337315764,
+      "target_pp": 4052.3335730419894,
+      "long_quality": "unscored"
+    },
+    {
+      "ub": 1024,
+      "native_semantic": "pass",
+      "native_tokens": 4096,
+      "native_cached_rebind_observed": true,
+      "complete": true,
+      "whole_pp": 4021.7067596719085,
+      "target_pp": 4072.9121881474625,
+      "long_quality": "unscored"
+    },
+    {
+      "ub": 2048,
+      "native_semantic": "pass",
+      "native_tokens": 4096,
+      "native_cached_rebind_observed": false,
+      "complete": true,
+      "whole_pp": 3478.7580829397375,
+      "target_pp": 3516.7122175055597,
+      "long_quality": "unscored"
+    }
+  ],
+  "mask2d_positive_logged": true,
+  "observer_error": "Native cached-rebind per-interval assertion failed after all model families completed. Preserve native semantic passes, but do not claim native exercised cached rebind for every family.",
+  "decision": "UB1024 +0.60% vs UB512 is not a convincing gain; UB2048 -12.98%. Retain UB512; stop UB scaling route.",
+  "goals_met": false
+}

@@ -1,0 +1,4 @@
+CONTIG_VIEW_CONTRACT source=attn_inp_kq_mask op=VIEW contiguous=1 same_layout=1 bytes=16777216
+CONTIG_VIEW_CONTRACT source=mtp_h_state-48 op=RESHAPE contiguous=1 same_layout=1 bytes=20971520
+NONCONTIG_VIEW_CONTRACT source_op=VIEW source_contiguous=0 same_layout=0 bytes=33521664 reason=source_not_contiguous
+CPU_VIEW_CHECK_PASS mask_view=contiguous mtp_reshape=contiguous noncontiguous_view=declined_before_copy

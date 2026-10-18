@@ -1,0 +1,58 @@
+tag=v291-v292-computed-host-pass
+started_utc=2026-10-17T14:39:30Z
+mode=computed-host-view
+expected=pass
+visible_devices=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 3 MiB, 16124 MiB, 39, 0 %
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 3 MiB, 16124 MiB, 38, 0 %
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 3 MiB, 16124 MiB, 38, 0 %
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 3 MiB, 16124 MiB, 38, 0 %
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 15 MiB, 16112 MiB, 38, 0 %
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 13 MiB, 16114 MiB, 39, 0 %
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+GPU_PREFLIGHT rank=0 name=CUDA0 free=16584671232 total=16911433728
+GPU_PREFLIGHT rank=1 name=CUDA1 free=16584474624 total=16911433728
+GPU_PREFLIGHT rank=2 name=CUDA2 free=16584540160 total=16911433728
+GPU_PREFLIGHT rank=3 name=CUDA3 free=16584540160 total=16911433728
+GPU_PREFLIGHT rank=4 name=CUDA4 free=16571629568 total=16911433728
+GPU_PREFLIGHT rank=5 name=CUDA5 free=16573661184 total=16911433728
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+V291_COMPUTED_HOST_VIEW source=model.input_embed source_op=GET_ROWS view=model.input_embed (reshaped) view_op=RESHAPE shape=2560,1,249,1 aliases=1 buffer=CPU numeric_consumer=0
+V291_META_GRAPH nodes=9 ple_numeric_nodes=8 computed_view_node=1 cpu_get_rows_producer_in_meta_graph=0
+Meta allocator copy-view preserved name=model.input_embed (reshaped) source=model.input_embed backend=host op=RESHAPE source_op=GET_ROWS compute=0
+Meta allocator copy-view preserved name=model.input_embed (reshaped) source=model.input_embed backend=host op=RESHAPE source_op=GET_ROWS compute=0
+Meta allocator copy-view preserved name=model.input_embed (reshaped) source=model.input_embed backend=host op=RESHAPE source_op=GET_ROWS compute=0
+Meta allocator copy-view preserved name=model.input_embed (reshaped) source=model.input_embed backend=host op=RESHAPE source_op=GET_ROWS compute=0
+Meta allocator copy-view preserved name=model.input_embed (reshaped) source=model.input_embed backend=host op=RESHAPE source_op=GET_ROWS compute=0
+Meta allocator copy-view preserved name=model.input_embed (reshaped) source=model.input_embed backend=host op=RESHAPE source_op=GET_ROWS compute=0
+Meta allocator copy-view preserved name=model.input_embed (reshaped) source=model.input_embed backend=host op=RESHAPE source_op=GET_ROWS compute=0
+V291_COMPUTED_HOST_VIEW_PASS exact_cpu_meta=1 computed_host_reshape_retained=1 producer_excluded=1 output_canary=1
+2026-10-17T14:39:30Z gpu=0 used=3 delta=0 temp=39
+2026-10-17T14:39:30Z gpu=1 used=6 delta=3 temp=38
+2026-10-17T14:39:30Z gpu=2 used=5 delta=2 temp=38
+2026-10-17T14:39:30Z gpu=3 used=5 delta=2 temp=38
+2026-10-17T14:39:30Z gpu=4 used=18 delta=3 temp=38
+2026-10-17T14:39:30Z gpu=5 used=16 delta=3 temp=39
+2026-10-17T14:39:31Z gpu=0 used=415 delta=412 temp=40
+2026-10-17T14:39:31Z gpu=1 used=415 delta=412 temp=38
+2026-10-17T14:39:31Z gpu=2 used=415 delta=412 temp=39
+2026-10-17T14:39:32Z gpu=3 used=415 delta=412 temp=39
+2026-10-17T14:39:32Z gpu=4 used=427 delta=412 temp=39
+2026-10-17T14:39:32Z gpu=5 used=425 delta=412 temp=40
+V285_EXPECTED_PASS verified
+finished_utc=2026-10-17T14:39:33Z
+classified_status=0
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 3 MiB, 16124 MiB, 40, 0 %
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 3 MiB, 16124 MiB, 39, 0 %
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 3 MiB, 16124 MiB, 39, 0 %
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 3 MiB, 16124 MiB, 39, 0 %
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 15 MiB, 16112 MiB, 39, 0 %
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 13 MiB, 16114 MiB, 40, 0 %

@@ -1,0 +1,373 @@
+{
+  "schema_version": 1,
+  "status": "V60_PARTIAL_GUARD_STOP_DURING_FOUR_FLOW_PREFILL",
+  "unit": "root-v60-ep3-tailpad-20261016t215319778952z",
+  "runtime_build_id": "20261016T213259.513817Z",
+  "runner_sha256": "44f57a98c7798e4e8e26e3967c65b7cc931dfbd10f3ea80e4db37fa6df06a61c",
+  "profile_sha256_at_run": "dcbe73ddb8561810b31b217efcf2e76dc4ef9a1d3691ecb19cca5dde5c2f738c",
+  "systemd": {
+    "final_state": {
+      "MainPID": "0",
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ActiveState": "inactive",
+      "SubState": "dead"
+    },
+    "guard_seen": true,
+    "supervisor_exit_code": 1,
+    "automatic_retry": false
+  },
+  "guard_stop": {
+    "sample_utc": "2026-10-16T21:57:48.215775+00:00",
+    "reason": {
+      "gpu": true,
+      "bmc": false,
+      "tach": false
+    },
+    "action": "stop-requested via=ac922 ",
+    "free_floor_mib": 512,
+    "per_gpu": [
+      {
+        "uuid": "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f",
+        "free_mib": 4103,
+        "temp_c": 47,
+        "util_pct": 1
+      },
+      {
+        "uuid": "GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+        "free_mib": 4053,
+        "temp_c": 47,
+        "util_pct": 32
+      },
+      {
+        "uuid": "GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+        "free_mib": 4055,
+        "temp_c": 48,
+        "util_pct": 60
+      },
+      {
+        "uuid": "GPU-fadb0459-4d30-907b-289a-862b3014f165",
+        "free_mib": 973,
+        "temp_c": 44,
+        "util_pct": 0
+      },
+      {
+        "uuid": "GPU-760ce501-32f6-69b6-215b-1020da68bbfc",
+        "free_mib": 100,
+        "temp_c": 44,
+        "util_pct": 0
+      },
+      {
+        "uuid": "GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+        "free_mib": 61,
+        "temp_c": 45,
+        "util_pct": 0
+      }
+    ],
+    "node0_meminfo_kib": {
+      "MemTotal": 16520640,
+      "MemFree": 168320,
+      "Active(file)": 136960,
+      "Inactive(file)": 47424,
+      "Unevictable": 0,
+      "Dirty": 384,
+      "Writeback": 33792,
+      "FilePages": 2057408,
+      "Shmem": 1765504,
+      "SReclaimable": 291776
+    },
+    "node8_meminfo_kib": {
+      "MemTotal": 16584000,
+      "MemFree": 245632,
+      "Active(file)": 107008,
+      "Inactive(file)": 8128,
+      "Unevictable": 0,
+      "Dirty": 2112,
+      "Writeback": 0,
+      "FilePages": 1983040,
+      "Shmem": 1758912,
+      "SReclaimable": 344640
+    },
+    "hbm_nodes_250_255_kib": {
+      "250": {
+        "MemFree": 79680,
+        "FilePages": 43840,
+        "AnonPages": 3087040
+      },
+      "251": {
+        "MemFree": 135296,
+        "FilePages": 9472,
+        "AnonPages": 3014656
+      },
+      "252": {
+        "MemFree": 996736,
+        "FilePages": 0,
+        "AnonPages": 2097152
+      },
+      "253": {
+        "MemFree": 4152704,
+        "FilePages": 0,
+        "AnonPages": 2097152
+      },
+      "254": {
+        "MemFree": 4150656,
+        "FilePages": 0,
+        "AnonPages": 2097152
+      },
+      "255": {
+        "MemFree": 4201856,
+        "FilePages": 0,
+        "AnonPages": 2097152
+      }
+    },
+    "bmc_max_c": 47.0,
+    "tach_low_streak": {
+      "fan0": 0,
+      "fan2": 0,
+      "fan3": 0
+    }
+  },
+  "quality_and_performance": {
+    "native_four_flow_semantic_canary": "PASS",
+    "tail_gate_geometry_complete": true,
+    "tail_output_counts": [
+      4,
+      12
+    ],
+    "two_flow_window": {
+      "geometry_and_full_output_pass": true,
+      "clean_performance_eligible": true,
+      "shared_tg": 123.43292219131527,
+      "shared_tokens": 943,
+      "shared_window_seconds": 7.639777,
+      "aggregate_prefill_tok_s": 1306.1157851235453
+    },
+    "four_flow_window": {
+      "request_count_observed": 0,
+      "geometry_and_full_output_pass": false,
+      "shared_tg": null,
+      "shared_tokens": null,
+      "shared_window_seconds": null,
+      "aggregate_prefill_tok_s": null
+    },
+    "four_flow_status": "prefill started; GPU free guard stopped before performance result",
+    "raw_performance_output_semantic_status": "unscored"
+  },
+  "target_pad_offline_reparse": {
+    "parser_status": "V60_PARTIAL_GUARD_STOP",
+    "two_flow": {
+      "status": "PASS_OBSERVED_RECORDS",
+      "selected": 120,
+      "invalid": 0,
+      "unknown": 0,
+      "reassembled": 10,
+      "candidate_count": 120,
+      "reassembled_frames": [
+        {
+          "bank": 0,
+          "frame": 150,
+          "real_rows": 4,
+          "padded_rows": 0,
+          "score_rows": 4
+        },
+        {
+          "bank": 0,
+          "frame": 152,
+          "real_rows": 4,
+          "padded_rows": 0,
+          "score_rows": 4
+        },
+        {
+          "bank": 0,
+          "frame": 153,
+          "real_rows": 4,
+          "padded_rows": 0,
+          "score_rows": 4
+        },
+        {
+          "bank": 0,
+          "frame": 154,
+          "real_rows": 4,
+          "padded_rows": 0,
+          "score_rows": 4
+        },
+        {
+          "bank": 0,
+          "frame": 155,
+          "real_rows": 4,
+          "padded_rows": 0,
+          "score_rows": 4
+        },
+        {
+          "bank": 0,
+          "frame": 156,
+          "real_rows": 4,
+          "padded_rows": 0,
+          "score_rows": 4
+        },
+        {
+          "bank": 0,
+          "frame": 158,
+          "real_rows": 4,
+          "padded_rows": 0,
+          "score_rows": 4
+        },
+        {
+          "bank": 0,
+          "frame": 159,
+          "real_rows": 4,
+          "padded_rows": 0,
+          "score_rows": 4
+        },
+        {
+          "bank": 0,
+          "frame": 162,
+          "real_rows": 4,
+          "padded_rows": 0,
+          "score_rows": 4
+        },
+        {
+          "bank": 0,
+          "frame": 163,
+          "real_rows": 2,
+          "padded_rows": 2,
+          "score_rows": 2
+        }
+      ]
+    },
+    "four_flow": {
+      "status": "UNKNOWN_NO_SELECTED_PAD_RECORD",
+      "candidate_count": 0,
+      "selected": 0,
+      "invalid": 0,
+      "unknown_records": 0,
+      "unknown_window_count": 1
+    },
+    "old_online_parser_counts": {
+      "selected": 115,
+      "invalid": 5
+    },
+    "strict_offline_counts": {
+      "selected": 120,
+      "invalid": 0,
+      "unknown_records": 0,
+      "reassembled": 10
+    },
+    "row_accounting_weakened": false,
+    "raw_runtime_log_changed": false
+  },
+  "ple": {
+    "status": "PASS",
+    "gpu_gib": 12,
+    "gpu_nodes": 6,
+    "cpu_ddr_gib": 14.82,
+    "gpu_stripes_verified": true,
+    "ordered_exact_chunks": true,
+    "whole_copy_exact": true
+  },
+  "stream_reclaim": {
+    "raw_summary_lines": [
+      {
+        "selected": 1,
+        "tensors": 0,
+        "ranges": 0,
+        "madvise_advised_bytes": 0,
+        "fadvise_advised_bytes": 0,
+        "madvise_errors": 0,
+        "fadvise_errors": 0,
+        "actual_freed_bytes": "not_measured"
+      },
+      {
+        "selected": 1,
+        "tensors": 444,
+        "ranges": 444,
+        "madvise_advised_bytes": 21695758336,
+        "fadvise_advised_bytes": 21695758336,
+        "madvise_errors": 0,
+        "fadvise_errors": 0,
+        "actual_freed_bytes": "not_measured"
+      },
+      {
+        "selected": 1,
+        "tensors": 424,
+        "ranges": 424,
+        "madvise_advised_bytes": 27769634816,
+        "fadvise_advised_bytes": 27769634816,
+        "madvise_errors": 0,
+        "fadvise_errors": 0,
+        "actual_freed_bytes": "not_measured"
+      },
+      {
+        "selected": 1,
+        "tensors": 0,
+        "ranges": 0,
+        "madvise_advised_bytes": 0,
+        "fadvise_advised_bytes": 0,
+        "madvise_errors": 0,
+        "fadvise_errors": 0,
+        "actual_freed_bytes": "not_measured"
+      }
+    ],
+    "total_advised_bytes_madvise": 49465393152,
+    "total_advised_bytes_fadvise": 49465393152,
+    "errors": 0,
+    "actual_freed_bytes": "not measured; advised bytes are not claimed as freed"
+  },
+  "artifacts": {
+    "runtime.log": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-runtime.log",
+      "sha256": "2dc9554cd7410a7761d7dd0c634e819b51f905c90fa895f7ef2688de7cac788c",
+      "bytes": 2138479
+    },
+    "telemetry.jsonl": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-telemetry.jsonl",
+      "sha256": "df7a8dfb61688ddf7b071c49bfaf892289fd439deaaf7130475b1ca92e22a45c",
+      "bytes": 76571
+    },
+    "summary.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-summary.json",
+      "sha256": "c8b63b91e5b6e02eedfc51d520cd8810f40edc1716730e3391aa42671b46906f",
+      "bytes": 118337
+    },
+    "monitor-summary.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-monitor-summary.json",
+      "sha256": "28c579a84cc49eac02f9f6c2d3ffbab789e4f223326de9849124a84f3285828b",
+      "bytes": 739
+    },
+    "ple-wiring.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-ple-wiring.json",
+      "sha256": "db3893ca5b1876b83b06d9d5f5d53515ac313d053f58eefe59fdc984b42ed218",
+      "bytes": 552
+    },
+    "unit-journal.txt": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-unit-journal.txt",
+      "sha256": "9a9ace1a96c7fd26e95415279dd43b6ad833abec07be6276ecb83de7281ce162",
+      "bytes": 619
+    },
+    "supervisor-manifest.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-supervisor-manifest.json",
+      "sha256": "9db7007dcff2ca003e7c384463a7f54d4a4463ef7229d35ef12db50441222ab0",
+      "bytes": 21064
+    },
+    "remote-supervisor-manifest.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-remote-supervisor-manifest.json",
+      "sha256": "9db7007dcff2ca003e7c384463a7f54d4a4463ef7229d35ef12db50441222ab0",
+      "bytes": 21064
+    },
+    "remote-scenarios.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-remote-scenarios.json",
+      "sha256": "72ba30c2d0e8096bd1b48a96ac3d58b8fd102cda4bb620917753f9d516389834",
+      "bytes": 6308
+    },
+    "frame-host-resources.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-frame-host-resources.json",
+      "sha256": "692bcfb7d6c28140c7c0d7fc11b9d526676511879557c5265c40bc14d28da174",
+      "bytes": 211271
+    },
+    "tailpad-reparse.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-tailpad-reparse.json",
+      "sha256": "cdef5891aa4a4d519057d79fa93161132aa9f7993d2758fd880c266ad8ba893e",
+      "bytes": 29279
+    }
+  }
+}

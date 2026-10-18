@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "runtime": "AC922 POWER9 host, runtime-perf-v77 ggml-base, no CUDA backend initialized",
+  "scope": "synthetic Q8_0 selected-cell CPU FP64 oracle vs dense masked CPU FP64 reference; not GPU FA or model logits",
+  "shape": {
+    "head_dim": 256,
+    "n_stream": [1, 2],
+    "queries_per_stream": [4, 32],
+    "q_heads": [4, 8],
+    "view_nkv": 2112,
+    "kv_capacity_per_stream": 4096,
+    "tail_canary_rows_per_stream": 1984,
+    "selected_width": 513,
+    "explicit_cell_pad_width": 516,
+    "q8_0_cell_bytes": 272
+  },
+  "max_abs_error": 1.021405182655144e-14,
+  "max_rel_error": 5.015664482414045e-12,
+  "cases": [
+    {"streams": 1, "queries_per_stream": 4,  "q_heads": 4, "max_abs": 7.549516567451064e-15, "max_rel": 1.428603502590995e-13},
+    {"streams": 1, "queries_per_stream": 4,  "q_heads": 8, "max_abs": 1.021405182655144e-14, "max_rel": 3.622624019793734e-13},
+    {"streams": 1, "queries_per_stream": 32, "q_heads": 4, "max_abs": 8.43769498715119e-15, "max_rel": 5.015664482414045e-12},
+    {"streams": 1, "queries_per_stream": 32, "q_heads": 8, "max_abs": 1.021405182655144e-14, "max_rel": 5.015664482414045e-12},
+    {"streams": 2, "queries_per_stream": 4,  "q_heads": 4, "max_abs": 7.993605777301127e-15, "max_rel": 1.813622713125832e-12},
+    {"streams": 2, "queries_per_stream": 4,  "q_heads": 8, "max_abs": 1.021405182655144e-14, "max_rel": 1.813622713125832e-12},
+    {"streams": 2, "queries_per_stream": 32, "q_heads": 4, "max_abs": 9.103828801926284e-15, "max_rel": 5.015664482414045e-12},
+    {"streams": 2, "queries_per_stream": 32, "q_heads": 8, "max_abs": 1.021405182655144e-14, "max_rel": 5.015664482414045e-12}
+  ]
+}

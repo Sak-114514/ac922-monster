@@ -1,0 +1,19 @@
+Source run: /home/debian/ac922-monster/experiments/standard-semantic-20261014/results/20261015T182643Z/server.log
+
+206: ple-numa: CUDA UUID order verified for 3 PLE GPU nodes (maps above); CPU DDR available 26.85 GiB (node0 13.49, node8 13.36; free 3.38 + reclaimable clean file pages 23.47 GiB)
+1935: 1.17.575.471 I load_tensors: hybrid PLE enabled; 8.00 GiB on CUDA UUID-mapped GPU NUMA nodes (stripe map above) and 18.82 GiB strictly bound in 32 MiB stripes to CPU nodes 0/8; row format unchanged
+57553: 5.09.363.095 I lazy-prefill-workspace batch=8192 max_ubatch=8192 selected_ubatch=1024 used_max=0 KV_backing=132096
+57554: 5.09.363.101 I prefill-ubatch-control requested=1024 selected=1024 configured_ceiling=8192 batch=8192
+57660: 5.14.626.473 I TurboPrefill pinned-plan scheduler=0x1003ae5ee70 frame_payload=109469952 ring_slots=2 FIFO_live=93110280 FIFO_current=144277520 cap=268435456 selected=0
+57661: 5.14.626.490 I TurboPrefill requested=1 selected=0 scheduler=0x1003ae5ee70 reason=pinned_byte_budget_exceeded
+84704: 5.43.413.915 I lazy-prefill-workspace batch=8192 max_ubatch=8192 selected_ubatch=2048 used_max=0 KV_backing=132096
+84705: 5.43.413.920 I prefill-ubatch-control requested=2048 selected=2048 configured_ceiling=8192 batch=8192
+84721: 5.46.549.830 I TurboPrefill pinned-plan scheduler=0x1003ae5ee70 frame_payload=218562816 ring_slots=2 FIFO_live=185466888 FIFO_current=143523848 cap=268435456 selected=0
+84722: 5.46.549.845 I TurboPrefill requested=1 selected=0 scheduler=0x1003ae5ee70 reason=pinned_byte_budget_exceeded
+84726: 5.47.401.019 I TurboPrefill pinned-plan scheduler=0x1003ae5ee70 frame_payload=218562816 ring_slots=2 FIFO_live=185466888 FIFO_current=287047696 cap=268435456 selected=0
+
+Interpretation:
+- V43 warm UB1024 ordinary prefill was 1521.905 tok/s in notes/V43-ubatch-summary.json; the Turbo request at actual selected_ubatch=1024 declined before work.
+- UB1024 projected combined bytes = 2*109469952 + 93110280 = 312050184 B (297.59 MiB); with the observed current FIFO allocation: 2*109469952 + 144277520 = 363217424 B (346.39 MiB).
+- UB2048 projected combined bytes = 2*218562816 + 185466888 = 622592520 B (593.75 MiB); the later current FIFO figure gives 724173328 B (690.95 MiB).
+- PLE placement is 18.82 GiB in CPU DDR and 8.00 GiB in GPU HBM. On the stated 32 GiB physical DDR, a 512 MiB per-scheduler hard cap adds at most 0.50 GiB pinned; gross remaining after PLE+cap is 12.68 GiB before other CPU/model/OS allocations. This is an accounting estimate, not a measured post-load DDR high-water; do not substitute the aggregate 26.85 GiB free+reclaimable diagnostic or system-wide memory totals.

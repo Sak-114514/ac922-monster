@@ -1,0 +1,124 @@
+{
+  "schema": "flatmeta6-cohort-gate/v1",
+  "result": "PASS",
+  "fixture": "flatmeta6-cohort-v93-20261016",
+  "execution": {
+    "runtime_tag": "V94",
+    "runtime_build_run_id": "20261016T121300.582979Z",
+    "runtime_directory": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v94",
+    "cuda_library_sha256": "703d0e3f8689e9b90e8b44d9b54e6d1398b8bd34b691082f2f4b7dd2a7824dd2",
+    "binary": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/flatmeta6-cohort-v93-20261016/flatmeta6-cohort-v93-v94-cohort-host1",
+    "binary_sha256": "8727c8eab3afd87523f546a7f32c8763fcb2a29460103d7eb1c40ee618424b2c",
+    "stack_limit_kib": 8192,
+    "model_loaded": false
+  },
+  "primary": {
+    "status": 0,
+    "elapsed_seconds": 7,
+    "scale_nodes": 10000,
+    "environment": {
+      "GGML_CUDA_GRAPHS_FORCE": "0",
+      "GGML_CUDA_GRAPH_STRUCTURAL": "0",
+      "GGML_CUDA_GRAPH_STRUCTURAL_MAX_NODES": "16384",
+      "GGML_META_CHUNK_NODES": "0",
+      "GGML_META_SINGLE_CHUNK_COLD_DRAIN": "1",
+      "GGML_META_COLD_PREPARE_COHORT": "1",
+      "GGML_CUDA_P2P_AR_DEBUG": "1"
+    },
+    "schedule": ["A", "A", "A", "B", "B", "B", "A", "A", "A"],
+    "submissions_status_zero": 9,
+    "intermediate_host_syncs": 0,
+    "cohort_records": {
+      "total": 6,
+      "unanimous_eager": 3,
+      "unanimous_capture_prepared_and_launched": 3,
+      "rank_mask": "3f",
+      "capture_masks": {
+        "graph_votes": "3f",
+        "prepared": "3f",
+        "launch_started": "3f",
+        "launch_returned": "3f"
+      },
+      "capture_launch_after_last_prepare": true,
+      "capture_prepare_to_launch_delta_us": [12, 10, 11],
+      "aborted": false
+    },
+    "graph_paths": {
+      "capture_devices": [0, 1, 2, 3, 4, 5],
+      "hot_replay_devices": [0, 1, 2, 3, 4, 5],
+      "hot_replay_phase": "A6"
+    },
+    "observed_phase_detail": {
+      "A1": "first unmerged eager graph",
+      "A2": "first merged graph, unanimous eager cohort",
+      "A3": "merged capture with all-rank prepare then launch",
+      "B2": "first merged B graph, unanimous eager cohort",
+      "B3": "B topology capture with all-rank prepare then launch",
+      "A4": "return-to-A unanimous eager cohort",
+      "A5": "A topology capture with all-rank prepare then launch",
+      "A6": "hot replay on all six devices"
+    },
+    "allreduce": {
+      "partial_type": "F32",
+      "partial_elements": 24,
+      "partial_bytes": 96,
+      "per_rank_child_graphs_with_one_96B_allreduce": {
+        "A2": [0, 1, 2, 3, 4, 5],
+        "A3": [0, 1, 2, 3, 4, 5],
+        "B2": [0, 1, 2, 3, 4, 5],
+        "B3": [0, 1, 2, 3, 4, 5],
+        "A4": [0, 1, 2, 3, 4, 5],
+        "A5": [0, 1, 2, 3, 4, 5],
+        "A6": [0, 1, 2, 3, 4, 5]
+      }
+    },
+    "raw_key_and_topology": {
+      "A_B_child_raw_keys_equal_all_six_ranks": true,
+      "topology_change": "A tail is VIEW placeholder; B tail is ADD",
+      "child_node_count": 10004
+    },
+    "update_result_2": {
+      "observed_count": 12,
+      "devices": [0, 1, 2, 3, 4, 5],
+      "contexts": ["B3: A-to-B topology", "A5: B-to-A topology"],
+      "action": "reinstantiate",
+      "fatal": false
+    },
+    "outputs": {
+      "A_exact_oracle": true,
+      "B_exact_oracle": true,
+      "max_abs_error": 0,
+      "host_read_canary": true,
+      "output_bytes": 96
+    },
+    "errors": {
+      "cohort_abort": false,
+      "deadline_exceeded": false,
+      "p2p_stall_or_spin_timeout": false,
+      "xid_in_log": false
+    },
+    "log": "primary-scale10000-20261016T121950Z.log",
+    "log_sha256": "135e02bd943a72021c701248b601c018cc24dbf556ef969bdd9b18208836ac0c"
+  },
+  "small_graphs_disabled": {
+    "status": 0,
+    "elapsed_seconds": 3,
+    "scale_nodes": 0,
+    "graphs_disabled": true,
+    "cuda_graph_capture_count": 0,
+    "cuda_graph_replay_count": 0,
+    "cold_cohort": "N/A: graph-ready fast path prevents lockstep cohort entry when graphs are disabled",
+    "A_exact_oracle": true,
+    "B_exact_oracle": true,
+    "max_abs_error": 0,
+    "host_read_canary": true,
+    "log": "small-graphs-disabled-20261016T121959Z.log",
+    "log_sha256": "e1fcb55cdaa99d9d2041337a14c89a03b9437c5983fcc0ad13f88fefa107c1bd"
+  },
+  "postflight": {
+    "all_six_gpus_idle": true,
+    "temperature_c_range": [39, 40],
+    "free_memory_mib_min": 16121,
+    "released_to_packed_dense_gate": true
+  }
+}

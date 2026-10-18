@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "parallel_labels": [
+    "dual-sem-00",
+    "dual-sem-01",
+    "dual-sem-02",
+    "dual-sem-03",
+    "real8k-p4-2x2"
+  ],
+  "pairs": [
+    {
+      "id": "capital-en",
+      "serial_label": "serial-sem-00-0",
+      "parallel_label": "dual-sem-00",
+      "parallel_bank": 0
+    },
+    {
+      "id": "arithmetic-zh",
+      "serial_label": "serial-sem-00-0",
+      "parallel_label": "dual-sem-00",
+      "parallel_bank": 1
+    },
+    {
+      "id": "logic-en",
+      "serial_label": "serial-sem-00-1",
+      "parallel_label": "dual-sem-00",
+      "parallel_bank": 0
+    },
+    {
+      "id": "strict-json-zh",
+      "serial_label": "serial-sem-00-1",
+      "parallel_label": "dual-sem-00",
+      "parallel_bank": 1
+    },
+    {
+      "id": "python-clamp",
+      "serial_label": "serial-sem-01-0",
+      "parallel_label": "dual-sem-01",
+      "parallel_bank": 0
+    },
+    {
+      "id": "vocabulary-en-zh",
+      "serial_label": "serial-sem-01-0",
+      "parallel_label": "dual-sem-01",
+      "parallel_bank": 1
+    },
+    {
+      "id": "parallel2-add-en",
+      "serial_label": "serial-sem-01-1",
+      "parallel_label": "dual-sem-01",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel2-subtract-zh",
+      "serial_label": "serial-sem-01-1",
+      "parallel_label": "dual-sem-01",
+      "parallel_bank": 1
+    },
+    {
+      "id": "parallel4-add",
+      "serial_label": "serial-sem-02-0",
+      "parallel_label": "dual-sem-02",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel4-subtract",
+      "serial_label": "serial-sem-02-0",
+      "parallel_label": "dual-sem-02",
+      "parallel_bank": 1
+    },
+    {
+      "id": "parallel4-multiply",
+      "serial_label": "serial-sem-02-1",
+      "parallel_label": "dual-sem-02",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel4-divide",
+      "serial_label": "serial-sem-02-1",
+      "parallel_label": "dual-sem-02",
+      "parallel_bank": 1
+    },
+    {
+      "id": "slot-reuse-0",
+      "serial_label": "serial-sem-03-0",
+      "parallel_label": "dual-sem-03",
+      "parallel_bank": 0
+    },
+    {
+      "id": "slot-reuse-1",
+      "serial_label": "serial-sem-03-0",
+      "parallel_label": "dual-sem-03",
+      "parallel_bank": 1
+    },
+    {
+      "id": "slot-reuse-2",
+      "serial_label": "serial-sem-03-1",
+      "parallel_label": "dual-sem-03",
+      "parallel_bank": 0
+    },
+    {
+      "id": "slot-reuse-3",
+      "serial_label": "serial-sem-03-1",
+      "parallel_label": "dual-sem-03",
+      "parallel_bank": 1
+    },
+    {
+      "id": "real8k-0",
+      "serial_label": "serial-real8k-0",
+      "parallel_label": "real8k-p4-2x2",
+      "parallel_bank": 0
+    },
+    {
+      "id": "real8k-1",
+      "serial_label": "serial-real8k-0",
+      "parallel_label": "real8k-p4-2x2",
+      "parallel_bank": 1
+    },
+    {
+      "id": "real8k-2",
+      "serial_label": "serial-real8k-1",
+      "parallel_label": "real8k-p4-2x2",
+      "parallel_bank": 0
+    },
+    {
+      "id": "real8k-3",
+      "serial_label": "serial-real8k-1",
+      "parallel_label": "real8k-p4-2x2",
+      "parallel_bank": 1
+    }
+  ],
+  "required_config": {
+    "bank_count": 2,
+    "bank_lanes": 2,
+    "mtp_depth_default": 2,
+    "mtp_depth_allowed": [
+      2,
+      3
+    ],
+    "verify_rows_for_d2": 6,
+    "verify_rows_for_d3": 8,
+    "bank_context": 132096,
+    "pooled_context_capacity": 264192,
+    "logical_prefill_batch_capacity": 8192,
+    "max_verify_rows": 8,
+    "serial_cpu_submit": false,
+    "server_mtp_kv_policy": true,
+    "expert_parallel": "1",
+    "mtp_chain_multi": true,
+    "mtp_unrolled": true,
+    "mtp_fixed_prefix_rows": 6,
+    "mtp_variable_lanes": true,
+    "model_load_count": 1,
+    "ubatch_default": 1024,
+    "ubatch_allowed": [
+      512,
+      1024
+    ],
+    "turboprefill_default": false,
+    "turboprefill_optional": true,
+    "island_split": "3,3",
+    "qsa_indexer_impl": "standard",
+    "turbo_requested": true
+  },
+  "require_full_output_label": "real8k-p4-2x2",
+  "require_runtime_diagnostics_for_label": "real8k-p4-2x2"
+}

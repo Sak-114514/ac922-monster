@@ -1,0 +1,82 @@
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v103
+build_id=20261016T162913.468680Z
+tag=ac922-host-v103-20261017-r4
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tilelocal-half-20261017/results/tilelocal-half-fixture-ac922-host-v103-20261017-r4
+source_bundle_sha256=5f077834d330154d94a800391c56b05499da08b899a558c4c8776ce1dce6b784
+manifest_sha256=65b9e1a397e697f499a37bdf69f5cb05ab95e1a6911bf7655183b8c055f3d6ad
+samples_dir=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tc-real
+compile_scope=one fixture translation unit; host compile only; no GPU launch/model load
+75fc04c7c6219948da0386dbd51bcc1434f5bc5be763e78bf978c335cdbad885  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tilelocal-half-20261017/tilelocal-half-fixture.cu
+6b769efc5a6e952f5bd3442cb576475e07b47aa56ff3d39fdf06fca773efaae0  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tilelocal-half-20261017/tilelocal-half.cuh
+65b9e1a397e697f499a37bdf69f5cb05ab95e1a6911bf7655183b8c055f3d6ad  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tc-cached-codes-20261016/manifest.json
+/usr/include/c++/12/bits/stl_uninitialized.h(90): error: static assertion failed with "result type must be constructible from input type"
+        static_assert(is_constructible<_ValueType, _Tp>::value,
+        ^
+          detected during:
+            instantiation of "__nv_bool std::__check_constructible<_ValueType,_Tp>() [with _ValueType=block_q8_1_mmq, _Tp=const block_q8_1_mmq &]" at line 182
+            instantiation of "_ForwardIterator std::uninitialized_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator=__gnu_cxx::__normal_iterator<const block_q8_1_mmq *, std::vector<block_q8_1_mmq, std::allocator<block_q8_1_mmq>>>, _ForwardIterator=block_q8_1_mmq *]" at line 372
+            instantiation of "_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, std::allocator<_Tp> &) [with _InputIterator=__gnu_cxx::__normal_iterator<const block_q8_1_mmq *, std::vector<block_q8_1_mmq, std::allocator<block_q8_1_mmq>>>, _ForwardIterator=block_q8_1_mmq *, _Tp=block_q8_1_mmq]" at line 1618 of /usr/include/c++/12/bits/stl_vector.h
+            instantiation of "std::vector<_Tp, _Alloc>::pointer std::vector<_Tp, _Alloc>::_M_allocate_and_copy(std::vector<_Tp, _Alloc>::size_type, _ForwardIterator, _ForwardIterator) [with _Tp=block_q8_1_mmq, _Alloc=std::allocator<block_q8_1_mmq>, _ForwardIterator=__gnu_cxx::__normal_iterator<const block_q8_1_mmq *, std::vector<block_q8_1_mmq, std::allocator<block_q8_1_mmq>>>]" at line 233 of /usr/include/c++/12/bits/vector.tcc
+            instantiation of "std::vector<_Tp, _Alloc> &std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc> &) [with _Tp=block_q8_1_mmq, _Alloc=std::allocator<block_q8_1_mmq>]" at line 634 of /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tilelocal-half-20261017/tilelocal-half-fixture.cu
+
+/usr/include/c++/12/bits/stl_construct.h(119): error: function "block_q8_1_mmq::block_q8_1_mmq(const block_q8_1_mmq &)" (declared implicitly) cannot be referenced -- it is a deleted function
+        ::new((void*)__p) _Tp(std::forward<_Args>(__args)...);
+                             ^
+          detected during:
+            instantiation of "void std::_Construct(_Tp *, _Args &&...) [with _Tp=block_q8_1_mmq, _Args=<const block_q8_1_mmq &>]" at line 120 of /usr/include/c++/12/bits/stl_uninitialized.h
+            instantiation of "_ForwardIterator std::__do_uninit_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator=__gnu_cxx::__normal_iterator<const block_q8_1_mmq *, std::vector<block_q8_1_mmq, std::allocator<block_q8_1_mmq>>>, _ForwardIterator=block_q8_1_mmq *]" at line 137 of /usr/include/c++/12/bits/stl_uninitialized.h
+            instantiation of "_ForwardIterator std::__uninitialized_copy<_TrivialValueTypes>::__uninit_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _TrivialValueTypes=false, _InputIterator=__gnu_cxx::__normal_iterator<const block_q8_1_mmq *, std::vector<block_q8_1_mmq, std::allocator<block_q8_1_mmq>>>, _ForwardIterator=block_q8_1_mmq *]" at line 185 of /usr/include/c++/12/bits/stl_uninitialized.h
+            instantiation of "_ForwardIterator std::uninitialized_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator=__gnu_cxx::__normal_iterator<const block_q8_1_mmq *, std::vector<block_q8_1_mmq, std::allocator<block_q8_1_mmq>>>, _ForwardIterator=block_q8_1_mmq *]" at line 372 of /usr/include/c++/12/bits/stl_uninitialized.h
+            instantiation of "_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, std::allocator<_Tp> &) [with _InputIterator=__gnu_cxx::__normal_iterator<const block_q8_1_mmq *, std::vector<block_q8_1_mmq, std::allocator<block_q8_1_mmq>>>, _ForwardIterator=block_q8_1_mmq *, _Tp=block_q8_1_mmq]" at line 1618 of /usr/include/c++/12/bits/stl_vector.h
+            instantiation of "std::vector<_Tp, _Alloc>::pointer std::vector<_Tp, _Alloc>::_M_allocate_and_copy(std::vector<_Tp, _Alloc>::size_type, _ForwardIterator, _ForwardIterator) [with _Tp=block_q8_1_mmq, _Alloc=std::allocator<block_q8_1_mmq>, _ForwardIterator=__gnu_cxx::__normal_iterator<const block_q8_1_mmq *, std::vector<block_q8_1_mmq, std::allocator<block_q8_1_mmq>>>]" at line 233 of /usr/include/c++/12/bits/vector.tcc
+            instantiation of "std::vector<_Tp, _Alloc> &std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc> &) [with _Tp=block_q8_1_mmq, _Alloc=std::allocator<block_q8_1_mmq>]" at line 634 of /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tilelocal-half-20261017/tilelocal-half-fixture.cu
+
+/usr/include/c++/12/bits/stl_algobase.h(385): error: function "block_q8_1_mmq::operator=(const block_q8_1_mmq &)" (declared implicitly) cannot be referenced -- it is a deleted function
+         *__result = *__first;
+                   ^
+          detected during:
+            instantiation of "_OI std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m(_II, _II, _OI) [with _II=const block_q8_1_mmq *, _OI=block_q8_1_mmq *]" at line 495
+            instantiation of "_OI std::__copy_move_a2<_IsMove,_II,_OI>(_II, _II, _OI) [with _IsMove=false, _II=const block_q8_1_mmq *, _OI=block_q8_1_mmq *]" at line 522
+            instantiation of "_OI std::__copy_move_a1<_IsMove,_II,_OI>(_II, _II, _OI) [with _IsMove=false, _II=const block_q8_1_mmq *, _OI=block_q8_1_mmq *]" at line 532
+            instantiation of "_OI std::__copy_move_a<_IsMove,_II,_OI>(_II, _II, _OI) [with _IsMove=false, _II=__gnu_cxx::__normal_iterator<const block_q8_1_mmq *, std::vector<block_q8_1_mmq, std::allocator<block_q8_1_mmq>>>, _OI=__gnu_cxx::__normal_iterator<block_q8_1_mmq *, std::vector<block_q8_1_mmq, std::allocator<block_q8_1_mmq>>>]" at line 620
+            instantiation of "_OI std::copy(_II, _II, _OI) [with _II=__gnu_cxx::__normal_iterator<const block_q8_1_mmq *, std::vector<block_q8_1_mmq, std::allocator<block_q8_1_mmq>>>, _OI=__gnu_cxx::__normal_iterator<block_q8_1_mmq *, std::vector<block_q8_1_mmq, std::allocator<block_q8_1_mmq>>>]" at line 244 of /usr/include/c++/12/bits/vector.tcc
+            instantiation of "std::vector<_Tp, _Alloc> &std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc> &) [with _Tp=block_q8_1_mmq, _Alloc=std::allocator<block_q8_1_mmq>]" at line 634 of /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tilelocal-half-20261017/tilelocal-half-fixture.cu
+
+/usr/include/c++/12/bits/stl_algobase.h(385): error: function "block_q8_1_mmq::operator=(const block_q8_1_mmq &)" (declared implicitly) cannot be referenced -- it is a deleted function
+         *__result = *__first;
+                   ^
+          detected during:
+            instantiation of "_OI std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m(_II, _II, _OI) [with _II=block_q8_1_mmq *, _OI=block_q8_1_mmq *]" at line 495
+            instantiation of "_OI std::__copy_move_a2<_IsMove,_II,_OI>(_II, _II, _OI) [with _IsMove=false, _II=block_q8_1_mmq *, _OI=block_q8_1_mmq *]" at line 522
+            instantiation of "_OI std::__copy_move_a1<_IsMove,_II,_OI>(_II, _II, _OI) [with _IsMove=false, _II=block_q8_1_mmq *, _OI=block_q8_1_mmq *]" at line 532
+            instantiation of "_OI std::__copy_move_a<_IsMove,_II,_OI>(_II, _II, _OI) [with _IsMove=false, _II=block_q8_1_mmq *, _OI=block_q8_1_mmq *]" at line 620
+            instantiation of "_OI std::copy(_II, _II, _OI) [with _II=block_q8_1_mmq *, _OI=block_q8_1_mmq *]" at line 250 of /usr/include/c++/12/bits/vector.tcc
+            instantiation of "std::vector<_Tp, _Alloc> &std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc> &) [with _Tp=block_q8_1_mmq, _Alloc=std::allocator<block_q8_1_mmq>]" at line 634 of /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tilelocal-half-20261017/tilelocal-half-fixture.cu
+
+/usr/include/c++/12/bits/stl_uninitialized.h(90): error: static assertion failed with "result type must be constructible from input type"
+        static_assert(is_constructible<_ValueType, _Tp>::value,
+        ^
+          detected during:
+            instantiation of "__nv_bool std::__check_constructible<_ValueType,_Tp>() [with _ValueType=block_q8_1_mmq, _Tp=block_q8_1_mmq &]" at line 182
+            instantiation of "_ForwardIterator std::uninitialized_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator=block_q8_1_mmq *, _ForwardIterator=block_q8_1_mmq *]" at line 372
+            instantiation of "_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, std::allocator<_Tp> &) [with _InputIterator=block_q8_1_mmq *, _ForwardIterator=block_q8_1_mmq *, _Tp=block_q8_1_mmq]" at line 254 of /usr/include/c++/12/bits/vector.tcc
+            instantiation of "std::vector<_Tp, _Alloc> &std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc> &) [with _Tp=block_q8_1_mmq, _Alloc=std::allocator<block_q8_1_mmq>]" at line 634 of /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tilelocal-half-20261017/tilelocal-half-fixture.cu
+
+/usr/include/c++/12/bits/stl_construct.h(119): error: function "block_q8_1_mmq::block_q8_1_mmq(const block_q8_1_mmq &)" (declared implicitly) cannot be referenced -- it is a deleted function
+        ::new((void*)__p) _Tp(std::forward<_Args>(__args)...);
+                             ^
+          detected during:
+            instantiation of "void std::_Construct(_Tp *, _Args &&...) [with _Tp=block_q8_1_mmq, _Args=<block_q8_1_mmq &>]" at line 120 of /usr/include/c++/12/bits/stl_uninitialized.h
+            instantiation of "_ForwardIterator std::__do_uninit_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator=block_q8_1_mmq *, _ForwardIterator=block_q8_1_mmq *]" at line 137 of /usr/include/c++/12/bits/stl_uninitialized.h
+            instantiation of "_ForwardIterator std::__uninitialized_copy<_TrivialValueTypes>::__uninit_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _TrivialValueTypes=false, _InputIterator=block_q8_1_mmq *, _ForwardIterator=block_q8_1_mmq *]" at line 185 of /usr/include/c++/12/bits/stl_uninitialized.h
+            instantiation of "_ForwardIterator std::uninitialized_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator=block_q8_1_mmq *, _ForwardIterator=block_q8_1_mmq *]" at line 372 of /usr/include/c++/12/bits/stl_uninitialized.h
+            instantiation of "_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, std::allocator<_Tp> &) [with _InputIterator=block_q8_1_mmq *, _ForwardIterator=block_q8_1_mmq *, _Tp=block_q8_1_mmq]" at line 254 of /usr/include/c++/12/bits/vector.tcc
+            instantiation of "std::vector<_Tp, _Alloc> &std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc> &) [with _Tp=block_q8_1_mmq, _Alloc=std::allocator<block_q8_1_mmq>]" at line 634 of /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tilelocal-half-20261017/tilelocal-half-fixture.cu
+
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tilelocal-half-20261017/tilelocal-half-fixture.cu(195): warning #177-D: function "<unnamed>::compare_stock" was declared but never referenced
+  void compare_stock(const Format & format, int K, int N, int E, int cols,
+       ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+6 errors detected in the compilation of "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tilelocal-half-20261017/tilelocal-half-fixture.cu".

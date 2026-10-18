@@ -1,0 +1,79 @@
+GPU_PREFLIGHT phase=before uuid=GPU-d3558623-deca-c702-3cc0-01b4aa9c667a used_mib=11 free_mib=16116 temp_c=39 util=0 compute_pids=none
+runtime_libdir=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/onecat-init-concurrency-v372-20261018/onecat-init-concurrency-v372-root-r368r2-r4
+	linux-vdso64.so.1 (0x00007fffb7d70000)
+	libggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib/libggml-cuda.so.0 (0x00007fffaa080000)
+	libggml.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib/libggml.so.0 (0x00007fffaa050000)
+	libggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib/libggml-base.so.0 (0x00007fffa9ec0000)
+	libstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fffa9b90000)
+	libm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fffa9a60000)
+	libgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fffa9a20000)
+	libc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fffa97c0000)
+	libcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fffa96e0000)
+	libcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fffa29c0000)
+	libcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fffa0c00000)
+	libnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff9eda0000)
+	/lib64/ld64.so.2 (0x00007fffb7d90000)
+	libggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib/libggml-cpu.so.0 (0x00007fff9ebe0000)
+	libgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fff9eb60000)
+	libdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff9eb30000)
+	libpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff9eb00000)
+	librt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff9ead0000)
+	libcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff8ac40000)
+V372_RUNTIME_CLOSURE_PASS libdir=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+V372_RUNTIME_GATE GGML_CUDA_FATTN_ONECAT=1 GGML_CUDA_ONECAT_INIT_READY=1 cuda_device_index=0 visible_gpu_count=1 first_graph_computes=concurrent
+ggml_cuda_get_best_fattn_kernel: using opt-in Onecat Flash-V100 XQA decode path (QH=24 KVH=2 T=1 S=1 n_kv=2303)
+CASE name=v372_t1_s1 t=1 streams=1 total_query_rows=1 nkv=2303 partial_tail=1 gathered=1 kv=q8_0/q8_0 mask=causal-triangular max_bias=0.0 prefix=2299 env=1 onecat_supported=1 expected_path=onecat alloc=4865728 buft=4865728
+V372_CONTEXT_READY worker=0 thread_hash=2878157900344424673 backend=0x7fff58001df0 device=0x1003b11c890 shape=S1 query_tokens=1 onecat_supported=1 graph_uid=57802752
+CASE name=v372_t1_s4 t=1 streams=4 total_query_rows=4 nkv=2303 partial_tail=1 gathered=1 kv=q8_0/q8_0 mask=causal-triangular max_bias=0.0 prefix=2299 env=1 onecat_supported=1 expected_path=onecat alloc=19462912 buft=19462912
+V372_CONTEXT_READY worker=1 thread_hash=13452041771252032425 backend=0x7fff28001df0 device=0x1003b11c890 shape=S4 query_tokens=1 onecat_supported=1 graph_uid=57802753
+V372_FIRST_BEGIN worker=1 shape=S4 graph_uid=57802753 start_us=200349055528
+V372_FIRST_BEGIN worker=0 shape=S1 graph_uid=57802752 start_us=200349055557
+Onecat init-ready prepared device=0 entries=4 reason=initialized_ready
+optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=6 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x7fff58000b70 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph path active ctx=0x7fff58000b70 device=0 uid=57802752 nodes=6 mode=capture count=1
+optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=6 width=0 auxiliary=0 count=2
+CUDA graph path config ctx=0x7fff28000b70 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph path active ctx=0x7fff28000b70 device=0 uid=57802753 nodes=6 mode=capture count=1
+CPU_ORACLE name=v372_t1_s1 sampled_rows=4 max_abs=7.7158213e-05 atol=0.01 PASS
+V372_FIRST_END worker=0 shape=S1 graph_uid=57802752 elements=6144 cpu_oracle=1 exact_against_oracle=within_existing_tolerance canary=1
+CPU_ORACLE name=v372_t1_s4 sampled_rows=8 max_abs=7.7158213e-05 atol=0.01 PASS
+V372_FIRST_END worker=1 shape=S4 graph_uid=57802753 elements=24576 cpu_oracle=1 exact_against_oracle=within_existing_tolerance canary=1
+CUDA Graph id 57802753 reused
+optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=6 width=0 auxiliary=0 count=1
+CUDA graph path active ctx=0x7fff28000b70 device=0 uid=57802753 nodes=6 mode=replay count=1
+CUDA Graph id 57802752 reused
+optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=6 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x7fff58000b70 device=0 uid=57802752 nodes=6 mode=replay count=1
+V372_REPLAY_END worker=1 shape=S4 graph_uid=57802753 bit_exact=1 canary=1
+V372_REPLAY_END worker=0 shape=S1 graph_uid=57802752 bit_exact=1 canary=1
+V372_CONTEXT_DESTROY worker=0 thread_hash=2878157900344424673
+V372_CONTEXT_DESTROY worker=1 thread_hash=13452041771252032425
+CASE name=v372_t1_s1 t=1 streams=1 total_query_rows=1 nkv=2303 partial_tail=1 gathered=1 kv=q8_0/q8_0 mask=causal-triangular max_bias=0.0 prefix=2299 env=1 onecat_supported=1 expected_path=onecat alloc=4865728 buft=4865728
+V372_CONTEXT_RECREATED worker=0 thread_hash=2878157900344424673 backend=0x7fff58001df0 device=0x1003b11c890 shape=S1 graph_uid=57802754
+CASE name=v372_t1_s4 t=1 streams=4 total_query_rows=4 nkv=2303 partial_tail=1 gathered=1 kv=q8_0/q8_0 mask=causal-triangular max_bias=0.0 prefix=2299 env=1 onecat_supported=1 expected_path=onecat alloc=19462912 buft=19462912
+V372_CONTEXT_RECREATED worker=1 thread_hash=13452041771252032425 backend=0x7fff588e8930 device=0x1003b11c890 shape=S4 graph_uid=57802755
+CUDA graph path config ctx=0x7fff28000b70 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph path active ctx=0x7fff28000b70 device=0 uid=57802755 nodes=6 mode=capture count=1
+CUDA graph path config ctx=0x7fff58000b70 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph path active ctx=0x7fff58000b70 device=0 uid=57802754 nodes=6 mode=capture count=1
+CPU_ORACLE name=v372_t1_s1 sampled_rows=4 max_abs=7.7158213e-05 atol=0.01 PASS
+V372_RECREATED_FIRST_END worker=0 shape=S1 graph_uid=57802754 bit_exact=1 cpu_oracle=1 canary=1
+CPU_ORACLE name=v372_t1_s4 sampled_rows=8 max_abs=7.7158213e-05 atol=0.01 PASS
+V372_RECREATED_FIRST_END worker=1 shape=S4 graph_uid=57802755 bit_exact=1 cpu_oracle=1 canary=1
+CUDA Graph id 57802754 reused
+CUDA graph path active ctx=0x7fff58000b70 device=0 uid=57802754 nodes=6 mode=replay count=1
+V372_SERIAL_REPLAY worker=0 shape=S1 bit_exact=1
+CUDA Graph id 57802755 reused
+CUDA graph path active ctx=0x7fff28000b70 device=0 uid=57802755 nodes=6 mode=replay count=1
+V372_SERIAL_REPLAY worker=1 shape=S4 bit_exact=1
+V372_WORKER_PASS worker=1 thread_hash=13452041771252032425 shape=S4
+V372_WORKER_PASS worker=0 thread_hash=2878157900344424673 shape=S1
+V372_PASS first_use_concurrent=1 first_start_skew_us=29 contexts=2 same_device=1 unique_graph_uids=4 shapes=S1,S4 first_capture_and_replay=1 recreation_warm_reuse=1 serial_after_first_use=1 exact_bitwise=1 cpu_oracle=1 canaries=1
+optimization path summary device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=8 selected=4 fallback_structural_binding_signature_unavailable=4
+V372 result verification PASS: runtime-selected capture/replay, concurrent Onecat first-use S1/S4, recreation, exact outputs/canaries
+GPU_PREFLIGHT phase=after uuid=GPU-d3558623-deca-c702-3cc0-01b4aa9c667a used_mib=12 free_mib=16116 temp_c=41 util=0 compute_pids=none
+exit_status=0

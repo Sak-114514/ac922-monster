@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "status": "failed_exit139_in_cuda_graph_structural_signature; supervisor_stopped_no_autorestart",
+  "candidate": "V26 hierarchical EP6 16K-per-request full-model attempt, reusing the exact host-qualified runner binary; no core change in this fixture",
+  "runner_source": "dual-context-v24-shortctx.cpp",
+  "runner_binary_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v26-shortctx16k-hierarchical-20261016/build-runtime-v26-shortctx/dual-context-v26-shortctx",
+  "runner_sha256": "8f25242b2c8bb8fe09eba2002386d5d98f5b8de08886e9e491a6499b76a5c44d",
+  "runtime": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v64",
+    "build_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V64-build.json",
+    "build_id": "20261016T015610.271139Z",
+    "report_sha256": "8818d4831179db364702a1720c849dfb04b836d6c37e7ae3e6671d9ed5aefc1e",
+    "dynamic_closure": "verified by ldd; all seven application libraries resolve from runtime-perf-v64/lib",
+    "V61_not_launchable_reason": "nested Meta init source binding required V62 core fix"
+  },
+  "model": {
+    "path": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+    "size_bytes": 78615622080,
+    "weights": "IQ3_XXS; all 512 experts retained",
+    "kv_precision": "Q8_0 K/V target and draft",
+    "sha256": "not recomputed"
+  },
+  "topology": {
+    "hierarchical_ep6": "Meta2 -> 2 Meta3 islands -> six physical V100 leaves",
+    "island_split": "3,3",
+    "model_level_meta_device_count": 1,
+    "experts_pruned": false,
+    "PLE_lookup_precision_changed": false
+  },
+  "contexts": {
+    "variant": "per_seq_16k",
+    "kv_unified": false,
+    "bank_count": 2,
+    "lanes_per_bank": 2,
+    "bank_context": 32768,
+    "sequence_count_per_bank": 2,
+    "kv_streams_per_bank": 2,
+    "per_sequence_capacity": 16384,
+    "aggregate_four_stream_capacity": 65536,
+    "maximum_request_context": 16384,
+    "target_ubatch": 1024,
+    "mtp_depth": 3,
+    "mtp_ubatch": 512,
+    "prefill_batch": 8192,
+    "output_tokens_per_real_prompt": 256
+  },
+  "ple": {
+    "hybrid_numa_enabled": true,
+    "gpu_numa_nodes": 6,
+    "gpu_prefix_total_gib": 8,
+    "gpu_prefix_per_node_gib": 1.3333333333333333,
+    "cpu_lookup": "unchanged full precision path",
+    "gpu_runtime_reserve_gib_per_card": 4,
+    "cpu_ddr_runtime_reserve_gib_total": 3,
+    "reserve_modified": false
+  },
+  "capacity_review": {
+    "usable_hbm_gib_per_card": 15.47,
+    "weight_estimate_gib_per_card": [
+      9.22,
+      9.34
+    ],
+    "ple_gib_per_card": 1.3333333333333333,
+    "post_weights_and_ple_room_gib_per_card": [
+      4.8,
+      4.92
+    ],
+    "64k_tracked_lower_bound_mib_per_card": 4924.86,
+    "64k_basis": "2 banks * (748 KV/indexer + 381 RS + 908.15 target compute) + 2*425.28 MTP compute; excludes additional MTP KV/indexer and graph/allocator overhead",
+    "16k_tracked_lower_bound_mib_per_card": 3802.86,
+    "16k_basis": "2 banks * (187 KV/indexer at quarter context + 381 RS unchanged + 908.15 target compute conservatively unchanged) + 2*425.28 MTP compute; excludes additional MTP KV/indexer and graph/allocator overhead",
+    "16k_estimated_headroom_gib_per_card": [
+      1.09,
+      1.21
+    ],
+    "fit_claim": "none; V64 loader and graph gates must pass with unchanged reserves"
+  },
+  "quality_gates": {
+    "native_semantics": true,
+    "full_f32_prefill_logits_preclean": true,
+    "exact_token_parity_preserved": true,
+    "clean_four_stream_measurement": true,
+    "gate_source": "reused V23 wrapper/checkers with a strict 16K context-shape policy"
+  },
+  "launch_safety": {
+    "requires_root_gpu_grant": true,
+    "gpu_free_floor_mib": 512,
+    "gpu_temp_ceiling_c": 58,
+    "corrected_v23_bmc_gpu_monitor": true,
+    "ddr_node0_8_and_unit_rss": "record-only; no DDR MemFree stop threshold",
+    "autorun": false,
+    "CUPTI": false,
+    "LD_PRELOAD": false,
+    "runtime_build": "V64; actual full-model loader/graph reserve checks remain authoritative",
+    "requires_v64_tiny_gate": true
+  },
+  "previous_v23_result": {
+    "clean_tg_tok_s": 132.5790328725751,
+    "native_semantics": "pass",
+    "preclean_f32": "pass",
+    "exact_token_gate": "fail; not certified"
+  },
+  "open_risk": "V64 tiny qualification passed per root, but the V26 full graph still SIGSEGVed in ggml_cuda_graph_tensor_input during CUDA graph structural-signature generation. Keep this tag stopped; do not auto-relaunch.",
+  "host_link_evidence": {
+    "status": "same frozen PPC64LE runner reused without rebuilding; V64 dynamic closure verified by ldd/hash",
+    "runner_sha256": "8f25242b2c8bb8fe09eba2002386d5d98f5b8de08886e9e491a6499b76a5c44d",
+    "elf_build_id": "8560fce4abedc573a22840fd81d9dfdf9dc34546",
+    "v64_ldd_evidence": "v64-reused-runner.ldd.txt",
+    "v64_sha256_evidence": "v64-reused-runner.sha256.txt",
+    "v64_file_evidence": "v64-reused-runner.file.txt",
+    "v64_status_evidence": "v64-reused-runner.status.txt",
+    "v64_report_sha256": "8818d4831179db364702a1720c849dfb04b836d6c37e7ae3e6671d9ed5aefc1e"
+  },
+  "timing": {
+    "GGML_CUDA_GRAPH_STRUCTURAL_TRACE": "1",
+    "GGML_META_TIMING": "1",
+    "LLAMA_STEP_TIMING": "1",
+    "LLAMA_STEP_TIMING_PERIOD": "32",
+    "CUPTI": "off",
+    "LD_PRELOAD": "empty",
+    "additional_gpu_sync": "none"
+  },
+  "tiny_qualification": {
+    "status": "PASS per root report: external-suffix sentinel/direct-node regression; V64 fail-closed opaque-extra and raw-UID structural graph ABA/canary; log reference is maintained by root",
+    "launch_blocked_until": "root reports V64 tiny gate PASS and grants V26 GPU window"
+  },
+  "v64_runtime_metadata": {
+    "build_id": "20261016T015610.271139Z",
+    "report_sha256": "8818d4831179db364702a1720c849dfb04b836d6c37e7ae3e6671d9ed5aefc1e",
+    "opaque_extra": "explicit opaque input is fail-closed",
+    "cuda_graph_structural_signature": "raw graph UID retained",
+    "build_delta": "1 CUDA object; no runner ABI change"
+  },
+  "previous_v25_attempt": {
+    "status": "failed_exit139_in_cuda_graph_structural_signature; not a V26 result",
+    "status_file": "../dual-context-v25-shortctx16k-hierarchical-20261016/STATUS.md"
+  },
+  "run_outcome": {
+    "unit": "root-p4-v26-shortctx16k-hierarchical-ep6-d3-20261016t020607z",
+    "unit_result": "exit-code 139 SIGSEGV",
+    "result_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v26-shortctx16k-hierarchical-20261016/results/root-p4-v26-shortctx16k-hierarchical-ep6-d3-20261016t020607z",
+    "first_scenario": "serial-sem-00-0 / capital-en",
+    "failure": "ggml_cuda_graph_tensor_input during structural-signature generation",
+    "quality_result": "no completed semantic/F32/exact-token/clean gate",
+    "supervisor_active": false
+  }
+}

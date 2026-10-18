@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "parallel_labels": [
+    "v20-dual-sem-00",
+    "v20-dual-sem-01",
+    "v20-dual-sem-02",
+    "v20-dual-sem-03",
+    "v20-real8k-p4-1x4"
+  ],
+  "pairs": [
+    {
+      "id": "capital-en",
+      "serial_label": "v20-serial-sem-00-0",
+      "parallel_label": "v20-dual-sem-00",
+      "parallel_bank": 0
+    },
+    {
+      "id": "arithmetic-zh",
+      "serial_label": "v20-serial-sem-00-0",
+      "parallel_label": "v20-dual-sem-00",
+      "parallel_bank": 0
+    },
+    {
+      "id": "logic-en",
+      "serial_label": "v20-serial-sem-00-1",
+      "parallel_label": "v20-dual-sem-00",
+      "parallel_bank": 0
+    },
+    {
+      "id": "strict-json-zh",
+      "serial_label": "v20-serial-sem-00-1",
+      "parallel_label": "v20-dual-sem-00",
+      "parallel_bank": 0
+    },
+    {
+      "id": "python-clamp",
+      "serial_label": "v20-serial-sem-01-0",
+      "parallel_label": "v20-dual-sem-01",
+      "parallel_bank": 0
+    },
+    {
+      "id": "vocabulary-en-zh",
+      "serial_label": "v20-serial-sem-01-0",
+      "parallel_label": "v20-dual-sem-01",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel2-add-en",
+      "serial_label": "v20-serial-sem-01-1",
+      "parallel_label": "v20-dual-sem-01",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel2-subtract-zh",
+      "serial_label": "v20-serial-sem-01-1",
+      "parallel_label": "v20-dual-sem-01",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel4-add",
+      "serial_label": "v20-serial-sem-02-0",
+      "parallel_label": "v20-dual-sem-02",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel4-subtract",
+      "serial_label": "v20-serial-sem-02-0",
+      "parallel_label": "v20-dual-sem-02",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel4-multiply",
+      "serial_label": "v20-serial-sem-02-1",
+      "parallel_label": "v20-dual-sem-02",
+      "parallel_bank": 0
+    },
+    {
+      "id": "parallel4-divide",
+      "serial_label": "v20-serial-sem-02-1",
+      "parallel_label": "v20-dual-sem-02",
+      "parallel_bank": 0
+    },
+    {
+      "id": "slot-reuse-0",
+      "serial_label": "v20-serial-sem-03-0",
+      "parallel_label": "v20-dual-sem-03",
+      "parallel_bank": 0
+    },
+    {
+      "id": "slot-reuse-1",
+      "serial_label": "v20-serial-sem-03-0",
+      "parallel_label": "v20-dual-sem-03",
+      "parallel_bank": 0
+    },
+    {
+      "id": "slot-reuse-2",
+      "serial_label": "v20-serial-sem-03-1",
+      "parallel_label": "v20-dual-sem-03",
+      "parallel_bank": 0
+    },
+    {
+      "id": "slot-reuse-3",
+      "serial_label": "v20-serial-sem-03-1",
+      "parallel_label": "v20-dual-sem-03",
+      "parallel_bank": 0
+    },
+    {
+      "id": "real8k-0",
+      "serial_label": "v20-serial-real8k-0",
+      "parallel_label": "v20-real8k-p4-1x4",
+      "parallel_bank": 0
+    },
+    {
+      "id": "real8k-1",
+      "serial_label": "v20-serial-real8k-0",
+      "parallel_label": "v20-real8k-p4-1x4",
+      "parallel_bank": 0
+    },
+    {
+      "id": "real8k-2",
+      "serial_label": "v20-serial-real8k-1",
+      "parallel_label": "v20-real8k-p4-1x4",
+      "parallel_bank": 0
+    },
+    {
+      "id": "real8k-3",
+      "serial_label": "v20-serial-real8k-1",
+      "parallel_label": "v20-real8k-p4-1x4",
+      "parallel_bank": 0
+    }
+  ],
+  "prefix_checks": [
+    {
+      "id": "single8k-pp-probe-prefix",
+      "probe_label": "v20-single8k-pp-probe-32",
+      "probe_flow_id": "real8k0-pp-probe-32",
+      "reference_label": "v20-serial-real8k-0",
+      "reference_flow_id": "real8k-0",
+      "prefix_tokens": 32,
+      "warm_graph_probe": false
+    },
+    {
+      "id": "pp-warm-prefix",
+      "probe_label": "v20-single8k-pp-warm-32",
+      "probe_flow_id": "real8k0-pp-warm-32",
+      "reference_label": "v20-serial-real8k-0",
+      "reference_flow_id": "real8k-0",
+      "prefix_tokens": 32,
+      "warm_graph_probe": true
+    }
+  ],
+  "required_config": {
+    "bank_count": 1,
+    "bank_lanes": 4,
+    "mtp_depth_default": 2,
+    "mtp_depth_allowed": [
+      2,
+      4
+    ],
+    "target_verify_rows_for_d2": 12,
+    "target_verify_rows_for_d4": 20,
+    "mtp_fixed_prefix_rows_per_lane": 6,
+    "mtp_fixed_prefix_rows_total": 24,
+    "logical_prefill_batch_capacity": 8192,
+    "serial_cpu_submit": false,
+    "server_mtp_kv_policy": true,
+    "expert_parallel": "1",
+    "mtp_chain_multi": true,
+    "mtp_unrolled": true,
+    "mtp_fixed_prefix_rows": 6,
+    "mtp_variable_lanes": true,
+    "model_load_count": 1,
+    "ubatch_default": 1024,
+    "ubatch_allowed": [
+      512,
+      1024
+    ],
+    "turboprefill_default": false,
+    "turboprefill_optional": true,
+    "island_split": "3,3",
+    "qsa_indexer_impl": "standard",
+    "kv_variant": "per_seq_64k_x4",
+    "bank_context": 262144,
+    "n_seq_max": 4,
+    "context_per_sequence": 65536,
+    "kv_streams": 4,
+    "maximum_request_context": 65536
+  },
+  "require_full_output_label": "v20-real8k-p4-1x4",
+  "require_runtime_diagnostics_for_label": "v20-real8k-p4-1x4",
+  "kv_variants_allowed": [
+    "per_seq_64k_x4"
+  ],
+  "kv_layouts": {
+    "per_seq_64k_x4": {
+      "kv_unified": false,
+      "bank_context": 262144,
+      "n_seq_max": 4,
+      "context_per_sequence": 65536,
+      "kv_streams": 4,
+      "bank_count": 1,
+      "aggregate_context_capacity": 262144,
+      "maximum_request_context": 65536
+    }
+  },
+  "topology": {
+    "variant": "one_bank_four_lanes",
+    "bank_count": 1,
+    "lanes_per_bank": 4,
+    "all_parallel_flows_bank": 0,
+    "serial_reference_requests_per_context": 2,
+    "parallel_real_requests_per_context": 4,
+    "capacity_note": "one context with four independent 65536-cell KV streams; 262144 total cells is aggregate capacity, not one-request context"
+  }
+}

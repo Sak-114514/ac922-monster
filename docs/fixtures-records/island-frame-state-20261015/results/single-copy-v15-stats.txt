@@ -1,0 +1,48 @@
+
+NOTICE: Existing SQLite export found: /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/island-frame-state-20261015/results/single-copy-v15.sqlite
+        It is assumed file was previously exported from: /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/island-frame-state-20261015/results/single-copy-v15.nsys-rep
+        Consider using --force-export=true if needed.
+
+Processing [/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/island-frame-state-20261015/results/single-copy-v15.sqlite] with [/usr/local/cuda-12.4/nsight-systems-2023.4.4/target-linux-ppc64le/reports/cuda_gpu_kern_sum.py]... 
+
+ ** CUDA GPU Kernel Summary (cuda_gpu_kern_sum):
+
+ Time (%)  Total Time (ns)  Instances  Avg (ns)   Med (ns)   Min (ns)  Max (ns)  StdDev (ns)                                                  Name                                                
+ --------  ---------------  ---------  ---------  ---------  --------  --------  -----------  ----------------------------------------------------------------------------------------------------
+     99.2       7677123857       1536  4998127.5  4863430.0   4851856   7232831     279358.0  volta_sgemm_128x64_tn                                                                               
+      0.7         54802930         48  1141727.7    38400.0      4252  18568533    3211100.6  k_allreduce_p2p(float *, long, p2p_ar_args)                                                         
+      0.0          1839100       1488     1236.0     1408.0       476      5789        580.2  void k_bin_bcast<&op_add, float, float, float, const float *>(const T2 *, const T3 *, T4 *, unsigne…
+      0.0          1479063       1488      994.0     1310.0       348      5949        573.6  scale_f32(const float *, float *, float, float, long)                                               
+      0.0           883364        768     1150.2     1439.0       507      4254        568.4  void k_bin_bcast<&op_repeat, float, float, float, >(const T2 *, const T3 *, T4 *, unsigned int, uns…
+      0.0           189613        144     1316.8     1631.0       604      2302        607.6  void concat_cont<unsigned int, (int)1>(const T1 *, const T1 *, T1 *, long, long, long, long, long, …
+      0.0            74555         32     2329.8     2590.0      1244      3168        717.4  void gemmSN_TN_kernel<float, (int)128, (int)16, (int)2, (int)4, (int)4, (int)4, (bool)1, cublasGemv…
+      0.0            39666         48      826.4      812.5       603      1146        182.2  add_id_kernel(const float *, const float *, const int *, float *, long, long, unsigned long, unsign…
+      0.0            28289         16     1768.1     1950.5       924      2369        534.4  void mul_mat_vec_f<float, float, (int)4, (int)32, (bool)0, (bool)0>(const T1 *, const float *, cons…
+
+Processing [/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/island-frame-state-20261015/results/single-copy-v15.sqlite] with [/usr/local/cuda-12.4/nsight-systems-2023.4.4/target-linux-ppc64le/reports/nvtx_sum.py]... 
+
+ ** NVTX Range Summary (nvtx_sum):
+
+ Time (%)  Total Time (ns)  Instances    Avg (ns)      Med (ns)     Min (ns)    Max (ns)   StdDev (ns)   Style              Range           
+ --------  ---------------  ---------  ------------  ------------  ----------  ----------  -----------  -------  ---------------------------
+     96.3      30090010278          6  5015001713.0  4963304327.0  4549364578  5760347699  458533596.4  PushPop  NCCL:ncclCommInitAll       
+      3.1        975751089         18    54208393.8      599509.5      534646   319908007   95606194.5  PushPop  NCCL:ncclCommDestroy       
+      0.1         35476173          4     8869043.3     4922707.5      683076    24947682   11032583.7  PushPop  P4S/A0_to_B0               
+      0.1         34387679          1    34387679.0    34387679.0    34387679    34387679          0.0  PushPop  P4S/epoch=1/frame=0/stage=A
+      0.1         24355159          1    24355159.0    24355159.0    24355159    24355159          0.0  PushPop  P4S/epoch=1/frame=0/stage=B
+      0.1         20032004          1    20032004.0    20032004.0    20032004    20032004          0.0  PushPop  P4S/epoch=2/frame=0/stage=A
+      0.1         16815313          4     4203828.3     4719271.5      689650     6687120    2942035.4  PushPop  P4S/A1_B0_to_B1            
+      0.0          7332475          1     7332475.0     7332475.0     7332475     7332475          0.0  PushPop  P4S/epoch=2/frame=1/stage=A
+      0.0          6557773          1     6557773.0     6557773.0     6557773     6557773          0.0  PushPop  P4S/epoch=2/frame=0/stage=B
+      0.0          6269626          1     6269626.0     6269626.0     6269626     6269626          0.0  PushPop  P4S/epoch=2/frame=1/stage=B
+      0.0          6191432          1     6191432.0     6191432.0     6191432     6191432          0.0  PushPop  P4S/epoch=1/frame=1/stage=A
+      0.0          6122231          1     6122231.0     6122231.0     6122231     6122231          0.0  PushPop  P4S/epoch=1/frame=1/stage=B
+      0.0          2850671          1     2850671.0     2850671.0     2850671     2850671          0.0  PushPop  P4S/epoch=3/frame=1/stage=A
+      0.0          2743455          1     2743455.0     2743455.0     2743455     2743455          0.0  PushPop  P4S/epoch=3/frame=0/stage=A
+      0.0          2603512          1     2603512.0     2603512.0     2603512     2603512          0.0  PushPop  P4S/epoch=3/frame=0/stage=B
+      0.0          2581612          1     2581612.0     2581612.0     2581612     2581612          0.0  PushPop  P4S/epoch=3/frame=1/stage=B
+      0.0           510702          1      510702.0      510702.0      510702      510702          0.0  PushPop  P4S/epoch=4/frame=1/stage=A
+      0.0           461994          1      461994.0      461994.0      461994      461994          0.0  PushPop  P4S/epoch=4/frame=0/stage=B
+      0.0           453270          1      453270.0      453270.0      453270      453270          0.0  PushPop  P4S/epoch=4/frame=0/stage=A
+      0.0           447437          1      447437.0      447437.0      447437      447437          0.0  PushPop  P4S/epoch=4/frame=1/stage=B
+

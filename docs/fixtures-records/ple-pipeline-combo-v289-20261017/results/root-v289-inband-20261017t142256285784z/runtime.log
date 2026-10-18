@@ -1,0 +1,7 @@
+fatal-backtrace-v15 enabled=1 prewarmed=1 main_altstack=1 handlers=SIGSEGV,SIGBUS
+runner-environment ld_preload= sync_audit=0
+runner-diagnostics common_log_threshold=4 ggml_info_verbosity=4 ggml_info_visible=1
+cupti-marker phase=off dso_loaded=0 profiled=0
+fatal-backtrace-v15 reinstalled point=before-backend-init
+mtp-owner-policy mode=model-default env_override=unset expected_device=CUDA5 clone_api=off
+dual-context error: V131 plain-CUDA layer mode must not enable Meta replay or context views

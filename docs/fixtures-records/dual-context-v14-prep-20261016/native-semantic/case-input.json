@@ -1,0 +1,398 @@
+[
+  {
+    "case_id": "capital-en",
+    "phase": "single",
+    "id_slot": 0,
+    "prompt": "What is the capital city of France? Reply with exactly the city name, without punctuation or explanation.",
+    "checker": "exact_text",
+    "expected": "Paris",
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What is the capital city of France? Reply with exactly the city name, without punctuation or explanation."
+        }
+      ],
+      "temperature": 0,
+      "seed": 84101,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 0
+    }
+  },
+  {
+    "case_id": "arithmetic-zh",
+    "phase": "single",
+    "id_slot": 0,
+    "prompt": "请计算 2847 + 6958。只输出十进制整数，不要解释。",
+    "checker": "exact_text",
+    "expected": "9805",
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "请计算 2847 + 6958。只输出十进制整数，不要解释。"
+        }
+      ],
+      "temperature": 0,
+      "seed": 84102,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 0
+    }
+  },
+  {
+    "case_id": "logic-en",
+    "phase": "single",
+    "id_slot": 0,
+    "prompt": "All dax are lamn. Some lamn are red. Does it logically follow that some dax are red? Reply with exactly YES or NO.",
+    "checker": "exact_text",
+    "expected": "NO",
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "All dax are lamn. Some lamn are red. Does it logically follow that some dax are red? Reply with exactly YES or NO."
+        }
+      ],
+      "temperature": 0,
+      "seed": 84103,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 0
+    }
+  },
+  {
+    "case_id": "strict-json-zh",
+    "phase": "single",
+    "id_slot": 0,
+    "prompt": "请严格按要求输出一个 JSON 对象，不要 Markdown、代码围栏或其他文字。对象必须是：{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}",
+    "checker": "strict_json",
+    "expected": {
+      "ok": true,
+      "count": 3,
+      "colors": [
+        "红",
+        "蓝"
+      ]
+    },
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "请严格按要求输出一个 JSON 对象，不要 Markdown、代码围栏或其他文字。对象必须是：{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+        }
+      ],
+      "temperature": 0,
+      "seed": 84104,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 0
+    }
+  },
+  {
+    "case_id": "python-clamp",
+    "phase": "single",
+    "id_slot": 0,
+    "prompt": "Output Python code only, with no Markdown. Define clamp(x, low, high), assuming low <= high, and return x clamped to the closed interval [low, high]. Write only this function.",
+    "checker": "clamp_ast",
+    "expected": {
+      "function": "clamp",
+      "args": [
+        "x",
+        "low",
+        "high"
+      ]
+    },
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Output Python code only, with no Markdown. Define clamp(x, low, high), assuming low <= high, and return x clamped to the closed interval [low, high]. Write only this function."
+        }
+      ],
+      "temperature": 0,
+      "seed": 84105,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 0
+    }
+  },
+  {
+    "case_id": "vocabulary-en-zh",
+    "phase": "single",
+    "id_slot": 0,
+    "prompt": "In English, what color does the Chinese word 蓝 name? Reply with exactly one lowercase English word.",
+    "checker": "exact_text",
+    "expected": "blue",
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "In English, what color does the Chinese word 蓝 name? Reply with exactly one lowercase English word."
+        }
+      ],
+      "temperature": 0,
+      "seed": 84106,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 0
+    }
+  },
+  {
+    "case_id": "parallel2-add-en",
+    "phase": "concurrent_2",
+    "id_slot": 0,
+    "prompt": "Independent request. Use only this message. Return strict JSON with exactly the keys \"nonce\" and \"answer\". Add 148 and 275. Repeat nonce exactly: 052091280d. Expected shape: {\"nonce\":\"052091280d\",\"answer\":integer}",
+    "checker": "strict_json",
+    "expected": {
+      "nonce": "052091280d",
+      "answer": 423
+    },
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Independent request. Use only this message. Return strict JSON with exactly the keys \"nonce\" and \"answer\". Add 148 and 275. Repeat nonce exactly: 052091280d. Expected shape: {\"nonce\":\"052091280d\",\"answer\":integer}"
+        }
+      ],
+      "temperature": 0,
+      "seed": 84200,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 0
+    }
+  },
+  {
+    "case_id": "parallel2-subtract-zh",
+    "phase": "concurrent_2",
+    "id_slot": 1,
+    "prompt": "Independent request. Use only this message. Return strict JSON with exactly the keys \"nonce\" and \"answer\". 计算 913 - 478。 Repeat nonce exactly: c66a0d251e. Expected shape: {\"nonce\":\"c66a0d251e\",\"answer\":integer}",
+    "checker": "strict_json",
+    "expected": {
+      "nonce": "c66a0d251e",
+      "answer": 435
+    },
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Independent request. Use only this message. Return strict JSON with exactly the keys \"nonce\" and \"answer\". 计算 913 - 478。 Repeat nonce exactly: c66a0d251e. Expected shape: {\"nonce\":\"c66a0d251e\",\"answer\":integer}"
+        }
+      ],
+      "temperature": 0,
+      "seed": 84201,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 1
+    }
+  },
+  {
+    "case_id": "parallel4-add",
+    "phase": "concurrent_4",
+    "id_slot": 0,
+    "prompt": "Independent request. Ignore other requests. Return strict JSON with exactly the keys \"nonce\" and \"answer\". Compute 148 + 275. Repeat nonce exactly: ef76e40e4a. Expected shape: {\"nonce\":\"ef76e40e4a\",\"answer\":integer}",
+    "checker": "strict_json",
+    "expected": {
+      "nonce": "ef76e40e4a",
+      "answer": 423
+    },
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Independent request. Ignore other requests. Return strict JSON with exactly the keys \"nonce\" and \"answer\". Compute 148 + 275. Repeat nonce exactly: ef76e40e4a. Expected shape: {\"nonce\":\"ef76e40e4a\",\"answer\":integer}"
+        }
+      ],
+      "temperature": 0,
+      "seed": 84300,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 0
+    }
+  },
+  {
+    "case_id": "parallel4-subtract",
+    "phase": "concurrent_4",
+    "id_slot": 1,
+    "prompt": "Independent request. Ignore other requests. Return strict JSON with exactly the keys \"nonce\" and \"answer\". Compute 913 - 478. Repeat nonce exactly: 599754b731. Expected shape: {\"nonce\":\"599754b731\",\"answer\":integer}",
+    "checker": "strict_json",
+    "expected": {
+      "nonce": "599754b731",
+      "answer": 435
+    },
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Independent request. Ignore other requests. Return strict JSON with exactly the keys \"nonce\" and \"answer\". Compute 913 - 478. Repeat nonce exactly: 599754b731. Expected shape: {\"nonce\":\"599754b731\",\"answer\":integer}"
+        }
+      ],
+      "temperature": 0,
+      "seed": 84301,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 1
+    }
+  },
+  {
+    "case_id": "parallel4-multiply",
+    "phase": "concurrent_4",
+    "id_slot": 2,
+    "prompt": "Independent request. Ignore other requests. Return strict JSON with exactly the keys \"nonce\" and \"answer\". Compute 12 * 17. Repeat nonce exactly: d17d03f22e. Expected shape: {\"nonce\":\"d17d03f22e\",\"answer\":integer}",
+    "checker": "strict_json",
+    "expected": {
+      "nonce": "d17d03f22e",
+      "answer": 204
+    },
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Independent request. Ignore other requests. Return strict JSON with exactly the keys \"nonce\" and \"answer\". Compute 12 * 17. Repeat nonce exactly: d17d03f22e. Expected shape: {\"nonce\":\"d17d03f22e\",\"answer\":integer}"
+        }
+      ],
+      "temperature": 0,
+      "seed": 84302,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 2
+    }
+  },
+  {
+    "case_id": "parallel4-divide",
+    "phase": "concurrent_4",
+    "id_slot": 3,
+    "prompt": "Independent request. Ignore other requests. Return strict JSON with exactly the keys \"nonce\" and \"answer\". Compute 1000 / 8 as an integer. Repeat nonce exactly: 4d3a32cd57. Expected shape: {\"nonce\":\"4d3a32cd57\",\"answer\":integer}",
+    "checker": "strict_json",
+    "expected": {
+      "nonce": "4d3a32cd57",
+      "answer": 125
+    },
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Independent request. Ignore other requests. Return strict JSON with exactly the keys \"nonce\" and \"answer\". Compute 1000 / 8 as an integer. Repeat nonce exactly: 4d3a32cd57. Expected shape: {\"nonce\":\"4d3a32cd57\",\"answer\":integer}"
+        }
+      ],
+      "temperature": 0,
+      "seed": 84303,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 3
+    }
+  },
+  {
+    "case_id": "slot-reuse-0",
+    "phase": "slot_reuse",
+    "id_slot": 0,
+    "prompt": "New independent request after the concurrent wave. Ignore any prior request handled by this slot; use only this message. Return strict JSON with exactly the keys \"fresh_nonce\" and \"result\". Compute 31 - 9. Repeat fresh_nonce exactly: 82a171648c. Expected shape: {\"fresh_nonce\":\"82a171648c\",\"result\":integer}",
+    "checker": "strict_json",
+    "expected": {
+      "fresh_nonce": "82a171648c",
+      "result": 22
+    },
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "New independent request after the concurrent wave. Ignore any prior request handled by this slot; use only this message. Return strict JSON with exactly the keys \"fresh_nonce\" and \"result\". Compute 31 - 9. Repeat fresh_nonce exactly: 82a171648c. Expected shape: {\"fresh_nonce\":\"82a171648c\",\"result\":integer}"
+        }
+      ],
+      "temperature": 0,
+      "seed": 84400,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 0
+    }
+  },
+  {
+    "case_id": "slot-reuse-1",
+    "phase": "slot_reuse",
+    "id_slot": 1,
+    "prompt": "New independent request after the concurrent wave. Ignore any prior request handled by this slot; use only this message. Return strict JSON with exactly the keys \"fresh_nonce\" and \"result\". Compute 38 - 12. Repeat fresh_nonce exactly: e65d0878a5. Expected shape: {\"fresh_nonce\":\"e65d0878a5\",\"result\":integer}",
+    "checker": "strict_json",
+    "expected": {
+      "fresh_nonce": "e65d0878a5",
+      "result": 26
+    },
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "New independent request after the concurrent wave. Ignore any prior request handled by this slot; use only this message. Return strict JSON with exactly the keys \"fresh_nonce\" and \"result\". Compute 38 - 12. Repeat fresh_nonce exactly: e65d0878a5. Expected shape: {\"fresh_nonce\":\"e65d0878a5\",\"result\":integer}"
+        }
+      ],
+      "temperature": 0,
+      "seed": 84401,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 1
+    }
+  },
+  {
+    "case_id": "slot-reuse-2",
+    "phase": "slot_reuse",
+    "id_slot": 2,
+    "prompt": "New independent request after the concurrent wave. Ignore any prior request handled by this slot; use only this message. Return strict JSON with exactly the keys \"fresh_nonce\" and \"result\". Compute 45 - 15. Repeat fresh_nonce exactly: 089d1ff4f9. Expected shape: {\"fresh_nonce\":\"089d1ff4f9\",\"result\":integer}",
+    "checker": "strict_json",
+    "expected": {
+      "fresh_nonce": "089d1ff4f9",
+      "result": 30
+    },
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "New independent request after the concurrent wave. Ignore any prior request handled by this slot; use only this message. Return strict JSON with exactly the keys \"fresh_nonce\" and \"result\". Compute 45 - 15. Repeat fresh_nonce exactly: 089d1ff4f9. Expected shape: {\"fresh_nonce\":\"089d1ff4f9\",\"result\":integer}"
+        }
+      ],
+      "temperature": 0,
+      "seed": 84402,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 2
+    }
+  },
+  {
+    "case_id": "slot-reuse-3",
+    "phase": "slot_reuse",
+    "id_slot": 3,
+    "prompt": "New independent request after the concurrent wave. Ignore any prior request handled by this slot; use only this message. Return strict JSON with exactly the keys \"fresh_nonce\" and \"result\". Compute 52 - 18. Repeat fresh_nonce exactly: 9de14ed1dc. Expected shape: {\"fresh_nonce\":\"9de14ed1dc\",\"result\":integer}",
+    "checker": "strict_json",
+    "expected": {
+      "fresh_nonce": "9de14ed1dc",
+      "result": 34
+    },
+    "request": {
+      "model": "local-model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "New independent request after the concurrent wave. Ignore any prior request handled by this slot; use only this message. Return strict JSON with exactly the keys \"fresh_nonce\" and \"result\". Compute 52 - 18. Repeat fresh_nonce exactly: 9de14ed1dc. Expected shape: {\"fresh_nonce\":\"9de14ed1dc\",\"result\":integer}"
+        }
+      ],
+      "temperature": 0,
+      "seed": 84403,
+      "max_tokens": 256,
+      "stream": false,
+      "id_slot": 3
+    }
+  }
+]

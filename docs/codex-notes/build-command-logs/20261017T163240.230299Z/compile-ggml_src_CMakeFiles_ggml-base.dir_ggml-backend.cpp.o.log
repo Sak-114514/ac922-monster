@@ -1,0 +1,78 @@
+{
+  "argv": [
+    "/usr/bin/c++",
+    "-DGGML_BUILD",
+    "-DGGML_SCHED_MAX_COPIES=4",
+    "-DGGML_SHARED",
+    "-DGGML_USE_OPENMP",
+    "-D_GNU_SOURCE",
+    "-D_XOPEN_SOURCE=600",
+    "-Dggml_base_EXPORTS",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/.",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/ggml/src",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/../include",
+    "-O3",
+    "-DNDEBUG",
+    "-std=gnu++17",
+    "-fPIC",
+    "-Wmissing-declarations",
+    "-Wmissing-noreturn",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Wcast-qual",
+    "-Wno-unused-function",
+    "-Wno-array-bounds",
+    "-Wextra-semi",
+    "-fopenmp",
+    "-o",
+    "CMakeFiles/ggml-base.dir/ggml-backend.cpp.o",
+    "-c",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp"
+  ],
+  "cwd": "/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/ggml/src",
+  "display": "/usr/bin/c++ -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_base_EXPORTS -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/. -I/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/ggml/src -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -fopenmp -o CMakeFiles/ggml-base.dir/ggml-backend.cpp.o -c /home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp",
+  "error": null,
+  "error_repr": null,
+  "error_type": null,
+  "object": "ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o",
+  "returncode": 1,
+  "traceback": null
+}
+
+--- combined stdout/stderr ---
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp: In function ‘bool ggml_sched_layer_single_input(ggml_backend_sched_t, const ggml_tensor*, int, int, const std::unordered_set<const ggml_tensor*>&)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp:1051:45: error: invalid conversion from ‘const ggml_tensor*’ to ‘ggml_tensor*’ [-fpermissive]
+ 1051 |         const int owner = tensor_backend_id(t);
+      |                                             ^
+      |                                             |
+      |                                             const ggml_tensor*
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp:1021:68: note: in definition of macro ‘hash_id’
+ 1021 | #define hash_id(tensor) ggml_hash_find_or_insert(&sched->hash_set, tensor)
+      |                                                                    ^~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp:1051:27: note: in expansion of macro ‘tensor_backend_id’
+ 1051 |         const int owner = tensor_backend_id(t);
+      |                           ^~~~~~~~~~~~~~~~~
+In file included from /home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp:14:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-impl.h:312:94: note:   initializing argument 2 of ‘size_t ggml_hash_find_or_insert(ggml_hash_set*, ggml_tensor*)’
+  312 | static size_t ggml_hash_find_or_insert(struct ggml_hash_set * hash_set, struct ggml_tensor * key) {
+      |                                                                         ~~~~~~~~~~~~~~~~~~~~~^~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp: In function ‘void ggml_backend_sched_split_graph(ggml_backend_sched_t, ggml_cgraph*)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp:1805:54: error: invalid conversion from ‘const ggml_tensor*’ to ‘ggml_tensor*’ [-fpermissive]
+ 1805 |             const int root_owner = tensor_backend_id(root);
+      |                                                      ^~~~
+      |                                                      |
+      |                                                      const ggml_tensor*
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp:1021:68: note: in definition of macro ‘hash_id’
+ 1021 | #define hash_id(tensor) ggml_hash_find_or_insert(&sched->hash_set, tensor)
+      |                                                                    ^~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp:1805:36: note: in expansion of macro ‘tensor_backend_id’
+ 1805 |             const int root_owner = tensor_backend_id(root);
+      |                                    ^~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-impl.h:312:94: note:   initializing argument 2 of ‘size_t ggml_hash_find_or_insert(ggml_hash_set*, ggml_tensor*)’
+  312 | static size_t ggml_hash_find_or_insert(struct ggml_hash_set * hash_set, struct ggml_tensor * key) {
+      |                                                                         ~~~~~~~~~~~~~~~~~~~~~^~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp: In function ‘bool ggml_turboprefill::seal_last(ggml_backend_sched_t)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp:3812:26: warning: unused variable ‘meta_a’ [-Wunused-variable]
+ 3812 |     const ggml_backend_t meta_a = sched->backends[meta_a_id];
+      |                          ^~~~~~

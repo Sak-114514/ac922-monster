@@ -1,0 +1,1946 @@
+fatal-backtrace-v15 enabled=1 prewarmed=1 main_altstack=1 handlers=SIGSEGV,SIGBUS
+runner-environment ld_preload= sync_audit=0
+runner-diagnostics common_log_threshold=4 ggml_info_verbosity=4 ggml_info_visible=1
+cupti-marker phase=off dso_loaded=0 profiled=0
+fatal-backtrace-v15 reinstalled point=before-backend-init
+0.00.237.894 I ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+0.00.238.381 I   Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.00.238.856 I   Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.00.239.324 I   Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.00.239.787 I   Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.00.240.248 I   Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.00.240.710 I   Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ple-wire-profile requested_gpu_gib=12 expected_selected_gpu_gib=12 actual_selected_gpu_gib=must-read-hybrid-activation-marker requested_nodes=6 expected_nominal_gib_per_node=2 actual_selected_nodes=must-read-ple-numa-node-marker
+target-pad-profile requested=1 selected=1 depth=3 row_budget=8 actual_active_lane_marker=per-frame-required
+0.02.709.312 I llama_model_loader: loaded meta data with 65 key-value pairs and 1256 tensors from /home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf (version GGUF V3 (latest))
+0.02.709.444 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.02.709.462 I llama_model_loader: - kv   0:                       general.architecture str              = qwen4exp
+0.02.709.465 I llama_model_loader: - kv   1:                               general.type str              = model
+0.02.709.471 I llama_model_loader: - kv   2:                     general.sampling.top_k i32              = 20
+0.02.709.485 I llama_model_loader: - kv   3:                     general.sampling.top_p f32              = 0.950000
+0.02.709.488 I llama_model_loader: - kv   4:                      general.sampling.temp f32              = 1.000000
+0.02.709.490 I llama_model_loader: - kv   5:                               general.name str              = Qwen3.8-Flash-Next GSQ-RCO
+0.02.709.493 I llama_model_loader: - kv   6:                        general.description str              = A Preview of the Qwen4 Architecture
+0.02.709.495 I llama_model_loader: - kv   7:                         general.size_label str              = 512x56B
+0.02.709.497 I llama_model_loader: - kv   8:                       qwen4exp.block_count u32              = 49
+0.02.709.498 I llama_model_loader: - kv   9:                    qwen4exp.context_length u32              = 262144
+0.02.709.500 I llama_model_loader: - kv  10:                  qwen4exp.embedding_length u32              = 2560
+0.02.709.501 I llama_model_loader: - kv  11:              qwen4exp.attention.head_count u32              = 24
+0.02.709.503 I llama_model_loader: - kv  12:           qwen4exp.attention.head_count_kv u32              = 2
+0.02.709.535 I llama_model_loader: - kv  13:           qwen4exp.rope.dimension_sections arr[i32,4]       = [11, 11, 10, 0]
+0.02.709.540 I llama_model_loader: - kv  14:                    qwen4exp.rope.freq_base f32              = 10000000.000000
+0.02.709.542 I llama_model_loader: - kv  15:  qwen4exp.attention.layer_norm_rms_epsilon f32              = 0.000001
+0.02.709.543 I llama_model_loader: - kv  16:                      qwen4exp.expert_count u32              = 512
+0.02.709.545 I llama_model_loader: - kv  17:                 qwen4exp.expert_used_count u32              = 10
+0.02.709.546 I llama_model_loader: - kv  18:              qwen4exp.attention.key_length u32              = 256
+0.02.709.547 I llama_model_loader: - kv  19:            qwen4exp.attention.value_length u32              = 256
+0.02.709.548 I llama_model_loader: - kv  20:        qwen4exp.expert_feed_forward_length u32              = 640
+0.02.709.550 I llama_model_loader: - kv  21: qwen4exp.expert_shared_feed_forward_length u32              = 640
+0.02.709.551 I llama_model_loader: - kv  22:                   qwen4exp.ssm.conv_kernel u32              = 4
+0.02.709.552 I llama_model_loader: - kv  23:                    qwen4exp.ssm.state_size u32              = 128
+0.02.709.553 I llama_model_loader: - kv  24:                   qwen4exp.ssm.group_count u32              = 16
+0.02.709.554 I llama_model_loader: - kv  25:                qwen4exp.ssm.time_step_rank u32              = 48
+0.02.709.555 I llama_model_loader: - kv  26:                    qwen4exp.ssm.inner_size u32              = 6144
+0.02.709.557 I llama_model_loader: - kv  27:           qwen4exp.full_attention_interval u32              = 4
+0.02.709.558 I llama_model_loader: - kv  28:              qwen4exp.rope.dimension_count u32              = 64
+0.02.709.559 I llama_model_loader: - kv  29:            qwen4exp.hyper_connection.count u32              = 4
+0.02.709.560 I llama_model_loader: - kv  30:         qwen4exp.hyper_connection.low_rank u32              = 320
+0.02.709.561 I llama_model_loader: - kv  31:      qwen4exp.attention.indexer.head_count u32              = 4
+0.02.709.562 I llama_model_loader: - kv  32:      qwen4exp.attention.indexer.key_length u32              = 128
+0.02.709.564 I llama_model_loader: - kv  33:           qwen4exp.attention.indexer.top_k u32              = 2048
+0.02.709.578 I llama_model_loader: - kv  34:         qwen4exp.attention.compress_ratios arr[u32,49]      = [0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 4, ...
+0.02.709.582 I llama_model_loader: - kv  35:                        qwen4exp.ple.layers arr[i32,1]       = [1]
+0.02.709.584 I llama_model_loader: - kv  36:                    qwen4exp.ple.ngram_size u32              = 3
+0.02.709.585 I llama_model_loader: - kv  37:               qwen4exp.ple.heads_per_ngram u32              = 8
+0.02.709.586 I llama_model_loader: - kv  38:                   qwen4exp.ple.conv_kernel u32              = 4
+0.02.709.588 I llama_model_loader: - kv  39:                  qwen4exp.ple.eos_token_id u32              = 248044
+0.02.709.589 I llama_model_loader: - kv  40:  qwen4exp.embedding_length_per_layer_input u32              = 160
+0.02.709.597 I llama_model_loader: - kv  41:             qwen4exp.ple.layer_multipliers arr[u64,3]       = [23703573157769, 20109073645365, 8052...
+0.02.709.605 I llama_model_loader: - kv  42:                  qwen4exp.ple.head_offsets arr[u64,16]      = [0, 20000003, 40000026, 60000059, 800...
+0.02.709.612 I llama_model_loader: - kv  43:              qwen4exp.ple.head_vocab_sizes arr[u64,16]      = [20000003, 20000023, 20000033, 200000...
+0.02.709.613 I llama_model_loader: - kv  44:                       tokenizer.ggml.model str              = gpt2
+0.02.709.614 I llama_model_loader: - kv  45:                         tokenizer.ggml.pre str              = qwen35
+0.02.777.130 I llama_model_loader: - kv  46:                      tokenizer.ggml.tokens arr[str,248320]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+0.02.794.798 I llama_model_loader: - kv  47:                  tokenizer.ggml.token_type arr[i32,248320]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.02.862.381 I llama_model_loader: - kv  48:                      tokenizer.ggml.merges arr[str,247587]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+0.02.862.389 I llama_model_loader: - kv  49:                tokenizer.ggml.eos_token_id u32              = 248046
+0.02.862.390 I llama_model_loader: - kv  50:            tokenizer.ggml.padding_token_id u32              = 248044
+0.02.862.392 I llama_model_loader: - kv  51:                tokenizer.ggml.bos_token_id u32              = 248044
+0.02.862.393 I llama_model_loader: - kv  52:               tokenizer.ggml.add_bos_token bool             = false
+0.02.862.399 I llama_model_loader: - kv  53:                    tokenizer.chat_template str              = {%- set image_count = namespace(value...
+0.02.862.400 I llama_model_loader: - kv  54:                qwen4exp.ple.image_token_id u32              = 248056
+0.02.862.402 I llama_model_loader: - kv  55:                       general.quantized_by str              = ISTA DASLab
+0.02.862.403 I llama_model_loader: - kv  56:                           general.repo_url str              = https://huggingface.co/ISTA-DASLab
+0.02.862.410 I llama_model_loader: - kv  57:                               general.tags arr[str,2]       = ["gsq-rco", "ista-daslab"]
+0.02.862.412 I llama_model_loader: - kv  58:                      quantize.imatrix.file str              = imatrix-qwen3.8-flash-next.gguf
+0.02.862.413 I llama_model_loader: - kv  59:                   quantize.imatrix.dataset str              = calib_qwen3.8-flash-next.tokids
+0.02.862.415 I llama_model_loader: - kv  60:             quantize.imatrix.entries_count u32              = 926
+0.02.862.416 I llama_model_loader: - kv  61:              quantize.imatrix.chunks_count u32              = 1000
+0.02.862.418 I llama_model_loader: - kv  62:                          general.file_type u32              = 23
+0.02.862.419 I llama_model_loader: - kv  63:               general.quantization_version u32              = 2
+0.02.862.420 I llama_model_loader: - kv  64:              qwen4exp.nextn_predict_layers u32              = 1
+0.02.862.424 I llama_model_loader: - type  f32:  303 tensors
+0.02.862.425 I llama_model_loader: - type  f16:    1 tensors
+0.02.862.426 I llama_model_loader: - type q8_0:   19 tensors
+0.02.862.427 I llama_model_loader: - type q4_K:   45 tensors
+0.02.862.428 I llama_model_loader: - type q5_K:   15 tensors
+0.02.862.429 I llama_model_loader: - type q6_K:   71 tensors
+0.02.862.430 I llama_model_loader: - type iq2_xxs:   18 tensors
+0.02.862.430 I llama_model_loader: - type iq2_xs:   20 tensors
+0.02.862.431 I llama_model_loader: - type iq3_xxs:   12 tensors
+0.02.862.432 I llama_model_loader: - type iq4_nl:   59 tensors
+0.02.862.432 I llama_model_loader: - type iq3_s:   82 tensors
+0.02.862.433 I llama_model_loader: - type iq2_s:   20 tensors
+0.02.862.434 I llama_model_loader: - type iq4_xs:   67 tensors
+0.02.862.435 I llama_model_loader: - type bf16:  486 tensors
+0.02.862.435 I llama_model_loader: - type q2_0:   38 tensors
+0.02.862.440 I print_info: file format = GGUF V3 (latest)
+0.02.862.442 I print_info: file type   = IQ3_XXS - 3.0625 bpw
+0.02.862.447 I print_info: file size   = 73.21 GiB (3.50 BPW) 
+0.02.862.491 I llama_prepare_model_devices: skipping CPU (CPU) for tensor parallelism
+0.02.862.514 I llama_push_island_meta_devices: creating a Meta device with 3 devices (island 0):
+0.02.862.515 I llama_push_island_meta_devices: - device 0: CUDA0
+0.02.862.516 I llama_push_island_meta_devices: - device 1: CUDA1
+0.02.862.516 I llama_push_island_meta_devices: - device 2: CUDA2
+0.02.862.560 I llama_push_island_meta_devices: creating a Meta device with 3 devices (island 1):
+0.02.862.561 I llama_push_island_meta_devices: - device 0: CUDA3
+0.02.862.561 I llama_push_island_meta_devices: - device 1: CUDA4
+0.02.862.562 I llama_push_island_meta_devices: - device 2: CUDA5
+0.02.867.790 I llama_prepare_model_devices: using device Meta() (Meta()) (unknown id) - 47451 MiB free
+0.02.872.470 I llama_prepare_model_devices: using device Meta() (Meta()) (unknown id) - 47437 MiB free
+0.03.168.935 I load: 0 unused tokens
+0.03.322.203 I load: printing all EOG tokens:
+0.03.322.213 I load:   - 248044 ('<|endoftext|>')
+0.03.322.214 I load:   - 248046 ('<|im_end|>')
+0.03.322.215 I load:   - 248063 ('<|fim_pad|>')
+0.03.322.216 I load:   - 248064 ('<|repo_name|>')
+0.03.322.217 I load:   - 248065 ('<|file_sep|>')
+0.03.323.165 I load: special tokens cache size = 33
+0.03.511.688 I load: token to piece cache size = 1.7581 MB
+0.03.511.730 I print_info: arch                  = qwen4exp
+0.03.511.731 I print_info: vocab_only            = 0
+0.03.511.731 I print_info: no_alloc              = 0
+0.03.511.732 I print_info: n_ctx_train           = 262144
+0.03.511.735 I print_info: n_embd_inp            = 2560
+0.03.511.736 I print_info: n_embd                = 2560
+0.03.511.738 I print_info: n_embd_out            = 10240
+0.03.511.739 I print_info: n_layer               = 48
+0.03.511.740 I print_info: n_layer_all           = 49
+0.03.511.761 I print_info: n_head                = 24
+0.03.511.766 I print_info: n_head_kv             = 2
+0.03.511.767 I print_info: n_rot                 = 64
+0.03.511.768 I print_info: n_swa                 = 0
+0.03.511.771 I print_info: is_swa_any            = 0
+0.03.511.771 I print_info: non_causal_type       = 0
+0.03.511.772 I print_info: n_embd_head_k         = 256
+0.03.511.773 I print_info: n_embd_head_v         = 256
+0.03.511.778 I print_info: n_gqa                 = 12
+0.03.511.788 I print_info: n_embd_k_gqa          = 512
+0.03.511.796 I print_info: n_embd_v_gqa          = 512
+0.03.511.798 I print_info: f_norm_eps            = 0.0e+00
+0.03.511.800 I print_info: f_norm_rms_eps        = 1.0e-06
+0.03.511.801 I print_info: f_clamp_kqv           = 0.0e+00
+0.03.511.802 I print_info: f_max_alibi_bias      = 0.0e+00
+0.03.511.802 I print_info: f_logit_scale         = 0.0e+00
+0.03.511.803 I print_info: f_attn_scale          = 0.0e+00
+0.03.511.804 I print_info: f_attn_value_scale    = 0.0000
+0.03.511.809 I print_info: n_ff                  = 0
+0.03.511.810 I print_info: n_expert              = 512
+0.03.511.811 I print_info: n_expert_used         = 10
+0.03.511.812 I print_info: n_expert_groups       = 0
+0.03.511.812 I print_info: n_group_used          = 0
+0.03.511.813 I print_info: causal attn           = 1
+0.03.511.813 I print_info: pooling type          = -1
+0.03.511.814 I print_info: rope type             = 40
+0.03.511.815 I print_info: rope scaling          = linear
+0.03.511.817 I print_info: freq_base_train       = 10000000.0
+0.03.511.818 I print_info: freq_scale_train      = 1
+0.03.511.819 I print_info: n_ctx_orig_yarn       = 262144
+0.03.511.820 I print_info: rope_yarn_log_mul     = 0.0000
+0.03.511.820 I print_info: rope_finetuned        = unknown
+0.03.511.821 I print_info: mrope sections        = [11, 11, 10, 0]
+0.03.511.824 I print_info: model type            = A3B
+0.03.511.826 I print_info: model params          = 179.55 B
+0.03.511.826 I print_info: general.name          = Qwen3.8-Flash-Next GSQ-RCO
+0.03.511.832 I print_info: vocab type            = BPE
+0.03.511.833 I print_info: n_vocab               = 248320
+0.03.511.834 I print_info: n_merges              = 247587
+0.03.511.835 I print_info: BOS token             = 248044 '<|endoftext|>'
+0.03.511.835 I print_info: EOS token             = 248046 '<|im_end|>'
+0.03.511.836 I print_info: EOT token             = 248046 '<|im_end|>'
+0.03.511.837 I print_info: PAD token             = 248044 '<|endoftext|>'
+0.03.511.837 I print_info: LF token              = 198 'Ċ'
+0.03.511.838 I print_info: FIM PRE token         = 248060 '<|fim_prefix|>'
+0.03.511.839 I print_info: FIM SUF token         = 248062 '<|fim_suffix|>'
+0.03.511.839 I print_info: FIM MID token         = 248061 '<|fim_middle|>'
+0.03.511.840 I print_info: FIM PAD token         = 248063 '<|fim_pad|>'
+0.03.511.841 I print_info: FIM REP token         = 248064 '<|repo_name|>'
+0.03.511.841 I print_info: FIM SEP token         = 248065 '<|file_sep|>'
+0.03.511.842 I print_info: EOG token             = 248044 '<|endoftext|>'
+0.03.511.843 I print_info: EOG token             = 248046 '<|im_end|>'
+0.03.511.843 I print_info: EOG token             = 248063 '<|fim_pad|>'
+0.03.511.844 I print_info: EOG token             = 248064 '<|repo_name|>'
+0.03.511.845 I print_info: EOG token             = 248065 '<|file_sep|>'
+0.03.511.845 I print_info: max token length      = 256
+0.03.531.067 I load_tensors: loading model tensors, this can take a while... (load_mode = mmap)
+0.03.539.371 I load_tensors: island device Meta(): 0x1000f4d4a58, buffer type Meta(): 0x1001943c948
+0.03.539.381 I load_tensors: island device Meta(): 0x10014cf06e8, buffer type Meta(): 0x10019489548
+0.03.542.143 I load_tensors: island mode: 2 islands of 3 devices, blocks 0..24 on island 0
+0.03.542.169 I load_tensors: island Meta() owns 25 blocks (incl. output/MTP)
+0.03.542.170 I load_tensors: island Meta() owns 25 blocks (incl. output/MTP)
+0.03.542.209 I Qwen4exp input placement requested=1 eligible=1 destination=Meta() base_token_table_only=1 PLE_and_output_placement_unchanged=1
+0.03.542.362 I add: tensor per_layer_token_embd.weight (size = 27465 MiB) lazy read enabled
+0.03.564.654 I load_tensors: island Meta() aggregate free 46.34 GiB over 3 members (expected 3): CUDA0(15.45 GiB free) CUDA1(15.45 GiB free) CUDA2(15.45 GiB free) 
+0.03.564.664 I load_tensors: island Meta() (buft Meta(): 0x1001943c948): 638 tensors, 20.49 GiB total (~6.83 GiB per member), island free 46.34 GiB
+0.03.567.971 I load_tensors: island Meta() aggregate free 46.33 GiB over 3 members (expected 3): CUDA3(15.45 GiB free) CUDA4(15.44 GiB free) CUDA5(15.44 GiB free) 
+0.03.567.980 I load_tensors: island Meta() (buft Meta(): 0x10019489548): 617 tensors, 25.89 GiB total (~8.63 GiB per member), island free 46.33 GiB
+0.03.568.202 I init_mappings: GPU source-page reclaim enabled (page granularity 64 KiB; lazy and CPU ranges protected)
+0.03.579.176 I split-callback first call: n_devices=3 tensor_split=[1.000000 1.000000 1.000000 ] detp_scale=0 trunk_w=1.000 detp_dev=0
+0.05.264.965 I load_tensors: deferring only per_layer_token_embd.weight buffer for the bounded hybrid PLE placement attempt
+ple-numa: logical_gpu=0 uuid=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f pci=0004:04:00.0 numa=255 free=7.97/15.75 GiB
+ple-numa: logical_gpu=1 uuid=GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb pci=0004:05:00.0 numa=254 free=7.93/15.75 GiB
+ple-numa: logical_gpu=2 uuid=GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb pci=0004:06:00.0 numa=253 free=7.93/15.75 GiB
+ple-numa: logical_gpu=3 uuid=GPU-fadb0459-4d30-907b-289a-862b3014f165 pci=0035:03:00.0 numa=252 free=6.40/15.75 GiB
+ple-numa: logical_gpu=4 uuid=GPU-760ce501-32f6-69b6-215b-1020da68bbfc pci=0035:04:00.0 numa=251 free=6.32/15.75 GiB
+ple-numa: logical_gpu=5 uuid=GPU-d3558623-deca-c702-3cc0-01b4aa9c667a pci=0035:05:00.0 numa=250 free=6.32/15.75 GiB
+ple-numa: CUDA UUID order verified for 6 PLE GPU nodes (maps above); CPU DDR available 23.06 GiB (node0 11.47, node8 11.59; free 20.93 + reclaimable clean file pages 2.13 GiB)
+ple-numa: stripe logical_gpu=0 numa_node=255 offset=0 bytes=2147483648
+ple-numa: stripe logical_gpu=1 numa_node=254 offset=2147483648 bytes=2147483648
+ple-numa: stripe logical_gpu=2 numa_node=253 offset=4294967296 bytes=2147483648
+ple-numa: stripe logical_gpu=3 numa_node=252 offset=6442450944 bytes=2147483648
+ple-numa: stripe logical_gpu=4 numa_node=251 offset=8589934592 bytes=2147483648
+ple-numa: stripe logical_gpu=5 numa_node=250 offset=10737418240 bytes=2147483648
+ple-numa: capacity-balanced CPU stripes node0=7.411 GiB node8=7.411 GiB; per-node reserve remains 1.5 GiB
+ple-numa: MADV_POPULATE_WRITE unavailable; temporary mlock per chunk <=33554432 bytes, no persistent table pin
+ple-numa: chunk=0 offset=0 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47039905792 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=1 offset=33554432 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47073460224 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=2 offset=67108864 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47107014656 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=3 offset=100663296 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47140569088 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=4 offset=134217728 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47174123520 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=5 offset=167772160 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47207677952 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=6 offset=201326592 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47241232384 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=7 offset=234881024 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47274786816 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=8 offset=268435456 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47308341248 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=9 offset=301989888 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47341895680 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=10 offset=335544320 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47375450112 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=11 offset=369098752 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47409004544 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=12 offset=402653184 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47442558976 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=13 offset=436207616 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47476113408 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=14 offset=469762048 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47509667840 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=15 offset=503316480 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47543222272 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=16 offset=536870912 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47576776704 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=17 offset=570425344 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47610331136 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=18 offset=603979776 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47643885568 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=19 offset=637534208 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47677440000 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=20 offset=671088640 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47710994432 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=21 offset=704643072 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47744548864 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=22 offset=738197504 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47778103296 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=23 offset=771751936 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47811657728 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=24 offset=805306368 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47845212160 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=25 offset=838860800 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47878766592 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=26 offset=872415232 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47912321024 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=27 offset=905969664 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47945875456 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=28 offset=939524096 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=47979429888 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=29 offset=973078528 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48012984320 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=30 offset=1006632960 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48046538752 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=31 offset=1040187392 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48080093184 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=32 offset=1073741824 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48113647616 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=33 offset=1107296256 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48147202048 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=34 offset=1140850688 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48180756480 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=35 offset=1174405120 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48214310912 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=36 offset=1207959552 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48247865344 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=37 offset=1241513984 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48281419776 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=38 offset=1275068416 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48314974208 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=39 offset=1308622848 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48348528640 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=40 offset=1342177280 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48382083072 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=41 offset=1375731712 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48415637504 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=42 offset=1409286144 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48449191936 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=43 offset=1442840576 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48482746368 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=44 offset=1476395008 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48516300800 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=45 offset=1509949440 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48549855232 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=46 offset=1543503872 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48583409664 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=47 offset=1577058304 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48616964096 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=48 offset=1610612736 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48650518528 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=49 offset=1644167168 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48684072960 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=50 offset=1677721600 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48717627392 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=51 offset=1711276032 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48751181824 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=52 offset=1744830464 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48784736256 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=53 offset=1778384896 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48818290688 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=54 offset=1811939328 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48851845120 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=55 offset=1845493760 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48885399552 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=56 offset=1879048192 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48918953984 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=57 offset=1912602624 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48952508416 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=58 offset=1946157056 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=48986062848 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=59 offset=1979711488 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49019617280 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=60 offset=2013265920 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49053171712 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=61 offset=2046820352 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49086726144 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=62 offset=2080374784 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49120280576 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=63 offset=2113929216 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49153835008 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=64 offset=2147483648 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49187389440 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=65 offset=2181038080 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49220943872 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=66 offset=2214592512 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49254498304 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=67 offset=2248146944 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49288052736 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=68 offset=2281701376 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49321607168 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=69 offset=2315255808 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49355161600 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=70 offset=2348810240 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49388716032 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=71 offset=2382364672 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49422270464 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=72 offset=2415919104 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49455824896 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=73 offset=2449473536 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49489379328 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=74 offset=2483027968 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49522933760 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=75 offset=2516582400 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49556488192 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=76 offset=2550136832 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49590042624 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=77 offset=2583691264 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49623597056 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=78 offset=2617245696 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49657151488 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=79 offset=2650800128 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49690705920 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=80 offset=2684354560 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49724260352 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=81 offset=2717908992 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49757814784 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=82 offset=2751463424 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49791369216 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=83 offset=2785017856 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49824923648 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=84 offset=2818572288 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49858478080 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=85 offset=2852126720 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49892032512 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=86 offset=2885681152 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49925586944 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=87 offset=2919235584 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49959141376 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=88 offset=2952790016 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=49992695808 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=89 offset=2986344448 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50026250240 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=90 offset=3019898880 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50059804672 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=91 offset=3053453312 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50093359104 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=92 offset=3087007744 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50126913536 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=93 offset=3120562176 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50160467968 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=94 offset=3154116608 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50194022400 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=95 offset=3187671040 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50227576832 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=96 offset=3221225472 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50261131264 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=97 offset=3254779904 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50294685696 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=98 offset=3288334336 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50328240128 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=99 offset=3321888768 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50361794560 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=100 offset=3355443200 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50395348992 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=101 offset=3388997632 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50428903424 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=102 offset=3422552064 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50462457856 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=103 offset=3456106496 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50496012288 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=104 offset=3489660928 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50529566720 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=105 offset=3523215360 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50563121152 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=106 offset=3556769792 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50596675584 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=107 offset=3590324224 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50630230016 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=108 offset=3623878656 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50663784448 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=109 offset=3657433088 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50697338880 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=110 offset=3690987520 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50730893312 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=111 offset=3724541952 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50764447744 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=112 offset=3758096384 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50798002176 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=113 offset=3791650816 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50831556608 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=114 offset=3825205248 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50865111040 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=115 offset=3858759680 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50898665472 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=116 offset=3892314112 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50932219904 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=117 offset=3925868544 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50965774336 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=118 offset=3959422976 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=50999328768 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=119 offset=3992977408 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51032883200 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=120 offset=4026531840 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51066437632 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=121 offset=4060086272 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51099992064 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=122 offset=4093640704 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51133546496 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=123 offset=4127195136 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51167100928 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=124 offset=4160749568 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51200655360 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=125 offset=4194304000 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51234209792 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=126 offset=4227858432 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51267764224 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=127 offset=4261412864 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51301318656 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=128 offset=4294967296 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51334873088 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=129 offset=4328521728 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51368427520 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=130 offset=4362076160 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51401981952 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=131 offset=4395630592 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51435536384 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=132 offset=4429185024 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51469090816 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=133 offset=4462739456 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51502645248 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=134 offset=4496293888 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51536199680 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=135 offset=4529848320 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51569754112 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=136 offset=4563402752 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51603308544 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=137 offset=4596957184 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51636862976 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=138 offset=4630511616 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51670417408 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=139 offset=4664066048 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51703971840 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=140 offset=4697620480 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51737526272 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=141 offset=4731174912 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51771080704 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=142 offset=4764729344 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51804635136 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=143 offset=4798283776 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51838189568 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=144 offset=4831838208 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51871744000 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=145 offset=4865392640 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51905298432 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=146 offset=4898947072 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51938852864 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=147 offset=4932501504 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=51972407296 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=148 offset=4966055936 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52005961728 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=149 offset=4999610368 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52039516160 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=150 offset=5033164800 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52073070592 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=151 offset=5066719232 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52106625024 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=152 offset=5100273664 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52140179456 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=153 offset=5133828096 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52173733888 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=154 offset=5167382528 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52207288320 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=155 offset=5200936960 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52240842752 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=156 offset=5234491392 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52274397184 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=157 offset=5268045824 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52307951616 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=158 offset=5301600256 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52341506048 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=159 offset=5335154688 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52375060480 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=160 offset=5368709120 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52408614912 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=161 offset=5402263552 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52442169344 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=162 offset=5435817984 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52475723776 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=163 offset=5469372416 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52509278208 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=164 offset=5502926848 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52542832640 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=165 offset=5536481280 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52576387072 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=166 offset=5570035712 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52609941504 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=167 offset=5603590144 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52643495936 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=168 offset=5637144576 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52677050368 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=169 offset=5670699008 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52710604800 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=170 offset=5704253440 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52744159232 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=171 offset=5737807872 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52777713664 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=172 offset=5771362304 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52811268096 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=173 offset=5804916736 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52844822528 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=174 offset=5838471168 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52878376960 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=175 offset=5872025600 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52911931392 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=176 offset=5905580032 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52945485824 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=177 offset=5939134464 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=52979040256 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=178 offset=5972688896 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53012594688 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=179 offset=6006243328 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53046149120 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=180 offset=6039797760 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53079703552 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=181 offset=6073352192 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53113257984 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=182 offset=6106906624 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53146812416 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=183 offset=6140461056 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53180366848 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=184 offset=6174015488 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53213921280 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=185 offset=6207569920 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53247475712 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=186 offset=6241124352 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53281030144 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=187 offset=6274678784 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53314584576 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=188 offset=6308233216 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53348139008 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=189 offset=6341787648 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53381693440 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=190 offset=6375342080 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53415247872 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=191 offset=6408896512 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53448802304 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=192 offset=6442450944 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53482356736 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=193 offset=6476005376 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53515911168 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=194 offset=6509559808 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53549465600 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=195 offset=6543114240 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53583020032 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=196 offset=6576668672 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53616574464 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=197 offset=6610223104 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53650128896 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=198 offset=6643777536 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53683683328 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=199 offset=6677331968 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53717237760 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=200 offset=6710886400 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53750792192 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=201 offset=6744440832 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53784346624 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=202 offset=6777995264 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53817901056 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=203 offset=6811549696 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53851455488 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=204 offset=6845104128 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53885009920 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=205 offset=6878658560 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53918564352 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=206 offset=6912212992 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53952118784 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=207 offset=6945767424 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=53985673216 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=208 offset=6979321856 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54019227648 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=209 offset=7012876288 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54052782080 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=210 offset=7046430720 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54086336512 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=211 offset=7079985152 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54119890944 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=212 offset=7113539584 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54153445376 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=213 offset=7147094016 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54186999808 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=214 offset=7180648448 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54220554240 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=215 offset=7214202880 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54254108672 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=216 offset=7247757312 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54287663104 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=217 offset=7281311744 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54321217536 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=218 offset=7314866176 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54354771968 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=219 offset=7348420608 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54388326400 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=220 offset=7381975040 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54421880832 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=221 offset=7415529472 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54455435264 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=222 offset=7449083904 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54488989696 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=223 offset=7482638336 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54522544128 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=224 offset=7516192768 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54556098560 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=225 offset=7549747200 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54589652992 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=226 offset=7583301632 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54623207424 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=227 offset=7616856064 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54656761856 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=228 offset=7650410496 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54690316288 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=229 offset=7683964928 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54723870720 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=230 offset=7717519360 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54757425152 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=231 offset=7751073792 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54790979584 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=232 offset=7784628224 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54824534016 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=233 offset=7818182656 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54858088448 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=234 offset=7851737088 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54891642880 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=235 offset=7885291520 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54925197312 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=236 offset=7918845952 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54958751744 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=237 offset=7952400384 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=54992306176 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=238 offset=7985954816 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55025860608 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=239 offset=8019509248 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55059415040 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=240 offset=8053063680 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55092969472 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=241 offset=8086618112 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55126523904 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=242 offset=8120172544 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55160078336 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=243 offset=8153726976 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55193632768 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=244 offset=8187281408 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55227187200 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=245 offset=8220835840 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55260741632 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=246 offset=8254390272 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55294296064 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=247 offset=8287944704 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55327850496 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=248 offset=8321499136 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55361404928 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=249 offset=8355053568 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55394959360 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=250 offset=8388608000 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55428513792 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=251 offset=8422162432 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55462068224 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=252 offset=8455716864 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55495622656 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=253 offset=8489271296 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55529177088 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=254 offset=8522825728 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55562731520 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=255 offset=8556380160 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55596285952 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=256 offset=8589934592 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55629840384 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=257 offset=8623489024 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55663394816 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=258 offset=8657043456 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55696949248 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=259 offset=8690597888 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55730503680 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=260 offset=8724152320 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55764058112 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=261 offset=8757706752 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55797612544 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=262 offset=8791261184 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55831166976 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=263 offset=8824815616 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55864721408 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=264 offset=8858370048 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55898275840 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=265 offset=8891924480 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55931830272 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=266 offset=8925478912 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55965384704 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=267 offset=8959033344 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=55998939136 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=268 offset=8992587776 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56032493568 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=269 offset=9026142208 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56066048000 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=270 offset=9059696640 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56099602432 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=271 offset=9093251072 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56133156864 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=272 offset=9126805504 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56166711296 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=273 offset=9160359936 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56200265728 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=274 offset=9193914368 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56233820160 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=275 offset=9227468800 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56267374592 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=276 offset=9261023232 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56300929024 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=277 offset=9294577664 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56334483456 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=278 offset=9328132096 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56368037888 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=279 offset=9361686528 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56401592320 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=280 offset=9395240960 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56435146752 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=281 offset=9428795392 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56468701184 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=282 offset=9462349824 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56502255616 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=283 offset=9495904256 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56535810048 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=284 offset=9529458688 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56569364480 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=285 offset=9563013120 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56602918912 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=286 offset=9596567552 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56636473344 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=287 offset=9630121984 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56670027776 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=288 offset=9663676416 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56703582208 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=289 offset=9697230848 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56737136640 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=290 offset=9730785280 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56770691072 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=291 offset=9764339712 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56804245504 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=292 offset=9797894144 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56837799936 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=293 offset=9831448576 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56871354368 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=294 offset=9865003008 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56904908800 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=295 offset=9898557440 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56938463232 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=296 offset=9932111872 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=56972017664 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=297 offset=9965666304 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57005572096 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=298 offset=9999220736 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57039126528 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=299 offset=10032775168 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57072680960 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=300 offset=10066329600 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57106235392 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=301 offset=10099884032 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57139789824 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=302 offset=10133438464 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57173344256 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=303 offset=10166992896 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57206898688 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=304 offset=10200547328 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57240453120 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=305 offset=10234101760 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57274007552 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=306 offset=10267656192 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57307561984 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=307 offset=10301210624 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57341116416 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=308 offset=10334765056 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57374670848 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=309 offset=10368319488 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57408225280 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=310 offset=10401873920 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57441779712 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=311 offset=10435428352 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57475334144 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=312 offset=10468982784 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57508888576 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=313 offset=10502537216 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57542443008 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=314 offset=10536091648 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57575997440 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=315 offset=10569646080 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57609551872 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=316 offset=10603200512 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57643106304 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=317 offset=10636754944 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57676660736 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=318 offset=10670309376 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57710215168 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=319 offset=10703863808 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57743769600 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=320 offset=10737418240 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57777324032 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=321 offset=10770972672 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57810878464 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=322 offset=10804527104 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57844432896 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=323 offset=10838081536 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57877987328 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=324 offset=10871635968 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57911541760 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=325 offset=10905190400 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57945096192 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=326 offset=10938744832 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=57978650624 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=327 offset=10972299264 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58012205056 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=328 offset=11005853696 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58045759488 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=329 offset=11039408128 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58079313920 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=330 offset=11072962560 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58112868352 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=331 offset=11106516992 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58146422784 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=332 offset=11140071424 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58179977216 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=333 offset=11173625856 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58213531648 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=334 offset=11207180288 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58247086080 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=335 offset=11240734720 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58280640512 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=336 offset=11274289152 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58314194944 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=337 offset=11307843584 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58347749376 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=338 offset=11341398016 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58381303808 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=339 offset=11374952448 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58414858240 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=340 offset=11408506880 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58448412672 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=341 offset=11442061312 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58481967104 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=342 offset=11475615744 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58515521536 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=343 offset=11509170176 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58549075968 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=344 offset=11542724608 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58582630400 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=345 offset=11576279040 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58616184832 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=346 offset=11609833472 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58649739264 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=347 offset=11643387904 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58683293696 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=348 offset=11676942336 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58716848128 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=349 offset=11710496768 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58750402560 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=350 offset=11744051200 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58783956992 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=351 offset=11777605632 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58817511424 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=352 offset=11811160064 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58851065856 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=353 offset=11844714496 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58884620288 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=354 offset=11878268928 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58918174720 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=355 offset=11911823360 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58951729152 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=356 offset=11945377792 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=58985283584 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=357 offset=11978932224 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59018838016 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=358 offset=12012486656 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59052392448 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=359 offset=12046041088 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59085946880 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=360 offset=12079595520 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59119501312 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=361 offset=12113149952 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59153055744 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=362 offset=12146704384 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59186610176 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=363 offset=12180258816 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59220164608 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=364 offset=12213813248 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59253719040 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=365 offset=12247367680 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59287273472 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=366 offset=12280922112 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59320827904 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=367 offset=12314476544 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59354382336 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=368 offset=12348030976 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59387936768 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=369 offset=12381585408 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59421491200 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=370 offset=12415139840 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59455045632 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=371 offset=12448694272 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59488600064 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=372 offset=12482248704 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59522154496 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=373 offset=12515803136 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59555708928 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=374 offset=12549357568 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59589263360 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=375 offset=12582912000 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59622817792 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=376 offset=12616466432 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59656372224 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=377 offset=12650020864 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59689926656 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=378 offset=12683575296 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59723481088 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=379 offset=12717129728 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59757035520 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=380 offset=12750684160 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59790589952 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=381 offset=12784238592 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59824144384 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=382 offset=12817793024 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59857698816 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=383 offset=12851347456 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59891253248 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=384 offset=12884901888 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59924807680 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=385 offset=12918456320 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59958362112 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=386 offset=12952010752 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=59991916544 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=387 offset=12985565184 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60025470976 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=388 offset=13019119616 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60059025408 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=389 offset=13052674048 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60092579840 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=390 offset=13086228480 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60126134272 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=391 offset=13119782912 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60159688704 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=392 offset=13153337344 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60193243136 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=393 offset=13186891776 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60226797568 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=394 offset=13220446208 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60260352000 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=395 offset=13254000640 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60293906432 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=396 offset=13287555072 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60327460864 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=397 offset=13321109504 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60361015296 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=398 offset=13354663936 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60394569728 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=399 offset=13388218368 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60428124160 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=400 offset=13421772800 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60461678592 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=401 offset=13455327232 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60495233024 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=402 offset=13488881664 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60528787456 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=403 offset=13522436096 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60562341888 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=404 offset=13555990528 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60595896320 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=405 offset=13589544960 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60629450752 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=406 offset=13623099392 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60663005184 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=407 offset=13656653824 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60696559616 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=408 offset=13690208256 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60730114048 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=409 offset=13723762688 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60763668480 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=410 offset=13757317120 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60797222912 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=411 offset=13790871552 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60830777344 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=412 offset=13824425984 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60864331776 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=413 offset=13857980416 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60897886208 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=414 offset=13891534848 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60931440640 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=415 offset=13925089280 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60964995072 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=416 offset=13958643712 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=60998549504 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=417 offset=13992198144 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61032103936 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=418 offset=14025752576 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61065658368 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=419 offset=14059307008 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61099212800 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=420 offset=14092861440 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61132767232 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=421 offset=14126415872 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61166321664 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=422 offset=14159970304 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61199876096 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=423 offset=14193524736 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61233430528 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=424 offset=14227079168 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61266984960 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=425 offset=14260633600 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61300539392 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=426 offset=14294188032 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61334093824 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=427 offset=14327742464 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61367648256 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=428 offset=14361296896 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61401202688 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=429 offset=14394851328 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61434757120 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=430 offset=14428405760 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61468311552 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=431 offset=14461960192 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61501865984 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=432 offset=14495514624 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61535420416 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=433 offset=14529069056 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61568974848 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=434 offset=14562623488 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61602529280 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=435 offset=14596177920 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61636083712 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=436 offset=14629732352 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61669638144 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=437 offset=14663286784 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61703192576 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=438 offset=14696841216 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61736747008 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=439 offset=14730395648 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61770301440 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=440 offset=14763950080 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61803855872 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=441 offset=14797504512 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61837410304 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=442 offset=14831058944 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61870964736 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=443 offset=14864613376 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61904519168 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=444 offset=14898167808 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61938073600 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=445 offset=14931722240 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=61971628032 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=446 offset=14965276672 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62005182464 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=447 offset=14998831104 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62038736896 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=448 offset=15032385536 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62072291328 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=449 offset=15065939968 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62105845760 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=450 offset=15099494400 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62139400192 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=451 offset=15133048832 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62172954624 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=452 offset=15166603264 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62206509056 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=453 offset=15200157696 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62240063488 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=454 offset=15233712128 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62273617920 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=455 offset=15267266560 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62307172352 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=456 offset=15300820992 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62340726784 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=457 offset=15334375424 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62374281216 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=458 offset=15367929856 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62407835648 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=459 offset=15401484288 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62441390080 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=460 offset=15435038720 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62474944512 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=461 offset=15468593152 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62508498944 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=462 offset=15502147584 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62542053376 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=463 offset=15535702016 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62575607808 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=464 offset=15569256448 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62609162240 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=465 offset=15602810880 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62642716672 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=466 offset=15636365312 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62676271104 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=467 offset=15669919744 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62709825536 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=468 offset=15703474176 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62743379968 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=469 offset=15737028608 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62776934400 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=470 offset=15770583040 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62810488832 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=471 offset=15804137472 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62844043264 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=472 offset=15837691904 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62877597696 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=473 offset=15871246336 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62911152128 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=474 offset=15904800768 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62944706560 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=475 offset=15938355200 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=62978260992 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=476 offset=15971909632 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63011815424 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=477 offset=16005464064 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63045369856 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=478 offset=16039018496 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63078924288 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=479 offset=16072572928 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63112478720 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=480 offset=16106127360 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63146033152 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=481 offset=16139681792 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63179587584 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=482 offset=16173236224 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63213142016 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=483 offset=16206790656 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63246696448 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=484 offset=16240345088 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63280250880 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=485 offset=16273899520 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63313805312 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=486 offset=16307453952 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63347359744 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=487 offset=16341008384 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63380914176 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=488 offset=16374562816 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63414468608 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=489 offset=16408117248 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63448023040 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=490 offset=16441671680 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63481577472 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=491 offset=16475226112 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63515131904 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=492 offset=16508780544 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63548686336 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=493 offset=16542334976 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63582240768 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=494 offset=16575889408 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63615795200 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=495 offset=16609443840 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63649349632 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=496 offset=16642998272 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63682904064 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=497 offset=16676552704 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63716458496 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=498 offset=16710107136 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63750012928 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=499 offset=16743661568 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63783567360 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=500 offset=16777216000 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63817121792 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=501 offset=16810770432 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63850676224 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=502 offset=16844324864 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63884230656 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=503 offset=16877879296 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63917785088 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=504 offset=16911433728 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63951339520 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=505 offset=16944988160 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=63984893952 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=506 offset=16978542592 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64018448384 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=507 offset=17012097024 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64052002816 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=508 offset=17045651456 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64085557248 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=509 offset=17079205888 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64119111680 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=510 offset=17112760320 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64152666112 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=511 offset=17146314752 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64186220544 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=512 offset=17179869184 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64219774976 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=513 offset=17213423616 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64253329408 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=514 offset=17246978048 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64286883840 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=515 offset=17280532480 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64320438272 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=516 offset=17314086912 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64353992704 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=517 offset=17347641344 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64387547136 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=518 offset=17381195776 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64421101568 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=519 offset=17414750208 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64454656000 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=520 offset=17448304640 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64488210432 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=521 offset=17481859072 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64521764864 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=522 offset=17515413504 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64555319296 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=523 offset=17548967936 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64588873728 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=524 offset=17582522368 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64622428160 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=525 offset=17616076800 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64655982592 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=526 offset=17649631232 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64689537024 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=527 offset=17683185664 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64723091456 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=528 offset=17716740096 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64756645888 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=529 offset=17750294528 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64790200320 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=530 offset=17783848960 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64823754752 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=531 offset=17817403392 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64857309184 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=532 offset=17850957824 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64890863616 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=533 offset=17884512256 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64924418048 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=534 offset=17918066688 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64957972480 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=535 offset=17951621120 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=64991526912 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=536 offset=17985175552 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65025081344 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=537 offset=18018729984 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65058635776 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=538 offset=18052284416 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65092190208 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=539 offset=18085838848 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65125744640 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=540 offset=18119393280 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65159299072 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=541 offset=18152947712 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65192853504 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=542 offset=18186502144 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65226407936 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=543 offset=18220056576 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65259962368 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=544 offset=18253611008 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65293516800 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=545 offset=18287165440 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65327071232 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=546 offset=18320719872 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65360625664 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=547 offset=18354274304 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65394180096 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=548 offset=18387828736 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65427734528 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=549 offset=18421383168 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65461288960 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=550 offset=18454937600 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65494843392 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=551 offset=18488492032 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65528397824 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=552 offset=18522046464 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65561952256 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=553 offset=18555600896 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65595506688 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=554 offset=18589155328 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65629061120 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=555 offset=18622709760 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65662615552 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=556 offset=18656264192 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65696169984 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=557 offset=18689818624 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65729724416 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=558 offset=18723373056 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65763278848 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=559 offset=18756927488 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65796833280 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=560 offset=18790481920 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65830387712 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=561 offset=18824036352 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65863942144 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=562 offset=18857590784 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65897496576 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=563 offset=18891145216 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65931051008 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=564 offset=18924699648 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65964605440 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=565 offset=18958254080 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=65998159872 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=566 offset=18991808512 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66031714304 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=567 offset=19025362944 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66065268736 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=568 offset=19058917376 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66098823168 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=569 offset=19092471808 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66132377600 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=570 offset=19126026240 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66165932032 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=571 offset=19159580672 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66199486464 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=572 offset=19193135104 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66233040896 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=573 offset=19226689536 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66266595328 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=574 offset=19260243968 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66300149760 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=575 offset=19293798400 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66333704192 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=576 offset=19327352832 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66367258624 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=577 offset=19360907264 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66400813056 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=578 offset=19394461696 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66434367488 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=579 offset=19428016128 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66467921920 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=580 offset=19461570560 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66501476352 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=581 offset=19495124992 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66535030784 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=582 offset=19528679424 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66568585216 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=583 offset=19562233856 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66602139648 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=584 offset=19595788288 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66635694080 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=585 offset=19629342720 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66669248512 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=586 offset=19662897152 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66702802944 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=587 offset=19696451584 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66736357376 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=588 offset=19730006016 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66769911808 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=589 offset=19763560448 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66803466240 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=590 offset=19797114880 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66837020672 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=591 offset=19830669312 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66870575104 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=592 offset=19864223744 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66904129536 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=593 offset=19897778176 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66937683968 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=594 offset=19931332608 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=66971238400 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=595 offset=19964887040 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67004792832 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=596 offset=19998441472 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67038347264 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=597 offset=20031995904 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67071901696 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=598 offset=20065550336 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67105456128 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=599 offset=20099104768 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67139010560 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=600 offset=20132659200 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67172564992 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=601 offset=20166213632 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67206119424 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=602 offset=20199768064 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67239673856 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=603 offset=20233322496 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67273228288 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=604 offset=20266876928 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67306782720 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=605 offset=20300431360 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67340337152 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=606 offset=20333985792 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67373891584 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=607 offset=20367540224 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67407446016 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=608 offset=20401094656 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67441000448 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=609 offset=20434649088 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67474554880 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=610 offset=20468203520 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67508109312 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=611 offset=20501757952 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67541663744 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=612 offset=20535312384 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67575218176 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=613 offset=20568866816 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67608772608 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=614 offset=20602421248 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67642327040 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=615 offset=20635975680 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67675881472 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=616 offset=20669530112 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67709435904 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=617 offset=20703084544 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67742990336 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=618 offset=20736638976 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67776544768 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=619 offset=20770193408 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67810099200 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=620 offset=20803747840 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67843653632 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=621 offset=20837302272 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67877208064 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=622 offset=20870856704 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67910762496 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=623 offset=20904411136 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67944316928 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=624 offset=20937965568 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=67977871360 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=625 offset=20971520000 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68011425792 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=626 offset=21005074432 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68044980224 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=627 offset=21038628864 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68078534656 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=628 offset=21072183296 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68112089088 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=629 offset=21105737728 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68145643520 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=630 offset=21139292160 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68179197952 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=631 offset=21172846592 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68212752384 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=632 offset=21206401024 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68246306816 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=633 offset=21239955456 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68279861248 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=634 offset=21273509888 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68313415680 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=635 offset=21307064320 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68346970112 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=636 offset=21340618752 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68380524544 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=637 offset=21374173184 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68414078976 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=638 offset=21407727616 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68447633408 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=639 offset=21441282048 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68481187840 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=640 offset=21474836480 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68514742272 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=641 offset=21508390912 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68548296704 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=642 offset=21541945344 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68581851136 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=643 offset=21575499776 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68615405568 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=644 offset=21609054208 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68648960000 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=645 offset=21642608640 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68682514432 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=646 offset=21676163072 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68716068864 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=647 offset=21709717504 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68749623296 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=648 offset=21743271936 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68783177728 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=649 offset=21776826368 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68816732160 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=650 offset=21810380800 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68850286592 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=651 offset=21843935232 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68883841024 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=652 offset=21877489664 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68917395456 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=653 offset=21911044096 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68950949888 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=654 offset=21944598528 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=68984504320 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=655 offset=21978152960 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69018058752 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=656 offset=22011707392 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69051613184 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=657 offset=22045261824 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69085167616 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=658 offset=22078816256 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69118722048 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=659 offset=22112370688 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69152276480 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=660 offset=22145925120 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69185830912 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=661 offset=22179479552 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69219385344 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=662 offset=22213033984 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69252939776 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=663 offset=22246588416 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69286494208 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=664 offset=22280142848 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69320048640 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=665 offset=22313697280 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69353603072 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=666 offset=22347251712 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69387157504 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=667 offset=22380806144 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69420711936 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=668 offset=22414360576 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69454266368 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=669 offset=22447915008 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69487820800 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=670 offset=22481469440 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69521375232 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=671 offset=22515023872 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69554929664 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=672 offset=22548578304 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69588484096 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=673 offset=22582132736 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69622038528 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=674 offset=22615687168 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69655592960 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=675 offset=22649241600 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69689147392 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=676 offset=22682796032 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69722701824 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=677 offset=22716350464 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69756256256 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=678 offset=22749904896 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69789810688 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=679 offset=22783459328 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69823365120 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=680 offset=22817013760 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69856919552 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=681 offset=22850568192 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69890473984 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=682 offset=22884122624 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69924028416 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=683 offset=22917677056 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69957582848 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=684 offset=22951231488 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=69991137280 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=685 offset=22984785920 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70024691712 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=686 offset=23018340352 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70058246144 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=687 offset=23051894784 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70091800576 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=688 offset=23085449216 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70125355008 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=689 offset=23119003648 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70158909440 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=690 offset=23152558080 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70192463872 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=691 offset=23186112512 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70226018304 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=692 offset=23219666944 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70259572736 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=693 offset=23253221376 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70293127168 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=694 offset=23286775808 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70326681600 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=695 offset=23320330240 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70360236032 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=696 offset=23353884672 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70393790464 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=697 offset=23387439104 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70427344896 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=698 offset=23420993536 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70460899328 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=699 offset=23454547968 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70494453760 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=700 offset=23488102400 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70528008192 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=701 offset=23521656832 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70561562624 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=702 offset=23555211264 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70595117056 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=703 offset=23588765696 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70628671488 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=704 offset=23622320128 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70662225920 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=705 offset=23655874560 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70695780352 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=706 offset=23689428992 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70729334784 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=707 offset=23722983424 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70762889216 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=708 offset=23756537856 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70796443648 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=709 offset=23790092288 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70829998080 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=710 offset=23823646720 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70863552512 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=711 offset=23857201152 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70897106944 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=712 offset=23890755584 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70930661376 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=713 offset=23924310016 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70964215808 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=714 offset=23957864448 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=70997770240 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=715 offset=23991418880 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71031324672 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=716 offset=24024973312 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71064879104 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=717 offset=24058527744 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71098433536 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=718 offset=24092082176 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71131987968 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=719 offset=24125636608 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71165542400 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=720 offset=24159191040 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71199096832 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=721 offset=24192745472 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71232651264 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=722 offset=24226299904 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71266205696 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=723 offset=24259854336 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71299760128 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=724 offset=24293408768 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71333314560 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=725 offset=24326963200 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71366868992 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=726 offset=24360517632 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71400423424 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=727 offset=24394072064 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71433977856 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=728 offset=24427626496 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71467532288 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=729 offset=24461180928 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71501086720 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=730 offset=24494735360 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71534641152 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=731 offset=24528289792 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71568195584 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=732 offset=24561844224 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71601750016 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=733 offset=24595398656 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71635304448 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=734 offset=24628953088 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71668858880 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=735 offset=24662507520 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71702413312 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=736 offset=24696061952 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71735967744 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=737 offset=24729616384 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71769522176 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=738 offset=24763170816 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71803076608 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=739 offset=24796725248 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71836631040 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=740 offset=24830279680 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71870185472 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=741 offset=24863834112 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71903739904 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=742 offset=24897388544 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71937294336 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=743 offset=24930942976 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=71970848768 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=744 offset=24964497408 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72004403200 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=745 offset=24998051840 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72037957632 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=746 offset=25031606272 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72071512064 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=747 offset=25065160704 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72105066496 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=748 offset=25098715136 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72138620928 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=749 offset=25132269568 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72172175360 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=750 offset=25165824000 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72205729792 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=751 offset=25199378432 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72239284224 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=752 offset=25232932864 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72272838656 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=753 offset=25266487296 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72306393088 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=754 offset=25300041728 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72339947520 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=755 offset=25333596160 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72373501952 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=756 offset=25367150592 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72407056384 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=757 offset=25400705024 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72440610816 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=758 offset=25434259456 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72474165248 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=759 offset=25467813888 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72507719680 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=760 offset=25501368320 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72541274112 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=761 offset=25534922752 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72574828544 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=762 offset=25568477184 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72608382976 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=763 offset=25602031616 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72641937408 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=764 offset=25635586048 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72675491840 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=765 offset=25669140480 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72709046272 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=766 offset=25702694912 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72742600704 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=767 offset=25736249344 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72776155136 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=768 offset=25769803776 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72809709568 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=769 offset=25803358208 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72843264000 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=770 offset=25836912640 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72876818432 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=771 offset=25870467072 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72910372864 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=772 offset=25904021504 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72943927296 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=773 offset=25937575936 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=72977481728 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=774 offset=25971130368 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73011036160 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=775 offset=26004684800 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73044590592 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=776 offset=26038239232 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73078145024 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=777 offset=26071793664 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73111699456 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=778 offset=26105348096 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73145253888 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=779 offset=26138902528 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73178808320 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=780 offset=26172456960 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73212362752 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=781 offset=26206011392 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73245917184 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=782 offset=26239565824 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73279471616 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=783 offset=26273120256 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73313026048 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=784 offset=26306674688 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73346580480 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=785 offset=26340229120 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73380134912 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=786 offset=26373783552 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73413689344 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=787 offset=26407337984 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73447243776 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=788 offset=26440892416 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73480798208 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=789 offset=26474446848 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73514352640 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=790 offset=26508001280 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73547907072 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=791 offset=26541555712 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73581461504 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=792 offset=26575110144 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73615015936 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=793 offset=26608664576 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73648570368 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=794 offset=26642219008 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73682124800 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=795 offset=26675773440 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73715679232 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=796 offset=26709327872 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73749233664 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=797 offset=26742882304 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73782788096 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=798 offset=26776436736 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73816342528 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=799 offset=26809991168 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73849896960 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=800 offset=26843545600 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73883451392 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=801 offset=26877100032 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73917005824 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=802 offset=26910654464 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73950560256 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=803 offset=26944208896 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=73984114688 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=804 offset=26977763328 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74017669120 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=805 offset=27011317760 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74051223552 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=806 offset=27044872192 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74084777984 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=807 offset=27078426624 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74118332416 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=808 offset=27111981056 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74151886848 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=809 offset=27145535488 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74185441280 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=810 offset=27179089920 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74218995712 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=811 offset=27212644352 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74252550144 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=812 offset=27246198784 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74286104576 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=813 offset=27279753216 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74319659008 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=814 offset=27313307648 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74353213440 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=815 offset=27346862080 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74386767872 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=816 offset=27380416512 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74420322304 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=817 offset=27413970944 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74453876736 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=818 offset=27447525376 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74487431168 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=819 offset=27481079808 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74520985600 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=820 offset=27514634240 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74554540032 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=821 offset=27548188672 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74588094464 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=822 offset=27581743104 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74621648896 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=823 offset=27615297536 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74655203328 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=824 offset=27648851968 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74688757760 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=825 offset=27682406400 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74722312192 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=826 offset=27715960832 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74755866624 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=827 offset=27749515264 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74789421056 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=828 offset=27783069696 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74822975488 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=829 offset=27816624128 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74856529920 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=830 offset=27850178560 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74890084352 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=831 offset=27883732992 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74923638784 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=832 offset=27917287424 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74957193216 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=833 offset=27950841856 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=74990747648 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=834 offset=27984396288 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75024302080 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=835 offset=28017950720 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75057856512 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=836 offset=28051505152 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75091410944 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=837 offset=28085059584 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75124965376 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=838 offset=28118614016 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75158519808 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=839 offset=28152168448 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75192074240 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=840 offset=28185722880 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75225628672 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=841 offset=28219277312 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75259183104 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=842 offset=28252831744 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75292737536 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=843 offset=28286386176 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75326291968 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=844 offset=28319940608 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75359846400 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=845 offset=28353495040 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75393400832 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=846 offset=28387049472 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75426955264 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=847 offset=28420603904 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75460509696 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=848 offset=28454158336 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75494064128 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=849 offset=28487712768 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75527618560 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=850 offset=28521267200 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75561172992 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=851 offset=28554821632 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75594727424 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=852 offset=28588376064 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75628281856 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=853 offset=28621930496 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75661836288 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=854 offset=28655484928 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75695390720 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=855 offset=28689039360 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75728945152 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=856 offset=28722593792 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75762499584 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=857 offset=28756148224 bytes=33554432 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75796054016 bytes=33488896 (only complete 65536-byte pages inside PLE)
+ple-numa: chunk=858 offset=28789702656 bytes=10435584 memcmp_exact=1
+ple-numa: released copied PLE source pages offset=75829608448 bytes=10354688 (only complete 65536-byte pages inside PLE)
+ple-numa: actual placement node=255 pages=32768/32768
+ple-numa: actual placement node=254 pages=32768/32768
+ple-numa: actual placement node=253 pages=32768/32768
+ple-numa: actual CPU placement nodes=0,8 pages=242848/242848 total_pages=439456/439456
+ple-numa: copy complete bytes=28800138240 memcmp_exact=1 chunks=859
+1.14.040.045 I load_tensors: hybrid PLE enabled; 12.00 GiB on CUDA UUID-mapped GPU NUMA nodes (stripe map above) and 14.82 GiB strictly bound in 32 MiB stripes to CPU nodes 0/8; row format unchanged
+.1.14.040.669 I load_tensors: offloading output layer to GPU
+1.14.040.673 I load_tensors: offloading 48 repeating layers to GPU
+1.14.040.674 I load_tensors: offloaded 50/50 layers to GPU
+1.14.040.689 I load_tensors:       Meta() model buffer size =  7699.22 MiB
+1.14.040.693 I load_tensors:       Meta() model buffer size =  9341.12 MiB
+1.14.040.695 I load_tensors:   CPU_Mapped model buffer size = 27465.95 MiB
+1.14.040.718 I monpack: disabled via MONSTER_MONPACK=0, using original GGUF path
+.........................

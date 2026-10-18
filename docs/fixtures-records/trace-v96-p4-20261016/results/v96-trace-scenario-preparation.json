@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "status": "HOST_SCENARIOS_PREPARED_NO_MODEL_OR_GPU",
+  "trace_label": "v37-flatmeta6d3-copy1-clean-v96-p4-decode-trace-t16",
+  "prefill_label": "v37-flatmeta6d3-copy1-clean-single8k-pp-probe-32",
+  "scenario_order": [
+    "v37-flatmeta6d3-copy1-diagnostic-serial-sem-00-0",
+    "v37-flatmeta6d3-copy1-diagnostic-serial-sem-00-1",
+    "v37-flatmeta6d3-copy1-diagnostic-dual-sem-00",
+    "v37-flatmeta6d3-copy1-diagnostic-serial-sem-01-0",
+    "v37-flatmeta6d3-copy1-diagnostic-serial-sem-01-1",
+    "v37-flatmeta6d3-copy1-diagnostic-dual-sem-01",
+    "v37-flatmeta6d3-copy1-diagnostic-serial-sem-02-0",
+    "v37-flatmeta6d3-copy1-diagnostic-serial-sem-02-1",
+    "v37-flatmeta6d3-copy1-diagnostic-dual-sem-02",
+    "v37-flatmeta6d3-copy1-diagnostic-serial-sem-03-0",
+    "v37-flatmeta6d3-copy1-diagnostic-serial-sem-03-1",
+    "v37-flatmeta6d3-copy1-diagnostic-dual-sem-03",
+    "v37-flatmeta6d3-copy1-diagnostic-single8k-pp-probe-32",
+    "v37-flatmeta6d3-copy1-diagnostic-serial-real8k-0",
+    "v37-flatmeta6d3-copy1-diagnostic-serial-real8k-1",
+    "v37-flatmeta6d3-copy1-diagnostic-single8k-pp-warm-32",
+    "v37-flatmeta6d3-copy1-diagnostic-real8k-p4-1x4",
+    "v37-flatmeta6d3-copy1-clean-single8k-pp-probe-32",
+    "v37-flatmeta6d3-copy1-clean-v96-p4-decode-trace-t16"
+  ],
+  "counts": {
+    "diagnostic_scenarios": 17,
+    "native_semantic_cases": 12,
+    "clean_scenarios": 2,
+    "profiled_clean_8k_prefill_ranges": 1,
+    "profiled_4lane_p4_decode_ranges": 1
+  },
+  "range_order": [
+    "clean-single8k-pp-probe-32 prefill",
+    "clean V96 P4 decode trace scenario"
+  ],
+  "nsys_contract": {
+    "capture_range": "cudaProfilerApi",
+    "capture_range_end": "repeat:2",
+    "expected_ranges": 2,
+    "cuda_graph_granularity": "node",
+    "cpu_sampling": "none",
+    "cupti": "off",
+    "diagnostic_not_performance_claim": true
+  },
+  "quality_policy": {
+    "all_v37_diagnostic_scenarios_precede_clean_profile": true,
+    "preclean_f32_gate_must_run_and_its_actual_result_is_retained": true,
+    "full_v42_quality_proof_required_before_trace_launch": true,
+    "proof_source": "actual V42 outcome JSON plus artifact hashes; no V41 token or manual pass flag",
+    "trace_run_not_a_quality_or_performance_qualification": true,
+    "v27_legacy_delta_may_remain_reported": true
+  },
+  "runtime_profile_preflight": {
+    "v96_build_run_id": "20261016T125920.508355Z",
+    "v96_build_report_sha256": "c17cbcfc2b940bc982fff61d1a3606c380cfdd5c90c2c4de33b9da82e3b554f8",
+    "runtime_directory": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v96",
+    "v42_profile_sha256": "ab510ee320c9a85cbed674970b6185dda9561848a1dce98b785dd5737f44e0a1",
+    "v42_profile_status": "host_prepared_root_window_required",
+    "v42_profile_launch_eligible": true,
+    "v42_profile_pending_gates": [],
+    "v42_micro_status": "PASS",
+    "v42_micro_pending_gates": [],
+    "v96_selected_runtime_ldd_sha256": "3fb10e6d080053b9eccc4143aac323e90bf573927fdd4c0346985c32bb74dde8",
+    "v42_full_model_quality_proof": "absent; no V42 full-model run has completed",
+    "launch_eligible": false
+  },
+  "provenance": {
+    "v37_scenarios": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v37-flatmeta6-20261016/scenarios.json",
+    "v37_scenarios_sha256": "0696a6c100a209ae97fda17c80a8f951d246c9c871ed69478d48e092eb6f4ac4",
+    "v37_plan": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v37-flatmeta6-20261016/plan-v37-flatmeta6d3.json",
+    "v37_plan_sha256": "a6bfb5cda3a2011b43fcead76b017e3eb9c34e597d6bcf4b4f7055d6fea36172",
+    "v41_runner_source": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v41-ub4096-20261016/dual-context-v41-ub4096.cpp",
+    "v41_runner_source_sha256": "4252c41a833746e264d5056ef1229cde8f07095bf11f7393b9de7f5f643c32e3",
+    "v43_trace_source_copy": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/trace-v96-p4-20261016/dual-context-v43-trace.cpp",
+    "v43_trace_source_sha256": "99efbca2bdd53e28d6405d6aecb1508edccbf652e94ab0d4982af10dccc68e3a",
+    "v42_quality_proof_verifier": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/trace-v96-p4-20261016/verify_v42_trace_prerequisites.py",
+    "v42_quality_proof_verifier_sha256": "78be005dbc3dd92644de6be84dfd0c66e429ba6e665e7208ef38383b05c4bbf9",
+    "nsys_two_range_wrapper": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/trace-v96-p4-20261016/nsys_profile_v96_two_ranges.sh",
+    "nsys_two_range_wrapper_sha256": "3fedefde0f2ccc6fac31c6c0de6c8c70e45694b61c2fb54bdaa066508bf60644",
+    "trace_supervisor_adapter": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/trace-v96-p4-20261016/run-v96-p4-trace-supervisor.py",
+    "trace_supervisor_adapter_sha256": "9b8dce9e407a013844f1f41c7fead1b7e2e0dad816d0a5775b32d7f87addc921",
+    "v89_scenario_helper_sha256": "e77ab4888b33116bed92347617a424f568e5c2e5122b5d096dcbbe5dedadf434",
+    "v37_variant_helper_sha256": "001b06b1482b1318840cbc38d0f968ebfdf3fcd2babd01065a07cd8e41d3b967",
+    "canonical_v37_comparator": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v40-chunked-ordered-20261016/compare_v40_vs_v37_token_arrays.py",
+    "canonical_v37_comparator_sha256": "df71f59b507bc3906428f977b87073f28d06e6bdc75a99959c0ae05441f50749",
+    "v96_build_report_sha256": "c17cbcfc2b940bc982fff61d1a3606c380cfdd5c90c2c4de33b9da82e3b554f8",
+    "v42_profile_sha256": "ab510ee320c9a85cbed674970b6185dda9561848a1dce98b785dd5737f44e0a1",
+    "v42_micro_report_sha256": "4322e3fe3a6fe305aae2d467b3ed57c22238ee9eb385e6900d7291831affc5ee",
+    "v96_selected_runtime_ldd_sha256": "3fb10e6d080053b9eccc4143aac323e90bf573927fdd4c0346985c32bb74dde8"
+  },
+  "runtime_provenance_snapshots": {
+    "V96-build.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/trace-v96-p4-20261016/provenance/V96-build.json",
+      "sha256": "c17cbcfc2b940bc982fff61d1a3606c380cfdd5c90c2c4de33b9da82e3b554f8"
+    },
+    "v42-exact-env.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/trace-v96-p4-20261016/provenance/v42-exact-env.json",
+      "sha256": "ab510ee320c9a85cbed674970b6185dda9561848a1dce98b785dd5737f44e0a1"
+    },
+    "v42-micro-gates.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/trace-v96-p4-20261016/provenance/v42-micro-gates.json",
+      "sha256": "4322e3fe3a6fe305aae2d467b3ed57c22238ee9eb385e6900d7291831affc5ee"
+    },
+    "ldd-v41-runner-under-v96.txt": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/trace-v96-p4-20261016/provenance/ldd-v41-runner-under-v96.txt",
+      "sha256": "3fb10e6d080053b9eccc4143aac323e90bf573927fdd4c0346985c32bb74dde8"
+    },
+    "v41-runner-build.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/trace-v96-p4-20261016/provenance/v41-runner-build.json",
+      "sha256": "76d8d83de5587f0e91143fc66185df4c791ae09e0d5e11903d17f9dec39bf28a"
+    },
+    "v41-runner-binary-sha256.txt": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/trace-v96-p4-20261016/provenance/v41-runner-binary-sha256.txt",
+      "sha256": "ba81c3bfbb839f0a9b86b9d9b14bf65aca371889440e24e6d28f76c779398950"
+    }
+  },
+  "prepared_inputs": {
+    "diagnostic_scenarios": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/trace-v96-p4-20261016/prepared/diagnostic-scenarios.json",
+    "diagnostic_plan": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/trace-v96-p4-20261016/prepared/diagnostic-plan-v37-flatmeta6d3.json",
+    "clean_scenarios": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/trace-v96-p4-20261016/prepared/clean-scenarios.json",
+    "clean_plan": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/trace-v96-p4-20261016/prepared/clean-plan-v37-flatmeta6d3.json"
+  },
+  "no_work_started": {
+    "nsys": false,
+    "model": false,
+    "gpu": false
+  },
+  "runtime_profile_and_quality_proof": "V96 local gate, V42 profile, and runtime closure pinned; pending the actual complete V42 quality outcome; trace launch remains blocked"
+}

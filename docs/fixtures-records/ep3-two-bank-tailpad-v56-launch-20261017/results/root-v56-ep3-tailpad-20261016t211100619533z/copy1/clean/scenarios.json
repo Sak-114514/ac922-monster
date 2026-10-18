@@ -1,0 +1,176 @@
+[
+  {
+    "label": "v49-ordinary-ep3-four-lane-semantic-canary",
+    "kind": "semantic_p4_gate",
+    "dual": true,
+    "requests": [
+      {
+        "id": "capital-en",
+        "prompt": "What is the capital city of France? Reply with exactly the city name, without punctuation or explanation.",
+        "checker": "exact_text",
+        "expected": "Paris",
+        "max_tokens": 32,
+        "prompt_source": "native-semantics-case-input-chat-text",
+        "prompt_sha256": "678afb9d5078d3ef479ad3e40b6e01e132b65aac62879b62ac421f37a4c5de53",
+        "ignore_eos": false
+      },
+      {
+        "id": "arithmetic-zh",
+        "prompt": "请计算 2847 + 6958。只输出十进制整数，不要解释。",
+        "checker": "exact_text",
+        "expected": "9805",
+        "max_tokens": 32,
+        "prompt_source": "native-semantics-case-input-chat-text",
+        "prompt_sha256": "66a63b3484247e7484205590e2d97f029e4cca6d04dad810a4bf875ea5ab3cb9",
+        "ignore_eos": false
+      },
+      {
+        "id": "logic-en",
+        "prompt": "All dax are lamn. Some lamn are red. Does it logically follow that some dax are red? Reply with exactly YES or NO.",
+        "checker": "exact_text",
+        "expected": "NO",
+        "max_tokens": 32,
+        "prompt_source": "native-semantics-case-input-chat-text",
+        "prompt_sha256": "58744d376b8998e4096757e147962eeec82dddab03c495e0fbf84e000fc2591d",
+        "ignore_eos": false
+      },
+      {
+        "id": "strict-json-zh",
+        "prompt": "请严格按要求输出一个 JSON 对象，不要 Markdown、代码围栏或其他文字。对象必须是：{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}",
+        "checker": "strict_json",
+        "expected": {
+          "ok": true,
+          "count": 3,
+          "colors": [
+            "红",
+            "蓝"
+          ]
+        },
+        "max_tokens": 32,
+        "prompt_source": "native-semantics-case-input-chat-text",
+        "prompt_sha256": "67df94ecb8366efe4bde382cda2f805ec358be2a81d4c21717131bfe18beff22",
+        "ignore_eos": false
+      }
+    ]
+  },
+  {
+    "label": "v56-tail-limit-2x12k-4x12",
+    "kind": "v56_tail_limit_canary",
+    "dual": false,
+    "quality_only": true,
+    "require_full_output": true,
+    "input_tokens_per_request": 12288,
+    "tail_output_limits": [
+      4,
+      12
+    ],
+    "corpus_source_file": "v56-real-corpus-source.json",
+    "corpus_assembled_text_sha256": "4d7ee033662bde6151a7dd13a9b106929e8caa7d447a091d1e2f125a09e8ca15",
+    "requests": [
+      {
+        "id": "tail12k-0",
+        "corpus_token_start": 0,
+        "corpus_token_count": 12288,
+        "corpus_assembled_text_sha256": "4d7ee033662bde6151a7dd13a9b106929e8caa7d447a091d1e2f125a09e8ca15",
+        "max_tokens": 4,
+        "ignore_eos": true,
+        "prompt_source": "r19_curated_source_runtime_token_slice",
+        "prompt_sha256": ""
+      },
+      {
+        "id": "tail12k-1",
+        "corpus_token_start": 12288,
+        "corpus_token_count": 12288,
+        "corpus_assembled_text_sha256": "4d7ee033662bde6151a7dd13a9b106929e8caa7d447a091d1e2f125a09e8ca15",
+        "max_tokens": 12,
+        "ignore_eos": true,
+        "prompt_source": "r19_curated_source_runtime_token_slice",
+        "prompt_sha256": ""
+      }
+    ]
+  },
+  {
+    "label": "v56-two-flow-2x12k-512",
+    "kind": "v56_grouped_decode",
+    "dual": false,
+    "require_full_output": true,
+    "input_tokens_per_request": 12288,
+    "output_tokens_per_request": 512,
+    "corpus_source_file": "v56-real-corpus-source.json",
+    "corpus_assembled_text_sha256": "4d7ee033662bde6151a7dd13a9b106929e8caa7d447a091d1e2f125a09e8ca15",
+    "requests": [
+      {
+        "id": "real12k-0",
+        "corpus_token_start": 0,
+        "corpus_token_count": 12288,
+        "corpus_assembled_text_sha256": "4d7ee033662bde6151a7dd13a9b106929e8caa7d447a091d1e2f125a09e8ca15",
+        "max_tokens": 512,
+        "ignore_eos": true,
+        "prompt_source": "r19_curated_source_runtime_token_slice",
+        "prompt_sha256": ""
+      },
+      {
+        "id": "real12k-1",
+        "corpus_token_start": 12288,
+        "corpus_token_count": 12288,
+        "corpus_assembled_text_sha256": "4d7ee033662bde6151a7dd13a9b106929e8caa7d447a091d1e2f125a09e8ca15",
+        "max_tokens": 512,
+        "ignore_eos": true,
+        "prompt_source": "r19_curated_source_runtime_token_slice",
+        "prompt_sha256": ""
+      }
+    ]
+  },
+  {
+    "label": "v56-four-flow-4x12k-512",
+    "kind": "v56_grouped_decode",
+    "dual": true,
+    "require_full_output": true,
+    "input_tokens_per_request": 12288,
+    "output_tokens_per_request": 512,
+    "corpus_source_file": "v56-real-corpus-source.json",
+    "corpus_assembled_text_sha256": "4d7ee033662bde6151a7dd13a9b106929e8caa7d447a091d1e2f125a09e8ca15",
+    "requests": [
+      {
+        "id": "real12k-0",
+        "corpus_token_start": 0,
+        "corpus_token_count": 12288,
+        "corpus_assembled_text_sha256": "4d7ee033662bde6151a7dd13a9b106929e8caa7d447a091d1e2f125a09e8ca15",
+        "max_tokens": 512,
+        "ignore_eos": true,
+        "prompt_source": "r19_curated_source_runtime_token_slice",
+        "prompt_sha256": ""
+      },
+      {
+        "id": "real12k-1",
+        "corpus_token_start": 12288,
+        "corpus_token_count": 12288,
+        "corpus_assembled_text_sha256": "4d7ee033662bde6151a7dd13a9b106929e8caa7d447a091d1e2f125a09e8ca15",
+        "max_tokens": 512,
+        "ignore_eos": true,
+        "prompt_source": "r19_curated_source_runtime_token_slice",
+        "prompt_sha256": ""
+      },
+      {
+        "id": "real12k-2",
+        "corpus_token_start": 24576,
+        "corpus_token_count": 12288,
+        "corpus_assembled_text_sha256": "4d7ee033662bde6151a7dd13a9b106929e8caa7d447a091d1e2f125a09e8ca15",
+        "max_tokens": 512,
+        "ignore_eos": true,
+        "prompt_source": "r19_curated_source_runtime_token_slice",
+        "prompt_sha256": ""
+      },
+      {
+        "id": "real12k-3",
+        "corpus_token_start": 36864,
+        "corpus_token_count": 12288,
+        "corpus_assembled_text_sha256": "4d7ee033662bde6151a7dd13a9b106929e8caa7d447a091d1e2f125a09e8ca15",
+        "max_tokens": 512,
+        "ignore_eos": true,
+        "prompt_source": "r19_curated_source_runtime_token_slice",
+        "prompt_sha256": ""
+      }
+    ]
+  }
+]

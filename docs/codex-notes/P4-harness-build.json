@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "numactl",
+    "--cpunodebind=0",
+    "--membind=0,8",
+    "g++",
+    "-std=c++17",
+    "-O2",
+    "-pthread",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/common",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/include",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/include",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/vendor",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-runner.cpp",
+    "-L/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-standard-combined/lib",
+    "-Wl,-rpath,/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-standard-combined/lib",
+    "-Wl,--no-as-needed",
+    "-lllama-common",
+    "-lllama",
+    "-lggml",
+    "-lggml-base",
+    "-lggml-cpu",
+    "-lggml-cuda",
+    "-ldl",
+    "-o",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/dual-context-runner"
+  ],
+  "returncode": 0,
+  "stderr": ""
+}

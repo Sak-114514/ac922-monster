@@ -1,0 +1,614 @@
+ggml-log[2] ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+ggml-log[2]   Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml-log[2]   Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml-log[2]   Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml-log[2]   Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml-log[2]   Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml-log[2]   Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+fixture-start cuda_module_loading=LAZY allreduce=nccl p2p_cold=1 graph_opt=1
+cuda-rank=0 name=CUDA0 pci=0004:04:00.0
+cuda-rank=1 name=CUDA1 pci=0004:05:00.0
+cuda-rank=2 name=CUDA2 pci=0004:06:00.0
+cuda-rank=3 name=CUDA3 pci=0035:03:00.0
+cuda-rank=4 name=CUDA4 pci=0035:04:00.0
+cuda-rank=5 name=CUDA5 pci=0035:05:00.0
+192:222230:222230 [5] NCCL INFO cudaDriverVersion 12040
+192:222230:222230 [0] NCCL INFO NCCL version 2.27.7+cuda12.4
+192:222230:222269 [3] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+192:222230:222269 [3] NCCL INFO NET/IB : No device found.
+192:222230:222269 [3] NCCL INFO NET/IB : Using [RO]; OOB enP5p1s0f0:192.168.1.205<0>
+192:222230:222269 [3] NCCL INFO NET/Socket : Using [0]enP5p1s0f0:192.168.1.205<0>
+192:222230:222269 [3] NCCL INFO Initialized NET plugin Socket
+192:222230:222269 [3] NCCL INFO Assigned NET plugin Socket to comm
+192:222230:222269 [3] NCCL INFO Using network Socket
+192:222230:222268 [2] NCCL INFO Assigned NET plugin Socket to comm
+192:222230:222268 [2] NCCL INFO Using network Socket
+192:222230:222267 [1] NCCL INFO Assigned NET plugin Socket to comm
+192:222230:222267 [1] NCCL INFO Using network Socket
+192:222230:222266 [0] NCCL INFO Assigned NET plugin Socket to comm
+192:222230:222266 [0] NCCL INFO Using network Socket
+192:222230:222270 [4] NCCL INFO Assigned NET plugin Socket to comm
+192:222230:222270 [4] NCCL INFO Using network Socket
+192:222230:222271 [5] NCCL INFO Assigned NET plugin Socket to comm
+192:222230:222271 [5] NCCL INFO Using network Socket
+192:222230:222268 [2] NCCL INFO ncclCommInitAll comm 0x1002b08dbd0 rank 2 nranks 6 cudaDev 2 nvmlDev 2 busId 406000 commId 0x5f9d308410a71878 - Init START
+192:222230:222269 [3] NCCL INFO ncclCommInitAll comm 0x1002b1a0760 rank 3 nranks 6 cudaDev 3 nvmlDev 3 busId 3503000 commId 0x5f9d308410a71878 - Init START
+192:222230:222266 [0] NCCL INFO ncclCommInitAll comm 0x1002ae68390 rank 0 nranks 6 cudaDev 0 nvmlDev 0 busId 404000 commId 0x5f9d308410a71878 - Init START
+192:222230:222270 [4] NCCL INFO ncclCommInitAll comm 0x1002b2b32f0 rank 4 nranks 6 cudaDev 4 nvmlDev 4 busId 3504000 commId 0x5f9d308410a71878 - Init START
+192:222230:222267 [1] NCCL INFO ncclCommInitAll comm 0x1002af7afc0 rank 1 nranks 6 cudaDev 1 nvmlDev 1 busId 405000 commId 0x5f9d308410a71878 - Init START
+192:222230:222271 [5] NCCL INFO ncclCommInitAll comm 0x1002b3c5e80 rank 5 nranks 6 cudaDev 5 nvmlDev 5 busId 3505000 commId 0x5f9d308410a71878 - Init START
+192:222230:222269 [3] NCCL INFO RAS client listening socket at ::1<28028>
+192:222230:222266 [0] NCCL INFO Setting affinity for GPU 0 to 0-87
+192:222230:222268 [2] NCCL INFO Setting affinity for GPU 2 to 0-87
+192:222230:222266 [0] NCCL INFO NVLS multicast support is not available on dev 0 (NVLS_NCHANNELS 0)
+192:222230:222268 [2] NCCL INFO NVLS multicast support is not available on dev 2 (NVLS_NCHANNELS 0)
+192:222230:222270 [4] NCCL INFO Setting affinity for GPU 4 to 88-175
+192:222230:222270 [4] NCCL INFO NVLS multicast support is not available on dev 4 (NVLS_NCHANNELS 0)
+192:222230:222269 [3] NCCL INFO Setting affinity for GPU 3 to 88-175
+192:222230:222271 [5] NCCL INFO Setting affinity for GPU 5 to 88-175
+192:222230:222269 [3] NCCL INFO NVLS multicast support is not available on dev 3 (NVLS_NCHANNELS 0)
+192:222230:222271 [5] NCCL INFO NVLS multicast support is not available on dev 5 (NVLS_NCHANNELS 0)
+192:222230:222267 [1] NCCL INFO Setting affinity for GPU 1 to 0-87
+192:222230:222267 [1] NCCL INFO NVLS multicast support is not available on dev 1 (NVLS_NCHANNELS 0)
+192:222230:222267 [1] NCCL INFO comm 0x1002af7afc0 rank 1 nRanks 6 nNodes 1 localRanks 6 localRank 1 MNNVL 0
+192:222230:222271 [5] NCCL INFO comm 0x1002b3c5e80 rank 5 nRanks 6 nNodes 1 localRanks 6 localRank 5 MNNVL 0
+192:222230:222269 [3] NCCL INFO comm 0x1002b1a0760 rank 3 nRanks 6 nNodes 1 localRanks 6 localRank 3 MNNVL 0
+192:222230:222270 [4] NCCL INFO comm 0x1002b2b32f0 rank 4 nRanks 6 nNodes 1 localRanks 6 localRank 4 MNNVL 0
+192:222230:222267 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] -1/-1/-1->1->2 [2] 2/-1/-1->1->0 [3] -1/-1/-1->1->2
+192:222230:222269 [3] NCCL INFO Trees [0] 4/-1/-1->3->2 [1] 5/-1/-1->3->-1 [2] 4/-1/-1->3->2 [3] 5/-1/-1->3->-1
+192:222230:222269 [3] NCCL INFO P2P Chunksize set to 131072
+192:222230:222271 [5] NCCL INFO Trees [0] -1/-1/-1->5->4 [1] 4/-1/-1->5->3 [2] -1/-1/-1->5->4 [3] 4/-1/-1->5->3
+192:222230:222271 [5] NCCL INFO P2P Chunksize set to 131072
+192:222230:222267 [1] NCCL INFO P2P Chunksize set to 131072
+192:222230:222270 [4] NCCL INFO Trees [0] 5/-1/-1->4->3 [1] 0/-1/-1->4->5 [2] 5/-1/-1->4->3 [3] 0/-1/-1->4->5
+192:222230:222270 [4] NCCL INFO P2P Chunksize set to 131072
+192:222230:222266 [0] NCCL INFO comm 0x1002ae68390 rank 0 nRanks 6 nNodes 1 localRanks 6 localRank 0 MNNVL 0
+192:222230:222266 [0] NCCL INFO Channel 00/04 : 0 1 2 3 4 5
+192:222230:222266 [0] NCCL INFO Channel 01/04 : 0 1 2 3 4 5
+192:222230:222268 [2] NCCL INFO comm 0x1002b08dbd0 rank 2 nRanks 6 nNodes 1 localRanks 6 localRank 2 MNNVL 0
+192:222230:222268 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 1/-1/-1->2->0 [2] 3/-1/-1->2->1 [3] 1/-1/-1->2->0
+192:222230:222268 [2] NCCL INFO P2P Chunksize set to 131072
+192:222230:222266 [0] NCCL INFO Channel 02/04 : 0 1 2 3 4 5
+192:222230:222266 [0] NCCL INFO Channel 03/04 : 0 1 2 3 4 5
+192:222230:222266 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 2/-1/-1->0->4 [2] 1/-1/-1->0->-1 [3] 2/-1/-1->0->4
+192:222230:222266 [0] NCCL INFO P2P Chunksize set to 131072
+192:222230:222269 [3] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+192:222230:222271 [5] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+192:222230:222267 [1] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+192:222230:222276 [3] NCCL INFO [Proxy Service] Device 3 CPU core 148
+192:222230:222277 [5] NCCL INFO [Proxy Service] Device 5 CPU core 92
+192:222230:222270 [4] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+192:222230:222278 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 96
+192:222230:222280 [5] NCCL INFO [Proxy Service UDS] Device 5 CPU core 168
+192:222230:222279 [1] NCCL INFO [Proxy Service] Device 1 CPU core 16
+192:222230:222268 [2] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+192:222230:222283 [4] NCCL INFO [Proxy Service UDS] Device 4 CPU core 112
+192:222230:222282 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 20
+192:222230:222284 [2] NCCL INFO [Proxy Service] Device 2 CPU core 32
+192:222230:222266 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+192:222230:222266 [0] NCCL INFO Check P2P Type isAllDirectP2p 0 directMode 1
+192:222230:222281 [4] NCCL INFO [Proxy Service] Device 4 CPU core 108
+192:222230:222285 [0] NCCL INFO [Proxy Service] Device 0 CPU core 36
+192:222230:222286 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 44
+192:222230:222287 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 55
+192:222230:222271 [5] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+192:222230:222271 [5] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+192:222230:222269 [3] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+192:222230:222269 [3] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+192:222230:222267 [1] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+192:222230:222267 [1] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+192:222230:222270 [4] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+192:222230:222270 [4] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+192:222230:222266 [0] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+192:222230:222266 [0] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+192:222230:222268 [2] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+192:222230:222268 [2] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+192:222230:222266 [0] NCCL INFO CC Off, workFifoBytes 1048ggml-log[2] ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml-log[2] ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml-log[2] ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml-log[1] SPLIT_STATE: {} -> partial_0_0[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {} -> partial_0_1[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {} -> partial_0_2[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {} -> partial_0_3[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {} -> partial_0_0[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {} -> partial_0_1[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {partial_0_0[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}], partial_0_1[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_0_stage_0[ADD, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_0_stage_0[ADD, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_0_stage_1[SQR, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {} -> partial_0_2[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_0_stage_1[SQR, PARTIAL, {0, 0, 0, 0, 0, 0}], partial_0_2[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_0_stage_2[ADD, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_0_stage_2[ADD, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_0_stage_3[SQR, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {} -> partial_0_3[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_0_stage_3[SQR, PARTIAL, {0, 0, 0, 0, 0, 0}], partial_0_3[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_0_stage_4[ADD, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+576
+192:222230:222271 [5] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+192:222230:222271 [5] NCCL INFO ncclCommInitAll comm 0x1002b3c5e80 rank 5 nranks 6 cudaDev 5 nvmlDev 5 busId 3505000 commId 0x5f9d308410a71878 - Init COMPLETE
+192:222230:222271 [5] NCCL INFO Init timings - ncclCommInitAll: rank 5 nranks 6 total 0.71 (kernels 0.50, alloc 0.10, bootstrap 0.00, allgathers 0.01, topo 0.06, graphs 0.03, connections 0.02, rest 0.00)
+192:222230:222269 [3] NCCL INFO ncclCommInitAll comm 0x1002b1a0760 rank 3 nranks 6 cudaDev 3 nvmlDev 3 busId 3503000 commId 0x5f9d308410a71878 - Init COMPLETE
+192:222230:222267 [1] NCCL INFO ncclCommInitAll comm 0x1002af7afc0 rank 1 nranks 6 cudaDev 1 nvmlDev 1 busId 405000 commId 0x5f9d308410a71878 - Init COMPLETE
+192:222230:222267 [1] NCCL INFO Init timings - ncclCommInitAll: rank 1 nranks 6 total 0.71 (kernels 0.50, alloc 0.10, bootstrap 0.00, allgathers 0.00, topo 0.06, graphs 0.03, connections 0.02, rest 0.00)
+192:222230:222266 [0] NCCL INFO ncclCommInitAll comm 0x1002ae68390 rank 0 nranks 6 cudaDev 0 nvmlDev 0 busId 404000 commId 0x5f9d308410a71878 - Init COMPLETE
+192:222230:222268 [2] NCCL INFO ncclCommInitAll comm 0x1002b08dbd0 rank 2 nranks 6 cudaDev 2 nvmlDev 2 busId 406000 commId 0x5f9d308410a71878 - Init COMPLETE
+192:222230:222270 [4] NCCL INFO ncclCommInitAll comm 0x1002b2b32f0 rank 4 nranks 6 cudaDev 4 nvmlDev 4 busId 3504000 commId 0x5f9d308410a71878 - Init COMPLETE
+192:222230:222269 [3] NCCL INFO Init timings - ncclCommInitAll: rank 3 nranks 6 total 0.71 (kernels 0.50, alloc 0.10, bootstrap 0.00, allgathers 0.01, topo 0.06, graphs 0.03, connections 0.02, rest 0.00)
+192:222230:222268 [2] NCCL INFO Init timings - ncclCommInitAll: rank 2 nranks 6 total 0.71 (kernels 0.50, alloc 0.10, bootstrap 0.00, allgathers 0.00, topo 0.06, graphs 0.03, connections 0.02, rest 0.00)
+192:222230:222266 [0] NCCL INFO Init timings - ncclCommInitAll: rank 0 nranks 6 total 0.71 (kernels 0.50, alloc 0.10, bootstrap 0.00, allgathers 0.00, topo 0.06, graphs 0.03, connections 0.02, rest 0.00)
+192:222230:222270 [4] NCCL INFO Init timings - ncclCommInitAll: rank 4 nranks 6 total 0.71 (kernels 0.50, alloc 0.10, bootstrap 0.00, allgathers 0.01, topo 0.06, graphs 0.03, connections 0.02, rest 0.00)
+meta-bank-init bank=0 backend=0x1002ae65400 cpu=0x1002cfb84e0
+192:222230:222294 [0] NCCL INFO Assigned NET plugin Socket to comm
+192:222230:222294 [0] NCCL INFO Using network Socket
+192:222230:222295 [1] NCCL INFO Assigned NET plugin Socket to comm
+192:222230:222295 [1] NCCL INFO Using network Socket
+192:222230:222294 [0] NCCL INFO ncclCommInitAll comm 0x1002e2b6570 rank 0 nranks 6 cudaDev 0 nvmlDev 0 busId 404000 commId 0x8c0d40a59a91adbe - Init START
+192:222230:222296 [2] NCCL INFO Assigned NET plugin Socket to comm
+192:222230:222296 [2] NCCL INFO Using network Socket
+192:222230:222295 [1] NCCL INFO ncclCommInitAll comm 0x1002e3bfc80 rank 1 nranks 6 cudaDev 1 nvmlDev 1 busId 405000 commId 0x8c0d40a59a91adbe - Init START
+192:222230:222298 [4] NCCL INFO Assigned NET plugin Socket to comm
+192:222230:222298 [4] NCCL INFO Using network Socket
+192:222230:222296 [2] NCCL INFO ncclCommInitAll comm 0x1002e4c9390 rank 2 nranks 6 cudaDev 2 nvmlDev 2 busId 406000 commId 0x8c0d40a59a91adbe - Init START
+192:222230:222297 [3] NCCL INFO Assigned NET plugin Socket to comm
+192:222230:222297 [3] NCCL INFO Using network Socket
+192:222230:222298 [4] NCCL INFO ncclCommInitAll comm 0x1002e6dc1b0 rank 4 nranks 6 cudaDev 4 nvmlDev 4 busId 3504000 commId 0x8c0d40a59a91adbe - Init START
+192:222230:222299 [5] NCCL INFO Assigned NET plugin Socket to comm
+192:222230:222299 [5] NCCL INFO Using network Socket
+192:222230:222297 [3] NCCL INFO ncclCommInitAll comm 0x1002e5d2aa0 rank 3 nranks 6 cudaDev 3 nvmlDev 3 busId 3503000 commId 0x8c0d40a59a91adbe - Init START
+192:222230:222299 [5] NCCL INFO ncclCommInitAll comm 0x1002e7e58c0 rank 5 nranks 6 cudaDev 5 nvmlDev 5 busId 3505000 commId 0x8c0d40a59a91adbe - Init START
+192:222230:222294 [0] NCCL INFO Setting affinity for GPU 0 to 0-87
+192:222230:222294 [0] NCCL INFO NVLS multicast support is not available on dev 0 (NVLS_NCHANNELS 0)
+192:222230:222299 [5] NCCL INFO Setting affinity for GPU 5 to 88-175
+192:222230:222299 [5] NCCL INFO NVLS multicast support is not available on dev 5 (NVLS_NCHANNELS 0)
+192:222230:222298 [4] NCCL INFO Setting affinity for GPU 4 to 88-175
+192:222230:222298 [4] NCCL INFO NVLS multicast support is not available on dev 4 (NVLS_NCHANNELS 0)
+192:222230:222297 [3] NCCL INFO Setting affinity for GPU 3 to 88-175
+192:222230:222297 [3] NCCL INFO NVLS multicast support is not available on dev 3 (NVLS_NCHANNELS 0)
+192:222230:222296 [2] NCCL INFO Setting affinity for GPU 2 to 0-87
+192:222230:222296 [2] NCCL INFO NVLS multicast support is not available on dev 2 (NVLS_NCHANNELS 0)
+192:222230:222295 [1] NCCL INFO Setting affinity for GPU 1 to 0-87
+192:222230:222295 [1] NCCL INFO NVLS multicast support is not available on dev 1 (NVLS_NCHANNELS 0)
+192:222230:222295 [1] NCCL INFO comm 0x1002e3bfc80 rank 1 nRanks 6 nNodes 1 localRanks 6 localRank 1 MNNVL 0
+192:222230:222294 [0] NCCL INFO comm 0x1002e2b6570 rank 0 nRanks 6 nNodes 1 localRanks 6 localRank 0 MNNVL 0
+192:222230:222299 [5] NCCL INFO comm 0x1002e7e58c0 rank 5 nRanks 6 nNodes 1 localRanks 6 localRank 5 MNNVL 0
+192:222230:222294 [0] NCCL INFO Channel 00/04 : 0 1 2 3 4 5
+192:222230:222298 [4] NCCL INFO comm 0x1002e6dc1b0 rank 4 nRanks 6 nNodes 1 localRanks 6 localRank 4 MNNVL 0
+192:222230:222294 [0] NCCL INFO Channel 01/04 : 0 1 2 3 4 5
+192:222230:222297 [3] NCCL INFO comm 0x1002e5d2aa0 rank 3 nRanks 6 nNodes 1 localRanks 6 localRank 3 MNNVL 0
+192:222230:222299 [5] NCCL INFO Trees [0] -1/-1/-1->5->4 [1] 4/-1/-1->5->3 [2] -1/-1/-1->5->4 [3] 4/-1/-1->5->3
+192:222230:222299 [5] NCCL INFO P2P Chunksize set to 131072
+192:222230:222294 [0] NCCL INFO Channel 02/04 : 0 1 2 3 4 5
+192:222230:222298 [4] NCCL INFO Trees [0] 5/-1/-1->4->3 [1] 0/-1/-1->4->5 [2] 5/-1/-1->4->3 [3] 0/-1/-1->4->5
+192:222230:222295 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] -1/-1/-1->1->2 [2] 2/-1/-1->1->0 [3] -1/-1/-1->1->2
+192:222230:222294 [0] NCCL INFO Channel 03/04 : 0 1 2 3 4 5
+192:222230:222296 [2] NCCL INFO comm 0x1002e4c9390 rank 2 nRanks 6 nNodes 1 localRanks 6 localRank 2 MNNVL 0
+192:222230:222297 [3] NCCL INFO Trees [0] 4/-1/-1->3->2 [1] 5/-1/-1->3->-1 [2] 4/-1/-1->3->2 [3] 5/-1/-1->3->-1
+192:222230:222294 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 2/-1/-1->0->4 [2] 1/-1/-1->0->-1 [3] 2/-1/-1->0->4
+192:222230:222298 [4] NCCL INFO P2P Chunksize set to 131072
+192:222230:222294 [0] NCCL INFO P2P Chunksize set to 131072
+192:222230:222297 [3] NCCL INFO P2P Chunksize set to 131072
+192:222230:222295 [1] NCCL INFO P2P Chunksize set to 131072
+192:222230:222294 [0] NCCL INFO Check P2P Type isAllDirectP2p 0 directMode 1
+192:222230:222296 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 1/-1/-1->2->0 [2] 3/-1/-1->2->1 [3] 1/-1/-1->2->0
+192:222230:222296 [2] NCCL INFO P2P Chunksize set to 131072
+192:222230:222300 [5] NCCL INFO [Proxy Service] Device 5 CPU core 92
+192:222230:222301 [4] NCCL INFO [Proxy Service] Device 4 CPU core 108
+192:222230:222303 [4] NCCL INFO [Proxy Service UDS] Device 4 CPU core 112
+192:222230:222302 [2] NCCL INFO [Proxy Service] Device 2 CPU core 4
+192:222230:222304 [1] NCCL INFO [Proxy Service] Device 1 CPU core 16
+192:222230:222306 [5] NCCL INFO [Proxy Service UDS] Device 5 CPU core 172
+192:222230:222305 [3] NCCL INFO [Proxy Service] Device 3 CPU core 148
+192:222230:222307 [0] NCCL INFO [Proxy Service] Device 0 CPU core 20
+192:222230:222308 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 32
+192:222230:222309 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 36
+192:222230:222310 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 100
+192:222230:222311 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 44
+192:222230:222299 [5] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+192:222230:222299 [5] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+192:222230:222297 [3] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+192:222230:222297 [3] NCCL INFO 4 coll channggml-log[2] ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml-log[2] ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml-log[2] ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml-log[1] SPLIT_STATE: {} -> partial_1_0[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {} -> partial_1_1[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {} -> partial_1_2[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {} -> partial_1_3[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {} -> partial_1_0[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {} -> partial_1_1[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {partial_1_0[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}], partial_1_1[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_1_stage_0[ADD, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_1_stage_0[ADD, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_1_stage_1[SQR, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {} -> partial_1_2[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_1_stage_1[SQR, PARTIAL, {0, 0, 0, 0, 0, 0}], partial_1_2[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_1_stage_2[ADD, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_1_stage_2[ADD, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_1_stage_3[SQR, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {} -> partial_1_3[NONE, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_1_stage_3[SQR, PARTIAL, {0, 0, 0, 0, 0, 0}], partial_1_3[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_1_stage_4[ADD, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {partial_1_0[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}], partial_1_1[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_1_stage_0[ADD, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_1_stage_0[ADD, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_1_stage_1[SQR, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {partial_0_0[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}], partial_0_1[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_0_stage_0[ADD, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_1_stage_1[SQR, PARTIAL, {0, 0, 0, 0, 0, 0}], partial_1_2[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_1_stage_2[ADD, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_0_stage_0[ADD, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_0_stage_1[SQR, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_0_stage_1[SQR, PARTIAL, {0, 0, 0, 0, 0, 0}], partial_0_2[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_0_stage_2[ADD, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_0_stage_2[ADD, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_0_stage_3[SQR, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_0_stage_3[SQR, PARTIAL, {0, 0, 0, 0, 0, 0}], partial_0_3[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_0_stage_4[ADD, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_1_stage_2[ADD, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_1_stage_3[SQR, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+ggml-log[1] SPLIT_STATE: {p4_bank_1_stage_3[SQR, PARTIAL, {0, 0, 0, 0, 0, 0}], partial_1_3[NONE, PARTIAL, {0, 0, 0, 0, 0, 0}]} -> p4_bank_1_stage_4[ADD, PARTIAL, {0x1, 0x1, 0x1, 0x1, 0x1, 0x1}]
+CUDA graph path config ctx=0x1002e2aedc0 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002e2aedc0 device=0 uid=5 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1002ae4a410 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002ae4a410 device=0 uid=35 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1002e2b00e0 device=1 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002e2b00e0 device=1 uid=10 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1002ae4b690 device=1 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002ae4b690 device=1 uid=40 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1002e2b1400 device=2 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002e2b1400 device=2 uid=15 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1002ae4c910 device=2 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002ae4c910 device=2 uid=45 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1002e2b2720 device=3 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002e2b2720 device=3 uid=20 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1002ae4db90 device=3 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002ae4db90 device=3 uid=50 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1002e2b3a90 device=4 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002e2b3a90 device=4 uid=25 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1002ae4ee10 device=4 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002ae4ee10 device=4 uid=55 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1002e2b4db0 device=5 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002e2b4db0 device=5 uid=30 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1002ae50090 device=5 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002ae50090 device=5 uid=60 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+ggml-log[2] P2P compact staging selected ranks=6 max_tensor=0.00 MiB small_arena=0.00 MiB segmented_arena=0.00 MiB per_rank old_arena=0.00 MiB
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_0 n=1 zero=0 stream=0x100260e77d0
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_0 n=1 zero=0 stream=0x100260e82e0
+ggml-log[2] P2P compact staging selected ranks=6 max_tensor=0.00 MiB small_arena=0.00 MiB segmented_arena=0.00 MiB per_rank old_arena=0.00 MiB
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_0 n=1 zero=0 stream=0x10025f2fe10
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_0 n=1 zero=0 stream=0x1002608a2d0
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_0 n=1 zero=0 stream=0x1002e95f670
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_0 n=1 zero=0 stream=0x1002608a050
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_0 n=1 zero=0 stream=0x1002e97d1d0
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_0 n=1 zero=0 stream=0x100260d3a40
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_0 n=1 zero=0 stream=0x1002e99ad30
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_0 n=1 zero=0 stream=0x100260bced0
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_0 n=1 zero=0 stream=0x1002e9b8890
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_0 n=1 zero=0 stream=0x100260824d0
+CUDA graph fallback ctx=0x1002e2aedc0 device=0 uid=6 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002ae4a410 device=0 uid=36 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002e2b00e0 device=1 uid=11 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002ae4b690 device=1 uid=41 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002e2b1400 device=2 uid=16 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002ae4c910 device=2 uid=46 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002e2b2720 device=3 uid=21 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002ae4db90 device=3 uid=51 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002e2b3a90 device=4 uid=26 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002ae4ee10 device=4 uid=56 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002e2b4db0 device=5 uid=31 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002ae50090 device=5 uid=61 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_0 n=1 zero=0 stream=0x10025f2fe10
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_0 n=1 zero=0 stream=0x1002608a2d0
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_0 n=1 zero=0 stream=0x1002e95f670
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_0 n=1 zero=0 stream=0x1002e97d1d0
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_0 n=1 zero=0 stream=0x100260e77d0
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_0 n=1 zero=0 stream=0x1002e99ad30
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_0 n=1 zero=0 stream=0x100260e82e0
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_0 n=1 zero=0 stream=0x1002e9b8890
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_0 n=1 zero=0 stream=0x1002608a050
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_0 n=1 zero=0 stream=0x100260d3a40
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_0 n=1 zero=0 stream=0x100260bced0
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_0 n=1 zero=0 stream=0x100260824d0
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_0 n=1 zero=0 stream=0x10025f2fe10
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_0 n=1 zero=0 stream=0x1002608a2d0
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_0 n=1 zero=0 stream=0x1002e95f670
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_0 n=1 zero=0 stream=0x1002e97d1d0
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_0 n=1 zero=0 stream=0x1002e99ad30
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_0 n=1 zero=0 stream=0x1002e9b8890
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_0 n=1 zero=0 stream=0x100260e77d0
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_0 n=1 zero=0 stream=0x100260e82e0
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_0 n=1 zero=0 stream=0x1002608a050
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_0 n=1 zero=0 stream=0x100260d3a40
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_0 n=1 zero=0 stream=0x100260bced0
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_0 n=1 zero=0 stream=0x100260824d0
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_0 n=1 zero=0 stream=0x10025f2fe10
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_0 n=1 zero=0 stream=0x1002608a2d0
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_0 n=1 zero=0 stream=0x1002e95f670
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_0 n=1 zero=0 stream=0x1002e97d1d0
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_0 n=1 zero=0 stream=0x1002e99ad30
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_0 n=1 zero=0 stream=0x1002e9b8890
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_0 n=1 zero=0 stream=0x100260e77d0
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_0 n=1 zero=0 stream=0x100260e82e0
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_0 n=1 zero=0 stream=0x1002608a050
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_0 n=1 zero=0 stream=0x100260d3a40
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_0 n=1 zero=0 stream=0x100260bced0
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_0 n=1 zero=0 stream=0x100260824d0
+WARMUP-ROUND-BEGIN index=1 p2p_launches=48
+ggml-log[3] ggml_backend_meta_graph_compute: graph 5 nodes, 5 subgraphs: merged, 1 chunks
+ggml-log[3] ggml_backend_meta_graph_compute: graph 5 nodes, 5 subgraphs: merged, 1 chunks
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_0 n=1 zero=0 stream=0x100260824d0
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_1 n=1 zero=0 stream=0x100260824d0
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_0 n=1 zero=0 stream=0x100260e77d0
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_0 n=1 zero=0 stream=0x100260bced0
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_1 n=1 zero=0 stream=0x100260e77d0
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_2 n=1 zero=0 stream=0x100260824d0
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_1 n=1 zero=0 stream=0x100260bced0
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_2 n=1 zero=0 stream=0x100260e77d0
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_3 n=1 zero=0 stream=0x100260824d0
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_0 n=1 zero=0 stream=0x1002608a050
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_2 n=1 zero=0 stream=0x100260bced0
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_0 n=1 zero=0 stream=0x1002e9b8890
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_3 n=1 zero=0 stream=0x100260e77d0
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_0 n=1 zero=0 stream=0x100260d3a40
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_0 n=1 zero=0 stream=0x1002608a2d0
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_1 n=1 zero=0 stream=0x100260d3a40
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_1 n=1 zero=0 stream=0x1002608a2d0
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_0 n=1 zero=0 stream=0x10025f2fe10
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_2 n=1 zero=0 stream=0x1002608a2d0
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_0 n=1 zero=0 stream=0x100260e82e0
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_0 n=1 zero=0 stream=0x1002e97d1d0
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_3 n=1 zero=0 stream=0x100260bced0
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_1 n=1 zero=0 stream=0x1002e97d1d0
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_1 n=1 zero=0 stream=0x1002e9b8890
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_2 n=1 zero=0 stream=0x1002e97d1d0
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_2 n=1 zero=0 stream=0x1002e9b8890
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_1 n=1 zero=0 stream=0x1002608a050
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_3 n=1 zero=0 stream=0x1002e9b8890
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_0 n=1 zero=0 stream=0x1002e95f670
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_2 n=1 zero=0 stream=0x1002608a050
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_1 n=1 zero=0 stream=0x10025f2fe10
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_1 n=1 zero=0 stream=0x1002e95f670
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_1 n=1 zero=0 stream=0x100260e82e0
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_2 n=1 zero=0 stream=0x1002e95f670
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_0 n=1 zero=0 stream=0x1002e99ad30
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_3 n=1 zero=0 stream=0x1002e97d1d0
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_1 n=1 zero=0 stream=0x1002e99ad30
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_2 n=1 zero=0 stream=0x100260d3a40
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_2 n=1 zero=0 stream=0x1002e99ad30
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_3 n=1 zero=0 stream=0x1002608a2d0
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_3 n=1 zero=0 stream=0x100260d3a40
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_3 n=1 zero=0 stream=0x1002608a050
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_2 n=1 zero=0 stream=0x10025f2fe10
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_2 n=1 zero=0 stream=0x100260e82e0
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_3 n=1 zero=0 stream=0x1002e95f670
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_3 n=1 zero=0 stream=0x10025f2fe10
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_3 n=1 zero=0 stream=0x100260e82e0
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_3 n=1 zero=0 stream=0x1002e99ad30
+els, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+192:222230:222298 [4] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+192:222230:222298 [4] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+192:222230:222296 [2] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+192:222230:222296 [2] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+192:222230:222294 [0] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+192:222230:222294 [0] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+192:222230:222295 [1] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 512 | 512
+192:222230:222295 [1] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+192:222230:222294 [0] NCCL INFO CC Off, workFifoBytes 1048576
+192:222230:222297 [3] NCCL INFO ncclCommInitAll comm 0x1002e5d2aa0 rank 3 nranks 6 cudaDev 3 nvmlDev 3 busId 3503000 commId 0x8c0d40a59a91adbe - Init COMPLETE
+192:222230:222297 [3] NCCL INFO Init timings - ncclCommInitAll: rank 3 nranks 6 total 0.29 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.07, topo 0.17, graphs 0.03, connections 0.03, rest 0.00)
+192:222230:222299 [5] NCCL INFO ncclCommInitAll comm 0x1002e7e58c0 rank 5 nranks 6 cudaDev 5 nvmlDev 5 busId 3505000 commId 0x8c0d40a59a91adbe - Init COMPLETE
+192:222230:222299 [5] NCCL INFO Init timings - ncclCommInitAll: rank 5 nranks 6 total 0.29 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.07, topo 0.16, graphs 0.03, connections 0.03, rest 0.00)
+192:222230:222298 [4] NCCL INFO ncclCommInitAll comm 0x1002e6dc1b0 rank 4 nranks 6 cudaDev 4 nvmlDev 4 busId 3504000 commId 0x8c0d40a59a91adbe - Init COMPLETE
+192:222230:222298 [4] NCCL INFO Init timings - ncclCommInitAll: rank 4 nranks 6 total 0.29 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.07, topo 0.16, graphs 0.03, connections 0.03, rest 0.00)
+192:222230:222296 [2] NCCL INFO ncclCommInitAll comm 0x1002e4c9390 rank 2 nranks 6 cudaDev 2 nvmlDev 2 busId 406000 commId 0x8c0d40a59a91adbe - Init COMPLETE
+192:222230:222296 [2] NCCL INFO Init timings - ncclCommInitAll: rank 2 nranks 6 total 0.29 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.17, graphs 0.09, connections 0.03, rest 0.00)
+192:222230:222295 [1] NCCL INFO ncclCommInitAll comm 0x1002e3bfc80 rank 1 nranks 6 cudaDev 1 nvmlDev 1 busId 405000 commId 0x8c0d40a59a91adbe - Init COMPLETE
+192:222230:222295 [1] NCCL INFO Init timings - ncclCommInitAll: rank 1 nranks 6 total 0.29 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.02, topo 0.17, graphs 0.07, connections 0.03, rest 0.00)
+192:222230:222294 [0] NCCL INFO ncclCommInitAll comm 0x1002e2b6570 rank 0 nranks 6 cudaDev 0 nvmlDev 0 busId 404000 commId 0x8c0d40a59a91adbe - Init COMPLETE
+192:222230:222294 [0] NCCL INFO Init timings - ncclCommInitAll: rank 0 nranks 6 total 0.29 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.01, topo 0.16, graphs 0.08, connections 0.03, rest 0.00)
+meta-bank-init bank=1 backend=0x1002e9bca80 cpu=0x1002e9bcdd0
+verified-meta-p2p-contexts count=2 p2p-cold-enabled=2
+release-concurrent phase=concurrent-first-cold-shape active_meta_contexts=2 p2p_launches_before=0
+owner-start phase=concurrent-first-cold-shape bank=0 graph=0x1002de09f50
+owner-start phase=concurrent-first-cold-shape bank=1 graph=0x1002f7c8a50
+observed phase=concurrent-first-cold-shape bank=0 n=1 oracle_mismatches=0
+observed phase=concurrent-first-cold-shape bank=1 n=1 oracle_mismatches=0
+phase-end name=concurrent-first-cold-shape p2p_launches_after=48
+route-counter phase=first-cold mode=cold-p2p launches=48 expected=48
+release-concurrent phase=concurrent-warmup-01 active_meta_contexts=2 p2p_launches_before=48
+owner-start phase=concurrent-warmup-01 bank=1 graph=0x1002f7c8a50
+owner-start phase=concurrent-warmup-01 bank=0 graph=0x1002de09f50
+observed phase=concurrent-warmup-01 bank=0 n=1 oracle_mismatches=0
+observed phase=concurrent-waWARMUP-ROUND-END index=1 p2p_launches=96 delta=48 oracle_mismatches=0
+WARMUP-ROUND-BEGIN index=2 p2p_launches=96
+ggml-log[1] CUDA Graph id 66 reused
+ggml-log[1] CUDA Graph id 67 reused
+ggml-log[1] CUDA Graph id 72 reused
+ggml-log[1] ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml-log[1] ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002ae4a410 device=0 uid=66 nodes=9 mode=capture count=1
+ggml-log[1] CUDA Graph id 69 reused
+ggml-log[1] ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002e2b2720 device=3 uid=72 nodes=9 mode=capture count=1
+CUDA graph path active ctx=0x1002ae4c910 device=2 uid=69 nodes=9 mode=capture count=1
+ggml-log[1] CUDA Graph id 65 reused
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_0 n=1 zero=0 stream=0x1002608a050
+ggml-log[1] CUDA Graph id 70 reused
+ggml-log[1] ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml-log[1] CUDA Graph id 74 reused
+ggml-log[1] CUDA Graph id 76 reused
+CUDA graph path active ctx=0x1002e2b1400 device=2 uid=70 nodes=9 mode=capture count=1
+ggml-log[1] ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002e2b4db0 device=5 uid=76 nodes=9 mode=capture count=1
+ggml-log[1] CUDA Graph id 73 reused
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_0 n=1 zero=0 stream=0x1002e9b8890
+ggml-log[1] CUDA Graph id 75 reused
+ggml-log[1] ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002e2b3a90 device=4 uid=75 nodes=9 mode=capture count=1
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_0 n=1 zero=0 stream=0x1002e97d1d0
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_0 n=1 zero=0 stream=0x1002e99ad30
+ggml-log[1] ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002e2aedc0 device=0 uid=65 nodes=9 mode=capture count=1
+ggml-log[1] CUDA Graph id 68 reused
+ggml-log[1] ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_0 n=1 zero=0 stream=0x10025f2fe10
+CUDA graph path active ctx=0x1002e2b00e0 device=1 uid=68 nodes=9 mode=capture count=1
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_1 n=1 zero=0 stream=0x10025f2fe10
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_2 n=1 zero=0 stream=0x10025f2fe10
+ggml-log[1] CUDA Graph id 71 reused
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_3 n=1 zero=0 stream=0x10025f2fe10
+ggml-log[1] ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_0 n=1 zero=0 stream=0x1002e95f670
+ggml-log[1] ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_0 n=1 zero=0 stream=0x100260e77d0
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_1 n=1 zero=0 stream=0x1002e9b8890
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_1 n=1 zero=0 stream=0x100260e77d0
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_2 n=1 zero=0 stream=0x1002e9b8890
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_1 n=1 zero=0 stream=0x1002608a050
+ggml-log[1] ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml-log[1] ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002ae4db90 device=3 uid=71 nodes=9 mode=capture count=1
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_1 n=1 zero=0 stream=0x1002e95f670
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_1 n=1 zero=0 stream=0x1002e97d1d0
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_2 n=1 zero=0 stream=0x1002e97d1d0
+CUDA graph path active ctx=0x1002ae4ee10 device=4 uid=73 nodes=9 mode=capture count=1
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_1 n=1 zero=0 stream=0x1002e99ad30
+CUDA graph path active ctx=0x1002ae50090 device=5 uid=74 nodes=9 mode=capture count=1
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_2 n=1 zero=0 stream=0x100260e77d0
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_0 n=1 zero=0 stream=0x100260824d0
+CUDA graph path active ctx=0x1002ae4b690 device=1 uid=67 nodes=9 mode=capture count=1
+ggml-log[3] p2p allreduce launch: rank 0 allreduce_3 n=1 zero=0 stream=0x100260e77d0
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_0 n=1 zero=0 stream=0x100260e82e0
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_0 n=1 zero=0 stream=0x1002608a2d0
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_1 n=1 zero=0 stream=0x1002608a2d0
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_2 n=1 zero=0 stream=0x1002608a2d0
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_3 n=1 zero=0 stream=0x1002608a2d0
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_3 n=1 zero=0 stream=0x1002e97d1d0
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_0 n=1 zero=0 stream=0x100260bced0
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_2 n=1 zero=0 stream=0x1002e99ad30
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_1 n=1 zero=0 stream=0x100260bced0
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_3 n=1 zero=0 stream=0x1002e99ad30
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_2 n=1 zero=0 stream=0x100260bced0
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_1 n=1 zero=0 stream=0x100260e82e0
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_0 n=1 zero=0 stream=0x100260d3a40
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_2 n=1 zero=0 stream=0x1002e95f670
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_3 n=1 zero=0 stream=0x1002e9b8890
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_1 n=1 zero=0 stream=0x100260d3a40
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_3 n=1 zero=0 stream=0x1002e95f670
+ggml-log[3] p2p allreduce launch: rank 4 allreduce_3 n=1 zero=0 stream=0x100260bced0
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_2 n=1 zero=0 stream=0x100260d3a40
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_1 n=1 zero=0 stream=0x100260824d0
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_2 n=1 zero=0 stream=0x1002608a050
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_2 n=1 zero=0 stream=0x100260e82e0
+ggml-log[3] p2p allreduce launch: rank 3 allreduce_3 n=1 zero=0 stream=0x100260d3a40
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_2 n=1 zero=0 stream=0x100260824d0
+ggml-log[3] p2p allreduce launch: rank 1 allreduce_3 n=1 zero=0 stream=0x100260e82e0
+ggml-log[3] p2p allreduce launch: rank 5 allreduce_3 n=1 zero=0 stream=0x100260824d0
+ggml-log[3] p2p allreduce launch: rank 2 allreduce_3 n=1 zero=0 stream=0x1002608a050
+WARMUP-ROUND-END index=2 p2p_launches=144 delta=48 oracle_mismatches=0
+WARMUP-ROUND-BEGIN index=3 p2p_launches=144
+ggml-log[1] CUDA Graph id 68 reused
+ggml-log[1] CUDA Graph id 70 reused
+ggml-log[1] CUDA Graph id 65 reused
+CUDA graph path active ctx=0x1002e2b00e0 device=1 uid=68 nodes=9 mode=replay count=1
+ggml-log[1] CUDA Graph id 72 reused
+ggml-log[1] CUDA Graph id 76 reused
+ggml-log[1] CUDA Graph id 66 reused
+ggml-log[1] CUDA Graph id 71 reused
+CUDA graph path active ctx=0x1002e2b2720 device=3 uid=72 nodes=9 mode=replay count=1
+ggml-log[1] CUDA Graph id 75 reused
+CUDA graph path active ctx=0x1002e2b3a90 device=4 uid=75 nodes=9 mode=replay count=1
+ggml-log[1] CUDA Graph id 67 reused
+CUDA graph path active ctx=0x1002ae4b690 device=1 uid=67 nodes=9 mode=replay count=1
+ggml-log[1] CUDA Graph id 69 reused
+CUDA graph path active ctx=0x1002ae4c910 device=2 uid=69 nodes=9 mode=replay count=1
+CUDA graph path active ctx=0x1002e2aedc0 device=0 uid=65 nodes=9 mode=replay count=1
+CUDA graph path active ctx=0x1002e2b4db0 device=5 uid=76 nodes=9 mode=replay count=1
+CUDA graph path active ctx=0x1002e2b1400 device=2 uid=70 nodes=9 mode=replay count=1
+CUDA graph path active ctx=0x1002ae4a410 device=0 uid=66 nodes=9 mode=replay count=1
+CUDA graph path active ctx=0x1002ae4db90 device=3 uid=71 nodes=9 mode=replay count=1
+ggml-log[1] CUDA Graph id 74 reused
+CUDA graph path active ctx=0x1002ae50090 device=5 uid=74 nodes=9 mode=replay count=1
+ggml-log[1] CUDA Graph id 73 reused
+CUDA graph path active ctx=0x1002ae4ee10 device=4 uid=73 nodes=9 mode=replay count=1
+WARMUP-ROUND-END index=3 p2p_launches=144 delta=0 oracle_mismatches=0
+WARMUP-ROUND-BEGIN index=4 p2p_launches=144
+ggml-log[1] CUDA Graph id 71 reused
+ggml-log[1] CUDA Graph id 67 reused
+ggml-log[1] CUDA Graph id 66 reused
+CUDA graph path active ctx=0x1002ae4db90 device=3 uid=71 nodes=9 mode=replay count=2
+ggml-log[1] CUDA Graph id 72 reused
+ggml-log[1] CUDA Graph id 69 reused
+ggml-log[1] CUDA Graph id 73 reused
+CUDA graph path active ctx=0x1002e2b2720 device=3 uid=72 nodes=9 mode=replay count=2
+ggml-log[1] CUDA Graph id 68 reused
+ggml-log[1] CUDA Graph id 70 reused
+ggml-log[1] CUDA Graph id 74 reused
+CUDA graph path active ctx=0x1002e2b00e0 device=1 uid=68 nodes=9 mode=replay count=2
+ggml-log[1] CUDA Graph id 75 reused
+CUDA graph path active ctx=0x1002e2b3a90 device=4 uid=75 nodes=9 mode=replay count=2
+CUDA graph path active ctx=0x1002ae4a410 device=0 uid=66 nodes=9 mode=replay count=2
+ggml-log[1] CUDA Graph id 76 reused
+CUDA graph path active ctx=0x1002e2b4db0 device=5 uid=76 nodes=9 mode=replay count=2
+CUDA graph path active ctx=0x1002ae4b690 device=1 uid=67 nodes=9 mode=replay count=2
+CUDA graph path active ctx=0x1002ae4c910 device=2 uid=69 nodes=9 mode=replay count=2
+CUDA graph path active ctx=0x1002ae4ee10 device=4 uid=73 nodes=9 mode=replay count=2
+ggml-log[1] CUDA Graph id 65 reused
+CUDA graph path active ctx=0x1002e2b1400 device=2 uid=70 nodes=9 mode=replay count=2
+CUDA graph path active ctx=0x1002ae50090 device=5 uid=74 nodes=9 mode=replay count=2
+CUDA graph path active ctx=0x1002e2aedc0 device=0 uid=65 nodes=9 mode=replay count=2
+WARMUP-ROUND-END index=4 p2p_launches=144 delta=0 oracle_mismatches=0
+WARMUP-ROUND-BEGIN index=5 p2p_launches=144
+ggml-log[1] CUDA Graph id 71 reused
+ggml-log[1] CUDA Graph id 68 reused
+ggml-log[1] CUDA Graph id 74 reused
+ggml-log[1] CUDA Graph id 70 reused
+ggml-log[1] CUDA Graph id 73 reused
+ggml-log[1] CUDA Graph id 67 reused
+ggml-log[1] CUDA Graph id 66 reused
+ggml-log[1] CUDA Graph id 69 reused
+ggml-log[1] CUDA Graph id 65 reused
+ggml-log[1] CUDA Graph id 76 reused
+ggml-log[1] CUDA Graph id 75 reused
+ggml-log[1] CUDA Graph id 72 reused
+WARMUP-ROUND-END index=5 p2p_launches=144 delta=0 oracle_mismatches=0
+WARMUP-ROUND-BEGIN index=6 p2p_launches=144
+ggml-log[1] CUDA Graph id 71 reused
+ggml-log[1] CUDA Graph id 67 reused
+ggml-log[1] CUDA Graph id 72 reused
+ggml-log[1] CUDA Graph id 74 reused
+ggml-log[1] CUDA Graph id 66 reused
+ggml-log[1] CUDA Graph id 76 reused
+ggml-log[1] CUDA Graph id 70 reused
+ggml-log[1] CUDA Graph id 68 reused
+ggml-log[1] CUDA Graph id 65 reused
+ggml-log[1] CUDA Graph id 75 reused
+ggml-log[1] CUDA Graph id 73 reused
+ggml-log[1] CUDA Graph id 69 reused
+WARMUP-ROUND-END index=6 p2p_launches=144 delta=0 oracle_mismatches=0
+rmup-01 bank=1 n=1 oracle_mismatches=0
+phase-end name=concurrent-warmup-01 p2p_launches_after=96
+release-concurrent phase=concurrent-warmup-02 active_meta_contexts=2 p2p_launches_before=96
+owner-start phase=concurrent-warmup-02 bank=1 graph=0x1002f7c8a50
+owner-start phase=concurrent-warmup-02 bank=0 graph=0x1002de09f50
+observed phase=concurrent-warmup-02 bank=0 n=1 oracle_mismatches=0
+observed phase=concurrent-warmup-02 bank=1 n=1 oracle_mismatches=0
+phase-end name=concurrent-warmup-02 p2p_launches_after=144
+release-concurrent phase=concurrent-warmup-03 active_meta_contexts=2 p2p_launches_before=144
+owner-start phase=concurrent-warmup-03 bank=1 graph=0x1002f7c8a50
+owner-start phase=concurrent-warmup-03 bank=0 graph=0x1002de09f50
+observed phase=concurrent-warmup-03 bank=0 n=1 oracle_mismatches=0
+observed phase=concurrent-warmup-03 bank=1 n=1 oracle_mismatches=0
+phase-end name=concurrent-warmup-03 p2p_launches_after=144
+release-concurrent phase=concurrent-warmup-04 active_meta_contexts=2 p2p_launches_before=144
+owner-start phase=concurrent-warmup-04 bank=0 graph=0x1002de09f50
+owner-start phase=concurrent-warmup-04 bank=1 graph=0x1002f7c8a50
+observed phase=concurrent-warmup-04 bank=0 n=1 oracle_mismatches=0
+observed phase=concurrent-warmup-04 bank=1 n=1 oracle_mismatches=0
+phase-end name=concurrent-warmup-04 p2p_launches_after=144
+release-concurrent phase=concurrent-warmup-05 active_meta_contexts=2 p2p_launches_before=144
+owner-start phase=concurrent-warmup-05 bank=0 graph=0x1002de09f50
+owner-start phase=concurrent-warmup-05 bank=1 graph=0x1002f7c8a50
+observed phase=concurrent-warmup-05 bank=0 n=1 oracle_mismatches=0
+observed phase=concurrent-warmup-05 bank=1 n=1 oracle_mismatches=0
+phase-end name=concurrent-warmup-05 p2p_launches_after=144
+release-concurrent phase=concurrent-warmup-06 active_meta_contexts=2 p2p_launches_before=144
+owner-start phase=concurrent-warmup-06 bank=0 graph=0x1002de09f50
+owner-start phase=concurrent-warmup-06 bank=1 graph=0x1002f7c8a50
+observed phase=concurrent-warmup-06 bank=0 n=1 oracle_mismatches=0
+observed phase=concurrent-warmup-06 bank=1 n=1 oracle_mismatches=0
+phase-end name=concurrent-warmup-06 p2p_launches_after=144
+PASS bounded first-cold/warmup ranks=6 banks=2 n=1 rounds=6 p2p_ar_calls=144 warmup_launches=96 fallbacks=0 oracle_mismatches=0
+192:222230:222336 [0] NCCL INFO comm 0x1002ae68390 rank 0 nranks 6 cudaDev 0 busId 404000 - Destroy COMPLETE
+192:222230:222336 [5] NCCL INFO comm 0x1002b3c5e80 rank 5 nranks 6 cudaDev 5 busId 3505000 - Destroy COMPLETE
+192:222230:222336 [4] NCCL INFO comm 0x1002b2b32f0 rank 4 nranks 6 cudaDev 4 busId 3504000 - Destroy COMPLETE
+192:222230:222336 [3] NCCL INFO comm 0x1002b1a0760 rank 3 nranks 6 cudaDev 3 busId 3503000 - Destroy COMPLETE
+192:222230:222336 [2] NCCL INFO comm 0x1002b08dbd0 rank 2 nranks 6 cudaDev 2 busId 406000 - Destroy COMPLETE
+192:222230:222336 [1] NCCL INFO comm 0x1002af7afc0 rank 1 nranks 6 cudaDev 1 busId 405000 - Destroy COMPLETE
+192:222230:222342 [0] NCCL INFO comm 0x1002e2b6570 rank 0 nranks 6 cudaDev 0 busId 404000 - Destroy COMPLETE
+192:222230:222342 [5] NCCL INFO comm 0x1002e7e58c0 rank 5 nranks 6 cudaDev 5 busId 3505000 - Destroy COMPLETE
+192:222230:222342 [4] NCCL INFO comm 0x1002e6dc1b0 rank 4 nranks 6 cudaDev 4 busId 3504000 - Destroy COMPLETE
+192:222230:222342 [3] NCCL INFO comm 0x1002e5d2aa0 rank 3 nranks 6 cudaDev 3 busId 3503000 - Destroy COMPLETE
+192:222230:222342 [2] NCCL INFO comm 0x1002e4c9390 rank 2 nranks 6 cudaDev 2 busId 406000 - Destroy COMPLETE
+192:222230:222342 [1] NCCL INFO comm 0x1002e3bfc80 rank 1 nranks 6 cudaDev 1 busId 405000 - Destroy COMPLETE

@@ -1,0 +1,402 @@
+{
+  "all_six_active_overlap_percent": 5.782460364206161,
+  "analysis_window": {
+    "duration_ms": 10484.234129,
+    "end_us": 18609475925.064,
+    "kind": "single_request_prefill_trace_window",
+    "source": "R3 CUPTI prefill1 window_start_ns/window_stop_ns mapped by V14 start/stop host brackets",
+    "start_us": 18598991690.935
+  },
+  "clock_bracket": {
+    "analysis_window_cupti_ns_approx": [
+      1792099613729658934,
+      1792099624213893063
+    ],
+    "analysis_window_host_us_approx": [
+      18598991690.935,
+      18609475925.064
+    ],
+    "mapped_trace_window_host_us_approx": [
+      18598991690.935,
+      18609475925.064
+    ],
+    "mapping_source": "intersection of start/stop host brackets",
+    "selected_offset_bracket_ns": [
+      -1792081014737969063,
+      -1792081014737966934
+    ],
+    "selected_offset_midpoint_ns": -1792081014737967999,
+    "source": "V14 start/stop host-before/after brackets around R3 CUPTI timestamps",
+    "start_host_after_us": 18598991692,
+    "start_host_before_us": 18598991688,
+    "start_offset_bracket_ns": [
+      -1792081014737970934,
+      -1792081014737966934
+    ],
+    "stop_host_after_us": 18610972032,
+    "stop_host_before_us": 18609475924,
+    "stop_offset_bracket_ns": [
+      -1792081014737969063,
+      -1792081013241861063
+    ],
+    "uncertainty_us": 2.129,
+    "warnings": []
+  },
+  "collector": {
+    "abi": "ac922-cupti-window-markers-v1",
+    "frozen_sha256_allowlist": [
+      "2abfa4f07a034353dcc8ac18eee7f9af1aa6c571f36c630d98308b17bed873f2",
+      "2fd1c3400b7aa90583ff96ce2350d0f7f33682b85e4bcd2bf644c1d8f871309a"
+    ],
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cupti-window-20261016/r4/libac922-cupti-window.so",
+    "required_markers": [
+      "ac922_trace_prepare",
+      "ac922_trace_start",
+      "ac922_trace_stop",
+      "ac922_trace_last_error"
+    ],
+    "revision": "r4",
+    "sha256": "2fd1c3400b7aa90583ff96ce2350d0f7f33682b85e4bcd2bf644c1d8f871309a",
+    "verified": true
+  },
+  "cross_island_overlap_fraction_of_window_percent": 5.782460364206161,
+  "cross_island_overlap_ms": 606.246683,
+  "device_uuid_by_id": {
+    "0": "80452dace8c199fd225cea846276ae6f",
+    "1": "ac5b33c1276dc1ae15a646f7894daefb",
+    "2": "e6529eb8aa1f1d025d63dfb7995bf1eb",
+    "3": "fadb04594d30907b289a862b3014f165",
+    "4": "760ce50132f669b6215b1020da68bbfc",
+    "5": "d3558623decac7023cc001b4aa9c667a"
+  },
+  "island_mapping_source": "explicit --islands 0,1,2|3,4,5; trace UUID order is recorded; run manifest omitted CUDA_VISIBLE_DEVICES",
+  "kernel_category_device_busy_ms": {
+    "allreduce": 5854.490804,
+    "attention": 548.709327,
+    "gdn": 740.746248,
+    "moe": 3386.047485,
+    "other": 5698.446044
+  },
+  "kernel_top20": [
+    {
+      "count": 2304,
+      "name": "_Z19k_allreduce_p2p_segPfl11p2p_ar_args",
+      "sum_ms": 5854.175552
+    },
+    {
+      "count": 5040,
+      "name": "_ZN7cutlass7Kernel2I50cutlass_70_tensorop_s884gemm_f16_128x128_tn_align8EEvNT_6ParamsE",
+      "sum_ms": 862.341274
+    },
+    {
+      "count": 864,
+      "name": "_Z32gated_delta_net_cuda_128x4_voltaILb1EEvPKfS1_S1_S1_S1_S1_PfS2_llllllllllll5uint3S3_fliPKilll",
+      "sum_ms": 740.746248
+    },
+    {
+      "count": 19152,
+      "name": "_Z27convert_unary_cont_sat_vec4IfEvPKvP6__halfl",
+      "sum_ms": 588.877943
+    },
+    {
+      "count": 192,
+      "name": "_Z18flash_attn_ext_f16ILi256ELi256ELi16ELi4ELb0ELb0ELb0EEvPKcS1_S1_S1_S1_PKiPfP6float2ffffjfi5uint3iiiiiiiiiiiliiliiiiil",
+      "sum_ms": 544.63155
+    },
+    {
+      "count": 3456,
+      "name": "_Z13mm_ids_helperILi10EEvPKiPiS2_S2_iiiiibi",
+      "sum_ms": 449.375128
+    },
+    {
+      "count": 2304,
+      "name": "_Z16dsv4_hc_post_f32ILb0EEvPKfS1_S1_S1_Pfllllllllllllllll",
+      "sum_ms": 361.06978
+    },
+    {
+      "count": 2752,
+      "name": "volta_s884gemm_fp16_64x64_ldg8_tn",
+      "sum_ms": 353.062149
+    },
+    {
+      "count": 4659,
+      "name": "_Z12rms_norm_f32ILi1024ELb1ELb0EEvPKfPfilllfS1_lll5uint3S3_S3_S3_S1_lllS3_S3_S3_S3_",
+      "sum_ms": 347.647368
+    },
+    {
+      "count": 720,
+      "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type42ELi64ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+      "sum_ms": 344.184336
+    },
+    {
+      "count": 720,
+      "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type42ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+      "sum_ms": 334.52864
+    },
+    {
+      "count": 624,
+      "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type21ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+      "sum_ms": 319.786123
+    },
+    {
+      "count": 3072,
+      "name": "_Z15dsv4_hc_pre_f32ILb1EEvPKfS1_Pflllllllllllf",
+      "sum_ms": 285.795035
+    },
+    {
+      "count": 4128,
+      "name": "volta_s884gemm_fp16_128x128_ldg8_tn",
+      "sum_ms": 258.369009
+    },
+    {
+      "count": 624,
+      "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type21ELi64ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+      "sum_ms": 255.114862
+    },
+    {
+      "count": 480,
+      "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type22ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+      "sum_ms": 245.189904
+    },
+    {
+      "count": 480,
+      "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type17ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+      "sum_ms": 240.633318
+    },
+    {
+      "count": 480,
+      "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type22ELi64ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+      "sum_ms": 237.01144
+    },
+    {
+      "count": 480,
+      "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type17ELi64ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+      "sum_ms": 229.240745
+    },
+    {
+      "count": 432,
+      "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type20ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+      "sum_ms": 228.999358
+    }
+  ],
+  "per_island_busy_any_gpu_ms": {
+    "island0": 3288.17184,
+    "island1": 3553.480923
+  },
+  "runtime_api": {
+    "api_interval_union_ms": 5511.782254,
+    "api_interval_union_percent_of_analysis_window": 52.57210194070438,
+    "by_category": {
+      "event_api": {
+        "calls": 6388,
+        "host_api_union_ms": 38.929671,
+        "host_api_union_percent_of_analysis_window": 0.3713163071427246,
+        "sum_of_clipped_call_durations_ms": 38.929671
+      },
+      "launch": {
+        "calls": 65498,
+        "host_api_union_ms": 1432.596129,
+        "host_api_union_percent_of_analysis_window": 13.66428974566064,
+        "sum_of_clipped_call_durations_ms": 2767.312929
+      },
+      "memcpy_memset_api": {
+        "calls": 14902,
+        "host_api_union_ms": 141.678743,
+        "host_api_union_percent_of_analysis_window": 1.3513504301483346,
+        "sum_of_clipped_call_durations_ms": 143.596183
+      },
+      "other_runtime_api": {
+        "calls": 148364,
+        "host_api_union_ms": 765.069094,
+        "host_api_union_percent_of_analysis_window": 7.297329347918457,
+        "sum_of_clipped_call_durations_ms": 1044.268119
+      },
+      "sync_wait": {
+        "calls": 8883,
+        "host_api_union_ms": 3223.930471,
+        "host_api_union_percent_of_analysis_window": 30.750271610993703,
+        "sum_of_clipped_call_durations_ms": 3223.930471
+      }
+    },
+    "correlation_coverage_percent": 93.15291563275434,
+    "gpu_correlation_ids": 51584,
+    "matched_runtime_gpu_correlation_ids": 48052,
+    "runtime_correlation_ids": 244035,
+    "semantics": "union of CUPTI runtime API host intervals; excludes non-runtime host work and may overlap across threads",
+    "top_api_sum_durations": [
+      {
+        "api_name": "cudaStreamSynchronize_v3020",
+        "calls": 7134,
+        "sum_duration_ms": 3210.809284
+      },
+      {
+        "api_name": "cudaGraphLaunch_v10000",
+        "calls": 1125,
+        "sum_duration_ms": 2141.886269
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "calls": 64373,
+        "sum_duration_ms": 625.42666
+      },
+      {
+        "api_name": "cudaGraphInstantiate_v12000",
+        "calls": 225,
+        "sum_duration_ms": 592.399885
+      },
+      {
+        "api_name": "cudaGraphDestroy_v10000",
+        "calls": 102,
+        "sum_duration_ms": 92.384252
+      },
+      {
+        "api_name": "cudaMemcpyAsync_v3020",
+        "calls": 6890,
+        "sum_duration_ms": 81.489936
+      },
+      {
+        "api_name": "cudaMallocHost_v3020",
+        "calls": 96,
+        "sum_duration_ms": 81.391713
+      },
+      {
+        "api_name": "cudaGraphExecDestroy_v10000",
+        "calls": 102,
+        "sum_duration_ms": 65.980013
+      },
+      {
+        "api_name": "cudaMemsetAsync_v3020",
+        "calls": 7802,
+        "sum_duration_ms": 57.204164
+      },
+      {
+        "api_name": "cudaMalloc_v3020",
+        "calls": 20,
+        "sum_duration_ms": 56.585376
+      },
+      {
+        "api_name": "cudaGetDevice_v3020",
+        "calls": 73795,
+        "sum_duration_ms": 33.443153
+      },
+      {
+        "api_name": "cudaFreeHost_v3020",
+        "calls": 96,
+        "sum_duration_ms": 26.539535
+      },
+      {
+        "api_name": "cudaGetLastError_v3020",
+        "calls": 56379,
+        "sum_duration_ms": 22.745653
+      },
+      {
+        "api_name": "cudaEventElapsedTime_v3020",
+        "calls": 1632,
+        "sum_duration_ms": 17.961967
+      },
+      {
+        "api_name": "cudaEventRecord_v3020",
+        "calls": 3295,
+        "sum_duration_ms": 13.878055
+      },
+      {
+        "api_name": "cudaFree_v3020",
+        "calls": 20,
+        "sum_duration_ms": 13.18083
+      },
+      {
+        "api_name": "cudaFuncGetAttributes_v3020",
+        "calls": 33,
+        "sum_duration_ms": 11.337463
+      },
+      {
+        "api_name": "cudaFuncSetAttribute_v9000",
+        "calls": 156,
+        "sum_duration_ms": 10.944057
+      },
+      {
+        "api_name": "cudaSetDevice_v3020",
+        "calls": 7260,
+        "sum_duration_ms": 9.457241
+      },
+      {
+        "api_name": "cudaGraphExecUpdate_v10020",
+        "calls": 225,
+        "sum_duration_ms": 9.304188
+      },
+      {
+        "api_name": "cudaOccupancyMaxActiveBlocksPerMultiprocessor_v6050",
+        "calls": 4190,
+        "sum_duration_ms": 7.155442
+      },
+      {
+        "api_name": "cudaEventSynchronize_v3020",
+        "calls": 789,
+        "sum_duration_ms": 6.468678
+      },
+      {
+        "api_name": "cudaEventQuery_v3020",
+        "calls": 831,
+        "sum_duration_ms": 5.944021
+      },
+      {
+        "api_name": "cudaStreamBeginCapture_v10000",
+        "calls": 225,
+        "sum_duration_ms": 4.482755
+      },
+      {
+        "api_name": "cudaDeviceSynchronize_v3020",
+        "calls": 6,
+        "sum_duration_ms": 3.570825
+      },
+      {
+        "api_name": "cudaDeviceGetAttribute_v5000",
+        "calls": 5074,
+        "sum_duration_ms": 3.130542
+      },
+      {
+        "api_name": "cudaStreamWaitEvent_v3020",
+        "calls": 954,
+        "sum_duration_ms": 3.081684
+      },
+      {
+        "api_name": "cudaMemcpy2DAsync_v3020",
+        "calls": 162,
+        "sum_duration_ms": 2.714273
+      },
+      {
+        "api_name": "cudaStreamEndCapture_v10000",
+        "calls": 225,
+        "sum_duration_ms": 2.227278
+      },
+      {
+        "api_name": "cudaMemcpyPeerAsync_v4000",
+        "calls": 48,
+        "sum_duration_ms": 2.18781
+      }
+    ]
+  },
+  "same_island_pairwise_overlap_ms": {
+    "0:1": 2433.333765,
+    "0:2": 2357.418148,
+    "1:2": 2403.697482,
+    "3:4": 2254.628065,
+    "3:5": 2111.754023,
+    "4:5": 2202.964921
+  },
+  "status": "valid_diagnostic_profile",
+  "trace_integrity": {
+    "buffer_starvation_selected_window": 0,
+    "dropped_pre_window_phase": 0,
+    "dropped_prepare_phase": 0,
+    "dropped_read_total": 0,
+    "dropped_selected_window_phase": 0,
+    "events_stored": 405995,
+    "kernel_records_in_window": 154178,
+    "parse_errors_selected_window": 0,
+    "record_overflow": 0,
+    "trace_valid": true,
+    "untimed_activity_records_during_window": 0
+  },
+  "trace_sha256": "bd7f2909ce953f41ad2798696f9d999adb71b7cebb41fd91cf2bfe24e8bfe65f"
+}

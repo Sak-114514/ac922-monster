@@ -1,0 +1,22 @@
+CASE_BEGIN name=IQ4_NL/blk.35.ffn_down_exps.weight tokens=32 quick=1
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+ROUTE name=balanced_uniform tokens=32 topk=10 assignments=320 experts=320 min=0 max=1
+PHASE_BEGIN name=copy_route_ids wall_ms=97082400
+PHASE_END name=copy_route_ids wall_ms=97082400
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+PHASE_BEGIN name=kernel_attributes wall_ms=97082401
+PHASE_END name=kernel_attributes wall_ms=97082402
+PHASE_NODE name=dequant_f16 wall_ms=97082402
+PHASE_NODE name=mmf_id_compact wall_ms=97082404
+PHASE_NODE name=mmf_grouped_core wall_ms=97082404
+PHASE_NODE name=mmq_id_offsets_q8_scatter wall_ms=97082404
+PHASE_NODE name=mmq_grouped_core wall_ms=97082411
+PHASE_BEGIN name=dequant_f16 wall_ms=97082411
+PHASE_END name=dequant_f16 gpu_ms=2.521
+PHASE_BEGIN name=mmf_id_compact wall_ms=97082431
+PHASE_END name=mmf_id_compact gpu_ms=0.018
+PHASE_BEGIN name=maps_dtoh_validate wall_ms=97082451
+MAPS_DTOH_PASS tokens=32 assignments=320 experts_nonzero=320 bounds_tail=320 exact=1
+PHASE_END name=maps_dtoh_validate wall_ms=97082451
+PHASE_BEGIN name=mmf_grouped_core wall_ms=97082451
+PHASE_TIMEOUT_ABORT name=mmf_grouped_core wall_ms=97097468

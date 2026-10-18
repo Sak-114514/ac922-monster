@@ -1,0 +1,14 @@
+built mode=cpu binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/gdn-x4-probe/build/gdn-x4-cpu runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v71
+view-check snapshot parent=1081344 offset=32768 size=4194304
+fixture=gdn-x4-batch-serial mode=cpu device=CPU width=128 heads=4 tokens_per_seq=4 sequences=4 initial_state_rows=6,2,5,1 rollback_ring_rows=8
+/root/setup/llama.cpp/ggml/src/ggml.c:1744: GGML_ASSERT(view_src == NULL || data_size == 0 || data_size + view_offs <= ggml_nbytes(view_src)) failed
+/usr/local/lib/libggml-base.so.0(+0x19cc8)[0x7fff956c9cc8]
+/usr/local/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fff956ca2c8]
+/usr/local/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fff956ca464]
+/usr/local/lib/libggml-base.so.0(+0x1bcd8)[0x7fff956cbcd8]
+/usr/local/lib/libggml-base.so.0(ggml_view_3d+0x64)[0x7fff956d3a74]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/gdn-x4-probe/build/gdn-x4-cpu(+0x3e14)[0x107003e14]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/gdn-x4-probe/build/gdn-x4-cpu(+0x25bc)[0x1070025bc]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fff94fe4d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fff94fe4f6c]
+./run-gdn-x4-probe.sh: line 18: 149293 Aborted                 env -u GGML_CUDA_VOLTA_GDN_X4 -u GGML_OPTIMIZATION_PATH_LOG "$OUT" cpu

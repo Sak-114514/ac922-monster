@@ -1,0 +1,649 @@
+{
+  "schema": "v197-fourbank-depth-profile-v1",
+  "status": "V197_V196_GO_READY",
+  "runner_lineage": {
+    "base_runner": "fixtures/layer6-fourbank-v146-20261017/dual-context-v146-fourbank-layer6.cpp",
+    "base_runner_sha256": "9a5a6671618ab15138bb3fd40fe3b8711fc8ef35bf07e1de2d86711361fe6740",
+    "generator": "notes/prepare-v197.py",
+    "generated_runner": "fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/dual-context-v197-fourbank-depth.cpp",
+    "generated_runner_sha256": "f5f25f4b67ae7f4a35894687d3de718dda5274372d5eea76747586e6d1d93a31",
+    "model_loads": 1,
+    "engine_source_modified": false,
+    "cuda_source_modified": false,
+    "binary_origin_runtime_build_id": null,
+    "selected_runtime_build_id": "20261017T041709.736607Z",
+    "target_pad_header": "fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/target-verify-pad-plan-v197.h",
+    "target_pad_header_sha256": "35550ae6e29758ed5e7940408b85d3e527dc07c0f743c350267ab6b11266ae02",
+    "families": [
+      "fourbank16k-d2"
+    ],
+    "family_order": [
+      "d2"
+    ]
+  },
+  "runtime": {
+    "status": "FROZEN_V196",
+    "name": "runtime-perf-v196",
+    "build_id": "20261017T041709.736607Z",
+    "report": "notes/V196-build.json",
+    "report_sha256": "71ab653693b9d96d0c830d7d3a6feb8f61b7792350822d4750522bb0ceea9b18",
+    "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v196",
+    "runtime_library_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v196/lib",
+    "loaded_runner_dso_sha256": {},
+    "v169_report_sha256_verified_remotely": true
+  },
+  "split": {
+    "mode": "LLAMA_SPLIT_MODE_LAYER",
+    "visible_plain_cuda_devices": 6,
+    "tensor_split_relative_weights": [
+      10,
+      10,
+      9,
+      7,
+      8,
+      6
+    ],
+    "cumulative_normalized_boundaries": [
+      0.2,
+      0.4,
+      0.58,
+      0.72,
+      0.88,
+      1.0
+    ],
+    "actual_layer_device_map": [
+      {
+        "logical_gpu": 0,
+        "blocks": "0-9",
+        "includes_output": false
+      },
+      {
+        "logical_gpu": 1,
+        "blocks": "10-19",
+        "includes_output": false
+      },
+      {
+        "logical_gpu": 2,
+        "blocks": "20-28",
+        "includes_output": false
+      },
+      {
+        "logical_gpu": 3,
+        "blocks": "29-35",
+        "includes_output": false
+      },
+      {
+        "logical_gpu": 4,
+        "blocks": "36-43",
+        "includes_output": false
+      },
+      {
+        "logical_gpu": 5,
+        "blocks": "44-48",
+        "includes_output": true
+      }
+    ],
+    "loader_owner_rule_source": "src/src/llama-model.cpp:1509-1510,1564-1567",
+    "expected_debug_owner_lines": 50,
+    "no_expert_parallelism_or_allreduce": true,
+    "all_recurrent_blocks_plus_output_offloaded": true,
+    "input_embedding_expected_on_cpu": true,
+    "runtime_ownership_gate": {
+      "expected_layer_owner_records": 50,
+      "cpu_global_tensor_names": [
+        "token_embd.weight",
+        "per_layer_token_embd.weight"
+      ],
+      "cpu_global_source_bytes": 29073290240,
+      "forbid_cpu_expert_weight_fallback": true,
+      "requires_actual_loader_buffer_summary": true,
+      "output_weight_owner": "logical GPU 5; independently present, not tied to token_embd.weight"
+    }
+  },
+  "memory_ledger": {
+    "source": "V146 overlay, based on V131/V143 runtime logs and V122 layer-byte ledger",
+    "v146_basis": {
+      "source": "V131/V143 one-bank runtime logs plus V122 static layer-byte ledger",
+      "fit_claim": false,
+      "gpu5_embedding_replica_mib_per_mtp_context": 260.5,
+      "gpu5_embedding_replica_total_if_context_local_mib": 1042.0,
+      "v131_target_compute_mib_per_context_by_gpu": [
+        709.42,
+        949.42,
+        949.42,
+        949.42,
+        949.42,
+        916.92
+      ],
+      "v131_mtp_compute_mib_per_context_gpu5": 409.75,
+      "v131_mtp_cuda_host_compute_mib_per_context": 156.13,
+      "v143_min_free_mib_one_context_observed": [
+        3870,
+        4074,
+        3728,
+        4252,
+        3845,
+        3919
+      ],
+      "gpu5_fourbank_free_estimate_at_ub1024_mib": -989,
+      "gpu5_workspace_saving_at_ub256_if_linear_mib": 2063.07,
+      "gpu5_fourbank_free_estimate_at_ub256_if_linear_mib": 1074.07,
+      "selected_target_ubatch": 256,
+      "draft_ubatch_unchanged": 512,
+      "workspace_scaling_assumption": "target scheduler workspace scales linearly with ubatch from the V131/V143 observed GPU5 916.92-MiB per-context buffer; planning estimate only, no fit claim",
+      "gpu5_risk": "The UB256 projection adds about 2063 MiB of estimated GPU5 headroom over the UB1024 projection, but four-context CUDA graph allocation, KV/GDN state, and allocator behavior are nonlinear; runtime must still retain at least 512 MiB free on every GPU."
+    },
+    "fit_claim": false,
+    "minimum_gpu_free_mib": 512,
+    "gpu_temperature_ceiling_c": 58
+  },
+  "prefill_scenarios": {
+    "scenario_provenance": "fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/results/v197-scenario-provenance.json",
+    "scenario_provenance_sha256": "c696a0f8ec713ea35a6e84c81a5fefad14403562a3d4f2e61a61cade2a29a987",
+    "families": {
+      "d2": {
+        "scenario_file": "v197-d2-scenarios.json",
+        "scenario_sha256": "22c0a307010a3f70704f228f11e7965a19b44fa66f70acd77b4053a90d9038ab",
+        "family_labels": [
+          "v197-d2-native-fourbank-canary",
+          "v197-d2-fourbank-4x16k-512"
+        ],
+        "prompt_tokens_per_bank": 16384,
+        "output_tokens_per_bank": 512,
+        "context_per_bank": 17152,
+        "lookahead_tokens": 2,
+        "context_slack_tokens": 253,
+        "mtp_pad_rows": 6,
+        "draft_rows_plus_seed": 3,
+        "performance_slices": [
+          [
+            0,
+            16384
+          ],
+          [
+            16384,
+            32768
+          ],
+          [
+            32768,
+            49152
+          ],
+          [
+            49152,
+            65536
+          ]
+        ],
+        "raw_performance_outputs_semantically_scored": false,
+        "require_generic_gpu_chain_observed": true
+      }
+    },
+    "family_order": [
+      "d2"
+    ],
+    "native_semantic_gate_precedes_performance_in_each_family": true,
+    "raw_performance_outputs_semantically_scored": false,
+    "one_real_model_vocab_tokenized_4x16k_scenario_per_family": true
+  },
+  "pipeline_parallel": {
+    "requested_by_runner": false,
+    "selection": "stock llama_context auto predicate in src/src/llama-context.cpp:1131-1158",
+    "offload_kqv_source_default": "llama_context_default_params initializes offload_kqv=true; common_params has no offload_kqv member",
+    "conditions": [
+      "six devices",
+      "n_gpu_layers > n_layer_all",
+      "LAYER split",
+      "offload_kqv",
+      "no tensor overrides",
+      "all devices async+events"
+    ],
+    "scheduler_parallel_argument": "cparams.pipeline_parallel",
+    "copies_when_auto_enabled": 4,
+    "copy_count_source": "src/ggml/src/ggml-backend.cpp:789-790,3579",
+    "runtime_confirmation": "require the actual pipeline parallelism enabled log and reject any reserve fallback; no overlap claim from host profile"
+  },
+  "ple": {
+    "gpu_nodes": 6,
+    "gpu_prefix_gib_total": 12,
+    "gpu_stripe_gib_each": 2,
+    "cpu_ddr_remainder_gib_source": 14.822218894958496,
+    "cpu_nodes": [
+      0,
+      8
+    ],
+    "runtime_exact_gate": {
+      "chunks": 859,
+      "bytes": 28800138240,
+      "memcmp_exact": true,
+      "require_each_gpu_stripe_actual_pages": true
+    },
+    "gpu_stripes_verified_gate": {
+      "required_count": 6,
+      "required_marker": "ple-numa: gpu_stripes_verified=6 per_stripe_exact=1",
+      "source_marker_template": "ple-numa: gpu_stripes_verified=%zu per_stripe_exact=1",
+      "must_follow_per_device_actual_placement_checks": true
+    },
+    "source_page_verification": {
+      "source": "src/src/llama-ple-numa.h:573-577",
+      "status": "SOURCE_LOOP_FIXED_RUNTIME_UNVERIFIED",
+      "issue": null,
+      "core_loop_uses_configured_gpu_count": true,
+      "blocks_six_gpu_placement_proof_until_core_fix": false,
+      "required_verified_gpu_stripes": 6
+    }
+  },
+  "safety": {
+    "gpu_temp_ceiling_c": 58,
+    "bmc_temp_ceiling_c": 58,
+    "gpu_free_floor_mib": 512,
+    "automatic_retry": false,
+    "gpu_reset": false,
+    "model_loaded": false,
+    "gpu_touched": false,
+    "runner_host_linked": true,
+    "engine_cuda_rebuild": false,
+    "runtime_max_seconds": 1800,
+    "model_loads": 1,
+    "fan_targets_mutated": false,
+    "power_caps_mutated": false,
+    "ddr_free_stop_threshold": null,
+    "physical_ddr_free_policy": "record-only; not a stop threshold",
+    "runner_reused_without_recompile": true,
+    "runtime_build_id": "20261017T041709.736607Z"
+  },
+  "host_build": {
+    "status": "ROOT_AUTHORIZED_FOR_HOST_LINK",
+    "script": "fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/build-v197-host.sh",
+    "runner_source": "fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/dual-context-v197-fourbank-depth.cpp",
+    "runner_source_sha256": "f5f25f4b67ae7f4a35894687d3de718dda5274372d5eea76747586e6d1d93a31",
+    "target_pad_header": "fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/target-verify-pad-plan-v197.h",
+    "target_pad_header_sha256": "35550ae6e29758ed5e7940408b85d3e527dc07c0f743c350267ab6b11266ae02",
+    "remote_build_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/build-root-v197-v196",
+    "runner_binary_remote": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/build-root-v197-v196/dual-context-v197-fourbank-depth",
+    "runtime_name": "runtime-perf-v196",
+    "runtime_build_id": "20261017T041709.736607Z",
+    "runtime_report_sha256": "71ab653693b9d96d0c830d7d3a6feb8f61b7792350822d4750522bb0ceea9b18",
+    "runtime_dso_sha256": {},
+    "translation_units": 1,
+    "engine_cuda_rebuild": false,
+    "model_loads": 0,
+    "gpu_touched": false,
+    "runner_binary_sha256": "349cc5e2431b356efc2926877beefdcf9aa5070db5fcd2080723964bd78c9941",
+    "build_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/build-root-v197-v196",
+    "runner_build_record": "fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/results/v197-runner-build.json",
+    "runner_build_record_remote": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/build-root-v197-v196/v197-runner-build.json",
+    "profile_at_link_remote": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/build-root-v197-v196/v197-profile-at-link.json",
+    "profile_at_link_sha256": "428d019f868c957ddef7fc65763bad3d6b2424451cb85ed6a5261c9af8343e4e",
+    "runner_build_record_sha256": "a400b6c6bee0d67fea8c6c7e5a75b03aab45528e07b2a944a70b2eb1d56e6397",
+    "ldd_report_sha256": "ab58bee1d5a2d7f60f7fb3b6434178d67ca3df02f650478bcf374f014ce60edd",
+    "compile_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "environment": {
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "LD_LIBRARY_PATH": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v196/lib",
+    "ROOT_RUNTIME_REVISION": "20261017T041709.736607Z",
+    "ROOT_DYNAMIC_LIB_DIR": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v196/lib",
+    "ROOT_BUILD_REPORT": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V169-build.json",
+    "CUDA_VISIBLE_DEVICES": "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+    "GGML_CUDA_P2P": "1",
+    "LLAMA_ISLAND_SPLIT": null,
+    "LLAMA_EXPERT_PARALLEL": "0",
+    "LLAMA_HIERARCHICAL_EP6": "0",
+    "LLAMA_DRAFT_DETP": "0",
+    "LLAMA_PLE_SHARD": "0",
+    "LLAMA_PLE_SHARD_ROWS": "0",
+    "LLAMA_PLE_NUMA_HYBRID": "1",
+    "LLAMA_PLE_NUMA_GPU_NODES": "6",
+    "LLAMA_PLE_NUMA_GPU_GIB": "18",
+    "LLAMA_QSA_INDEXER_IMPL": "standard",
+    "LLAMA_QSA_SPARSE_KERNEL": "1",
+    "LLAMA_QSA_GATHER_MAX_TOKENS": "32",
+    "LLAMA_QSA_STANDARD_SPARSE": "1",
+    "LLAMA_QSA_STANDARD_HEAD_LOOP": "1",
+    "LLAMA_QSA_BIAS_DEVICE": "1",
+    "GGML_CUDA_GET_ROWS_NARROW": "1",
+    "GGML_CUDA_MOE_GROUPED": "1",
+    "GGML_CUDA_MOE_ADAPTIVE_J": "1",
+    "GGML_CUDA_MOE_FUSED_T16": "1",
+    "GGML_CUDA_TOPK_STABLE": "1",
+    "GGML_CUDA_VOLTA_GDN_X4": "1",
+    "GGML_SM70_BF16_GEMV": "1",
+    "GGML_SM70_MOE_REWORK": "1",
+    "GGML_SM70_BF16_DECODE_PANEL": "1",
+    "GGML_CUDA_GRAPH_OPT": "1",
+    "GGML_CUDA_GRAPH_STRUCTURAL": "1",
+    "GGML_CUDA_GRAPH_STRUCTURAL_TRACE": "1",
+    "GGML_CUDA_GRAPH_STRUCTURAL_MAX_NODES": "16384",
+    "GGML_CUDA_GRAPH_PATH_LOG": "1",
+    "GGML_CUDA_GRAPH_SNAPSHOT_CACHE": "1",
+    "GGML_FT_GRAPH_CACHE": "1",
+    "GGML_FT_GRAPH_CACHE_MIN_NODES": "32",
+    "GGML_OPTIMIZATION_PATH_LOG": "1",
+    "GGML_SM70_DECODE_LINEAR_CHUNKS": "4",
+    "GGML_SM70_DECODE_LINEAR_PACKED": "1",
+    "LLAMA_PLE_PREFETCH": "1",
+    "LLAMA_PLE_NUMA_CPU_BALANCE": "1",
+    "LLAMA_PLE_ONECAT": "0",
+    "GGML_CUDA_FATTN_ONECAT": "1",
+    "LLAMA_HC_FUSED": "1",
+    "LLAMA_QWEN4EXP_HC_FUSION": "0",
+    "LLAMA_MTP_FOLD": "1",
+    "LLAMA_MTP_FOLD_MULTI": "0",
+    "LLAMA_MTP_SEQ_LAYOUT": "1",
+    "LLAMA_MTP_GPU_CHAIN": "1",
+    "LLAMA_MTP_GPU_CHAIN_SINGLE": "1",
+    "LLAMA_MTP_GPU_CHAIN_MULTI": "0",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED": "1",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED_DEPTH": "2",
+    "LLAMA_MTP_UNROLL_VARIABLE_LANES": "0",
+    "LLAMA_MTP_UNROLL_D3_LANES4": "0",
+    "LLAMA_MTP_GPU_EMBED": "1",
+    "LLAMA_MTP_DRAFT_GRAPH_CACHE": "0",
+    "LLAMA_MTP_DRAFT_GRAPH_CACHE_LOG": "1",
+    "LLAMA_MTP_FUSE_CATCHUP_SEED": "1",
+    "LLAMA_MTP_N_UBATCH": "512",
+    "LLAMA_MTP_PAD": "6",
+    "LLAMA_MTP_FIXED_PREFIX_ROWS": "0",
+    "LLAMA_MTP_VERIFY_ROW_BUDGET": "3",
+    "LLAMA_GPU_ARGMAX": "1",
+    "LLAMA_ARGMAX_PINNED_OUTPUT": "1",
+    "LLAMA_GPU_ARGMAX_UNIQUE": "1",
+    "LLAMA_GREEDY_SUPPRESSION_FAST": "1",
+    "LLAMA_MTP_KV_ONLY_PREFILL": "1",
+    "LLAMA_MTP_RELEASE_PREFILL_HISTORY": "1",
+    "LLAMA_MTP_FIFO": "0",
+    "LLAMA_TARGET_FIFO_MULTI": "0",
+    "ROOT_MTP_DEPTH": "2",
+    "ROOT_TARGET_VERIFY_PAD_PER_ACTIVE_LANE": "1",
+    "ROOT_WARMUP_FRAMES": "4",
+    "ROOT_UBATCH": "256",
+    "ROOT_PREFILL_BATCH": "4096",
+    "ROOT_KV_UNIFIED": "0",
+    "ROOT_BANK_LANES": "1",
+    "ROOT_PER_SEQUENCE_CONTEXT": "17152",
+    "ROOT_BANK_CTX": "17152",
+    "ROOT_KV_VARIANT": "per_seq_16k_plus_mtp_pad6_x1",
+    "ROOT_V131_LONG_ONLY": "1",
+    "ROOT_V131_CORPUS_SOURCE": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/v45-real-corpus-source.json",
+    "ROOT_PREFILL_LOGITS_DIR": "off",
+    "ROOT_PREFILL_LOGITS_BEFORE_MTP": "0",
+    "ROOT_SERIAL_CPU_SUBMIT": "0",
+    "ROOT_SERVER_MTP_KV_POLICY": "1",
+    "ROOT_CUPTI_PHASE": "off",
+    "ROOT_NSYS_PREFILL_PROFILE": "0",
+    "ROOT_FATAL_BACKTRACE": "1",
+    "LLAMA_STEP_TIMING": "1",
+    "LLAMA_STEP_TIMING_PERIOD": "32",
+    "CUDA_DEVICE_MAX_CONNECTIONS": "32",
+    "LLAMA_PREFILL_FRAME_PIPELINE": "0",
+    "LLAMA_PREFILL_LAZY_RESERVE": "0",
+    "LLAMA_TURBOPREFILL": "0",
+    "ROOT_TURBOPREFILL": "0",
+    "LLAMA_FIFO_SINGLE_ISLAND": "0",
+    "LLAMA_QSA_COMPACT_MASK": "1",
+    "LLAMA_QSA_COMPACT_MASK_NATIVE": "1",
+    "LLAMA_PREFILL_FIXED_UBATCH": "1",
+    "LLAMA_PREFILL_KV_PAD": "8192",
+    "LLAMA_DECODE_KV_PAD": "8192",
+    "LLAMA_SPEC_PAD_MULTI": "20",
+    "LLAMA_SPEC_PAD_MULTI_AUTO": "1",
+    "LLAMA_LOAD_RECLAIM_GPU_PAGES": "1",
+    "LLAMA_LOAD_RECLAIM_GPU_PAGES_STREAM": "1",
+    "LLAMA_LOAD_PREFETCH": "0",
+    "LLAMA_MONOMOE_SM70": "0",
+    "GGML_CUDA_VOLTA_Q8_HEAD_TC": "0",
+    "GGML_SM70_FUSED_PROJ": "0",
+    "GGML_CUDA_IQ2S_VOLTA_EP": "0",
+    "GGML_CPU_PLE_PAGE_BATCH": "1",
+    "GGML_CPU_PLE_PAGE_BATCH_LOG_PERIOD": "1",
+    "GGML_CPU_PLE_GET_ROWS_THREADS": "32",
+    "GGML_CPU_PLE_DECODE_THREADS": "4",
+    "LLAMA_QSA_POOLED_SINGLE": "0",
+    "LLAMA_QSA_POOLED_MULTI": "0",
+    "LLAMA_QSA_MULTI_CELL_SEL": "0",
+    "LLAMA_PREFILL_FAIR_SHARE": "1",
+    "GGML_META_ASYNC_INPUTS": "0",
+    "GGML_META_ASYNC_COPY": "0",
+    "GGML_META_CPU_ASYNC_COPY": "0",
+    "GGML_META_CPU_ASYNC_COPY_BUDGET_MIB": null,
+    "GGML_META_CPU_ASYNC_COPY_MAX_BYTES": null,
+    "GGML_META_NCCL_MIN_BYTES": "0",
+    "GGML_CUDA_NCCL_F32": "0",
+    "GGML_CUDA_ALLREDUCE": null,
+    "GGML_CUDA_P2P_AR_DISABLE": "1",
+    "GGML_CUDA_P2P_AR_RELAY6": "0",
+    "GGML_CUDA_P2P_AR_RELAY6_ORDERED": "0",
+    "GGML_CUDA_P2P_AR_ELIDE_UNUSED_SEGMENT": "0",
+    "GGML_CUDA_P2P_AR_RELAY_LEADER_STAGE": "0",
+    "GGML_META_FIFO_PIPELINE": "0",
+    "GGML_META_GPU_EVENT_WAIT": "0",
+    "GGML_CUDA_META_COPY_GPU_WAIT": "0",
+    "GGML_CUDA_META_COPY_TOPOLOGY": "0",
+    "GGML_META_FRAGMENT_PARENT_SIG": "0",
+    "GGML_META_FRAGMENT_CACHE": "0",
+    "GGML_META_PARENT_WALK_FAST": "0",
+    "GGML_META_CONTEXT_VIEWS": "0",
+    "GGML_META_REPLAY_GUARD": "0",
+    "GGML_META_NESTED_EXPERIMENTAL": "0",
+    "GGML_META_NESTED_GPU_AR": "0",
+    "GGML_META_NESTED_COMPOSE": "0",
+    "GGML_META_NESTED_ASYNC": "0",
+    "GGML_META_SHARED_DEVICE_COPY": "0",
+    "GGML_META_GPU_SPANS": "0",
+    "GGML_META_GPU_SPANS_PERIOD": "0",
+    "GGML_TURBOPREFILL_TRACE": "0",
+    "OMP_WAIT_POLICY": "PASSIVE",
+    "GOMP_SPINCOUNT": "0",
+    "LLAMA_GRAPH_REUSE_DISABLE": "0",
+    "LLAMA_LAYER_PREFILL_REBUILD": "1",
+    "GGML_SCHED_LAYER_PINNED_INPUTS": "1",
+    "GGML_SCHED_LAYER_PINNED_CAP_MIB": "256",
+    "CUDA_SCALE_LAUNCH_QUEUES": "4x",
+    "GGML_SCHED_ALLOC_TIMING": "1",
+    "ROOT_BANK_COUNT": "4",
+    "ROOT_PROFILE_KIND": "fourbank16k-d2",
+    "GGML_CUDA_GRAPHS_FORCE": "0",
+    "GGML_SCHED_STABLE_CPU_INPUT_LEAFS": "1",
+    "GGML_SCHED_ALLOC_TIMING_ALL": "1",
+    "LLAMA_MTP_UNROLL_SINGLE_LANE": "1",
+    "GGML_SCHED_LAYER_PEER_REUSE_FENCE": "1",
+    "LLAMA_QSA_DECODE_FUSED_INDEXER": "1",
+    "LLAMA_QSA_INDEXER_TRACE": "1",
+    "LLAMA_MTP_PREFILL_HISTORY_LAST_ONLY": "1",
+    "LLAMA_MTP_UNROLL_DEDICATED_SCHED": "1",
+    "LLAMA_FULL_STEP_TIMING": "1"
+  },
+  "candidate_label": "V197 D2 dedicated unroll scheduler + chunk4096 + PLE18GiB + V188 lastrow + peerfence/decodefused",
+  "run_tag_prefix": "root-v197-d2-sidecar-chunk4096-ple18-v196",
+  "execution_plan": {
+    "model_loads": 1,
+    "family_order": [
+      "d4",
+      "d5"
+    ],
+    "per_family_order": [
+      "four native canaries",
+      "one 4x16K/512 performance case"
+    ],
+    "contexts_destroyed_between_families": true,
+    "automatic_retry": false,
+    "launch_eligible": true,
+    "pending_launch_gates": [],
+    "host_build_required": false,
+    "host_linked": true,
+    "root_gpu_authorization_required": false
+  },
+  "pipeline_parallel_expectation": {
+    "target_pipeline_parallel_context_markers": "enabled for each target context; verify actual runtime log",
+    "mtp_pipeline_parallel": "off in the V155 runtime by profile design",
+    "do_not_require_four_pipeline_markers": true
+  },
+  "base_profile": {
+    "path": "fixtures/layer6-fourbank-v146-20261017/v146-v155-layer-profile.json",
+    "sha256": "70491c9dd475a8bfc7b78a0ab9cac92f86b120335d166b0944e6b05eaca4867e"
+  },
+  "geometry": {
+    "banks": 4,
+    "lanes_per_bank": 1,
+    "target_context_per_bank": 17152,
+    "mtp_context_per_bank": 17152,
+    "aggregate_target_kv_capacity": 68608,
+    "request_prompt_tokens": 16384,
+    "request_output_limit": 512,
+    "strict_context_guard": "prompt + max_output + draft_depth + 1 <= context",
+    "context_slack_tokens": 768,
+    "target_n_batch": 16384,
+    "target_n_ubatch": 256,
+    "draft_n_ubatch": 512,
+    "decode_threads_per_bank": 2,
+    "decode_threads_total_max": 8,
+    "prefill_threads_per_bank": 8,
+    "prefill_threads_total_max": 32,
+    "persistent_owner_threads_per_bank": 1,
+    "persistent_owner_threads_total_max": 4,
+    "target_verify_rows_per_bank": 4,
+    "mtp_fixed_prefix_rows_per_bank": 6,
+    "model_loads": 1,
+    "target_contexts": 4,
+    "mtp_contexts": 4,
+    "shared_model_weights": true,
+    "family_depths": [
+      4,
+      5
+    ],
+    "context_tokens_per_bank": 17152,
+    "context_slack_tokens_by_family": {
+      "d4": 251,
+      "d5": 250
+    },
+    "requested_draft_n_ubatch": 512,
+    "observed_actual_draft_n_ubatch": 256,
+    "mtp_pad_rows": 6,
+    "fixed_prefix_unrolled_enabled": false,
+    "generic_gpu_chain_max_depth_guard": 32,
+    "target_contexts_per_family": 4,
+    "mtp_contexts_per_family": 4,
+    "family_context_lifetimes": "D4 family fully drains and destroys four target/MTP pairs before D5 construction; one loaded model is retained"
+  },
+  "launch_eligible": true,
+  "pending_launch_gates": [],
+  "host_link_evidence": {
+    "status": "PASS_V197_V196_SEVEN_DSO_HOST_LINK",
+    "runner_source_sha256": "904c1d21fc8a2da1e74159a4980e806ddac48a9e7fc6898efbac003055a11769",
+    "target_pad_header_sha256": "9591da3f4730f998c1ab5c613a3a9cbc35dbc481b8512db19afee6e0d8af2965",
+    "runner_binary_sha256": "5b47f4d5f751f024e1f8ecee500477ca0fb5d9b9d15ba30465eb3ca2f5b31328",
+    "runtime_build_id": "20261017T041709.736607Z",
+    "runtime_report_sha256": "71ab653693b9d96d0c830d7d3a6feb8f61b7792350822d4750522bb0ceea9b18",
+    "runtime_dso_sha256": {
+      "libllama-common.so.0": "c331b4e27d74fdc4ea295676985c1ae1d8b8ad296feee0715164e37a96d395ac",
+      "libmtmd.so.0": "02b78e109820e28de208363e3f6d8f3cde8f43a452ec8770972d3565caed8e23",
+      "libllama.so.0": "843b17da8b7348462315baa88a1006acc51457253431d9a1e78c24a841e0bc99",
+      "libggml.so.0": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+      "libggml-cpu.so.0": "d51a3e28fafe2fc03584d790512d4dcb88583f9949647602e5cbef1fc0d71781",
+      "libggml-cuda.so.0": "5f663e079037bee6fe0d9cf1246433566e7103d53699ca659574f5efcbd6e53a",
+      "libggml-base.so.0": "81e6dd9d0ebbca6f66b0403ee687c8dff0e5bba359e566f3775b21797da9a6de"
+    },
+    "profile_at_link_sha256": "1b274032bb7519fd2c897d0cd5ffce517e949c2d20308103d4ae6860186ad959",
+    "ldd_report_sha256": "854222009707585aff0e7fbe3714b1142975582ecf6481f86211d38ab78e12c5",
+    "model_loads": 0,
+    "gpu_touched": false,
+    "runner_linked": true
+  },
+  "tiny_gate": {
+    "status": "PASS_V169_OFF_ON_TINY25_AND_EXACT_FALLBACK",
+    "artifact": "fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/results/v169-tiny25-summary.json",
+    "artifact_sha256": "25930942ab081ee3f678fd322e9afb06324f53f7d8ae8a1ac87734bbfb21defb",
+    "runtime_build_id": "20261017T041709.736607Z",
+    "off_timing_rows": 25,
+    "off_reserve_rows": 25,
+    "on_timing_rows": 25,
+    "on_reserve_rows": 4,
+    "stable_leaf_selected_schedulers": 2,
+    "stable_leaf_groups_by_scheduler": [
+      32,
+      64
+    ],
+    "exact_cpu_oracle": true,
+    "model_loaded": false,
+    "bounded_gpu_fixture": true,
+    "automatic_retry": false
+  },
+  "cpu_red_green_gate": {
+    "status": "PASS",
+    "command": "python3 fixtures/layer-pp-inputs-v152-20261017/test-v152-plan.py",
+    "test_source": "fixtures/layer-pp-inputs-v152-20261017/test-v152-plan.py",
+    "test_source_sha256": "3dfc5edb5f35d63e534d85a8d999387a64809eb5fbe3076398c7bcc72b781879",
+    "fresh_local_run": true
+  },
+  "launch_authorization": {
+    "root_authorized_single_bounded_run": true,
+    "scope": "one bounded V197 D4-then-D5 single-load run; no automatic retry",
+    "automatic_retry": false,
+    "model_or_gpu_run_performed": false,
+    "root_authorized_host_link": true,
+    "root_go_received": true,
+    "tiny25_gate_summary_sha256": "25930942ab081ee3f678fd322e9afb06324f53f7d8ae8a1ac87734bbfb21defb"
+  },
+  "native_semantic_gate": {
+    "scope": "four original frozen native case IDs, independently rerun in each family; not the full 16-case suite",
+    "checker": "fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/verify_v197_native4.py",
+    "checker_sha256": "17e09e88d0d9e1433d292e5f8a61c01682c6d6dfc183fd33a8ee036e903af8d9",
+    "native_source_sha256": "f2487f90c32d0e383494dc5ae68bec24d6bf0c8d31a065dfbf614447fb6b53fd",
+    "case_ids": [
+      "capital-en",
+      "arithmetic-zh",
+      "logic-en",
+      "strict-json-zh"
+    ],
+    "scenario_sha256_by_family": {
+      "d2": "22c0a307010a3f70704f228f11e7965a19b44fa66f70acd77b4053a90d9038ab"
+    },
+    "selected_checker_delegates_to_frozen_v146_four_case_logic": true,
+    "transitive_source_closure": "fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/results/v197-semantic-closure.json",
+    "transitive_source_closure_sha256": "35533b91eac802c91d8943cd727cbe4e766f7075de494ef10e83f2df164863ee",
+    "expected_runtime_build_id": "20261017T041709.736607Z"
+  },
+  "force_capture_tiny_gate": {
+    "status": "PASS_TINY_EXACT_FORCE_CAPTURE_SELECTED",
+    "artifact": "fixtures/layer-pp-inputs-v163-force-capture-v152-20261017/results/v163-force-v160-20261017T010927Z-summary.json",
+    "artifact_sha256": "331dcaa942e86c1b6f7c711d9dcd12d32439a0771d08cdb1c7fb7c21658d6d9e",
+    "runtime_build_id": "20261016T232842.692185Z",
+    "runtime_scope": "V160 proof; V169 root tiny25 gates remain pending",
+    "exact_frames": 25,
+    "canary_frames": 25,
+    "force_capture_selected": {
+      "device0": {
+        "requested": 25,
+        "selected": 25,
+        "reason_logged": "compatible_changed_graph_capture"
+      },
+      "device1": {
+        "requested": 25,
+        "selected": 25,
+        "reason_logged": "compatible_changed_graph_capture"
+      }
+    },
+    "structural_signature_active": 1,
+    "model_loaded": false,
+    "gpu_workload": false
+  },
+  "v146_reference_not_a_v197_result": {
+    "results": "fixtures/layer6-fourbank-v146-20261017/results/root-v146-fourbank-v160-native4-20261017t011346834042z-results.json",
+    "results_sha256": "29dcb6818174db81acf4e7b0a36b4b09e8f98489bc8b93ff00cdf7946c4da521",
+    "native_canary_status": "PASS",
+    "performance_output_status": "unscored",
+    "shared_tg_tokens_per_second": 248.3581765384771,
+    "all_emission_tokens": 2048,
+    "all_emission_span_seconds": 13.831588,
+    "all_emission_tokens_per_second": 148.0669,
+    "inclusive_window_basis": "root-reported first-to-last token emissions including 16 serialized warmup frames and tail",
+    "claim": "reference only; preserve shared-window TG and inclusive all-emissions rate as separate measures"
+  },
+  "measurement_contract": {
+    "shared_tg": "retain the post-warmup intersection window already emitted by the V146 runner",
+    "inclusive_rate": "new first-to-last emitted-token span across all lanes, including serial warmup and tail",
+    "prefill_parallel": "derive from actual nonempty bank count; host submission only, no GPU overlap claim",
+    "semantic": "four frozen native cases once; long512 outputs remain unscored",
+    "performance_output_quality": "unscored until a separate exact/numerical quality gate",
+    "speed_claim": "none in this local preparation"
+  }
+}

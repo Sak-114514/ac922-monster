@@ -1,0 +1,163 @@
+{
+  "schema": "qwen4exp-input-gpu-v123-host-gates-v1",
+  "scope": "fixture-only; no engine rebuild or model load; one bounded Meta3 operator run and two scheduler-layout attempts (first fixture assertion, corrected one pass)",
+  "runtime": {
+    "name": "runtime-perf-v123",
+    "build_id": "20261016T204206.497138Z",
+    "build_report_sha256": "7e321c96c870a53a7f8de72115ec77250c5bc31e1a31b1adaf12784f544fdf0d",
+    "build_report_path": "results/V123-build.json",
+    "libraries": {
+      "libggml.so.0": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+      "libggml-cuda.so.0": "84debba398d48061ac3f55367de3fb2ccdf80b2ea062dd8083490124d9b33550",
+      "libggml-base.so.0": "beee6adf3e5fc7801e3e2291e039119707f0a8cfbee4ac75555192bf3182279a",
+      "libggml-cpu.so.0": "d51a3e28fafe2fc03584d790512d4dcb88583f9949647602e5cbef1fc0d71781"
+    }
+  },
+  "fixture": {
+    "source": "qwen4exp-input-gpu-fixture.cpp",
+    "source_sha256": "fd76b1e2291ab8750c7ea404c0c318a9896b50a577bd39f2f424c979d4ebd80b",
+    "binary_remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qwen4exp-input-gpu-v123-20261017/qwen4exp-input-gpu-v123-host2",
+    "binary_sha256": "1839ea109da7e343b4a5c0279b2d1f2fca364d069cee4bb22ceb3c593f03148e",
+    "host_link": "PASS_ONE_FIXTURE_TU",
+    "build_log": "results/build-v123-host2.txt",
+    "build_log_sha256": "557358a450f7c8b67cbb9da9566132fdc4587680e0b3d3d6da0bf696a6ad6a7f",
+    "gpu_binary_sha256": "1839ea109da7e343b4a5c0279b2d1f2fca364d069cee4bb22ceb3c593f03148e",
+    "binary_host2_source_sha256": "e24425ea845b120257a4a902013d7e940a2e393c40f3b132aa4373b633f1541f",
+    "layout_binary_remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qwen4exp-input-gpu-v123-20261017/qwen4exp-input-gpu-v123-host3",
+    "layout_binary_sha256": "bdeeb193ef1b09c7ebe9a06cfc50a3b0f5927b1da3ff74e65b1281b9fbb3c128",
+    "layout_host_link": "PASS_ONE_FIXTURE_TU",
+    "layout_build_log": "results/build-v123-host3.txt",
+    "layout_build_log_sha256": "79f593fd2e12c8dc093306efbbab844cdf6987eed1eda3ea185df748a56cf61e"
+  },
+  "source_rows": {
+    "metadata_record": "original-input-output-offsets-v123.json",
+    "metadata_sha256": "e4f02f72565e5babfdb977231d19c8eeb6ec4fa28e42861cc2a4b37461d40f05",
+    "tensor": "token_embd.weight",
+    "ggml_type": "iq3_s",
+    "ggml_type_id": 21,
+    "shape_ne": [
+      2560,
+      248320
+    ],
+    "bytes": 273152000,
+    "row_bytes": 1100,
+    "absolute_payload_offset": 461217728,
+    "test_reads": "8 selected rows only; no full GGUF tensor payload read"
+  },
+  "cpu_get_rows": {
+    "status": "PASS",
+    "log": "results/cpu-rows-v123-1-cpu-20261016T205144Z.log",
+    "log_sha256": "ace5a9f2c1bae962ae9a97cc4d866a058d6791554f35d9a089c42fc6ea030d7b",
+    "phases": [
+      "A1",
+      "B",
+      "A2"
+    ],
+    "ids_per_phase": 32,
+    "original_rows_sampled": 8,
+    "repeat_exact": true,
+    "source_and_id_immutability": true,
+    "canaries": true,
+    "model_loaded": false,
+    "gpu_compute": false
+  },
+  "gpu_meta3": {
+    "status": "PASS",
+    "run_tag": "v123-meta3-authorized-20261017T1215Z",
+    "log": "results/v123-meta3-authorized-20261017T1215Z-meta3-20261016T205626Z.log",
+    "log_sha256": "3b915a41c6c88950bdbd3b6eda4710ef250e5040fbe71be31f0600e551fbb091",
+    "elapsed_seconds": 4,
+    "visible_devices": [
+      0,
+      1,
+      2
+    ],
+    "sampled_original_rows": 8,
+    "a_b_a_exact_f32": true,
+    "repeated_ids": true,
+    "first_last_original_rows_selected": true,
+    "compact_index_remap": true,
+    "source_ids_canaries_immutable": true,
+    "full_vocab_index_addressing_tested": false,
+    "model_loaded": false,
+    "binary": "qwen4exp-input-gpu-v123-host2",
+    "binary_sha256": "1839ea109da7e343b4a5c0279b2d1f2fca364d069cee4bb22ceb3c593f03148e"
+  },
+  "scheduler_layout": {
+    "status": "PASS",
+    "first_attempt": {
+      "status": "FAIL_FIXTURE_CONSTRUCTOR_ASSERT",
+      "run_tag": "v123-layout-authorized-20261017T1215Z",
+      "log": "results/v123-layout-authorized-20261017T1215Z-layout-20261016T205634Z.log",
+      "log_sha256": "76437e6bd6e37333db5242d44dfc582d9757454b05bd235951722db072a3d924",
+      "elapsed_seconds": 4,
+      "failure": "ggml_backend_sched_new asserts the last backend is CPU; initial fixture passed {CPU, MetaA, MetaB}",
+      "assertion": "src/ggml/src/ggml-backend.cpp:3564",
+      "graph_allocated_or_computed": false
+    },
+    "corrected_attempt": {
+      "run_tag": "v123-layout-host3-authorized-20261017T1220Z",
+      "log": "results/v123-layout-host3-authorized-20261017T1220Z-layout-20261016T205932Z.log",
+      "log_sha256": "04cc30b23099f43d8dba16c281377e2c30066f1a1f7a251fae595567f16e3939",
+      "binary": "qwen4exp-input-gpu-v123-host3",
+      "binary_sha256": "bdeeb193ef1b09c7ebe9a06cfc50a3b0f5927b1da3ff74e65b1281b9fbb3c128",
+      "elapsed_seconds": 4,
+      "fixture_only_correction": "backend array {MetaA, MetaB, CPU}; explicit node assignments retained",
+      "actual_classifier_topology_eligible": true,
+      "actual_split_count": 3,
+      "actual_split_map": [
+        {
+          "split": 0,
+          "backend": "CPU",
+          "nodes": 1,
+          "range": "0..1"
+        },
+        {
+          "split": 1,
+          "backend": "Meta(CUDA0,CUDA1,CUDA2)",
+          "nodes": 2,
+          "range": "1..3"
+        },
+        {
+          "split": 2,
+          "backend": "Meta(CUDA3,CUDA4,CUDA5)",
+          "nodes": 1,
+          "range": "3..4"
+        }
+      ],
+      "prefix_ids": 512,
+      "bridge_bytes": 512,
+      "copy_count": 1,
+      "cpu_ple_and_meta_a_to_meta_b_outputs_exact": true,
+      "model_loaded": false
+    },
+    "automatic_retry": false
+  },
+  "gpu_postflight": {
+    "status": "RELEASED",
+    "all_six_no_compute_pid": true,
+    "temperatures_c": [
+      39,
+      38,
+      38,
+      38,
+      38,
+      39
+    ],
+    "free_mib": [
+      16125,
+      16125,
+      16125,
+      16126,
+      16115,
+      16117
+    ]
+  },
+  "full_model_integration": {
+    "status": "NOT_TESTED",
+    "loader_destination_markers": false,
+    "independent_ple_prefix_before_gpu_embedding": false,
+    "full_model_semantics": false,
+    "full_vocab_embedding_indexing": false
+  }
+}

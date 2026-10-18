@@ -1,0 +1,66 @@
+{
+  "argv": [
+    "/usr/bin/c++",
+    "-DGGML_BACKEND_SHARED",
+    "-DGGML_SHARED",
+    "-DGGML_USE_CPU",
+    "-DGGML_USE_CUDA",
+    "-DLLAMA_BUILD",
+    "-DLLAMA_SHARED",
+    "-DMONPACK_AVAILABLE=1",
+    "-Dllama_EXPORTS",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/.",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/src",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/../include",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/../include",
+    "-O3",
+    "-DNDEBUG",
+    "-fPIC",
+    "-Wmissing-declarations",
+    "-Wmissing-noreturn",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Wcast-qual",
+    "-Wno-unused-function",
+    "-Wno-array-bounds",
+    "-Wextra-semi",
+    "-o",
+    "CMakeFiles/llama.dir/llama-context.cpp.o",
+    "-c",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp"
+  ],
+  "cwd": "/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/src",
+  "display": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -DGGML_USE_CUDA -DLLAMA_BUILD -DLLAMA_SHARED -DMONPACK_AVAILABLE=1 -Dllama_EXPORTS -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/. -I/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/src -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/../include -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/../include -O3 -DNDEBUG -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-context.cpp.o -c /home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp",
+  "error": null,
+  "error_repr": null,
+  "error_type": null,
+  "object": "src/CMakeFiles/llama.dir/llama-context.cpp.o",
+  "returncode": 1,
+  "traceback": null
+}
+
+--- combined stdout/stderr ---
+In file included from /home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:20:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/../ggml/src/ggml-meta-replay-guard.h:32:15: error: conflicting declaration of ‘bool ggml_backend_sched_meta_replay_ready(ggml_backend_sched_t, const ggml_cgraph*)’ with ‘C’ linkage
+   32 | GGML_API bool ggml_backend_sched_meta_replay_ready(
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:10:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/../ggml/src/ggml-turboprefill-private.h:66:15: note: previous declaration with ‘C++’ linkage
+   66 | GGML_API bool ggml_backend_sched_meta_replay_ready(
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp: In member function ‘llama_token llama_context::inspect_mtp_gpu_chain_step(int32_t, bool)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:2194:35: warning: comparison of integer expressions of different signedness: ‘llama_token’ {aka ‘int’} and ‘uint32_t’ {aka ‘unsigned int’} [-Wsign-compare]
+ 2194 |         for (llama_token j = 1; j < model.vocab.n_tokens(); ++j) {
+      |                                 ~~^~~~~~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp: In member function ‘int32_t llama_context::end_mtp_gpu_chain(llama_token*, int32_t)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:2220:34: warning: comparison of integer expressions of different signedness: ‘const int’ and ‘uint32_t’ {aka ‘unsigned int’} [-Wsign-compare]
+ 2220 |         if (ids[i] < 0 || ids[i] >= model.vocab.n_tokens()) {
+      |                           ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp: In member function ‘int llama_context::decode(const llama_batch&)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:3891:40: warning: comparison of integer expressions of different signedness: ‘uint32_t’ {aka ‘unsigned int’} and ‘int32_t’ {aka ‘int’} [-Wsign-compare]
+ 3891 |             for (uint32_t seq = 0; seq < ubatch.n_seq_id[row]; ++seq) {
+      |                                    ~~~~^~~~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-context.cpp:4021:59: warning: comparison of integer expressions of different signedness: ‘uint32_t’ {aka ‘unsigned int’} and ‘int32_t’ {aka ‘int’} [-Wsign-compare]
+ 4021 |                 if (!res->mtp_token_feedback || n_outputs != (int32_t) mtp_chain_multi_lanes.size() ||
+      |                                                 ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

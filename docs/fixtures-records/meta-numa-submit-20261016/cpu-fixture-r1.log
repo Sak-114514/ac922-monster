@@ -1,0 +1,5 @@
+PASS cpu_list parser valid/range/invalid
+PASS fake_sysfs BDF->NUMA/local_cpulist cpuset_intersection distinct_physical_cores fallback
+PASS affinity_scope restore exact prior mask early_return nested no_widen set_failure
+PASS default_off literal_1 opt_in
+PASS meta_numa_submit_affinity CPU_ONLY=1 GPU=not_run

@@ -1,0 +1,6 @@
+RUN_CONFIG tag=20261016T001641Z-78322 runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v59 manifest_sha=83761eec8803f6147057ea78f07a0086af79938b1cb9ee5bce83b076a438f041 optin=GGML_META_CPU_ASYNC_COPY=1 max_copy_bytes=1048576 devices=GPU3-5 timeout=45s
+GPU_GUARD GPU-fadb0459-4d30-907b-289a-862b3014f165:37C/16126MiB GPU-760ce501-32f6-69b6-215b-1020da68bbfc:38C/16126MiB GPU-d3558623-deca-c702-3cc0-01b4aa9c667a:38C/16124MiB
+VALIDATION_PASS V59 real event-query path: Meta events new=2, recorded=15, queried=13, query_statuses={'1': 13}, dual_slots_A1_B=False (A1=1, B=1); exact 1 MiB policy, 2 MiB fallback, A/B/A readback/canaries
+GPU_GUARD GPU-fadb0459-4d30-907b-289a-862b3014f165:39C/16125MiB GPU-760ce501-32f6-69b6-215b-1020da68bbfc:39C/16125MiB GPU-d3558623-deca-c702-3cc0-01b4aa9c667a:39C/16123MiB
+1e2e0047dc3ee7e1b1cbdf6b230d47f8d70101956fb2e58ee1794135068550d3  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cpu-meta-copy-gpu-20261016/results/adapter-v59-20261016T001641Z-78322/run.log
+V59_CPU_TO_META_ASYNC_ADAPTER_PASS tag=20261016T001641Z-78322 result_dir=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cpu-meta-copy-gpu-20261016/results/adapter-v59-20261016T001641Z-78322

@@ -1,0 +1,14 @@
+ple-page-batch: ops=1 hits=70319 misses=60753 resident_rows=46 direct_rows=60699 fallback_rows=0 direct_groups=60699 direct_bytes=254009344 direct_pages4k=62014 resident_bytes=4140 fallback_bytes=0 budget_fallback_rows=0 workers=32/32 staging_peak=589824/67108864
+ple-page-batch: ops=2 hits=200924 misses=61220 resident_rows=47 direct_rows=61165 fallback_rows=0 direct_groups=61165 direct_bytes=255963136 direct_pages4k=62491 resident_bytes=4230 fallback_bytes=0 budget_fallback_rows=0 workers=32/32 staging_peak=589824/67108864
+fixture=real-qwen4exp-GET_ROWS backend=CPU threads=32 page_batch_env=1 row_cache_env=1 tokens=8192 heads=16 raw_rows=131072 table_rows=320001536 columns=160 row_bytes=90 logical_packed_bytes=11796480 output_bytes=83886080 file_size=78615622080 offset=47039862208 offset_gt_2GiB=1
+map=7fffacd60000-7ffface70000 r-xp 00000000 08:04 31667376                   /home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin/libggml-base.so.0.25.1
+map=7ffface70000-7ffface80000 r--p 00100000 08:04 31667376                   /home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin/libggml-base.so.0.25.1
+map=7ffface80000-7ffface90000 rw-p 00110000 08:04 31667376                   /home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin/libggml-base.so.0.25.1
+map=7ffface90000-7fffacfb0000 r-xp 00000000 08:04 31667371                   /home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin/libggml-cpu.so.0.25.1
+map=7fffacfb0000-7fffacfc0000 r--p 00110000 08:04 31667371                   /home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin/libggml-cpu.so.0.25.1
+map=7fffacfc0000-7fffacfd0000 rw-p 00120000 08:04 31667371                   /home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin/libggml-cpu.so.0.25.1
+iteration=1 graph_compute_wall_ms=12219.7 full_output_equals_previous=n/a sample_rows=16 sample_values=2560 sample_exact_bits=yes sample_max_abs=0 sample_nonfinite_actual=0 sample_nonfinite_reference=0
+iteration=1 hits=70319 misses=60753 observed_resident_rows=46 direct_rows=60699 fallback_rows=0 direct_groups=60699 direct_bytes=254009344 direct_pages4k=62014
+iteration=2 graph_compute_wall_ms=98.3294 full_output_equals_previous=yes sample_rows=16 sample_values=2560 sample_exact_bits=yes sample_max_abs=0 sample_nonfinite_actual=0 sample_nonfinite_reference=0
+iteration=2 hits=130605 misses=467 observed_resident_rows=1 direct_rows=466 fallback_rows=0 direct_groups=466 direct_bytes=1953792 direct_pages4k=477
+PASS full_output_repeat_exact=yes

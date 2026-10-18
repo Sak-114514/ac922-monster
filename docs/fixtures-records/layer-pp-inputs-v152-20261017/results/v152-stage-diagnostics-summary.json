@@ -1,0 +1,109 @@
+{
+  "fixture": "layer-pp-inputs-v152-20261017",
+  "status": "diagnostic-pair-failed-before-output-verification",
+  "runtime": {
+    "id": "runtime-perf-v155",
+    "report_sha256": "b5f4884cef3df093d45f2fbe7be3bcfb1caa0ea1943e7344c8cf4bf14fe28d92",
+    "core_backend_source_sha256": "77090a924f2b61f2d774675cd7965732cd13f436bf6abb1fe55d0e80e532a07c",
+    "fixture_source_sha256": "4992a1aad9907083a12689de712eac488ef728158093923e16c380675a16ee5b",
+    "runner_sha256": "91a51bfb77f88ea42fa774dd3b19287158cf5558704fc64b23d99b7fb2c5cc48",
+    "runtime_dsos": {
+      "libggml-base.so.0": "348b013d1ecf903f90a0c4e525d53fe8ecdfa3f4e1cca688fb2d67b027718084",
+      "libggml.so.0": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+      "libggml-cpu.so.0": "d51a3e28fafe2fc03584d790512d4dcb88583f9949647602e5cbef1fc0d71781",
+      "libggml-cuda.so.0": "5f663e079037bee6fe0d9cf1246433566e7103d53699ca659574f5efcbd6e53a"
+    }
+  },
+  "diagnostics": {
+    "off": {
+      "tag": "v152-stage-off-20261016T231629Z",
+      "exit_status": 139,
+      "mode": 0,
+      "queued_frames": ["A-small frame 0 seed 0"],
+      "last_stage_active": false,
+      "fault_point": "B-small frame 0 after GPU1 MUL_MAT hook and during scheduler allocation/compute path",
+      "backtrace": [
+        "v152_segv_handler",
+        "ggml_gallocr_alloc_graph+0x34c",
+        "ggml_backend_sched_alloc_graph+0x6b0",
+        "graph_case::submit(int)",
+        "main"
+      ],
+      "rows_shape": [32, 16],
+      "mm0_src1_shape": [32, 16],
+      "raw_log": "v152-stage-off-20261016T231629Z.log",
+      "raw_log_sha256": "9ef69a3ce356f42eefe9a125842c3a39f4de25bbc8e11d80bf76a20d65757397"
+    },
+    "on": {
+      "tag": "v152-stage-on-20261016T231729Z",
+      "exit_status": 139,
+      "mode": 1,
+      "selected_schedulers": 2,
+      "copies": 4,
+      "cap_bytes": 268435456,
+      "active_stage_inputs_logged": [
+        {"scheduler": "A-small", "backend": "CUDA0", "source": "A-small.frame0.cpu_embedding_rows", "bytes": 2048, "private_source": true, "device_event_wait": true},
+        {"scheduler": "A-small", "backend": "CUDA1", "source": "A-small.frame0.input.host1", "bytes": 2048, "private_source": true, "device_event_wait": true},
+        {"scheduler": "B-small", "backend": "CUDA0", "source": "B-small.frame0.cpu_embedding_rows", "bytes": 2048, "private_source": true, "device_event_wait": true},
+        {"scheduler": "B-small", "backend": "CUDA1", "source": "B-small.frame0.input.host1", "bytes": 2048, "private_source": true, "device_event_wait": true}
+      ],
+      "queued_frames": ["A-small frame 0 seed 0"],
+      "fault_point": "B-small frame 0 after GPU1 MUL_MAT hook and during scheduler allocation/compute path",
+      "backtrace": [
+        "v152_segv_handler",
+        "ggml_gallocr_alloc_graph+0x34c",
+        "ggml_backend_sched_alloc_graph+0x6b0",
+        "graph_case::submit(int)",
+        "main"
+      ],
+      "rows_shape": [32, 16],
+      "mm0_src1_shape": [32, 16],
+      "raw_log": "v152-stage-on-20261016T231729Z.log",
+      "raw_log_sha256": "f9d3c5a2f9d50d878bf0e1e093e04eeda168326b488eb3413be4d905f3e87c79"
+    }
+  },
+  "safety": {
+    "mode_off_preflight": {
+      "gpus": [
+        {"index": 0, "temperature_c": 38, "memory_free_mib": 16126, "memory_used_mib": 1, "utilization_percent": 0},
+        {"index": 1, "temperature_c": 37, "memory_free_mib": 16126, "memory_used_mib": 1, "utilization_percent": 0},
+        {"index": 2, "temperature_c": 37, "memory_free_mib": 16127, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 3, "temperature_c": 37, "memory_free_mib": 16127, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 4, "temperature_c": 37, "memory_free_mib": 16118, "memory_used_mib": 10, "utilization_percent": 0},
+        {"index": 5, "temperature_c": 38, "memory_free_mib": 16123, "memory_used_mib": 4, "utilization_percent": 0}
+      ],
+      "bmc": {"sample_utc": "2026-10-16T23:26:04.196490Z", "max_c": 40, "host": "Running", "chassis": "On", "masks_ok": true, "fan_target_rpm": 3000, "faults": 0, "alarms": 0}
+    },
+    "mode_off_postflight_and_mode_on_preflight": {
+      "gpus": [
+        {"index": 0, "temperature_c": 38, "memory_free_mib": 16125, "memory_used_mib": 2, "utilization_percent": 0},
+        {"index": 1, "temperature_c": 37, "memory_free_mib": 16125, "memory_used_mib": 2, "utilization_percent": 0},
+        {"index": 2, "temperature_c": 37, "memory_free_mib": 16127, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 3, "temperature_c": 38, "memory_free_mib": 16127, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 4, "temperature_c": 37, "memory_free_mib": 16118, "memory_used_mib": 9, "utilization_percent": 0},
+        {"index": 5, "temperature_c": 38, "memory_free_mib": 16123, "memory_used_mib": 4, "utilization_percent": 0}
+      ],
+      "bmc": {"sample_utc": "2026-10-16T23:26:59.325002Z", "max_c": 39.062, "host": "Running", "chassis": "On", "masks_ok": true, "fan_target_rpm": 3000, "faults": 0, "alarms": 0}
+    },
+    "mode_on_postflight": {
+      "all_six_compute_pids": 0,
+      "gpus": [
+        {"index": 0, "temperature_c": 38, "memory_free_mib": 16124, "memory_used_mib": 3, "utilization_percent": 0},
+        {"index": 1, "temperature_c": 37, "memory_free_mib": 16124, "memory_used_mib": 3, "utilization_percent": 0},
+        {"index": 2, "temperature_c": 37, "memory_free_mib": 16127, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 3, "temperature_c": 37, "memory_free_mib": 16127, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 4, "temperature_c": 37, "memory_free_mib": 16118, "memory_used_mib": 9, "utilization_percent": 0},
+        {"index": 5, "temperature_c": 38, "memory_free_mib": 16123, "memory_used_mib": 4, "utilization_percent": 0}
+      ],
+      "bmc": {"sample_utc": "2026-10-16T23:27:17.803348Z", "max_c": 40, "host": "Running", "chassis": "On", "masks_ok": true, "fan_target_rpm": 3000, "faults": 0, "alarms": 0}
+    }
+  },
+  "verification": {
+    "cpu_planner_and_budget_mock": "PASS",
+    "host_link_and_ldd": "PASS",
+    "off_on_diagnostic": "BOTH_FAIL_IDENTICALLY_BEFORE_OUTPUT_ORACLE",
+    "end_to_end_output_exactness": "NOT_REACHED",
+    "reset_growth_free_and_budget_scenarios": "NOT_REACHED",
+    "additional_gpu_retries": "NONE_AUTHORIZED_OR_RUN"
+  }
+}

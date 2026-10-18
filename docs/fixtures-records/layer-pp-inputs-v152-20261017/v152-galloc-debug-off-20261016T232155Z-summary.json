@@ -1,0 +1,68 @@
+{
+  "fixture": "layer-pp-inputs-v152-20261017",
+  "tag": "v152-galloc-debug-off-20261016T232155Z",
+  "status": "segfault-at-galloc-buft-size-query",
+  "run": {
+    "mode": "stage-off",
+    "runtime_id": "runtime-perf-v155",
+    "runner_sha256": "91a51bfb77f88ea42fa774dd3b19287158cf5558704fc64b23d99b7fb2c5cc48",
+    "exit_status": 139,
+    "frames": [
+      {"scheduler": "A-small", "frame": 0, "seed": 0, "queued": true},
+      {"scheduler": "B-small", "frame": 0, "seed": 7, "queued": false}
+    ],
+    "last_graph_geometry": {"rows_ne": [32, 16], "mm0_src1_ne": [32, 16]},
+    "allocator_access": {
+      "source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-alloc.c",
+      "line": 972,
+      "function": "ggml_gallocr_init_tensor",
+      "discriminator": 2,
+      "expression": "ggml_backend_buft_get_alloc_size(galloc->bufts[buffer_id], tensor) <= tensor_alloc->size_max",
+      "caller_line": 1078,
+      "caller_function": "ggml_gallocr_alloc_graph (leaf loop)",
+      "faulting_callee": "ggml_backend_buft_get_alloc_size+0x1c in libggml-base.so.0",
+      "identified_tensor_name": null,
+      "identified_buffer_id": null,
+      "interpretation": "The crash is in the backend buffer-type allocation-size query for a graph leaf. The preload backtrace does not expose the tensor name or buffer_id."
+    },
+    "preload": {
+      "source_sha256": "213b48d6ef6d6ffef55c438db837116105de72cdae3dd152673035e61508d384",
+      "library_sha256": "e5cb7c6d7e97f2d8026c195f419d2c4fc140cf946eb15cc9a2668955ef86ce1b",
+      "build_command_file": "results/build-v155-galloc-debug/build-command.txt",
+      "ldd_r": "PASS; only V155 libggml-base.so.0 and system libraries; no CUDA dependency"
+    },
+    "raw_log": "v152-galloc-debug-off-20261016T232155Z.log",
+    "raw_log_sha256": "3735ccb08ddea52af01c0a4b0b926182aa211cf7fd12c2c09529ba3718ed0710",
+    "coredumpctl": "not installed/available"
+  },
+  "safety": {
+    "preflight": {
+      "gpus": [
+        {"index": 0, "temperature_c": 38, "memory_free_mib": 16125, "memory_used_mib": 2, "utilization_percent": 0},
+        {"index": 1, "temperature_c": 37, "memory_free_mib": 16125, "memory_used_mib": 2, "utilization_percent": 0},
+        {"index": 2, "temperature_c": 37, "memory_free_mib": 16127, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 3, "temperature_c": 37, "memory_free_mib": 16127, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 4, "temperature_c": 37, "memory_free_mib": 16118, "memory_used_mib": 9, "utilization_percent": 0},
+        {"index": 5, "temperature_c": 38, "memory_free_mib": 16123, "memory_used_mib": 4, "utilization_percent": 0}
+      ],
+      "bmc": {"sample_utc": "2026-10-16T23:31:32.825161Z", "max_c": 39, "host": "Running", "chassis": "On", "masks_ok": true, "fan_target_rpm": 3000, "faults": 0, "alarms": 0}
+    },
+    "postflight": {
+      "all_six_compute_pids": 0,
+      "gpus": [
+        {"index": 0, "temperature_c": 38, "memory_free_mib": 16124, "memory_used_mib": 3, "utilization_percent": 0},
+        {"index": 1, "temperature_c": 37, "memory_free_mib": 16124, "memory_used_mib": 3, "utilization_percent": 0},
+        {"index": 2, "temperature_c": 38, "memory_free_mib": 16127, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 3, "temperature_c": 37, "memory_free_mib": 16127, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 4, "temperature_c": 37, "memory_free_mib": 16118, "memory_used_mib": 9, "utilization_percent": 0},
+        {"index": 5, "temperature_c": 38, "memory_free_mib": 16123, "memory_used_mib": 4, "utilization_percent": 0}
+      ],
+      "bmc": {"sample_utc": "2026-10-16T23:32:10.213335Z", "max_c": 39, "host": "Running", "chassis": "On", "masks_ok": true, "fan_target_rpm": 3000, "faults": 0, "alarms": 0}
+    }
+  },
+  "verification": {
+    "source_and_binary_runtime_provenance": "PASS",
+    "output_exactness": "NOT_REACHED",
+    "additional_tiny_runs": "NONE_AUTHORIZED_OR_RUN"
+  }
+}

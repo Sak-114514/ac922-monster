@@ -1,0 +1,24 @@
+built mode=cpu binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/gdn-x4-probe/build/gdn-x4-cpu runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v71
+fixture=gdn-x4-batch-serial mode=cpu device=CPU width=128 heads=4 tokens_per_seq=4 sequences=4 initial_state_rows=6,2,5,1 rollback_ring_rows=8
+mode=cpu seq=0 initial_row=6 cache_row=0 attention_exact=2048/2048 attention_maxabs=0 rollback_exact=262144/262144 rollback_maxabs=0
+mode=cpu rollback seq=0 accepted=0 consumed=1 slot=3 exact=true
+mode=cpu rollback seq=0 accepted=1 consumed=2 slot=2 exact=true
+mode=cpu rollback seq=0 accepted=2 consumed=3 slot=1 exact=true
+mode=cpu rollback seq=0 accepted=3 consumed=4 slot=0 exact=true
+mode=cpu seq=1 initial_row=2 cache_row=1 attention_exact=2048/2048 attention_maxabs=0 rollback_exact=262144/262144 rollback_maxabs=0
+mode=cpu rollback seq=1 accepted=0 consumed=1 slot=3 exact=true
+mode=cpu rollback seq=1 accepted=1 consumed=2 slot=2 exact=true
+mode=cpu rollback seq=1 accepted=2 consumed=3 slot=1 exact=true
+mode=cpu rollback seq=1 accepted=3 consumed=4 slot=0 exact=true
+mode=cpu seq=2 initial_row=5 cache_row=2 attention_exact=2048/2048 attention_maxabs=0 rollback_exact=262144/262144 rollback_maxabs=0
+mode=cpu rollback seq=2 accepted=0 consumed=1 slot=3 exact=true
+mode=cpu rollback seq=2 accepted=1 consumed=2 slot=2 exact=true
+mode=cpu rollback seq=2 accepted=2 consumed=3 slot=1 exact=true
+mode=cpu rollback seq=2 accepted=3 consumed=4 slot=0 exact=true
+mode=cpu seq=3 initial_row=1 cache_row=3 attention_exact=2048/2048 attention_maxabs=0 rollback_exact=262144/262144 rollback_maxabs=0
+mode=cpu rollback seq=3 accepted=0 consumed=1 slot=3 exact=true
+mode=cpu rollback seq=3 accepted=1 consumed=2 slot=2 exact=true
+mode=cpu rollback seq=3 accepted=2 consumed=3 slot=1 exact=true
+mode=cpu rollback seq=3 accepted=3 consumed=4 slot=0 exact=true
+mode=cpu op=GATED_DELTA_NET width=128 heads=4 tokens_per_seq=4 sequences=4 K=5 cache_rows=36 cache_exact=2359296/2359296 cache_maxabs=0
+mode=cpu result=PASS compared_attention=8192 compared_rollback=1048576 cache_canaries=preserved-for-unwritten-rows

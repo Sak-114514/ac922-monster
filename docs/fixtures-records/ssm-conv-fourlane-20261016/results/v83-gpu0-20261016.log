@@ -1,0 +1,36 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+SSM_CONV_FIXTURE backend=CUDA0 mode=cuda0 d_state=128 key_heads=16 value_heads=48 conv_channels=10240 kernel=4 history=3 mem_size=4 snapshot_slots=5 cache_rows=20 guard_rows=2 shapes=[T1,T4] sequences=4
+SSM_CONV_CASE backend=CUDA0 phase=step1 T=1 seq=0 conv_exact=0/0 conv_maxabs=0 silu_exact=10240/10240 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step1 T=1 seq=1 conv_exact=0/0 conv_maxabs=0 silu_exact=10240/10240 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step1 T=1 seq=2 conv_exact=0/0 conv_maxabs=0 silu_exact=10240/10240 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step1 T=1 seq=3 conv_exact=0/0 conv_maxabs=0 silu_exact=10240/10240 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_SUMMARY backend=CUDA0 phase=step1 T=1 conv_exact=0/0 silu_exact=40960/40960 full_cache_exact=675840/675840 canary_batch=61440/61440 canary_serial=61440/61440 result=PASS
+SSM_CONV_CASE backend=CUDA0 phase=step2-carry T=1 seq=0 conv_exact=0/0 conv_maxabs=0 silu_exact=10240/10240 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step2-carry T=1 seq=1 conv_exact=0/0 conv_maxabs=0 silu_exact=10240/10240 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step2-carry T=1 seq=2 conv_exact=0/0 conv_maxabs=0 silu_exact=10240/10240 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step2-carry T=1 seq=3 conv_exact=0/0 conv_maxabs=0 silu_exact=10240/10240 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_SUMMARY backend=CUDA0 phase=step2-carry T=1 conv_exact=0/0 silu_exact=40960/40960 full_cache_exact=675840/675840 canary_batch=61440/61440 canary_serial=61440/61440 result=PASS
+SSM_CONV_CASE backend=CUDA0 phase=step2-changed T=1 seq=0 conv_exact=0/0 conv_maxabs=0 silu_exact=10240/10240 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step2-changed T=1 seq=1 conv_exact=0/0 conv_maxabs=0 silu_exact=10240/10240 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step2-changed T=1 seq=2 conv_exact=0/0 conv_maxabs=0 silu_exact=10240/10240 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step2-changed T=1 seq=3 conv_exact=0/0 conv_maxabs=0 silu_exact=10240/10240 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_SUMMARY backend=CUDA0 phase=step2-changed T=1 conv_exact=0/0 silu_exact=40960/40960 full_cache_exact=675840/675840 canary_batch=61440/61440 canary_serial=61440/61440 result=PASS
+SSM_CONV_CHANGED_INPUT backend=CUDA0 T=1 seq=2 output_isolated=1 history_changed=1 PASS
+SSM_CONV_CASE backend=CUDA0 phase=step1 T=4 seq=0 conv_exact=0/0 conv_maxabs=0 silu_exact=40960/40960 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step1 T=4 seq=1 conv_exact=0/0 conv_maxabs=0 silu_exact=40960/40960 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step1 T=4 seq=2 conv_exact=0/0 conv_maxabs=0 silu_exact=40960/40960 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step1 T=4 seq=3 conv_exact=0/0 conv_maxabs=0 silu_exact=40960/40960 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_SUMMARY backend=CUDA0 phase=step1 T=4 conv_exact=0/0 silu_exact=163840/163840 full_cache_exact=675840/675840 canary_batch=61440/61440 canary_serial=61440/61440 result=PASS
+SSM_CONV_CASE backend=CUDA0 phase=step2-carry T=4 seq=0 conv_exact=0/0 conv_maxabs=0 silu_exact=40960/40960 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step2-carry T=4 seq=1 conv_exact=0/0 conv_maxabs=0 silu_exact=40960/40960 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step2-carry T=4 seq=2 conv_exact=0/0 conv_maxabs=0 silu_exact=40960/40960 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step2-carry T=4 seq=3 conv_exact=0/0 conv_maxabs=0 silu_exact=40960/40960 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_SUMMARY backend=CUDA0 phase=step2-carry T=4 conv_exact=0/0 silu_exact=163840/163840 full_cache_exact=675840/675840 canary_batch=61440/61440 canary_serial=61440/61440 result=PASS
+SSM_CONV_CASE backend=CUDA0 phase=step2-changed T=4 seq=0 conv_exact=0/0 conv_maxabs=0 silu_exact=40960/40960 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step2-changed T=4 seq=1 conv_exact=0/0 conv_maxabs=0 silu_exact=40960/40960 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step2-changed T=4 seq=2 conv_exact=0/0 conv_maxabs=0 silu_exact=40960/40960 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_CASE backend=CUDA0 phase=step2-changed T=4 seq=3 conv_exact=0/0 conv_maxabs=0 silu_exact=40960/40960 silu_maxabs=0 snapshot_exact=153600/153600 snapshot_maxabs=0
+SSM_CONV_SUMMARY backend=CUDA0 phase=step2-changed T=4 conv_exact=0/0 silu_exact=163840/163840 full_cache_exact=675840/675840 canary_batch=61440/61440 canary_serial=61440/61440 result=PASS
+SSM_CONV_CHANGED_INPUT backend=CUDA0 T=4 seq=2 output_isolated=1 history_changed=1 PASS
+SSM_CONV_FIXTURE PASS

@@ -1,0 +1,122 @@
+start=2026-10-16T01:40:02Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v63
+mode=real-ple-weight-view
+8e5b33a6c66077b8b371ede2a308aa8abb9351073ab1bafc7d5f83dc5ba7794d  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-weight-view-20261016/ple-weight-view-fixture-v63
+visible=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a
+model=/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf
+temp_limit=58C memory_limit=1024MiB timeout=180s
+GGML_META_CONTEXT_VIEWS=1 GGML_META_REPLAY_GUARD=1 GGML_META_FIFO_PIPELINE=1
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+meta-context-view owner-create owner=4 epoch=1 backend-context=1
+meta-context-view bind owner=4 epoch=1 buffer=2 view=ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=4 epoch=1 buffer=2 view=ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=4 epoch=1 buffer=2 view=ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=4 epoch=1 buffer=2 view=ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+meta-replay-ready backend=0x1002beaef10 graph_uid=2 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-context-submit FIFO active context=0x1002ae9aa50 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+meta-replay-ready backend=0x1002beaef10 graph_uid=2 ctx_uid=2 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x1002beaef10 graph_uid=2 ctx_uid=2 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+CUDA Graph id 3 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 4 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 5 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-replay-ready backend=0x1002beaef10 graph_uid=2 ctx_uid=2 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x1002beaef10 graph_uid=2 ctx_uid=2 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+CUDA Graph id 3 reused
+CUDA Graph id 4 reused
+CUDA Graph id 5 reused
+meta-context-view owner-unbind owner=4 epoch=1 removed=4
+meta-context-view owner-retire owner=4 epoch=1
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_backend_meta_context: nested Meta experimental path uses generic 2-member AllReduce fallback; outer CUDA/NCCL/P2P is disabled
+meta-context-view owner-create owner=15 epoch=1 backend-context=6
+meta-context-view bind owner=15 epoch=1 buffer=9 view=ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=15 epoch=1 buffer=9 view=ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=15 epoch=1 buffer=9 view=ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=15 epoch=1 buffer=9 view=ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view owner-create owner=19 epoch=1 backend-context=7
+meta-context-view bind owner=19 epoch=1 buffer=10 view=ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view owner-create owner=20 epoch=1 backend-context=8
+meta-context-view bind owner=20 epoch=1 buffer=11 view=ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=19 epoch=1 buffer=10 view=ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=20 epoch=1 buffer=11 view=ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=19 epoch=1 buffer=10 view=ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=20 epoch=1 buffer=11 view=ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=19 epoch=1 buffer=10 view=ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=20 epoch=1 buffer=11 view=ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+meta-replay-ready backend=0x1002c2b7e90 graph_uid=7 ctx_uid=0 subgraphs=0 backends=2 p2p=0 merge_tried=0 ready_cb=0 merged=0 chunks=0
+meta-context-submit FIFO active context=0x1002ae9aa50 members=2 CPU_enqueue_atomic=1 GPU_tail_wait=1
+meta-replay-ready backend=0x1002be7cc90 graph_uid=8 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-context-submit FIFO active context=0x1002b9430d0 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+meta-replay-ready backend=0x1002be7cc90 graph_uid=8 ctx_uid=8 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x1002c2b7f30 graph_uid=9 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-context-submit FIFO active context=0x1002b93d780 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+meta-replay-ready backend=0x1002c2b7f30 graph_uid=9 ctx_uid=9 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x1002c2b7e90 graph_uid=7 ctx_uid=7 subgraphs=1 backends=2 p2p=0 merge_tried=0 ready_cb=0 merged=0 chunks=0
+meta-replay-ready backend=0x1002c2b7e90 graph_uid=7 ctx_uid=7 subgraphs=1 backends=2 p2p=0 merge_tried=0 ready_cb=0 merged=0 chunks=0
+meta-replay-ready backend=0x1002be7cc90 graph_uid=8 ctx_uid=8 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+CUDA Graph id 10 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 11 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 12 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-replay-ready backend=0x1002be7cc90 graph_uid=8 ctx_uid=8 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x1002c2b7f30 graph_uid=9 ctx_uid=9 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+CUDA Graph id 13 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 14 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 15 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-replay-ready backend=0x1002c2b7f30 graph_uid=9 ctx_uid=9 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+CUDA Graph id 10 reused
+CUDA Graph id 11 reused
+CUDA Graph id 12 reused
+CUDA Graph id 13 reused
+CUDA Graph id 14 reused
+CUDA Graph id 15 reused
+CUDA Graph id 10 reused
+CUDA Graph id 11 reused
+CUDA Graph id 12 reused
+CUDA Graph id 13 reused
+CUDA Graph id 14 reused
+CUDA Graph id 15 reused
+CUDA Graph id 10 reused
+CUDA Graph id 11 reused
+CUDA Graph id 12 reused
+CUDA Graph id 13 reused
+CUDA Graph id 14 reused
+CUDA Graph id 15 reused
+CUDA Graph id 10 reused
+CUDA Graph id 11 reused
+CUDA Graph id 12 reused
+CUDA Graph id 13 reused
+CUDA Graph id 14 reused
+CUDA Graph id 15 reused
+meta-context-view owner-unbind owner=19 epoch=1 removed=4
+meta-context-view owner-unbind owner=20 epoch=1 removed=4
+meta-context-view owner-unbind owner=15 epoch=1 removed=4
+meta-context-view owner-retire owner=15 epoch=1
+meta-context-view owner-retire owner=19 epoch=1
+meta-context-view owner-retire owner=20 epoch=1
+PLE_WEIGHT name=blk.1.ple_conv1d.weight type=f16 ne=4,10240,1,1 bytes=81920 offset=2479353664
+PASS PLE_WEIGHT_VIEW layout=standalone3 taps=4 output_values=30720 ABA=1
+PASS PLE_WEIGHT_VIEW layout=nested2x3 taps=4 output_values=30720 owner_A_B_A=1 island_mirror=1
+PLE_WEIGHT_VIEW_GPU_FIXTURE_PASS full_model_loaded=0

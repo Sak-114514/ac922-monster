@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "status": "prepared_not_launched_waiting_for_V61_tiny_pass_and_root_GPU_grant",
+  "candidate": "V23 owner-loop runner; no new link or engine build",
+  "runner_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v23-prep-20261016/build-runtime-v23/dual-context-v23",
+  "runner_sha256": "df017b118af9669a8f3ea7c1e604f88791b85a3b1fe61c30a0f720e20de2d72d",
+  "runtime_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61",
+  "runtime_build_id": "20261016T002602.434235Z",
+  "build_report_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V61-build.json",
+  "build_report_sha256": "7452eb584fe489c56b880be4feae5b37d427de797937aec33b2631c09ba00726",
+  "dynamic_closure_verified_by_read_only_ldd": {
+    "libllama-common.so.0": "402454f60c629f2108622d469d50b472b96b261707ad00a91f7afdff839b380d",
+    "libllama.so.0": "88ba263e7d19f20d89ffc8970092a2937cbe1b2adf0f32a56b6d1ac6949db2bc",
+    "libmtmd.so.0": null,
+    "libggml.so.0": null,
+    "libggml-cpu.so.0": null,
+    "libggml-cuda.so.0": "e5a91189f18dce2eed73369a36088696542ee09ebdf94cde195ed3c6c226f983",
+    "libggml-base.so.0": "9b072ec410e4c85be819d0e5c6e901fc934c001e13dcb18d52d1cafba4abb602"
+  },
+  "profile_source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v21-prep-20261016/results/p4-d3-20261015T234920Z/supervisor-manifest.json",
+  "model": {
+    "path": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+    "size_bytes": 78615622080,
+    "sha256": "not recomputed"
+  },
+  "topology": {
+    "hierarchical_ep6": true,
+    "nested_meta": "Meta2 -> 2 x Meta3 -> 6 physical V100",
+    "island_split": "3,3",
+    "expert_count": 512,
+    "experts_pruned": false
+  },
+  "ple": {
+    "placement": "existing NUMA hybrid PLE placement",
+    "gpu_numa_nodes": 6,
+    "gpu_prefix_total_gib": 8,
+    "gpu_prefix_per_node_gib": 1.3333333333333333,
+    "gpu_runtime_reserve_gib_per_card": 4,
+    "cpu_ddr_reserve_gib_total": 3,
+    "lookup_precision_changed": false,
+    "fit_claim": "not made; rely on V61 loader capacity gate and actual free-memory accounting"
+  },
+  "context": {
+    "bank_count": 2,
+    "lanes_per_bank": 2,
+    "mtp_depth": 3,
+    "kv_unified": false,
+    "per_sequence_kv_tokens": 65536,
+    "bank_ctx": 131072,
+    "target_ubatch": 1024,
+    "mtp_ubatch": 512,
+    "target_cache": "q8_0/q8_0",
+    "draft_cache": "q8_0/q8_0"
+  },
+  "required_env": {
+    "LLAMA_HIERARCHICAL_EP6": "1",
+    "GGML_META_NESTED_EXPERIMENTAL": "1",
+    "GGML_META_NESTED_GPU_AR": "1",
+    "LLAMA_PLE_NUMA_GPU_NODES": "6",
+    "LLAMA_PLE_NUMA_GPU_GIB": "8",
+    "GGML_META_NCCL_MIN_BYTES": "0",
+    "GGML_CUDA_P2P_AR_BLOCKS": "64",
+    "LLAMA_QSA_INDEXER_IMPL": "standard",
+    "GGML_META_CPU_ASYNC_COPY": "1",
+    "GGML_META_CPU_ASYNC_COPY_MAX_BYTES": "1048576",
+    "LLAMA_PLE_NUMA_HYBRID": "1"
+  },
+  "quality_gates": {
+    "reuse_v23_native_semantic_gate": true,
+    "full_f32_prefill_logits_must_pass_before_clean": true,
+    "exact_token_parity_gate_preserved": true,
+    "clean_four_lane_decode_measurement": true
+  },
+  "safety": {
+    "requires_v61_tiny_gate_before_launch": true,
+    "requires_root_gpu_grant": true,
+    "gpu_free_floor_mib": 512,
+    "gpu_temp_ceiling_c": 58,
+    "bmc_watchdog_required": true,
+    "fan_monitor_mask_policy_unchanged": true,
+    "ddr_node0_8_telemetry": "record-only; no added MemFree stop threshold",
+    "no_CUPTI": true,
+    "no_LD_PRELOAD": true,
+    "no_autorun": true
+  },
+  "known_uncertainty": "V61 model loader requires one model device (outer Meta2) and nested Meta3 children; full graph support is unverified pending V61 tiny qualification.",
+  "base_profile_manifest_sha256": "2c526ba0f482f89ce7e5e04d156a15aa23cfa599249e591ea7f8e2b3261219e2",
+  "prelaunch_weight_estimate": {
+    "per_card_gib_range": [
+      9.22,
+      9.34
+    ],
+    "source": "V61 metadata-only estimate provided by root",
+    "fit_claim": "none; loader must pass actual per-card free-memory/reserve gate"
+  },
+  "runtime_reserves": {
+    "hierarchical_weight_budget_gib_per_card": 2,
+    "ple_hbm_runtime_reserve_gib_per_card": 4,
+    "ple_cpu_ddr_runtime_reserve_gib_total": 3,
+    "modified": false
+  },
+  "prior_v23_result": {
+    "clean_four_stream_tg_tok_s": 132.5790328725751,
+    "native_semantics": "pass",
+    "preclean_full_f32_logits": "pass",
+    "exact_token_gate": "fail (real8k-0 and single probe prefixes)",
+    "status": "not quality-certified; V24 must preserve and rerun exact-token gates"
+  }
+}

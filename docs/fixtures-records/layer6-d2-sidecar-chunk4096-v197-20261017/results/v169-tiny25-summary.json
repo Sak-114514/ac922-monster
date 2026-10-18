@@ -1,0 +1,55 @@
+{
+  "schema": "v169-tiny25-stable-leaf-gate-v1",
+  "status": "PASS_V169_OFF_ON_TINY25_AND_EXACT_FALLBACK",
+  "runtime_build_id": "20261017T013609.676118Z",
+  "runtime_report_sha256": "d4451cb0c16ccbb2fa569955c0aaaa4b276c76449ef786c1a7b68552a46c7c0b",
+  "runs": {
+    "off": {
+      "name": "off",
+      "log": "results/v169-stable-leafs-off-20261017T013957Z.log",
+      "log_sha256": "e05af472eb362490a44bf302ed991f867eeb1067ee0ad717ac01ffde3201bf6b",
+      "alloc_timing_rows": 25,
+      "reserve_rows": 25,
+      "phase_rows": 4,
+      "exact_cpu_oracle": true,
+      "source_overwrite_aba_reset_growth_free_event_fallback": true,
+      "final_marker": "V152_PASS phases=4 schedules=3 copies=4 source_overwrite=1 ABA=1 independent_scheduler_interleave=1 reset=1 growth=1 free_event=1 invalid_cap_fallback=1 exact_cpu_oracle=1 output_backend=CUDA1"
+    },
+    "off_repeat": {
+      "name": "off_repeat",
+      "log": "results/v169-stable-leafs-off-20261017T014006Z.log",
+      "log_sha256": "9c8f267bef465f3d5ff41bb5522dd37323ab4c6d3e67024cb293a9ddf0427778",
+      "alloc_timing_rows": 25,
+      "reserve_rows": 25,
+      "phase_rows": 4,
+      "exact_cpu_oracle": true,
+      "source_overwrite_aba_reset_growth_free_event_fallback": true,
+      "final_marker": "V152_PASS phases=4 schedules=3 copies=4 source_overwrite=1 ABA=1 independent_scheduler_interleave=1 reset=1 growth=1 free_event=1 invalid_cap_fallback=1 exact_cpu_oracle=1 output_backend=CUDA1"
+    },
+    "on": {
+      "name": "on",
+      "log": "results/v169-stable-leafs-on-20261017T014207Z.log",
+      "log_sha256": "8c4005e7fa942c494fa0e35a483b45d2df45413634ee6fe3a551b655db6730ee",
+      "alloc_timing_rows": 25,
+      "reserve_rows": 4,
+      "phase_rows": 4,
+      "exact_cpu_oracle": true,
+      "source_overwrite_aba_reset_growth_free_event_fallback": true,
+      "final_marker": "V152_PASS phases=4 schedules=3 copies=4 source_overwrite=1 ABA=1 independent_scheduler_interleave=1 reset=1 growth=1 free_event=1 invalid_cap_fallback=1 exact_cpu_oracle=1 output_backend=CUDA1",
+      "stable_leaf_groups_by_scheduler": [
+        32,
+        64
+      ],
+      "selected_schedulers": 2,
+      "invalid_budget_fallback": true
+    }
+  },
+  "off_reserve_rows": 25,
+  "on_reserve_rows": 4,
+  "timing_rows_per_run": 25,
+  "exact_cpu_oracle": true,
+  "model_loaded": false,
+  "bounded_gpu_fixture": true,
+  "automatic_retry": false,
+  "source_scope": "V152 staging fixture under V169 with stable CPU input leaf selection off/on"
+}

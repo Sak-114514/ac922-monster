@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "scope": "host-only synthetic FP64 selected-cell address/numeric oracle; not a GGML dense FA run, CUDA run, or model logits gate",
+  "shape": {
+    "n_stream": 2,
+    "queries_per_stream": [4, 32],
+    "q_heads": [4, 8],
+    "head_dim": 256,
+    "view_nkv": 2112,
+    "kv_capacity_per_stream": 4096,
+    "cell_stride_bytes": 1040,
+    "stream_stride_bytes": 4259904,
+    "selected_width": 513,
+    "padded_width": 516,
+    "padding_ids": "cell 0, valid in bounds, masked to -inf"
+  },
+  "max_abs_error_vs_dense_masked_fp64": 8.326672684688674e-16,
+  "max_relative_error_vs_dense_masked_fp64": 1.9161085347747985e-15,
+  "wrong_active_view_offset": "detected: stream * view_nkv * nb2 differs from stream * nb3 when view_nkv < capacity",
+  "cases": [
+    {
+      "queries_per_stream": 4,
+      "q_heads": 4,
+      "max_abs_error": 5.551115123125783e-16,
+      "max_relative_error": 1.915717309609478e-15
+    },
+    {
+      "queries_per_stream": 4,
+      "q_heads": 8,
+      "max_abs_error": 6.661338147750939e-16,
+      "max_relative_error": 1.9157173096094785e-15
+    },
+    {
+      "queries_per_stream": 32,
+      "q_heads": 4,
+      "max_abs_error": 8.326672684688674e-16,
+      "max_relative_error": 1.915717309609478e-15
+    },
+    {
+      "queries_per_stream": 32,
+      "q_heads": 8,
+      "max_abs_error": 8.326672684688674e-16,
+      "max_relative_error": 1.9161085347747985e-15
+    }
+  ]
+}

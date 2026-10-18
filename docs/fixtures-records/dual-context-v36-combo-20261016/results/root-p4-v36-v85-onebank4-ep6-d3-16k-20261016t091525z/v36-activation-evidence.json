@@ -1,0 +1,78 @@
+{
+  "activation_checks": {
+    "dense_sm70_chunk4_selected": true,
+    "hc_combine_small_selected": true,
+    "nested_async_selected": true,
+    "nested_compose_replayed": true,
+    "qsa_direct_list_selected_on_prefill_shape": true,
+    "relay6_kind3_selected_all_ranks_within_10mib": false
+  },
+  "composition_gate": "requires a successful meta-nested-compose requested=1 selected=1 phase=replay marker; flags/record-only markers do not pass",
+  "dense_sm70_chunk4_examples": [
+    "sm70 decode linear chunks active: dense columns=32 chunk=4 type=bf16",
+    "sm70 decode linear chunks active: dense columns=32 chunk=4 type=iq4_xs",
+    "sm70 decode linear chunks active: dense columns=32 chunk=4 type=iq3_s",
+    "sm70 decode linear chunks active: dense columns=32 chunk=4 type=iq4_nl",
+    "sm70 decode linear chunks active: dense columns=32 chunk=4 type=q6_K",
+    "sm70 decode linear chunks active: dense columns=32 chunk=4 type=q4_K",
+    "sm70 decode linear chunks active: dense columns=32 chunk=4 type=q5_K",
+    "sm70 decode linear chunks active: dense columns=32 chunk=4 type=q4_K"
+  ],
+  "dense_sm70_chunk4_marker_count": 497,
+  "hc_combine_small_examples": [
+    "2.56.724.197 I hc-combine-small selected=1 tokens=32 max_tokens=32 mode=2 dtype=f32",
+    "2.56.724.240 I hc-combine-small selected=1 tokens=32 max_tokens=32 mode=2 dtype=f32",
+    "3.08.843.825 I hc-combine-small selected=1 tokens=32 max_tokens=32 mode=2 dtype=f32",
+    "3.08.843.865 I hc-combine-small selected=1 tokens=32 max_tokens=32 mode=2 dtype=f32",
+    "3.15.403.081 I hc-combine-small selected=1 tokens=16 max_tokens=32 mode=2 dtype=f32",
+    "3.15.403.131 I hc-combine-small selected=1 tokens=16 max_tokens=32 mode=2 dtype=f32",
+    "3.54.971.364 I hc-combine-small selected=1 tokens=16 max_tokens=32 mode=2 dtype=f32",
+    "3.54.971.403 I hc-combine-small selected=1 tokens=16 max_tokens=32 mode=2 dtype=f32"
+  ],
+  "hc_combine_small_selected_count": 16,
+  "nested_async_selected_marker_count": 4,
+  "nested_compose_record_count": 624,
+  "nested_compose_records": [
+    "2.57.033.304 I meta-nested-compose context=0x7fff6131f870 requested=1 selected=0 phase=record generation=1 replays=0 recordings=0 declines=1 source=validated_prepared_fragments",
+    "2.58.664.452 I meta-nested-compose context=0x7ffc6b5ba830 requested=1 selected=0 phase=record generation=1 replays=0 recordings=0 declines=1 source=validated_prepared_fragments",
+    "2.59.154.135 I meta-nested-compose context=0x7fff6131f870 requested=1 selected=0 phase=record generation=2 replays=0 recordings=0 declines=2 source=validated_prepared_fragments",
+    "3.00.368.348 I meta-nested-compose context=0x7ffc6b5ba830 requested=1 selected=0 phase=record generation=2 replays=0 recordings=0 declines=2 source=validated_prepared_fragments",
+    "3.00.444.961 I meta-nested-compose context=0x7ffc6b5ba830 requested=1 selected=0 phase=record generation=3 replays=0 recordings=0 declines=3 source=validated_prepared_fragments",
+    "3.01.085.700 I meta-nested-compose context=0x7fff6131f870 requested=1 selected=0 phase=record generation=3 replays=0 recordings=0 declines=3 source=validated_prepared_fragments",
+    "3.02.479.421 I meta-nested-compose context=0x7fff6131f870 requested=1 selected=0 phase=record generation=4 replays=0 recordings=0 declines=4 source=validated_prepared_fragments",
+    "3.03.776.345 I meta-nested-compose context=0x7ffc6b5ba830 requested=1 selected=0 phase=record generation=4 replays=0 recordings=0 declines=4 source=validated_prepared_fragments"
+  ],
+  "nested_compose_replay_count": 132,
+  "nested_compose_replays": [
+    "3.08.371.025 I meta-nested-compose context=0x7ffc6b5ba830 requested=1 selected=1 phase=replay generation=10 replays=1 recordings=1 declines=11",
+    "3.08.689.947 I meta-nested-compose context=0x7ffc6b5ba830 requested=1 selected=1 phase=replay generation=12 replays=2 recordings=2 declines=13",
+    "3.27.102.398 I meta-nested-compose context=0x7ffc6b5ba830 requested=1 selected=1 phase=replay generation=25 replays=3 recordings=3 declines=26",
+    "3.27.318.768 I meta-nested-compose context=0x7ffc6b5ba830 requested=1 selected=1 phase=replay generation=27 replays=4 recordings=4 declines=28",
+    "3.27.515.653 I meta-nested-compose context=0x7fff6131f870 requested=1 selected=1 phase=replay generation=14 replays=1 recordings=1 declines=17",
+    "3.34.030.426 I meta-nested-compose context=0x7ffc6b5ba830 requested=1 selected=1 phase=replay generation=34 replays=5 recordings=5 declines=36",
+    "3.34.295.251 I meta-nested-compose context=0x7ffc6b5ba830 requested=1 selected=1 phase=replay generation=36 replays=6 recordings=6 declines=38",
+    "3.34.502.687 I meta-nested-compose context=0x7fff6131f870 requested=1 selected=1 phase=replay generation=18 replays=2 recordings=2 declines=22"
+  ],
+  "nested_compose_summaries": [
+    "7.55.113.943 I meta-nested-compose summary context=0x7ffc6b5ba830 replays=417 recordings=61 declines=250",
+    "7.56.264.637 I meta-nested-compose summary context=0x7fff6131f870 replays=280 recordings=16 declines=167",
+    "10.03.436.658 I meta-nested-compose summary context=0x7ff8a5417f60 replays=155 recordings=20 declines=63",
+    "10.04.009.519 I meta-nested-compose summary context=0x7ffdc82bed30 replays=96 recordings=5 declines=42"
+  ],
+  "nested_compose_summary_count": 4,
+  "qsa_prefill_direct_list_examples": [
+    "optimization path device=1 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=1 selected=1 reason=direct_list_dynamic_smem_bytes_in_auxiliary tokens=1024 width=513 auxiliary=0 count=1",
+    "optimization path device=2 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=1 selected=1 reason=direct_list_dynamic_smem_bytes_in_auxiliary tokens=1024 width=513 auxiliary=0 count=1",
+    "optimization path device=4 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=1 selected=1 reason=direct_list_dynamic_smem_bytes_in_auxiliary tokens=1024 width=513 auxiliary=0 count=1",
+    "optimization path device=5 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=1 selected=1 reason=direct_list_dynamic_smem_bytes_in_auxiliary tokens=1024 width=513 auxiliary=0 count=1",
+    "optimization path device=0 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=1 selected=1 reason=direct_list_dynamic_smem_bytes_in_auxiliary tokens=1024 width=513 auxiliary=0 count=1",
+    "optimization path device=2 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=1 selected=1 reason=direct_list_dynamic_smem_bytes_in_auxiliary tokens=1024 width=513 auxiliary=0 count=2",
+    "optimization path device=3 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=1 selected=1 reason=direct_list_dynamic_smem_bytes_in_auxiliary tokens=1024 width=513 auxiliary=0 count=1",
+    "optimization path device=5 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=1 selected=1 reason=direct_list_dynamic_smem_bytes_in_auxiliary tokens=1024 width=513 auxiliary=0 count=2"
+  ],
+  "qsa_prefill_direct_list_selected_count_tokens_ge_1024": 30,
+  "relay6_kind3_eligible_ranks_observed": [],
+  "relay6_kind3_ranks_observed": [],
+  "relay6_kind3_records": [],
+  "status": "FAIL"
+}

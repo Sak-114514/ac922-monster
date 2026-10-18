@@ -1,0 +1,208 @@
+ggml_cuda_init: found 2 CUDA devices (Total VRAM: 32256 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+PP pinned inputs requested=1 selected=1 scheduler=0x1000fde0aa0 copies=4 cap=268435456 reset_preserves_slots=1
+V220_START cuda_devices=2 cpu_devices=1 binding_keys=1 key_cap=32 structural=1 path_log=1 force=0 host_timing=1 pinned_inputs=1 expected_copies=4
+SCHEDULER_READY scheduler=0x1000fde0aa0 order=CUDA0,CUDA1,CPU copies=4 cap_mib=256
+CASE_PLAN label=binding-slots width=32 batch=16 row_bytes=2048 gpu0_inputs_per_copy=6144 gpu1_inputs_per_copy=2048 expected_stage_ring_bytes=32768 output_sink_bytes=41120 fresh_graph_per_frame=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=0 cycle_index=0 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x10011bbfee0 ids_data=0x1001176a3c0 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+CUDA graph structural rejected binding device=0 name=CUDA0#binding-slots.cpu_embedding_rows#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=32,16,1,1
+CUDA graph structural rejected binding device=0 name=CUDA0#binding-slots.input.host0#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=32,16,1,1
+CUDA graph structural rejected binding device=0 name=CUDA0#binding-slots.input.host0b#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=32,16,1,1
+CUDA graph structural rejected graph device=0 reason=unsupported_external nodes=3 external=4 uid=0
+CUDA graph structural rejected binding device=1 name=CUDA1#binding-slots.gpu0_add1#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=32,16,1,1
+CUDA graph structural rejected binding device=1 name=CUDA1#binding-slots.input.host1#0 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=32,16,1,1
+CUDA graph structural rejected graph device=1 reason=unsupported_external nodes=2 external=3 uid=0
+GRAPH_DESCRIPTOR frame=0 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=1 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=0 cycle_index=0 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=0 seed=0 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+PP pinned inputs active scheduler=0x1000fde0aa0 backend=CUDA0 slot=0 source=binding-slots.cpu_embedding_rows bytes=2048 private_source=1 device_event_wait=1
+CUDA graph binding key requested=1 selected=1 device=0 raw_key=0x1001162a450 key=0x1001177bdb0 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph path config ctx=0x1000fdde5a0 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x1000fdde5a0 device=0 uid=3 nodes=3 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfa00000
+PP pinned inputs active scheduler=0x1000fde0aa0 backend=CUDA1 slot=0 source=binding-slots.input.host1 bytes=2048 private_source=1 device_event_wait=1
+CUDA graph binding key requested=1 selected=1 device=1 raw_key=0x1001162a8a0 key=0x1000faef930 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph path config ctx=0x1000fddf820 device=1 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x1000fddf820 device=1 uid=4 nodes=2 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfc00000
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=0 seed=0 source_overwrite_after_submit=1 output_sink_slot=0 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=1 cycle_index=1 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x10013ea9320 ids_data=0x10013fa9380 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+CUDA graph structural rejected binding device=0 name=CUDA0#binding-slots.cpu_embedding_rows#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=32,16,1,1
+CUDA graph structural rejected graph device=0 reason=unsupported_external nodes=3 external=4 uid=0
+CUDA graph structural rejected binding device=1 name=CUDA1#binding-slots.gpu0_add1#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=32,16,1,1
+CUDA graph structural rejected binding device=1 name=CUDA1#binding-slots.input.host1#1 op=0 buffer=0 data=0 extra_valid=1 view=0 ne=32,16,1,1
+CUDA graph structural rejected graph device=1 reason=unsupported_external nodes=2 external=3 uid=0
+GRAPH_DESCRIPTOR frame=1 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=5 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=1 cycle_index=1 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=1 seed=1 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+CUDA graph signature detail ctx=0x1000fdde5a0 device=0 raw_key=0x1001162a450 section=external index=1 old_name=CUDA0#binding-slots.cpu_embedding_rows#0 new_name=CUDA0#binding-slots.cpu_embedding_rows#1 old_ne=[32,16,1,1] new_ne=[32,16,1,1] old_data=0x7ffecfa01000 new_data=0x7ffecfa01800 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1000fdde5a0 device=0 reference=same_size_owned_signature section=external index=1 field=data same_data=0 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=1/16
+CUDA graph binding key requested=1 selected=1 device=0 raw_key=0x1001162a450 key=0x10013fad280 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph fallback ctx=0x1000fdde5a0 device=0 uid=7 nodes=3 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfa00000
+CUDA graph signature detail ctx=0x1000fddf820 device=1 raw_key=0x1001162a8a0 section=external index=1 old_name=CUDA1#binding-slots.gpu0_add1#0 new_name=CUDA1#binding-slots.gpu0_add1#1 old_ne=[32,16,1,1] new_ne=[32,16,1,1] old_data=0x7ffecfc01000 new_data=0x7ffecfc01800 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1000fddf820 device=1 reference=same_size_owned_signature section=external index=1 field=data same_data=0 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=1/16
+CUDA graph binding key requested=1 selected=1 device=1 raw_key=0x1001162a8a0 key=0x10013faf000 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph fallback ctx=0x1000fddf820 device=1 uid=8 nodes=2 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfc00000
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=1 seed=1 source_overwrite_after_submit=1 output_sink_slot=1 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=2 cycle_index=2 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x10013fb0120 ids_data=0x100140b0180 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=2 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=9 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=2 cycle_index=2 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=2 seed=0 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+CUDA graph signature detail ctx=0x1000fdde5a0 device=0 raw_key=0x1001162a450 section=external index=1 old_name=CUDA0#binding-slots.cpu_embedding_rows#1 new_name=CUDA0#binding-slots.cpu_embedding_rows#2 old_ne=[32,16,1,1] new_ne=[32,16,1,1] old_data=0x7ffecfa01800 new_data=0x7ffecfa02000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1000fdde5a0 device=0 reference=same_size_owned_signature section=external index=1 field=data same_data=0 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=2/16
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfa00000
+CUDA graph signature detail ctx=0x1000fddf820 device=1 raw_key=0x1001162a8a0 section=external index=1 old_name=CUDA1#binding-slots.gpu0_add1#0 new_name=CUDA1#binding-slots.gpu0_add1#2 old_ne=[32,16,1,1] new_ne=[32,16,1,1] old_data=0x7ffecfc01000 new_data=0x7ffecfc02000 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1000fddf820 device=1 reference=same_size_owned_signature section=external index=1 field=data same_data=0 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=2/16
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfc00000
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=2 seed=0 source_overwrite_after_submit=1 output_sink_slot=2 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=3 cycle_index=3 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x100140b6920 ids_data=0x100141b6980 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=3 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=13 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=3 cycle_index=3 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=3 seed=2 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+CUDA graph signature detail ctx=0x1000fdde5a0 device=0 raw_key=0x1001162a450 section=external index=1 old_name=CUDA0#binding-slots.cpu_embedding_rows#2 new_name=CUDA0#binding-slots.cpu_embedding_rows#3 old_ne=[32,16,1,1] new_ne=[32,16,1,1] old_data=0x7ffecfa02000 new_data=0x7ffecfa02800 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1000fdde5a0 device=0 reference=same_size_owned_signature section=external index=1 field=data same_data=0 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=3/16
+CUDA graph binding key requested=1 selected=1 device=0 raw_key=0x1001162a450 key=0x100141b8480 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph signature detail ctx=0x1000fddf820 device=1 raw_key=0x1001162a8a0 section=external index=1 old_name=CUDA1#binding-slots.gpu0_add1#2 new_name=CUDA1#binding-slots.gpu0_add1#3 old_ne=[32,16,1,1] new_ne=[32,16,1,1] old_data=0x7ffecfc02000 new_data=0x7ffecfc02800 old_view_offs=0 new_view_offs=0 diagnostic_only=1
+CUDA graph signature miss ctx=0x1000fddf820 device=1 reference=same_size_owned_signature section=external index=1 field=data same_data=0 same_buffer=1 same_shape_strides=1 same_op_params=1 diagnostic_only=1 decision_unchanged=1 report=3/16
+CUDA graph binding key requested=1 selected=1 device=1 raw_key=0x1001162a8a0 key=0x10011778230 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=3 seed=2 source_overwrite_after_submit=1 output_sink_slot=3 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=4 cycle_index=0 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x100141bcee0 ids_data=0x100142bcf40 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=4 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=17 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=4 cycle_index=0 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=4 seed=3 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000fdde5a0 device=0 uid=19 nodes=3 mode=capture count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000fddf820 device=1 uid=20 nodes=2 mode=capture count=1
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=4 seed=3 source_overwrite_after_submit=1 output_sink_slot=4 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=5 cycle_index=1 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x100142cc2a0 ids_data=0x100143cc300 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=5 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=21 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=5 cycle_index=1 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=5 seed=4 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000fdde5a0 device=0 uid=23 nodes=3 mode=capture count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1000fddf820 device=1 uid=24 nodes=2 mode=capture count=2
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=5 seed=4 source_overwrite_after_submit=1 output_sink_slot=5 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=6 cycle_index=2 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x100143d6760 ids_data=0x100144d67c0 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=6 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=25 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=6 cycle_index=2 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=6 seed=5 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=6 seed=5 source_overwrite_after_submit=1 output_sink_slot=6 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=7 cycle_index=3 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x100144e0aa0 ids_data=0x100145e0ac0 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=7 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=29 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=7 cycle_index=3 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=7 seed=6 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=7 seed=6 source_overwrite_after_submit=1 output_sink_slot=7 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=8 cycle_index=0 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x100145eabe0 ids_data=0x100146eac00 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=8 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=33 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=8 cycle_index=0 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=8 seed=7 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+CUDA graph path active ctx=0x1000fdde5a0 device=0 uid=35 nodes=3 mode=replay count=1
+CUDA graph path active ctx=0x1000fddf820 device=1 uid=36 nodes=2 mode=replay count=1
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=8 seed=7 source_overwrite_after_submit=1 output_sink_slot=8 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=9 cycle_index=1 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x100146ed520 ids_data=0x100147ed580 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=9 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=37 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=9 cycle_index=1 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=9 seed=8 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+CUDA graph path active ctx=0x1000fdde5a0 device=0 uid=39 nodes=3 mode=replay count=2
+CUDA graph path active ctx=0x1000fddf820 device=1 uid=40 nodes=2 mode=replay count=2
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=9 seed=8 source_overwrite_after_submit=1 output_sink_slot=9 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=10 cycle_index=2 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x100147ef620 ids_data=0x100148ef640 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=10 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=41 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=10 cycle_index=2 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=10 seed=9 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=10 seed=9 source_overwrite_after_submit=1 output_sink_slot=10 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=11 cycle_index=3 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x100148f1720 ids_data=0x100149f1740 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=11 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=45 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=11 cycle_index=3 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=11 seed=10 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=11 seed=10 source_overwrite_after_submit=1 output_sink_slot=11 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=12 cycle_index=0 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x100149f3860 ids_data=0x10014af38c0 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=12 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=49 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=12 cycle_index=0 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=12 seed=11 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=12 seed=11 source_overwrite_after_submit=1 output_sink_slot=12 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=13 cycle_index=1 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x10014af5960 ids_data=0x10014bf5980 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=13 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=53 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=13 cycle_index=1 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=13 seed=12 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=13 seed=12 source_overwrite_after_submit=1 output_sink_slot=13 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=14 cycle_index=2 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x10014bf7a60 ids_data=0x10014cf7a80 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=14 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=57 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=14 cycle_index=2 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=14 seed=13 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=14 seed=13 source_overwrite_after_submit=1 output_sink_slot=14 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=15 cycle_index=3 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x10014cf9b60 ids_data=0x10014df9b80 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=15 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=61 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=15 cycle_index=3 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=15 seed=14 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=15 seed=14 source_overwrite_after_submit=1 output_sink_slot=15 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=16 cycle_index=0 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x10014dfbc60 ids_data=0x10014efbc80 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=16 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=65 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=16 cycle_index=0 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=16 seed=15 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=16 seed=15 source_overwrite_after_submit=1 output_sink_slot=16 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=17 cycle_index=1 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x10014efdd60 ids_data=0x10014ffdd80 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=17 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=69 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=17 cycle_index=1 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=17 seed=16 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=17 seed=16 source_overwrite_after_submit=1 output_sink_slot=17 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=18 cycle_index=2 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x10014fffe60 ids_data=0x100150ffe80 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=18 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=73 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=18 cycle_index=2 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=18 seed=17 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=18 seed=17 source_overwrite_after_submit=1 output_sink_slot=18 input_owner_retained=1 reusable_graph_metadata=1
+BEFORE_ALLOC scheduler=0x1000fde0aa0 frame=19 cycle_index=3 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 ids=0x10015101f60 ids_data=0x10015201f80 rows=0x1001162a2e0 mm0=0x1001162a450 mm0_src1=0x1001162a2e0 mm0_src1_ne=32x16
+GRAPH_DESCRIPTOR frame=19 metadata_ctx=0x100113fd4b0 graph=0x1001162ab80 uid=77 rows=0x1001162a2e0 mm0=0x1001162a450 mm1=0x1001162a8a0 descriptor_addresses_stable=1 uid_changed=1
+AFTER_ALLOC scheduler=0x1000fde0aa0 frame=19 cycle_index=3 graph=0x1001162ab80 splits=3
+FRAME_BEGIN scheduler=0x1000fde0aa0 case=binding-slots frame=19 seed=18 graph=0x1001162ab80 metadata_ctx=0x100113fd4b0 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1 shared_metadata=1
+FRAME_QUEUED scheduler=0x1000fde0aa0 case=binding-slots frame=19 seed=18 source_overwrite_after_submit=1 output_sink_slot=19 input_owner_retained=1 reusable_graph_metadata=1
+PP pinned inputs summary scheduler=0x1000fde0aa0 copies=80 declines=0 pinned_high_water=32768 cap=268435456
+CUDA graph structural stats device=1 attempts=40 built=20 reject_too_large=0 reject_graph=0 reject_external=20 reject_missing=0 active_matches=16 variant_matches=0 lookup_misses=4 cross_descriptor_replays=12 flat_snapshot_hits=0 flat_snapshot_misses=0 signature_build_us=287 lookup_us=143
+FreeToken host ctx=0x1000fddf820 kind=eager calls=4 total_us=18092 nodes=8
+FreeToken host ctx=0x1000fddf820 kind=capture calls=4 total_us=375 nodes=8
+FreeToken host ctx=0x1000fddf820 kind=replay calls=12 total_us=272 nodes=24
+FreeToken host ctx=0x1000fddf820 kind=launch calls=16 total_us=123 nodes=0
+FreeToken host ctx=0x1000fddf820 kind=synchronize calls=23 total_us=165 nodes=0
+FreeToken host ctx=0x1000fddf820 kind=instantiate calls=4 total_us=108 nodes=0
+FreeToken host ctx=0x1000fddf820 kind=exec_update calls=4 total_us=8 nodes=0
+FreeToken host ctx=0x1000fddf820 kind=reinstantiate calls=0 total_us=0 nodes=0
+CUDA graph structural stats device=0 attempts=40 built=20 reject_too_large=0 reject_graph=0 reject_external=20 reject_missing=0 active_matches=16 variant_matches=0 lookup_misses=4 cross_descriptor_replays=12 flat_snapshot_hits=0 flat_snapshot_misses=0 signature_build_us=423 lookup_us=182
+FreeToken host ctx=0x1000fdde5a0 kind=eager calls=4 total_us=49453 nodes=12
+FreeToken host ctx=0x1000fdde5a0 kind=capture calls=4 total_us=490 nodes=12
+FreeToken host ctx=0x1000fdde5a0 kind=replay calls=12 total_us=355 nodes=36
+FreeToken host ctx=0x1000fdde5a0 kind=launch calls=16 total_us=142 nodes=0
+FreeToken host ctx=0x1000fdde5a0 kind=synchronize calls=23 total_us=220 nodes=0
+FreeToken host ctx=0x1000fdde5a0 kind=instantiate calls=4 total_us=142 nodes=0
+FreeToken host ctx=0x1000fdde5a0 kind=exec_update calls=4 total_us=16 nodes=0
+FreeToken host ctx=0x1000fdde5a0 kind=reinstantiate calls=0 total_us=0 nodes=0
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=0 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=1 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=2 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=3 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=4 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=5 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=6 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=7 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=8 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=9 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=10 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=11 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=12 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=13 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=14 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=15 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=16 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=17 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=18 exact=1 canary=1 elements=512
+FRAME_RESULT phase=four-copy-binding-key-rotation scheduler=0x1000fde0aa0 case=binding-slots frame=19 exact=1 canary=1 elements=512
+PASS_PHASE phase=four-copy-binding-key-rotation frames=20 exact_cpu_oracle=1 output_on_cuda1=1 final_drain=1
+V220_PASS frames=20 copies=4 slot_wraps=5 fresh_graph_per_frame=1 shared_metadata_context=1 descriptor_addresses_stable=1 graph_uid_changes=1 source_overwrite=1 ABA=1 exact_cpu_oracle=1 output_canaries=1 output_backend=CUDA1

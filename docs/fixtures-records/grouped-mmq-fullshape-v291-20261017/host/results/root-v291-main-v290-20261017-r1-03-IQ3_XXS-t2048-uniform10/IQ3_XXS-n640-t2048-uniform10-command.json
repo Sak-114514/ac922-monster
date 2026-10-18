@@ -1,0 +1,43 @@
+{
+  "argv": [
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/grouped-mmq-fullshape-v291-20261017/host/build-v291/grouped-mmq-fullshape",
+    "--format",
+    "IQ3_XXS",
+    "--tokens",
+    "2048",
+    "--route",
+    "uniform10",
+    "--samples",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/monpack-ep-readiness-20261016/operator-fixture/tc-probe/samples",
+    "--device",
+    "3"
+  ],
+  "format": "IQ3_XXS",
+  "rows": 640,
+  "inner": 2560,
+  "experts": 512,
+  "tokens": 2048,
+  "top_k": 10,
+  "route": "uniform10",
+  "route_per_active_expert": 40,
+  "expected_j_family_from_exact_route_histogram": "adaptive",
+  "expected_j_bucket_from_source_dispatch_rules": 64,
+  "device": 3,
+  "device_uuid": "GPU-fadb0459-4d30-907b-289a-862b3014f165",
+  "runtime_library_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v290/lib",
+  "recipe_flags": {
+    "GGML_CUDA_MOE_GROUPED": "1",
+    "GGML_CUDA_MOE_ADAPTIVE_J": "1",
+    "GGML_CUDA_MOE_SMALL_J": "1",
+    "GGML_CUDA_MOE_SMALL_J_MAX_TOKENS": "512",
+    "GGML_CUDA_MOE_FUSED_T16": "1"
+  },
+  "gpu_memory_cap_bytes": 2147483648,
+  "minimum_free_mib": 512,
+  "maximum_temperature_c": 58,
+  "timeout_seconds": 120,
+  "model_loaded": false,
+  "custom_kernel_called": false,
+  "source_samples_sha256_verified": true,
+  "quality_scope": "six representative tokens, all 10 routed outputs, all N rows; report-only"
+}

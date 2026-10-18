@@ -1,0 +1,105 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+RUNTIME_LD_LIBRARY_PATH=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib:/usr/local/cuda-12.4/targets/ppc64le-linux/lib:/usr/local/cuda/lib:/usr/local/cuda/lib:/usr/local/cuda-12.4/lib
+RUNTIME_MAP 7fff93a90000-7fff93bb0000 r-xp 00000000 08:04 31915844                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-cpu.so.0
+RUNTIME_MAP 7fff93bb0000-7fff93bc0000 r--p 00110000 08:04 31915844                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-cpu.so.0
+RUNTIME_MAP 7fff93bc0000-7fff93bd0000 rw-p 00120000 08:04 31915844                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-cpu.so.0
+RUNTIME_MAP 7fff93c50000-7fffa1680000 r-xp 00000000 08:04 31915845                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-cuda.so.0
+RUNTIME_MAP 7fffa1680000-7fffa1690000 r--p 0da20000 08:04 31915845                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-cuda.so.0
+RUNTIME_MAP 7fffa1690000-7fffa16a0000 rw-p 0da30000 08:04 31915845                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-cuda.so.0
+RUNTIME_MAP 7fffa16b0000-7fffa17d0000 r-xp 00000000 08:04 31915843                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-base.so.0
+RUNTIME_MAP 7fffa17d0000-7fffa17e0000 r--p 00110000 08:04 31915843                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-base.so.0
+RUNTIME_MAP 7fffa17e0000-7fffa17f0000 rw-p 00120000 08:04 31915843                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml-base.so.0
+RUNTIME_MAP 7fffa17f0000-7fffa1800000 r-xp 00000000 08:04 31915842                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml.so.0
+RUNTIME_MAP 7fffa1800000-7fffa1810000 r--p 00000000 08:04 31915842                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml.so.0
+RUNTIME_MAP 7fffa1810000-7fffa1820000 rw-p 00010000 08:04 31915842                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v13/lib/libggml.so.0
+DEVICE phase=start index=0 name=CUDA0 pci=0004:04:00.0 free=16575102976 total=16911433728 island=A
+DEVICE phase=start index=1 name=CUDA1 pci=0004:05:00.0 free=16575102976 total=16911433728 island=A
+DEVICE phase=start index=2 name=CUDA2 pci=0004:06:00.0 free=16575102976 total=16911433728 island=A
+DEVICE phase=start index=3 name=CUDA3 pci=0035:03:00.0 free=16575102976 total=16911433728 island=B
+DEVICE phase=start index=4 name=CUDA4 pci=0035:04:00.0 free=16568811520 total=16911433728 island=B
+DEVICE phase=start index=5 name=CUDA5 pci=0035:05:00.0 free=16574382080 total=16911433728 island=B
+SHARED_LAYER_STATE A_kv=0x10032bc98a0 A_gdn=0x10032bc9a10 B_kv=0x100344d08e0 B_gdn=0x100344d0a50 frames_share_state=1
+NVTX_BEGIN name=P4S/epoch=1/frame=0/stage=A host_ns=103396174112830
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x7ffd1d042400
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x7ffd1d242400
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x7ffd1d442400
+STAGE_ENQUEUED epoch=1 generation=1 slot=0 stage=A pos=0..4 host_us=103396238298
+NVTX_END name=P4S/epoch=1/frame=0/stage=A host_ns=103396238300455
+NVTX_BEGIN name=P4S/A0_to_B0 host_ns=103396238338932
+meta cross-device event wait active: CUDA stream dependencies
+NVTX_BEGIN name=P4S/epoch=1/frame=0/stage=B host_ns=103396238677303
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x7ffc5d042400
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x7ffc5d242400
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x7ffc5d442400
+STAGE_ENQUEUED epoch=1 generation=1 slot=0 stage=B pos=0..4 host_us=103396263533
+NVTX_END name=P4S/epoch=1/frame=0/stage=B host_ns=103396263534754
+NVTX_END name=P4S/A0_to_B0 host_ns=103396263549663
+NVTX_BEGIN name=P4S/epoch=1/frame=1/stage=A host_ns=103396263570915
+STAGE_ENQUEUED epoch=1 generation=2 slot=1 stage=A pos=4..8 host_us=103396269600
+NVTX_END name=P4S/epoch=1/frame=1/stage=A host_ns=103396269602515
+NVTX_BEGIN name=P4S/A1_B0_to_B1 host_ns=103396269609550
+NVTX_BEGIN name=P4S/epoch=1/frame=1/stage=B host_ns=103396269836495
+STAGE_ENQUEUED epoch=1 generation=2 slot=1 stage=B pos=4..8 host_us=103396276513
+NVTX_END name=P4S/epoch=1/frame=1/stage=B host_ns=103396276515040
+NVTX_END name=P4S/A1_B0_to_B1 host_ns=103396276522122
+BACKPRESSURE epoch=1 occupied=2 capacity=2
+EXACT_OUTPUT epoch=1 slot=0 stage=A values=128
+EXACT_OUTPUT epoch=1 slot=0 stage=B values=128
+EXACT_OUTPUT epoch=1 slot=1 stage=A values=128
+EXACT_OUTPUT epoch=1 slot=1 stage=B values=128
+EXACT_SHARED_STATE epoch=1 stage=A kv_values=512 gdn_layers=2
+EXACT_SHARED_STATE epoch=1 stage=B kv_values=512 gdn_layers=2
+STALE_GENERATION_REJECTED old=1 new=3
+NVTX_BEGIN name=P4S/epoch=2/frame=0/stage=A host_ns=103396277761009
+STAGE_ENQUEUED epoch=2 generation=3 slot=0 stage=A pos=0..4 host_us=103396281904
+NVTX_END name=P4S/epoch=2/frame=0/stage=A host_ns=103396281906485
+NVTX_BEGIN name=P4S/A0_to_B0 host_ns=103396281913842
+NVTX_BEGIN name=P4S/epoch=2/frame=0/stage=B host_ns=103396282125261
+STAGE_ENQUEUED epoch=2 generation=3 slot=0 stage=B pos=0..4 host_us=103396285303
+NVTX_END name=P4S/epoch=2/frame=0/stage=B host_ns=103396285304630
+NVTX_END name=P4S/A0_to_B0 host_ns=103396285310882
+NVTX_BEGIN name=P4S/epoch=2/frame=1/stage=A host_ns=103396285325458
+STAGE_ENQUEUED epoch=2 generation=4 slot=1 stage=A pos=4..8 host_us=103396287932
+NVTX_END name=P4S/epoch=2/frame=1/stage=A host_ns=103396287933864
+NVTX_BEGIN name=P4S/A1_B0_to_B1 host_ns=103396287940630
+NVTX_BEGIN name=P4S/epoch=2/frame=1/stage=B host_ns=103396288159661
+STAGE_ENQUEUED epoch=2 generation=4 slot=1 stage=B pos=4..8 host_us=103396290738
+NVTX_END name=P4S/epoch=2/frame=1/stage=B host_ns=103396290739735
+NVTX_END name=P4S/A1_B0_to_B1 host_ns=103396290745615
+BACKPRESSURE epoch=2 occupied=2 capacity=2
+EXACT_OUTPUT epoch=2 slot=0 stage=A values=128
+EXACT_OUTPUT epoch=2 slot=0 stage=B values=128
+EXACT_OUTPUT epoch=2 slot=1 stage=A values=128
+EXACT_OUTPUT epoch=2 slot=1 stage=B values=128
+EXACT_SHARED_STATE epoch=2 stage=A kv_values=512 gdn_layers=2
+EXACT_SHARED_STATE epoch=2 stage=B kv_values=512 gdn_layers=2
+SCHED_META_BYTES A=1408 B=1408
+PASS stateful_island_prefill_fixture exact=1 shared_kv=1 shared_gdn=1 backpressure=1 drain_reset=1 order=A0,B0,A1,B1
+DEVICE phase=released index=0 name=CUDA0 pci=0004:04:00.0 free=16464084992 total=16911433728 island=A
+DEVICE phase=released index=1 name=CUDA1 pci=0004:05:00.0 free=16463953920 total=16911433728 island=A
+DEVICE phase=released index=2 name=CUDA2 pci=0004:06:00.0 free=16463953920 total=16911433728 island=A
+DEVICE phase=released index=3 name=CUDA3 pci=0035:03:00.0 free=16463953920 total=16911433728 island=B
+DEVICE phase=released index=4 name=CUDA4 pci=0035:04:00.0 free=16457662464 total=16911433728 island=B
+DEVICE phase=released index=5 name=CUDA5 pci=0035:05:00.0 free=16463233024 total=16911433728 island=B
+Generating '/tmp/nsys-report-e1ce.qdstrm'
+[1/1] [0%                          ] stateful-p4-v13.nsys-rep[1/1] [0%                          ] stateful-p4-v13.nsys-rep[1/1] [=15%                        ] stateful-p4-v13.nsys-rep[1/1] [========42%                 ] stateful-p4-v13.nsys-rep[1/1] [=============58%            ] stateful-p4-v13.nsys-rep[1/1] [=============59%            ] stateful-p4-v13.nsys-rep[1/1] [==============61%           ] stateful-p4-v13.nsys-rep[1/1] [==============64%           ] stateful-p4-v13.nsys-rep[1/1] [===============65%          ] stateful-p4-v13.nsys-rep[1/1] [===============66%          ] stateful-p4-v13.nsys-rep[1/1] [================69%         ] stateful-p4-v13.nsys-rep[1/1] [=================72%        ] stateful-p4-v13.nsys-rep[1/1] [=================74%        ] stateful-p4-v13.nsys-rep[1/1] [==================77%       ] stateful-p4-v13.nsys-rep[1/1] [===================80%      ] stateful-p4-v13.nsys-rep[1/1] [====================83%     ] stateful-p4-v13.nsys-rep[1/1] [====================85%     ] stateful-p4-v13.nsys-rep[1/1] [=====================88%    ] stateful-p4-v13.nsys-rep[1/1] [======================91%   ] stateful-p4-v13.nsys-rep[1/1] [=======================93%  ] stateful-p4-v13.nsys-rep[1/1] [=======================96%  ] stateful-p4-v13.nsys-rep[1/1] [========================97% ] stateful-p4-v13.nsys-rep[1/1] [========================100%] stateful-p4-v13.nsys-rep[1/1] [========================100%] stateful-p4-v13.nsys-rep
+Generated:
+    /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/island-frame-state-20261015/results/stateful-p4-v13.nsys-rep

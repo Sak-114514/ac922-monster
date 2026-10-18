@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "error": "",
+  "checks": [
+    {"name": "null_event_query", "backend": "none", "generation": 0, "first_status": -1, "final_status": -1, "pending_queries": 0, "elapsed_us": 0, "pass": true, "detail": "null event must be unsupported", "memory_delta_bytes": []},
+    {"name": "cpu_device_unsupported", "backend": "CPU", "generation": 0, "first_status": -2, "final_status": -2, "pending_queries": 0, "elapsed_us": 0, "pass": true, "detail": "query_supported(null)=false; query_supported(cpu)=false", "memory_delta_bytes": []},
+    {"name": "cpu_unsupported_event_query", "backend": "CPU", "generation": 0, "first_status": -2, "final_status": -1, "pending_queries": 0, "elapsed_us": 0, "pass": true, "detail": "CPU event query unsupported; synthetic CPU-device event returns -1", "memory_delta_bytes": []},
+    {"name": "cuda_simple_supported", "backend": "CUDA0", "generation": 0, "first_status": -2, "final_status": -2, "pending_queries": 0, "elapsed_us": 0, "pass": true, "detail": "CUDA event query proc available", "memory_delta_bytes": []},
+    {"name": "meta3_supported", "backend": "CUDA-Meta3", "generation": 0, "first_status": -2, "final_status": -2, "pending_queries": 0, "elapsed_us": 0, "pass": true, "detail": "all three child CUDA devices support query", "memory_delta_bytes": []},
+    {"name": "simple-cuda/unrecorded_generation", "backend": "CUDA0", "generation": 0, "first_status": -2, "final_status": -2, "pending_queries": 0, "elapsed_us": 0, "pass": true, "detail": "events created but not queried until generation is published after record", "memory_delta_bytes": []},
+    {"name": "simple-cuda/A1", "backend": "CUDA0", "generation": 1, "first_status": 0, "final_status": 1, "pending_queries": 40, "elapsed_us": 12580, "pass": true, "detail": "record_enqueued_before_query; unrecorded_generation_not_queried", "memory_delta_bytes": [603979776]},
+    {"name": "simple-cuda/B1", "backend": "CUDA0", "generation": 1, "first_status": 0, "final_status": 1, "pending_queries": 41, "elapsed_us": 12952, "pass": true, "detail": "record_enqueued_before_query; unrecorded_generation_not_queried", "memory_delta_bytes": [603979776]},
+    {"name": "simple-cuda/A2", "backend": "CUDA0", "generation": 2, "first_status": 0, "final_status": 1, "pending_queries": 40, "elapsed_us": 12882, "pass": true, "detail": "record_enqueued_before_query; unrecorded_generation_not_queried", "memory_delta_bytes": [603979776]},
+    {"name": "meta3-cuda-fanout/unrecorded_generation", "backend": "CUDA-Meta3", "generation": 0, "first_status": -2, "final_status": -2, "pending_queries": 0, "elapsed_us": 0, "pass": true, "detail": "events created but not queried until generation is published after record", "memory_delta_bytes": []},
+    {"name": "meta3-cuda-fanout/A1", "backend": "CUDA-Meta3", "generation": 1, "first_status": 0, "final_status": 1, "pending_queries": 39, "elapsed_us": 12742, "pass": true, "detail": "record_enqueued_before_query; unrecorded_generation_not_queried", "memory_delta_bytes": [603979776, 603979776, 603979776]},
+    {"name": "meta3-cuda-fanout/B1", "backend": "CUDA-Meta3", "generation": 1, "first_status": 0, "final_status": 1, "pending_queries": 41, "elapsed_us": 13476, "pass": true, "detail": "record_enqueued_before_query; unrecorded_generation_not_queried", "memory_delta_bytes": [603979776, 603979776, 603979776]},
+    {"name": "meta3-cuda-fanout/A2", "backend": "CUDA-Meta3", "generation": 2, "first_status": 0, "final_status": 1, "pending_queries": 43, "elapsed_us": 14049, "pass": true, "detail": "record_enqueued_before_query; unrecorded_generation_not_queried", "memory_delta_bytes": [603979776, 603979776, 603979776]}
+  ]
+}

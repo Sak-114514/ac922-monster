@@ -1,0 +1,173 @@
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+P2P compact staging selected ranks=6 max_tensor=40.00 MiB small_arena=480.00 MiB segmented_arena=80.00 MiB per_rank old_arena=480.00 MiB
+DISPATCH_CONFIG mode=ordered elide_unused_segment=0 relay_leader_stage=0 small_bytes=163840 relay_bytes=41943040 growth_bytes=42991616 compact=1 relay_max=41943040 ring_min=204800 blocks=64 zero_rank=-1 contexts=1
+COMM_READY context=0 ranks=6 compact=1 initial_cap_floats=0
+HBM phase=after_context rank=0 free_before_mib=15817.875 free_after_mib=15735.875 added_mib=82.000
+HBM phase=after_context rank=1 free_before_mib=15817.812 free_after_mib=15735.812 added_mib=82.000
+HBM phase=after_context rank=2 free_before_mib=15817.875 free_after_mib=15735.875 added_mib=82.000
+HBM phase=after_context rank=3 free_before_mib=15816.562 free_after_mib=15734.562 added_mib=82.000
+HBM phase=after_context rank=4 free_before_mib=15813.812 free_after_mib=15731.812 added_mib=82.000
+HBM phase=after_context rank=5 free_before_mib=15814.500 free_after_mib=15732.500 added_mib=82.000
+RESERVE_STAGE_BEGIN generation=1 elide=0 leader_stage=0 bytes=41943040
+ARENA phase=reserve generation=1 rank=0 requested_bytes=41943040 elide=0 leader_stage=0 old_cap_floats=0 cap_floats=10485760 old_segment_cap_floats=0 small_cap_floats=10485760 segment_cap_floats=1747627 relay_cap_floats=0 segment_ptr=0x7ffd14e00000 relay_ptr=(nil) expected_small_bytes=503316480 expected_segment_bytes=83886096 expected_relay_bytes=0 added_bytes=589299712 graph_handles_retired=1
+ARENA phase=reserve generation=1 rank=1 requested_bytes=41943040 elide=0 leader_stage=0 old_cap_floats=0 cap_floats=10485760 old_segment_cap_floats=0 small_cap_floats=10485760 segment_cap_floats=1747627 relay_cap_floats=0 segment_ptr=0x7ffd1a000000 relay_ptr=(nil) expected_small_bytes=503316480 expected_segment_bytes=83886096 expected_relay_bytes=0 added_bytes=589299712 graph_handles_retired=1
+ARENA phase=reserve generation=1 rank=2 requested_bytes=41943040 elide=0 leader_stage=0 old_cap_floats=0 cap_floats=10485760 old_segment_cap_floats=0 small_cap_floats=10485760 segment_cap_floats=1747627 relay_cap_floats=0 segment_ptr=0x7ffd32400000 relay_ptr=(nil) expected_small_bytes=503316480 expected_segment_bytes=83886096 expected_relay_bytes=0 added_bytes=589299712 graph_handles_retired=1
+ARENA phase=reserve generation=1 rank=3 requested_bytes=41943040 elide=0 leader_stage=0 old_cap_floats=0 cap_floats=10485760 old_segment_cap_floats=0 small_cap_floats=10485760 segment_cap_floats=1747627 relay_cap_floats=0 segment_ptr=0x7ffd37600000 relay_ptr=(nil) expected_small_bytes=503316480 expected_segment_bytes=83886096 expected_relay_bytes=0 added_bytes=589299712 graph_handles_retired=1
+ARENA phase=reserve generation=1 rank=4 requested_bytes=41943040 elide=0 leader_stage=0 old_cap_floats=0 cap_floats=10485760 old_segment_cap_floats=0 small_cap_floats=10485760 segment_cap_floats=1747627 relay_cap_floats=0 segment_ptr=0x7ffd52400000 relay_ptr=(nil) expected_small_bytes=503316480 expected_segment_bytes=83886096 expected_relay_bytes=0 added_bytes=589299712 graph_handles_retired=1
+ARENA phase=reserve generation=1 rank=5 requested_bytes=41943040 elide=0 leader_stage=0 old_cap_floats=0 cap_floats=10485760 old_segment_cap_floats=0 small_cap_floats=10485760 segment_cap_floats=1747627 relay_cap_floats=0 segment_ptr=0x7ffd57600000 relay_ptr=(nil) expected_small_bytes=503316480 expected_segment_bytes=83886096 expected_relay_bytes=0 added_bytes=589299712 graph_handles_retired=1
+PAYLOAD_SET generation=1 bytes=41943040 elements=10485760
+PAYLOAD_SET generation=1 bytes=163840 elements=40960
+MIXED_DIRECT_BEGIN generation=1 step=0 payload_bytes=163840 expected_kind=0 context=0
+p2p-ar-path entry=dispatch device=0 rank=0 ranks=6 bytes=163840 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 0 allreduce_0 n=40960 zero=0 kind=0 stream=0x1002ff32ec0
+p2p-ar-path entry=dispatch device=1 rank=1 ranks=6 bytes=163840 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 1 allreduce_0 n=40960 zero=0 kind=0 stream=0x10030752500
+p2p-ar-path entry=dispatch device=2 rank=2 ranks=6 bytes=163840 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 2 allreduce_0 n=40960 zero=0 kind=0 stream=0x10030753570
+p2p-ar-path entry=dispatch device=3 rank=3 ranks=6 bytes=163840 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 3 allreduce_0 n=40960 zero=0 kind=0 stream=0x100307545e0
+p2p-ar-path entry=dispatch device=4 rank=4 ranks=6 bytes=163840 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 4 allreduce_0 n=40960 zero=0 kind=0 stream=0x10030755650
+p2p-ar-path entry=dispatch device=5 rank=5 ranks=6 bytes=163840 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 5 allreduce_0 n=40960 zero=0 kind=0 stream=0x100307566c0
+PASS_OUTPUT mode=ordered entry=dispatch context=0 frame=A0 exact=1 canary=1 zero_rank=-1 payload_bytes=163840
+MIXED_DIRECT_STEP generation=1 step=0 payload_bytes=163840 expected_kind=0 epoch_continuous=1 context=0
+PAYLOAD_SET generation=1 bytes=41943040 elements=10485760
+MIXED_DIRECT_BEGIN generation=1 step=1 payload_bytes=41943040 expected_kind=4 context=0
+p2p-ar-path entry=dispatch device=0 rank=0 ranks=6 bytes=41943040 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=0 rank=0 bytes=41943040 rank-order-exact=1 cross-payload=2V entry=dispatch
+p2p allreduce launch: rank 0 allreduce_0 n=10485760 zero=0 kind=4 stream=0x1002ff32ec0
+p2p-ar-path entry=dispatch device=1 rank=1 ranks=6 bytes=41943040 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=1 rank=1 bytes=41943040 rank-order-exact=1 cross-payload=2V entry=dispatch
+p2p allreduce launch: rank 1 allreduce_0 n=10485760 zero=0 kind=4 stream=0x10030752500
+p2p-ar-path entry=dispatch device=2 rank=2 ranks=6 bytes=41943040 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=2 rank=2 bytes=41943040 rank-order-exact=1 cross-payload=2V entry=dispatch
+p2p allreduce launch: rank 2 allreduce_0 n=10485760 zero=0 kind=4 stream=0x10030753570
+p2p-ar-path entry=dispatch device=3 rank=3 ranks=6 bytes=41943040 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=3 rank=3 bytes=41943040 rank-order-exact=1 cross-payload=2V entry=dispatch
+p2p allreduce launch: rank 3 allreduce_0 n=10485760 zero=0 kind=4 stream=0x100307545e0
+p2p-ar-path entry=dispatch device=4 rank=4 ranks=6 bytes=41943040 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=4 rank=4 bytes=41943040 rank-order-exact=1 cross-payload=2V entry=dispatch
+p2p allreduce launch: rank 4 allreduce_0 n=10485760 zero=0 kind=4 stream=0x10030755650
+p2p-ar-path entry=dispatch device=5 rank=5 ranks=6 bytes=41943040 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=5 rank=5 bytes=41943040 rank-order-exact=1 cross-payload=2V entry=dispatch
+p2p allreduce launch: rank 5 allreduce_0 n=10485760 zero=0 kind=4 stream=0x100307566c0
+PASS_OUTPUT mode=ordered entry=dispatch context=0 frame=B exact=1 canary=1 zero_rank=-1 payload_bytes=41943040
+MIXED_DIRECT_STEP generation=1 step=1 payload_bytes=41943040 expected_kind=4 epoch_continuous=1 context=0
+PAYLOAD_SET generation=1 bytes=163840 elements=40960
+MIXED_DIRECT_BEGIN generation=1 step=2 payload_bytes=163840 expected_kind=0 context=0
+p2p allreduce launch: rank 0 allreduce_0 n=40960 zero=0 kind=0 stream=0x1002ff32ec0
+p2p allreduce launch: rank 1 allreduce_0 n=40960 zero=0 kind=0 stream=0x10030752500
+p2p allreduce launch: rank 2 allreduce_0 n=40960 zero=0 kind=0 stream=0x10030753570
+p2p allreduce launch: rank 3 allreduce_0 n=40960 zero=0 kind=0 stream=0x100307545e0
+p2p allreduce launch: rank 4 allreduce_0 n=40960 zero=0 kind=0 stream=0x10030755650
+p2p allreduce launch: rank 5 allreduce_0 n=40960 zero=0 kind=0 stream=0x100307566c0
+PASS_OUTPUT mode=ordered entry=dispatch context=0 frame=A2 exact=1 canary=1 zero_rank=-1 payload_bytes=163840
+MIXED_DIRECT_STEP generation=1 step=2 payload_bytes=163840 expected_kind=0 epoch_continuous=1 context=0
+p2p allreduce launch: rank 0 allreduce_0 n=10485760 zero=0 kind=4 stream=0x1002ff32ec0
+p2p allreduce launch: rank 1 allreduce_0 n=10485760 zero=0 kind=4 stream=0x10030752500
+p2p allreduce launch: rank 2 allreduce_0 n=10485760 zero=0 kind=4 stream=0x10030753570
+p2p allreduce launch: rank 3 allreduce_0 n=10485760 zero=0 kind=4 stream=0x100307545e0
+p2p allreduce launch: rank 4 allreduce_0 n=10485760 zero=0 kind=4 stream=0x10030755650
+p2p allreduce launch: rank 5 allreduce_0 n=10485760 zero=0 kind=4 stream=0x100307566c0
+p2p-ar-path entry=graph_append device=0 rank=0 ranks=6 bytes=41943040 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=0 rank=0 bytes=41943040 rank-order-exact=1 cross-payload=2V entry=graph_append
+p2p-ar-path entry=graph_append device=1 rank=1 ranks=6 bytes=41943040 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=1 rank=1 bytes=41943040 rank-order-exact=1 cross-payload=2V entry=graph_append
+p2p-ar-path entry=graph_append device=2 rank=2 ranks=6 bytes=41943040 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=2 rank=2 bytes=41943040 rank-order-exact=1 cross-payload=2V entry=graph_append
+p2p-ar-path entry=graph_append device=3 rank=3 ranks=6 bytes=41943040 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=3 rank=3 bytes=41943040 rank-order-exact=1 cross-payload=2V entry=graph_append
+p2p-ar-path entry=graph_append device=4 rank=4 ranks=6 bytes=41943040 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=4 rank=4 bytes=41943040 rank-order-exact=1 cross-payload=2V entry=graph_append
+p2p-ar-path entry=graph_append device=5 rank=5 ranks=6 bytes=41943040 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=5 rank=5 bytes=41943040 rank-order-exact=1 cross-payload=2V entry=graph_append
+PASS_MIXED_ABA generation=1 sequence=one_shot_160KiB,ordered_relay6_40MiB,one_shot_160KiB same_communicator=1 epoch_continuous=1 exact=1
+PAYLOAD_SET generation=1 bytes=41943040 elements=10485760
+GRAPH_READY mode=ordered entry=dispatch generation=1 context=0 ranks=6 actual_dispatcher=1 payload_bytes=41943040
+INPUT_CHANGE mode=ordered entry=dispatch generation=1 context=0 rank=0 changed=1 payload_bytes=41943040
+INPUT_CHANGE mode=ordered entry=dispatch generation=1 context=0 rank=1 changed=1 payload_bytes=41943040
+INPUT_CHANGE mode=ordered entry=dispatch generation=1 context=0 rank=2 changed=1 payload_bytes=41943040
+INPUT_CHANGE mode=ordered entry=dispatch generation=1 context=0 rank=3 changed=1 payload_bytes=41943040
+INPUT_CHANGE mode=ordered entry=dispatch generation=1 context=0 rank=4 changed=1 payload_bytes=41943040
+INPUT_CHANGE mode=ordered entry=dispatch generation=1 context=0 rank=5 changed=1 payload_bytes=41943040
+PASS_OUTPUT mode=ordered entry=dispatch context=0 frame=A0 exact=1 canary=1 zero_rank=-1 payload_bytes=41943040
+TIMING mode=ordered entry=dispatch generation=1 context=0 rep=0 frame=0 wall_ms=0.167 max_gpu_event_ms=4.311 gpu_event_ms=[3.969,4.294,4.283,3.932,4.274,4.311]
+PASS_OUTPUT mode=ordered entry=dispatch context=0 frame=B exact=1 canary=1 zero_rank=-1 payload_bytes=41943040
+TIMING mode=ordered entry=dispatch generation=1 context=0 rep=1 frame=1 wall_ms=0.097 max_gpu_event_ms=4.318 gpu_event_ms=[3.987,4.318,4.309,3.963,4.315,4.308]
+PASS_OUTPUT mode=ordered entry=dispatch context=0 frame=A2 exact=1 canary=1 zero_rank=-1 payload_bytes=41943040
+TIMING mode=ordered entry=dispatch generation=1 context=0 rep=2 frame=0 wall_ms=0.098 max_gpu_event_ms=4.309 gpu_event_ms=[3.987,4.309,4.303,3.964,4.303,4.296]
+PASS_ABA mode=ordered entry=dispatch generation=1 context=0 frames=A0,B,A2 exact=1 zero_rank=-1 payload_bytes=41943040
+PASS_NEGATIVE_ZERO mode=ordered entry=dispatch context=0 zero_rank=-1 expected_bits=80000000 exact=1 canary=1 payload_bytes=41943040
+SUMMARY mode=ordered entry=dispatch generation=1 payload_bytes=41943040 zero_rank=-1 context=0 reps=3 avg_wall_ms=0.121 avg_max_gpu_event_ms=4.313
+GRAPH_RETIRE entry=dispatch generation=1 destroyed_execs=6 all_handles_null=1
+GRAPH_READY mode=ordered entry=graph_append generation=1 context=0 ranks=6 actual_dispatcher=1 payload_bytes=41943040
+INPUT_CHANGE mode=ordered entry=graph_append generation=1 context=0 rank=0 changed=1 payload_bytes=41943040
+INPUT_CHANGE mode=ordered entry=graph_append generation=1 context=0 rank=1 changed=1 payload_bytes=41943040
+INPUT_CHANGE mode=ordered entry=graph_append generation=1 context=0 rank=2 changed=1 payload_bytes=41943040
+INPUT_CHANGE mode=ordered entry=graph_append generation=1 context=0 rank=3 changed=1 payload_bytes=41943040
+INPUT_CHANGE mode=ordered entry=graph_append generation=1 context=0 rank=4 changed=1 payload_bytes=41943040
+INPUT_CHANGE mode=ordered entry=graph_append generation=1 context=0 rank=5 changed=1 payload_bytes=41943040
+PASS_OUTPUT mode=ordered entry=graph_append context=0 frame=A0 exact=1 canary=1 zero_rank=-1 payload_bytes=41943040
+TIMING mode=ordered entry=graph_append generation=1 context=0 rep=0 frame=0 wall_ms=0.164 max_gpu_event_ms=4.380 gpu_event_ms=[4.084,4.357,4.347,4.049,4.342,4.380]
+PASS_OUTPUT mode=ordered entry=graph_append context=0 frame=B exact=1 canary=1 zero_rank=-1 payload_bytes=41943040
+TIMING mode=ordered entry=graph_append generation=1 context=0 rep=1 frame=1 wall_ms=0.094 max_gpu_event_ms=4.283 gpu_event_ms=[4.036,4.281,4.273,4.011,4.283,4.276]
+PASS_OUTPUT mode=ordered entry=graph_append context=0 frame=A2 exact=1 canary=1 zero_rank=-1 payload_bytes=41943040
+TIMING mode=ordered entry=graph_append generation=1 context=0 rep=2 frame=0 wall_ms=0.093 max_gpu_event_ms=4.261 gpu_event_ms=[3.967,4.261,4.255,3.942,4.249,4.241]
+PASS_ABA mode=ordered entry=graph_append generation=1 context=0 frames=A0,B,A2 exact=1 zero_rank=-1 payload_bytes=41943040
+PASS_NEGATIVE_ZERO mode=ordered entry=graph_append context=0 zero_rank=-1 expected_bits=80000000 exact=1 canary=1 payload_bytes=41943040
+SUMMARP2P compact staging selected ranks=6 max_tensor=41.00 MiB small_arena=480.00 MiB segmented_arena=82.00 MiB per_rank old_arena=492.00 MiB
+p2p-ar-path entry=dispatch device=0 rank=0 ranks=6 bytes=42991616 algorithm=compact_segmented blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 0 allreduce_0 n=10747904 zero=0 kind=2 stream=0x1002ff32ec0
+p2p-ar-path entry=dispatch device=1 rank=1 ranks=6 bytes=42991616 algorithm=compact_segmented blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 1 allreduce_0 n=10747904 zero=0 kind=2 stream=0x10030752500
+p2p-ar-path entry=dispatch device=2 rank=2 ranks=6 bytes=42991616 algorithm=compact_segmented blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 2 allreduce_0 n=10747904 zero=0 kind=2 stream=0x10030753570
+p2p-ar-path entry=dispatch device=3 rank=3 ranks=6 bytes=42991616 algorithm=compact_segmented blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 3 allreduce_0 n=10747904 zero=0 kind=2 stream=0x100307545e0
+p2p-ar-path entry=dispatch device=4 rank=4 ranks=6 bytes=42991616 algorithm=compact_segmented blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 4 allreduce_0 n=10747904 zero=0 kind=2 stream=0x10030755650
+p2p-ar-path entry=dispatch device=5 rank=5 ranks=6 bytes=42991616 algorithm=compact_segmented blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 5 allreduce_0 n=10747904 zero=0 kind=2 stream=0x100307566c0
+Y mode=ordered entry=graph_append generation=1 payload_bytes=41943040 zero_rank=-1 context=0 reps=3 avg_wall_ms=0.117 avg_max_gpu_event_ms=4.308
+GRAPH_RETIRE entry=graph_append generation=1 destroyed_execs=6 all_handles_null=1
+RESERVE_STAGE_GROW_BEGIN old_generation=1 new_generation=2 old_bytes=41943040 new_bytes=42991616 old_graphs_retired=1
+ARENA phase=reserve generation=2 rank=0 requested_bytes=42991616 elide=0 leader_stage=0 old_cap_floats=10485760 cap_floats=10747904 old_segment_cap_floats=1747627 small_cap_floats=10485760 segment_cap_floats=1791318 relay_cap_floats=0 segment_ptr=0x7ffc40000000 relay_ptr=(nil) expected_small_bytes=503316480 expected_segment_bytes=85983264 expected_relay_bytes=0 added_bytes=2097152 graph_handles_retired=1
+ARENA phase=reserve generation=2 rank=1 requested_bytes=42991616 elide=0 leader_stage=0 old_cap_floats=10485760 cap_floats=10747904 old_segment_cap_floats=1747627 small_cap_floats=10485760 segment_cap_floats=1791318 relay_cap_floats=0 segment_ptr=0x7ffc45400000 relay_ptr=(nil) expected_small_bytes=503316480 expected_segment_bytes=85983264 expected_relay_bytes=0 added_bytes=2097152 graph_handles_retired=1
+ARENA phase=reserve generation=2 rank=2 requested_bytes=42991616 elide=0 leader_stage=0 old_cap_floats=10485760 cap_floats=10747904 old_segment_cap_floats=1747627 small_cap_floats=10485760 segment_cap_floats=1791318 relay_cap_floats=0 segment_ptr=0x7ffc4a800000 relay_ptr=(nil) expected_small_bytes=503316480 expected_segment_bytes=85983264 expected_relay_bytes=0 added_bytes=2097152 graph_handles_retired=1
+ARENA phase=reserve generation=2 rank=3 requested_bytes=42991616 elide=0 leader_stage=0 old_cap_floats=10485760 cap_floats=10747904 old_segment_cap_floats=1747627 small_cap_floats=10485760 segment_cap_floats=1791318 relay_cap_floats=0 segment_ptr=0x7ffc4fc00000 relay_ptr=(nil) expected_small_bytes=503316480 expected_segment_bytes=85983264 expected_relay_bytes=0 added_bytes=2097152 graph_handles_retired=1
+ARENA phase=reserve generation=2 rank=4 requested_bytes=42991616 elide=0 leader_stage=0 old_cap_floats=10485760 cap_floats=10747904 old_segment_cap_floats=1747627 small_cap_floats=10485760 segment_cap_floats=1791318 relay_cap_floats=0 segment_ptr=0x7ffc55000000 relay_ptr=(nil) expected_small_bytes=503316480 expected_segment_bytes=85983264 expected_relay_bytes=0 added_bytes=2097152 graph_handles_retired=1
+ARENA phase=reserve generation=2 rank=5 requested_bytes=42991616 elide=0 leader_stage=0 old_cap_floats=10485760 cap_floats=10747904 old_segment_cap_floats=1747627 small_cap_floats=10485760 segment_cap_floats=1791318 relay_cap_floats=0 segment_ptr=0x7ffd14e00000 relay_ptr=(nil) expected_small_bytes=503316480 expected_segment_bytes=85983264 expected_relay_bytes=0 added_bytes=2097152 graph_handles_retired=1
+PAYLOAD_SET generation=2 bytes=42991616 elements=10747904
+GRAPH_READY mode=ordered entry=dispatch generation=2 context=0 ranks=6 actual_dispatcher=1 payload_bytes=42991616
+INPUT_CHANGE mode=ordered entry=dispatch generation=2 context=0 rank=0 changed=1 payload_bytes=42991616
+INPUT_CHANGE mode=ordered entry=dispatch generation=2 context=0 rank=1 changed=1 payload_bytes=42991616
+INPUT_CHANGE mode=ordered entry=dispatch generation=2 context=0 rank=2 changed=1 payload_bytes=42991616
+INPUT_CHANGE mode=ordered entry=dispatch generation=2 context=0 rank=3 changed=1 payload_bytes=42991616
+INPUT_CHANGE mode=ordered entry=dispatch generation=2 context=0 rank=4 changed=1 payload_bytes=42991616
+INPUT_CHANGE mode=ordered entry=dispatch generation=2 context=0 rank=5 changed=1 payload_bytes=42991616
+PASS_OUTPUT mode=ordered entry=dispatch context=0 frame=A0 exact=1 canary=1 zero_rank=-1 payload_bytes=42991616
+TIMING mode=ordered entry=dispatch generation=2 context=0 rep=0 frame=0 wall_ms=0.160 max_gpu_event_ms=19.395 gpu_event_ms=[19.395,19.381,19.369,19.357,19.346,19.364]
+PASS_OUTPUT mode=ordered entry=dispatch context=0 frame=B exact=1 canary=1 zero_rank=-1 payload_bytes=42991616
+TIMING mode=ordered entry=dispatch generation=2 context=0 rep=1 frame=1 wall_ms=0.097 max_gpu_event_ms=21.305 gpu_event_ms=[21.305,21.294,21.285,21.272,21.265,21.241]
+PASS_OUTPUT mode=ordered entry=dispatch context=0 frame=A2 exact=1 canary=1 zero_rank=-1 payload_bytes=42991616
+TIMING mode=ordered entry=dispatch generation=2 context=0 rep=2 frame=0 wall_ms=0.098 max_gpu_event_ms=19.160 gpu_event_ms=[19.160,19.150,19.141,19.129,19.121,19.095]
+PASS_ABA mode=ordered entry=dispatch generation=2 context=0 frames=A0,B,A2 exact=1 zero_rank=-1 payload_bytes=42991616
+PASS_NEGATIVE_ZERO mode=ordered entry=dispatch context=0 zero_rank=-1 expected_bits=80000000 exact=1 canary=1 payload_bytes=42991616
+SUMMARY mode=ordered entry=dispatch generation=2 payload_bytes=42991616 zero_rank=-1 context=0 reps=3 avg_wall_ms=0.118 avg_max_gpu_event_ms=19.953
+GRAPH_RETIRE entry=dispatch generation=2 destroyed_execs=6 all_handles_null=1
+HBM phase=after_all_phases rank=0 free_before_mib=15817.875 free_after_mib=15171.875 added_mib=646.000
+HBM phase=after_all_phases rank=1 free_before_mib=15817.812 free_after_mib=15171.812 added_mib=646.000
+HBM phase=after_all_phases rank=2 free_before_mib=15817.875 free_after_mib=15171.875 added_mib=646.000
+HBM phase=after_all_phases rank=3 free_before_mib=15816.562 free_after_mib=15170.562 added_mib=646.000
+HBM phase=after_all_phases rank=4 free_before_mib=15813.812 free_after_mib=15167.812 added_mib=646.000
+HBM phase=after_all_phases rank=5 free_before_mib=15814.500 free_after_mib=15168.500 added_mib=646.000
+PASS_STAGE_ELISION_V96 elide_unused_segment=0 relay_leader_stage=0 communicator_count=1 reserve_generations=40MiB,41MiB old_graphs_retired_before_growth=1 40MiB_dispatch_and_graph_append=1 mixed_small_relay_small=exact 41MiB_segmented_fallback=exact

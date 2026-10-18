@@ -1,0 +1,16 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA_FIXTURE device=3 backend=CUDA3 no_model=1 q8_0=1 streams=[1,2] q=[4,32] gqa=[4,8] kv_view=2112 capacity=4096 width=513 pad=516
+CUDA_CASE streams=1 ntps=4 heads=4 helper_vs_explicit_bitwise=1 helper_cpu_maxabs=5.97126681e-07 helper_cpu_maxrel=0.000104192928 cpu_selected_vs_dense_maxabs=7.54951657e-15 finite=4096/4096 canary=PASS input_variation=PASS dense_fa=PASS dense_cpu_maxabs=0.000921270756 dense_cpu_maxrel=0.0411787993
+CUDA_CASE streams=1 ntps=4 heads=8 helper_vs_explicit_bitwise=1 helper_cpu_maxabs=7.30021203e-07 helper_cpu_maxrel=0.000246951907 cpu_selected_vs_dense_maxabs=1.02140518e-14 finite=8192/8192 canary=PASS input_variation=PASS dense_fa=SKIPPED_UNSUPPORTED_SM70_SHAPE dense_cpu_maxabs=0 dense_cpu_maxrel=0
+CUDA_CASE streams=1 ntps=32 heads=4 helper_vs_explicit_bitwise=1 helper_cpu_maxabs=5.5077885e-07 helper_cpu_maxrel=0.00869242502 cpu_selected_vs_dense_maxabs=8.43769499e-15 finite=32768/32768 canary=PASS input_variation=PASS dense_fa=SKIPPED_UNSUPPORTED_SM70_SHAPE dense_cpu_maxabs=0 dense_cpu_maxrel=0
+CUDA_CASE streams=1 ntps=32 heads=8 helper_vs_explicit_bitwise=1 helper_cpu_maxabs=5.69000162e-07 helper_cpu_maxrel=0.00869242502 cpu_selected_vs_dense_maxabs=1.02140518e-14 finite=65536/65536 canary=PASS input_variation=PASS dense_fa=SKIPPED_UNSUPPORTED_SM70_SHAPE dense_cpu_maxabs=0 dense_cpu_maxrel=0
+CUDA_CASE streams=2 ntps=4 heads=4 helper_vs_explicit_bitwise=1 helper_cpu_maxabs=6.61801202e-07 helper_cpu_maxrel=0.00101525668 cpu_selected_vs_dense_maxabs=7.99360578e-15 finite=8192/8192 canary=PASS input_variation=PASS dense_fa=SKIPPED_UNSUPPORTED_SM70_SHAPE dense_cpu_maxabs=0 dense_cpu_maxrel=0
+CUDA_CASE streams=2 ntps=4 heads=8 helper_vs_explicit_bitwise=1 helper_cpu_maxabs=8.40279545e-07 helper_cpu_maxrel=0.00101525668 cpu_selected_vs_dense_maxabs=1.02140518e-14 finite=16384/16384 canary=PASS input_variation=PASS dense_fa=SKIPPED_UNSUPPORTED_SM70_SHAPE dense_cpu_maxabs=0 dense_cpu_maxrel=0
+CUDA_CASE streams=2 ntps=32 heads=4 helper_vs_explicit_bitwise=1 helper_cpu_maxabs=5.74027483e-07 helper_cpu_maxrel=0.00869242502 cpu_selected_vs_dense_maxabs=9.1038288e-15 finite=65536/65536 canary=PASS input_variation=PASS dense_fa=SKIPPED_UNSUPPORTED_SM70_SHAPE dense_cpu_maxabs=0 dense_cpu_maxrel=0
+CUDA_CASE streams=2 ntps=32 heads=8 helper_vs_explicit_bitwise=1 helper_cpu_maxabs=5.74027483e-07 helper_cpu_maxrel=0.00869242502 cpu_selected_vs_dense_maxabs=1.02140518e-14 finite=131072/131072 canary=PASS input_variation=PASS dense_fa=SKIPPED_UNSUPPORTED_SM70_SHAPE dense_cpu_maxabs=0 dense_cpu_maxrel=0

@@ -1,0 +1,72 @@
+{
+  "build": {
+    "binary": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-virtual-topk-dispatch-v119-20261017/builds/v120-dispatch-20261017-r1/qsa_virtual_topk_dispatch_fixture",
+    "binary_sha256": "086eafcaa49bd1baee316ea505455c757571072409f64865ba26e706de070200",
+    "private_header_sha256": "a72b47b61fc5a21853263d3f8f48dbfdc3561ebc18922cac4a02c34344cb52d3",
+    "source_cpp_sha256": "1b9cb2e2150d8fd0981ca84bc502611c44c2d683e380b9dc1ba1144ccb25c49e",
+    "tag": "v120-dispatch-20261017-r1"
+  },
+  "build_report": {
+    "expected_sha256": "490982b5f4267f56f4e021899be90e87c409b6621a315266968f5761ac39b8de",
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V120-build.json",
+    "sha256": "490982b5f4267f56f4e021899be90e87c409b6621a315266968f5761ac39b8de"
+  },
+  "gates": {
+    "cpu_probe": {
+      "log": {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-virtual-topk-dispatch-v119-20261017/results/v120-privateop-20261017/cpu-probe.log",
+        "sha256": "e0c3125934c9761085a6ebc5749049e4efaa7d304d286d1f510eeabcd1263e84"
+      },
+      "status": "PASS"
+    },
+    "cuda0": {
+      "a_b_a_exact_ids": true,
+      "cases": [
+        "K1025 Q4 S2 W16",
+        "K65536 Q512 S1 W2051"
+      ],
+      "fresh_exec_capture_replay": true,
+      "log": {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-virtual-topk-dispatch-v119-20261017/results/v120-privateop-20261017/cuda0.log",
+        "sha256": "f6b040efdb26be2fe0a6d6e27180194c1078b697a8e825ff552979b77f7c456c"
+      },
+      "status": "PASS"
+    },
+    "meta3": {
+      "a_b_a_exact_ids": true,
+      "cases": [
+        "K1025 Q4 S2 W16",
+        "K65536 Q512 S1 W2051"
+      ],
+      "fresh_exec_capture_replay": true,
+      "log": {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-virtual-topk-dispatch-v119-20261017/results/v120-privateop-20261017/meta3.log",
+        "sha256": "cad559c26cd3e6e9bd3fbc4b8b2d8ea1eadb7b01328c368c37ec98afdc812307"
+      },
+      "readback_scope": "rank0 mirrored copy only",
+      "status": "PASS"
+    }
+  },
+  "gpu_release": {
+    "post_run_rows": [
+      "2026-10-16T20:21:42Z,after_cuda0,GPU-fadb0459-4d30-907b-289a-862b3014f165,16384,1,39,none",
+      "2026-10-16T20:21:46Z,after_meta3,GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,16384,2,40,none",
+      "2026-10-16T20:21:46Z,after_meta3,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,16384,2,39,none",
+      "2026-10-16T20:21:46Z,after_meta3,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,16384,2,39,none"
+    ],
+    "snapshot_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-virtual-topk-dispatch-v119-20261017/results/v120-privateop-20261017/gpu-snapshots.csv",
+    "status": "CONFIRMED_NO_COMPUTE_PROCESSES"
+  },
+  "ldd": {
+    "hash_manifest": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-virtual-topk-dispatch-v119-20261017/results/v120-privateop-20261017/source-and-dso-hashes.txt",
+    "hash_manifest_sha256": "4e40253d311c6b02da91958e6d9e9c31bb26a7d77fc4a9871cb9df10d6570f80",
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-virtual-topk-dispatch-v119-20261017/results/v120-privateop-20261017/ldd.txt",
+    "resolved_dso_count": 18,
+    "sha256": "ac4d49dbff618f6152c36ceb88485bcc8fc3c742df2eee2bb9c72b89cd985d2f"
+  },
+  "scope": {
+    "cuda_fixture_run": "one CUDA0 then one Meta3; no retries",
+    "models_loaded": false
+  },
+  "task": "V120 QSA virtual TOP_K private-op dispatch fixture"
+}

@@ -1,0 +1,53 @@
+{
+  "argv": [
+    "/usr/bin/c++",
+    "-DGGML_BUILD",
+    "-DGGML_SCHED_MAX_COPIES=4",
+    "-DGGML_SHARED",
+    "-DGGML_USE_OPENMP",
+    "-D_GNU_SOURCE",
+    "-D_XOPEN_SOURCE=600",
+    "-Dggml_base_EXPORTS",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/.",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/ggml/src",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/../include",
+    "-O3",
+    "-DNDEBUG",
+    "-std=gnu++17",
+    "-fPIC",
+    "-Wmissing-declarations",
+    "-Wmissing-noreturn",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Wcast-qual",
+    "-Wno-unused-function",
+    "-Wno-array-bounds",
+    "-Wextra-semi",
+    "-fopenmp",
+    "-o",
+    "CMakeFiles/ggml-base.dir/ggml-backend-meta.cpp.o",
+    "-c",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp"
+  ],
+  "cwd": "/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/ggml/src",
+  "display": "/usr/bin/c++ -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_base_EXPORTS -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/. -I/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/ggml/src -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -fopenmp -o CMakeFiles/ggml-base.dir/ggml-backend-meta.cpp.o -c /home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp",
+  "error": null,
+  "error_repr": null,
+  "error_type": null,
+  "object": "ggml/src/CMakeFiles/ggml-base.dir/ggml-backend-meta.cpp.o",
+  "returncode": 1,
+  "traceback": null
+}
+
+--- combined stdout/stderr ---
+In file included from /home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp:1:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/../include/ggml.h:184:67: error: invalid use of ‘extern’ in linkage specification
+  184 | #        define GGML_API __attribute__ ((visibility ("default"))) extern
+      |                                                                   ^~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp:224:12: note: in expansion of macro ‘GGML_API’
+  224 | extern "C" GGML_API bool ggml_backend_meta_device_is_meta(ggml_backend_dev_t dev) {
+      |            ^~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp:224:26: warning: no previous declaration for ‘bool ggml_backend_meta_device_is_meta(ggml_backend_dev_t)’ [-Wmissing-declarations]
+  224 | extern "C" GGML_API bool ggml_backend_meta_device_is_meta(ggml_backend_dev_t dev) {
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

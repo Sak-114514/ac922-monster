@@ -1,0 +1,20 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA_VIRTUAL_TOPK_FIXTURE device=0 backend=CUDA0 topk_reference=GGML_CUDA_TOPK_STABLE:1 cuda_graphs=disabled models_loaded=0 timing_samples=5 timing_clock=steady_clock
+STOCK_ABA case=tiny-two-stream-partial-block repeat_a=PASS
+ID_CHECK phase=A1 exact=PASS
+ID_CHECK phase=B exact=PASS
+ID_CHECK phase=A2 exact=PASS
+HOST_TIMING arm=stock-expanded-f32-topk case=tiny-two-stream-partial-block samples=5 median_us=118.451 raw_us=[126.162,119.311,117.891,118.451,115.768] boundary=ggml_backend_graph_compute+backend_synchronize host_inclusive=1 measurement=host_wall_not_gpu_kernel input_upload=excluded gpu_event=0
+HOST_TIMING arm=virtual-topk case=tiny-two-stream-partial-block samples=5 median_us=77.974 raw_us=[78.523,77.691,77.974,76.474,78.425] boundary=launch_counterzero+radix_count_gather+arm_stream_synchronize host_inclusive=1 measurement=host_wall_not_gpu_kernel input_upload=excluded gpu_event=0
+ID_CHECK phase=timed-A exact=PASS
+CUDA_VIRTUAL_TOPK case=tiny-two-stream-partial-block B=257 K=1025 Q=4 S=2 k=16 rows=8 A_B_A=1 two_contexts_independent=1 stock_ids_exact=PASS input_immutable=PASS output_canaries=PASS reference_buffer_bytes=173568 virtual_input_buffer_bytes=33152 virtual_scratch_bytes=16576 virtual_output_bytes=512 materialized_three_F32_bytes=98400
+STOCK_ABA case=large-K65536-Q512 repeat_a=PASS
+ID_CHECK phase=A1 exact=PASS
+ID_CHECK phase=B exact=PASS
+ID_CHECK phase=A2 exact=PASS
+HOST_TIMING arm=stock-expanded-f32-topk case=large-K65536-Q512 samples=5 median_us=3905.038 raw_us=[3940.130,3912.997,3905.038,3901.729,3902.505] boundary=ggml_backend_graph_compute+backend_synchronize host_inclusive=1 measurement=host_wall_not_gpu_kernel input_upload=excluded gpu_event=0
+HOST_TIMING arm=virtual-topk case=large-K65536-Q512 samples=5 median_us=4575.047 raw_us=[4579.666,4575.047,4573.941,4574.871,4577.630] boundary=launch_counterzero+radix_count_gather+arm_stream_synchronize host_inclusive=1 measurement=host_wall_not_gpu_kernel input_upload=excluded gpu_event=0
+ID_CHECK phase=timed-A exact=PASS
+CUDA_VIRTUAL_TOPK case=large-K65536-Q512 B=16384 K=65536 Q=512 S=1 k=2051 rows=512 A_B_A=1 two_contexts_independent=1 stock_ids_exact=PASS input_immutable=PASS output_canaries=PASS reference_buffer_bytes=675551232 virtual_input_buffer_bytes=100925440 virtual_scratch_bytes=33566720 virtual_output_bytes=4200448 materialized_three_F32_bytes=402653184
+CUDA_VIRTUAL_TOPK_RESULT exact_ids=PASS timing_reported=1

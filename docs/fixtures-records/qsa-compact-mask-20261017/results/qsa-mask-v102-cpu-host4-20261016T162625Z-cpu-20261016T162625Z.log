@@ -1,0 +1,31 @@
+start=2026-10-16T16:26:25Z
+base=/home/debian/ac922-monster/experiments/standard-opt-20261014
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v102
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-compact-mask-20261017/qsa-compact-mask-v102-host4
+mode=cpu
+timeout=20
+model_loaded=0
+87369a17e2fb9bf428de6b1566d0e6ca5906f322faaadb77a4ba73209077fdfe  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-compact-mask-20261017/qsa-compact-mask-v102-host4
+COMPACT_INPUT_MISMATCH key_expected=-3,-1,inf,0,3,inf, key_actual=0,-2.67890066e+36,-2.67890066e+36,0,9.04005665e-41,-2.67890066e+36, query_expected=-1,1,8, query_actual=-2.65845599e+36,1,8,
+FAIL_QSA_COMPACT_MASK compact graph input changed unexpectedly
+PASS_HOST_METADATA bounds_signed=1 reject_atomic=1 ignored_empty=1
+BACKEND_MODE cpu
+OP_PLACEMENT op=RESHAPE assigned=CPU target=CPU supports=1 view=1
+OP_PLACEMENT op=RESHAPE assigned=CPU target=CPU supports=1 view=1
+OP_PLACEMENT op=REPEAT assigned=CPU target=CPU supports=1 view=0
+OP_PLACEMENT op=SUB assigned=CPU target=CPU supports=1 view=0
+OP_PLACEMENT op=SCALE assigned=CPU target=CPU supports=1 view=0
+OP_PLACEMENT op=UNARY assigned=CPU target=CPU supports=1 view=0
+OP_PLACEMENT op=LOG assigned=CPU target=CPU supports=1 view=0
+OP_PLACEMENT op=RESHAPE assigned=CPU target=CPU supports=1 view=1
+OP_PLACEMENT op=RESHAPE assigned=CPU target=CPU supports=1 view=1
+OP_PLACEMENT op=REPEAT assigned=CPU target=CPU supports=1 view=0
+OP_PLACEMENT op=SUB assigned=CPU target=CPU supports=1 view=0
+OP_PLACEMENT op=SCALE assigned=CPU target=CPU supports=1 view=0
+OP_PLACEMENT op=UNARY assigned=CPU target=CPU supports=1 view=0
+OP_PLACEMENT op=LOG assigned=CPU target=CPU supports=1 view=0
+OP_PLACEMENT op=CPY assigned=CPU target=CPU supports=1 view=0
+GRAPH_READY nodes=15 n_kv=6 n_query=3 mask_types=F32,F16 uid=1
+end=2026-10-16T16:26:26Z
+elapsed_seconds=1
+exit_status=1

@@ -1,0 +1,20 @@
+SYNTAX llama-memory-hybrid-idx.cpp
+PASS llama-memory-hybrid-idx.cpp
+SYNTAX qwen4exp.cpp
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-device-bias-20261016/apply-v47-r3/src/src/models/qwen4exp.cpp: In function ‘bool qwen4exp_qsa_mblk_fast(const llama_memory_hybrid_idx_context*, const llama_ubatch&, const llama_cparams&, const llama_hparams&, uint32_t)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-device-bias-20261016/apply-v47-r3/src/src/models/qwen4exp.cpp:1583:25: warning: comparison of integer expressions of different signedness: ‘const uint32_t’ {aka ‘const unsigned int’} and ‘int’ [-Wsign-compare]
+ 1583 |     if (ubatch.n_tokens > qwen4exp_qsa_gather_max_tokens()) {
+      |         ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PASS qwen4exp.cpp
+SYNTAX qsa-device-bias-ggml-fixture.cpp
+In file included from /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-device-bias-20261016/qsa-device-bias-ggml-fixture.cpp:1:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-device-bias-20261016/apply-v47-r3/src/src/llama-qsa-bias-device-private.h: In function ‘ggml_tensor* llama_qsa_bias_device_private::build_graph(ggml_context*, ggml_backend_sched_t, ggml_backend_t, ggml_tensor*, ggml_tensor*, ggml_tensor*, ggml_tensor*, std::vector<ggml_tensor*>*)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-device-bias-20261016/apply-v47-r3/src/src/llama-qsa-bias-device-private.h:128:38: error: ‘INFINITY’ was not declared in this scope
+  128 |     base = pin(ggml_fill(ctx, base, -INFINITY));
+      |                                      ^~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-device-bias-20261016/apply-v47-r3/src/src/llama-qsa-bias-device-private.h:128:38: note: the macro ‘INFINITY’ had not yet been defined
+In file included from /usr/include/c++/12/cmath:45,
+                 from /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-device-bias-20261016/qsa-device-bias-ggml-fixture.cpp:6:
+/usr/include/math.h:91: note: it was later defined here
+   91 | #  define INFINITY (__builtin_inff ())
+      | 

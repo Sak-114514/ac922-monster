@@ -1,0 +1,23 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA_LONG_BATCH_FIXTURE device=0 backend=CUDA0 models_loaded=0 modes=4096x513,8192x2051
+CUDA graph path config ctx=0x1001ea78400 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x1001ea78400 device=0 uid=0 nodes=100 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+optimization path device=0 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=0 selected=0 reason=disabled_shared_list_dynamic_smem_bytes_in_auxiliary tokens=4096 width=129 auxiliary=4128 count=1
+optimization path device=0 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=0 selected=0 reason=disabled_shared_list_dynamic_smem_bytes_in_auxiliary tokens=1024 width=129 auxiliary=4128 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1001ea78400 device=0 uid=0 nodes=100 mode=capture count=1
+optimization path device=0 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=1
+CUDA graph executable rebuild ctx=0x1001ea78400 device=0 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x7fff6d429fe0 instance=0x7fff784bb120
+CUDA graph path active ctx=0x1001ea78400 device=0 uid=0 nodes=100 mode=replay count=1
+CUDA_LONG_BATCH PASS queries=4096 kv=4096 width=513 padded=516 chunks=4 full_vs_1024_chunks_bitwise=1 A_B_A=1 input_immutability=PASS qmaskids_padding=PASS kv_tail_canary=PASS finite=4194304/4194304
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1001ea78400 device=0 uid=0 nodes=180 mode=eager reason=shape_or_binding_changed node= op=none count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1001ea78400 device=0 uid=0 nodes=180 mode=capture count=2
+optimization path device=0 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=2
+CUDA graph executable rebuild ctx=0x1001ea78400 device=0 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x7fff6d48f5f0 instance=0x7fff784cd0a0
+CUDA graph path active ctx=0x1001ea78400 device=0 uid=0 nodes=180 mode=replay count=2
+CUDA_LONG_BATCH PASS queries=8192 kv=8192 width=2051 padded=2052 chunks=8 full_vs_1024_chunks_bitwise=1 A_B_A=1 input_immutability=PASS qmaskids_padding=PASS kv_tail_canary=PASS finite=8388608/8388608
+optimization path summary device=0 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=2 selected=2
+optimization path summary device=0 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=0 selected=0 fallback_disabled_shared_list_dynamic_smem_bytes_in_auxiliary=28

@@ -1,0 +1,46 @@
+{
+  "fixture": "op-specific-prefill-v375-20261018/qsa-tests",
+  "source_shape": {
+    "tokens": [
+      1024,
+      2048
+    ],
+    "chunk": 512,
+    "indexer_heads": 4,
+    "qsa_query_heads": 24,
+    "kv_heads": 2,
+    "gqa": 12,
+    "kv_cells": 8192,
+    "ratio": 4,
+    "width": 2051
+  },
+  "source_sha256": {
+    "fixture_source": "c3171aad977358ea22263e6690275c3737e1f18661e349faf3622dc1d4378f7e",
+    "helper_header": "f0bb02a6369401bfd3735d716f19ee03224f334bd1f9383ae6f971ffc847a3e8",
+    "compact_mask_header": "6a83aa7d8c61b093e802c59a56a536c44353b0f7ed004658b940b5a2815094b6",
+    "standard_sparse_header": "c418c22944aca694661cf9a85a028b35cd8f6bc1503fcd521abc7bf60b1ba8a7",
+    "device_bias_header": "351ef00f3428bd3b0e1c0b8f632b8493a2843954136a5666973d5899e6d7b02f",
+    "topk_header": "a72b47b61fc5a21853263d3f8f48dbfdc3561ebc18922cac4a02c34344cb52d3",
+    "hostlink_binary": "277fd38e6662d5f181575e62f09ad923b0eb0f11e5409c5574dc3c52c8e726e5",
+    "hostlink_log": "589badb63865d2d3d628aedf9a4c11caf97e82ef72cd7556889cd53b3a615429"
+  },
+  "hostlink_runtime": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib",
+  "hostlink_result": "PASS; exact V368r2 runtime, ldd -r unresolved symbols=none",
+  "ldd_r": "PASS; exact V368r2 CUDA/CPU/base libraries and CUDA 12.4 closure recorded in hostlink log",
+  "gpu_execution": "r1 shape assertion, r2 readback lifetime, r3 fixture oracle order, and r4 input-readback lifetime failures retained; r6 hostlinked and awaits parent-controlled run",
+  "local_syntax": "C++17 -Wall -Wextra -Wpedantic -Werror -fsyntax-only PASS after input and readback lifetime gates",
+  "scripts": "hostlink-v375.sh bash -n PASS; run-v375-once.py py_compile PASS",
+  "active_SRC_modified": false,
+  "model_loaded": false,
+  "binary_executed": false,
+  "hostlink_tag": "r6",
+  "fix_after_gpu_r1": "select now receives the required 2D pooled tensor [128, blocks]; the separate pooled_4d reshape remains only for the full reference indexer",
+  "root_gpu_r1_failure_preserved": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/op-specific-prefill-v375-20261018/qsa-tests/results/qsa-prefill-v375-gpu5-20261018T005102Z/gpu.log (shape assert before numerical execution)",
+  "fix_after_gpu_r2": "mark all post-execution readback targets and view roots with GGML_TENSOR_FLAG_OUTPUT so allocator cannot recycle readback storage; keep all exact comparisons",
+  "diff_diagnostics": "indexer/bias/ID/attention gates print first differing token/index and values/bits before failing",
+  "root_gpu_r2_failure_preserved": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/op-specific-prefill-v375-20261018/qsa-tests/results/qsa-prefill-v375-gpu5-20261018T005222Z/gpu.log (readback lifetime not protected; do not interpret raw-score mismatch as math result)",
+  "topk_oracle": "reproduces ordered-float radix threshold, greater-count/rank membership, then emits greater IDs by ascending physical column followed by selected threshold ties by ascending physical column; not a score-sorted output",
+  "root_gpu_r3_failure_preserved": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/op-specific-prefill-v375-20261018/qsa-tests/results/qsa-prefill-v375-gpu5-20261018T005431Z/gpu.log (indexer, device bias, and full/chunk IDs were exact; test stopped on fixture oracle order contract)",
+  "fix_after_gpu_r4": "apply preserve_output_storage to every graph input tensor and its view roots, in addition to all post-execution readback targets; do not weaken input immutability",
+  "root_gpu_r4_failure_preserved": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/op-specific-prefill-v375-20261018/qsa-tests/results/qsa-prefill-v375-gpu5-20261018T005754Z/gpu.log (value-comparison gates passed; input immutability readback was unprotected)"
+}

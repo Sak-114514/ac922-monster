@@ -1,0 +1,77 @@
+tag=v286-v290-pipeline
+started_utc=2026-10-17T14:19:02Z
+mode=pipeline
+expected=pass
+visible_devices=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 2 MiB, 16125 MiB, 39, 0 %
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 16125 MiB, 38, 0 %
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 2 MiB, 16125 MiB, 38, 0 %
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 2 MiB, 16125 MiB, 38, 0 %
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 16 MiB, 16111 MiB, 38, 0 %
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 12 MiB, 16115 MiB, 38, 0 %
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+GPU_PREFLIGHT rank=0 name=CUDA0 free=16584671232 total=16911433728
+GPU_PREFLIGHT rank=1 name=CUDA1 free=16584605696 total=16911433728
+GPU_PREFLIGHT rank=2 name=CUDA2 free=16584933376 total=16911433728
+GPU_PREFLIGHT rank=3 name=CUDA3 free=16585129984 total=16911433728
+GPU_PREFLIGHT rank=4 name=CUDA4 free=16570253312 total=16911433728
+GPU_PREFLIGHT rank=5 name=CUDA5 free=16574447616 total=16911433728
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+meta-plain-event-wait selected=1 children=6 destination=CUDA0 host_wait=0
+V286_META_TO_CUDA0_EVENT_WAIT probe=1 destination=CUDA0 host_wait_expected=0
+PP pinned inputs requested=1 selected=0 scheduler=0x1001350acc0 copies=4 reason=invalid-pinned-cap
+V286_PLACEMENT rows=CPU get_rows=Meta(CUDA0,CUDA1,CUDA2,CUDA3,CUDA4,CUDA5) cast=Meta(CUDA0,CUDA1,CUDA2,CUDA3,CUDA4,CUDA5) zeros=Meta(CUDA0,CUDA1,CUDA2,CUDA3,CUDA4,CUDA5) join=Meta(CUDA0,CUDA1,CUDA2,CUDA3,CUDA4,CUDA5) ple_reshape=Meta(CUDA0,CUDA1,CUDA2,CUDA3,CUDA4,CUDA5) cpu_token_get_rows=CPU output=CUDA0
+meta-context-submit FIFO active context=0x1001088a480 members=6 CPU_enqueue_atomic=1 GPU_tail_wait=1
+V286_FRAME frame=0 slot_by_round_robin=0 graph_uid=1 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=1 slot_by_round_robin=1 graph_uid=17 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=2 slot_by_round_robin=2 graph_uid=39 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=3 slot_by_round_robin=3 graph_uid=61 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=4 slot_by_round_robin=0 graph_uid=83 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=5 slot_by_round_robin=1 graph_uid=105 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=6 slot_by_round_robin=2 graph_uid=127 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=7 slot_by_round_robin=3 graph_uid=149 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=8 slot_by_round_robin=0 graph_uid=171 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=9 slot_by_round_robin=1 graph_uid=193 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=10 slot_by_round_robin=2 graph_uid=215 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=11 slot_by_round_robin=3 graph_uid=237 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=12 slot_by_round_robin=0 graph_uid=259 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=13 slot_by_round_robin=1 graph_uid=281 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=14 slot_by_round_robin=2 graph_uid=303 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=15 slot_by_round_robin=3 graph_uid=325 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=16 slot_by_round_robin=0 graph_uid=347 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=17 slot_by_round_robin=1 graph_uid=369 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=18 slot_by_round_robin=2 graph_uid=391 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_FRAME frame=19 slot_by_round_robin=3 graph_uid=413 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V286_PIPELINE_PASS frames=20 unique_graph_uids=20 scheduler_copies=4 slots=0,1,2,3 exact=20/20 cpu_f32_get_rows=20 cuda0_consumer=20 ple_reshape=20 canaries=all
+2026-10-17T14:19:02Z gpu=0 used=3 delta=1 temp=39
+2026-10-17T14:19:02Z gpu=1 used=5 delta=3 temp=37
+2026-10-17T14:19:02Z gpu=2 used=5 delta=3 temp=38
+2026-10-17T14:19:02Z gpu=3 used=5 delta=3 temp=38
+2026-10-17T14:19:02Z gpu=4 used=19 delta=3 temp=38
+2026-10-17T14:19:02Z gpu=5 used=15 delta=3 temp=38
+2026-10-17T14:19:03Z gpu=0 used=415 delta=413 temp=40
+2026-10-17T14:19:03Z gpu=1 used=415 delta=413 temp=38
+2026-10-17T14:19:03Z gpu=2 used=415 delta=413 temp=39
+2026-10-17T14:19:03Z gpu=3 used=415 delta=413 temp=39
+2026-10-17T14:19:04Z gpu=4 used=429 delta=413 temp=39
+2026-10-17T14:19:04Z gpu=5 used=453 delta=441 temp=40
+V285_EXPECTED_PASS verified
+V286 pinned-input staging was not selected for four copies
+V286 CPU embedding H2D staging was not selected
+finished_utc=2026-10-17T14:19:05Z
+classified_status=93
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 3 MiB, 16124 MiB, 40, 0 %
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 3 MiB, 16124 MiB, 39, 0 %
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 3 MiB, 16124 MiB, 39, 0 %
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 3 MiB, 16125 MiB, 39, 0 %
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 17 MiB, 16111 MiB, 39, 0 %
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 13 MiB, 16114 MiB, 40, 0 %

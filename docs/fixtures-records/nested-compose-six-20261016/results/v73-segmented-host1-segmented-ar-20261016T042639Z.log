@@ -1,0 +1,76 @@
+start=2026-10-16T04:26:40Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v73
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-compose-six-20261016/segmented-ar-control-v73-segmented-host1
+segmented_threshold_bytes=4194304
+bd9317e50765fbffabeb2c59c3bb697115e52027b55625784e313ecbbd0c0ef3  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-compose-six-20261016/segmented-ar-control-v73-segmented-host1
+visible=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a
+limits temp<58C preexisting<=512MiB runtime<=1024MiB timeout=180s
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 1 MiB, 40
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 1 MiB, 39
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 1 MiB, 39
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 1 MiB, 39
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 6 MiB, 39
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 5 MiB, 40
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=0/6 first=0 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=1/6 first=85 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=2/6 first=170 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=3/6 first=256 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=4/6 first=341 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=5/6 first=426 local=86 total=512 final-output-only-reduction=1
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_backend_meta_context: nested native GPU AllReduce opt-in requested; unsupported PARTIAL boundaries fail closed
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+meta-nested-gpu-ar opt-in=1 topology=2x3 leaves=6 order=A0,A1,A2,B0,B1,B2 p2p6=1 nccl6_f32=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=0/2 first=0 local=256 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=1/2 first=256 local=256 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=0/3 first=0 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=1/3 first=85 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=2/3 first=170 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=0/3 first=256 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=1/3 first=341 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=2/3 first=426 local=86 total=512 final-output-only-reduction=1
+[mp-dbg] mul_mat_id hook: type=8 ne11=1 reg=0 ptr=0x7ffcddc2c600 ne=[32,32,85]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-cuda/mmid.cu:155: GGML_ASSERT(nbytes_shared <= smpbo) failed
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v73/lib/libggml-base.so.0(+0x26e08)[0x7fff7c186e08]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v73/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fff7c187408]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v73/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fff7c1875a4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v73/lib/libggml-cuda.so.0(_Z30ggml_cuda_launch_mm_ids_helperPKiPiS1_S1_iiiiiibiP11CUstream_st+0xf90)[0x7fff7c789160]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v73/lib/libggml-cuda.so.0(_Z19ggml_cuda_mul_mat_qR25ggml_backend_cuda_contextPK11ggml_tensorS3_S3_PS1_+0x468)[0x7fff7c7da9d8]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v73/lib/libggml-cuda.so.0(+0x28c350)[0x7fff7c72c350]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v73/lib/libggml-cuda.so.0(+0x28de4c)[0x7fff7c72de4c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v73/lib/libggml-cuda.so.0(+0x2985a0)[0x7fff7c7385a0]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v73/lib/libggml-cuda.so.0(+0x2a3eec)[0x7fff7c743eec]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v73/lib/libggml-base.so.0(ggml_backend_graph_compute_async+0x2c)[0x7fff7c1acf2c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v73/lib/libggml-base.so.0(+0x94b54)[0x7fff7c1f4b54]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v73/lib/libggml-base.so.0(ggml_backend_graph_compute_async+0x2c)[0x7fff7c1acf2c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v73/lib/libggml-base.so.0(ggml_backend_graph_compute+0x24)[0x7fff7c1acf94]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-compose-six-20261016/segmented-ar-control-v73-segmented-host1(+0x6150)[0x113696150]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fff7ba84d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fff7ba84f6c]
+exit_status=134
+after:
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 2 MiB, 41
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 40
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 2 MiB, 40
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 2 MiB, 40
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 6 MiB, 40
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 6 MiB, 41

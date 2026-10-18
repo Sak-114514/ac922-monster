@@ -1,0 +1,31 @@
+base=/home/debian/ac922-monster/experiments/standard-opt-20261014
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2
+tag=r4
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/op-specific-prefill-v375-20261018/qsa-tests/bin/qsa-prefill-chunks-v375-r4
+compile_scope=fixture-only; no model load; no GPU execution
+35e77ca1f9f3503fea450b487aa6be4f490850429ca379dfbf40af5c46c6189f  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/op-specific-prefill-v375-20261018/qsa-tests/qsa-prefill-chunks-fixture.cpp
+f0bb02a6369401bfd3735d716f19ee03224f334bd1f9383ae6f971ffc847a3e8  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/op-specific-prefill-v375-20261018/qsa-tests/include/llama-qsa-prefill-chunks-private.h
+6a83aa7d8c61b093e802c59a56a536c44353b0f7ed004658b940b5a2815094b6  /home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-qsa-compact-mask-private.h
+c418c22944aca694661cf9a85a028b35cd8f6bc1503fcd521abc7bf60b1ba8a7  /home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-qsa-standard-sparse.h
+351ef00f3428bd3b0e1c0b8f632b8493a2843954136a5666973d5899e6d7b02f  /home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/llama-qsa-bias-device-private.h
+a72b47b61fc5a21853263d3f8f48dbfdc3561ebc18922cac4a02c34344cb52d3  /home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-qsa-topk-private.h
+d740fa8f7368555db6637482441d8dbc5c04cbe774afbdee61a07789a6161d70  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/op-specific-prefill-v375-20261018/qsa-tests/bin/qsa-prefill-chunks-v375-r4
+ldd -r:
+	linux-vdso64.so.1 (0x00007fffa6bd0000)
+	libggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib/libggml-cuda.so.0 (0x00007fff98ee0000)
+	libggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib/libggml-cpu.so.0 (0x00007fff98d20000)
+	libggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v368r2/lib/libggml-base.so.0 (0x00007fff98b90000)
+	libstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fff98860000)
+	libgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fff98820000)
+	libc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fff985c0000)
+	libcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fff984e0000)
+	libcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fff917c0000)
+	libcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fff8fa00000)
+	libnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff8dba0000)
+	libm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fff8da70000)
+	/lib64/ld64.so.2 (0x00007fffa6bf0000)
+	libgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fff8d9f0000)
+	libdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff8d9c0000)
+	libpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff8d990000)
+	librt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff8d960000)
+	libcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff79ad0000)

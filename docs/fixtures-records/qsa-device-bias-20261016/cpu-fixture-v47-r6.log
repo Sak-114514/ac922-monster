@@ -1,0 +1,10 @@
+PASS SET_ROWS_COMPACT_INDEX shape=I32[6,1,1,1] broadcast_tokens=3
+PASS GGML_HOST name=one-stream-hole-foreign-spare-tail blocks=6 tps=3 streams=1 exact_bias=1 stable_topk=1 mask=1
+PASS SET_ROWS_COMPACT_INDEX shape=I32[6,1,2,1] broadcast_tokens=2
+PASS GGML_HOST name=two-stream-sequence-membership blocks=6 tps=2 streams=2 exact_bias=1 stable_topk=1 mask=1
+PASS SET_ROWS_COMPACT_INDEX shape=I32[65536,1,1,1] broadcast_tokens=1
+PASS GGML_HOST name=extreme-legal-position-shape-change blocks=65536 tps=1 streams=1 exact_bias=1 stable_topk=1 mask=1
+PASS SET_ROWS_COMPACT_INDEX shape=I32[6,1,1,1] broadcast_tokens=3
+PASS SAME_SHAPE_SEQ_REUSE old_sequence_to_new_sequence=PASS
+PASS SHAPE_CACHE_KEY ratio+device+blocks+tps+streams=PASS
+PASS qsa_device_bias_shared_ggml_helper CPU_ONLY=1 GPU=not_run

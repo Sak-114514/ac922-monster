@@ -1,0 +1,7 @@
+FULL_BLOCK standard=1.788852772 multi=1.788852772 exact_formula=PASS
+WRONG_CELLWISE score=1.414212070 differs_from_standard=PASS
+DEVICE_BIAS_GATE unset=host literal_1=device PASS
+BLOCK_BIAS exact=-inf/0/+1e9 sequence-membership=PASS partial-tail=PASS
+V47_HOST_SEMANTICS no-extra-future-mask=PASS
+SET_ROWS_SHAPES base=F32[1,2B,T,S] src=F32[1,B,T,S] idx=I32[B,1,S,1] token_broadcast=PASS unique_scratch=PASS
+PASS qsa_device_bias_cpu_fixture (no GGML/CUDA execution)

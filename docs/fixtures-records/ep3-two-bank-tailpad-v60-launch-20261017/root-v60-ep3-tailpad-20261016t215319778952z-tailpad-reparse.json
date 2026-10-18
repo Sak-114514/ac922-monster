@@ -1,0 +1,768 @@
+{
+  "schema_version": 1,
+  "status": "V60_PARTIAL_GUARD_STOP",
+  "unit": "root-v60-ep3-tailpad-20261016t215319778952z",
+  "parser": {
+    "source": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v56-launch-20261017/run-v56-supervisor.py",
+    "algorithm": "strict fields + complete per_lane parsing; only remove an exact full-step splice when the adjacent continuation completes one record",
+    "raw_log_modified": false,
+    "row_accounting_relaxed": false
+  },
+  "raw_artifacts": {
+    "root-v60-ep3-tailpad-20261016t215319778952z-runtime.log": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-runtime.log",
+      "sha256": "2dc9554cd7410a7761d7dd0c634e819b51f905c90fa895f7ef2688de7cac788c",
+      "bytes": 2138479
+    },
+    "root-v60-ep3-tailpad-20261016t215319778952z-summary.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-summary.json",
+      "sha256": "c8b63b91e5b6e02eedfc51d520cd8810f40edc1716730e3391aa42671b46906f",
+      "bytes": 118337
+    },
+    "root-v60-ep3-tailpad-20261016t215319778952z-remote-scenarios.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-remote-scenarios.json",
+      "sha256": "72ba30c2d0e8096bd1b48a96ac3d58b8fd102cda4bb620917753f9d516389834",
+      "bytes": 6308
+    },
+    "root-v60-ep3-tailpad-20261016t215319778952z-telemetry.jsonl": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-telemetry.jsonl",
+      "sha256": "df7a8dfb61688ddf7b071c49bfaf892289fd439deaaf7130475b1ca92e22a45c",
+      "bytes": 76571
+    },
+    "root-v60-ep3-tailpad-20261016t215319778952z-monitor-summary.json": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v60-launch-20261017/results/root-v60-ep3-tailpad-20261016t215319778952z-monitor-summary.json",
+      "sha256": "28c579a84cc49eac02f9f6c2d3ffbab789e4f223326de9849124a84f3285828b",
+      "bytes": 739
+    }
+  },
+  "scenario_start_labels": [
+    "v49-ordinary-ep3-four-lane-semantic-canary",
+    "v56-tail-limit-2x12k-4x12",
+    "v56-two-flow-2x12k-512",
+    "v56-four-flow-4x12k-512"
+  ],
+  "target_pad_plan_reparse": {
+    "per_window": {
+      "v56-two-flow-2x12k-512": {
+        "status": "PASS_OBSERVED_RECORDS",
+        "scenario_started": true,
+        "candidate_plan_count": 120,
+        "selected_plan_count": 120,
+        "invalid_selected_plan_count": 0,
+        "unknown_selected_plan_count": 0,
+        "reassembled_plan_count": 10,
+        "not_selected_plan_count": 0,
+        "complete_window_observed": true,
+        "selected_plan_lines": [
+          "target-pad-plan requested=1 selected=1 bank=0 frame=5 active_lanes=2 real_rows=8 padded_rows=0 total_rows=8 score_rows=8 depth=3 row_budget=8 per_lane=seq:0,generated:1,remaining:511,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12288,max_trim_pos:12292;seq:1,generated:1,remaining:511,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12288,max_trim_pos:12292",
+          "target-pad-plan requested=1 selected=1 bank=0 frame=7 active_lanes=2 real_rows=8 padded_rows=0 total_rows=8 score_rows=8 depth=3 row_budget=8 per_lane=seq:0,generated:4,remaining:508,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12291,max_trim_pos:12295;seq:1,generated:6,remaining:506,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12293,max_trim_pos:12297",
+          "target-pad-plan requested=1 selected=1 bank=0 frame=8 active_lanes=2 real_rows=8 padded_rows=0 total_rows=8 score_rows=8 depth=3 row_budget=8 per_lane=seq:0,generated:6,remaining:506,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12293,max_trim_pos:12297;seq:1,generated:10,remaining:502,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12297,max_trim_pos:12301",
+          "target-pad-plan requested=1 selected=1 bank=0 frame=9 active_lanes=2 real_rows=8 padded_rows=0 total_rows=8 score_rows=8 depth=3 row_budget=8 per_lane=seq:0,generated:7,remaining:505,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12294,max_trim_pos:12298;seq:1,generated:14,remaining:498,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12301,max_trim_pos:12305"
+        ],
+        "invalid_plans": [],
+        "unknown_plans": [],
+        "reassembled_plans": [
+          {
+            "raw_log_line_number": 11182,
+            "status": "selected",
+            "fields": {
+              "active_lanes": 1,
+              "real_rows": 4,
+              "padded_rows": 0,
+              "total_rows": 4,
+              "score_rows": 4,
+              "depth": 3,
+              "row_budget": 8
+            },
+            "location": {
+              "bank": 0,
+              "frame": 150
+            },
+            "per_lane": [
+              {
+                "seq": 0,
+                "generated": 463,
+                "remaining": 49,
+                "dp_n_max": 3,
+                "draft": 3,
+                "real": 4,
+                "pad": 0,
+                "seed_pos": 12750,
+                "max_trim_pos": 12754
+              }
+            ],
+            "violations": [],
+            "line": "target-pad-plan requested=1 selected=1 bank=0 frame=150 active_lanes=1 real_rows=4 padded_rows=0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:463,remaining:49,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12750,max_trim_pos:12754",
+            "reassembled": true,
+            "raw_log_line_numbers": [
+              11182,
+              11183
+            ],
+            "raw_prefix": "target-pad-plan requested=1 selected=1 bank=0 frame=150 active_lanes=1 real_rows=4 padded_rows=0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:463,remaining:49,dp_n_max:3,draft:3,real:",
+            "interleaved_field_fragment": "44.05.783.030",
+            "removed_complete_full_step_record": " I full-step sample ctx=0x10058ece6c0 idx=0 start_us=106837973951 end_us=106837974875 span_us=924 path=gpu_argmax",
+            "raw_continuation": ",pad:0,seed_pos:12750,max_trim_pos:12754"
+          },
+          {
+            "raw_log_line_number": 11323,
+            "status": "selected",
+            "fields": {
+              "active_lanes": 1,
+              "real_rows": 4,
+              "padded_rows": 0,
+              "total_rows": 4,
+              "score_rows": 4,
+              "depth": 3,
+              "row_budget": 8
+            },
+            "location": {
+              "bank": 0,
+              "frame": 152
+            },
+            "per_lane": [
+              {
+                "seq": 0,
+                "generated": 471,
+                "remaining": 41,
+                "dp_n_max": 3,
+                "draft": 3,
+                "real": 4,
+                "pad": 0,
+                "seed_pos": 12758,
+                "max_trim_pos": 12762
+              }
+            ],
+            "violations": [],
+            "line": "target-pad-plan requested=1 selected=1 bank=0 frame=152 active_lanes=1 real_rows=4 padded_rows=0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:471,remaining:41,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12758,max_trim_pos:12762",
+            "reassembled": true,
+            "raw_log_line_numbers": [
+              11323,
+              11324
+            ],
+            "raw_prefix": "target-pad-plan requested=1 selected=1 bank=0 frame=152 active_lanes=1 real_rows=4 padded_rows=",
+            "interleaved_field_fragment": "4.05.886.756",
+            "removed_complete_full_step_record": " I full-step sample ctx=0x10058ece6c0 idx=0 start_us=106838077714 end_us=106838078602 span_us=888 path=gpu_argmax",
+            "raw_continuation": "0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:471,remaining:41,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12758,max_trim_pos:12762"
+          },
+          {
+            "raw_log_line_number": 11390,
+            "status": "selected",
+            "fields": {
+              "active_lanes": 1,
+              "real_rows": 4,
+              "padded_rows": 0,
+              "total_rows": 4,
+              "score_rows": 4,
+              "depth": 3,
+              "row_budget": 8
+            },
+            "location": {
+              "bank": 0,
+              "frame": 153
+            },
+            "per_lane": [
+              {
+                "seq": 0,
+                "generated": 475,
+                "remaining": 37,
+                "dp_n_max": 3,
+                "draft": 3,
+                "real": 4,
+                "pad": 0,
+                "seed_pos": 12762,
+                "max_trim_pos": 12766
+              }
+            ],
+            "violations": [],
+            "line": "target-pad-plan requested=1 selected=1 bank=0 frame=153 active_lanes=1 real_rows=4 padded_rows=0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:475,remaining:37,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12762,max_trim_pos:12766",
+            "reassembled": true,
+            "raw_log_line_numbers": [
+              11390,
+              11391
+            ],
+            "raw_prefix": "target-pad-plan requested=1 selected=1 bank=0 frame=153 active_lanes=1 real_rows=4 padded_rows=",
+            "interleaved_field_fragment": "4.05.935.513",
+            "removed_complete_full_step_record": " I full-step sample ctx=0x10058ece6c0 idx=0 start_us=106838126452 end_us=106838127359 span_us=907 path=gpu_argmax",
+            "raw_continuation": "0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:475,remaining:37,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12762,max_trim_pos:12766"
+          },
+          {
+            "raw_log_line_number": 11457,
+            "status": "selected",
+            "fields": {
+              "active_lanes": 1,
+              "real_rows": 4,
+              "padded_rows": 0,
+              "total_rows": 4,
+              "score_rows": 4,
+              "depth": 3,
+              "row_budget": 8
+            },
+            "location": {
+              "bank": 0,
+              "frame": 154
+            },
+            "per_lane": [
+              {
+                "seq": 0,
+                "generated": 479,
+                "remaining": 33,
+                "dp_n_max": 3,
+                "draft": 3,
+                "real": 4,
+                "pad": 0,
+                "seed_pos": 12766,
+                "max_trim_pos": 12770
+              }
+            ],
+            "violations": [],
+            "line": "target-pad-plan requested=1 selected=1 bank=0 frame=154 active_lanes=1 real_rows=4 padded_rows=0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:479,remaining:33,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12766,max_trim_pos:12770",
+            "reassembled": true,
+            "raw_log_line_numbers": [
+              11457,
+              11458
+            ],
+            "raw_prefix": "target-pad-plan requested=1 selected=1 bank=0 frame=154 active_lanes=1 real_rows=4 padded_rows=",
+            "interleaved_field_fragment": "4.05.984.384",
+            "removed_complete_full_step_record": " I full-step sample ctx=0x10058ece6c0 idx=0 start_us=106838175330 end_us=106838176230 span_us=900 path=gpu_argmax",
+            "raw_continuation": "0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:479,remaining:33,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12766,max_trim_pos:12770"
+          },
+          {
+            "raw_log_line_number": 11524,
+            "status": "selected",
+            "fields": {
+              "active_lanes": 1,
+              "real_rows": 4,
+              "padded_rows": 0,
+              "total_rows": 4,
+              "score_rows": 4,
+              "depth": 3,
+              "row_budget": 8
+            },
+            "location": {
+              "bank": 0,
+              "frame": 155
+            },
+            "per_lane": [
+              {
+                "seq": 0,
+                "generated": 483,
+                "remaining": 29,
+                "dp_n_max": 3,
+                "draft": 3,
+                "real": 4,
+                "pad": 0,
+                "seed_pos": 12770,
+                "max_trim_pos": 12774
+              }
+            ],
+            "violations": [],
+            "line": "target-pad-plan requested=1 selected=1 bank=0 frame=155 active_lanes=1 real_rows=4 padded_rows=0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:483,remaining:29,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12770,max_trim_pos:12774",
+            "reassembled": true,
+            "raw_log_line_numbers": [
+              11524,
+              11525
+            ],
+            "raw_prefix": "target-pad-plan requested=1 selected=1 bank=0 frame=155 active_lanes=1 real_rows=4 padded_rows=0 total_rows=4 score_rows=4 depth=3 row_budget=",
+            "interleaved_field_fragment": "84.06.035.024",
+            "removed_complete_full_step_record": " I full-step sample ctx=0x10058ece6c0 idx=0 start_us=106838225959 end_us=106838226869 span_us=910 path=gpu_argmax",
+            "raw_continuation": " per_lane=seq:0,generated:483,remaining:29,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12770,max_trim_pos:12774"
+          },
+          {
+            "raw_log_line_number": 11591,
+            "status": "selected",
+            "fields": {
+              "active_lanes": 1,
+              "real_rows": 4,
+              "padded_rows": 0,
+              "total_rows": 4,
+              "score_rows": 4,
+              "depth": 3,
+              "row_budget": 8
+            },
+            "location": {
+              "bank": 0,
+              "frame": 156
+            },
+            "per_lane": [
+              {
+                "seq": 0,
+                "generated": 487,
+                "remaining": 25,
+                "dp_n_max": 3,
+                "draft": 3,
+                "real": 4,
+                "pad": 0,
+                "seed_pos": 12774,
+                "max_trim_pos": 12778
+              }
+            ],
+            "violations": [],
+            "line": "target-pad-plan requested=1 selected=1 bank=0 frame=156 active_lanes=1 real_rows=4 padded_rows=0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:487,remaining:25,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12774,max_trim_pos:12778",
+            "reassembled": true,
+            "raw_log_line_numbers": [
+              11591,
+              11592
+            ],
+            "raw_prefix": "target-pad-plan requested=1 selected=1 bank=0 frame=156 active_lanes=1 real_rows=4 padded_rows=0 total_rows=4 score_rows=4 depth=3 row_budget=",
+            "interleaved_field_fragment": "4.06.084.828",
+            "removed_complete_full_step_record": " I full-step sample ctx=0x10058ece6c0 idx=0 start_us=106838275756 end_us=106838276673 span_us=917 path=gpu_argmax",
+            "raw_continuation": "8 per_lane=seq:0,generated:487,remaining:25,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12774,max_trim_pos:12778"
+          },
+          {
+            "raw_log_line_number": 11725,
+            "status": "selected",
+            "fields": {
+              "active_lanes": 1,
+              "real_rows": 4,
+              "padded_rows": 0,
+              "total_rows": 4,
+              "score_rows": 4,
+              "depth": 3,
+              "row_budget": 8
+            },
+            "location": {
+              "bank": 0,
+              "frame": 158
+            },
+            "per_lane": [
+              {
+                "seq": 0,
+                "generated": 494,
+                "remaining": 18,
+                "dp_n_max": 3,
+                "draft": 3,
+                "real": 4,
+                "pad": 0,
+                "seed_pos": 12781,
+                "max_trim_pos": 12785
+              }
+            ],
+            "violations": [],
+            "line": "target-pad-plan requested=1 selected=1 bank=0 frame=158 active_lanes=1 real_rows=4 padded_rows=0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:494,remaining:18,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12781,max_trim_pos:12785",
+            "reassembled": true,
+            "raw_log_line_numbers": [
+              11725,
+              11726
+            ],
+            "raw_prefix": "target-pad-plan requested=1 selected=1 bank=",
+            "interleaved_field_fragment": "04.06.186.477",
+            "removed_complete_full_step_record": " I full-step sample ctx=0x10058ece6c0 idx=0 start_us=106838377415 end_us=106838378323 span_us=908 path=gpu_argmax",
+            "raw_continuation": " frame=158 active_lanes=1 real_rows=4 padded_rows=0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:494,remaining:18,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12781,max_trim_pos:12785"
+          },
+          {
+            "raw_log_line_number": 11793,
+            "status": "selected",
+            "fields": {
+              "active_lanes": 1,
+              "real_rows": 4,
+              "padded_rows": 0,
+              "total_rows": 4,
+              "score_rows": 4,
+              "depth": 3,
+              "row_budget": 8
+            },
+            "location": {
+              "bank": 0,
+              "frame": 159
+            },
+            "per_lane": [
+              {
+                "seq": 0,
+                "generated": 495,
+                "remaining": 17,
+                "dp_n_max": 3,
+                "draft": 3,
+                "real": 4,
+                "pad": 0,
+                "seed_pos": 12782,
+                "max_trim_pos": 12786
+              }
+            ],
+            "violations": [],
+            "line": "target-pad-plan requested=1 selected=1 bank=0 frame=159 active_lanes=1 real_rows=4 padded_rows=0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:495,remaining:17,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12782,max_trim_pos:12786",
+            "reassembled": true,
+            "raw_log_line_numbers": [
+              11793,
+              11794
+            ],
+            "raw_prefix": "target-pad-plan requested=1 selected=1 bank=0 frame=159 active_lanes=1 real_rows=4 padded_rows=0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:495,remaining:17,dp_n_max:3,draft:3,real:",
+            "interleaved_field_fragment": "44.06.235.349",
+            "removed_complete_full_step_record": " I full-step sample ctx=0x10058ece6c0 idx=0 start_us=106838426272 end_us=106838427194 span_us=922 path=gpu_argmax",
+            "raw_continuation": ",pad:0,seed_pos:12782,max_trim_pos:12786"
+          },
+          {
+            "raw_log_line_number": 11994,
+            "status": "selected",
+            "fields": {
+              "active_lanes": 1,
+              "real_rows": 4,
+              "padded_rows": 0,
+              "total_rows": 4,
+              "score_rows": 4,
+              "depth": 3,
+              "row_budget": 8
+            },
+            "location": {
+              "bank": 0,
+              "frame": 162
+            },
+            "per_lane": [
+              {
+                "seq": 0,
+                "generated": 507,
+                "remaining": 5,
+                "dp_n_max": 3,
+                "draft": 3,
+                "real": 4,
+                "pad": 0,
+                "seed_pos": 12794,
+                "max_trim_pos": 12798
+              }
+            ],
+            "violations": [],
+            "line": "target-pad-plan requested=1 selected=1 bank=0 frame=162 active_lanes=1 real_rows=4 padded_rows=0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:507,remaining:5,dp_n_max:3,draft:3,real:4,pad:0,seed_pos:12794,max_trim_pos:12798",
+            "reassembled": true,
+            "raw_log_line_numbers": [
+              11994,
+              11995
+            ],
+            "raw_prefix": "target-pad-plan requested=1 selected=1 bank=0 frame=162 active_lanes=1 real_rows=4 padded_rows=0 total_rows=4 score_rows=4 depth=3 row_budget=8 per_lane=seq:0,generated:507,remaining:5,dp_n_max:3,draft:3,real:4,pad:",
+            "interleaved_field_fragment": "4.06.381.664",
+            "removed_complete_full_step_record": " I full-step sample ctx=0x10058ece6c0 idx=0 start_us=106838572601 end_us=106838573510 span_us=909 path=gpu_argmax",
+            "raw_continuation": "0,seed_pos:12794,max_trim_pos:12798"
+          },
+          {
+            "raw_log_line_number": 12032,
+            "status": "selected",
+            "fields": {
+              "active_lanes": 1,
+              "real_rows": 2,
+              "padded_rows": 2,
+              "total_rows": 4,
+              "score_rows": 2,
+              "depth": 3,
+              "row_budget": 8
+            },
+            "location": {
+              "bank": 0,
+              "frame": 163
+            },
+            "per_lane": [
+              {
+                "seq": 0,
+                "generated": 510,
+                "remaining": 2,
+                "dp_n_max": 1,
+                "draft": 1,
+                "real": 2,
+                "pad": 2,
+                "seed_pos": 12797,
+                "max_trim_pos": 12799
+              }
+            ],
+            "violations": [],
+            "line": "target-pad-plan requested=1 selected=1 bank=0 frame=163 active_lanes=1 real_rows=2 padded_rows=2 total_rows=4 score_rows=2 depth=3 row_budget=8 per_lane=seq:0,generated:510,remaining:2,dp_n_max:1,draft:1,real:2,pad:2,seed_pos:12797,max_trim_pos:12799",
+            "reassembled": true,
+            "raw_log_line_numbers": [
+              12032,
+              12033
+            ],
+            "raw_prefix": "target-pad-plan requested=1 selected=1 bank=",
+            "interleaved_field_fragment": "04.06.421.360",
+            "removed_complete_full_step_record": " I full-step sample ctx=0x10058ece6c0 idx=3 start_us=106838613158 end_us=106838613205 span_us=47 path=gpu_argmax",
+            "raw_continuation": " frame=163 active_lanes=1 real_rows=2 padded_rows=2 total_rows=4 score_rows=2 depth=3 row_budget=8 per_lane=seq:0,generated:510,remaining:2,dp_n_max:1,draft:1,real:2,pad:2,seed_pos:12797,max_trim_pos:12799"
+          }
+        ]
+      },
+      "v56-four-flow-4x12k-512": {
+        "status": "UNKNOWN_NO_SELECTED_PAD_RECORD",
+        "scenario_started": true,
+        "candidate_plan_count": 0,
+        "selected_plan_count": 0,
+        "invalid_selected_plan_count": 0,
+        "unknown_selected_plan_count": 0,
+        "reassembled_plan_count": 0,
+        "not_selected_plan_count": 0,
+        "complete_window_observed": false,
+        "selected_plan_lines": [],
+        "invalid_plans": [],
+        "unknown_plans": [],
+        "reassembled_plans": []
+      }
+    },
+    "selected_count": 120,
+    "invalid_count": 0,
+    "unknown_count": 0,
+    "reassembled_count": 10,
+    "unknown_window_count": 1,
+    "unstarted_or_no-plan_windows": [
+      "v56-four-flow-4x12k-512"
+    ],
+    "invariants": [
+      "total_rows == 4 * active_lanes",
+      "real_rows + padded_rows == total_rows",
+      "score_rows == real_rows",
+      "depth == 3",
+      "complete per_lane records count == active_lanes",
+      "per_lane real/pad sums match global totals and each lane has four rows"
+    ]
+  },
+  "run_scope": {
+    "native_canary": "PASS",
+    "tail_limit_canary_complete": true,
+    "performance_windows": [
+      {
+        "label": "v56-two-flow-2x12k-512",
+        "request_count_observed": 2,
+        "geometry_and_full_output_pass": true,
+        "shared_tg": 123.43292219131527,
+        "shared_tokens": 943,
+        "shared_window_seconds": 7.639777,
+        "aggregate_prefill_tok_s": 1306.1157851235453
+      },
+      {
+        "label": "v56-four-flow-4x12k-512",
+        "request_count_observed": 0,
+        "geometry_and_full_output_pass": false,
+        "shared_tg": null,
+        "shared_tokens": null,
+        "shared_window_seconds": null,
+        "aggregate_prefill_tok_s": null
+      }
+    ],
+    "performance_outputs_semantically_scored": false
+  },
+  "guard_stop": {
+    "sample_utc": "2026-10-16T21:57:48.215775+00:00",
+    "reason": {
+      "gpu": true,
+      "bmc": false,
+      "tach": false
+    },
+    "stop_action": "stop-requested via=ac922 ",
+    "gpu": [
+      {
+        "uuid": "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f",
+        "free_mib": 4103,
+        "temp_c": 47,
+        "util_pct": 1
+      },
+      {
+        "uuid": "GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+        "free_mib": 4053,
+        "temp_c": 47,
+        "util_pct": 32
+      },
+      {
+        "uuid": "GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+        "free_mib": 4055,
+        "temp_c": 48,
+        "util_pct": 60
+      },
+      {
+        "uuid": "GPU-fadb0459-4d30-907b-289a-862b3014f165",
+        "free_mib": 973,
+        "temp_c": 44,
+        "util_pct": 0
+      },
+      {
+        "uuid": "GPU-760ce501-32f6-69b6-215b-1020da68bbfc",
+        "free_mib": 100,
+        "temp_c": 44,
+        "util_pct": 0
+      },
+      {
+        "uuid": "GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+        "free_mib": 61,
+        "temp_c": 45,
+        "util_pct": 0
+      }
+    ],
+    "node0_meminfo_kib": {
+      "MemTotal": 16520640,
+      "MemFree": 168320,
+      "Active(file)": 136960,
+      "Inactive(file)": 47424,
+      "Unevictable": 0,
+      "Dirty": 384,
+      "Writeback": 33792,
+      "FilePages": 2057408,
+      "Shmem": 1765504,
+      "SReclaimable": 291776
+    },
+    "node8_meminfo_kib": {
+      "MemTotal": 16584000,
+      "MemFree": 245632,
+      "Active(file)": 107008,
+      "Inactive(file)": 8128,
+      "Unevictable": 0,
+      "Dirty": 2112,
+      "Writeback": 0,
+      "FilePages": 1983040,
+      "Shmem": 1758912,
+      "SReclaimable": 344640
+    },
+    "hbm_numa_meminfo_kib": {
+      "250": {
+        "MemFree": 79680,
+        "FilePages": 43840,
+        "AnonPages": 3087040
+      },
+      "251": {
+        "MemFree": 135296,
+        "FilePages": 9472,
+        "AnonPages": 3014656
+      },
+      "252": {
+        "MemFree": 996736,
+        "FilePages": 0,
+        "AnonPages": 2097152
+      },
+      "253": {
+        "MemFree": 4152704,
+        "FilePages": 0,
+        "AnonPages": 2097152
+      },
+      "254": {
+        "MemFree": 4150656,
+        "FilePages": 0,
+        "AnonPages": 2097152
+      },
+      "255": {
+        "MemFree": 4201856,
+        "FilePages": 0,
+        "AnonPages": 2097152
+      }
+    }
+  },
+  "hbm_numa_record_only": {
+    "nodes": [
+      250,
+      251,
+      252,
+      253,
+      254,
+      255
+    ],
+    "fields": [
+      "FilePages",
+      "AnonPages",
+      "MemFree"
+    ],
+    "stop_threshold": null,
+    "sample_count": 15,
+    "first_sample": {
+      "sample_utc": "2026-10-16T21:53:26.744930+00:00",
+      "nodes": {
+        "250": {
+          "MemFree": 16507840,
+          "FilePages": 4288,
+          "AnonPages": 0
+        },
+        "251": {
+          "MemFree": 16494080,
+          "FilePages": 16512,
+          "AnonPages": 0
+        },
+        "252": {
+          "MemFree": 16500352,
+          "FilePages": 64,
+          "AnonPages": 0
+        },
+        "253": {
+          "MemFree": 16199424,
+          "FilePages": 0,
+          "AnonPages": 0
+        },
+        "254": {
+          "MemFree": 16199808,
+          "FilePages": 0,
+          "AnonPages": 0
+        },
+        "255": {
+          "MemFree": 16199616,
+          "FilePages": 0,
+          "AnonPages": 0
+        }
+      }
+    },
+    "guard_sample": {
+      "sample_utc": "2026-10-16T21:57:48.215775+00:00",
+      "nodes": {
+        "250": {
+          "MemFree": 79680,
+          "FilePages": 43840,
+          "AnonPages": 3087040
+        },
+        "251": {
+          "MemFree": 135296,
+          "FilePages": 9472,
+          "AnonPages": 3014656
+        },
+        "252": {
+          "MemFree": 996736,
+          "FilePages": 0,
+          "AnonPages": 2097152
+        },
+        "253": {
+          "MemFree": 4152704,
+          "FilePages": 0,
+          "AnonPages": 2097152
+        },
+        "254": {
+          "MemFree": 4150656,
+          "FilePages": 0,
+          "AnonPages": 2097152
+        },
+        "255": {
+          "MemFree": 4201856,
+          "FilePages": 0,
+          "AnonPages": 2097152
+        }
+      }
+    },
+    "last_sample": {
+      "sample_utc": "2026-10-16T21:58:08.126812+00:00",
+      "nodes": {
+        "250": {
+          "MemFree": 16506624,
+          "FilePages": 4288,
+          "AnonPages": 0
+        },
+        "251": {
+          "MemFree": 16503936,
+          "FilePages": 9472,
+          "AnonPages": 0
+        },
+        "252": {
+          "MemFree": 16513408,
+          "FilePages": 0,
+          "AnonPages": 0
+        },
+        "253": {
+          "MemFree": 16513408,
+          "FilePages": 0,
+          "AnonPages": 0
+        },
+        "254": {
+          "MemFree": 16513408,
+          "FilePages": 0,
+          "AnonPages": 0
+        },
+        "255": {
+          "MemFree": 16513408,
+          "FilePages": 0,
+          "AnonPages": 0
+        }
+      }
+    }
+  },
+  "systemd": {
+    "MainPID": "0",
+    "Result": "success",
+    "ExecMainStatus": "0",
+    "ActiveState": "inactive",
+    "SubState": "dead"
+  },
+  "automatic_retry": false
+}

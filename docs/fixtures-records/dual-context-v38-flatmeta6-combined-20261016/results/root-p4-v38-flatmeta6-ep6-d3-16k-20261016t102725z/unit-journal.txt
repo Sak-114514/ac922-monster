@@ -1,0 +1,46 @@
+2026-10-16T18:27:27+0800 192 systemd[1562]: Started root-p4-v38-flatmeta6-ep6-d3-16k-20261016t102725z.service - V38 V89 flat Meta6 EP6 combined short-context qualification.
+2026-10-16T18:27:27+0800 192 numactl[206540]: V38_PREFLIGHT_PROFILE_PASS runtime_id=20261016T101245.741848Z PLE_prefix_GiB=12
+2026-10-16T18:27:28+0800 192 numactl[206543]: {
+2026-10-16T18:27:28+0800 192 numactl[206543]:   "modes": [
+2026-10-16T18:27:28+0800 192 numactl[206543]:     1
+2026-10-16T18:27:28+0800 192 numactl[206543]:   ],
+2026-10-16T18:27:28+0800 192 numactl[206543]:   "profile_dirs": [
+2026-10-16T18:27:28+0800 192 numactl[206543]:     "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v38-flatmeta6-combined-20261016/results/root-p4-v38-flatmeta6-ep6-d3-16k-20261016t102725z/copy1/diagnostic",
+2026-10-16T18:27:28+0800 192 numactl[206543]:     "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v38-flatmeta6-combined-20261016/results/root-p4-v38-flatmeta6-ep6-d3-16k-20261016t102725z/copy1/clean"
+2026-10-16T18:27:28+0800 192 numactl[206543]:   ]
+2026-10-16T18:27:28+0800 192 numactl[206543]: }
+2026-10-16T18:31:53+0800 192 numactl[206527]: /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v38-flatmeta6-combined-20261016/run-v38-flatmeta6.sh: line 225: 206566 Segmentation fault      LD_LIBRARY_PATH="$ROOT_DYNAMIC_LIB_DIR${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" "$RUNNER" "$MODEL" "$OUT" "$V35_DIR/semantic_gate_v14.py" "$V35_DIR/preclean_quality_gate_v22.py" > "$LOG" 2>&1
+2026-10-16T18:31:53+0800 192 numactl[207437]: Traceback (most recent call last):
+2026-10-16T18:31:53+0800 192 numactl[207437]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 51, in <module>
+2026-10-16T18:31:53+0800 192 numactl[207437]:     raise SystemExit(main())
+2026-10-16T18:31:53+0800 192 numactl[207437]:                      ^^^^^^
+2026-10-16T18:31:53+0800 192 numactl[207437]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 45, in main
+2026-10-16T18:31:53+0800 192 numactl[207437]:     result = extract(args.input.read_text(encoding="utf-8", errors="replace"), args.mode, args.profile)
+2026-10-16T18:31:53+0800 192 numactl[207437]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T18:31:53+0800 192 numactl[207437]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 26, in extract
+2026-10-16T18:31:53+0800 192 numactl[207437]:     raise ValueError(f"mode {mode}/{name}: expected one complete family, starts={starts}, ends={stops}")
+2026-10-16T18:31:53+0800 192 numactl[207437]: ValueError: mode 1/diagnostic: expected one complete family, starts=[1938], ends=[]
+2026-10-16T18:31:53+0800 192 numactl[207439]: Traceback (most recent call last):
+2026-10-16T18:31:53+0800 192 numactl[207439]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 51, in <module>
+2026-10-16T18:31:53+0800 192 numactl[207439]:     raise SystemExit(main())
+2026-10-16T18:31:53+0800 192 numactl[207439]:                      ^^^^^^
+2026-10-16T18:31:53+0800 192 numactl[207439]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 45, in main
+2026-10-16T18:31:53+0800 192 numactl[207439]:     result = extract(args.input.read_text(encoding="utf-8", errors="replace"), args.mode, args.profile)
+2026-10-16T18:31:53+0800 192 numactl[207439]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T18:31:53+0800 192 numactl[207439]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 26, in extract
+2026-10-16T18:31:53+0800 192 numactl[207439]:     raise ValueError(f"mode {mode}/{name}: expected one complete family, starts={starts}, ends={stops}")
+2026-10-16T18:31:53+0800 192 numactl[207439]: ValueError: mode 1/clean: expected one complete family, starts=[], ends=[]
+2026-10-16T18:31:53+0800 192 numactl[207441]: Traceback (most recent call last):
+2026-10-16T18:31:53+0800 192 numactl[207441]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 51, in <module>
+2026-10-16T18:31:53+0800 192 numactl[207441]:     raise SystemExit(main())
+2026-10-16T18:31:53+0800 192 numactl[207441]:                      ^^^^^^
+2026-10-16T18:31:53+0800 192 numactl[207441]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 45, in main
+2026-10-16T18:31:53+0800 192 numactl[207441]:     result = extract(args.input.read_text(encoding="utf-8", errors="replace"), args.mode, args.profile)
+2026-10-16T18:31:53+0800 192 numactl[207441]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T18:31:53+0800 192 numactl[207441]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 26, in extract
+2026-10-16T18:31:53+0800 192 numactl[207441]:     raise ValueError(f"mode {mode}/{name}: expected one complete family, starts={starts}, ends={stops}")
+2026-10-16T18:31:53+0800 192 numactl[207441]: ValueError: mode 1/diagnostic: expected one complete family, starts=[1938], ends=[]
+2026-10-16T18:31:54+0800 192 numactl[206527]: run_rc=139 final_rc=139 output=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v38-flatmeta6-combined-20261016/results/root-p4-v38-flatmeta6-ep6-d3-16k-20261016t102725z variants=1
+2026-10-16T18:31:54+0800 192 systemd[1562]: root-p4-v38-flatmeta6-ep6-d3-16k-20261016t102725z.service: Main process exited, code=exited, status=139/n/a
+2026-10-16T18:31:54+0800 192 systemd[1562]: root-p4-v38-flatmeta6-ep6-d3-16k-20261016t102725z.service: Failed with result 'exit-code'.
+2026-10-16T18:31:54+0800 192 systemd[1562]: root-p4-v38-flatmeta6-ep6-d3-16k-20261016t102725z.service: Consumed 6min 5.081s CPU time.

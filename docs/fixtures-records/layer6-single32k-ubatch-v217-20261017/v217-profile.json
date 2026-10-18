@@ -1,0 +1,140 @@
+{
+  "schema": "v217-single32k-ubatch-sweep-profile-v1",
+  "status": "SOURCE_AND_SCENARIOS_READY_GATE_PENDING",
+  "candidate_label": "single32K prefill UB1024\u21922048\u21924096; native Paris canary; F32 tile indexer + virtual TopK",
+  "runtime": {
+    "name": "runtime-perf-v216",
+    "build_id": "20261017T054611.963897Z",
+    "report": "notes/V216-build.json",
+    "report_sha256": "7db0fde86433f8b385ab412ae2145907cd005599b0f3a1a7a8c04ee593642154",
+    "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v216"
+  },
+  "runner": {
+    "source": "dual-context-v217-single32k-ubatch-sweep.cpp",
+    "source_sha256": "fdc2bd82c269e25f1a9f2e090e93f4c9ac7fab8aa3ce55d1118db4464eacfbc6",
+    "base": "fixtures/layer6-single64k-combo-v198-20261017/dual-context-v198-single64k-combo.cpp",
+    "base_sha256": "0b887c301a40019901d754fe053534ddb1c61bcad2c43fdb60917600c7a8aa40",
+    "target_pad_header": "target-verify-pad-plan-v217.h",
+    "target_pad_header_sha256": "35550ae6e29758ed5e7940408b85d3e527dc07c0f743c350267ab6b11266ae02",
+    "compile_status": "not built; root owns build and slim launcher"
+  },
+  "inherited_environment": {
+    "profile": "fixtures/layer6-single64k-combo-v198-20261017/v198-profile.json",
+    "profile_sha256": "0de21c81d63e908545bf48ac16465c7add7c6c125c34d6ad7744a1d9e28b608c",
+    "overlay": {
+      "ROOT_UBATCH": "1024",
+      "ROOT_PREFILL_BATCH": "32768",
+      "ROOT_MTP_DEPTH": "2",
+      "LLAMA_MTP_N_UBATCH": "256",
+      "LLAMA_MTP_PAD": "6",
+      "LLAMA_MTP_VOCAB_PARALLEL": "0",
+      "LLAMA_QSA_PREFILL_F32_INDEXER": "1",
+      "LLAMA_QSA_VIRTUAL_TOPK": "1",
+      "LLAMA_PLE_NUMA_GPU_NODES": "6",
+      "LLAMA_PLE_NUMA_GPU_GIB": "18",
+      "LLAMA_QSA_INDEXER_IMPL": "standard",
+      "LLAMA_QSA_STANDARD_SPARSE": "1",
+      "GGML_CUDA_GRAPHS_FORCE": "1",
+      "GGML_CUDA_GRAPH_STRUCTURAL": "1",
+      "ROOT_WARMUP_FRAMES": "4",
+      "ROOT_PER_SEQUENCE_CONTEXT": "66048",
+      "ROOT_BANK_CTX": "66048",
+      "LLAMA_PREFILL_KV_PAD": "8192",
+      "GGML_CUDA_GRAPH_MISS_TRACE": "1",
+      "GGML_SCHED_LAYER_PINNED_CAP_MIB": "1024"
+    },
+    "per_family": [
+      {
+        "profile_kind": "single32k-ub1024",
+        "ROOT_UBATCH": "1024"
+      },
+      {
+        "profile_kind": "single32k-ub2048",
+        "ROOT_UBATCH": "2048"
+      },
+      {
+        "profile_kind": "single32k-ub4096",
+        "ROOT_UBATCH": "4096"
+      }
+    ]
+  },
+  "workload": {
+    "model_loads": 1,
+    "family_order": [
+      "single32k-ub1024",
+      "single32k-ub2048",
+      "single32k-ub4096"
+    ],
+    "native_canary_kind": "v50_semantic_canary",
+    "native_canary_expected": "Paris",
+    "native_canary_max_tokens": 8,
+    "long_case_kind": "v50_long_prefill",
+    "input_tokens": 32768,
+    "output_tokens": 8,
+    "long_outputs_semantically_scored": false,
+    "logical_n_batch": 32768,
+    "target_ubatch_by_family": [
+      1024,
+      2048,
+      4096
+    ],
+    "draft_ubatch": 256,
+    "mtp_depth": 2,
+    "mtp_pad_rows": 6,
+    "context_per_sequence": 66048,
+    "logical_chunk_tokens": 32768,
+    "expected_logical_chunks": 1,
+    "scenario_paths": {
+      "single32k-ub1024": "prepared-output/copy0/single32k-ub1024/scenarios.json",
+      "single32k-ub2048": "prepared-output/copy0/single32k-ub2048/scenarios.json",
+      "single32k-ub4096": "prepared-output/copy0/single32k-ub4096/scenarios.json"
+    },
+    "corpus_source": "fixtures/long-prefill-combo-v45-20261016/v45-real-corpus-source.json",
+    "corpus_source_sha256": "bd231acb8ce9423222dd0e5b043b2c274163106dc99af8d5a2380916b7df957c",
+    "scenario_sha256_by_family": {
+      "single32k-ub1024": "014ccc73327ceb9be4ea9a4c058143099c70399966ae4fe66c8e5f899cad8acc",
+      "single32k-ub2048": "ccfb4c455eef293937a04448e30bd8090fc21e2a10ab5eb2c455e6d71f7e6def",
+      "single32k-ub4096": "dc762866208f8fdbc9bccbc2a1de850d3f30730ed295ef24ef3434bfca840638"
+    },
+    "expected_target_scheduler_ubatch_count": {
+      "1024": 32,
+      "2048": 16,
+      "4096": 8
+    },
+    "scheduler_ubatch_counts_are_planning_only": true,
+    "logical_chunk_note": "one 32768-token runner call per long scenario; scheduler subdivisions are to be verified from actual runtime records"
+  },
+  "required_feature_contract": {
+    "LLAMA_QSA_PREFILL_F32_INDEXER": "1",
+    "LLAMA_QSA_VIRTUAL_TOPK": "1",
+    "LLAMA_QSA_INDEXER_IMPL": "standard",
+    "LLAMA_QSA_STANDARD_SPARSE": "1",
+    "LLAMA_MTP_VOCAB_PARALLEL": "0",
+    "LLAMA_MTP_PREFILL_HISTORY_LAST_ONLY": "1",
+    "LLAMA_MTP_RELEASE_PREFILL_HISTORY": "1",
+    "GGML_SCHED_LAYER_PEER_REUSE_FENCE": "1",
+    "LLAMA_QSA_DECODE_FUSED_INDEXER": "1",
+    "LLAMA_PLE_NUMA_GPU_GIB": "18"
+  },
+  "quality_scope": "V50 native Paris canary only; 32K/8 output performance case is unscored",
+  "safety": {
+    "max_runtime_seconds": 1800,
+    "gpu_free_floor_mib": 512,
+    "gpu_temp_ceiling_c": 58,
+    "automatic_retry": false,
+    "model_loaded": false,
+    "gpu_touched": false
+  },
+  "pending_gates": [
+    "V215 numerical fixture gate is not yet frozen/passed; root must clear before launch"
+  ],
+  "launch_eligible": false,
+  "root_adjustment": {
+    "basis": "V214 valid4K trace:123597 kernel launches/4.308s host API,1GPU83.49%,GraphLaunch16 no target replay",
+    "changes": [
+      "KVpad8192 prevents needless65536-key work at32K",
+      "binding-signature-validated force capture on; retain all compatibility guards",
+      "exact virtual TopK plus F32 tile and largeUB combined; no speedclaim"
+    ]
+  }
+}

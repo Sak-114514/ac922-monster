@@ -1,0 +1,47 @@
+FIXTURE=direct-nccl-allreduce
+UTC=2026-10-15T21:46:32Z
+HOST=192
+GPU0_2_EXPECTED_UUIDS=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb
+GPU0_2_EXPECTED_BUSES=00000004:04:00.0 00000004:05:00.0 00000004:06:00.0
+CUDA_VISIBLE_DEVICES=unset
+DRIVER=550.54.15
+BINARY_SHA256=3569678037d0fa55de2f44e4704e0a0c8be736fee0da8e44711158456887792f
+SOURCE_SHA256=3480b617a2ef04f538093e1f59a4f4a30d36a7d885e912d24c1056c4ba3da3e2
+NCCL_LIB=libnccl.so.2 => /usr/local/nccl/lib/libnccl.so.2 (0x00007fffbb390000)
+CUDA_RUNTIME=libcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fff88330000)
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 00000004:04:00.0, 6 MiB, 39
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 00000004:05:00.0, 6 MiB, 38
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 00000004:06:00.0, 6 MiB, 38
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 00000035:03:00.0, 0 MiB, 38
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 00000035:04:00.0, 0 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 00000035:05:00.0, 131 MiB, 39
+GPU_INVENTORY count=6
+GPU rank=0 device=0 bus=0004:04:00.0
+GPU rank=1 device=1 bus=0004:05:00.0
+GPU rank=2 device=2 bus=0004:06:00.0
+NCCL_VERSION 2.27.7 mode=ordinary ranks=3 warmup=5 reps=20
+RESULT mode=ordinary payload=200KB bytes=204800 count_f32=51200 warmup=5 reps=20 host_complete_ms_avg=0.0876 host_complete_ms_p50=0.0878 host_complete_ms_p95=0.0892 event_max_rank_ms_avg=0.0697 event_max_rank_ms_p50=0.0696 event_max_rank_ms_p95=0.0708
+RESULT mode=ordinary payload=400KB bytes=409600 count_f32=102400 warmup=5 reps=20 host_complete_ms_avg=0.0915 host_complete_ms_p50=0.0914 host_complete_ms_p95=0.0927 event_max_rank_ms_avg=0.0761 event_max_rank_ms_p50=0.0758 event_max_rank_ms_p95=0.0768
+RESULT mode=ordinary payload=4MiB bytes=4194304 count_f32=1048576 warmup=5 reps=20 host_complete_ms_avg=0.2299 host_complete_ms_p50=0.2247 host_complete_ms_p95=0.2261 event_max_rank_ms_avg=0.2179 event_max_rank_ms_p50=0.2121 event_max_rank_ms_p95=0.2140
+RESULT mode=ordinary payload=16MiB bytes=16777216 count_f32=4194304 warmup=5 reps=20 host_complete_ms_avg=0.5937 host_complete_ms_p50=0.5802 host_complete_ms_p95=0.6504 event_max_rank_ms_avg=0.5713 event_max_rank_ms_p50=0.5551 event_max_rank_ms_p95=0.6461
+RESULT mode=ordinary payload=32MiB bytes=33554432 count_f32=8388608 warmup=5 reps=20 host_complete_ms_avg=0.9531 host_complete_ms_p50=0.9457 host_complete_ms_p95=0.9860 event_max_rank_ms_avg=0.9253 event_max_rank_ms_p50=0.9194 event_max_rank_ms_p95=0.9615
+GRAPH_WORKER rank=2 device=2 bus=0004:06:00.0 NCCL_VERSION=22707 one_gpu_per_process=1
+GRAPH_WORKER rank=1 device=1 bus=0004:05:00.0 NCCL_VERSION=22707 one_gpu_per_process=1
+GRAPH_WORKER rank=0 device=0 bus=0004:04:00.0 NCCL_VERSION=22707 one_gpu_per_process=1
+RESULT mode=graph rank=2 payload=200KB bytes=204800 count_f32=51200 warmup=5 reps=20 host_complete_ms_avg=0.2940 host_complete_ms_p50=0.2731 host_complete_ms_p95=0.2852 event_ms_avg=0.2415 event_ms_p50=0.2212 event_ms_p95=0.2324
+RESULT mode=graph rank=1 payload=200KB bytes=204800 count_f32=51200 warmup=5 reps=20 host_complete_ms_avg=0.0463 host_complete_ms_p50=0.0465 host_complete_ms_p95=0.0483 event_ms_avg=0.0304 event_ms_p50=0.0297 event_ms_p95=0.0327
+RESULT mode=graph rank=0 payload=200KB bytes=204800 count_f32=51200 warmup=5 reps=20 host_complete_ms_avg=0.0461 host_complete_ms_p50=0.0440 host_complete_ms_p95=0.0482 event_ms_avg=0.0313 event_ms_p50=0.0297 event_ms_p95=0.0328
+RESULT mode=graph rank=2 payload=400KB bytes=409600 count_f32=102400 warmup=5 reps=20 host_complete_ms_avg=0.4711 host_complete_ms_p50=0.4618 host_complete_ms_p95=0.4678 event_ms_avg=0.4146 event_ms_p50=0.4055 event_ms_p95=0.4116
+RESULT mode=graph rank=1 payload=400KB bytes=409600 count_f32=102400 warmup=5 reps=20 host_complete_ms_avg=0.0540 host_complete_ms_p50=0.0533 host_complete_ms_p95=0.0599 event_ms_avg=0.0320 event_ms_p50=0.0307 event_ms_p95=0.0389
+RESULT mode=graph rank=0 payload=400KB bytes=409600 count_f32=102400 warmup=5 reps=20 host_complete_ms_avg=0.0537 host_complete_ms_p50=0.0533 host_complete_ms_p95=0.0548 event_ms_avg=0.0315 event_ms_p50=0.0307 event_ms_p95=0.0338
+RESULT mode=graph rank=0 payload=4MiB bytes=4194304 count_f32=1048576 warmup=5 reps=20 host_complete_ms_avg=0.1982 host_complete_ms_p50=0.1805 host_complete_ms_p95=0.2814 event_ms_avg=0.1828 event_ms_p50=0.1669 event_ms_p95=0.2673
+RESULT mode=graph rank=2 payload=4MiB bytes=4194304 count_f32=1048576 warmup=5 reps=20 host_complete_ms_avg=2.1478 host_complete_ms_p50=0.3774 host_complete_ms_p95=4.3242 event_ms_avg=2.0861 event_ms_p50=0.2908 event_ms_p95=4.2465
+RESULT mode=graph rank=1 payload=4MiB bytes=4194304 count_f32=1048576 warmup=5 reps=20 host_complete_ms_avg=0.1901 host_complete_ms_p50=0.1715 host_complete_ms_p95=0.2837 event_ms_avg=0.1736 event_ms_p50=0.1567 event_ms_p95=0.2714
+RESULT mode=graph rank=0 payload=16MiB bytes=16777216 count_f32=4194304 warmup=5 reps=20 host_complete_ms_avg=0.9695 host_complete_ms_p50=0.4922 host_complete_ms_p95=2.2506 event_ms_avg=0.9585 event_ms_p50=0.4813 event_ms_p95=2.2385
+RESULT mode=graph rank=1 payload=16MiB bytes=16777216 count_f32=4194304 warmup=5 reps=20 host_complete_ms_avg=0.5164 host_complete_ms_p50=0.4541 host_complete_ms_p95=0.7270 event_ms_avg=0.5057 event_ms_p50=0.4424 event_ms_p95=0.7209
+RESULT mode=graph rank=2 payload=16MiB bytes=16777216 count_f32=4194304 warmup=5 reps=20 host_complete_ms_avg=0.9187 host_complete_ms_p50=0.5627 host_complete_ms_p95=2.1509 event_ms_avg=0.8360 event_ms_p50=0.4239 event_ms_p95=2.1330
+RESULT mode=graph rank=0 payload=32MiB bytes=33554432 count_f32=8388608 warmup=5 reps=20 host_complete_ms_avg=0.9186 host_complete_ms_p50=0.8212 host_complete_ms_p95=1.4912 event_ms_avg=0.9071 event_ms_p50=0.8079 event_ms_p95=1.4858
+RESULT mode=graph rank=1 payload=32MiB bytes=33554432 count_f32=8388608 warmup=5 reps=20 host_complete_ms_avg=2.0763 host_complete_ms_p50=0.8265 host_complete_ms_p95=6.1148 event_ms_avg=2.0408 event_ms_p50=0.8141 event_ms_p95=6.1020
+RESULT mode=graph rank=2 payload=32MiB bytes=33554432 count_f32=8388608 warmup=5 reps=20 host_complete_ms_avg=2.0510 host_complete_ms_p50=0.8971 host_complete_ms_p95=6.1485 event_ms_avg=2.0123 event_ms_p50=0.8571 event_ms_p95=6.1379
+PASS mode=graph exact_integer_sum=1 canary=1
+EXIT_STATUS=0

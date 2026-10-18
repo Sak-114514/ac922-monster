@@ -1,0 +1,287 @@
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v103
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/volta-tilelocal-half-20261017/results/tilelocal-half-fixture-ac922-host-v103-20261017-r5
+binary_sha256=8ff18f4b79e28ba005e63561987d7865abedc450b90f40ae3927fb07d979d992
+source_bundle_sha256=de6707a85d77dd93b951a10963e2e81a69a994b06e91f6339ee15928a746737f
+CUDA_VISIBLE_DEVICES=GPU-fadb0459-4d30-907b-289a-862b3014f165
+mode=full-7-format-matrix timeout_seconds=55
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 1 MiB, 16126 MiB, 39
+STAGE main-entry argc=3
+STAGE cudaSetDevice-before visible_index=0
+STAGE cudaSetDevice-after
+DEVICE visible_index=0 name=Tesla V100-SXM2-16GB cc=7.0 free_bytes=16586375168 total_bytes=16911433728 l2_bytes=6291456 cuda_visible_devices=GPU-fadb0459-4d30-907b-289a-862b3014f165
+STAGE formats-load-before
+STAGE formats-load-after count=7
+STAGE matrix-case-before type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8
+STAGE case-host-weights-before type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=0.000106507912 max_rel=0.769391897 rel_rms=0.000294332659
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=0.000104507431 max_rel=1.96898532 rel_rms=0.000282077227
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=0.000106507912 max_rel=0.769391897 rel_rms=0.000294332659
+PERF type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 reps=5 stock_mmq_us=74.7520 tilelocal_half_us=322.5600 speedup_stock_over_tilelocal=0.2317 prep_pass=none
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=0.000104507431 max_rel=1.96898532 rel_rms=0.000282077227
+CASE type=IQ2_XXS type_id=16 Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 added_bytes=8154624 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ2_XXS cols=8
+STAGE matrix-case-before type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16
+STAGE case-host-weights-before type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=0.000106507912 max_rel=0.769391897 rel_rms=0.000292982569
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163800 max_abs=0.000104507431 max_rel=1.96898532 rel_rms=0.000284024819
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=0.000106507912 max_rel=0.769391897 rel_rms=0.000292982569
+F64_REF F64_dequant_q8_f32 type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E_sample=3 cols_sample=3 cand_vs_dequantf32_max_abs=6.18110417e-05 max_rel=0.0207717392 rel_rms=0.000321189483 stock_vs_dequantf32_max_abs=5.20248724e-08 max_rel=4.56944506e-06 rel_rms=1.95625794e-07 cand_vs_half_operands_max_abs=5.02077455e-08 max_rel=1.62381084e-05 rel_rms=2.02494351e-07 finite=1
+PERF type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 reps=5 stock_mmq_us=75.7760 tilelocal_half_us=330.7520 speedup_stock_over_tilelocal=0.2291 prep_pass=none
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163800 max_abs=0.000104507431 max_rel=1.96898532 rel_rms=0.000284024819
+CASE type=IQ2_XXS type_id=16 Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 added_bytes=8809984 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=recorded
+STAGE matrix-case-after type=IQ2_XXS cols=16
+STAGE matrix-case-before type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32
+STAGE case-host-weights-before type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327640 max_abs=0.000106507912 max_rel=0.769391897 rel_rms=0.000289188796
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327640 max_abs=0.000104507431 max_rel=1.96898532 rel_rms=0.000290102683
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327640 max_abs=0.000106507912 max_rel=0.769391897 rel_rms=0.000289188796
+PERF type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 reps=5 stock_mmq_us=112.6400 tilelocal_half_us=647.1680 speedup_stock_over_tilelocal=0.1741 prep_pass=none
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327640 max_abs=0.000104507431 max_rel=1.96898532 rel_rms=0.000290102683
+CASE type=IQ2_XXS type_id=16 Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 added_bytes=10859008 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ2_XXS cols=32
+STAGE matrix-case-before type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64
+STAGE case-host-weights-before type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655320 max_abs=0.000106507912 max_rel=6.25696884 rel_rms=0.000289223533
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655320 max_abs=0.000104507431 max_rel=3.25355039 rel_rms=0.000289818219
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655320 max_abs=0.000106507912 max_rel=6.25696884 rel_rms=0.000289223533
+PERF type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 reps=5 stock_mmq_us=212.9920 tilelocal_half_us=1284.0959 speedup_stock_over_tilelocal=0.1659 prep_pass=none
+NUMERIC stock_mmq type=IQ2_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655320 max_abs=0.000104507431 max_rel=3.25355039 rel_rms=0.000289818219
+CASE type=IQ2_XXS type_id=16 Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 added_bytes=14957056 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ2_XXS cols=64
+STAGE matrix-case-before type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8
+STAGE case-host-weights-before type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=7.80671835e-05 max_rel=0.21764162 rel_rms=0.000314765992
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=8.83825123e-05 max_rel=0.534831822 rel_rms=0.000302772492
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=7.80671835e-05 max_rel=0.21764162 rel_rms=0.000314765992
+PERF type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 reps=5 stock_mmq_us=84.9920 tilelocal_half_us=325.6320 speedup_stock_over_tilelocal=0.2610 prep_pass=none
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=8.83825123e-05 max_rel=0.534831822 rel_rms=0.000302772492
+CASE type=IQ2_XS type_id=17 Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 added_bytes=8973824 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ2_XS cols=8
+STAGE matrix-case-before type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16
+STAGE case-host-weights-before type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=9.11951065e-05 max_rel=2.62924522 rel_rms=0.000316194032
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163800 max_abs=8.83825123e-05 max_rel=0.534831822 rel_rms=0.00029855953
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=9.11951065e-05 max_rel=2.62924522 rel_rms=0.000316194032
+F64_REF F64_dequant_q8_f32 type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E_sample=3 cols_sample=3 cand_vs_dequantf32_max_abs=5.61306722e-05 max_rel=2.62801716 rel_rms=0.000294468528 stock_vs_dequantf32_max_abs=3.6751797e-08 max_rel=0.000753759993 rel_rms=1.42094879e-07 cand_vs_half_operands_max_abs=4.2566171e-08 max_rel=0.000445489467 rel_rms=1.92677302e-07 finite=1
+PERF type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 reps=5 stock_mmq_us=87.0400 tilelocal_half_us=334.8480 speedup_stock_over_tilelocal=0.2599 prep_pass=none
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163800 max_abs=8.83825123e-05 max_rel=0.534831822 rel_rms=0.00029855953
+CASE type=IQ2_XS type_id=17 Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 added_bytes=9629184 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=recorded
+STAGE matrix-case-after type=IQ2_XS cols=16
+STAGE matrix-case-before type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32
+STAGE case-host-weights-before type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327680 max_abs=9.62167978e-05 max_rel=2.62924522 rel_rms=0.000308066753
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327640 max_abs=8.94144177e-05 max_rel=3.63764646 rel_rms=0.00030138536
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327680 max_abs=9.62167978e-05 max_rel=2.62924522 rel_rms=0.000308066753
+PERF type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 reps=5 stock_mmq_us=130.0480 tilelocal_half_us=652.2880 speedup_stock_over_tilelocal=0.1994 prep_pass=none
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327640 max_abs=8.94144177e-05 max_rel=3.63764646 rel_rms=0.00030138536
+CASE type=IQ2_XS type_id=17 Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 added_bytes=11678208 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ2_XS cols=32
+STAGE matrix-case-before type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64
+STAGE case-host-weights-before type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655240 max_abs=0.000106066465 max_rel=2.62924522 rel_rms=0.000301762055
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655240 max_abs=9.55685973e-05 max_rel=2385.53519 rel_rms=0.000300395387
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655240 max_abs=0.000106066465 max_rel=2.62924522 rel_rms=0.000301762055
+PERF type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 reps=5 stock_mmq_us=245.7600 tilelocal_half_us=1294.3359 speedup_stock_over_tilelocal=0.1899 prep_pass=none
+NUMERIC stock_mmq type=IQ2_XS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655240 max_abs=9.55685973e-05 max_rel=2385.53519 rel_rms=0.000300395387
+CASE type=IQ2_XS type_id=17 Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 added_bytes=15776256 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ2_XS cols=64
+STAGE matrix-case-before type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=8
+STAGE case-host-weights-before type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=8
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=7.25612044e-05 max_rel=6.78025383 rel_rms=0.000293448523
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=7.49416649e-05 max_rel=1.8284514 rel_rms=0.000311330636
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=7.25612044e-05 max_rel=6.78025383 rel_rms=0.000293448523
+PERF type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 reps=5 stock_mmq_us=86.0160 tilelocal_half_us=327.6800 speedup_stock_over_tilelocal=0.2625 prep_pass=none
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=7.49416649e-05 max_rel=1.8284514 rel_rms=0.000311330636
+CASE type=IQ2_S type_id=22 Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 added_bytes=9793024 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ2_S cols=8
+STAGE matrix-case-before type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=16
+STAGE case-host-weights-before type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=16
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=8.61026347e-05 max_rel=6.78025383 rel_rms=0.00028816525
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=7.77058303e-05 max_rel=1.8284514 rel_rms=0.000303871562
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=8.61026347e-05 max_rel=6.78025383 rel_rms=0.00028816525
+F64_REF F64_dequant_q8_f32 type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E_sample=3 cols_sample=3 cand_vs_dequantf32_max_abs=5.79246906e-05 max_rel=0.0157414272 rel_rms=0.000278612895 stock_vs_dequantf32_max_abs=6.16807823e-08 max_rel=6.58303924e-06 rel_rms=1.74174574e-07 cand_vs_half_operands_max_abs=3.98649718e-08 max_rel=8.85073543e-06 rel_rms=1.7167489e-07 finite=1
+PERF type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 reps=5 stock_mmq_us=86.0160 tilelocal_half_us=334.8480 speedup_stock_over_tilelocal=0.2569 prep_pass=none
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=7.77058303e-05 max_rel=1.8284514 rel_rms=0.000303871562
+CASE type=IQ2_S type_id=22 Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 added_bytes=10448384 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=recorded
+STAGE matrix-case-after type=IQ2_S cols=16
+STAGE matrix-case-before type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=32
+STAGE case-host-weights-before type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=32
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327680 max_abs=8.61026347e-05 max_rel=6.78025383 rel_rms=0.000292428964
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327680 max_abs=8.18035624e-05 max_rel=5.66644157 rel_rms=0.000296909614
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327680 max_abs=8.61026347e-05 max_rel=6.78025383 rel_rms=0.000292428964
+PERF type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 reps=5 stock_mmq_us=132.0960 tilelocal_half_us=655.3600 speedup_stock_over_tilelocal=0.2016 prep_pass=none
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327680 max_abs=8.18035624e-05 max_rel=5.66644157 rel_rms=0.000296909614
+CASE type=IQ2_S type_id=22 Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 added_bytes=12497408 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ2_S cols=32
+STAGE matrix-case-before type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=64
+STAGE case-host-weights-before type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=64
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655320 max_abs=8.61026347e-05 max_rel=6.78025383 rel_rms=0.000290872166
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655360 max_abs=8.18035624e-05 max_rel=5.66644157 rel_rms=0.000293648921
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655320 max_abs=8.61026347e-05 max_rel=6.78025383 rel_rms=0.000290872166
+PERF type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 reps=5 stock_mmq_us=252.9280 tilelocal_half_us=1301.5040 speedup_stock_over_tilelocal=0.1943 prep_pass=none
+NUMERIC stock_mmq type=IQ2_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655360 max_abs=8.18035624e-05 max_rel=5.66644157 rel_rms=0.000293648921
+CASE type=IQ2_S type_id=22 Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 added_bytes=16595456 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ2_S cols=64
+STAGE matrix-case-before type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8
+STAGE case-host-weights-before type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=0.000103607774 max_rel=0.310681994 rel_rms=0.000289554199
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=0.000107601285 max_rel=0.875702362 rel_rms=0.000294586994
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=0.000103607774 max_rel=0.310681994 rel_rms=0.000289554199
+PERF type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 reps=5 stock_mmq_us=80.8960 tilelocal_half_us=330.7520 speedup_stock_over_tilelocal=0.2446 prep_pass=none
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=0.000107601285 max_rel=0.875702362 rel_rms=0.000294586994
+CASE type=IQ3_XXS type_id=18 Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 added_bytes=11431424 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ3_XXS cols=8
+STAGE matrix-case-before type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16
+STAGE case-host-weights-before type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=0.000103607774 max_rel=1.39993103 rel_rms=0.000291486575
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=0.000107601285 max_rel=3.0256636 rel_rms=0.000286930167
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=0.000103607774 max_rel=1.39993103 rel_rms=0.000291486575
+F64_REF F64_dequant_q8_f32 type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E_sample=3 cols_sample=3 cand_vs_dequantf32_max_abs=6.17860185e-05 max_rel=0.0155418784 rel_rms=0.00037534173 stock_vs_dequantf32_max_abs=5.01792433e-08 max_rel=3.82984214e-06 rel_rms=1.85651739e-07 cand_vs_half_operands_max_abs=5.16611181e-08 max_rel=7.69323407e-06 rel_rms=2.25704684e-07 finite=1
+PERF type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 reps=5 stock_mmq_us=80.8960 tilelocal_half_us=338.9440 speedup_stock_over_tilelocal=0.2387 prep_pass=none
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=0.000107601285 max_rel=3.0256636 rel_rms=0.000286930167
+CASE type=IQ3_XXS type_id=18 Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 added_bytes=12086784 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=recorded
+STAGE matrix-case-after type=IQ3_XXS cols=16
+STAGE matrix-case-before type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32
+STAGE case-host-weights-before type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327680 max_abs=0.000103607774 max_rel=35.9559552 rel_rms=0.00029114864
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327640 max_abs=0.000107601285 max_rel=3.0256636 rel_rms=0.000286786881
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327680 max_abs=0.000103607774 max_rel=35.9559552 rel_rms=0.00029114864
+PERF type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 reps=5 stock_mmq_us=114.6880 tilelocal_half_us=662.5280 speedup_stock_over_tilelocal=0.1731 prep_pass=none
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327640 max_abs=0.000107601285 max_rel=3.0256636 rel_rms=0.000286786881
+CASE type=IQ3_XXS type_id=18 Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 added_bytes=14135808 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ3_XXS cols=32
+STAGE matrix-case-before type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64
+STAGE case-host-weights-before type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655360 max_abs=0.000112764537 max_rel=35.9559552 rel_rms=0.000292804452
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655280 max_abs=0.000107601285 max_rel=3.0256636 rel_rms=0.000289093897
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655360 max_abs=0.000112764537 max_rel=35.9559552 rel_rms=0.000292804452
+PERF type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 reps=5 stock_mmq_us=216.0640 tilelocal_half_us=1312.7679 speedup_stock_over_tilelocal=0.1646 prep_pass=none
+NUMERIC stock_mmq type=IQ3_XXS Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655280 max_abs=0.000107601285 max_rel=3.0256636 rel_rms=0.000289093897
+CASE type=IQ3_XXS type_id=18 Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 added_bytes=18233856 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ3_XXS cols=64
+STAGE matrix-case-before type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=8
+STAGE case-host-weights-before type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=8
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=8.26120377e-05 max_rel=1.14769631 rel_rms=0.000285346829
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=7.42487609e-05 max_rel=0.776706022 rel_rms=0.00027919737
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=8.26120377e-05 max_rel=1.14769631 rel_rms=0.000285346829
+PERF type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 reps=5 stock_mmq_us=83.9680 tilelocal_half_us=334.8480 speedup_stock_over_tilelocal=0.2508 prep_pass=none
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=7.42487609e-05 max_rel=0.776706022 rel_rms=0.00027919737
+CASE type=IQ3_S type_id=21 Ksrc=2560 Kexec=2560 N=640 E=16 cols=8 added_bytes=12660224 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ3_S cols=8
+STAGE matrix-case-before type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=16
+STAGE case-host-weights-before type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=16
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163800 max_abs=8.26120377e-05 max_rel=1.14769631 rel_rms=0.000279652058
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=7.58543611e-05 max_rel=4.14055558 rel_rms=0.000280662675
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163800 max_abs=8.26120377e-05 max_rel=1.14769631 rel_rms=0.000279652058
+F64_REF F64_dequant_q8_f32 type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E_sample=3 cols_sample=3 cand_vs_dequantf32_max_abs=6.72507343e-05 max_rel=0.0192837267 rel_rms=0.000253324154 stock_vs_dequantf32_max_abs=5.14748221e-08 max_rel=5.80719368e-06 rel_rms=1.4371952e-07 cand_vs_half_operands_max_abs=4.60786396e-08 max_rel=1.25039774e-05 rel_rms=2.06533838e-07 finite=1
+PERF type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 reps=5 stock_mmq_us=84.9920 tilelocal_half_us=342.0160 speedup_stock_over_tilelocal=0.2485 prep_pass=none
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=7.58543611e-05 max_rel=4.14055558 rel_rms=0.000280662675
+CASE type=IQ3_S type_id=21 Ksrc=2560 Kexec=2560 N=640 E=16 cols=16 added_bytes=13315584 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=recorded
+STAGE matrix-case-after type=IQ3_S cols=16
+STAGE matrix-case-before type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=32
+STAGE case-host-weights-before type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=32
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327560 max_abs=8.26120377e-05 max_rel=3.89065234 rel_rms=0.000278781651
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327680 max_abs=7.58543611e-05 max_rel=4.14055558 rel_rms=0.000281354578
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327560 max_abs=8.26120377e-05 max_rel=3.89065234 rel_rms=0.000278781651
+PERF type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 reps=5 stock_mmq_us=124.9280 tilelocal_half_us=669.6960 speedup_stock_over_tilelocal=0.1865 prep_pass=none
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 n=327680 bitdiff=327680 max_abs=7.58543611e-05 max_rel=4.14055558 rel_rms=0.000281354578
+CASE type=IQ3_S type_id=21 Ksrc=2560 Kexec=2560 N=640 E=16 cols=32 added_bytes=15364608 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ3_S cols=32
+STAGE matrix-case-before type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=64
+STAGE case-host-weights-before type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=64
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655160 max_abs=8.31484795e-05 max_rel=3.89065234 rel_rms=0.0002849439
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655360 max_abs=8.30590725e-05 max_rel=4.33341911 rel_rms=0.00028063519
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655160 max_abs=8.31484795e-05 max_rel=3.89065234 rel_rms=0.0002849439
+PERF type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 reps=5 stock_mmq_us=236.5440 tilelocal_half_us=1323.0079 speedup_stock_over_tilelocal=0.1788 prep_pass=none
+NUMERIC stock_mmq type=IQ3_S Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 n=655360 bitdiff=655360 max_abs=8.30590725e-05 max_rel=4.33341911 rel_rms=0.00028063519
+CASE type=IQ3_S type_id=21 Ksrc=2560 Kexec=2560 N=640 E=16 cols=64 added_bytes=19462656 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ3_S cols=64
+STAGE matrix-case-before type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=8
+STAGE case-host-weights-before type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=8
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=5.58551401e-05 max_rel=0.266049199 rel_rms=0.000296778459
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=5.15654683e-05 max_rel=0.322637071 rel_rms=0.000297933271
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=5.58551401e-05 max_rel=0.266049199 rel_rms=0.000296778459
+PERF type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=8 reps=5 stock_mmq_us=25.6000 tilelocal_half_us=102.4000 speedup_stock_over_tilelocal=0.2500 prep_pass=none
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=5.15654683e-05 max_rel=0.322637071 rel_rms=0.000297933271
+CASE type=IQ4_NL type_id=20 Ksrc=640 Kexec=768 N=640 E=16 cols=8 added_bytes=5303808 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ4_NL cols=8
+STAGE matrix-case-before type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=16
+STAGE case-host-weights-before type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=16
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=5.58551401e-05 max_rel=3.5111901 rel_rms=0.000289612224
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=5.15654683e-05 max_rel=0.322637071 rel_rms=0.000299298215
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=5.58551401e-05 max_rel=3.5111901 rel_rms=0.000289612224
+F64_REF F64_dequant_q8_f32 type=IQ4_NL Ksrc=640 Kexec=768 N=640 E_sample=3 cols_sample=3 cand_vs_dequantf32_max_abs=3.18536414e-05 max_rel=0.0242679327 rel_rms=0.000311291091 stock_vs_dequantf32_max_abs=8.36440761e-09 max_rel=1.16943589e-05 rel_rms=7.51153311e-08 cand_vs_half_operands_max_abs=2.51268375e-08 max_rel=3.36322087e-06 rel_rms=1.58948627e-07 finite=1
+PERF type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=16 reps=5 stock_mmq_us=25.6000 tilelocal_half_us=105.4720 speedup_stock_over_tilelocal=0.2427 prep_pass=none
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=5.15654683e-05 max_rel=0.322637071 rel_rms=0.000299298215
+CASE type=IQ4_NL type_id=20 Ksrc=640 Kexec=768 N=640 E=16 cols=16 added_bytes=5959168 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=recorded
+STAGE matrix-case-after type=IQ4_NL cols=16
+STAGE matrix-case-before type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=32
+STAGE case-host-weights-before type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=32
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=32 n=327680 bitdiff=327680 max_abs=5.58551401e-05 max_rel=3.5111901 rel_rms=0.000293899199
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=32 n=327680 bitdiff=327680 max_abs=5.15654683e-05 max_rel=4.20383199 rel_rms=0.000290832985
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=32 n=327680 bitdiff=327680 max_abs=5.58551401e-05 max_rel=3.5111901 rel_rms=0.000293899199
+PERF type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=32 reps=5 stock_mmq_us=43.0080 tilelocal_half_us=208.8960 speedup_stock_over_tilelocal=0.2059 prep_pass=none
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=32 n=327680 bitdiff=327680 max_abs=5.15654683e-05 max_rel=4.20383199 rel_rms=0.000290832985
+CASE type=IQ4_NL type_id=20 Ksrc=640 Kexec=768 N=640 E=16 cols=32 added_bytes=7492096 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ4_NL cols=32
+STAGE matrix-case-before type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=64
+STAGE case-host-weights-before type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=64
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=64 n=655360 bitdiff=655320 max_abs=5.58551401e-05 max_rel=8.8709092 rel_rms=0.000291494826
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=64 n=655360 bitdiff=655360 max_abs=5.15654683e-05 max_rel=4.26137565 rel_rms=0.00028890485
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=64 n=655360 bitdiff=655320 max_abs=5.58551401e-05 max_rel=8.8709092 rel_rms=0.000291494826
+PERF type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=64 reps=5 stock_mmq_us=86.0160 tilelocal_half_us=423.9360 speedup_stock_over_tilelocal=0.2029 prep_pass=none
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=640 E=16 cols=64 n=655360 bitdiff=655360 max_abs=5.15654683e-05 max_rel=4.26137565 rel_rms=0.00028890485
+CASE type=IQ4_NL type_id=20 Ksrc=640 Kexec=768 N=640 E=16 cols=64 added_bytes=10557952 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=IQ4_NL cols=64
+STAGE matrix-case-before type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=8
+STAGE case-host-weights-before type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=8
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=8 n=81920 bitdiff=81880 max_abs=3.0733645e-05 max_rel=0.353916198 rel_rms=0.00020468752
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=2.51014717e-05 max_rel=0.18934155 rel_rms=0.000198075133
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=8 n=81920 bitdiff=81880 max_abs=3.0733645e-05 max_rel=0.353916198 rel_rms=0.00020468752
+PERF type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=8 reps=5 stock_mmq_us=24.5760 tilelocal_half_us=98.3040 speedup_stock_over_tilelocal=0.2500 prep_pass=none
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=8 n=81920 bitdiff=81920 max_abs=2.51014717e-05 max_rel=0.18934155 rel_rms=0.000198075133
+CASE type=Q2_0 type_id=42 Ksrc=640 Kexec=768 N=640 E=16 cols=8 added_bytes=3091968 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=Q2_0 cols=8
+STAGE matrix-case-before type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=16
+STAGE case-host-weights-before type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=16
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=16 n=163840 bitdiff=163760 max_abs=3.0733645e-05 max_rel=0.560252678 rel_rms=0.000201047288
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=2.579391e-05 max_rel=1.13128602 rel_rms=0.000200705727
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=16 n=163840 bitdiff=163760 max_abs=3.0733645e-05 max_rel=0.560252678 rel_rms=0.000201047288
+F64_REF F64_dequant_q8_f32 type=Q2_0 Ksrc=640 Kexec=768 N=640 E_sample=3 cols_sample=3 cand_vs_dequantf32_max_abs=2.19039254e-05 max_rel=0.0636320537 rel_rms=0.00019191807 stock_vs_dequantf32_max_abs=1.43844048e-08 max_rel=5.2833814e-06 rel_rms=8.03064598e-08 cand_vs_half_operands_max_abs=1.87719706e-08 max_rel=1.3047024e-05 rel_rms=1.02854857e-07 finite=1
+PERF type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=16 reps=5 stock_mmq_us=25.6000 tilelocal_half_us=102.4000 speedup_stock_over_tilelocal=0.2500 prep_pass=none
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=16 n=163840 bitdiff=163840 max_abs=2.579391e-05 max_rel=1.13128602 rel_rms=0.000200705727
+CASE type=Q2_0 type_id=42 Ksrc=640 Kexec=768 N=640 E=16 cols=16 added_bytes=3747328 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=recorded
+STAGE matrix-case-after type=Q2_0 cols=16
+STAGE matrix-case-before type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=32
+STAGE case-host-weights-before type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=32
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=32 n=327680 bitdiff=327560 max_abs=3.0733645e-05 max_rel=0.560252678 rel_rms=0.000198677595
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=32 n=327680 bitdiff=327640 max_abs=2.69110024e-05 max_rel=3.66005254 rel_rms=0.000202085857
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=32 n=327680 bitdiff=327560 max_abs=3.0733645e-05 max_rel=0.560252678 rel_rms=0.000198677595
+PERF type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=32 reps=5 stock_mmq_us=35.8400 tilelocal_half_us=193.5360 speedup_stock_over_tilelocal=0.1852 prep_pass=none
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=32 n=327680 bitdiff=327640 max_abs=2.69110024e-05 max_rel=3.66005254 rel_rms=0.000202085857
+CASE type=Q2_0 type_id=42 Ksrc=640 Kexec=768 N=640 E=16 cols=32 added_bytes=5280256 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=Q2_0 cols=32
+STAGE matrix-case-before type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=64
+STAGE case-host-weights-before type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=64
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=64 n=655360 bitdiff=655200 max_abs=3.0733645e-05 max_rel=1.50358191 rel_rms=0.000199302183
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=64 n=655360 bitdiff=655320 max_abs=2.97706574e-05 max_rel=45.6147589 rel_rms=0.000201451187
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=64 n=655360 bitdiff=655200 max_abs=3.0733645e-05 max_rel=1.50358191 rel_rms=0.000199302183
+PERF type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=64 reps=5 stock_mmq_us=62.4640 tilelocal_half_us=379.9040 speedup_stock_over_tilelocal=0.1644 prep_pass=none
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=640 E=16 cols=64 n=655360 bitdiff=655320 max_abs=2.97706574e-05 max_rel=45.6147589 rel_rms=0.000201451187
+CASE type=Q2_0 type_id=42 Ksrc=640 Kexec=768 N=640 E=16 cols=64 added_bytes=8346112 numeric_status=MEASURED_ONLY timing=recorded f64_dequant_sample=not_requested
+STAGE matrix-case-after type=Q2_0 cols=64
+STAGE padded-tail-case-before type=IQ4_NL Ksrc=640 Kexec=768 N=2560 E=3 cols=16 synthetic_rows=1
+STAGE case-host-weights-before type=IQ4_NL Ksrc=640 Kexec=768 N=2560 E=3 cols=16
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=2560 E=3 cols=16 n=122880 bitdiff=122880 max_abs=5.58551401e-05 max_rel=0.189393218 rel_rms=0.000300076393
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=2560 E=3 cols=16 n=122880 bitdiff=122880 max_abs=3.58521938e-05 max_rel=0.316883372 rel_rms=0.000281216391
+NUMERIC stock_mmq type=IQ4_NL Ksrc=640 Kexec=768 N=2560 E=3 cols=16 n=122880 bitdiff=122880 max_abs=5.58551401e-05 max_rel=0.189393218 rel_rms=0.000300076393
+CASE type=IQ4_NL type_id=20 Ksrc=640 Kexec=768 N=2560 E=3 cols=16 added_bytes=4345024 numeric_status=MEASURED_ONLY timing=not_requested f64_dequant_sample=not_requested
+STAGE padded-tail-case-after type=IQ4_NL
+STAGE padded-tail-case-before type=Q2_0 Ksrc=640 Kexec=768 N=2560 E=3 cols=16 synthetic_rows=1
+STAGE case-host-weights-before type=Q2_0 Ksrc=640 Kexec=768 N=2560 E=3 cols=16
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=2560 E=3 cols=16 n=122880 bitdiff=122880 max_abs=2.58646905e-05 max_rel=0.0636370009 rel_rms=0.000204040827
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=2560 E=3 cols=16 n=122880 bitdiff=122880 max_abs=2.12583691e-05 max_rel=0.1163661 rel_rms=0.000203237926
+NUMERIC stock_mmq type=Q2_0 Ksrc=640 Kexec=768 N=2560 E=3 cols=16 n=122880 bitdiff=122880 max_abs=2.58646905e-05 max_rel=0.0636370009 rel_rms=0.000204040827
+CASE type=Q2_0 type_id=42 Ksrc=640 Kexec=768 N=2560 E=3 cols=16 added_bytes=2686144 numeric_status=MEASURED_ONLY timing=not_requested f64_dequant_sample=not_requested
+STAGE padded-tail-case-after type=Q2_0
+SUMMARY cases=30 input_comparisons=90 outputs_checked=35143680 stock_bitdiff=35140560 max_abs=0.000112764537 max_rel=2385.53519 f64_sample_outputs=40320 numerical_status=MEASURED_ONLY hardware_faults=0 model_load=0 engine_integration=0

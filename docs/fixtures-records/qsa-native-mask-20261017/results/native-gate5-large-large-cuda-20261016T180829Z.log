@@ -1,0 +1,36 @@
+start=2026-10-16T18:08:29Z
+base=/home/debian/ac922-monster/experiments/standard-opt-20261014
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v107
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-native-mask-20261017/qsa-native-mask-gate4
+mode=large-cuda
+timeout=20
+model_loaded=0
+5a1e90ec622025b128429566e64602ae7663ea7252647291d65a535ee8f8b1fc  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-native-mask-20261017/qsa-native-mask-gate4
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 4 MiB, 16123 MiB, 39
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 16125 MiB, 38
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 2 MiB, 16125 MiB, 39
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 0 MiB, 16127 MiB, 39
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 5 MiB, 16122 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 4 MiB, 16123 MiB, 39
+PASS_CONSTRUCTOR_CONTRACT named_api=1 mode_tag=1 source_ports=1 legacy_unary_separate=1 malformed_layout_rejected=1
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+BACKEND mode=large-cuda target=CUDA0
+GRAPH_READY mode=native nk=65536 nq=2048 uid=1 nodes=2 full_f16_nodes=2 full_f32_nodes=0 output_bytes=268435456 parent_nbytes=268435460 parent_buffer_bytes=268705920 alias_view=1
+optimization path device=0 path=qsa_position_mask_native scope=host_dispatch_or_capture requested=1 selected=1 reason=one_pass_exact_f16_fullwrite tokens=2048 width=65536 auxiliary=0 count=1
+PASS_NATIVE phase=A1 exact_f16=1 fullwrite_poison_7fff=1 inputs_immutable=1 canary=1 uid=1
+optimization path device=0 path=qsa_position_mask_native scope=host_dispatch_or_capture requested=1 selected=1 reason=one_pass_exact_f16_fullwrite tokens=2048 width=65536 auxiliary=0 count=2
+PASS_NATIVE phase=B exact_f16=1 fullwrite_poison_7fff=1 inputs_immutable=1 canary=1 uid=1
+PASS_NATIVE phase=A2 exact_f16=1 fullwrite_poison_7fff=1 inputs_immutable=1 canary=1 uid=1
+PASS_QSA_NATIVE_MASK mode=large-cuda A_B_A=1 exact_f16=1 fullwrite=1 input_immutable=1 canary=1 actual_op=1 uid_stable=1 legacy_mode_separate=1 model_loaded=0
+optimization path summary device=0 path=qsa_position_mask_native scope=host_dispatch_or_capture requested=3 selected=3
+end=2026-10-16T18:08:31Z
+elapsed_seconds=2
+exit_status=0
+peak_sampled_gpu_memory_delta_mib=569
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 5 MiB, 16122 MiB, 40
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 16125 MiB, 38
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 2 MiB, 16125 MiB, 39
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 0 MiB, 16127 MiB, 39
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 5 MiB, 16122 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 4 MiB, 16123 MiB, 39

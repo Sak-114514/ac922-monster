@@ -1,0 +1,1431 @@
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+P2P compact staging selected ranks=6 max_tensor=0.23 MiB small_arena=2.81 MiB segmented_arena=0.00 MiB per_rank old_arena=2.81 MiB
+P2P unused segmented arena policy ranks=6 cap_bytes=245760 ring_min=4194304 relay_max=41943040 allocated=0 saved_bytes_per_rank=491520
+P2P relay leader staging requested=1 selected=1 ranks=6 one_shot_arena=2.81 MiB leader_arena=2.81 MiB nonleader_relay_arena=0 MiB
+p2p-ar-path entry=dispatch device=0 rank=0 ranks=6 bytes=65536 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 0 allreduce_0 n=16384 zero=0 kind=0 stream=0x100380faba0
+p2p-ar-path entry=dispatch device=1 rank=1 ranks=6 bytes=65536 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 1 allreduce_0 n=16384 zero=0 kind=0 stream=0x100390f80b0
+p2p-ar-path entry=dispatch device=2 rank=2 ranks=6 bytes=65536 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 2 allreduce_0 n=16384 zero=0 kind=0 stream=0x100390f8170
+p2p-ar-path entry=dispatch device=3 rank=3 ranks=6 bytes=65536 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 3 allreduce_0 n=16384 zero=0 kind=0 stream=0x100390f8230
+p2p-ar-path entry=dispatch device=4 rank=4 ranks=6 bytes=65536 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 4 allreduce_0 n=16384 zero=0 kind=0 stream=0x100390f82f0
+p2p-ar-path entry=dispatch device=5 rank=5 ranks=6 bytes=65536 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 5 allreduce_0 n=16384 zero=0 kind=0 stream=0x100390f83b0
+p2p-ar-path entry=dispatch device=0 rank=0 ranks=6 bytes=96 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p-ar-path entry=dispatch device=1 rank=1 ranks=6 bytes=96 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p-ar-path entry=dispatch device=2 rank=2 ranks=6 bytes=96 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p-ar-path entry=dispatch device=3 rank=3 ranks=6 bytes=96 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p-ar-path entry=dispatch device=4 rank=4 ranks=6 bytes=96 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p-ar-path entry=dispatch device=5 rank=5 ranks=6 bytes=96 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+PROCESS_CONFIG mode=default relay_min_bytes=204800 relay_max_bytes=41943040 ring_min_bytes=4194304 leader_stage=1 elide_unused_segment=1 blocks=64 zero_rank=-1
+ARENA rank=0 cap_floats=61440 small_cap_floats=61440 relay_cap_floats=61440 segment_cap_floats=0 relay_owner=1 added_bytes=8388608
+ARENA rank=1 cap_floats=61440 small_cap_floats=61440 relay_cap_floats=61440 segment_cap_floats=0 relay_owner=0 added_bytes=4194304
+ARENA rank=2 cap_floats=61440 small_cap_floats=61440 relay_cap_floats=61440 segment_cap_floats=0 relay_owner=0 added_bytes=4194304
+ARENA rank=3 cap_floats=61440 small_cap_floats=61440 relay_cap_floats=61440 segment_cap_floats=0 relay_owner=1 added_bytes=8388608
+ARENA rank=4 cap_floats=61440 small_cap_floats=61440 relay_cap_floats=61440 segment_cap_floats=0 relay_owner=0 added_bytes=4194304
+ARENA rank=5 cap_floats=61440 small_cap_floats=61440 relay_cap_floats=61440 segment_cap_floats=0 relay_owner=0 added_bytes=4194304
+COMM_READY ranks=6 contexts=1 blocks=64 reserved_bytes=245760 epoch_buffers=6
+PAYLOAD_BEGIN mode=default bytes=65536 expected_kind=0
+PATH_ASSERT mode=default entry=dispatch_eager bytes=65536 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=65536 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=65536 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=65536 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=65536 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=65536 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=payload-eager rank=0 blocks=64 epoch=1 equal=1
+EPOCH_RANK sequence=payload-eager rank=1 blocks=64 epoch=1 equal=1
+EPOCH_RANK sequence=payload-eager rank=2 blocks=64 epoch=1 equal=1
+EPOCH_RANK sequence=payload-eager rank=3 blocks=64 epoch=1 equal=1
+EPOCH_RANK sequence=payload-eager rank=4 blocks=64 epoch=1 equal=1
+EPOCH_RANK sequence=payload-eager rank=5 blocks=64 epoch=1 equal=1
+PASS_EPOCH sequence=payload-eager all_ranks=6 all_blocks=64 epoch=1 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=eager bytes=65536 rep=0 all_rank_complete_wall_ms=5.724932 max_rank_event_ms=5.559296 rank_event_ms=[5.559296,5.540864,5.531648,5.521408,5.515264,5.555200]
+PASS_OUTPUT mode=default entry=dispatch_eager bytes=65536 frame=0 ranks=6 exact=1 canary=1 hash=2d7b984c2dc894a5
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_eager-after-65536 rank=0 blocks=64 epoch=2 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-65536 rank=1 blocks=64 epoch=2 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-65536 rank=2 blocks=64 epoch=2 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-65536 rank=3 blocks=64 epoch=2 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-65536 rank=4 blocks=64 epoch=2 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-65536 rank=5 blocks=64 epoch=2 equal=1
+PASS_p2p allreduce launch: rank 0 allreduce_0 n=16384 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=16384 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=16384 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=16384 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=16384 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=16384 zero=0 kind=0 stream=0x100390f83b0
+EPOCH sequence=96B-after_eager-after-65536 all_ranks=6 all_blocks=64 epoch=2 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_eager bytes=96 rep=0 all_rank_complete_wall_ms=0.243574 max_rank_event_ms=0.195584 rank_event_ms=[0.195584,0.190464,0.186368,0.180224,0.176000,0.172032]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=65536 stage=after_eager bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=2
+PATH_ASSERT mode=default entry=dispatch bytes=65536 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=65536 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=65536 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=65536 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=65536 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=65536 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+INPUT_CHANGE mode=default entry=dispatch bytes=65536 rank=0 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=65536 rank=1 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=65536 rank=2 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=65536 rank=3 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=65536 rank=4 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=65536 rank=5 changed=1
+GRAPH_READY mode=default entry=dispatch bytes=65536 rank=0 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=65536 rank=1 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=65536 rank=2 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=65536 rank=3 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=65536 rank=4 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=65536 rank=5 kind=0 replay_count=5
+EPOCH_RANK sequence=dispatch-65536-A0 rank=0 blocks=64 epoch=3 equal=1
+EPOCH_RANK sequence=dispatch-65536-A0 rank=1 blocks=64 epoch=3 equal=1
+EPOCH_RANK sequence=dispatch-65536-A0 rank=2 blocks=64 epoch=3 equal=1
+EPOCH_RANK sequence=dispatch-65536-A0 rank=3 blocks=64 epoch=3 equal=1
+EPOCH_RANK sequence=dispatch-65536-A0 rank=4 blocks=64 epoch=3 equal=1
+EPOCH_RANK sequence=dispatch-65536-A0 rank=5 blocks=64 epoch=3 equal=1
+PASS_EPOCH sequence=dispatch-65536-A0 all_ranks=6 all_blocks=64 epoch=3 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=A0 bytes=65536 rep=0 all_rank_complete_wall_ms=0.161502 max_rank_event_ms=0.111616 rank_event_ms=[0.111616,0.105472,0.101376,0.095296,0.094208,0.095232]
+PASS_OUTPUT mode=default entry=dispatch bytes=65536 frame=A0 rep=0 ranks=6 exact=1 canary=1 hash=2d7b984c2dc894a5
+EPOCH_RANK sequence=dispatch-65536-B rank=0 blocks=64 epoch=4 equal=1
+EPOCH_RANK sequence=dispatch-65536-B rank=1 blocks=64 epoch=4 equal=1
+EPOCH_RANK sequence=dispatch-65536-B rank=2 blocks=64 epoch=4 equal=1
+EPOCH_RANK sequence=dispatch-65536-B rank=3 blocks=64 epoch=4 equal=1
+EPOCH_RANK sequence=dispatch-65536-B rank=4 blocks=64 epoch=4 equal=1
+EPOCH_RANK sequence=dispatch-65536-B rank=5 blocks=64 epoch=4 equal=1
+PASS_EPOCH sequence=dispatch-65536-B all_ranks=6 all_blocks=64 epoch=4 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=B bytes=65536 rep=1 all_rank_complete_wall_ms=0.131035 max_rank_event_ms=0.086016 rank_event_ms=[0.086016,0.080832,0.076704,0.069632,0.067552,0.066560]
+PASS_OUTPUT mode=default entry=dispatch bytes=65536 frame=B rep=1 ranks=6 exact=1 canary=1 hash=631b423f7d5234a5
+EPOCH_RANK sequence=dispatch-65536-A2 rank=0 blocks=64 epoch=5 equal=1
+EPOCH_RANK sequence=dispatch-65536-A2 rank=1 blocks=64 epoch=5 equal=1
+EPOCH_RANK sequence=dispatch-65536-A2 rank=2 blocks=64 epoch=5 equal=1
+EPOCH_RANK sequence=dispatch-65536-A2 rank=3 blocks=64 epoch=5 eqp2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+ual=1
+EPOCH_RANK sequence=dispatch-65536-A2 rank=4 blocks=64 epoch=5 equal=1
+EPOCH_RANK sequence=dispatch-65536-A2 rank=5 blocks=64 epoch=5 equal=1
+PASS_EPOCH sequence=dispatch-65536-A2 all_ranks=6 all_blocks=64 epoch=5 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=A2 bytes=65536 rep=2 all_rank_complete_wall_ms=0.132728 max_rank_event_ms=0.086016 rank_event_ms=[0.086016,0.079872,0.074752,0.068608,0.068608,0.067584]
+PASS_OUTPUT mode=default entry=dispatch bytes=65536 frame=A2 rep=2 ranks=6 exact=1 canary=1 hash=2d7b984c2dc894a5
+PASS_ABA mode=default entry=dispatch bytes=65536 frames=A0,B,A2 replay_count=5 exact=1 canary=1 ranks=6
+EPOCH_RANK sequence=dispatch-65536-C rank=0 blocks=64 epoch=6 equal=1
+EPOCH_RANK sequence=dispatch-65536-C rank=1 blocks=64 epoch=6 equal=1
+EPOCH_RANK sequence=dispatch-65536-C rank=2 blocks=64 epoch=6 equal=1
+EPOCH_RANK sequence=dispatch-65536-C rank=3 blocks=64 epoch=6 equal=1
+EPOCH_RANK sequence=dispatch-65536-C rank=4 blocks=64 epoch=6 equal=1
+EPOCH_RANK sequence=dispatch-65536-C rank=5 blocks=64 epoch=6 equal=1
+PASS_EPOCH sequence=dispatch-65536-C all_ranks=6 all_blocks=64 epoch=6 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=C bytes=65536 rep=3 all_rank_complete_wall_ms=0.132593 max_rank_event_ms=0.087008 rank_event_ms=[0.087008,0.080896,0.075904,0.069568,0.067584,0.067584]
+PASS_OUTPUT mode=default entry=dispatch bytes=65536 frame=C rep=3 ranks=6 exact=1 canary=1 hash=e78f49d2fa718325
+EPOCH_RANK sequence=dispatch-65536-NEGZERO rank=0 blocks=64 epoch=7 equal=1
+EPOCH_RANK sequence=dispatch-65536-NEGZERO rank=1 blocks=64 epoch=7 equal=1
+EPOCH_RANK sequence=dispatch-65536-NEGZERO rank=2 blocks=64 epoch=7 equal=1
+EPOCH_RANK sequence=dispatch-65536-NEGZERO rank=3 blocks=64 epoch=7 equal=1
+EPOCH_RANK sequence=dispatch-65536-NEGZERO rank=4 blocks=64 epoch=7 equal=1
+EPOCH_RANK sequence=dispatch-65536-NEGZERO rank=5 blocks=64 epoch=7 equal=1
+PASS_EPOCH sequence=dispatch-65536-NEGZERO all_ranks=6 all_blocks=64 epoch=7 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=NEGZERO bytes=65536 rep=4 all_rank_complete_wall_ms=0.339176 max_rank_event_ms=0.289792 rank_event_ms=[0.023616,0.289792,0.284672,0.281600,0.277504,0.272384]
+PASS_OUTPUT mode=default entry=dispatch bytes=65536 frame=NEGZERO rep=4 ranks=6 exact=1 canary=1 hash=1a48545b8c872325
+PASS_NEGATIVE_ZERO mode=default entry=dispatch bytes=65536 expected_bits=80000000 ranks=6 exact=1 canary=1
+GRAPH_RETIRE mode=default entry=dispatch bytes=65536 all_ranks=6 all_handles_null=1
+PASS_GRAPH_CASE mode=default entry=dispatch bytes=65536 kind=0 replays=5 all_ranks=6 exact=1 canary=1 final_hash=1a48545b8c872325
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-65536 rank=0 blocks=64 epoch=8 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-65536 rank=1 blocks=64 epoch=8 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-65536 rank=2 blocks=64 epoch=8 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-65536 rank=3 blocks=64 epoch=8 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-65536 rank=4 blocks=64 epoch=8 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-65536 rank=5 blocks=64 epoch=8 equal=1
+PASS_EPOCH sequence=96B-after_dispatch_graph-aftep2p-ar-path entry=graph_append device=0 rank=0 ranks=6 bytes=65536 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p-ar-path entry=graph_append device=1 rank=1 ranks=6 bytes=65536 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p-ar-path entry=graph_append device=2 rank=2 ranks=6 bytes=65536 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p-ar-path entry=graph_append device=3 rank=3 ranks=6 bytes=65536 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p-ar-path entry=graph_append device=4 rank=4 ranks=6 bytes=65536 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p-ar-path entry=graph_append device=5 rank=5 ranks=6 bytes=65536 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+r-65536 all_ranks=6 all_blocks=64 epoch=8 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_dispatch_graph bytes=96 rep=0 all_rank_complete_wall_ms=0.730786 max_rank_event_ms=0.686144 rank_event_ms=[0.137216,0.686144,0.142336,0.137216,0.133056,0.128000]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=65536 stage=after_dispatch_graph bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=8
+PATH_ASSERT mode=default entry=graph_append bytes=65536 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=65536 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=65536 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=65536 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=65536 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=65536 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+INPUT_CHANGE mode=default entry=graph_append bytes=65536 rank=0 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=65536 rank=1 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=65536 rank=2 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=65536 rank=3 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=65536 rank=4 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=65536 rank=5 changed=1
+GRAPH_READY mode=default entry=graph_append bytes=65536 rank=0 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=65536 rank=1 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=65536 rank=2 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=65536 rank=3 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=65536 rank=4 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=65536 rank=5 kind=0 replay_count=5
+EPOCH_RANK sequence=graph_append-65536-A0 rank=0 blocks=64 epoch=9 equal=1
+EPOCH_RANK sequence=graph_append-65536-A0 rank=1 blocks=64 epoch=9 equal=1
+EPOCH_RANK sequence=graph_append-65536-A0 rank=2 blocks=64 epoch=9 equal=1
+EPOCH_RANK sequence=graph_append-65536-A0 rank=3 blocks=64 epoch=9 equal=1
+EPOCH_RANK sequence=graph_append-65536-A0 rank=4 blocks=64 epoch=9 equal=1
+EPOCH_RANK sequence=graph_append-65536-A0 rank=5 blocks=64 epoch=9 equal=1
+PASS_EPOCH sequence=graph_append-65536-A0 all_ranks=6 all_blocks=64 epoch=9 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=A0 bytes=65536 rep=0 all_rank_complete_wall_ms=0.154622 max_rank_event_ms=0.109728 rank_event_ms=[0.109728,0.058368,0.053248,0.045056,0.043008,0.084928]
+PASS_OUTPUT mode=default entry=graph_append bytes=65536 frame=A0 rep=0 ranks=6 exact=1 canary=1 hash=2d7b984c2dc894a5
+EPOCH_RANK sequence=graph_append-65536-B rank=0 blocks=64 epoch=10 equal=1
+EPOCH_RANK sequence=graph_append-65536-B rank=1 blocks=64 epoch=10 equal=1
+EPOCH_RANK sequence=graph_append-65536-B rank=2 blocks=64 epoch=10 equal=1
+EPOCH_RANK sequence=graph_append-65536-B rank=3 blocks=64 epoch=10 equal=1
+EPOCH_RANK sequence=graph_append-65536-B rank=4 blocks=64 epoch=10 equal=1
+EPOCH_RANK sequence=graph_append-65536-B rank=5 blocks=64 epoch=10 equal=1
+PASS_EPOCH sequence=graph_append-65536-B all_ranks=6 all_blocks=64 epoch=10 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=B bytes=65536 rep=1 all_rank_complete_wall_ms=0.129991 max_rank_event_ms=0.084960 rank_event_ms=[0.084960,0.078880,0.074752,0.068608,0.066560,0.065536]
+PASS_OUTPUT mode=default entry=graph_append bytes=65536 frame=B rep=1 ranks=6 exact=1 canary=1 hash=631b423f7d5234a5
+EPOCH_RANK sequence=graph_append-65536-A2 rank=0 blocks=64 epoch=11 equal=1
+EPOCH_RANK sequence=graph_append-65536-A2 rank=1 blocks=64 epoch=11 p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+equal=1
+EPOCH_RANK sequence=graph_append-65536-A2 rank=2 blocks=64 epoch=11 equal=1
+EPOCH_RANK sequence=graph_append-65536-A2 rank=3 blocks=64 epoch=11 equal=1
+EPOCH_RANK sequence=graph_append-65536-A2 rank=4 blocks=64 epoch=11 equal=1
+EPOCH_RANK sequence=graph_append-65536-A2 rank=5 blocks=64 epoch=11 equal=1
+PASS_EPOCH sequence=graph_append-65536-A2 all_ranks=6 all_blocks=64 epoch=11 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=A2 bytes=65536 rep=2 all_rank_complete_wall_ms=0.132234 max_rank_event_ms=0.084992 rank_event_ms=[0.084992,0.078848,0.074752,0.067584,0.067584,0.067584]
+PASS_OUTPUT mode=default entry=graph_append bytes=65536 frame=A2 rep=2 ranks=6 exact=1 canary=1 hash=2d7b984c2dc894a5
+PASS_ABA mode=default entry=graph_append bytes=65536 frames=A0,B,A2 replay_count=5 exact=1 canary=1 ranks=6
+EPOCH_RANK sequence=graph_append-65536-C rank=0 blocks=64 epoch=12 equal=1
+EPOCH_RANK sequence=graph_append-65536-C rank=1 blocks=64 epoch=12 equal=1
+EPOCH_RANK sequence=graph_append-65536-C rank=2 blocks=64 epoch=12 equal=1
+EPOCH_RANK sequence=graph_append-65536-C rank=3 blocks=64 epoch=12 equal=1
+EPOCH_RANK sequence=graph_append-65536-C rank=4 blocks=64 epoch=12 equal=1
+EPOCH_RANK sequence=graph_append-65536-C rank=5 blocks=64 epoch=12 equal=1
+PASS_EPOCH sequence=graph_append-65536-C all_ranks=6 all_blocks=64 epoch=12 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=C bytes=65536 rep=3 all_rank_complete_wall_ms=0.130240 max_rank_event_ms=0.084896 rank_event_ms=[0.084896,0.079872,0.074752,0.068608,0.066528,0.065600]
+PASS_OUTPUT mode=default entry=graph_append bytes=65536 frame=C rep=3 ranks=6 exact=1 canary=1 hash=e78f49d2fa718325
+EPOCH_RANK sequence=graph_append-65536-NEGZERO rank=0 blocks=64 epoch=13 equal=1
+EPOCH_RANK sequence=graph_append-65536-NEGZERO rank=1 blocks=64 epoch=13 equal=1
+EPOCH_RANK sequence=graph_append-65536-NEGZERO rank=2 blocks=64 epoch=13 equal=1
+EPOCH_RANK sequence=graph_append-65536-NEGZERO rank=3 blocks=64 epoch=13 equal=1
+EPOCH_RANK sequence=graph_append-65536-NEGZERO rank=4 blocks=64 epoch=13 equal=1
+EPOCH_RANK sequence=graph_append-65536-NEGZERO rank=5 blocks=64 epoch=13 equal=1
+PASS_EPOCH sequence=graph_append-65536-NEGZERO all_ranks=6 all_blocks=64 epoch=13 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=NEGZERO bytes=65536 rep=4 all_rank_complete_wall_ms=0.131336 max_rank_event_ms=0.085920 rank_event_ms=[0.085920,0.079840,0.074752,0.068608,0.066560,0.065600]
+PASS_OUTPUT mode=default entry=graph_append bytes=65536 frame=NEGZERO rep=4 ranks=6 exact=1 canary=1 hash=1a48545b8c872325
+PASS_NEGATIVE_ZERO mode=default entry=graph_append bytes=65536 expected_bits=80000000 ranks=6 exact=1 canary=1
+GRAPH_RETIRE mode=default entry=graph_append bytes=65536 all_ranks=6 all_handles_null=1
+PASS_GRAPH_CASE mode=default entry=graph_append bytes=65536 kind=0 replays=5 all_ranks=6 exact=1 canary=1 final_hash=1a48545b8c872325
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_graph_append-after-65536 rank=0 blocks=64 epoch=14 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-65536 rank=1 blocks=64 epoch=14 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-65536 rank=2 blocks=64 epoch=14 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-p2p allreduce launch: rank 0 allreduce_0 n=20480 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=20480 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=20480 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=20480 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=20480 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=20480 zero=0 kind=0 stream=0x100390f83b0
+p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+after-65536 rank=3 blocks=64 epoch=14 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-65536 rank=4 blocks=64 epoch=14 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-65536 rank=5 blocks=64 epoch=14 equal=1
+PASS_EPOCH sequence=96B-after_graph_append-after-65536 all_ranks=6 all_blocks=64 epoch=14 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_graph_append bytes=96 rep=0 all_rank_complete_wall_ms=0.196058 max_rank_event_ms=0.149504 rank_event_ms=[0.149504,0.145344,0.140288,0.134112,0.129024,0.124928]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=65536 stage=after_graph_append bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=14
+PASS_PAYLOAD mode=default bytes=65536 kind=0 graph_replays_per_entry=5 entries=dispatch,graph_append eager=1 interleaved_96b=3 exact=1 canary=1
+PAYLOAD_BEGIN mode=default bytes=81920 expected_kind=0
+PATH_ASSERT mode=default entry=dispatch_eager bytes=81920 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=81920 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=81920 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=81920 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=81920 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=81920 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=payload-eager rank=0 blocks=64 epoch=15 equal=1
+EPOCH_RANK sequence=payload-eager rank=1 blocks=64 epoch=15 equal=1
+EPOCH_RANK sequence=payload-eager rank=2 blocks=64 epoch=15 equal=1
+EPOCH_RANK sequence=payload-eager rank=3 blocks=64 epoch=15 equal=1
+EPOCH_RANK sequence=payload-eager rank=4 blocks=64 epoch=15 equal=1
+EPOCH_RANK sequence=payload-eager rank=5 blocks=64 epoch=15 equal=1
+PASS_EPOCH sequence=payload-eager all_ranks=6 all_blocks=64 epoch=15 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=eager bytes=81920 rep=0 all_rank_complete_wall_ms=0.187857 max_rank_event_ms=0.136288 rank_event_ms=[0.136288,0.131072,0.125952,0.120832,0.119776,0.120768]
+PASS_OUTPUT mode=default entry=dispatch_eager bytes=81920 frame=0 ranks=6 exact=1 canary=1 hash=02783fefe89b4ca5
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_eager-after-81920 rank=0 blocks=64 epoch=16 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-81920 rank=1 blocks=64 epoch=16 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-81920 rank=2 blocks=64 epoch=16 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-81920 rank=3 blocks=64 epoch=16 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-81920 rank=4 blocks=64 epoch=16 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-81920 rank=5 blocks=64 epoch=16 equal=1
+PASS_EPOCH sequence=96B-after_eager-after-81920 all_ranks=6 all_blocks=64 epoch=16 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_eager bytes=96 rep=0 all_rap2p allreduce launch: rank 0 allreduce_0 n=20480 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=20480 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=20480 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=20480 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=20480 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=20480 zero=0 kind=0 stream=0x100390f83b0
+nk_complete_wall_ms=0.190748 max_rank_event_ms=0.145408 rank_event_ms=[0.145408,0.140288,0.135168,0.130048,0.125952,0.121856]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=81920 stage=after_eager bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=16
+PATH_ASSERT mode=default entry=dispatch bytes=81920 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=81920 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=81920 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=81920 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=81920 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=81920 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+INPUT_CHANGE mode=default entry=dispatch bytes=81920 rank=0 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=81920 rank=1 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=81920 rank=2 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=81920 rank=3 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=81920 rank=4 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=81920 rank=5 changed=1
+GRAPH_READY mode=default entry=dispatch bytes=81920 rank=0 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=81920 rank=1 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=81920 rank=2 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=81920 rank=3 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=81920 rank=4 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=81920 rank=5 kind=0 replay_count=5
+EPOCH_RANK sequence=dispatch-81920-A0 rank=0 blocks=64 epoch=17 equal=1
+EPOCH_RANK sequence=dispatch-81920-A0 rank=1 blocks=64 epoch=17 equal=1
+EPOCH_RANK sequence=dispatch-81920-A0 rank=2 blocks=64 epoch=17 equal=1
+EPOCH_RANK sequence=dispatch-81920-A0 rank=3 blocks=64 epoch=17 equal=1
+EPOCH_RANK sequence=dispatch-81920-A0 rank=4 blocks=64 epoch=17 equal=1
+EPOCH_RANK sequence=dispatch-81920-A0 rank=5 blocks=64 epoch=17 equal=1
+PASS_EPOCH sequence=dispatch-81920-A0 all_ranks=6 all_blocks=64 epoch=17 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=A0 bytes=81920 rep=0 all_rank_complete_wall_ms=0.137769 max_rank_event_ms=0.091200 rank_event_ms=[0.091200,0.087040,0.081920,0.075776,0.071680,0.069632]
+PASS_OUTPUT mode=default entry=dispatch bytes=81920 frame=A0 rep=0 ranks=6 exact=1 canary=1 hash=02783fefe89b4ca5
+EPOCH_RANK sequence=dispatch-81920-B rank=0 blocks=64 epoch=18 equal=1
+EPOCH_RANK sequence=dispatch-81920-B rank=1 blocks=64 epoch=18 equal=1
+EPOCH_RANK sequence=dispatch-81920-B rank=2 blocks=64 epoch=18 equal=1
+EPOCH_RANK sequence=dispatch-81920-B rank=3 blocks=64 epoch=18 equal=1
+EPOCH_RANK sequence=dispatch-81920-B rank=4 blocks=64 epoch=18 equal=1
+EPOCH_RANK sequence=dispatch-81920-B rank=5 blocks=64 epoch=18 equal=1
+PASS_EPOCH sequence=dispatch-81920-B all_ranks=6 all_blocks=64 epoch=18 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=B bytes=81920 rep=1 all_rank_complete_wall_ms=0.135708 max_rank_event_ms=0.091136 rank_event_ms=[0.091136,0.084992,0.080896,0.073824,0.069632,0.068608]
+PASS_OUTPUT mode=default entry=dispatch bytes=81920 frame=B rep=1 ranks=6 exact=1 canary=1 hash=3e687b7433cc84a5
+EPOCH_RANK sequence=dispatch-81920-A2 rank=0 blocks=64 epoch=19 equal=1
+EPOCH_RANK sequence=dispatch-81920-A2 rank=1 blocks=64 epoch=19 equal=1
+EPOCH_RANK sequence=dispatch-81920-A2 rank=2 blocks=64 epoch=19 equal=1
+EPOCH_RANK sequence=dispatch-81920-A2 rank=3 blocks=64 epoch=19 equal=1
+EPOCH_RANK sequence=dispatch-81920-A2 rank=4 blocks=64 epoch=19 equal=1
+EPOCH_RANK sequence=dispatch-81920-A2 rank=5 blocks=64 epoch=19 equal=1
+PASS_Ep2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+POCH sequence=dispatch-81920-A2 all_ranks=6 all_blocks=64 epoch=19 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=A2 bytes=81920 rep=2 all_rank_complete_wall_ms=0.134623 max_rank_event_ms=0.089184 rank_event_ms=[0.089184,0.084992,0.079872,0.073728,0.069632,0.067552]
+PASS_OUTPUT mode=default entry=dispatch bytes=81920 frame=A2 rep=2 ranks=6 exact=1 canary=1 hash=02783fefe89b4ca5
+PASS_ABA mode=default entry=dispatch bytes=81920 frames=A0,B,A2 replay_count=5 exact=1 canary=1 ranks=6
+EPOCH_RANK sequence=dispatch-81920-C rank=0 blocks=64 epoch=20 equal=1
+EPOCH_RANK sequence=dispatch-81920-C rank=1 blocks=64 epoch=20 equal=1
+EPOCH_RANK sequence=dispatch-81920-C rank=2 blocks=64 epoch=20 equal=1
+EPOCH_RANK sequence=dispatch-81920-C rank=3 blocks=64 epoch=20 equal=1
+EPOCH_RANK sequence=dispatch-81920-C rank=4 blocks=64 epoch=20 equal=1
+EPOCH_RANK sequence=dispatch-81920-C rank=5 blocks=64 epoch=20 equal=1
+PASS_EPOCH sequence=dispatch-81920-C all_ranks=6 all_blocks=64 epoch=20 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=C bytes=81920 rep=3 all_rank_complete_wall_ms=0.203736 max_rank_event_ms=0.149536 rank_event_ms=[0.149536,0.142336,0.135168,0.128128,0.125056,0.120928]
+PASS_OUTPUT mode=default entry=dispatch bytes=81920 frame=C rep=3 ranks=6 exact=1 canary=1 hash=2e01de40ac584265
+EPOCH_RANK sequence=dispatch-81920-NEGZERO rank=0 blocks=64 epoch=21 equal=1
+EPOCH_RANK sequence=dispatch-81920-NEGZERO rank=1 blocks=64 epoch=21 equal=1
+EPOCH_RANK sequence=dispatch-81920-NEGZERO rank=2 blocks=64 epoch=21 equal=1
+EPOCH_RANK sequence=dispatch-81920-NEGZERO rank=3 blocks=64 epoch=21 equal=1
+EPOCH_RANK sequence=dispatch-81920-NEGZERO rank=4 blocks=64 epoch=21 equal=1
+EPOCH_RANK sequence=dispatch-81920-NEGZERO rank=5 blocks=64 epoch=21 equal=1
+PASS_EPOCH sequence=dispatch-81920-NEGZERO all_ranks=6 all_blocks=64 epoch=21 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=NEGZERO bytes=81920 rep=4 all_rank_complete_wall_ms=0.133634 max_rank_event_ms=0.090048 rank_event_ms=[0.090048,0.084000,0.079872,0.072800,0.068640,0.066528]
+PASS_OUTPUT mode=default entry=dispatch bytes=81920 frame=NEGZERO rep=4 ranks=6 exact=1 canary=1 hash=98a259a716a06325
+PASS_NEGATIVE_ZERO mode=default entry=dispatch bytes=81920 expected_bits=80000000 ranks=6 exact=1 canary=1
+GRAPH_RETIRE mode=default entry=dispatch bytes=81920 all_ranks=6 all_handles_null=1
+PASS_GRAPH_CASE mode=default entry=dispatch bytes=81920 kind=0 replays=5 all_ranks=6 exact=1 canary=1 final_hash=98a259a716a06325
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-81920 rank=0 blocks=64 epoch=22 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-81920 rank=1 blocks=64 epoch=22 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-81920 rank=2 blocks=64 epoch=22 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-81920 rank=3 blocks=64 epoch=22 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-81920 rank=4 blocks=64 epoch=22 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-81920 rank=5 blocks=64 epoch=22 equal=1
+PASS_EPOCH sequence=96B-after_dispatch_graph-after-81920 all_ranks=6 all_blocks=64 epoch=22 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_dispatch_graph bytes=96 rep=0 all_rank_complete_wall_ms=0.252488 max_rank_event_ms=0.205824 rank_event_ms=[0.205824,0.201728,0.196608,0.190464,0.185344,0.181248]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=81920 stage=after_dispatch_graph bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=22
+PATH_ASSERT mode=default entry=graph_append bytes=81920 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=81920 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=81920 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=81920 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=81920 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=81920 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+INPUT_CHANGE mode=default entry=graph_append bytes=81920 rank=0 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=81920 rank=1 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=81920 rank=2 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=81920 rank=3 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=81920 rank=4 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=81920 rank=5 changed=1
+GRAPH_READY mode=default entry=graph_append bytes=81920 rank=0 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=81920 rank=1 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=81920 rank=2 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=81920 rank=3 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=81920 rank=4 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=81920 rank=5 kind=0 replay_count=5
+EPOCH_RANK sequence=graph_append-81920-A0 rank=0 blocks=64 epoch=23 equal=1
+EPOCH_RANK sequence=graph_append-81920-A0 rank=1 blocks=64 epoch=23 equal=1
+EPOCH_RANK sequence=graph_append-81920-A0 rank=2 blocks=64 epoch=23 equal=1
+EPOCH_RANK sequence=graph_append-81920-A0 rank=3 blocks=64 epoch=23 equal=1
+EPOCH_RANK sequence=graph_append-81920-A0 rank=4 blocks=64 epoch=23 equal=1
+EPOCH_RANK sequence=graph_append-81920-A0 rank=5 blocks=64 epoch=23 equal=1
+PASS_EPOCH sequence=graph_append-81920-A0 all_ranks=6 all_blocks=64 epoch=23 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=A0 bytes=81920 rep=0 all_rank_complete_wall_ms=0.383096 max_rank_event_ms=0.331808 rank_event_ms=[0.024576,0.331808,0.325632,0.325600,0.320512,0.315392]
+PASS_OUTPUT mode=default entry=graph_append bytes=81920 frame=A0 rep=0 ranks=6 exact=1 canary=1 hash=02783fefe89b4ca5
+EPOCH_RANK sequence=graph_append-81920-B rank=0 blocks=64 epoch=24 equal=1
+EPOCH_RANK sequence=graph_append-81920-B rank=1 blocks=64 epoch=24 equal=1
+EPOCH_RANK sequence=graph_append-81920-B rank=2 blocks=64 epoch=24 equal=1
+EPOCH_RANK sequence=graph_append-81920-B rank=3 blocks=64 epoch=24 equal=1
+EPOCH_RANK sequence=graph_append-81920-B rank=4 blocks=64 epoch=24 equal=1
+EPOCH_RANK sequence=graph_append-81920-B rank=5 blocks=64 epoch=24 equal=1
+PASS_EPOCH sequence=graph_append-81920-B all_ranks=6 all_blocks=64 epoch=24 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=B bytes=81920 rep=1 all_rank_complete_wall_ms=0.543565 max_rank_event_ms=0.484352 rank_event_ms=[0.452608,0.447488,0.024576,0.484352,0.480256,0.476128]
+PASS_OUTPUT mode=default entry=graph_append bytes=81920 frame=B rep=1 ranks=6 exact=1 canary=1 hash=3e687b7433cc84a5
+EPOCH_RANK sequence=graph_append-81920-A2 rank=0 blocks=64 epoch=25 equal=1
+EPOCH_RANK sequence=graph_append-81920-A2 rank=1 blocks=64 epoch=25 equal=1
+EPOCH_RANK sequence=graph_append-81920-A2 rank=2 blocks=64 epoch=25 equal=1
+EPOCH_RANK sequence=graph_append-81920-Ap2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+2 rank=3 blocks=64 epoch=25 equal=1
+EPOCH_RANK sequence=graph_append-81920-A2 rank=4 blocks=64 epoch=25 equal=1
+EPOCH_RANK sequence=graph_append-81920-A2 rank=5 blocks=64 epoch=25 equal=1
+PASS_EPOCH sequence=graph_append-81920-A2 all_ranks=6 all_blocks=64 epoch=25 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=A2 bytes=81920 rep=2 all_rank_complete_wall_ms=0.153231 max_rank_event_ms=0.109568 rank_event_ms=[0.109568,0.103424,0.053248,0.044064,0.041984,0.082944]
+PASS_OUTPUT mode=default entry=graph_append bytes=81920 frame=A2 rep=2 ranks=6 exact=1 canary=1 hash=02783fefe89b4ca5
+PASS_ABA mode=default entry=graph_append bytes=81920 frames=A0,B,A2 replay_count=5 exact=1 canary=1 ranks=6
+EPOCH_RANK sequence=graph_append-81920-C rank=0 blocks=64 epoch=26 equal=1
+EPOCH_RANK sequence=graph_append-81920-C rank=1 blocks=64 epoch=26 equal=1
+EPOCH_RANK sequence=graph_append-81920-C rank=2 blocks=64 epoch=26 equal=1
+EPOCH_RANK sequence=graph_append-81920-C rank=3 blocks=64 epoch=26 equal=1
+EPOCH_RANK sequence=graph_append-81920-C rank=4 blocks=64 epoch=26 equal=1
+EPOCH_RANK sequence=graph_append-81920-C rank=5 blocks=64 epoch=26 equal=1
+PASS_EPOCH sequence=graph_append-81920-C all_ranks=6 all_blocks=64 epoch=26 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=C bytes=81920 rep=3 all_rank_complete_wall_ms=0.136277 max_rank_event_ms=0.091136 rank_event_ms=[0.091136,0.084992,0.080896,0.073728,0.069632,0.066560]
+PASS_OUTPUT mode=default entry=graph_append bytes=81920 frame=C rep=3 ranks=6 exact=1 canary=1 hash=2e01de40ac584265
+EPOCH_RANK sequence=graph_append-81920-NEGZERO rank=0 blocks=64 epoch=27 equal=1
+EPOCH_RANK sequence=graph_append-81920-NEGZERO rank=1 blocks=64 epoch=27 equal=1
+EPOCH_RANK sequence=graph_append-81920-NEGZERO rank=2 blocks=64 epoch=27 equal=1
+EPOCH_RANK sequence=graph_append-81920-NEGZERO rank=3 blocks=64 epoch=27 equal=1
+EPOCH_RANK sequence=graph_append-81920-NEGZERO rank=4 blocks=64 epoch=27 equal=1
+EPOCH_RANK sequence=graph_append-81920-NEGZERO rank=5 blocks=64 epoch=27 equal=1
+PASS_EPOCH sequence=graph_append-81920-NEGZERO all_ranks=6 all_blocks=64 epoch=27 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=NEGZERO bytes=81920 rep=4 all_rank_complete_wall_ms=0.135978 max_rank_event_ms=0.092160 rank_event_ms=[0.092160,0.086912,0.081920,0.075776,0.070656,0.067616]
+PASS_OUTPUT mode=default entry=graph_append bytes=81920 frame=NEGZERO rep=4 ranks=6 exact=1 canary=1 hash=98a259a716a06325
+PASS_NEGATIVE_ZERO mode=default entry=graph_append bytes=81920 expected_bits=80000000 ranks=6 exact=1 canary=1
+GRAPH_RETIRE mode=default entry=graph_append bytes=81920 all_ranks=6 all_handles_null=1
+PASS_GRAPH_CASE mode=default entry=graph_append bytes=81920 kind=0 replays=5 all_ranks=6 exact=1 canary=1 final_hash=98a259a716a06325
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_graph_append-after-81920 rank=0 blocks=64 epoch=28 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-81920 rank=1 blocks=64 epoch=28 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-81920 rank=2 blocks=64 epoch=28 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-81920 rank=3 blocks=64 epoch=28 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-81920 rank=4 blocks=64 epoch=p2p-ar-path entry=dispatch device=0 rank=0 ranks=6 bytes=131072 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 0 allreduce_0 n=32768 zero=0 kind=0 stream=0x100380faba0
+p2p-ar-path entry=dispatch device=1 rank=1 ranks=6 bytes=131072 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 1 allreduce_0 n=32768 zero=0 kind=0 stream=0x100390f80b0
+p2p-ar-path entry=dispatch device=2 rank=2 ranks=6 bytes=131072 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 2 allreduce_0 n=32768 zero=0 kind=0 stream=0x100390f8170
+p2p-ar-path entry=dispatch device=3 rank=3 ranks=6 bytes=131072 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 3 allreduce_0 n=32768 zero=0 kind=0 stream=0x100390f8230
+p2p-ar-path entry=dispatch device=4 rank=4 ranks=6 bytes=131072 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 4 allreduce_0 n=32768 zero=0 kind=0 stream=0x100390f82f0
+p2p-ar-path entry=dispatch device=5 rank=5 ranks=6 bytes=131072 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 5 allreduce_0 n=32768 zero=0 kind=0 stream=0x100390f83b0
+p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+28 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-81920 rank=5 blocks=64 epoch=28 equal=1
+PASS_EPOCH sequence=96B-after_graph_append-after-81920 all_ranks=6 all_blocks=64 epoch=28 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_graph_append bytes=96 rep=0 all_rank_complete_wall_ms=0.196214 max_rank_event_ms=0.150496 rank_event_ms=[0.150496,0.145408,0.141312,0.135168,0.130048,0.127008]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=81920 stage=after_graph_append bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=28
+PASS_PAYLOAD mode=default bytes=81920 kind=0 graph_replays_per_entry=5 entries=dispatch,graph_append eager=1 interleaved_96b=3 exact=1 canary=1
+PAYLOAD_BEGIN mode=default bytes=131072 expected_kind=0
+PATH_ASSERT mode=default entry=dispatch_eager bytes=131072 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=131072 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=131072 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=131072 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=131072 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=131072 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=payload-eager rank=0 blocks=64 epoch=29 equal=1
+EPOCH_RANK sequence=payload-eager rank=1 blocks=64 epoch=29 equal=1
+EPOCH_RANK sequence=payload-eager rank=2 blocks=64 epoch=29 equal=1
+EPOCH_RANK sequence=payload-eager rank=3 blocks=64 epoch=29 equal=1
+EPOCH_RANK sequence=payload-eager rank=4 blocks=64 epoch=29 equal=1
+EPOCH_RANK sequence=payload-eager rank=5 blocks=64 epoch=29 equal=1
+PASS_EPOCH sequence=payload-eager all_ranks=6 all_blocks=64 epoch=29 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=eager bytes=131072 rep=0 all_rank_complete_wall_ms=0.229660 max_rank_event_ms=0.183296 rank_event_ms=[0.183296,0.177152,0.172064,0.167936,0.163840,0.160768]
+PASS_OUTPUT mode=default entry=dispatch_eager bytes=131072 frame=0 ranks=6 exact=1 canary=1 hash=62cccb3cbecfe9e5
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_eager-after-131072 rank=0 blocks=64 epoch=30 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-131072 rank=1 blocks=64 epoch=30 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-131072 rank=2 blocks=64 epoch=30 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-131072 rank=3 blocks=64 epoch=30 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-131072 rank=4 blocks=64 epoch=30 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-131072 rank=5 blocks=64 epoch=30 equal=1
+PASS_EPOCH sequence=96B-after_eager-after-131072 all_ranks=6 all_blocks=64 epoch=30 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_eager bytes=96 rep=0 all_rank_complete_wall_ms=0.188173 max_rank_event_ms=0.144384 rank_event_ms=[0.144384,0.138240,0.134112,0.128000,0p2p allreduce launch: rank 0 allreduce_0 n=32768 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=32768 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=32768 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=32768 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=32768 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=32768 zero=0 kind=0 stream=0x100390f83b0
+.123808,0.119808]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=131072 stage=after_eager bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=30
+PATH_ASSERT mode=default entry=dispatch bytes=131072 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=131072 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=131072 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=131072 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=131072 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=131072 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+INPUT_CHANGE mode=default entry=dispatch bytes=131072 rank=0 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=131072 rank=1 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=131072 rank=2 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=131072 rank=3 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=131072 rank=4 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=131072 rank=5 changed=1
+GRAPH_READY mode=default entry=dispatch bytes=131072 rank=0 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=131072 rank=1 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=131072 rank=2 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=131072 rank=3 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=131072 rank=4 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=131072 rank=5 kind=0 replay_count=5
+EPOCH_RANK sequence=dispatch-131072-A0 rank=0 blocks=64 epoch=31 equal=1
+EPOCH_RANK sequence=dispatch-131072-A0 rank=1 blocks=64 epoch=31 equal=1
+EPOCH_RANK sequence=dispatch-131072-A0 rank=2 blocks=64 epoch=31 equal=1
+EPOCH_RANK sequence=dispatch-131072-A0 rank=3 blocks=64 epoch=31 equal=1
+EPOCH_RANK sequence=dispatch-131072-A0 rank=4 blocks=64 epoch=31 equal=1
+EPOCH_RANK sequence=dispatch-131072-A0 rank=5 blocks=64 epoch=31 equal=1
+PASS_EPOCH sequence=dispatch-131072-A0 all_ranks=6 all_blocks=64 epoch=31 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=A0 bytes=131072 rep=0 all_rank_complete_wall_ms=0.160813 max_rank_event_ms=0.115712 rank_event_ms=[0.115712,0.109568,0.104448,0.098336,0.094304,0.089088]
+PASS_OUTPUT mode=default entry=dispatch bytes=131072 frame=A0 rep=0 ranks=6 exact=1 canary=1 hash=62cccb3cbecfe9e5
+EPOCH_RANK sequence=dispatch-131072-B rank=0 blocks=64 epoch=32 equal=1
+EPOCH_RANK sequence=dispatch-131072-B rank=1 blocks=64 epoch=32 equal=1
+EPOCH_RANK sequence=dispatch-131072-B rank=2 blocks=64 epoch=32 equal=1
+EPOCH_RANK sequence=dispatch-131072-B rank=3 blocks=64 epoch=32 equal=1
+EPOCH_RANK sequence=dispatch-131072-B rank=4 blocks=64 epoch=32 equal=1
+EPOCH_RANK sequence=dispatch-131072-B rank=5 blocks=64 epoch=32 equal=1
+PASS_EPOCH sequence=dispatch-131072-B all_ranks=6 all_blocks=64 epoch=32 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=B bytes=131072 rep=1 all_rank_complete_wall_ms=0.159725 max_rank_event_ms=0.114688 rank_event_ms=[0.114688,0.108544,0.104384,0.099328,0.094208,0.090016]
+PASS_OUTPUT mode=default entry=dispatch bytes=131072 frame=B rep=1 ranks=6 exact=1 canary=1 hash=e742c4f9e1a989e5
+EPOCH_RANK sequence=dispatch-131072-A2 rank=0 blocks=64 epoch=33 equal=1
+EPOCH_RANK sequence=dispatch-131072-A2 rank=1 blocks=64 epoch=33 equal=1
+EPOCH_RANK sequence=dispatch-131072-A2 rank=2 blocks=64 epoch=33 equal=1
+EPOCH_RANK sequence=dispatch-131072-A2 rank=3 blocks=64 epoch=33 equal=1
+EPOCH_RANK sequence=dispatch-131072-A2 rank=4 blocks=64 epoch=33 equal=1
+EPOCH_RANK sequence=dispatch-131072-A2 rank=5 blocks=64 epoch=33 equal=1
+PASS_EPOCH sequence=dispatch-131072-A2 all_ranks=6 all_blocks=64 epoch=p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+33 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=A2 bytes=131072 rep=2 all_rank_complete_wall_ms=0.160950 max_rank_event_ms=0.116736 rank_event_ms=[0.116736,0.110592,0.105472,0.099328,0.095168,0.090112]
+PASS_OUTPUT mode=default entry=dispatch bytes=131072 frame=A2 rep=2 ranks=6 exact=1 canary=1 hash=62cccb3cbecfe9e5
+PASS_ABA mode=default entry=dispatch bytes=131072 frames=A0,B,A2 replay_count=5 exact=1 canary=1 ranks=6
+EPOCH_RANK sequence=dispatch-131072-C rank=0 blocks=64 epoch=34 equal=1
+EPOCH_RANK sequence=dispatch-131072-C rank=1 blocks=64 epoch=34 equal=1
+EPOCH_RANK sequence=dispatch-131072-C rank=2 blocks=64 epoch=34 equal=1
+EPOCH_RANK sequence=dispatch-131072-C rank=3 blocks=64 epoch=34 equal=1
+EPOCH_RANK sequence=dispatch-131072-C rank=4 blocks=64 epoch=34 equal=1
+EPOCH_RANK sequence=dispatch-131072-C rank=5 blocks=64 epoch=34 equal=1
+PASS_EPOCH sequence=dispatch-131072-C all_ranks=6 all_blocks=64 epoch=34 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=C bytes=131072 rep=3 all_rank_complete_wall_ms=0.158914 max_rank_event_ms=0.114688 rank_event_ms=[0.114688,0.108544,0.104448,0.099328,0.094208,0.089088]
+PASS_OUTPUT mode=default entry=dispatch bytes=131072 frame=C rep=3 ranks=6 exact=1 canary=1 hash=bf670180773ce825
+EPOCH_RANK sequence=dispatch-131072-NEGZERO rank=0 blocks=64 epoch=35 equal=1
+EPOCH_RANK sequence=dispatch-131072-NEGZERO rank=1 blocks=64 epoch=35 equal=1
+EPOCH_RANK sequence=dispatch-131072-NEGZERO rank=2 blocks=64 epoch=35 equal=1
+EPOCH_RANK sequence=dispatch-131072-NEGZERO rank=3 blocks=64 epoch=35 equal=1
+EPOCH_RANK sequence=dispatch-131072-NEGZERO rank=4 blocks=64 epoch=35 equal=1
+EPOCH_RANK sequence=dispatch-131072-NEGZERO rank=5 blocks=64 epoch=35 equal=1
+PASS_EPOCH sequence=dispatch-131072-NEGZERO all_ranks=6 all_blocks=64 epoch=35 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=NEGZERO bytes=131072 rep=4 all_rank_complete_wall_ms=0.159016 max_rank_event_ms=0.113664 rank_event_ms=[0.113664,0.108544,0.104448,0.098304,0.094208,0.089088]
+PASS_OUTPUT mode=default entry=dispatch bytes=131072 frame=NEGZERO rep=4 ranks=6 exact=1 canary=1 hash=921be46b94ec2325
+PASS_NEGATIVE_ZERO mode=default entry=dispatch bytes=131072 expected_bits=80000000 ranks=6 exact=1 canary=1
+GRAPH_RETIRE mode=default entry=dispatch bytes=131072 all_ranks=6 all_handles_null=1
+PASS_GRAPH_CASE mode=default entry=dispatch bytes=131072 kind=0 replays=5 all_ranks=6 exact=1 canary=1 final_hash=921be46b94ec2325
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-131072 rank=0 blocks=64 epoch=36 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-131072 rank=1 blocks=64 epoch=36 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-131072 rank=2 blocks=64 epoch=36 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-131072 rank=3 blocks=64 epoch=36 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-131072 rank=4 blocks=64 epoch=36 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-131072 rank=5 blocks=64 epoch=36 equal=1
+PASS_EPOCH sequence=96B-after_dispatch_graph-after-131072 all_ranks=6 all_blocks=64 epoch=36 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_dispatch_graph bytes=96 rep=0 all_rank_complete_wallp2p-ar-path entry=graph_append device=0 rank=0 ranks=6 bytes=131072 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p-ar-path entry=graph_append device=1 rank=1 ranks=6 bytes=131072 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p-ar-path entry=graph_append device=2 rank=2 ranks=6 bytes=131072 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p-ar-path entry=graph_append device=3 rank=3 ranks=6 bytes=131072 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p-ar-path entry=graph_append device=4 rank=4 ranks=6 bytes=131072 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+p2p-ar-path entry=graph_append device=5 rank=5 ranks=6 bytes=131072 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+_ms=0.200620 max_rank_event_ms=0.154624 rank_event_ms=[0.154624,0.149504,0.144384,0.138368,0.135168,0.129024]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=131072 stage=after_dispatch_graph bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=36
+PATH_ASSERT mode=default entry=graph_append bytes=131072 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=131072 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=131072 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=131072 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=131072 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=131072 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+INPUT_CHANGE mode=default entry=graph_append bytes=131072 rank=0 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=131072 rank=1 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=131072 rank=2 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=131072 rank=3 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=131072 rank=4 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=131072 rank=5 changed=1
+GRAPH_READY mode=default entry=graph_append bytes=131072 rank=0 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=131072 rank=1 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=131072 rank=2 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=131072 rank=3 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=131072 rank=4 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=131072 rank=5 kind=0 replay_count=5
+EPOCH_RANK sequence=graph_append-131072-A0 rank=0 blocks=64 epoch=37 equal=1
+EPOCH_RANK sequence=graph_append-131072-A0 rank=1 blocks=64 epoch=37 equal=1
+EPOCH_RANK sequence=graph_append-131072-A0 rank=2 blocks=64 epoch=37 equal=1
+EPOCH_RANK sequence=graph_append-131072-A0 rank=3 blocks=64 epoch=37 equal=1
+EPOCH_RANK sequence=graph_append-131072-A0 rank=4 blocks=64 epoch=37 equal=1
+EPOCH_RANK sequence=graph_append-131072-A0 rank=5 blocks=64 epoch=37 equal=1
+PASS_EPOCH sequence=graph_append-131072-A0 all_ranks=6 all_blocks=64 epoch=37 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=A0 bytes=131072 rep=0 all_rank_complete_wall_ms=0.179156 max_rank_event_ms=0.107520 rank_event_ms=[0.088096,0.081920,0.076896,0.068608,0.066560,0.107520]
+PASS_OUTPUT mode=default entry=graph_append bytes=131072 frame=A0 rep=0 ranks=6 exact=1 canary=1 hash=62cccb3cbecfe9e5
+EPOCH_RANK sequence=graph_append-131072-B rank=0 blocks=64 epoch=38 equal=1
+EPOCH_RANK sequence=graph_append-131072-B rank=1 blocks=64 epoch=38 equal=1
+EPOCH_RANK sequence=graph_append-131072-B rank=2 blocks=64 epoch=38 equal=1
+EPOCH_RANK sequence=graph_append-131072-B rank=3 blocks=64 epoch=38 equal=1
+EPOCH_RANK sequence=graph_append-131072-B rank=4 blocks=64 epoch=38 equal=1
+EPOCH_RANK sequence=graph_append-131072-B rank=5 blocks=64 epoch=38 equal=1
+PASS_EPOCH sequence=graph_append-131072-B all_ranks=6 all_blocks=64 epoch=38 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=B bytes=131072 rep=1 all_rank_complete_wall_ms=0.162918 max_rank_event_ms=0.118720 rank_event_ms=[0.118720,0.112640,0.106560,0.101376,0.096256,0.091232]
+PASS_OUTPUT mode=default entry=graph_append bytes=131072 frame=B rep=1 ranks=6 exact=1 canary=1 hash=e742c4f9e1a989e5
+EPOCH_RANK sequence=graph_append-131072-A2 rank=0 blocks=64 epoch=39 equal=1
+EPOCH_RANK sequence=graph_append-131072-A2 rank=1 blocks=64 epoch=39 equal=1
+EPOCH_RANK sequence=graph_append-131072-A2 rank=2 blocks=64 epoch=39 equal=1
+EPOCH_RANK sequence=graph_append-p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+131072-A2 rank=3 blocks=64 epoch=39 equal=1
+EPOCH_RANK sequence=graph_append-131072-A2 rank=4 blocks=64 epoch=39 equal=1
+EPOCH_RANK sequence=graph_append-131072-A2 rank=5 blocks=64 epoch=39 equal=1
+PASS_EPOCH sequence=graph_append-131072-A2 all_ranks=6 all_blocks=64 epoch=39 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=A2 bytes=131072 rep=2 all_rank_complete_wall_ms=0.163676 max_rank_event_ms=0.118784 rank_event_ms=[0.118784,0.113664,0.107648,0.102400,0.097280,0.092192]
+PASS_OUTPUT mode=default entry=graph_append bytes=131072 frame=A2 rep=2 ranks=6 exact=1 canary=1 hash=62cccb3cbecfe9e5
+PASS_ABA mode=default entry=graph_append bytes=131072 frames=A0,B,A2 replay_count=5 exact=1 canary=1 ranks=6
+EPOCH_RANK sequence=graph_append-131072-C rank=0 blocks=64 epoch=40 equal=1
+EPOCH_RANK sequence=graph_append-131072-C rank=1 blocks=64 epoch=40 equal=1
+EPOCH_RANK sequence=graph_append-131072-C rank=2 blocks=64 epoch=40 equal=1
+EPOCH_RANK sequence=graph_append-131072-C rank=3 blocks=64 epoch=40 equal=1
+EPOCH_RANK sequence=graph_append-131072-C rank=4 blocks=64 epoch=40 equal=1
+EPOCH_RANK sequence=graph_append-131072-C rank=5 blocks=64 epoch=40 equal=1
+PASS_EPOCH sequence=graph_append-131072-C all_ranks=6 all_blocks=64 epoch=40 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=C bytes=131072 rep=3 all_rank_complete_wall_ms=0.160649 max_rank_event_ms=0.115680 rank_event_ms=[0.115680,0.110592,0.105472,0.100352,0.095232,0.090112]
+PASS_OUTPUT mode=default entry=graph_append bytes=131072 frame=C rep=3 ranks=6 exact=1 canary=1 hash=bf670180773ce825
+EPOCH_RANK sequence=graph_append-131072-NEGZERO rank=0 blocks=64 epoch=41 equal=1
+EPOCH_RANK sequence=graph_append-131072-NEGZERO rank=1 blocks=64 epoch=41 equal=1
+EPOCH_RANK sequence=graph_append-131072-NEGZERO rank=2 blocks=64 epoch=41 equal=1
+EPOCH_RANK sequence=graph_append-131072-NEGZERO rank=3 blocks=64 epoch=41 equal=1
+EPOCH_RANK sequence=graph_append-131072-NEGZERO rank=4 blocks=64 epoch=41 equal=1
+EPOCH_RANK sequence=graph_append-131072-NEGZERO rank=5 blocks=64 epoch=41 equal=1
+PASS_EPOCH sequence=graph_append-131072-NEGZERO all_ranks=6 all_blocks=64 epoch=41 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=NEGZERO bytes=131072 rep=4 all_rank_complete_wall_ms=0.157860 max_rank_event_ms=0.112640 rank_event_ms=[0.112640,0.107520,0.103360,0.098304,0.093184,0.088128]
+PASS_OUTPUT mode=default entry=graph_append bytes=131072 frame=NEGZERO rep=4 ranks=6 exact=1 canary=1 hash=921be46b94ec2325
+PASS_NEGATIVE_ZERO mode=default entry=graph_append bytes=131072 expected_bits=80000000 ranks=6 exact=1 canary=1
+GRAPH_RETIRE mode=default entry=graph_append bytes=131072 all_ranks=6 all_handles_null=1
+PASS_GRAPH_CASE mode=default entry=graph_append bytes=131072 kind=0 replays=5 all_ranks=6 exact=1 canary=1 final_hash=921be46b94ec2325
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_graph_append-after-131072 rank=0 blocks=64 epoch=42 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-131072 rank=1 blocks=64 epoch=42 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-131072 rank=2 blocks=64 epoch=42 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-131072 rank=3 blocks=64 epoch=42 equal=1
+EPOCH_RANK sequence=96B-after_graph_appp2p allreduce launch: rank 0 allreduce_0 n=40960 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=40960 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=40960 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=40960 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=40960 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=40960 zero=0 kind=0 stream=0x100390f83b0
+p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+end-after-131072 rank=4 blocks=64 epoch=42 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-131072 rank=5 blocks=64 epoch=42 equal=1
+PASS_EPOCH sequence=96B-after_graph_append-after-131072 all_ranks=6 all_blocks=64 epoch=42 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_graph_append bytes=96 rep=0 all_rank_complete_wall_ms=0.196956 max_rank_event_ms=0.150528 rank_event_ms=[0.150528,0.145408,0.140288,0.134176,0.131072,0.125952]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=131072 stage=after_graph_append bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=42
+PASS_PAYLOAD mode=default bytes=131072 kind=0 graph_replays_per_entry=5 entries=dispatch,graph_append eager=1 interleaved_96b=3 exact=1 canary=1
+PAYLOAD_BEGIN mode=default bytes=163840 expected_kind=0
+PATH_ASSERT mode=default entry=dispatch_eager bytes=163840 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=163840 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=163840 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=163840 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=163840 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=163840 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=payload-eager rank=0 blocks=64 epoch=43 equal=1
+EPOCH_RANK sequence=payload-eager rank=1 blocks=64 epoch=43 equal=1
+EPOCH_RANK sequence=payload-eager rank=2 blocks=64 epoch=43 equal=1
+EPOCH_RANK sequence=payload-eager rank=3 blocks=64 epoch=43 equal=1
+EPOCH_RANK sequence=payload-eager rank=4 blocks=64 epoch=43 equal=1
+EPOCH_RANK sequence=payload-eager rank=5 blocks=64 epoch=43 equal=1
+PASS_EPOCH sequence=payload-eager all_ranks=6 all_blocks=64 epoch=43 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=eager bytes=163840 rep=0 all_rank_complete_wall_ms=0.204311 max_rank_event_ms=0.157696 rank_event_ms=[0.157696,0.152576,0.147456,0.142336,0.137216,0.132096]
+PASS_OUTPUT mode=default entry=dispatch_eager bytes=163840 frame=0 ranks=6 exact=1 canary=1 hash=b4ab7e72dfcb2a25
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_eager-after-163840 rank=0 blocks=64 epoch=44 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-163840 rank=1 blocks=64 epoch=44 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-163840 rank=2 blocks=64 epoch=44 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-163840 rank=3 blocks=64 epoch=44 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-163840 rank=4 blocks=64 epoch=44 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-163840 rank=5 blocks=64 epoch=44 equal=1
+PASS_EPOCH sequence=96B-after_eager-after-163840 all_ranks=6 all_blocks=64 epoch=44 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_eager bytes=96 rep=0 all_rank_complete_wall_ms=0.190193 max_rank_event_ms=0.144448 rank_evep2p allreduce launch: rank 0 allreduce_0 n=40960 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=40960 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=40960 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=40960 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=40960 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=40960 zero=0 kind=0 stream=0x100390f83b0
+nt_ms=[0.144448,0.140288,0.135136,0.130048,0.124928,0.121856]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=163840 stage=after_eager bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=44
+PATH_ASSERT mode=default entry=dispatch bytes=163840 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=163840 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=163840 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=163840 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=163840 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=163840 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+INPUT_CHANGE mode=default entry=dispatch bytes=163840 rank=0 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=163840 rank=1 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=163840 rank=2 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=163840 rank=3 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=163840 rank=4 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=163840 rank=5 changed=1
+GRAPH_READY mode=default entry=dispatch bytes=163840 rank=0 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=163840 rank=1 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=163840 rank=2 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=163840 rank=3 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=163840 rank=4 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=163840 rank=5 kind=0 replay_count=5
+EPOCH_RANK sequence=dispatch-163840-A0 rank=0 blocks=64 epoch=45 equal=1
+EPOCH_RANK sequence=dispatch-163840-A0 rank=1 blocks=64 epoch=45 equal=1
+EPOCH_RANK sequence=dispatch-163840-A0 rank=2 blocks=64 epoch=45 equal=1
+EPOCH_RANK sequence=dispatch-163840-A0 rank=3 blocks=64 epoch=45 equal=1
+EPOCH_RANK sequence=dispatch-163840-A0 rank=4 blocks=64 epoch=45 equal=1
+EPOCH_RANK sequence=dispatch-163840-A0 rank=5 blocks=64 epoch=45 equal=1
+PASS_EPOCH sequence=dispatch-163840-A0 all_ranks=6 all_blocks=64 epoch=45 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=A0 bytes=163840 rep=0 all_rank_complete_wall_ms=0.183396 max_rank_event_ms=0.136192 rank_event_ms=[0.136192,0.131072,0.125952,0.119808,0.114784,0.110592]
+PASS_OUTPUT mode=default entry=dispatch bytes=163840 frame=A0 rep=0 ranks=6 exact=1 canary=1 hash=b4ab7e72dfcb2a25
+EPOCH_RANK sequence=dispatch-163840-B rank=0 blocks=64 epoch=46 equal=1
+EPOCH_RANK sequence=dispatch-163840-B rank=1 blocks=64 epoch=46 equal=1
+EPOCH_RANK sequence=dispatch-163840-B rank=2 blocks=64 epoch=46 equal=1
+EPOCH_RANK sequence=dispatch-163840-B rank=3 blocks=64 epoch=46 equal=1
+EPOCH_RANK sequence=dispatch-163840-B rank=4 blocks=64 epoch=46 equal=1
+EPOCH_RANK sequence=dispatch-163840-B rank=5 blocks=64 epoch=46 equal=1
+PASS_EPOCH sequence=dispatch-163840-B all_ranks=6 all_blocks=64 epoch=46 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=B bytes=163840 rep=1 all_rank_complete_wall_ms=0.178984 max_rank_event_ms=0.123904 rank_event_ms=[0.088064,0.040960,0.123904,0.121856,0.116736,0.111776]
+PASS_OUTPUT mode=default entry=dispatch bytes=163840 frame=B rep=1 ranks=6 exact=1 canary=1 hash=a2c9c3fb8a473e25
+EPOCH_RANK sequence=dispatch-163840-A2 rank=0 blocks=64 epoch=47 equal=1
+EPOCH_RANK sequence=dispatch-163840-A2 rank=1 blocks=64 epoch=47 equal=1
+EPOCH_RANK sequence=dispatch-163840-A2 rank=2 blocks=64 epoch=47 equal=1
+EPOCH_RANK sequence=dispatch-163840-A2 rank=3 blocks=64 epoch=47 equal=1
+EPOCH_RANK sequence=dispatch-163840-A2 rank=4 blocks=64 epoch=47 equal=1
+EPOCH_RANK sequence=dispatch-163840-A2 rank=5 blocks=64 epoch=47 equal=1
+PASS_EPOCH sequence=dispatcp2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+h-163840-A2 all_ranks=6 all_blocks=64 epoch=47 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=A2 bytes=163840 rep=2 all_rank_complete_wall_ms=0.187290 max_rank_event_ms=0.142336 rank_event_ms=[0.142336,0.091136,0.084992,0.076800,0.074752,0.115712]
+PASS_OUTPUT mode=default entry=dispatch bytes=163840 frame=A2 rep=2 ranks=6 exact=1 canary=1 hash=b4ab7e72dfcb2a25
+PASS_ABA mode=default entry=dispatch bytes=163840 frames=A0,B,A2 replay_count=5 exact=1 canary=1 ranks=6
+EPOCH_RANK sequence=dispatch-163840-C rank=0 blocks=64 epoch=48 equal=1
+EPOCH_RANK sequence=dispatch-163840-C rank=1 blocks=64 epoch=48 equal=1
+EPOCH_RANK sequence=dispatch-163840-C rank=2 blocks=64 epoch=48 equal=1
+EPOCH_RANK sequence=dispatch-163840-C rank=3 blocks=64 epoch=48 equal=1
+EPOCH_RANK sequence=dispatch-163840-C rank=4 blocks=64 epoch=48 equal=1
+EPOCH_RANK sequence=dispatch-163840-C rank=5 blocks=64 epoch=48 equal=1
+PASS_EPOCH sequence=dispatch-163840-C all_ranks=6 all_blocks=64 epoch=48 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=C bytes=163840 rep=3 all_rank_complete_wall_ms=0.176566 max_rank_event_ms=0.132096 rank_event_ms=[0.132096,0.126976,0.121984,0.115712,0.111584,0.106496]
+PASS_OUTPUT mode=default entry=dispatch bytes=163840 frame=C rep=3 ranks=6 exact=1 canary=1 hash=3b2e16cd35ea5025
+EPOCH_RANK sequence=dispatch-163840-NEGZERO rank=0 blocks=64 epoch=49 equal=1
+EPOCH_RANK sequence=dispatch-163840-NEGZERO rank=1 blocks=64 epoch=49 equal=1
+EPOCH_RANK sequence=dispatch-163840-NEGZERO rank=2 blocks=64 epoch=49 equal=1
+EPOCH_RANK sequence=dispatch-163840-NEGZERO rank=3 blocks=64 epoch=49 equal=1
+EPOCH_RANK sequence=dispatch-163840-NEGZERO rank=4 blocks=64 epoch=49 equal=1
+EPOCH_RANK sequence=dispatch-163840-NEGZERO rank=5 blocks=64 epoch=49 equal=1
+PASS_EPOCH sequence=dispatch-163840-NEGZERO all_ranks=6 all_blocks=64 epoch=49 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=NEGZERO bytes=163840 rep=4 all_rank_complete_wall_ms=0.177023 max_rank_event_ms=0.132096 rank_event_ms=[0.132096,0.126976,0.122880,0.115712,0.111616,0.105536]
+PASS_OUTPUT mode=default entry=dispatch bytes=163840 frame=NEGZERO rep=4 ranks=6 exact=1 canary=1 hash=f6771aaf791ea325
+PASS_NEGATIVE_ZERO mode=default entry=dispatch bytes=163840 expected_bits=80000000 ranks=6 exact=1 canary=1
+GRAPH_RETIRE mode=default entry=dispatch bytes=163840 all_ranks=6 all_handles_null=1
+PASS_GRAPH_CASE mode=default entry=dispatch bytes=163840 kind=0 replays=5 all_ranks=6 exact=1 canary=1 final_hash=f6771aaf791ea325
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-163840 rank=0 blocks=64 epoch=50 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-163840 rank=1 blocks=64 epoch=50 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-163840 rank=2 blocks=64 epoch=50 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-163840 rank=3 blocks=64 epoch=50 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-163840 rank=4 blocks=64 epoch=50 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-163840 rank=5 blocks=64 epoch=50 equal=1
+PASS_EPOCH sequence=96B-after_dispatch_graph-after-163840 all_ranks=6 all_blocks=64 epoch=50 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_dispatch_graph bytes=96 rep=0 all_rank_complete_wall_ms=0.196405 max_rank_event_ms=0.150528 rank_event_ms=[0.150528,0.145376,0.140288,0.134144,0.131040,0.125952]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=163840 stage=after_dispatch_graph bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=50
+PATH_ASSERT mode=default entry=graph_append bytes=163840 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=163840 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=163840 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=163840 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=163840 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=163840 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+INPUT_CHANGE mode=default entry=graph_append bytes=163840 rank=0 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=163840 rank=1 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=163840 rank=2 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=163840 rank=3 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=163840 rank=4 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=163840 rank=5 changed=1
+GRAPH_READY mode=default entry=graph_append bytes=163840 rank=0 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=163840 rank=1 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=163840 rank=2 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=163840 rank=3 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=163840 rank=4 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=163840 rank=5 kind=0 replay_count=5
+EPOCH_RANK sequence=graph_append-163840-A0 rank=0 blocks=64 epoch=51 equal=1
+EPOCH_RANK sequence=graph_append-163840-A0 rank=1 blocks=64 epoch=51 equal=1
+EPOCH_RANK sequence=graph_append-163840-A0 rank=2 blocks=64 epoch=51 equal=1
+EPOCH_RANK sequence=graph_append-163840-A0 rank=3 blocks=64 epoch=51 equal=1
+EPOCH_RANK sequence=graph_append-163840-A0 rank=4 blocks=64 epoch=51 equal=1
+EPOCH_RANK sequence=graph_append-163840-A0 rank=5 blocks=64 epoch=51 equal=1
+PASS_EPOCH sequence=graph_append-163840-A0 all_ranks=6 all_blocks=64 epoch=51 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=A0 bytes=163840 rep=0 all_rank_complete_wall_ms=0.181516 max_rank_event_ms=0.135168 rank_event_ms=[0.135168,0.130048,0.125952,0.118784,0.114688,0.109600]
+PASS_OUTPUT mode=default entry=graph_append bytes=163840 frame=A0 rep=0 ranks=6 exact=1 canary=1 hash=b4ab7e72dfcb2a25
+EPOCH_RANK sequence=graph_append-163840-B rank=0 blocks=64 epoch=52 equal=1
+EPOCH_RANK sequence=graph_append-163840-B rank=1 blocks=64 epoch=52 equal=1
+EPOCH_RANK sequence=graph_append-163840-B rank=2 blocks=64 epoch=52 equal=1
+EPOCH_RANK sequence=graph_append-163840-B rank=3 blocks=64 epoch=52 equal=1
+EPOCH_RANK sequence=graph_append-163840-B rank=4 blocks=64 epoch=52 equal=1
+EPOCH_RANK sequence=graph_append-163840-B rank=5 blocks=64 epoch=52 equal=1
+PASS_EPOCH sequence=graph_append-163840-B all_ranks=6 all_blocks=64 epoch=52 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=B bytes=163840 rep=1 all_rank_complete_wall_ms=0.176513 max_rank_event_ms=0.131168 rank_event_ms=[0.131168,0.125952,0.120832,0.114784,0.110592,0.104544]
+PASS_OUTPUT mode=default entry=graph_append bytes=163840 frame=B rep=1 ranks=6 exact=1 canary=1 hash=a2c9c3fb8a473e25
+EPOCH_RANK sequence=graph_append-163840-A2 rank=0 blocks=64 epoch=53 equal=1
+EPOCH_RANK sequence=graph_append-163840-A2 rank=1 blocks=64 epoch=53 equal=1
+EPOCH_RANK sequence=graph_append-163840-A2 rank=2 blocks=64 epoch=p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+53 equal=1
+EPOCH_RANK sequence=graph_append-163840-A2 rank=3 blocks=64 epoch=53 equal=1
+EPOCH_RANK sequence=graph_append-163840-A2 rank=4 blocks=64 epoch=53 equal=1
+EPOCH_RANK sequence=graph_append-163840-A2 rank=5 blocks=64 epoch=53 equal=1
+PASS_EPOCH sequence=graph_append-163840-A2 all_ranks=6 all_blocks=64 epoch=53 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=A2 bytes=163840 rep=2 all_rank_complete_wall_ms=0.176766 max_rank_event_ms=0.132064 rank_event_ms=[0.132064,0.126976,0.121856,0.116736,0.111616,0.106496]
+PASS_OUTPUT mode=default entry=graph_append bytes=163840 frame=A2 rep=2 ranks=6 exact=1 canary=1 hash=b4ab7e72dfcb2a25
+PASS_ABA mode=default entry=graph_append bytes=163840 frames=A0,B,A2 replay_count=5 exact=1 canary=1 ranks=6
+EPOCH_RANK sequence=graph_append-163840-C rank=0 blocks=64 epoch=54 equal=1
+EPOCH_RANK sequence=graph_append-163840-C rank=1 blocks=64 epoch=54 equal=1
+EPOCH_RANK sequence=graph_append-163840-C rank=2 blocks=64 epoch=54 equal=1
+EPOCH_RANK sequence=graph_append-163840-C rank=3 blocks=64 epoch=54 equal=1
+EPOCH_RANK sequence=graph_append-163840-C rank=4 blocks=64 epoch=54 equal=1
+EPOCH_RANK sequence=graph_append-163840-C rank=5 blocks=64 epoch=54 equal=1
+PASS_EPOCH sequence=graph_append-163840-C all_ranks=6 all_blocks=64 epoch=54 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=C bytes=163840 rep=3 all_rank_complete_wall_ms=0.179199 max_rank_event_ms=0.134144 rank_event_ms=[0.134144,0.129088,0.124896,0.117760,0.113664,0.107520]
+PASS_OUTPUT mode=default entry=graph_append bytes=163840 frame=C rep=3 ranks=6 exact=1 canary=1 hash=3b2e16cd35ea5025
+EPOCH_RANK sequence=graph_append-163840-NEGZERO rank=0 blocks=64 epoch=55 equal=1
+EPOCH_RANK sequence=graph_append-163840-NEGZERO rank=1 blocks=64 epoch=55 equal=1
+EPOCH_RANK sequence=graph_append-163840-NEGZERO rank=2 blocks=64 epoch=55 equal=1
+EPOCH_RANK sequence=graph_append-163840-NEGZERO rank=3 blocks=64 epoch=55 equal=1
+EPOCH_RANK sequence=graph_append-163840-NEGZERO rank=4 blocks=64 epoch=55 equal=1
+EPOCH_RANK sequence=graph_append-163840-NEGZERO rank=5 blocks=64 epoch=55 equal=1
+PASS_EPOCH sequence=graph_append-163840-NEGZERO all_ranks=6 all_blocks=64 epoch=55 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=NEGZERO bytes=163840 rep=4 all_rank_complete_wall_ms=0.650618 max_rank_event_ms=0.589824 rank_event_ms=[0.558080,0.551936,0.549888,0.589824,0.584704,0.580608]
+PASS_OUTPUT mode=default entry=graph_append bytes=163840 frame=NEGZERO rep=4 ranks=6 exact=1 canary=1 hash=f6771aaf791ea325
+PASS_NEGATIVE_ZERO mode=default entry=graph_append bytes=163840 expected_bits=80000000 ranks=6 exact=1 canary=1
+GRAPH_RETIRE mode=default entry=graph_append bytes=163840 all_ranks=6 all_handles_null=1
+PASS_GRAPH_CASE mode=default entry=graph_append bytes=163840 kind=0 replays=5 all_ranks=6 exact=1 canary=1 final_hash=f6771aaf791ea325
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_graph_append-after-163840 rank=0 blocks=64 epoch=56 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-163840 rank=1 blocks=64 epoch=56 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-163840 rank=2 blocks=64 epoch=56 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-163840 rank=3 blocks=64 epoch=56 equp2p allreduce launch: rank 0 allreduce_0 n=49152 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=49152 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=49152 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=49152 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=49152 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=49152 zero=0 kind=0 stream=0x100390f83b0
+p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+al=1
+EPOCH_RANK sequence=96B-after_graph_append-after-163840 rank=4 blocks=64 epoch=56 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-163840 rank=5 blocks=64 epoch=56 equal=1
+PASS_EPOCH sequence=96B-after_graph_append-after-163840 all_ranks=6 all_blocks=64 epoch=56 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_graph_append bytes=96 rep=0 all_rank_complete_wall_ms=0.415976 max_rank_event_ms=0.369664 rank_event_ms=[0.369664,0.364544,0.358400,0.352256,0.031744,0.344064]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=163840 stage=after_graph_append bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=56
+PASS_PAYLOAD mode=default bytes=163840 kind=0 graph_replays_per_entry=5 entries=dispatch,graph_append eager=1 interleaved_96b=3 exact=1 canary=1
+PAYLOAD_BEGIN mode=default bytes=196608 expected_kind=0
+PATH_ASSERT mode=default entry=dispatch_eager bytes=196608 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=196608 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=196608 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=196608 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=196608 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=196608 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=payload-eager rank=0 blocks=64 epoch=57 equal=1
+EPOCH_RANK sequence=payload-eager rank=1 blocks=64 epoch=57 equal=1
+EPOCH_RANK sequence=payload-eager rank=2 blocks=64 epoch=57 equal=1
+EPOCH_RANK sequence=payload-eager rank=3 blocks=64 epoch=57 equal=1
+EPOCH_RANK sequence=payload-eager rank=4 blocks=64 epoch=57 equal=1
+EPOCH_RANK sequence=payload-eager rank=5 blocks=64 epoch=57 equal=1
+PASS_EPOCH sequence=payload-eager all_ranks=6 all_blocks=64 epoch=57 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=eager bytes=196608 rep=0 all_rank_complete_wall_ms=0.211286 max_rank_event_ms=0.163840 rank_event_ms=[0.163840,0.158720,0.154624,0.148512,0.144256,0.139264]
+PASS_OUTPUT mode=default entry=dispatch_eager bytes=196608 frame=0 ranks=6 exact=1 canary=1 hash=66d2faf47cda7165
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_eager-after-196608 rank=0 blocks=64 epoch=58 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-196608 rank=1 blocks=64 epoch=58 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-196608 rank=2 blocks=64 epoch=58 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-196608 rank=3 blocks=64 epoch=58 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-196608 rank=4 blocks=64 epoch=58 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-196608 rank=5 blocks=64 epoch=58 equal=1
+PASS_EPOCH sequence=96B-after_eager-after-196608 all_ranks=6 all_blocks=64 epoch=58 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_eager bytes=96 rep=0 all_rank_complete_wall_ms=p2p allreduce launch: rank 0 allreduce_0 n=49152 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=49152 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=49152 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=49152 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=49152 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=49152 zero=0 kind=0 stream=0x100390f83b0
+0.191101 max_rank_event_ms=0.145408 rank_event_ms=[0.145408,0.140288,0.136192,0.130048,0.125952,0.120896]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=196608 stage=after_eager bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=58
+PATH_ASSERT mode=default entry=dispatch bytes=196608 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=196608 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=196608 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=196608 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=196608 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=196608 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+INPUT_CHANGE mode=default entry=dispatch bytes=196608 rank=0 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=196608 rank=1 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=196608 rank=2 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=196608 rank=3 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=196608 rank=4 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=196608 rank=5 changed=1
+GRAPH_READY mode=default entry=dispatch bytes=196608 rank=0 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=196608 rank=1 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=196608 rank=2 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=196608 rank=3 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=196608 rank=4 kind=0 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=196608 rank=5 kind=0 replay_count=5
+EPOCH_RANK sequence=dispatch-196608-A0 rank=0 blocks=64 epoch=59 equal=1
+EPOCH_RANK sequence=dispatch-196608-A0 rank=1 blocks=64 epoch=59 equal=1
+EPOCH_RANK sequence=dispatch-196608-A0 rank=2 blocks=64 epoch=59 equal=1
+EPOCH_RANK sequence=dispatch-196608-A0 rank=3 blocks=64 epoch=59 equal=1
+EPOCH_RANK sequence=dispatch-196608-A0 rank=4 blocks=64 epoch=59 equal=1
+EPOCH_RANK sequence=dispatch-196608-A0 rank=5 blocks=64 epoch=59 equal=1
+PASS_EPOCH sequence=dispatch-196608-A0 all_ranks=6 all_blocks=64 epoch=59 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=A0 bytes=196608 rep=0 all_rank_complete_wall_ms=0.194507 max_rank_event_ms=0.147456 rank_event_ms=[0.147456,0.142208,0.136192,0.131072,0.125952,0.121856]
+PASS_OUTPUT mode=default entry=dispatch bytes=196608 frame=A0 rep=0 ranks=6 exact=1 canary=1 hash=66d2faf47cda7165
+EPOCH_RANK sequence=dispatch-196608-B rank=0 blocks=64 epoch=60 equal=1
+EPOCH_RANK sequence=dispatch-196608-B rank=1 blocks=64 epoch=60 equal=1
+EPOCH_RANK sequence=dispatch-196608-B rank=2 blocks=64 epoch=60 equal=1
+EPOCH_RANK sequence=dispatch-196608-B rank=3 blocks=64 epoch=60 equal=1
+EPOCH_RANK sequence=dispatch-196608-B rank=4 blocks=64 epoch=60 equal=1
+EPOCH_RANK sequence=dispatch-196608-B rank=5 blocks=64 epoch=60 equal=1
+PASS_EPOCH sequence=dispatch-196608-B all_ranks=6 all_blocks=64 epoch=60 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=B bytes=196608 rep=1 all_rank_complete_wall_ms=0.210877 max_rank_event_ms=0.147456 rank_event_ms=[0.147456,0.141312,0.137216,0.129024,0.124928,0.120832]
+PASS_OUTPUT mode=default entry=dispatch bytes=196608 frame=B rep=1 ranks=6 exact=1 canary=1 hash=73207b8a5f4b0065
+EPOCH_RANK sequence=dispatch-196608-A2 rank=0 blocks=64 epoch=61 equal=1
+EPOCH_RANK sequence=dispatch-196608-A2 rank=1 blocks=64 epoch=61 equal=1
+EPOCH_RANK sequence=dispatch-196608-A2 rank=2 blocks=64 epoch=61 equal=1
+EPOCH_RANK sequence=dispatch-196608-A2 rank=3 blocks=64 epoch=61 equal=1
+EPOCH_RANK sequence=dispatch-196608-A2 rank=4 blocks=64 epoch=61 equal=1
+EPOCH_RANK sequence=dispatch-196608-A2 rank=5 blocks=64 p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+epoch=61 equal=1
+PASS_EPOCH sequence=dispatch-196608-A2 all_ranks=6 all_blocks=64 epoch=61 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=A2 bytes=196608 rep=2 all_rank_complete_wall_ms=0.190870 max_rank_event_ms=0.145280 rank_event_ms=[0.145280,0.139264,0.134240,0.129024,0.123840,0.119808]
+PASS_OUTPUT mode=default entry=dispatch bytes=196608 frame=A2 rep=2 ranks=6 exact=1 canary=1 hash=66d2faf47cda7165
+PASS_ABA mode=default entry=dispatch bytes=196608 frames=A0,B,A2 replay_count=5 exact=1 canary=1 ranks=6
+EPOCH_RANK sequence=dispatch-196608-C rank=0 blocks=64 epoch=62 equal=1
+EPOCH_RANK sequence=dispatch-196608-C rank=1 blocks=64 epoch=62 equal=1
+EPOCH_RANK sequence=dispatch-196608-C rank=2 blocks=64 epoch=62 equal=1
+EPOCH_RANK sequence=dispatch-196608-C rank=3 blocks=64 epoch=62 equal=1
+EPOCH_RANK sequence=dispatch-196608-C rank=4 blocks=64 epoch=62 equal=1
+EPOCH_RANK sequence=dispatch-196608-C rank=5 blocks=64 epoch=62 equal=1
+PASS_EPOCH sequence=dispatch-196608-C all_ranks=6 all_blocks=64 epoch=62 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=C bytes=196608 rep=3 all_rank_complete_wall_ms=0.188398 max_rank_event_ms=0.143360 rank_event_ms=[0.143360,0.138240,0.133120,0.127936,0.122880,0.117760]
+PASS_OUTPUT mode=default entry=dispatch bytes=196608 frame=C rep=3 ranks=6 exact=1 canary=1 hash=07177c411f6885a5
+EPOCH_RANK sequence=dispatch-196608-NEGZERO rank=0 blocks=64 epoch=63 equal=1
+EPOCH_RANK sequence=dispatch-196608-NEGZERO rank=1 blocks=64 epoch=63 equal=1
+EPOCH_RANK sequence=dispatch-196608-NEGZERO rank=2 blocks=64 epoch=63 equal=1
+EPOCH_RANK sequence=dispatch-196608-NEGZERO rank=3 blocks=64 epoch=63 equal=1
+EPOCH_RANK sequence=dispatch-196608-NEGZERO rank=4 blocks=64 epoch=63 equal=1
+EPOCH_RANK sequence=dispatch-196608-NEGZERO rank=5 blocks=64 epoch=63 equal=1
+PASS_EPOCH sequence=dispatch-196608-NEGZERO all_ranks=6 all_blocks=64 epoch=63 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=NEGZERO bytes=196608 rep=4 all_rank_complete_wall_ms=0.189521 max_rank_event_ms=0.144384 rank_event_ms=[0.144384,0.139392,0.134240,0.129024,0.124032,0.119808]
+PASS_OUTPUT mode=default entry=dispatch bytes=196608 frame=NEGZERO rep=4 ranks=6 exact=1 canary=1 hash=7ae93d799d512325
+PASS_NEGATIVE_ZERO mode=default entry=dispatch bytes=196608 expected_bits=80000000 ranks=6 exact=1 canary=1
+GRAPH_RETIRE mode=default entry=dispatch bytes=196608 all_ranks=6 all_handles_null=1
+PASS_GRAPH_CASE mode=default entry=dispatch bytes=196608 kind=0 replays=5 all_ranks=6 exact=1 canary=1 final_hash=7ae93d799d512325
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-196608 rank=0 blocks=64 epoch=64 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-196608 rank=1 blocks=64 epoch=64 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-196608 rank=2 blocks=64 epoch=64 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-196608 rank=3 blocks=64 epoch=64 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-196608 rank=4 blocks=64 epoch=64 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-196608 rank=5 blocks=64 epoch=64 equal=1
+PASS_EPOCH sequence=96B-after_dispatch_graph-after-196608 all_ranks=6 all_blocks=64 epoch=64 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_dispatch_graph bytes=96 rep=0 all_rank_complete_wall_ms=0.203372 max_rank_event_ms=0.158720 rank_event_ms=[0.158720,0.152576,0.147456,0.142336,0.138240,0.134144]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=196608 stage=after_dispatch_graph bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=64
+PATH_ASSERT mode=default entry=graph_append bytes=196608 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=196608 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=196608 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=196608 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=196608 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=196608 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+INPUT_CHANGE mode=default entry=graph_append bytes=196608 rank=0 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=196608 rank=1 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=196608 rank=2 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=196608 rank=3 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=196608 rank=4 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=196608 rank=5 changed=1
+GRAPH_READY mode=default entry=graph_append bytes=196608 rank=0 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=196608 rank=1 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=196608 rank=2 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=196608 rank=3 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=196608 rank=4 kind=0 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=196608 rank=5 kind=0 replay_count=5
+EPOCH_RANK sequence=graph_append-196608-A0 rank=0 blocks=64 epoch=65 equal=1
+EPOCH_RANK sequence=graph_append-196608-A0 rank=1 blocks=64 epoch=65 equal=1
+EPOCH_RANK sequence=graph_append-196608-A0 rank=2 blocks=64 epoch=65 equal=1
+EPOCH_RANK sequence=graph_append-196608-A0 rank=3 blocks=64 epoch=65 equal=1
+EPOCH_RANK sequence=graph_append-196608-A0 rank=4 blocks=64 epoch=65 equal=1
+EPOCH_RANK sequence=graph_append-196608-A0 rank=5 blocks=64 epoch=65 equal=1
+PASS_EPOCH sequence=graph_append-196608-A0 all_ranks=6 all_blocks=64 epoch=65 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=A0 bytes=196608 rep=0 all_rank_complete_wall_ms=0.197869 max_rank_event_ms=0.151584 rank_event_ms=[0.151584,0.146528,0.142336,0.136192,0.132064,0.126976]
+PASS_OUTPUT mode=default entry=graph_append bytes=196608 frame=A0 rep=0 ranks=6 exact=1 canary=1 hash=66d2faf47cda7165
+EPOCH_RANK sequence=graph_append-196608-B rank=0 blocks=64 epoch=66 equal=1
+EPOCH_RANK sequence=graph_append-196608-B rank=1 blocks=64 epoch=66 equal=1
+EPOCH_RANK sequence=graph_append-196608-B rank=2 blocks=64 epoch=66 equal=1
+EPOCH_RANK sequence=graph_append-196608-B rank=3 blocks=64 epoch=66 equal=1
+EPOCH_RANK sequence=graph_append-196608-B rank=4 blocks=64 epoch=66 equal=1
+EPOCH_RANK sequence=graph_append-196608-B rank=5 blocks=64 epoch=66 equal=1
+PASS_EPOCH sequence=graph_append-196608-B all_ranks=6 all_blocks=64 epoch=66 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=B bytes=196608 rep=1 all_rank_complete_wall_ms=0.193175 max_rank_event_ms=0.148384 rank_event_ms=[0.148384,0.142336,0.138208,0.131168,0.126976,0.121888]
+PASS_OUTPUT mode=default entry=graph_append bytes=196608 frame=B rep=1 ranks=6 exact=1 canary=1 hash=73207b8a5f4b0065
+EPOCH_RANK sequence=graph_append-196608-A2 rank=0 blocks=64 epoch=67 equal=1
+EPOCH_RANK sequence=graph_append-196608-A2 rank=1 blocks=64 epoch=67 equal=1
+EPOCH_RANK sequence=grp2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+aph_append-196608-A2 rank=2 blocks=64 epoch=67 equal=1
+EPOCH_RANK sequence=graph_append-196608-A2 rank=3 blocks=64 epoch=67 equal=1
+EPOCH_RANK sequence=graph_append-196608-A2 rank=4 blocks=64 epoch=67 equal=1
+EPOCH_RANK sequence=graph_append-196608-A2 rank=5 blocks=64 epoch=67 equal=1
+PASS_EPOCH sequence=graph_append-196608-A2 all_ranks=6 all_blocks=64 epoch=67 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=A2 bytes=196608 rep=2 all_rank_complete_wall_ms=0.190986 max_rank_event_ms=0.146432 rank_event_ms=[0.146432,0.141312,0.136192,0.130048,0.125888,0.120832]
+PASS_OUTPUT mode=default entry=graph_append bytes=196608 frame=A2 rep=2 ranks=6 exact=1 canary=1 hash=66d2faf47cda7165
+PASS_ABA mode=default entry=graph_append bytes=196608 frames=A0,B,A2 replay_count=5 exact=1 canary=1 ranks=6
+EPOCH_RANK sequence=graph_append-196608-C rank=0 blocks=64 epoch=68 equal=1
+EPOCH_RANK sequence=graph_append-196608-C rank=1 blocks=64 epoch=68 equal=1
+EPOCH_RANK sequence=graph_append-196608-C rank=2 blocks=64 epoch=68 equal=1
+EPOCH_RANK sequence=graph_append-196608-C rank=3 blocks=64 epoch=68 equal=1
+EPOCH_RANK sequence=graph_append-196608-C rank=4 blocks=64 epoch=68 equal=1
+EPOCH_RANK sequence=graph_append-196608-C rank=5 blocks=64 epoch=68 equal=1
+PASS_EPOCH sequence=graph_append-196608-C all_ranks=6 all_blocks=64 epoch=68 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=C bytes=196608 rep=3 all_rank_complete_wall_ms=0.194239 max_rank_event_ms=0.148512 rank_event_ms=[0.148512,0.144384,0.140288,0.133120,0.129024,0.123904]
+PASS_OUTPUT mode=default entry=graph_append bytes=196608 frame=C rep=3 ranks=6 exact=1 canary=1 hash=07177c411f6885a5
+EPOCH_RANK sequence=graph_append-196608-NEGZERO rank=0 blocks=64 epoch=69 equal=1
+EPOCH_RANK sequence=graph_append-196608-NEGZERO rank=1 blocks=64 epoch=69 equal=1
+EPOCH_RANK sequence=graph_append-196608-NEGZERO rank=2 blocks=64 epoch=69 equal=1
+EPOCH_RANK sequence=graph_append-196608-NEGZERO rank=3 blocks=64 epoch=69 equal=1
+EPOCH_RANK sequence=graph_append-196608-NEGZERO rank=4 blocks=64 epoch=69 equal=1
+EPOCH_RANK sequence=graph_append-196608-NEGZERO rank=5 blocks=64 epoch=69 equal=1
+PASS_EPOCH sequence=graph_append-196608-NEGZERO all_ranks=6 all_blocks=64 epoch=69 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=NEGZERO bytes=196608 rep=4 all_rank_complete_wall_ms=0.191728 max_rank_event_ms=0.146432 rank_event_ms=[0.146432,0.141312,0.137216,0.131072,0.126080,0.120864]
+PASS_OUTPUT mode=default entry=graph_append bytes=196608 frame=NEGZERO rep=4 ranks=6 exact=1 canary=1 hash=7ae93d799d512325
+PASS_NEGATIVE_ZERO mode=default entry=graph_append bytes=196608 expected_bits=80000000 ranks=6 exact=1 canary=1
+GRAPH_RETIRE mode=default entry=graph_append bytes=196608 all_ranks=6 all_handles_null=1
+PASS_GRAPH_CASE mode=default entry=graph_append bytes=196608 kind=0 replays=5 all_ranks=6 exact=1 canary=1 final_hash=7ae93d799d512325
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_graph_append-after-196608 rank=0 blocks=64 epoch=70 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-196608 rank=1 blocks=64 epoch=70 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-196608 rank=2 blocks=64 epoch=70 equal=1
+EPOCH_RANK sequence=96B-after_graph_appenp2p-ar-path entry=dispatch device=0 rank=0 ranks=6 bytes=245760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=0 rank=0 bytes=245760 rank-order-exact=1 cross-payload=2V min-bytes=204800 entry=dispatch
+p2p allreduce launch: rank 0 allreduce_0 n=61440 zero=0 kind=4 stream=0x100380faba0
+p2p-ar-path entry=dispatch device=1 rank=1 ranks=6 bytes=245760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=1 rank=1 bytes=245760 rank-order-exact=1 cross-payload=2V min-bytes=204800 entry=dispatch
+p2p allreduce launch: rank 1 allreduce_0 n=61440 zero=0 kind=4 stream=0x100390f80b0
+p2p-ar-path entry=dispatch device=2 rank=2 ranks=6 bytes=245760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=2 rank=2 bytes=245760 rank-order-exact=1 cross-payload=2V min-bytes=204800 entry=dispatch
+p2p allreduce launch: rank 2 allreduce_0 n=61440 zero=0 kind=4 stream=0x100390f8170
+p2p-ar-path entry=dispatch device=3 rank=3 ranks=6 bytes=245760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=3 rank=3 bytes=245760 rank-order-exact=1 cross-payload=2V min-bytes=204800 entry=dispatch
+p2p allreduce launch: rank 3 allreduce_0 n=61440 zero=0 kind=4 stream=0x100390f8230
+p2p-ar-path entry=dispatch device=4 rank=4 ranks=6 bytes=245760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=4 rank=4 bytes=245760 rank-order-exact=1 cross-payload=2V min-bytes=204800 entry=dispatch
+p2p allreduce launch: rank 4 allreduce_0 n=61440 zero=0 kind=4 stream=0x100390f82f0
+p2p-ar-path entry=dispatch device=5 rank=5 ranks=6 bytes=245760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=5 rank=5 bytes=245760 rank-order-exact=1 cross-payload=2V min-bytes=204800 entry=dispatch
+p2p allreduce launch: rank 5 allreduce_0 n=61440 zero=0 kind=4 stream=0x100390f83b0
+p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+d-after-196608 rank=3 blocks=64 epoch=70 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-196608 rank=4 blocks=64 epoch=70 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-196608 rank=5 blocks=64 epoch=70 equal=1
+PASS_EPOCH sequence=96B-after_graph_append-after-196608 all_ranks=6 all_blocks=64 epoch=70 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_graph_append bytes=96 rep=0 all_rank_complete_wall_ms=0.207560 max_rank_event_ms=0.162784 rank_event_ms=[0.162784,0.156672,0.151552,0.146432,0.140288,0.137216]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=196608 stage=after_graph_append bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=70
+PASS_PAYLOAD mode=default bytes=196608 kind=0 graph_replays_per_entry=5 entries=dispatch,graph_append eager=1 interleaved_96b=3 exact=1 canary=1
+PAYLOAD_BEGIN mode=default bytes=245760 expected_kind=4
+PATH_ASSERT mode=default entry=dispatch_eager bytes=245760 rank=0 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=245760 rank=1 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=245760 rank=2 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=245760 rank=3 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=245760 rank=4 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=245760 rank=5 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=payload-eager rank=0 blocks=64 epoch=71 equal=1
+EPOCH_RANK sequence=payload-eager rank=1 blocks=64 epoch=71 equal=1
+EPOCH_RANK sequence=payload-eager rank=2 blocks=64 epoch=71 equal=1
+EPOCH_RANK sequence=payload-eager rank=3 blocks=64 epoch=71 equal=1
+EPOCH_RANK sequence=payload-eager rank=4 blocks=64 epoch=71 equal=1
+EPOCH_RANK sequence=payload-eager rank=5 blocks=64 epoch=71 equal=1
+PASS_EPOCH sequence=payload-eager all_ranks=6 all_blocks=64 epoch=71 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=eager bytes=245760 rep=0 all_rank_complete_wall_ms=0.627432 max_rank_event_ms=0.579584 rank_event_ms=[0.579584,0.577536,0.572416,0.565248,0.563136,0.558080]
+PASS_OUTPUT mode=default entry=dispatch_eager bytes=245760 frame=0 ranks=6 exact=1 canary=1 hash=25d3422e64a79d65
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_eager-after-245760 rank=0 blocks=64 epoch=72 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-245760 rank=1 blocks=64 epoch=72 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-245760 rank=2 blocks=64 epoch=72 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-245760 rank=3 blocks=64 epoch=72 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-245760 rank=4 blocks=64 epoch=72 equal=1
+EPOCH_RANK sequence=96B-after_eager-after-245760 rank=5 blocks=64 epoch=72 equal=1
+PASS_EPOCH sequence=96B-after_eager-after-245760 all_ranks=6 all_blocks=64 epoch=72 continuous=1
+COMM_TIMING mode=default p2p allreduce launch: rank 0 allreduce_0 n=61440 zero=0 kind=4 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=61440 zero=0 kind=4 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=61440 zero=0 kind=4 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=61440 zero=0 kind=4 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=61440 zero=0 kind=4 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=61440 zero=0 kind=4 stream=0x100390f83b0
+entry=dispatch_eager phase=after_eager bytes=96 rep=0 all_rank_complete_wall_ms=0.191584 max_rank_event_ms=0.145536 rank_event_ms=[0.145536,0.141312,0.136224,0.130048,0.125952,0.121856]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=245760 stage=after_eager bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=72
+PATH_ASSERT mode=default entry=dispatch bytes=245760 rank=0 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=245760 rank=1 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=245760 rank=2 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=245760 rank=3 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=245760 rank=4 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch bytes=245760 rank=5 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+INPUT_CHANGE mode=default entry=dispatch bytes=245760 rank=0 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=245760 rank=1 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=245760 rank=2 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=245760 rank=3 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=245760 rank=4 changed=1
+INPUT_CHANGE mode=default entry=dispatch bytes=245760 rank=5 changed=1
+GRAPH_READY mode=default entry=dispatch bytes=245760 rank=0 kind=4 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=245760 rank=1 kind=4 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=245760 rank=2 kind=4 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=245760 rank=3 kind=4 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=245760 rank=4 kind=4 replay_count=5
+GRAPH_READY mode=default entry=dispatch bytes=245760 rank=5 kind=4 replay_count=5
+EPOCH_RANK sequence=dispatch-245760-A0 rank=0 blocks=64 epoch=73 equal=1
+EPOCH_RANK sequence=dispatch-245760-A0 rank=1 blocks=64 epoch=73 equal=1
+EPOCH_RANK sequence=dispatch-245760-A0 rank=2 blocks=64 epoch=73 equal=1
+EPOCH_RANK sequence=dispatch-245760-A0 rank=3 blocks=64 epoch=73 equal=1
+EPOCH_RANK sequence=dispatch-245760-A0 rank=4 blocks=64 epoch=73 equal=1
+EPOCH_RANK sequence=dispatch-245760-A0 rank=5 blocks=64 epoch=73 equal=1
+PASS_EPOCH sequence=dispatch-245760-A0 all_ranks=6 all_blocks=64 epoch=73 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=A0 bytes=245760 rep=0 all_rank_complete_wall_ms=0.524348 max_rank_event_ms=0.479232 rank_event_ms=[0.479232,0.476160,0.471040,0.462848,0.460800,0.456704]
+PASS_OUTPUT mode=default entry=dispatch bytes=245760 frame=A0 rep=0 ranks=6 exact=1 canary=1 hash=25d3422e64a79d65
+EPOCH_RANK sequence=dispatch-245760-B rank=0 blocks=64 epoch=74 equal=1
+EPOCH_RANK sequence=dispatch-245760-B rank=1 blocks=64 epoch=74 equal=1
+EPOCH_RANK sequence=dispatch-245760-B rank=2 blocks=64 epoch=74 equal=1
+EPOCH_RANK sequence=dispatch-245760-B rank=3 blocks=64 epoch=74 equal=1
+EPOCH_RANK sequence=dispatch-245760-B rank=4 blocks=64 epoch=74 equal=1
+EPOCH_RANK sequence=dispatch-245760-B rank=5 blocks=64 epoch=74 equal=1
+PASS_EPOCH sequence=dispatch-245760-B all_ranks=6 all_blocks=64 epoch=74 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=B bytes=245760 rep=1 all_rank_complete_wall_ms=0.518311 max_rank_event_ms=0.474112 rank_event_ms=[0.474112,0.470016,0.465024,0.458752,0.455680,0.450656]
+PASS_OUTPUT mode=default entry=dispatch bytes=245760 frame=B rep=1 ranks=6 exact=1 canary=1 hash=881e9968910ba8e5
+EPOCH_RANK sequence=dispatch-245760-A2 rank=0 blocks=64 epoch=75 equal=1
+EPOCH_RANK sequence=dispatch-245760-A2 rank=1 blocks=64 epoch=75 equal=1
+EPOCH_RANK sequence=dispatch-245760-A2 rank=2 blocks=64 epoch=75 equal=1
+EPOCH_RANK sequence=dispatch-245760-A2 rank=3 blocks=64 epoch=75 equal=1
+EPOCH_RANK sep2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+quence=dispatch-245760-A2 rank=4 blocks=64 epoch=75 equal=1
+EPOCH_RANK sequence=dispatch-245760-A2 rank=5 blocks=64 epoch=75 equal=1
+PASS_EPOCH sequence=dispatch-245760-A2 all_ranks=6 all_blocks=64 epoch=75 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=A2 bytes=245760 rep=2 all_rank_complete_wall_ms=0.523227 max_rank_event_ms=0.479232 rank_event_ms=[0.479232,0.475136,0.471040,0.464832,0.460800,0.456704]
+PASS_OUTPUT mode=default entry=dispatch bytes=245760 frame=A2 rep=2 ranks=6 exact=1 canary=1 hash=25d3422e64a79d65
+PASS_ABA mode=default entry=dispatch bytes=245760 frames=A0,B,A2 replay_count=5 exact=1 canary=1 ranks=6
+EPOCH_RANK sequence=dispatch-245760-C rank=0 blocks=64 epoch=76 equal=1
+EPOCH_RANK sequence=dispatch-245760-C rank=1 blocks=64 epoch=76 equal=1
+EPOCH_RANK sequence=dispatch-245760-C rank=2 blocks=64 epoch=76 equal=1
+EPOCH_RANK sequence=dispatch-245760-C rank=3 blocks=64 epoch=76 equal=1
+EPOCH_RANK sequence=dispatch-245760-C rank=4 blocks=64 epoch=76 equal=1
+EPOCH_RANK sequence=dispatch-245760-C rank=5 blocks=64 epoch=76 equal=1
+PASS_EPOCH sequence=dispatch-245760-C all_ranks=6 all_blocks=64 epoch=76 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=C bytes=245760 rep=3 all_rank_complete_wall_ms=0.514186 max_rank_event_ms=0.470016 rank_event_ms=[0.470016,0.467968,0.463872,0.454656,0.453632,0.449536]
+PASS_OUTPUT mode=default entry=dispatch bytes=245760 frame=C rep=3 ranks=6 exact=1 canary=1 hash=5b03bf702d5a8065
+EPOCH_RANK sequence=dispatch-245760-NEGZERO rank=0 blocks=64 epoch=77 equal=1
+EPOCH_RANK sequence=dispatch-245760-NEGZERO rank=1 blocks=64 epoch=77 equal=1
+EPOCH_RANK sequence=dispatch-245760-NEGZERO rank=2 blocks=64 epoch=77 equal=1
+EPOCH_RANK sequence=dispatch-245760-NEGZERO rank=3 blocks=64 epoch=77 equal=1
+EPOCH_RANK sequence=dispatch-245760-NEGZERO rank=4 blocks=64 epoch=77 equal=1
+EPOCH_RANK sequence=dispatch-245760-NEGZERO rank=5 blocks=64 epoch=77 equal=1
+PASS_EPOCH sequence=dispatch-245760-NEGZERO all_ranks=6 all_blocks=64 epoch=77 continuous=1
+COMM_TIMING mode=default entry=dispatch phase=NEGZERO bytes=245760 rep=4 all_rank_complete_wall_ms=0.516162 max_rank_event_ms=0.472064 rank_event_ms=[0.472064,0.468992,0.464896,0.456704,0.454656,0.450560]
+PASS_OUTPUT mode=default entry=dispatch bytes=245760 frame=NEGZERO rep=4 ranks=6 exact=1 canary=1 hash=de5371b2ab9ce325
+PASS_NEGATIVE_ZERO mode=default entry=dispatch bytes=245760 expected_bits=80000000 ranks=6 exact=1 canary=1
+GRAPH_RETIRE mode=default entry=dispatch bytes=245760 all_ranks=6 all_handles_null=1
+PASS_GRAPH_CASE mode=default entry=dispatch bytes=245760 kind=4 replays=5 all_ranks=6 exact=1 canary=1 final_hash=de5371b2ab9ce325
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-245760 rank=0 blocks=64 epoch=78 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-245760 rank=1 blocks=64 epoch=78 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-245760 rank=2 blocks=64 epoch=78 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-245760 rank=3 blocks=64 epoch=78 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-245760 rank=4 blocks=64 epoch=78 equal=1
+EPOCH_RANK sequence=96B-after_dispatch_graph-after-245760 rank=5 blocks=64 epoch=78 equal=1
+PASS_EPOCH sp2p-ar-path entry=graph_append device=0 rank=0 ranks=6 bytes=245760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=0 rank=0 bytes=245760 rank-order-exact=1 cross-payload=2V min-bytes=204800 entry=graph_append
+p2p-ar-path entry=graph_append device=1 rank=1 ranks=6 bytes=245760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=1 rank=1 bytes=245760 rank-order-exact=1 cross-payload=2V min-bytes=204800 entry=graph_append
+p2p-ar-path entry=graph_append device=2 rank=2 ranks=6 bytes=245760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=2 rank=2 bytes=245760 rank-order-exact=1 cross-payload=2V min-bytes=204800 entry=graph_append
+p2p-ar-path entry=graph_append device=3 rank=3 ranks=6 bytes=245760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=3 rank=3 bytes=245760 rank-order-exact=1 cross-payload=2V min-bytes=204800 entry=graph_append
+p2p-ar-path entry=graph_append device=4 rank=4 ranks=6 bytes=245760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=4 rank=4 bytes=245760 rank-order-exact=1 cross-payload=2V min-bytes=204800 entry=graph_append
+p2p-ar-path entry=graph_append device=5 rank=5 ranks=6 bytes=245760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=5 rank=5 bytes=245760 rank-order-exact=1 cross-payload=2V min-bytes=204800 entry=graph_append
+equence=96B-after_dispatch_graph-after-245760 all_ranks=6 all_blocks=64 epoch=78 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_dispatch_graph bytes=96 rep=0 all_rank_complete_wall_ms=0.224822 max_rank_event_ms=0.179200 rank_event_ms=[0.179200,0.173984,0.168960,0.162816,0.157760,0.154624]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=245760 stage=after_dispatch_graph bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=78
+PATH_ASSERT mode=default entry=graph_append bytes=245760 rank=0 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=245760 rank=1 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=245760 rank=2 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=245760 rank=3 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=245760 rank=4 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=graph_append bytes=245760 rank=5 ranks=6 kind=4 algorithm=relay6_ordered min_bytes=204800 blocks=64 rank_order_exact=1
+INPUT_CHANGE mode=default entry=graph_append bytes=245760 rank=0 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=245760 rank=1 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=245760 rank=2 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=245760 rank=3 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=245760 rank=4 changed=1
+INPUT_CHANGE mode=default entry=graph_append bytes=245760 rank=5 changed=1
+GRAPH_READY mode=default entry=graph_append bytes=245760 rank=0 kind=4 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=245760 rank=1 kind=4 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=245760 rank=2 kind=4 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=245760 rank=3 kind=4 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=245760 rank=4 kind=4 replay_count=5
+GRAPH_READY mode=default entry=graph_append bytes=245760 rank=5 kind=4 replay_count=5
+EPOCH_RANK sequence=graph_append-245760-A0 rank=0 blocks=64 epoch=79 equal=1
+EPOCH_RANK sequence=graph_append-245760-A0 rank=1 blocks=64 epoch=79 equal=1
+EPOCH_RANK sequence=graph_append-245760-A0 rank=2 blocks=64 epoch=79 equal=1
+EPOCH_RANK sequence=graph_append-245760-A0 rank=3 blocks=64 epoch=79 equal=1
+EPOCH_RANK sequence=graph_append-245760-A0 rank=4 blocks=64 epoch=79 equal=1
+EPOCH_RANK sequence=graph_append-245760-A0 rank=5 blocks=64 epoch=79 equal=1
+PASS_EPOCH sequence=graph_append-245760-A0 all_ranks=6 all_blocks=64 epoch=79 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=A0 bytes=245760 rep=0 all_rank_complete_wall_ms=0.524600 max_rank_event_ms=0.479136 rank_event_ms=[0.479136,0.476064,0.471040,0.462848,0.460768,0.456608]
+PASS_OUTPUT mode=default entry=graph_append bytes=245760 frame=A0 rep=0 ranks=6 exact=1 canary=1 hash=25d3422e64a79d65
+EPOCH_RANK sequence=graph_append-245760-B rank=0 blocks=64 epoch=80 equal=1
+EPOCH_RANK sequence=graph_append-245760-B rank=1 blocks=64 epoch=80 equal=1
+EPOCH_RANK sequence=graph_append-245760-B rank=2 blocks=64 epoch=80 equal=1
+EPOCH_RANK sequence=graph_append-245760-B rank=3 blocks=64 epoch=80 equal=1
+EPOCH_RANK sequence=graph_append-245760-B rank=4 blocks=64 epoch=80 equal=1
+EPOCH_RANK sequence=graph_append-245760-B rank=5 blocks=64 epoch=80 equal=1
+PASS_EPOCH sequence=graph_append-245760-B all_ranks=6 all_blocks=64 epoch=80 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=B bytes=245760 rep=1 all_rank_complete_wall_ms=0.518258 max_rank_event_ms=0.473184 rank_event_ms=[0.473184,0.471040,0.464896,0.457728,0.454784,0.451584]
+PASS_OUTPUT mode=default entry=graph_append bytes=245760 frame=B rep=1 ranks=6 exact=1 canary=1 hash=881e9968910ba8e5
+EPOCH_RANK sequence=grapp2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x100380faba0
+p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f80b0
+p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8170
+p2p allreduce launch: rank 3 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f8230
+p2p allreduce launch: rank 4 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f82f0
+p2p allreduce launch: rank 5 allreduce_0 n=24 zero=0 kind=0 stream=0x100390f83b0
+h_append-245760-A2 rank=0 blocks=64 epoch=81 equal=1
+EPOCH_RANK sequence=graph_append-245760-A2 rank=1 blocks=64 epoch=81 equal=1
+EPOCH_RANK sequence=graph_append-245760-A2 rank=2 blocks=64 epoch=81 equal=1
+EPOCH_RANK sequence=graph_append-245760-A2 rank=3 blocks=64 epoch=81 equal=1
+EPOCH_RANK sequence=graph_append-245760-A2 rank=4 blocks=64 epoch=81 equal=1
+EPOCH_RANK sequence=graph_append-245760-A2 rank=5 blocks=64 epoch=81 equal=1
+PASS_EPOCH sequence=graph_append-245760-A2 all_ranks=6 all_blocks=64 epoch=81 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=A2 bytes=245760 rep=2 all_rank_complete_wall_ms=0.519371 max_rank_event_ms=0.474112 rank_event_ms=[0.474112,0.472064,0.466944,0.458752,0.457728,0.452608]
+PASS_OUTPUT mode=default entry=graph_append bytes=245760 frame=A2 rep=2 ranks=6 exact=1 canary=1 hash=25d3422e64a79d65
+PASS_ABA mode=default entry=graph_append bytes=245760 frames=A0,B,A2 replay_count=5 exact=1 canary=1 ranks=6
+EPOCH_RANK sequence=graph_append-245760-C rank=0 blocks=64 epoch=82 equal=1
+EPOCH_RANK sequence=graph_append-245760-C rank=1 blocks=64 epoch=82 equal=1
+EPOCH_RANK sequence=graph_append-245760-C rank=2 blocks=64 epoch=82 equal=1
+EPOCH_RANK sequence=graph_append-245760-C rank=3 blocks=64 epoch=82 equal=1
+EPOCH_RANK sequence=graph_append-245760-C rank=4 blocks=64 epoch=82 equal=1
+EPOCH_RANK sequence=graph_append-245760-C rank=5 blocks=64 epoch=82 equal=1
+PASS_EPOCH sequence=graph_append-245760-C all_ranks=6 all_blocks=64 epoch=82 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=C bytes=245760 rep=3 all_rank_complete_wall_ms=0.516312 max_rank_event_ms=0.471040 rank_event_ms=[0.471040,0.467968,0.462848,0.456640,0.453632,0.449536]
+PASS_OUTPUT mode=default entry=graph_append bytes=245760 frame=C rep=3 ranks=6 exact=1 canary=1 hash=5b03bf702d5a8065
+EPOCH_RANK sequence=graph_append-245760-NEGZERO rank=0 blocks=64 epoch=83 equal=1
+EPOCH_RANK sequence=graph_append-245760-NEGZERO rank=1 blocks=64 epoch=83 equal=1
+EPOCH_RANK sequence=graph_append-245760-NEGZERO rank=2 blocks=64 epoch=83 equal=1
+EPOCH_RANK sequence=graph_append-245760-NEGZERO rank=3 blocks=64 epoch=83 equal=1
+EPOCH_RANK sequence=graph_append-245760-NEGZERO rank=4 blocks=64 epoch=83 equal=1
+EPOCH_RANK sequence=graph_append-245760-NEGZERO rank=5 blocks=64 epoch=83 equal=1
+PASS_EPOCH sequence=graph_append-245760-NEGZERO all_ranks=6 all_blocks=64 epoch=83 continuous=1
+COMM_TIMING mode=default entry=graph_append phase=NEGZERO bytes=245760 rep=4 all_rank_complete_wall_ms=0.531985 max_rank_event_ms=0.486400 rank_event_ms=[0.486400,0.482304,0.477248,0.471968,0.467968,0.463808]
+PASS_OUTPUT mode=default entry=graph_append bytes=245760 frame=NEGZERO rep=4 ranks=6 exact=1 canary=1 hash=de5371b2ab9ce325
+PASS_NEGATIVE_ZERO mode=default entry=graph_append bytes=245760 expected_bits=80000000 ranks=6 exact=1 canary=1
+GRAPH_RETIRE mode=default entry=graph_append bytes=245760 all_ranks=6 all_handles_null=1
+PASS_GRAPH_CASE mode=default entry=graph_append bytes=245760 kind=4 replays=5 all_ranks=6 exact=1 canary=1 final_hash=de5371b2ab9ce325
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=0 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=1 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=2 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=3 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=4 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+PATH_ASSERT mode=default entry=dispatch_eager bytes=96 rank=5 ranks=6 kind=0 algorithm=one_shot min_bytes=204800 blocks=64 rank_order_exact=1
+EPOCH_RANK sequence=96B-after_graph_append-after-245760 rank=0 blocks=64 epoch=84 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-245760 rank=1 blocks=64 epoch=84 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-245760 rank=2 blocks=64 epoch=84 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-245760 rank=3 blocks=64 epoch=84 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-245760 rank=4 blocks=64 epoch=84 equal=1
+EPOCH_RANK sequence=96B-after_graph_append-after-245760 rank=5 blocks=64 epoch=84 equal=1
+PASS_EPOCH sequence=96B-after_graph_append-after-245760 all_ranks=6 all_blocks=64 epoch=84 continuous=1
+COMM_TIMING mode=default entry=dispatch_eager phase=after_graph_append bytes=96 rep=0 all_rank_complete_wall_ms=0.207386 max_rank_event_ms=0.160768 rank_event_ms=[0.160768,0.155648,0.150496,0.144384,0.139264,0.135168]
+PASS_INTERLEAVE_96B mode=default after_payload_bytes=245760 stage=after_graph_append bytes=96 kind=0 same_communicator=1 exact=1 canary=1 epoch=84
+PASS_PAYLOAD mode=default bytes=245760 kind=4 graph_replays_per_entry=5 entries=dispatch,graph_append eager=1 interleaved_96b=3 exact=1 canary=1
+PASS_SMALL_RELAY_V97 mode=default threshold=204800 payloads_complete=1 communicator_count=1 graph_replays_per_entry=5 all_rank_epoch_checks=1 exact=1 canary=1

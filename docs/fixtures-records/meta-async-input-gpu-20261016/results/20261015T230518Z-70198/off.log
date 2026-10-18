@@ -1,0 +1,38 @@
+ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+RUN_CONFIG mode=off GGML_META_ASYNC_INPUTS=0
+DEVICE member=0 name=CUDA0 pci=0035:03:00.0
+DEVICE member=1 name=CUDA1 pci=0035:04:00.0
+DEVICE member=2 name=CUDA2 pci=0035:05:00.0
+INPUT_SCOPE_PLAN family=A tensor=A_compute_input_0 flag_input=1 buffer_meta=1 usage=COMPUTE scheduler_backend=Meta graph_leaf=1
+INPUT_SCOPE_PLAN family=A tensor=A_compute_input_1 flag_input=1 buffer_meta=1 usage=COMPUTE scheduler_backend=Meta graph_leaf=1
+INPUT_SCOPE_PLAN family=A tensor=A_compute_input_2 flag_input=1 buffer_meta=1 usage=COMPUTE scheduler_backend=Meta graph_leaf=1
+INPUT_SCOPE_PLAN family=B tensor=B_compute_input_0 flag_input=1 buffer_meta=1 usage=COMPUTE scheduler_backend=Meta graph_leaf=1
+INPUT_SCOPE_PLAN family=B tensor=B_compute_input_1 flag_input=1 buffer_meta=1 usage=COMPUTE scheduler_backend=Meta graph_leaf=1
+INPUT_SCOPE_PLAN family=B tensor=B_compute_input_2 flag_input=1 buffer_meta=1 usage=COMPUTE scheduler_backend=Meta graph_leaf=1
+OWNERS A_sched=0x100376b22a0 A_meta=0x1003515eb80 A_input=0x1003794ac20 B_sched=0x100377fe640 B_meta=0x100376b1e40 B_input=0x10037f4f5e0 distinct_schedulers=1 distinct_meta_contexts=1
+CASE_BEGIN family=A phase=A-before-B frame=0 partial_before_readback=0
+READBACK_BARRIER family=A phase=A-before-B point=after-full-before-partial exact=1
+READBACK_BARRIER family=A phase=A-before-B point=after-partial exact=1
+SCOPE_FINISH family=A phase=A-before-B sources_mutated_and_freed=1
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp:1166: GGML_ASSERT(ggml_backend_buffer_is_meta(tensor->buffer)) failed
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v57/lib/libggml-base.so.0(+0x24388)[0x7fff79de4388]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v57/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fff79de4988]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v57/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fff79de4b24]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v57/lib/libggml-base.so.0(+0x7200c)[0x7fff79e3200c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v57/lib/libggml-base.so.0(+0x8a108)[0x7fff79e4a108]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v57/lib/libggml-base.so.0(ggml_backend_graph_compute_async+0x2c)[0x7fff79e0a4ac]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v57/lib/libggml-base.so.0(+0x55a40)[0x7fff79e15a40]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v57/lib/libggml-base.so.0(ggml_backend_sched_graph_compute_async+0x54)[0x7fff79e1d204]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/meta-async-input-gpu-20261016/bin/meta-async-input-gpu-fixture(+0x4b88)[0x125bf4b88]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/meta-async-input-gpu-20261016/bin/meta-async-input-gpu-fixture(+0x2ab8)[0x125bf2ab8]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fff5cb74d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fff5cb74f6c]

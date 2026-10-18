@@ -1,0 +1,35 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+V309_DEVICE rank=0 name=CUDA0 free=16582508544 total=16911433728
+V309_DEVICE rank=1 name=CUDA1 free=16583294976 total=16911433728
+V309_DEVICE rank=2 name=CUDA2 free=16583294976 total=16911433728
+V309_DEVICE rank=3 name=CUDA3 free=16582639616 total=16911433728
+V309_DEVICE rank=4 name=CUDA4 free=16569335808 total=16911433728
+V309_DEVICE rank=5 name=CUDA5 free=16571695104 total=16911433728
+PP pinned inputs requested=1 selected=1 scheduler=0x1003d0edb50 copies=4 cap=268435456 reset_preserves_slots=1 host_slots=4 device_ring_unchanged=1
+V309_ALLOC frame=0 graph_slot=0 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=5146 reset_pending_transition=0 alloc_pending_transition=0
+PP pinned input allocation scheduler=0x1003d0edb50 backend=1 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=5099520 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x1003d0edb50 backend=CUDA1 slot=0 source=v309_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+CUDA error: an illegal memory access was encountered
+  current device: 1, in function ggml_cuda_kernel_can_use_pdl at /home/debian/ac922-monster/src/ggml/src/ggml-cuda/common.cuh:1807
+  cudaFuncGetAttributes(&attr, kernel)
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-cuda/ggml-cuda.cu:177: CUDA error
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v310/lib/libggml-base.so.0(+0x29128)[0x7fff8b679128]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v310/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fff8b679728]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v310/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fff8b6798c4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v310/lib/libggml-cuda.so.0(_Z15ggml_cuda_errorPKcS0_S0_iS0_+0xbc)[0x7fff8ba660fc]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v310/lib/libggml-cuda.so.0(_Z18ggml_cuda_op_scaleR25ggml_backend_cuda_contextP11ggml_tensor+0xb20)[0x7fff8bc8d6a0]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v310/lib/libggml-cuda.so.0(+0x2a27a4)[0x7fff8ba827a4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v310/lib/libggml-cuda.so.0(+0x2adff0)[0x7fff8ba8dff0]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v310/lib/libggml-cuda.so.0(+0x2bb478)[0x7fff8ba9b478]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v310/lib/libggml-base.so.0(ggml_backend_graph_compute_async+0x2c)[0x7fff8b6a1c2c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v310/lib/libggml-base.so.0(+0x5bc2c)[0x7fff8b6abc2c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v310/lib/libggml-base.so.0(ggml_backend_sched_graph_compute_async+0x54)[0x7fff8b6b8f24]
+fixtures/single-device-input-v309-20261018/build-v310-20261018-link4/single-device-input-v309(+0x46dc)[0x11bc546dc]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fff8aeb4d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fff8aeb4f6c]

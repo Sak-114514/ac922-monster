@@ -1,0 +1,31 @@
+GPU_GUARD_PASS GPU-80452dac-e8c1-99fd-225c-ea846276ae6f=2MiB/40C GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb=2MiB/39C GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb=3MiB/39C GPU-fadb0459-4d30-907b-289a-862b3014f165=2MiB/39C GPU-760ce501-32f6-69b6-215b-1020da68bbfc=7MiB/39C GPU-d3558623-deca-c702-3cc0-01b4aa9c667a=6MiB/40C
+RUN_CONFIG tag=20261016T100320Z-grid32-201223 grid=32 runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77 timeout=60s decode_bytes=163840 prefill_bytes=10485760
+PROBE_SHA256 3c87ca88138ed3790e836183ba7a164f38d2df36cc3a3b053b9d385b4a65b179  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ar6-small-payload-grid-20261016/build/ar6-small-payload-grid-v77
+SOURCE_SHA256 eeb00eba9179963711376acc66b43bef6247386cdae4b15d38a55a4256db725a  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ar6-small-payload-grid-20261016/ar6-small-payload-grid.cpp
+MANIFEST_SHA256 5d5570afb0bd16cc765232020387b615d7466c3cca20cd23c7b2d1b1c518a9bd  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/runtime-manifest.json
+AR6_ROUTE_SCOPE source_and_forced_env_inference=1 runtime_algorithm_marker=unavailable_in_V77
+	linux-vdso64.so.1 (0x00007fffa29a0000)
+	libggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml-cuda.so.0 (0x00007fff94ed0000)
+	libggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml-base.so.0 (0x00007fff94d50000)
+	libggml.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml.so.0 (0x00007fff94d20000)
+	libggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml-cpu.so.0 (0x00007fff94b60000)
+	libstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fff94830000)
+	libgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fff947f0000)
+	libc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fff94590000)
+	libcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fff944b0000)
+	libcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fff8d790000)
+	libcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fff8b9d0000)
+	libnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff89b70000)
+	libm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fff89a40000)
+	/lib64/ld64.so.2 (0x00007fffa29c0000)
+	libgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fff899c0000)
+	libdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff89990000)
+	libpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff89960000)
+	librt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff89930000)
+	libcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff75aa0000)
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 00000004:04:00.0, 2 MiB, 40
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 00000004:05:00.0, 2 MiB, 39
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 00000004:06:00.0, 3 MiB, 39
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 00000035:03:00.0, 2 MiB, 39
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 00000035:04:00.0, 7 MiB, 39
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 00000035:05:00.0, 6 MiB, 40

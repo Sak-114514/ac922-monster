@@ -1,0 +1,11 @@
+R4 medium qualification memory accounting
+Captured 2026-10-16 after the one authorized GPU run.
+
+The before snapshot (memory-before.json) recorded system-wide MemAvailable and GPU memory, but did not capture per-NUMA-node DDR values. On this host, system-wide MemAvailable includes CUDA GPU NUMA nodes 250-255; it must not be interpreted as available host DDR. Do not infer an exact before-run DDR figure from it.
+
+After-run NUMA snapshot (numa-after.txt):
+- DDR nodes 0 and 8 total: 32,328.75 MiB = 31.57 GiB.
+- DDR nodes 0 and 8 free: 25,766.81 MiB = 25.16 GiB.
+- GPU NUMA nodes 250-255 each expose about 16 GiB of device memory to Linux NUMA accounting; their free memory inflates system-wide MemAvailable.
+- R4 fixed CUPTI callback pool: 64 x 4 MiB = 256 MiB host virtual capacity. The event table is about 304 MiB BSS, demand-paged; these are separate from device HBM.
+- No CUPTI internal device-buffer growth was made; original host-pinned CUPTI buffer attributes were retained.

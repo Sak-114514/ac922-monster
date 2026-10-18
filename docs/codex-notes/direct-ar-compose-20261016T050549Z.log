@@ -1,0 +1,44 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA Graph id 1 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 2 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 3 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 4 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 5 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 6 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 1 reused
+CUDA Graph id 2 reused
+CUDA Graph id 3 reused
+CUDA Graph id 4 reused
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+p2p allreduce launch: rank 0 allreduce_0 n=1048832 zero=0 kind=1 stream=0x1000a591ec0
+p2p allreduce launch: rank 1 allreduce_0 n=1048832 zero=0 kind=1 stream=0x10006e9c5d0
+p2p allreduce launch: rank 2 allreduce_0 n=1048832 zero=0 kind=1 stream=0x10007b54590
+p2p allreduce launch: rank 3 allreduce_0 n=1048832 zero=0 kind=1 stream=0x100085ea340
+p2p allreduce launch: rank 4 allreduce_0 n=1048832 zero=0 kind=1 stream=0x10009088f70
+p2p allreduce launch: rank 5 allreduce_0 n=1048832 zero=0 kind=1 stream=0x10009b314f0
+PASS_DIRECT_AR label=ordinary-segmented bytes=4195328 ranks=6 exact=1 canary=1
+CUDA Graph id 1 reused
+CUDA Graph id 2 reused
+CUDA Graph id 3 reused
+CUDA Graph id 4 reused
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA compose ready ranks=6 children_per_rank=1 ar6_per_rank=1 expected_ar6=1
+PASS_DIRECT_AR label=composed-segmented-first bytes=4195328 ranks=6 exact=1 canary=1
+PASS_DIRECT_AR label=composed-segmented-changed-input bytes=4195328 ranks=6 exact=1 canary=1
+DIRECT_SEGMENTED_AR_AND_COMPOSE_PASS

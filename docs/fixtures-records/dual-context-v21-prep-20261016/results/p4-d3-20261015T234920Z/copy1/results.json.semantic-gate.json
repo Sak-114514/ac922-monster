@@ -1,0 +1,420 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-15T23:53:10.927250+00:00",
+  "checker": "run_semantic_native.evaluate_case",
+  "generated_python_executed": false,
+  "id_slot_policy": "null; local bank/lane IDs are not HTTP slots",
+  "status": "pass",
+  "semantic_scenario_count": 12,
+  "scenarios": [
+    {
+      "label": "v21-copy1-serial-sem-00-0",
+      "kind": "semantic_serial_reference",
+      "status": "pass",
+      "case_count": 2,
+      "cases": [
+        {
+          "id": "capital-en",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "Paris"
+        },
+        {
+          "id": "arithmetic-zh",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "9805"
+        }
+      ],
+      "missing_lane_ids": [],
+      "unexpected_lane_ids": []
+    },
+    {
+      "label": "v21-copy1-serial-sem-00-1",
+      "kind": "semantic_serial_reference",
+      "status": "pass",
+      "case_count": 2,
+      "cases": [
+        {
+          "id": "logic-en",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "NO"
+        },
+        {
+          "id": "strict-json-zh",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+        }
+      ],
+      "missing_lane_ids": [],
+      "unexpected_lane_ids": []
+    },
+    {
+      "label": "v21-copy1-dual-sem-00",
+      "kind": "semantic_p4_gate",
+      "status": "pass",
+      "case_count": 4,
+      "cases": [
+        {
+          "id": "capital-en",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "Paris"
+        },
+        {
+          "id": "arithmetic-zh",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "9805"
+        },
+        {
+          "id": "logic-en",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "NO"
+        },
+        {
+          "id": "strict-json-zh",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+        }
+      ],
+      "missing_lane_ids": [],
+      "unexpected_lane_ids": []
+    },
+    {
+      "label": "v21-copy1-serial-sem-01-0",
+      "kind": "semantic_serial_reference",
+      "status": "pass",
+      "case_count": 2,
+      "cases": [
+        {
+          "id": "python-clamp",
+          "checker": "clamp_ast",
+          "status": "pass",
+          "reason": "AST matches a safe clamp form with commuted two-argument min/max; generated code was not executed",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "def clamp(x, low, high):\n    return max(low, min(x, high))"
+        },
+        {
+          "id": "vocabulary-en-zh",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "blue"
+        }
+      ],
+      "missing_lane_ids": [],
+      "unexpected_lane_ids": []
+    },
+    {
+      "label": "v21-copy1-serial-sem-01-1",
+      "kind": "semantic_serial_reference",
+      "status": "pass",
+      "case_count": 2,
+      "cases": [
+        {
+          "id": "parallel2-add-en",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"nonce\":\"052091280d\",\"answer\":423}"
+        },
+        {
+          "id": "parallel2-subtract-zh",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"nonce\":\"c66a0d251e\",\"answer\":435}"
+        }
+      ],
+      "missing_lane_ids": [],
+      "unexpected_lane_ids": []
+    },
+    {
+      "label": "v21-copy1-dual-sem-01",
+      "kind": "semantic_p4_gate",
+      "status": "pass",
+      "case_count": 4,
+      "cases": [
+        {
+          "id": "python-clamp",
+          "checker": "clamp_ast",
+          "status": "pass",
+          "reason": "AST matches a safe clamp form with commuted two-argument min/max; generated code was not executed",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "def clamp(x, low, high):\n    return max(low, min(x, high))"
+        },
+        {
+          "id": "vocabulary-en-zh",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "blue"
+        },
+        {
+          "id": "parallel2-add-en",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"nonce\":\"052091280d\",\"answer\":423}"
+        },
+        {
+          "id": "parallel2-subtract-zh",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"nonce\":\"c66a0d251e\",\"answer\":435}"
+        }
+      ],
+      "missing_lane_ids": [],
+      "unexpected_lane_ids": []
+    },
+    {
+      "label": "v21-copy1-serial-sem-02-0",
+      "kind": "semantic_serial_reference",
+      "status": "pass",
+      "case_count": 2,
+      "cases": [
+        {
+          "id": "parallel4-add",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"nonce\":\"ef76e40e4a\",\"answer\":423}"
+        },
+        {
+          "id": "parallel4-subtract",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"nonce\":\"599754b731\",\"answer\":435}"
+        }
+      ],
+      "missing_lane_ids": [],
+      "unexpected_lane_ids": []
+    },
+    {
+      "label": "v21-copy1-serial-sem-02-1",
+      "kind": "semantic_serial_reference",
+      "status": "pass",
+      "case_count": 2,
+      "cases": [
+        {
+          "id": "parallel4-multiply",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"nonce\":\"d17d03f22e\",\"answer\":204}"
+        },
+        {
+          "id": "parallel4-divide",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"nonce\":\"4d3a32cd57\",\"answer\":125}"
+        }
+      ],
+      "missing_lane_ids": [],
+      "unexpected_lane_ids": []
+    },
+    {
+      "label": "v21-copy1-dual-sem-02",
+      "kind": "semantic_p4_gate",
+      "status": "pass",
+      "case_count": 4,
+      "cases": [
+        {
+          "id": "parallel4-add",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"nonce\":\"ef76e40e4a\",\"answer\":423}"
+        },
+        {
+          "id": "parallel4-subtract",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"nonce\":\"599754b731\",\"answer\":435}"
+        },
+        {
+          "id": "parallel4-multiply",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"nonce\":\"d17d03f22e\",\"answer\":204}"
+        },
+        {
+          "id": "parallel4-divide",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"nonce\":\"4d3a32cd57\",\"answer\":125}"
+        }
+      ],
+      "missing_lane_ids": [],
+      "unexpected_lane_ids": []
+    },
+    {
+      "label": "v21-copy1-serial-sem-03-0",
+      "kind": "semantic_serial_reference",
+      "status": "pass",
+      "case_count": 2,
+      "cases": [
+        {
+          "id": "slot-reuse-0",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"fresh_nonce\":\"82a171648c\",\"result\":22}"
+        },
+        {
+          "id": "slot-reuse-1",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"fresh_nonce\":\"e65d0878a5\",\"result\":26}"
+        }
+      ],
+      "missing_lane_ids": [],
+      "unexpected_lane_ids": []
+    },
+    {
+      "label": "v21-copy1-serial-sem-03-1",
+      "kind": "semantic_serial_reference",
+      "status": "pass",
+      "case_count": 2,
+      "cases": [
+        {
+          "id": "slot-reuse-2",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"fresh_nonce\":\"089d1ff4f9\",\"result\":30}"
+        },
+        {
+          "id": "slot-reuse-3",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"fresh_nonce\":\"9de14ed1dc\",\"result\":34}"
+        }
+      ],
+      "missing_lane_ids": [],
+      "unexpected_lane_ids": []
+    },
+    {
+      "label": "v21-copy1-dual-sem-03",
+      "kind": "semantic_p4_gate",
+      "status": "pass",
+      "case_count": 4,
+      "cases": [
+        {
+          "id": "slot-reuse-0",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"fresh_nonce\":\"82a171648c\",\"result\":22}"
+        },
+        {
+          "id": "slot-reuse-1",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"fresh_nonce\":\"e65d0878a5\",\"result\":26}"
+        },
+        {
+          "id": "slot-reuse-2",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"fresh_nonce\":\"089d1ff4f9\",\"result\":30}"
+        },
+        {
+          "id": "slot-reuse-3",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"fresh_nonce\":\"9de14ed1dc\",\"result\":34}"
+        }
+      ],
+      "missing_lane_ids": [],
+      "unexpected_lane_ids": []
+    }
+  ],
+  "errors": []
+}

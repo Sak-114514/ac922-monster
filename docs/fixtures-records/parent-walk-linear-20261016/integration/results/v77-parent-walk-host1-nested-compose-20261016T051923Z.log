@@ -1,0 +1,262 @@
+start=2026-10-16T05:19:23Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/parent-walk-linear-20261016/integration/parent-walk-integration-fixture-v77-parent-walk-host1
+parent_manifest=1
+nested_compose=1
+451692d71ea97547dd6554a31cafb4494f8c8efff132c95e4edbf8e035164429  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/parent-walk-linear-20261016/integration/parent-walk-integration-fixture-v77-parent-walk-host1
+visible=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a
+limits temp<58C preexisting<=512MiB runtime<=1024MiB timeout=45s
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 2 MiB, 39
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 38
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 2 MiB, 38
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 3 MiB, 38
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 6 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 6 MiB, 39
+ggml[2] ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+ggml[2]   Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2] P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml[2] ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml[2] ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml[2] ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml[2] P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml[2] ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml[2] ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml[2] ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml[2] ggml_backend_meta_context: nested native GPU AllReduce opt-in requested; unsupported PARTIAL boundaries fail closed
+ggml[2] P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml[2] ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml[3] initialize_nested_gpu_ar: nested NCCL fallback rejected; strict F32 NCCL is not active
+ggml[2] meta-nested-async context=0x100098f0d60 requested=1 selected=1 reason=stream_order_with_cold_guard
+ggml[2] meta-nested-gpu-ar opt-in=1 topology=2x3 leaves=6 order=A0,A1,A2,B0,B1,B2 p2p6=1 nccl6_f32=0
+ggml[2] meta-fragment-cache context=0x100098f0d60 requested=1 enabled=0 reason=ineligible_parent_or_topology scope=0 members=2
+ggml[2] meta-context-submit FIFO active context=0x100098f0d60 members=2 CPU_enqueue_atomic=1 GPU_tail_wait=1
+ggml[2] meta-parent-manifest context=0x100098f0d60 selected=1 calls=1 generation=1 forced_rebuilds=0 validation_us=174
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=0 phase=prepare reason=private_cuda_api_available
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=0 phase=record generation=1 replays=0 recordings=0 declines=1 source=validated_prepared_fragments
+ggml[2] meta-fragment-cache context=0x100098f1280 requested=1 enabled=1 parent=1 fragment=0/3 child_uid=3 hit=0 hits=0 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-context-submit FIFO active context=0x100098f1280 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+CUDA graph path config ctx=0x1000a199010 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000a199010 device=0 uid=9 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffd3d032800
+CUDA graph path config ctx=0x1000a19a290 device=1 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000a19a290 device=1 uid=11 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffd3d232800
+CUDA graph path config ctx=0x1000a19b510 device=2 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000a19b510 device=2 uid=13 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffd3d432800
+CUDA graph fallback ctx=0x1000a199010 device=0 uid=10 nodes=2 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffd3d032900
+CUDA graph fallback ctx=0x1000a19a290 device=1 uid=12 nodes=2 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffd3d232900
+CUDA graph fallback ctx=0x1000a19b510 device=2 uid=14 nodes=2 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffd3d432900
+ggml[2] meta-fragment-cache context=0x1000b26bad0 requested=1 enabled=1 parent=1 fragment=0/3 child_uid=6 hit=0 hits=0 misses=1 retained=0 bytes=0 evictions=0
+ggml[2] meta-context-submit FIFO active context=0x1000b26bad0 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+CUDA graph path config ctx=0x1000b26c050 device=3 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000b26c050 device=3 uid=15 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1000b26d370 device=4 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000b26d370 device=4 uid=17 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1000b26e690 device=5 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=1
+CUDA graph fallback ctx=0x1000b26e690 device=5 uid=19 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph fallback ctx=0x1000b26c050 device=3 uid=16 nodes=2 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1000b26d370 device=4 uid=18 nodes=2 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1000b26e690 device=5 uid=20 nodes=2 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+ggml[2] meta-nested-gpu-ar sequence=1 route=p2p6-rank-order-async ranks=A0,A1,A2,B0,B1,B2 bytes=32 tensors=6 host_stage=0
+ggml[2] meta-nested-async cold-drain context=0x100098f0d60 ranks=6 before_driver_work=1
+ggml[2] meta-fragment-cache context=0x100098f1280 requested=1 enabled=1 parent=1 fragment=1/3 child_uid=4 hit=0 hits=0 misses=2 retained=0 bytes=0 evictions=0
+ggml[2] meta-fragment-cache context=0x1000b26bad0 requested=1 enabled=1 parent=1 fragment=1/3 child_uid=7 hit=0 hits=0 misses=2 retained=0 bytes=0 evictions=0
+ggml[2] meta-nested-gpu-ar sequence=2 route=p2p6-rank-order-async ranks=A0,A1,A2,B0,B1,B2 bytes=32 tensors=6 host_stage=0
+ggml[2] meta-nested-async cold-drain context=0x100098f0d60 ranks=6 before_driver_work=1
+ggml[2] meta-fragment-cache context=0x100098f1280 requested=1 enabled=1 parent=1 fragment=2/3 child_uid=5 hit=0 hits=0 misses=3 retained=0 bytes=0 evictions=0
+ggml[2] meta-fragment-cache context=0x1000b26bad0 requested=1 enabled=1 parent=1 fragment=2/3 child_uid=8 hit=0 hits=0 misses=3 retained=0 bytes=0 evictions=0
+ggml[2] meta-fragment-cache context=0x100098f0d60 requested=1 enabled=0 reason=ineligible_parent_or_topology scope=0 members=2
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=1 prepared_hits=1 full=1 bytes=60160 generation=1
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=0 phase=record generation=1 replays=0 recordings=0 declines=2 source=validated_prepared_fragments
+ggml[2] meta-fragment-cache context=0x100098f1280 requested=1 enabled=1 parent=1 fragment=0/3 child_uid=3 hit=0 hits=0 misses=4 retained=1 bytes=13728 evictions=0
+ggml[2] meta-fragment-cache collective-generation context=0x100098f1280 generation=1 high_water_bytes=32 invalidated_all=1
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 2 subgraphs: merged, 1 chunks
+ggml[2] meta-fragment-cache context=0x1000b26bad0 requested=1 enabled=1 parent=1 fragment=0/3 child_uid=6 hit=0 hits=0 misses=4 retained=1 bytes=13728 evictions=0
+ggml[2] meta-fragment-cache collective-generation context=0x1000b26bad0 generation=1 high_water_bytes=32 invalidated_all=1
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 2 subgraphs: merged, 1 chunks
+ggml[2] meta-nested-gpu-ar sequence=3 route=p2p6-rank-order-async ranks=A0,A1,A2,B0,B1,B2 bytes=32 tensors=6 host_stage=0
+ggml[2] meta-fragment-cache context=0x100098f1280 requested=1 enabled=1 parent=1 fragment=1/3 child_uid=4 hit=0 hits=0 misses=5 retained=1 bytes=38936 evictions=0
+ggml[2] meta-nested-async cold-drain context=0x100098f0d60 ranks=6 before_driver_work=1
+ggml[3] ggml_backend_meta_graph_compute: graph 5 nodes, 2 subgraphs: merged, 1 chunks
+ggml[2] meta-fragment-cache context=0x1000b26bad0 requested=1 enabled=1 parent=1 fragment=1/3 child_uid=7 hit=0 hits=0 misses=5 retained=1 bytes=38936 evictions=0
+ggml[3] ggml_backend_meta_graph_compute: graph 5 nodes, 2 subgraphs: merged, 1 chunks
+ggml[2] meta-nested-gpu-ar sequence=4 route=p2p6-rank-order-async ranks=A0,A1,A2,B0,B1,B2 bytes=32 tensors=6 host_stage=0
+ggml[2] meta-fragment-cache context=0x100098f1280 requested=1 enabled=1 parent=1 fragment=2/3 child_uid=5 hit=0 hits=0 misses=6 retained=2 bytes=86864 evictions=0
+ggml[2] meta-nested-async cold-drain context=0x100098f0d60 ranks=6 before_driver_work=1
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 1 subgraphs: not merged, 0 chunks
+CUDA graph path active ctx=0x1000a199010 device=0 uid=75 nodes=3 mode=capture count=1
+CUDA graph path active ctx=0x1000a19a290 device=1 uid=76 nodes=3 mode=capture count=1
+CUDA graph path active ctx=0x1000a19b510 device=2 uid=77 nodes=3 mode=capture count=1
+ggml[2] meta-fragment-cache context=0x1000b26bad0 requested=1 enabled=1 parent=1 fragment=2/3 child_uid=8 hit=0 hits=0 misses=6 retained=2 bytes=86864 evictions=0
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 1 subgraphs: not merged, 0 chunks
+CUDA graph path active ctx=0x1000b26c050 device=3 uid=78 nodes=3 mode=capture count=1
+CUDA graph path active ctx=0x1000b26d370 device=4 uid=79 nodes=3 mode=capture count=1
+CUDA graph path active ctx=0x1000b26e690 device=5 uid=80 nodes=3 mode=capture count=1
+ggml[2] meta-fragment-cache context=0x100098f0d60 requested=1 enabled=0 reason=ineligible_parent_or_topology scope=0 members=2
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=2 prepared_hits=2 full=1 bytes=60160 generation=1
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=0 phase=record generation=1 replays=0 recordings=0 declines=3 source=validated_prepared_fragments
+ggml[2] meta-fragment-cache context=0x100098f1280 requested=1 enabled=1 parent=1 fragment=0/3 child_uid=3 hit=1 hits=1 misses=6 retained=2 bytes=61656 evictions=0
+CUDA graph path active ctx=0x1000a199010 device=0 uid=45 nodes=4 mode=capture count=2
+CUDA graph path active ctx=0x1000a19a290 device=1 uid=46 nodes=4 mode=capture count=2
+CUDA graph path active ctx=0x1000a19b510 device=2 uid=47 nodes=4 mode=capture count=2
+ggml[2] meta-fragment-cache context=0x1000b26bad0 requested=1 enabled=1 parent=1 fragment=0/3 child_uid=6 hit=1 hits=1 misses=6 retained=2 bytes=61656 evictions=0
+CUDA graph path active ctx=0x1000b26c050 device=3 uid=54 nodes=4 mode=capture count=2
+CUDA graph path active ctx=0x1000b26d370 device=4 uid=55 nodes=4 mode=capture count=2
+CUDA graph path active ctx=0x1000b26e690 device=5 uid=56 nodes=4 mode=capture count=2
+ggml[2] meta-nested-gpu-ar sequence=5 route=p2p6-rank-order-async ranks=A0,A1,A2,B0,B1,B2 bytes=32 tensors=6 host_stage=0
+ggml[2] meta-fragment-cache context=0x100098f1280 requested=1 enabled=1 parent=1 fragment=1/3 child_uid=4 hit=1 hits=2 misses=6 retained=2 bytes=52664 evictions=0
+ggml[2] meta-nested-async cold-drain context=0x100098f0d60 ranks=6 before_driver_work=1
+ggml[2] meta-fragment-cache context=0x1000b26bad0 requested=1 enabled=1 parent=1 fragment=1/3 child_uid=7 hit=1 hits=2 misses=6 retained=2 bytes=52664 evictions=0
+ggml[2] meta-nested-gpu-ar sequence=6 route=p2p6-rank-order-async ranks=A0,A1,A2,B0,B1,B2 bytes=32 tensors=6 host_stage=0
+CUDA graph path active ctx=0x1000a199010 device=0 uid=75 nodes=3 mode=replay count=1
+CUDA graph path active ctx=0x1000a19a290 device=1 uid=76 nodes=3 mode=replay count=1
+CUDA graph path active ctx=0x1000a19b510 device=2 uid=77 nodes=3 mode=replay count=1
+CUDA graph path active ctx=0x1000b26c050 device=3 uid=78 nodes=3 mode=replay count=1
+CUDA graph path active ctx=0x1000b26d370 device=4 uid=79 nodes=3 mode=replay count=1
+CUDA graph path active ctx=0x1000b26e690 device=5 uid=80 nodes=3 mode=replay count=1
+ggml[2] meta-fragment-cache context=0x100098f0d60 requested=1 enabled=0 reason=ineligible_parent_or_topology scope=0 members=2
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=3 prepared_hits=3 full=1 bytes=60160 generation=1
+ggml[2] meta-nested-async cold-drain context=0x100098f0d60 ranks=6 before_driver_work=1
+ggml[2] CUDA compose uploaded ranks=6 persistent_host_launchers=6
+ggml[2] CUDA compose ready ranks=6 children_per_rank=3 ar6_per_rank=2 expected_ar6=2
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=record generation=1 replays=0 recordings=1 declines=3 source=validated_prepared_fragments
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=1 replays=1 recordings=1 declines=3
+FIXTURE_MARK parent_uid_transition_begin
+ggml[2] meta-nested-async cold-drain context=0x100098f0d60 ranks=6 before_driver_work=1
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=0 phase=record generation=2 replays=1 recordings=1 declines=4 source=validated_prepared_fragments
+ggml[2] meta-fragment-cache invalidate context=0x100098f1280 reason=parent_generation
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 2 subgraphs: merged, 1 chunks
+ggml[2] meta-fragment-cache invalidate context=0x1000b26bad0 reason=parent_generation
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 2 subgraphs: merged, 1 chunks
+ggml[2] meta-nested-gpu-ar sequence=7 route=p2p6-rank-order-async ranks=A0,A1,A2,B0,B1,B2 bytes=32 tensors=6 host_stage=0
+ggml[2] meta-nested-async cold-drain context=0x100098f0d60 ranks=6 before_driver_work=1
+ggml[3] ggml_backend_meta_graph_compute: graph 5 nodes, 2 subgraphs: merged, 1 chunks
+ggml[3] ggml_backend_meta_graph_compute: graph 5 nodes, 2 subgraphs: merged, 1 chunks
+ggml[2] meta-nested-gpu-ar sequence=8 route=p2p6-rank-order-async ranks=A0,A1,A2,B0,B1,B2 bytes=32 tensors=6 host_stage=0
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 1 subgraphs: not merged, 0 chunks
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 1 subgraphs: not merged, 0 chunks
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=4 prepared_hits=4 full=2 bytes=60160 generation=2
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=0 phase=record generation=2 replays=1 recordings=1 declines=5 source=validated_prepared_fragments
+FIXTURE_MARK parent_uid_transition_end
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=0 phase=record generation=3 replays=1 recordings=1 declines=6 source=validated_prepared_fragments
+ggml[2] meta-fragment-cache invalidate context=0x100098f1280 reason=parent_generation
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 2 subgraphs: merged, 1 chunks
+CUDA graph path active ctx=0x1000a199010 device=0 uid=141 nodes=4 mode=replay count=2
+CUDA graph path active ctx=0x1000a19b510 device=2 uid=143 nodes=4 mode=replay count=2
+CUDA graph path active ctx=0x1000a19a290 device=1 uid=142 nodes=4 mode=replay count=2
+ggml[2] meta-fragment-cache invalidate context=0x1000b26bad0 reason=parent_generation
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 2 subgraphs: merged, 1 chunks
+CUDA graph path active ctx=0x1000b26c050 device=3 uid=150 nodes=4 mode=replay count=2
+CUDA graph path active ctx=0x1000b26d370 device=4 uid=151 nodes=4 mode=replay count=2
+CUDA graph path active ctx=0x1000b26e690 device=5 uid=152 nodes=4 mode=replay count=2
+ggml[3] ggml_backend_meta_graph_compute: graph 5 nodes, 2 subgraphs: merged, 1 chunks
+ggml[3] ggml_backend_meta_graph_compute: graph 5 nodes, 2 subgraphs: merged, 1 chunks
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 1 subgraphs: not merged, 0 chunks
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 1 subgraphs: not merged, 0 chunks
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=5 prepared_hits=5 full=3 bytes=60160 generation=3
+ggml[2] CUDA compose uploaded ranks=6 persistent_host_launchers=6
+ggml[2] CUDA compose ready ranks=6 children_per_rank=3 ar6_per_rank=2 expected_ar6=2
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=record generation=3 replays=1 recordings=2 declines=6 source=validated_prepared_fragments
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=2 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=6 prepared_hits=6 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=3 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=7 prepared_hits=7 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=4 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=8 prepared_hits=8 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=5 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=9 prepared_hits=9 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=6 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=10 prepared_hits=10 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=7 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=11 prepared_hits=11 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=8 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=12 prepared_hits=12 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=9 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=13 prepared_hits=13 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=10 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=14 prepared_hits=14 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=11 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=15 prepared_hits=15 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=12 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=16 prepared_hits=16 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=13 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=17 prepared_hits=17 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=14 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=18 prepared_hits=18 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=15 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=19 prepared_hits=19 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=16 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=20 prepared_hits=20 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=17 recordings=2 declines=6
+ggml[2] meta-parent-walk context=0x100098f0d60 selected=1 original_hits=21 prepared_hits=21 full=3 bytes=60160 generation=3
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=1 phase=replay generation=3 replays=18 recordings=2 declines=6
+FIXTURE_MARK same_uid_binding_transition_begin uid=1
+ggml[2] meta-nested-compose context=0x100098f0d60 requested=1 selected=0 phase=record generation=4 replays=18 recordings=2 declines=7 source=validated_prepared_fragments
+ggml[2] meta-fragment-cache invalidate context=0x100098f1280 reason=parent_generation
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 2 subgraphs: merged, 1 chunks
+ggml[2] meta-fragment-cache invalidate context=0x1000b26bad0 reason=parent_generation
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 2 subgraphs: merged, 1 chunks
+ggml[3] ggml_backend_meta_graph_compute: graph 5 nodes, 2 subgraphs: merged, 1 chunks
+ggml[3] ggml_backend_meta_graph_compute: graph 5 nodes, 2 subgraphs: merged, 1 chunks
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 1 subgraphs: not merged, 0 chunks
+ggml[3] ggml_backend_meta_graph_compute: graph 3 nodes, 1 subgraphs: not merged, 0 chunks
+FIXTURE_MARK same_uid_binding_transition_end parent_generation_invalidations=2
+ggml[2] meta-nested-compose summary context=0x100098f0d60 replays=18 recordings=2 declines=7
+ggml[2] meta-parent-manifest summary context=0x100098f0d60 calls=25 generations=4 forced_rebuilds=3 validation_us=782
+ggml[2] meta-parent-walk summary context=0x100098f0d60 original_hits=21 prepared_hits=21 full=4
+ggml[2] meta-nested-async summary context=0x100098f0d60 async_calls=14 cold_drains=16
+ggml[2] meta-nested-gpu-ar-summary context=0x100098f0d60 calls=14 log_first=8 topology=2x3
+ggml[2] meta-fragment-cache summary context=0x100098f1280 hits=6 misses=15 invalidations=3 evictions=0 retained=2
+ggml[2] meta-fragment-signature summary context=0x100098f1280 trusted_hits=6 full_describes=15
+ggml[2] meta-fragment-cache summary context=0x1000b26bad0 hits=6 misses=15 invalidations=3 evictions=0 retained=2
+ggml[2] meta-fragment-signature summary context=0x1000b26bad0 trusted_hits=6 full_describes=15
+INPUT_SPLIT_USAGE proof=1 mode=COMPUTE leaves=24 K_axis_unchanged=1 data_aliases_unchanged=1
+INPUT_SPLIT_USAGE proof=1 mode=COMPUTE leaves=24 K_axis_unchanged=1 data_aliases_unchanged=1
+FRAGMENT_SETUP topology=Meta2x3 cache=1 outerUIDA=1 outerUIDB=2 graphBuffer=0x1000c451810 inputA=0x1000c41d2f0 inputB=0x1000c438520 nodesA=11 nodesB=11 same_uid_binding=1
+PASS_OUTPUT label=A-warmup frame=0 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=B-input-same-UID frame=1 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=A-input-restored frame=0 max_abs=0 exact=1 canary=1 parent_uid=1
+HOT_REPLAY_PROOF parent_uid=1 async_before=6 async_after=6 async_outer_ar_delta=0 compose_recordings_delta=1 compose_record_phase_delta=1 compose_replay_delta=1 ar6_per_rank=2 ar_equivalent=2 cold_before=5 cold_after=6 cold_drain_delta=1 same_uid=1
+PASS_OUTPUT label=A4-hot-replay-async frame=3 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=parent-new-UID-input-binding-async frame=2 max_abs=0 exact=1 canary=1 parent_uid=2
+PASS_OUTPUT label=same-UID-original-binding-restored frame=5 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-parent-warmup frame=5 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-0 frame=5 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-1 frame=6 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-2 frame=7 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-3 frame=5 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-4 frame=6 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-5 frame=7 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-6 frame=5 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-7 frame=6 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-8 frame=7 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-9 frame=5 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-10 frame=6 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-11 frame=7 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-12 frame=5 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-13 frame=6 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-14 frame=7 max_abs=0 exact=1 canary=1 parent_uid=1
+PASS_OUTPUT label=compose-stable-A-15 frame=5 max_abs=0 exact=1 canary=1 parent_uid=1
+COMPOSE_REPLAY_PROOF stable_repeats=16 selected_logs=20 replay_phase_delta=16 reported_replays=18 reported_delta=16 ar6_per_rank=2 ordinary_ar_delta=0 ordinary_async_ar_delta=0 cold_drain_delta=0
+PARENT_WALK_STABLE_PROOF stable_repeats=16 selected_logs=16 original_hits_before=5 original_hits_after=21 original_hits_delta=16 prepared_hits_before=5 prepared_hits_after=21 prepared_hits_delta=16
+PASS_OUTPUT label=same-UID-new-input-buffer frame=4 max_abs=0 exact=1 canary=1 parent_uid=1
+FRAGMENT_CACHE_RESULT mode=on nested_hits=4 nested_misses=12 parent_invalidations=6 outer_ar=8 async_outer_ar=8 cold_drains=8 transition_cold_drains=2 hot_async_delta=0 hot_cold_delta=1 inner_merged_graphs=24 max_inner_subgraphs=2 binding_changed=1
+PARENT_MANIFEST_PROOF selected=1 same_uid_binding_invalidations=2 same_uid_new_binding=1
+PASS NESTED_COMPOSE_SIX topology=Meta2x3 cache=1 async_route=1 parent_A_B_A=1 hot_A4_two_AR6_boundaries=1 hot_A4_cold_drains_accounted=1 compute_input_split_preserved=1 same_uid_new_binding_forced_rebuild=1 same_uid_binding_exact=1 new_uid_invalidated=1 cold_drain_before_uid_invalidation=1 stable_composed_repeats=16 changed_input_contents=1 composed_selected=1 composed_replay_counted=1 no_ordinary_child_dispatch=1 stable_replay_no_cold_drain=1 parent_walk_selected=1 parent_walk_stable_hits=1 cache_hit=1 output_exact=1 canary=1
+exit_status=0
+after:
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 3 MiB, 40
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 3 MiB, 39
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 3 MiB, 40
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 3 MiB, 40
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 6 MiB, 40
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 7 MiB, 40

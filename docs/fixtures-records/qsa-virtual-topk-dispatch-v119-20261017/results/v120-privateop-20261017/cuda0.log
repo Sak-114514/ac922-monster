@@ -1,0 +1,41 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA graph path config ctx=0x1001fa388d0 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x1001fa388d0 device=0 uid=0 nodes=10 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph fallback ctx=0x1001fa388d0 device=0 uid=0 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+optimization path device=0 path=qsa_virtual_cell_topk scope=host_dispatch_or_capture requested=1 selected=1 reason=typed_block_score_cellmap_f16mask_stable_ids_owned_scratch tokens=4 width=1025 auxiliary=16384 count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1001fa388d0 device=0 uid=0 nodes=10 mode=capture count=1
+optimization path device=0 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=1
+CUDA graph executable rebuild ctx=0x1001fa388d0 device=0 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x7fff715dc0a0 instance=0x7fff7154e7d0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1001fa388d0 device=0 uid=0 nodes=1 mode=capture count=2
+optimization path device=0 path=qsa_virtual_cell_topk scope=host_dispatch_or_capture requested=1 selected=1 reason=typed_block_score_cellmap_f16mask_stable_ids_owned_scratch tokens=4 width=1025 auxiliary=16384 count=2
+optimization path device=0 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=2
+CUDA graph executable rebuild ctx=0x1001fa388d0 device=0 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x7fff7157f0c0 instance=0x7fff714f9d80
+CUDA graph path active ctx=0x1001fa388d0 device=0 uid=0 nodes=10 mode=replay count=1
+CUDA graph path active ctx=0x1001fa388d0 device=0 uid=0 nodes=1 mode=replay count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1001fa388d0 device=0 uid=0 nodes=10 mode=eager reason=shape_or_binding_changed node= op=none count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1001fa388d0 device=0 uid=0 nodes=1 mode=eager reason=shape_or_binding_changed node= op=none count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph executable rebuild ctx=0x1001fa388d0 device=0 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x7fff71549b00 instance=0x7fff71b4e1f0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph executable rebuild ctx=0x1001fa388d0 device=0 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x7fff71b4d660 instance=0x7fff715002b0
+optimization path summary device=0 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=4 selected=4
+optimization path summary device=0 path=qsa_virtual_cell_topk scope=host_dispatch_or_capture requested=4 selected=4
+PRIVATE_SUPPORT mode=cuda-probe valid=1 cpu_supports=0 cuda_supports=1 meta3_all_child_supports=na bad_magic_valid=0 extra_src_valid=0 extra_src_cuda_supports=0 extra_src_meta_supports=na width_oob_build=null
+ID_COMPARE mode=cuda step=A1 exact=PASS ids=128
+ID_COMPARE mode=cuda step=B exact=PASS ids=128
+ID_COMPARE mode=cuda step=A2 exact=PASS ids=128
+ID_COMPARE mode=cuda step=reference-A1-A2 exact=PASS ids=128
+ID_COMPARE mode=cuda step=private-A1-A2 exact=PASS ids=128
+DISPATCH_CASE mode=cuda B=257 K=1025 Q=4 S=2 W=16 exact_ids=PASS A_B_A=1 b_output_changed=1 poison_mask=-inf host_read_canary=PASS input_immutable=PASS meta_output_readback=direct_backend_tensor_get meta_input_readback=direct_backend_tensor_get
+ID_COMPARE mode=cuda step=A1 exact=PASS ids=1050112
+ID_COMPARE mode=cuda step=B exact=PASS ids=1050112
+ID_COMPARE mode=cuda step=A2 exact=PASS ids=1050112
+ID_COMPARE mode=cuda step=reference-A1-A2 exact=PASS ids=1050112
+ID_COMPARE mode=cuda step=private-A1-A2 exact=PASS ids=1050112
+DISPATCH_CASE mode=cuda B=16384 K=65536 Q=512 S=1 W=2051 exact_ids=PASS A_B_A=1 b_output_changed=1 poison_mask=-inf host_read_canary=PASS input_immutable=PASS meta_output_readback=direct_backend_tensor_get meta_input_readback=direct_backend_tensor_get
+CUDA_RESULT exact_ids=PASS device=0

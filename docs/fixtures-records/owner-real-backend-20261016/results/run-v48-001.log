@@ -1,0 +1,25 @@
+ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+meta-context-view owner-create owner=7 epoch=1 backend-context=2
+meta-context-view bind owner=7 epoch=1 buffer=4 view=context_A_stride_view root=shared_static_f32_weights capacity=1
+meta-context-view owner-create owner=9 epoch=1 backend-context=3
+meta-context-view bind owner=9 epoch=1 buffer=4 view=context_B_stride_view root=shared_static_f32_weights capacity=1
+meta-context-submit FIFO active context=0x1003d46a7d0 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe9d400680
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe9d600680
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe9d800680
+fixture failure: MIRRORED A mismatch
+meta-context-view owner-unbind owner=9 epoch=1 removed=1
+meta-context-view owner-retire owner=9 epoch=1
+meta-context-view owner-unbind owner=7 epoch=1 removed=1
+meta-context-view owner-retire owner=7 epoch=1
+ENV CUDA_VISIBLE_DEVICES=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb GGML_META_CONTEXT_VIEWS=1 GGML_META_CONTEXT_VIEWS_TRACE=1
+DEVICE member=0 name=CUDA0 pci=0004:04:00.0
+DEVICE member=1 name=CUDA1 pci=0004:05:00.0
+DEVICE member=2 name=CUDA2 pci=0004:06:00.0
+IDENTITY root=0x1003fffc9a0 weight_buffer=0x1003ee496b0 A_sched=0x1003fc17ff0 A_meta=0x1003ebf3720 A_view=0x10040d2e7e0 B_sched=0x1003fe0a310 B_meta=0x1003fb0ee90 B_view=0x100416331a0 W0=0x1003fffcb10 bias=0x1003fffcc80 root_shared=1 owner_contexts_distinct=1
+ALLOC phase=MIRRORED family=context_A reset=0 graph=0x10040d2ef10 root=0x1003fffc9a0 buffer=0x1003ee496b0 view=0x10040d2e7e0 meta=0x1003ebf3720 splits=1 nodes=5 contiguous_view=0
+ALLOC phase=MIRRORED family=context_B reset=0 graph=0x100416338d0 root=0x1003fffc9a0 buffer=0x1003ee496b0 view=0x100416331a0 meta=0x1003fb0ee90 splits=1 nodes=5 contiguous_view=0
+RESULT family=context_A phase=MIRRORED-A0 frame=0 actual=14702.0 expected=6746.0 exact=0 canary=1

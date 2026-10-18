@@ -1,0 +1,6 @@
+PASS qsa_multi_phase_ledger freeze=seq-local rescan=all-dirty abort=drop rollback=straddle reuse=4-1-4 gaps=slow
+PASS qsa_cell_scatter_plan production_helper=physical_ids unique_scratch tail_bias=exact
+TAIL_BIAS current=DIFF expected_ids=11 tail_cells=3 physical_scatter=EXACT
+TIES physical_scatter=EXACT original_physical_order=preserved stable_radix_required=YES
+HOLE fast_path=REJECT slow_causal_mask=EXACT no_hole_or_foreign_ids=PASS
+PASS qsa_cellsel_host_contract (injected equal block scores; CUDA score parity not tested)

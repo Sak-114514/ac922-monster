@@ -1,0 +1,30 @@
+PASS V86 static localgate; no GPU or model launch
+build_id=20261016T093817.911598Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v86
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-dispatcher-10m-v81-20261016/relay6-dispatcher-10m-v81-relay10m-host1 sha256=7196bd1a746344b994c9f37dad2491095e4a0b9052ac06ce84d5ca81bbbb788e
+fixture_source_sha256=9a53d4edb36dc61d37a19c0596666aa1d8e6c1cbccccd29e9827092228409059
+runtime_cuda_sha256=cf4bc24d21459ba547c451da3f8cf8267f1fd668a6439f3b0a952e629d537095
+allreduce_source_sha256=a139dbbca28b38d5d433f59ce4ccdbfe2f862ec05c8ac598b04db21470edf93e
+binary_embedded_runpath=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v81/lib
+resolved_DSO_closure:
+	linux-vdso64.so.1 (0x00007fffb77c0000)
+	libggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v86/lib/libggml-cuda.so.0 (0x00007fffa9c00000)
+	libggml.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v86/lib/libggml.so.0 (0x00007fffa9bd0000)
+	libggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v86/lib/libggml-base.so.0 (0x00007fffa9a50000)
+	libggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v86/lib/libggml-cpu.so.0 (0x00007fffa9890000)
+	libcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fffa97b0000)
+	libstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fffa9480000)
+	libm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fffa9350000)
+	libgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fffa9310000)
+	libc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fffa90b0000)
+	/lib64/ld64.so.2 (0x00007fffb77e0000)
+	libcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fffa2390000)
+	libcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fffa05d0000)
+	libnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff9e770000)
+	libgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fff9e6f0000)
+	libdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff9e6c0000)
+	libpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff9e690000)
+	librt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff9e660000)
+	libcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff8a7d0000)
+PASS four ggml DSOs resolve only from runtime-perf-v86
+NEXT_GATE=run V86 binary with RELAY6_DISPATCHER_GPU_WINDOW_AUTHORIZED=1 and parse dispatch+graph_append kind3 markers on ranks 0..5

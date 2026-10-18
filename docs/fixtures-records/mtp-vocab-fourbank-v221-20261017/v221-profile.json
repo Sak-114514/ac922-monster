@@ -1,0 +1,116 @@
+{
+  "schema": "v221-vocab-fourbank-d3-profile-v1",
+  "status": "SOURCE_AND_SCENARIOS_READY_RUNTIME_V218_PENDING",
+  "candidate": "one-load D3 four-bank 4x16K/512 with graph binding keys and F32/virtual-TopK prefill",
+  "runtime": {
+    "name": "runtime-perf-v218",
+    "build_id": null,
+    "report": "notes/V218-build.json",
+    "report_sha256": null,
+    "runtime_dir": null
+  },
+  "runner": {
+    "source": "dual-context-v221-vocab-fourbank-d3.cpp",
+    "source_sha256": "4499bba8ed44c44d675d3156b321c73518d543d79954b5a3ca33172e3c7fd008",
+    "base": "fixtures/mtp-vocab-fourbank-v209-20261017/dual-context-v209-vocab-fourbank.cpp",
+    "base_sha256": "2963a4d67de3303d750a85c11d9e2a51b3a8132383956566a8b7342121151243",
+    "kv_policy_header": "v221-kv-shape-policy.h",
+    "kv_policy_header_sha256": "6a14601dfcadaa2cb2516a8148788f907825b50c5fb07123effd90ef72fa322a",
+    "target_pad_header": "target-verify-pad-plan-v221.h",
+    "target_pad_header_sha256": "35550ae6e29758ed5e7940408b85d3e527dc07c0f743c350267ab6b11266ae02",
+    "native_checker": "verify_v221_native4.py",
+    "native_checker_sha256": "9b14c1a6124f8d752d37b75c09d7c236611a75bc0b1a5cd1014824f22ae27f9c",
+    "build_status": "not built; root owns host link",
+    "target_pad_origin": "V197 private target padding supports D2 through D5"
+  },
+  "environment_base": {
+    "profile": "fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/v197-profile.json",
+    "profile_sha256": "2f19e88cc8b49f8f82ccf5eb7f233be5fb201c5ad441c3380b980e0276f74e42",
+    "base_values": {
+      "ROOT_PREFILL_BATCH": "4096",
+      "ROOT_UBATCH": "256",
+      "LLAMA_MTP_N_UBATCH": "512",
+      "LLAMA_MTP_PAD": "6",
+      "LLAMA_PLE_NUMA_GPU_NODES": "6",
+      "LLAMA_PLE_NUMA_GPU_GIB": "18",
+      "LLAMA_MTP_PREFILL_HISTORY_LAST_ONLY": "1",
+      "LLAMA_MTP_KV_ONLY_PREFILL": "1",
+      "GGML_SCHED_LAYER_PEER_REUSE_FENCE": "1",
+      "LLAMA_QSA_DECODE_FUSED_INDEXER": "1",
+      "LLAMA_QSA_INDEXER_IMPL": "standard",
+      "LLAMA_QSA_STANDARD_SPARSE": "1",
+      "GGML_CUDA_GRAPH_STRUCTURAL": "1",
+      "GGML_CUDA_GRAPHS_FORCE": "0"
+    },
+    "overlay": {
+      "ROOT_MTP_DEPTH": "3",
+      "LLAMA_MTP_GPU_CHAIN_UNROLLED_DEPTH": "3",
+      "LLAMA_MTP_GPU_CHAIN_UNROLLED": "0",
+      "LLAMA_MTP_UNROLL_DEDICATED_SCHED": "0",
+      "LLAMA_MTP_UNROLL_SINGLE_LANE": "0",
+      "LLAMA_MTP_VOCAB_PARALLEL": "0",
+      "GGML_CUDA_GRAPH_BINDING_KEYS": "1",
+      "GGML_CUDA_GRAPH_BINDING_KEYS_CAP": "32",
+      "LLAMA_QSA_PREFILL_F32_INDEXER": "1",
+      "LLAMA_QSA_VIRTUAL_TOPK": "1",
+      "LLAMA_MTP_VERIFY_ROW_BUDGET": "4",
+      "ROOT_PROFILE_KIND": "fourbank16k-d3"
+    }
+  },
+  "workload": {
+    "model_loads": 1,
+    "family_order": [
+      "fourbank16k-d3"
+    ],
+    "banks": 4,
+    "lanes_per_bank": 1,
+    "native_canary_kind": "semantic_p4_gate",
+    "native_case_ids": [
+      "capital-en",
+      "arithmetic-zh",
+      "logic-en",
+      "strict-json-zh"
+    ],
+    "performance_kind": "v50_long_prefill",
+    "inputs": 4,
+    "input_tokens_each": 16384,
+    "output_tokens_each": 512,
+    "target_n_batch": 4096,
+    "target_n_ubatch": 256,
+    "draft_n_ubatch": 512,
+    "mtp_depth": 3,
+    "mtp_pad_rows": 6,
+    "performance_outputs_semantically_scored": false,
+    "scenario": "v221-d3-scenarios.json",
+    "scenario_sha256": "4c2234d5d214ac7a62a43adb901c637e1ff8151bb106ad612364fc625c625324"
+  },
+  "required_features": {
+    "LLAMA_PLE_NUMA_GPU_NODES": "6",
+    "LLAMA_PLE_NUMA_GPU_GIB": "18",
+    "LLAMA_MTP_PREFILL_HISTORY_LAST_ONLY": "1",
+    "LLAMA_MTP_RELEASE_PREFILL_HISTORY": "1",
+    "LLAMA_MTP_VOCAB_PARALLEL": "0",
+    "GGML_SCHED_LAYER_PEER_REUSE_FENCE": "1",
+    "LLAMA_QSA_DECODE_FUSED_INDEXER": "1",
+    "LLAMA_QSA_INDEXER_IMPL": "standard",
+    "LLAMA_QSA_STANDARD_SPARSE": "1",
+    "LLAMA_QSA_PREFILL_F32_INDEXER": "1",
+    "LLAMA_QSA_VIRTUAL_TOPK": "1",
+    "GGML_CUDA_GRAPH_BINDING_KEYS": "1",
+    "GGML_CUDA_GRAPH_BINDING_KEYS_CAP": "32",
+    "GGML_CUDA_GRAPHS_FORCE": "0",
+    "GGML_CUDA_GRAPH_STRUCTURAL": "1"
+  },
+  "context_lifecycle": {
+    "family_count": 1,
+    "drain_and_destroy_before_family_exit": true,
+    "model_retained": true,
+    "runtime_proof_marker": "context-family-complete contexts_drained=1 contexts_destroyed=1 model_retained=1"
+  },
+  "quality_scope": "V146 frozen native four-case evaluator with all assertions retained; performance outputs unscored",
+  "pending": [
+    "runtime-perf-v218 build report/id/SHA",
+    "V218 graph-binding-key and F32/virtual-TopK compatibility gates"
+  ],
+  "launch_eligible": false
+}

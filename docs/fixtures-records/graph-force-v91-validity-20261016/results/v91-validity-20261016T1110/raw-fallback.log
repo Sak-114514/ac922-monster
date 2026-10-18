@@ -1,0 +1,27 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=2 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x100390253f0 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=0 structural_active=0 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x100390253f0 device=0 uid=1 nodes=2 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x10017400000
+CUDA Graph id 1 reused
+optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=2 width=0 auxiliary=0 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x100390253f0 device=0 uid=1 nodes=2 mode=capture count=1
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x10017400000
+CUDA graph fallback ctx=0x100390253f0 device=0 uid=2 nodes=2 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+[mp-dbg] mul_mat hook: type=0 ne11=8 reg=0 ptr=0x10017401a00
+CUDA Graph id 2 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x100390253f0 device=0 uid=2 nodes=2 mode=capture count=2
+[mp-dbg] mul_mat hook: type=0 ne11=8 reg=0 ptr=0x10017401a00
+CUDA Graph id 1 reused
+CUDA graph path active ctx=0x100390253f0 device=0 uid=1 nodes=2 mode=replay count=1
+optimization path summary device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=5 selected=0 fallback_structural_binding_signature_unavailable=5
+GRAPH_FORCE_FIXTURE device=CUDA0 buft=CUDA0 force=1 structural=0
+FRAME uid=1 cols=4 seed=10 nodes=2 exact=1 canary=ok
+FRAME uid=1 cols=4 seed=11 nodes=2 exact=1 canary=ok
+FRAME uid=2 cols=8 seed=20 nodes=2 exact=1 canary=ok
+FRAME uid=2 cols=8 seed=21 nodes=2 exact=1 canary=ok
+FRAME uid=1 cols=4 seed=12 nodes=2 exact=1 canary=ok
+PASS graph_force_fixture frames=5 shapes=2 changed_uid=1 changed_values=1 sequence=A/B/A exact=1 canary=1

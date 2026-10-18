@@ -1,0 +1,39 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+V192_A_GRAPH_PHASE_BEGIN graph=0x100055b94a0 output=0x10037400400 nodes=4
+V192_A_STEP_BEGIN step=0 graph=0x100055b94a0 output=0x10037400400
+CUDA graph path config ctx=0x100049d0ad0 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x100049d0ad0 device=0 uid=2 nodes=4 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+V192_SETUP cuda_backend=0x100049e0830 cpu_backend=0x100049979d0 sched_a=0x10004a08e20 sched_b=0x10004a19380 shared_backends=1 copies_a=1 copies_b=1 independent_schedulers=1
+V192_A_STEP step=0 exact=1 output_ptr=0x10037400400 output_bytes=32 canary_exact=1
+V192_A_STEP_END step=0
+CUDA graph fallback ctx=0x100049d0ad0 device=0 uid=4 nodes=4 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+V192_B_ROWS rows=1 exact=1 output_bytes=32 output_ptr=0x10037400a00 graph=0x1000602fd60 sched=0x10004a19380 metadata_retained_until_reset=1
+V192_A_PROTECTED after_b_rows=1 exact=1 allocations_stable=1 canary_exact=1 sched=0x10004a08e20
+V192_A_STEP_BEGIN step=1 graph=0x100055b94a0 output=0x10037400400
+CUDA Graph id 2 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x100049d0ad0 device=0 uid=2 nodes=4 mode=capture count=1
+V192_A_STEP step=1 exact=1 output_ptr=0x10037400400 output_bytes=32 canary_exact=1
+V192_A_STEP_END step=1
+V192_B_RESET from_rows=1 to_rows=2 drained=1 scheduler_reset=1 metadata_free_after_reset=1 sched=0x10004a19380
+V192_B_ROWS rows=2 exact=1 output_bytes=64 output_ptr=0x10037400a00 graph=0x1000623dfe0 sched=0x10004a19380 metadata_retained_until_reset=1
+V192_A_PROTECTED after_b_rows=2 exact=1 allocations_stable=1 canary_exact=1 sched=0x10004a08e20
+V192_A_STEP_BEGIN step=2 graph=0x100055b94a0 output=0x10037400400
+CUDA Graph id 2 reused
+CUDA graph path active ctx=0x100049d0ad0 device=0 uid=2 nodes=4 mode=replay count=1
+V192_A_STEP step=2 exact=1 output_ptr=0x10037400400 output_bytes=32 canary_exact=1
+V192_A_STEP_END step=2
+V192_B_RESET from_rows=2 to_rows=3 drained=1 scheduler_reset=1 metadata_free_after_reset=1 sched=0x10004a19380
+V192_B_ROWS rows=3 exact=1 output_bytes=96 output_ptr=0x10037400a00 graph=0x1000643e0e0 sched=0x10004a19380 metadata_retained_until_reset=1
+V192_A_PROTECTED after_b_rows=3 exact=1 allocations_stable=1 canary_exact=1 sched=0x10004a08e20
+V192_A_STEP_BEGIN step=3 graph=0x100055b94a0 output=0x10037400400
+CUDA Graph id 2 reused
+CUDA graph path active ctx=0x100049d0ad0 device=0 uid=2 nodes=4 mode=replay count=2
+V192_A_STEP step=3 exact=1 output_ptr=0x10037400400 output_bytes=32 canary_exact=1
+V192_A_STEP_END step=3
+V192_A_GRAPH_PHASE_END graph=0x100055b94a0 output=0x10037400400
+V192_B_RESET from_rows=3 to_rows=0 drained=1 scheduler_reset=1 metadata_free_after_reset=1 sched=0x10004a19380 reason=destroy
+V192_A_PROTECTED after_b_rows=0 exact=1 allocations_stable=1 canary_exact=1 sched=0x10004a08e20
+V192_B_DESTROYED a_sched_retained=1 a_output_ptr=0x10037400400 a_canary_retained=1
+V192_COMPLETE a_steps=4 b_rows=1,2,3 schedulers_independent=1 shared_cuda_backend=1 all_exact=1 allocations_stable=1 metadata_drained_before_free=1

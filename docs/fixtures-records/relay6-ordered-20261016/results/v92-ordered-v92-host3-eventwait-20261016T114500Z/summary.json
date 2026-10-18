@@ -1,0 +1,185 @@
+{
+  "schema": "relay6-ordered-v92-fixture-summary-v1",
+  "run_tag": "v92-host3-eventwait-20261016T114500Z",
+  "scope": "fixture-only; no model load; no engine rebuild",
+  "result": "PASS",
+  "cases_passed": 16,
+  "cases_expected": 16,
+  "all_case_statuses_zero": true,
+  "all_safety_checks_passed": true,
+  "runtime": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92",
+  "runtime_build_id": "20261016T112235.532285Z",
+  "fixture_binary_sha256": "1b67e1675b7ee2c7a8dbd362311e17ec89dab3c64bdaadcf9d95d249df50bbc4",
+  "fixture_build_log_sha256": "e32538ed8b60a2c80b23f972042443f22e68e48a96785455768e385d70d833ff",
+  "included_allreduce_source_sha256": "b0790248c39350d862e09d0841575a8c7bad1e3c5de19fe50e55c8c9ad311b19",
+  "dso_sha256": {
+    "libggml-cuda.so.0": "408df85bf3abc8b56383bc56022a5137bf4f99697bd38d25d1196a6cd0d4787f",
+    "libggml-base.so.0": "14cfbe0a90af969394a4dc0d58bbc1f7097e40862c2fc29770a14af6d290e118",
+    "libggml.so.0": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+    "libggml-cpu.so.0": "c1fd8d19e54df03e97f1c71c8c95565626ec73f44f7d4f3e334bfe3e74f464fc"
+  },
+  "run_log_sha256": "d00796bc82df2c29c89b9e2e5bdaa3629d5d67264bee9c365f129877cf27bdbd",
+  "provenance_sha256": "7f012b31d1be4e5b2c73b7e4e3331424f8fd46d0e13293104a854a78be2e6b50",
+  "path_gates": {
+    "ordered_kind0_160KiB": "PASS; dispatch and explicit graph_append; zero_rank=-1",
+    "ordered_kind4_200KiB": "PASS; dispatch and explicit graph_append; zero_rank=-1,0,3",
+    "ordered_kind4_10MiB": "PASS; dispatch and explicit graph_append; zero_rank=-1,0,3",
+    "segmented_kind2_10MiB": "PASS; dispatch control; zero_rank=3",
+    "relay_kind3_10MiB": "PASS; dispatch control; zero_rank=3"
+  },
+  "numeric_gates": {
+    "all_six_ranks": "PASS",
+    "rank_ordered_fp32_oracle_exact": "PASS",
+    "A_B_A_three_replays_each_of_two_contexts": "PASS",
+    "per_rank_changed_B_inputs": "PASS",
+    "all_negative_zero_sign_for_zero_rank_-1_0_3": "PASS",
+    "output_canaries": "PASS",
+    "two_communicators_and_1GiB_added_memory_limit": "PASS"
+  },
+  "comparison_10MiB_dispatch_zero_rank3_max_gpu_event_ms": {
+    "ordered_kind4_contexts_0_1": [
+      1.321,
+      1.33
+    ],
+    "relay_kind3_contexts_0_1": [
+      1.94,
+      1.957
+    ],
+    "segmented_kind2_contexts_0_1": [
+      5.206,
+      5.626
+    ],
+    "ordered_vs_relay_mean_event_reduction_percent": 31.98,
+    "scope": "same-window fixture timing only; no model throughput claim"
+  },
+  "postflight": {
+    "all_six_gpus_idle_assertion": "PASS; runner exit 0 after final idle check",
+    "temperatures_c": [
+      39,
+      38,
+      39,
+      39,
+      38,
+      39
+    ],
+    "utilization_percent": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "memory_used_mib": [
+      8,
+      8,
+      9,
+      9,
+      13,
+      12
+    ]
+  },
+  "prior_failed_fixture_attempt": {
+    "path": "results/v92-ordered-v92-ordered-bounded-20261016T114200Z/",
+    "reason": "fixture queried CUDA stop-event elapsed time before stop events completed; kind0 selection was logged, numeric checks were not reached",
+    "preserved": true
+  },
+  "cases": [
+    {
+      "id": "ordered-b163840-dispatch-z-1",
+      "validation": "PASS",
+      "validation_sha256": "1f2715f8782874f88337a51a445894732b38a6b9f9b640437b5b2647cbc9ec8c",
+      "combined_log_sha256": "8326e8e33870a3f512b630b63311ee7dc29650576b3e7ae7e6c8f4468b029c87"
+    },
+    {
+      "id": "ordered-b163840-graph_append-z-1",
+      "validation": "PASS",
+      "validation_sha256": "ef95695aa7a2691b1522ab6573523fe813cba3e40d99db90e1669700ff0d0c56",
+      "combined_log_sha256": "5452b90443d1997cd9f1024c16727bf85cf44f4c055d3d8d318c2430009d04df"
+    },
+    {
+      "id": "ordered-b204800-dispatch-z-1",
+      "validation": "PASS",
+      "validation_sha256": "852e2c30968b96112e9abfd32073f71754c6a86c671a6d907b361429dd668dda",
+      "combined_log_sha256": "350f5205086d531f6fb86e9551424fb2db1c748cf162f1a34c3e919645ec3f64"
+    },
+    {
+      "id": "ordered-b204800-dispatch-z0",
+      "validation": "PASS",
+      "validation_sha256": "d8008f8916989d189732a147ba6c3100fb5c1cbbd843e64b09cb2ec2eb2678f3",
+      "combined_log_sha256": "58a8d6f0ed76529bd9fbc0f7a2e8b641a610f43c886fbb08ba025c8ab9d0dbbf"
+    },
+    {
+      "id": "ordered-b204800-dispatch-z3",
+      "validation": "PASS",
+      "validation_sha256": "31cbd850af2b0ec2d2b76d4a3649ab80b510f09ea9a23315e5720e4897a8de21",
+      "combined_log_sha256": "4d61d2930dbd57d7739b4337a2cfa83d69fee9cd0fbae1426e250a5d19b3b4e2"
+    },
+    {
+      "id": "ordered-b204800-graph_append-z-1",
+      "validation": "PASS",
+      "validation_sha256": "29f747712efe1cf95b98fdf391341ee72c52dd9db9f837967b7ea31f76f6921b",
+      "combined_log_sha256": "2d072919df03e61ced2b9380c9dbbacb93e5b2148e2ae19120756928610c2a4e"
+    },
+    {
+      "id": "ordered-b204800-graph_append-z0",
+      "validation": "PASS",
+      "validation_sha256": "f4a8d5db39ed6e0694d1c95005c0274da72e301e2cbef3be59a3f245a23624b9",
+      "combined_log_sha256": "2b0681a0c56b3f8f92c624c4fdc17267c33f661cffa31acb6e209f107713db71"
+    },
+    {
+      "id": "ordered-b204800-graph_append-z3",
+      "validation": "PASS",
+      "validation_sha256": "0bd0f8766dcddecff495bfeae70fae33a62ed6e44cd640d6a83afd0b0c04bb5d",
+      "combined_log_sha256": "0da3fc372d7288d662111f33f35e157497410a5c92885cb1f78e1c721f80c901"
+    },
+    {
+      "id": "ordered-b10485760-dispatch-z-1",
+      "validation": "PASS",
+      "validation_sha256": "ba64da222b9e5fd8df0b85de26a3fc0f229b97754f51f35dbe4cd453563f30db",
+      "combined_log_sha256": "ec19aa3ab882f3715140880b3a289fe96d434958300495043cb2fd4809e697bf"
+    },
+    {
+      "id": "ordered-b10485760-dispatch-z0",
+      "validation": "PASS",
+      "validation_sha256": "8cc92867942fec1cd639bdc15c754568ac6f0f27c0aad8e4cf3b6f8760b5470c",
+      "combined_log_sha256": "5499f59ab54a632a77441fa5d5156e290d18a9d2815fc8acbc553fed0c3c05c4"
+    },
+    {
+      "id": "ordered-b10485760-dispatch-z3",
+      "validation": "PASS",
+      "validation_sha256": "9ee830cbd0a4a89e45da06cbe66953d15f90b7848c6b4adaaf0dfdb262c23194",
+      "combined_log_sha256": "132f31d8f6a98b0508c050a843ae2c741c5041c6310b35725df8350d21d71340"
+    },
+    {
+      "id": "ordered-b10485760-graph_append-z-1",
+      "validation": "PASS",
+      "validation_sha256": "dbb670514648e01e4e0e4fd8991b44ffa31b70b450ab1ae92dcb4d1d5954c84a",
+      "combined_log_sha256": "3c208566d63594191228acc81900c672e5e3a4307ec265c3613392015d42fcbd"
+    },
+    {
+      "id": "ordered-b10485760-graph_append-z0",
+      "validation": "PASS",
+      "validation_sha256": "70e85b9f9993aa7f4fb75557ff93593cf2796581e923b81cf6ee272668e49760",
+      "combined_log_sha256": "328088d478177329fc0c8d8454f9e585dff3c478e5d3698698ad5e9bbdbf67fb"
+    },
+    {
+      "id": "ordered-b10485760-graph_append-z3",
+      "validation": "PASS",
+      "validation_sha256": "8e0ed6bc4fb05443fe914fcab8d0ea348249197956f5d1e5c4661cb03fe5f875",
+      "combined_log_sha256": "1f5b6a7aa90c78e5d3b43e9073974377f7a85ce4cbd80899bf2ba353eb83815f"
+    },
+    {
+      "id": "segmented-b10485760-dispatch-z3",
+      "validation": "PASS",
+      "validation_sha256": "df3bffaf920fafb01cb112ab7d1b62649829a69de78931769dec2cfd7f696ed0",
+      "combined_log_sha256": "e79b47d541b290e3f0eb364b791c0a64fda2e458c043d2362a8c1d55d9bf346f"
+    },
+    {
+      "id": "relay-b10485760-dispatch-z3",
+      "validation": "PASS",
+      "validation_sha256": "c9d5441991aba90932ac59c6f1add662205092fecced41cf5ab97a84354b52e0",
+      "combined_log_sha256": "8582a875555fad82aa6d32e3b9ee439bb0fe6ba814058082507a3dfbc8de6db7"
+    }
+  ]
+}

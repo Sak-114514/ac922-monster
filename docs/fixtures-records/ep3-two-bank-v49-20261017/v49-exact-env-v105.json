@@ -1,0 +1,439 @@
+{
+  "schema_version": 1,
+  "candidate": "V49 ordinary 3+3 EP3, two banks x two lanes, grouped 4x8K 512-token decode with V105 BF16 case8, 3-node PLE stripes, 1 MiB async-copy cap required by runner",
+  "host_prepared": true,
+  "launch_eligible": true,
+  "model_loads_per_process": 1,
+  "runtime_build_id": "20261016T171746.673687Z",
+  "runtime_report_path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/notes/V105-build.json",
+  "runtime_report_sha256": "a9ee42d178f785383508893780fdaed5cf9043c770698cd396b78c88cdde2b5b",
+  "source_fast_profile": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/v45-exact-env-v100-consumed.json",
+  "source_fast_profile_sha256": "f046e6b33f2c09f9557bb8c8d40b53d8f0b395172647211ad2f4c8e256e7ce4e",
+  "environment": {
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_VISIBLE_DEVICES": "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+    "LD_LIBRARY_PATH": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v105/lib",
+    "LLAMA_ISLAND_SPLIT": "3,3",
+    "GGML_CUDA_P2P": "1",
+    "GGML_CUDA_ALLREDUCE": "nccl",
+    "LLAMA_QSA_INDEXER_IMPL": "standard",
+    "GGML_SM70_BF16_GEMV": "1",
+    "GGML_SM70_MOE_REWORK": "1",
+    "GGML_CUDA_MOE_GROUPED": "1",
+    "GGML_CUDA_VOLTA_GDN_X4": "1",
+    "LLAMA_QSA_SPARSE_KERNEL": "1",
+    "LLAMA_QSA_GATHER_MAX_TOKENS": "32",
+    "GGML_CUDA_TOPK_STABLE": "1",
+    "LLAMA_MTP_FOLD": "1",
+    "LLAMA_MTP_GPU_CHAIN": "1",
+    "LLAMA_MTP_GPU_EMBED": "1",
+    "LLAMA_MTP_FIFO": "1",
+    "LLAMA_MTP_N_UBATCH": "512",
+    "LLAMA_MTP_PAD": "6",
+    "LLAMA_DRAFT_DETP": "0",
+    "LLAMA_GPU_ARGMAX": "1",
+    "GGML_CUDA_GRAPH_OPT": "1",
+    "GGML_FT_GRAPH_CACHE": "1",
+    "GGML_FT_GRAPH_CACHE_MIN_NODES": "32",
+    "GGML_META_ASYNC_COPY": "1",
+    "GGML_META_FIFO_PIPELINE": "1",
+    "GGML_META_COMPACT_ARENA": "1",
+    "GGML_META_PACKED_CACHE": "1",
+    "LLAMA_QWEN4EXP_HC_FUSION": "0",
+    "LLAMA_HC_FUSED": "1",
+    "LLAMA_PREFILL_KV_PAD": "8192",
+    "LLAMA_PLE_SHARD": "0",
+    "LLAMA_PLE_SHARD_ROWS": "0",
+    "MONSTER_MONPACK": "0",
+    "LLAMA_PLE_ONECAT": "0",
+    "GGML_CUDA_FATTN_ONECAT": "1",
+    "LLAMA_MONOMOE_SM70": "0",
+    "GGML_CUDA_VOLTA_Q8_HEAD_TC": "0",
+    "GGML_CPU_PLE_PAGE_BATCH": "1",
+    "GGML_CPU_PLE_PAGE_BATCH_LOG_PERIOD": "1",
+    "LLAMA_LOAD_RECLAIM_GPU_PAGES": "1",
+    "LLAMA_SPEC_PAD_MULTI": "20",
+    "LLAMA_SPEC_PAD_MULTI_AUTO": "1",
+    "LLAMA_MTP_DRAFT_GRAPH_CACHE": "0",
+    "LLAMA_MTP_DRAFT_GRAPH_CACHE_LOG": "1",
+    "LLAMA_MTP_SEQ_LAYOUT": "1",
+    "LLAMA_MTP_FOLD_MULTI": "1",
+    "LLAMA_MTP_GPU_CHAIN_MULTI": "1",
+    "GGML_SM70_DECODE_LINEAR_CHUNKS": "4",
+    "GGML_CPU_PLE_GET_ROWS_THREADS": "32",
+    "GGML_CPU_PLE_DECODE_THREADS": "4",
+    "LLAMA_PREFILL_FAIR_SHARE": "1",
+    "GGML_CUDA_GRAPH_STRUCTURAL": "1",
+    "GGML_CUDA_GRAPH_PATH_LOG": "1",
+    "GGML_OPTIMIZATION_PATH_LOG": "1",
+    "LLAMA_GREEDY_SUPPRESSION_FAST": "1",
+    "LLAMA_PLE_PREFETCH": "1",
+    "GGML_CPU_PLE_ROW_CACHE": "1",
+    "LLAMA_MTP_KV_ONLY_PREFILL": "1",
+    "LLAMA_PLE_NUMA_HYBRID": "1",
+    "LLAMA_MTP_VERIFY_ROW_BUDGET": "8",
+    "GGML_CUDA_META_COPY_GPU_WAIT": "1",
+    "GGML_META_GPU_EVENT_WAIT": "1",
+    "GGML_CUDA_META_COPY_TOPOLOGY": "1",
+    "LLAMA_DECODE_KV_PAD": "8192",
+    "LLAMA_TARGET_FIFO_MULTI": "1",
+    "GGML_CUDA_MOE_ADAPTIVE_J": "1",
+    "LLAMA_MTP_GPU_CHAIN_SINGLE": "0",
+    "LLAMA_EXPERT_PARALLEL": "1",
+    "GGML_META_P2P_COLD": "1",
+    "LLAMA_ARGMAX_PINNED_OUTPUT": "1",
+    "LLAMA_GPU_ARGMAX_UNIQUE": "1",
+    "LLAMA_MTP_FUSE_CATCHUP_SEED": "1",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED": "1",
+    "LLAMA_MTP_FIXED_PREFIX_ROWS": "6",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED_DEPTH": "3",
+    "LLAMA_PREFILL_FRAME_PIPELINE": "0",
+    "LLAMA_PREFILL_LAZY_RESERVE": "1",
+    "GGML_META_REPLAY_GUARD": "1",
+    "GGML_SCHED_CPU_GATHER_PIPELINE": "1",
+    "GGML_CUDA_NCCL_F32": "1",
+    "GGML_SCHED_META_SINGLE_COPY_EVENTS": "1",
+    "LLAMA_MTP_UNROLL_VARIABLE_LANES": "1",
+    "GGML_CUDA_IQ2S_VOLTA_EP": "1",
+    "LLAMA_PLE_NUMA_CPU_BALANCE": "1",
+    "LLAMA_TURBOPREFILL": "0",
+    "ROOT_MTP_DEPTH": "3",
+    "ROOT_BANK_LANES": "2",
+    "ROOT_META_CPU_COPY_VARIANTS": "1",
+    "ROOT_UBATCH": "1024",
+    "ROOT_TURBOPREFILL": "0",
+    "ROOT_KV_UNIFIED": "0",
+    "ROOT_BANK_CTX": "32768",
+    "LLAMA_PREFILL_SEPARATE_STREAM_RESERVE": "1",
+    "ROOT_FATAL_BACKTRACE": "1",
+    "LLAMA_QSA_BIAS_DEVICE": "1",
+    "GGML_CUDA_GRAPH_SNAPSHOT_CACHE": "1",
+    "GGML_CUDA_P2P_AR_BLOCKS": "64",
+    "GGML_META_NESTED_EXPERIMENTAL": "0",
+    "GGML_META_CONTEXT_VIEWS": "1",
+    "LLAMA_QSA_POOLED_MULTI": "0",
+    "LLAMA_QSA_MULTI_CELL_SEL": "0",
+    "GGML_TURBOPREFILL_PINNED_CAP_MIB": "512",
+    "GGML_META_CPU_ASYNC_COPY": "1",
+    "GGML_META_NCCL_MIN_BYTES": "0",
+    "GGML_META_ASYNC_INPUTS": "0",
+    "GGML_META_CPU_ASYNC_COPY_MAX_BYTES": "1048576",
+    "ROOT_DYNAMIC_LIB_DIR": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v105/lib",
+    "ROOT_BUILD_REPORT": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V105-build.json",
+    "ROOT_RUNTIME_SOURCE": "/home/debian/ac922-monster/experiments/standard-opt-20261014/src",
+    "ROOT_MTP_UBATCH": "512",
+    "ROOT_WARMUP_FRAMES": "4",
+    "ROOT_PREFILL_LOGITS_BEFORE_MTP": "0",
+    "ROOT_SERIAL_CPU_SUBMIT": "0",
+    "ROOT_SERVER_MTP_KV_POLICY": "1",
+    "LLAMA_HIERARCHICAL_EP6": "0",
+    "GGML_META_NESTED_GPU_AR": "0",
+    "LLAMA_PLE_NUMA_GPU_NODES": "3",
+    "LLAMA_PLE_NUMA_GPU_GIB": "12",
+    "ROOT_KV_VARIANT": "per_seq_16k",
+    "ROOT_PREFILL_BATCH": "8192",
+    "LD_PRELOAD": "",
+    "AC922_SYNC_AUDIT": "0",
+    "ROOT_CUPTI_PHASE": "off",
+    "GGML_META_TIMING": "1",
+    "LLAMA_STEP_TIMING": "1",
+    "LLAMA_STEP_TIMING_PERIOD": "32",
+    "GGML_CUDA_GRAPH_STRUCTURAL_TRACE": "1",
+    "GGML_META_FRAGMENT_CACHE": "1",
+    "GGML_META_FRAGMENT_CACHE_CAP": "64",
+    "GGML_META_FRAGMENT_CACHE_MIB": "128",
+    "V27_BASELINE_RESULT_ROOT": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v27-shortctx16k-hierarchical-20261016/results/root-p4-v27-shortctx16k-hierarchical-ep6-d3-20261016t022431z/copy1",
+    "V27_BASELINE_DIAGNOSTIC_SHA256": "16cb38688dc2e4581c0f5990dcf432949f431dad842e44ac5560c082cdf6f994",
+    "V27_BASELINE_CLEAN_SHA256": "beee7b03194cea10d8f56225bf2f8bae83c014f461324b8b9603bb746b95ae36",
+    "LLAMA_MTP_UNROLL_D3_LANES4": "1",
+    "GGML_META_FRAGMENT_PARENT_SIG": "1",
+    "LLAMA_QSA_STANDARD_SPARSE": "1",
+    "ROOT_TARGET_VERIFY_PAD_PER_ACTIVE_LANE": "1",
+    "GGML_META_NESTED_COMPOSE": "0",
+    "GGML_META_PARENT_WALK_FAST": "1",
+    "ROOT_NSYS_PREFILL_PROFILE": "0",
+    "LLAMA_QSA_STANDARD_HEAD_LOOP": "1",
+    "GGML_CUDA_GET_ROWS_NARROW": "1",
+    "GGML_CUDA_MOE_FUSED_T16": "1",
+    "GGML_SM70_FUSED_PROJ": "0",
+    "LLAMA_HC_COMBINE_SMALL_MAX_TOKENS": "32",
+    "GGML_META_NESTED_ASYNC": "0",
+    "GGML_CUDA_QSA_PREFILL_DIRECT_LIST": "1",
+    "GGML_CUDA_P2P_AR_RELAY6": "0",
+    "GGML_CUDA_P2P_AR_RELAY_MAX_BYTES": "41943040",
+    "GGML_CUDA_P2P_AR_COMPACT_STAGE": "1",
+    "GGML_CUDA_P2P_AR_RING_MIN_BYTES": "4194304",
+    "ROOT_RUNTIME_REVISION": "20261016T171746.673687Z",
+    "LLAMA_FIFO_SINGLE_ISLAND": "1",
+    "GGML_META_DEBUG": "1",
+    "GGML_META_CHUNK_NODES": "0",
+    "GGML_CUDA_GRAPH_STRUCTURAL_MAX_NODES": "16384",
+    "GGML_SM70_DECODE_LINEAR_PACKED": "1",
+    "GGML_CUDA_GRAPHS_FORCE": "0",
+    "GGML_META_SINGLE_CHUNK_COLD_DRAIN": "1",
+    "GGML_CUDA_P2P_AR_RELAY6_ORDERED": "1",
+    "GGML_META_COLD_PREPARE_COHORT": "1",
+    "GGML_CUDA_P2P_AR_ELIDE_UNUSED_SEGMENT": "1",
+    "GGML_CUDA_P2P_AR_RELAY_LEADER_STAGE": "1",
+    "GGML_CUDA_GRAPH_VARIANTS_CAP": "1",
+    "GGML_TURBOPREFILL_TRACE": "1",
+    "GGML_META_SHARED_DEVICE_COPY": "0",
+    "GGML_SM70_BF16_DECODE_PANEL": "1",
+    "LLAMA_QSA_POOLED_SINGLE": "0",
+    "ROOT_PER_SEQUENCE_CONTEXT": "16384",
+    "ROOT_PROFILE_KIND": "clean",
+    "ROOT_PREFILL_LOGITS_DIR": "off",
+    "GGML_META_GPU_SPANS": "0",
+    "GGML_META_GPU_SPANS_PERIOD": "0",
+    "CUDA_DEVICE_MAX_CONNECTIONS": "32",
+    "ROOT_VARIANT_DIR": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ep3-two-bank-v49-20261017/copy1/clean",
+    "LLAMA_QSA_COMPACT_MASK": "1",
+    "LLAMA_PREFILL_FIXED_UBATCH": "1"
+  },
+  "geometry": {
+    "island_split": "3,3",
+    "expert_parallel": 1,
+    "hierarchical_ep6": false,
+    "nested_meta": false,
+    "banks": 2,
+    "lanes_per_bank": 2,
+    "per_sequence_context": 16384,
+    "bank_context": 32768,
+    "aggregate_target_kv_cells": 65536,
+    "mtp_depth": 3,
+    "fixed_prefix_rows_per_lane": 6,
+    "target_verify_rows_per_bank": 8,
+    "target_ubatch": 1024,
+    "draft_ubatch": 512
+  },
+  "ple_placement": {
+    "gpu_node_count": 3,
+    "total_gpu_ple_gib": 12,
+    "expected_logical_gpus": [
+      0,
+      1,
+      2
+    ],
+    "expected_numa_nodes": [
+      255,
+      254,
+      253
+    ],
+    "expected_bytes_per_gpu": 4294967296,
+    "cpu_ddr_nodes": [
+      0,
+      8
+    ],
+    "copy_chunks_required": 859,
+    "each_copy_chunk_memcmp_exact": true,
+    "whole_copy_memcmp_exact": true
+  },
+  "process_memory_policy": {
+    "numactl_cpu_nodebind": [
+      0
+    ],
+    "numactl_memory_interleave": [
+      0,
+      8
+    ],
+    "sysctl_or_kernel_changes": false,
+    "ple_mbind_policy": "loader keeps strict GPU-node/DDR-node stripes over its continuous allocation",
+    "reason": "interleave ordinary runtime allocations across DDR NUMA nodes 0 and 8; avoid concentrating first-touch pages on node 0"
+  },
+  "scenario_contract": {
+    "file": "v49-scenarios.json",
+    "sha256": "d7e55ee65711cf1b00f788c66f472b2ba7a873ade4423514332a7d97173eff3c",
+    "order": [
+      "semantic_p4_canary",
+      "4x8k-4x512-decode"
+    ],
+    "perf_flows": 4,
+    "input_tokens_per_flow": 8192,
+    "output_tokens_per_flow": 512,
+    "unoptimized_baseline_added": false,
+    "provenance": {
+      "status": "V49_SCENARIOS_PREPARED_HOST_ONLY",
+      "source": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v32-parent-walkfast-2bank2-20261016/scenarios.json",
+      "source_sha256": "a3c71220289a0d996f185e4ea26cc3e888229c5a705f895342aebb2104d32e0e",
+      "scenario_file": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-v49-20261017/v49-scenarios.json",
+      "scenario_sha256": "d7e55ee65711cf1b00f788c66f472b2ba7a873ade4423514332a7d97173eff3c",
+      "case_order": [
+        "v49-ordinary-ep3-four-lane-semantic-canary",
+        "v49-ordinary-ep3-four-way-8k-512-output"
+      ],
+      "semantic_canary_cases": [
+        "capital-en",
+        "arithmetic-zh",
+        "logic-en",
+        "strict-json-zh"
+      ],
+      "performance_case": {
+        "label": "v49-ordinary-ep3-four-way-8k-512-output",
+        "flow_ids": [
+          "real8k-0",
+          "real8k-1",
+          "real8k-2",
+          "real8k-3"
+        ],
+        "input_tokens_per_flow": 8192,
+        "output_tokens_per_flow": 512,
+        "token_array_sha256": [
+          "eb693b9eea64c6b60325dfd7329b1df8faa31295bc13ba5f943d67be4ae203b5",
+          "9c47f2ec264ca4702a7dcab71f87de26bf881052bda47fd947849b8b5b202147",
+          "11bde497b6144c4051df7ad7428922ae972cc13be4cae8f857a69d7caa72b6a1",
+          "72da55c75fccd86e2541c38ba4877b7be2c1016cfb385c1811538086310c0cef"
+        ]
+      },
+      "baseline_case_added": false,
+      "model_loaded": false,
+      "gpu_touched": false
+    }
+  },
+  "runner": {
+    "source": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-v49-20261017/dual-context-v49-ep3-two-bank.cpp",
+    "source_sha256": "eea315f1cee993210345ac54f2a5e9e61bc3d2a58aaa24170fa13aace57c402c",
+    "generator": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-v49-20261017/prepare_v49_runner.py",
+    "generator_sha256": "f215a314be26ffce56913956b667fdbff0b6f2eae4eea36787451f5f8ecada50"
+  },
+  "hardware_safety": {
+    "gpu_power_limit_w_expected": 300,
+    "cpu_scaling_max_khz_expected": 2600000,
+    "gpu_free_min_mib": 512,
+    "gpu_temperature_max_c": 58,
+    "bmc_temperature_max_c": 58,
+    "fan_targets_rpm_expected": {
+      "fan0": 3000,
+      "fan2": 3000,
+      "fan3": 3000
+    },
+    "fan_tach_min_rpm": 2650,
+    "fan_monitor_state_expected": [
+      "inactive",
+      "masked"
+    ],
+    "watchdog_required_active": true,
+    "mutate_power_or_fans": false
+  },
+  "launch_contract": {
+    "runtime_max_seconds": 1800,
+    "model_loads": 1,
+    "automatic_retry": false,
+    "gpu_reset": false,
+    "required_root_tokens": [
+      "V49_REQUIRED_GATES_PASSED=1",
+      "V49_GPU_WINDOW_AUTHORIZED=1"
+    ]
+  },
+  "pending_launch_gates": [],
+  "generation": {
+    "status": "GENERATED_HOST_ONLY_NOT_COMPILED",
+    "base_source": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v32-parent-walkfast-2bank2-20261016/dual-context-v24-shortctx.cpp",
+    "base_source_sha256": "25ae12fdfb76564f3d56e35c9f0e6f4f8332b17ba4d5a75506896e0f761d1538",
+    "source": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-v49-20261017/dual-context-v49-ep3-two-bank.cpp",
+    "source_sha256": "eea315f1cee993210345ac54f2a5e9e61bc3d2a58aaa24170fa13aace57c402c",
+    "transformations": [
+      {
+        "label": "pin one async-copy recipe",
+        "expected_matches": 1
+      },
+      {
+        "label": "retain the two-lane per-bank shape",
+        "expected_matches": 1
+      },
+      {
+        "label": "pin target UBatch 1024",
+        "expected_matches": 1
+      },
+      {
+        "label": "retain draft UBatch 512",
+        "expected_matches": 1
+      },
+      {
+        "label": "pin D3 fixed-prefix and verify-row budget",
+        "expected_matches": 1
+      },
+      {
+        "label": "require ordinary non-hierarchical 3+3 topology",
+        "expected_matches": 1
+      },
+      {
+        "label": "require the V103 fast path and ordinary-Meta3 relay profile",
+        "expected_matches": 1
+      },
+      {
+        "label": "run one clean scenario family without a duplicate diagnostic pass",
+        "expected_matches": 1
+      },
+      {
+        "label": "assert two-bank aggregate KV geometry",
+        "expected_matches": 1
+      },
+      {
+        "label": "record the actual V49 topology, row budget, and V103 runtime identity",
+        "expected_matches": 1
+      },
+      {
+        "label": "label actual ordinary EP3 route and selected V103 decode kernel",
+        "expected_matches": 1
+      }
+    ],
+    "model_loads_per_process": 1,
+    "banks": 2,
+    "lanes_per_bank": 2,
+    "per_sequence_context": 16384,
+    "aggregate_target_kv_cells": 65536,
+    "target_ubatch": 1024,
+    "draft_ubatch": 512,
+    "mtp_depth": 3,
+    "verify_rows_per_bank": 8,
+    "topology": "ordinary-3plus3-ep3; hierarchy=0; nested=0",
+    "compile_performed": false,
+    "model_loaded": false,
+    "gpu_touched": false,
+    "remote_action": false,
+    "launch_authorized": false
+  },
+  "runner_reuse": {
+    "source_runtime_build_id": "20261016T165217.792883Z",
+    "source_report_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V104-build.json",
+    "source_report_sha256": "c4d1cad0966ec159cedaa767ee43a32129596375b98eddfd490574e849fc678a",
+    "source_build_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ep3-two-bank-v49-20261017/build-v49-20261016T165217.792883Z",
+    "source_build_record_sha256": "1618ee426d29255d5a9acca5db9337a9afb48225de76a11ce8d722f701a78ec7",
+    "source_runner_sha256": "80d5991c3ea6fb87d3adaaecc6ae5d3a76a88aa1ea1a80e119d3ed0364599d62",
+    "reason": "V105 changes one private BF16 CUDA operator consumer only; V49 host source, public headers, model parameters, and ABI are unchanged. The runner bytes are reused and the V105 seven-library closure is separately verified."
+  },
+  "micro_gates": {
+    "bf16_panel8_case8_v105": {
+      "status": "PASS",
+      "required": true,
+      "artifact": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/bf16-panel8-20261017/results/panel8-v104-gpu3.log",
+      "sha256": "97e7ecf8f891a617fe98231f18f5b299dfde99556e8618d3ea142e299cb8571a",
+      "scope": "469064 values bit-exact, case8 operator fixture; local throughput gain observation is not a full-model claim"
+    },
+    "mrope_compact_mask_cpu_predicate": {
+      "status": "PASS",
+      "required": true,
+      "artifact": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/qsa-compact-mask-20261017/results/qsa-compact-mask-rope-host1.log",
+      "sha256": "6ffd1c9d95b80311084974fb654cb36bc558f7dba87114f52746b3cf2e742efb",
+      "helper_sha256": "7313c6f146b3ac896090eef8bcb991a2d7488abea329e62bbbe49a2d4879eb84",
+      "scope": "text positions n_pos 1/2/4 and broadcast; reject embedding/image/cache-XY; 16641 scalar-equivalent pairs"
+    },
+    "v49_v104_exact_header_host_compile": {
+      "status": "PASS",
+      "required": true,
+      "artifact": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-v49-20261017/results/v49-host-build-v104/v49-runner-build.json",
+      "sha256": "1618ee426d29255d5a9acca5db9337a9afb48225de76a11ce8d722f701a78ec7",
+      "ldd_artifact": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-v49-20261017/results/v49-host-build-v104/ldd.txt",
+      "ldd_sha256": "bee88359e6101f43ce6b444a77a89529ed7df2b8bd557236d5751dbc31907e6f",
+      "scope": "V49 C++ host runner compiled against exact V104 headers and linked to V104 DSOs; no GPU/model; V105 public ABI unchanged"
+    }
+  },
+  "previous_host_gate": "Exact V104 V49 runner compile/link passed without the prior local API alias. V105 BF16 case8 gate passed; V105 reuses the proven runner bytes and must re-resolve the complete runtime closure.",
+  "root_authorization": "Root explicitly authorized one bounded V49 model run after the selected runtime closure and immediate safety preflight pass.",
+  "runtime_fast_recipe_combination": "V49 grouped EP3/two-bank/multi-flow candidate; no separate unoptimized baseline, no A/B staged graph claim.",
+  "notes": [
+    "V49 PLE load uses 3 GPU NUMA nodes and 12 GiB total (4 GiB each on logical GPUs0-2/nodes255-253); runtime DDR pages interleave nodes0,8 while PLE loader retains strict mbind. Require exactly859 memcmp-exact loader chunks and actual page-placement logs.",
+    "V105 report is pinned. Reuse the V104 V49 runner binary byte-for-byte, then require a fresh V105 runtime LD closure and owner/provenance check before the one authorized load."
+  ],
+  "runner_build_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ep3-two-bank-v49-20261017/build-v49-20261016T171746.673687Z-async1m"
+}

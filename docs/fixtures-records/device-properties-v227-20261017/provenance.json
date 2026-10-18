@@ -1,0 +1,52 @@
+{
+  "fixture": "device-properties-v227-20261017",
+  "status": "prepared_static_only_not_built_not_run",
+  "prepared_at": "2026-10-17",
+  "subject": "V226 opt-in CUDA immutable device-property cache",
+  "runtime_under_test": "RUNTIME_DIR supplied only after root freezes V226",
+  "process_modes": [
+    {
+      "name": "off",
+      "environment": "GGML_CUDA_CACHE_DEVICE_PROPERTIES unset"
+    },
+    {
+      "name": "on",
+      "environment": "GGML_CUDA_CACHE_DEVICE_PROPERTIES=1"
+    }
+  ],
+  "scope": {
+    "backend_api_only": true,
+    "visible_cuda_devices_required": 6,
+    "get_type_calls_per_device": 1000,
+    "full_get_props_calls_per_device": 20,
+    "recorded_immutable_fields": [
+      "name",
+      "description",
+      "type",
+      "device_id",
+      "memory_total_bytes",
+      "device_capabilities"
+    ],
+    "dynamic_fields": [
+      "memory_free_initial_bytes",
+      "memory_free_samples_bytes"
+    ],
+    "no_model_weights_or_compute_graphs": true
+  },
+  "comparison": {
+    "immutable_native_properties_must_match": true,
+    "dynamic_free_memory_samples_are_not_compared": true,
+    "timing_interpretation": "API microbenchmark only; not model, kernel, inference, or throughput evidence."
+  },
+  "authorization": {
+    "host_build_gate": [
+      "DEVICE_PROPERTIES_BUILD_AUTHORIZED=1",
+      "V226_FROZEN=1"
+    ],
+    "benchmark_gate": [
+      "DEVICE_PROPERTIES_GPU_AUTHORIZED=1",
+      "V226_FROZEN=1"
+    ],
+    "state": "No host build or CUDA API run performed; wait for root handoff after V226 is frozen."
+  }
+}

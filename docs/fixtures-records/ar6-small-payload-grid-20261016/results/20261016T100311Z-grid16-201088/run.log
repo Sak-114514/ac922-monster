@@ -1,0 +1,138 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA Graph id 1 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 2 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 3 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 4 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 5 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 6 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 1 reused
+CUDA Graph id 2 reused
+CUDA Graph id 3 reused
+CUDA Graph id 4 reused
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+P2P AllReduce fixed-grid blocks=16 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+AR6_EXPECT_FIXED_GRID blocks=16 immutable_per_communicator=1
+AR6_GRID_CASE grid=16 decode_bytes=163840 decode_floats=40960 prefill_bytes=10485760 prefill_floats=2621440 warm_replays=1 measured_replays=3 ranks=6 composition=49x1scale+48AR6
+AR6_EXACT_GATE bytes=163840 label=ordinary-control-A ranks=6 rank_order=0..5 exact=1 canary=1 PASS
+CUDA Graph id 1 reused
+CUDA Graph id 2 reused
+CUDA Graph id 3 reused
+CUDA Graph id 4 reused
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA compose uploaded ranks=6 persistent_host_launchers=6
+CUDA compose ready ranks=6 children_per_rank=49 ar6_per_rank=48 expected_ar6=48
+AR6_COMPOSE_SHAPE grid=16 bytes=163840 children_per_rank=49 scalar_nodes_per_child=1 ar6_per_rank=48 expected_ar6=48
+AR6_COMPOSE_READY grid=16 bytes=163840 ranks=6 children_per_rank=49 ar6_per_rank=48
+AR6_EXACT_GATE bytes=163840 label=compose-A1 ranks=6 rank_order=0..5 exact=1 canary=1 PASS
+AR6_EXACT_GATE bytes=163840 label=compose-B ranks=6 rank_order=0..5 exact=1 canary=1 PASS
+AR6_EXACT_GATE bytes=163840 label=compose-A2 ranks=6 rank_order=0..5 exact=1 canary=1 PASS
+AR6_ABA_GATE bytes=163840 A_B_A=1 changed_input=1 exact=1 PASS
+AR6_WALL_SAMPLE grid=16 bytes=163840 seq=1 wall_complete_us=4581.78 ar6_boundaries=48 wall_per_ar_us=95.4537
+meta-gpu-span device=0 trace=0x7ffefe0d33d0 seq=1 nodes=48 approx_begin_us=63978798756 duration_us=4575 initial_calibration_bracket_us=12
+meta-gpu-span device=1 trace=0x7ffefe0c3c20 seq=1 nodes=48 approx_begin_us=63978798766 duration_us=4567 initial_calibration_bracket_us=9
+meta-gpu-span device=2 trace=0x7ffefe197400 seq=1 nodes=48 approx_begin_us=63978798772 duration_us=4561 initial_calibration_bracket_us=8
+meta-gpu-span device=3 trace=0x7ffefe075c60 seq=1 nodes=48 approx_begin_us=63978798778 duration_us=4557 initial_calibration_bracket_us=8
+meta-gpu-span device=4 trace=0x7ffefe07a750 seq=1 nodes=48 approx_begin_us=63978798784 duration_us=4551 initial_calibration_bracket_us=7
+meta-gpu-span device=5 trace=0x7ffefe07f240 seq=1 nodes=48 approx_begin_us=63978798790 duration_us=4545 initial_calibration_bracket_us=7
+AR6_WALL_SAMPLE grid=16 bytes=163840 seq=2 wall_complete_us=4580.53 ar6_boundaries=48 wall_per_ar_us=95.4278
+meta-gpu-span device=0 trace=0x7ffefe0d33d0 seq=2 nodes=48 approx_begin_us=63978803453 duration_us=4749 initial_calibration_bracket_us=12
+meta-gpu-span device=1 trace=0x7ffefe0c3c20 seq=2 nodes=48 approx_begin_us=63978803500 duration_us=4705 initial_calibration_bracket_us=9
+meta-gpu-span device=2 trace=0x7ffefe197400 seq=2 nodes=48 approx_begin_us=63978803543 duration_us=4661 initial_calibration_bracket_us=8
+meta-gpu-span device=3 trace=0x7ffefe075c60 seq=2 nodes=48 approx_begin_us=63978803584 duration_us=4622 initial_calibration_bracket_us=8
+meta-gpu-span device=4 trace=0x7ffefe07a750 seq=2 nodes=48 approx_begin_us=63978803625 duration_us=4580 initial_calibration_bracket_us=7
+meta-gpu-span device=5 trace=0x7ffefe07f240 seq=2 nodes=48 approx_begin_us=63978803667 duration_us=4538 initial_calibration_bracket_us=7
+AR6_WALL_SAMPLE grid=16 bytes=163840 seq=3 wall_complete_us=4518.57 ar6_boundaries=48 wall_per_ar_us=94.1368
+AR6_EXACT_GATE bytes=163840 label=timed-final-A ranks=6 rank_order=0..5 exact=1 canary=1 PASS
+meta-gpu-span device=0 trace=0x7ffefe0d33d0 seq=3 nodes=48 approx_begin_us=63978808301 duration_us=4690 initial_calibration_bracket_us=12
+meta-gpu-span device=0 trace=0x7ffefe0d33d0 dropped=0
+meta-gpu-span device=1 trace=0x7ffefe0c3c20 seq=3 nodes=48 approx_begin_us=63978808347 duration_us=4646 initial_calibration_bracket_us=9
+meta-gpu-span device=1 trace=0x7ffefe0c3c20 dropped=0
+meta-gpu-span device=2 trace=0x7ffefe197400 seq=3 nodes=48 approx_begin_us=63978808389 duration_us=4604 initial_calibration_bracket_us=8
+meta-gpu-span device=2 trace=0x7ffefe197400 dropped=0
+meta-gpu-span device=3 trace=0x7ffefe075c60 seq=3 nodes=48 approx_begin_us=63978808428 duration_us=4565 initial_calibration_bracket_us=8
+meta-gpu-span device=3 trace=0x7ffefe075c60 dropped=0
+meta-gpu-span device=4 trace=0x7ffefe07a750 seq=3 nodes=48 approx_begin_us=63978808477 duration_us=4517 initial_calibration_bracket_us=7
+meta-gpu-span device=4 trace=0x7ffefe07a750 dropped=0
+meta-gpu-span device=5 trace=0x7ffefe07f240 seq=3 nodes=48 approx_begin_us=63978808518 duration_us=4475 initial_calibration_bracket_us=7
+meta-gpu-span device=5 trace=0x7ffefe07f240 dropped=0
+AR6_PAYLOAD_PASS grid=16 bytes=163840 elements=40960 rank_order_exact=1 ABA=1 canary=1 reps=3
+CUDA Graph id 7 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 8 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 9 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 10 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 11 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 12 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 7 reused
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+CUDA Graph id 11 reused
+CUDA Graph id 12 reused
+P2P AllReduce fixed-grid blocks=16 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+AR6_EXACT_GATE bytes=10485760 label=ordinary-control-A ranks=6 rank_order=0..5 exact=1 canary=1 PASS
+CUDA Graph id 7 reused
+CUDA Graph id 8 reused
+CUDA Graph id 9 reused
+CUDA Graph id 10 reused
+CUDA Graph id 11 reused
+CUDA Graph id 12 reused
+CUDA compose uploaded ranks=6 persistent_host_launchers=6
+CUDA compose ready ranks=6 children_per_rank=49 ar6_per_rank=48 expected_ar6=48
+AR6_COMPOSE_SHAPE grid=16 bytes=10485760 children_per_rank=49 scalar_nodes_per_child=1 ar6_per_rank=48 expected_ar6=48
+AR6_COMPOSE_READY grid=16 bytes=10485760 ranks=6 children_per_rank=49 ar6_per_rank=48
+AR6_EXACT_GATE bytes=10485760 label=compose-A1 ranks=6 rank_order=0..5 exact=1 canary=1 PASS
+AR6_EXACT_GATE bytes=10485760 label=compose-B ranks=6 rank_order=0..5 exact=1 canary=1 PASS
+AR6_EXACT_GATE bytes=10485760 label=compose-A2 ranks=6 rank_order=0..5 exact=1 canary=1 PASS
+AR6_ABA_GATE bytes=10485760 A_B_A=1 changed_input=1 exact=1 PASS
+AR6_WALL_SAMPLE grid=16 bytes=10485760 seq=4 wall_complete_us=220216.76 ar6_boundaries=48 wall_per_ar_us=4587.8492
+meta-gpu-span device=0 trace=0x7ffefe07f240 seq=4 nodes=48 approx_begin_us=63980740735 duration_us=219835 initial_calibration_bracket_us=12
+meta-gpu-span device=1 trace=0x7ffefe07a750 seq=4 nodes=48 approx_begin_us=63980740744 duration_us=219822 initial_calibration_bracket_us=9
+meta-gpu-span device=2 trace=0x7ffefe075c60 seq=4 nodes=48 approx_begin_us=63980740747 duration_us=219816 initial_calibration_bracket_us=8
+meta-gpu-span device=3 trace=0x7ffefe197400 seq=4 nodes=48 approx_begin_us=63980740756 duration_us=219800 initial_calibration_bracket_us=8
+meta-gpu-span device=4 trace=0x7ffefe0c3c20 seq=4 nodes=48 approx_begin_us=63980740771 duration_us=219788 initial_calibration_bracket_us=7
+meta-gpu-span device=5 trace=0x7ffefe0d33d0 seq=4 nodes=48 approx_begin_us=63980740769 duration_us=219768 initial_calibration_bracket_us=7
+AR6_WALL_SAMPLE grid=16 bytes=10485760 seq=5 wall_complete_us=216785.18 ar6_boundaries=48 wall_per_ar_us=4516.3579
+meta-gpu-span device=0 trace=0x7ffefe07f240 seq=5 nodes=48 approx_begin_us=63980961133 duration_us=217039 initial_calibration_bracket_us=12
+meta-gpu-span device=1 trace=0x7ffefe07a750 seq=5 nodes=48 approx_begin_us=63980961195 duration_us=216975 initial_calibration_bracket_us=9
+meta-gpu-span device=2 trace=0x7ffefe075c60 seq=5 nodes=48 approx_begin_us=63980961248 duration_us=216917 initial_calibration_bracket_us=8
+meta-gpu-span device=3 trace=0x7ffefe197400 seq=5 nodes=48 approx_begin_us=63980961319 duration_us=216846 initial_calibration_bracket_us=8
+meta-gpu-span device=4 trace=0x7ffefe0c3c20 seq=5 nodes=48 approx_begin_us=63980961379 duration_us=216792 initial_calibration_bracket_us=7
+meta-gpu-span device=5 trace=0x7ffefe0d33d0 seq=5 nodes=48 approx_begin_us=63980961420 duration_us=216718 initial_calibration_bracket_us=7
+AR6_WALL_SAMPLE grid=16 bytes=10485760 seq=6 wall_complete_us=216356.84 ar6_boundaries=48 wall_per_ar_us=4507.4341
+AR6_EXACT_GATE bytes=10485760 label=timed-final-A ranks=6 rank_order=0..5 exact=1 canary=1 PASS
+meta-gpu-span device=0 trace=0x7ffefe07f240 seq=6 nodes=48 approx_begin_us=63981178280 duration_us=216529 initial_calibration_bracket_us=12
+meta-gpu-span device=0 trace=0x7ffefe07f240 dropped=0
+meta-gpu-span device=1 trace=0x7ffefe07a750 seq=6 nodes=48 approx_begin_us=63981178322 duration_us=216486 initial_calibration_bracket_us=9
+meta-gpu-span device=1 trace=0x7ffefe07a750 dropped=0
+meta-gpu-span device=2 trace=0x7ffefe075c60 seq=6 nodes=48 approx_begin_us=63981178360 duration_us=216440 initial_calibration_bracket_us=8
+meta-gpu-span device=2 trace=0x7ffefe075c60 dropped=0
+meta-gpu-span device=3 trace=0x7ffefe197400 seq=6 nodes=48 approx_begin_us=63981178407 duration_us=216396 initial_calibration_bracket_us=8
+meta-gpu-span device=3 trace=0x7ffefe197400 dropped=0
+meta-gpu-span device=4 trace=0x7ffefe0c3c20 seq=6 nodes=48 approx_begin_us=63981178456 duration_us=216347 initial_calibration_bracket_us=7
+meta-gpu-span device=4 trace=0x7ffefe0c3c20 dropped=0
+meta-gpu-span device=5 trace=0x7ffefe0d33d0 seq=6 nodes=48 approx_begin_us=63981178484 duration_us=216290 initial_calibration_bracket_us=7
+meta-gpu-span device=5 trace=0x7ffefe0d33d0 dropped=0
+AR6_PAYLOAD_PASS grid=16 bytes=10485760 elements=2621440 rank_order_exact=1 ABA=1 canary=1 reps=3
+AR6_GRID_PROCESS_PASS grid=16 decode_bytes=163840 prefill_bytes=10485760

@@ -1,0 +1,36 @@
+{
+  "runtime": "runtime-perf-v108",
+  "build_id": "20261016T183414.662729Z",
+  "report_sha256": "3e90e390e8689b8680f1408232a0ecc57ac9f0da00cdaff3f4de669432cb2bc7",
+  "gates": {
+    "cpu": {
+      "path": "monster-engine/standard-opt-20261014/fixtures/qsa-block-bias-native-20261017/results/block-gate2-cpu-20261016T183927Z.log",
+      "sha256": "604607d5af97f3268fa9d7337860cc20f01eb972305c7e1b1249964c4ce568a1"
+    },
+    "cuda": {
+      "path": "monster-engine/standard-opt-20261014/fixtures/qsa-block-bias-native-20261017/results/block-gate2-cuda-20261016T183951Z.log",
+      "sha256": "d4e995e6b7bc89e7edb77908e5861c93f3a8169c6b88986458b4ea8cf0d819ce"
+    },
+    "meta3": {
+      "path": "monster-engine/standard-opt-20261014/fixtures/qsa-block-bias-native-20261017/results/block-gate2-meta3-20261016T184000Z.log",
+      "sha256": "2a483173df635a35add7172b010b65691ffc8b9ed8cb7721d11fc54c7120581b"
+    },
+    "large_cuda": {
+      "path": "monster-engine/standard-opt-20261014/fixtures/qsa-block-bias-native-20261017/results/block-gate2-large-cuda-20261016T184008Z.log",
+      "sha256": "ae3a861e1b38796100f70f03e46a77a8b9bb5e8d1c994bd931531e18ea828cbe"
+    }
+  },
+  "source_binary_sha256": "21c816e4505ae28e8804051531e490dae39e1740d38000064529fcb969a97ae6",
+  "small_scope": "ratios4/64 A/B/A originalexpression vs nativehelper vs constructor; exactF32, poison,canary,immutableinputs,integerfloatcast2^24ties",
+  "large_shape": [
+    16384,
+    4096
+  ],
+  "large_output_values": 67108864,
+  "large_F32_output_bytes": 268435456,
+  "large_backend_root_buffer_bytes": 268648576,
+  "large_gpu_process_sampled_delta_mib": 568,
+  "graph_replay": "notestablished: operatorfixturegraphsdisabled;modelpending",
+  "failed_attempt": "CPUgate1stoppedbyfixturedata coverageassert before arithmetic; adjustedcaseproducer toinclude foreign+spareperstream withoutweakeningasserts",
+  "model_launch_eligible": true
+}

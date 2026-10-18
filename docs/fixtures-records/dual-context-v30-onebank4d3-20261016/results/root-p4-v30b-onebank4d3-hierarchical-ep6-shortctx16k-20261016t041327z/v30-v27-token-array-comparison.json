@@ -1,0 +1,411 @@
+{
+  "schema_version": 1,
+  "comparison": "V30 generated token arrays against frozen V27, case by case",
+  "status": "fail",
+  "baseline_root": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v27-shortctx16k-hierarchical-20261016/results/root-p4-v27-shortctx16k-hierarchical-ep6-d3-20261016t022431z/copy1",
+  "candidate_root": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v30-onebank4d3-20261016/results/root-p4-v30b-onebank4d3-hierarchical-ep6-shortctx16k-20261016t041327z/copy1",
+  "profiles": {
+    "diagnostic": {
+      "profile": "diagnostic",
+      "status": "fail",
+      "baseline_flow_count": 42,
+      "candidate_flow_count": 42,
+      "matching_flow_count": 0,
+      "exact_token_array_count": 0,
+      "missing_from_candidate": [
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-00",
+          "flow_id": "arithmetic-zh"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-00",
+          "flow_id": "capital-en"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-00",
+          "flow_id": "logic-en"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-00",
+          "flow_id": "strict-json-zh"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-01",
+          "flow_id": "parallel2-add-en"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-01",
+          "flow_id": "parallel2-subtract-zh"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-01",
+          "flow_id": "python-clamp"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-01",
+          "flow_id": "vocabulary-en-zh"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-02",
+          "flow_id": "parallel4-add"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-02",
+          "flow_id": "parallel4-divide"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-02",
+          "flow_id": "parallel4-multiply"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-02",
+          "flow_id": "parallel4-subtract"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-03",
+          "flow_id": "slot-reuse-0"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-03",
+          "flow_id": "slot-reuse-1"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-03",
+          "flow_id": "slot-reuse-2"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-03",
+          "flow_id": "slot-reuse-3"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-real8k-p4-2x2",
+          "flow_id": "real8k-0"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-real8k-p4-2x2",
+          "flow_id": "real8k-1"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-real8k-p4-2x2",
+          "flow_id": "real8k-2"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-real8k-p4-2x2",
+          "flow_id": "real8k-3"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-real8k-0",
+          "flow_id": "real8k-0"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-real8k-0",
+          "flow_id": "real8k-1"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-real8k-1",
+          "flow_id": "real8k-2"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-real8k-1",
+          "flow_id": "real8k-3"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-00-0",
+          "flow_id": "arithmetic-zh"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-00-0",
+          "flow_id": "capital-en"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-00-1",
+          "flow_id": "logic-en"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-00-1",
+          "flow_id": "strict-json-zh"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-01-0",
+          "flow_id": "python-clamp"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-01-0",
+          "flow_id": "vocabulary-en-zh"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-01-1",
+          "flow_id": "parallel2-add-en"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-01-1",
+          "flow_id": "parallel2-subtract-zh"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-02-0",
+          "flow_id": "parallel4-add"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-02-0",
+          "flow_id": "parallel4-subtract"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-02-1",
+          "flow_id": "parallel4-divide"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-02-1",
+          "flow_id": "parallel4-multiply"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-03-0",
+          "flow_id": "slot-reuse-0"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-03-0",
+          "flow_id": "slot-reuse-1"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-03-1",
+          "flow_id": "slot-reuse-2"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-03-1",
+          "flow_id": "slot-reuse-3"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-single8k-pp-probe-32",
+          "flow_id": "real8k0-pp-probe-32"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-single8k-pp-warm-32",
+          "flow_id": "real8k0-pp-warm-32"
+        }
+      ],
+      "unexpected_in_candidate": [
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-00",
+          "flow_id": "arithmetic-zh"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-00",
+          "flow_id": "capital-en"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-00",
+          "flow_id": "logic-en"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-00",
+          "flow_id": "strict-json-zh"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-01",
+          "flow_id": "parallel2-add-en"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-01",
+          "flow_id": "parallel2-subtract-zh"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-01",
+          "flow_id": "python-clamp"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-01",
+          "flow_id": "vocabulary-en-zh"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-02",
+          "flow_id": "parallel4-add"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-02",
+          "flow_id": "parallel4-divide"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-02",
+          "flow_id": "parallel4-multiply"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-02",
+          "flow_id": "parallel4-subtract"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-03",
+          "flow_id": "slot-reuse-0"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-03",
+          "flow_id": "slot-reuse-1"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-03",
+          "flow_id": "slot-reuse-2"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-dual-sem-03",
+          "flow_id": "slot-reuse-3"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-real8k-p4-1x4",
+          "flow_id": "real8k-0"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-real8k-p4-1x4",
+          "flow_id": "real8k-1"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-real8k-p4-1x4",
+          "flow_id": "real8k-2"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-real8k-p4-1x4",
+          "flow_id": "real8k-3"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-real8k-0",
+          "flow_id": "real8k-0"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-real8k-0",
+          "flow_id": "real8k-1"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-real8k-1",
+          "flow_id": "real8k-2"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-real8k-1",
+          "flow_id": "real8k-3"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-00-0",
+          "flow_id": "arithmetic-zh"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-00-0",
+          "flow_id": "capital-en"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-00-1",
+          "flow_id": "logic-en"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-00-1",
+          "flow_id": "strict-json-zh"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-01-0",
+          "flow_id": "python-clamp"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-01-0",
+          "flow_id": "vocabulary-en-zh"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-01-1",
+          "flow_id": "parallel2-add-en"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-01-1",
+          "flow_id": "parallel2-subtract-zh"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-02-0",
+          "flow_id": "parallel4-add"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-02-0",
+          "flow_id": "parallel4-subtract"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-02-1",
+          "flow_id": "parallel4-divide"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-02-1",
+          "flow_id": "parallel4-multiply"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-03-0",
+          "flow_id": "slot-reuse-0"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-03-0",
+          "flow_id": "slot-reuse-1"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-03-1",
+          "flow_id": "slot-reuse-2"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-serial-sem-03-1",
+          "flow_id": "slot-reuse-3"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-single8k-pp-probe-32",
+          "flow_id": "real8k0-pp-probe-32"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-diagnostic-single8k-pp-warm-32",
+          "flow_id": "real8k0-pp-warm-32"
+        }
+      ],
+      "token_array_mismatches": [],
+      "errors": [],
+      "baseline_results_sha256": "16cb38688dc2e4581c0f5990dcf432949f431dad842e44ac5560c082cdf6f994",
+      "candidate_results_sha256": "91b4cb1a07ccd9e7990436a6993c1bfc7d77be0f2e8d38cce6521132f1f31b47"
+    },
+    "clean": {
+      "profile": "clean",
+      "status": "fail",
+      "baseline_flow_count": 4,
+      "candidate_flow_count": 4,
+      "matching_flow_count": 0,
+      "exact_token_array_count": 0,
+      "missing_from_candidate": [
+        {
+          "label": "v24-shortctx-copy1-clean-real8k-p4-2x2-clean",
+          "flow_id": "real8k-0"
+        },
+        {
+          "label": "v24-shortctx-copy1-clean-real8k-p4-2x2-clean",
+          "flow_id": "real8k-1"
+        },
+        {
+          "label": "v24-shortctx-copy1-clean-real8k-p4-2x2-clean",
+          "flow_id": "real8k-2"
+        },
+        {
+          "label": "v24-shortctx-copy1-clean-real8k-p4-2x2-clean",
+          "flow_id": "real8k-3"
+        }
+      ],
+      "unexpected_in_candidate": [
+        {
+          "label": "v30-onebank4d3-copy1-clean-real8k-p4-1x4-clean",
+          "flow_id": "real8k-0"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-clean-real8k-p4-1x4-clean",
+          "flow_id": "real8k-1"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-clean-real8k-p4-1x4-clean",
+          "flow_id": "real8k-2"
+        },
+        {
+          "label": "v30-onebank4d3-copy1-clean-real8k-p4-1x4-clean",
+          "flow_id": "real8k-3"
+        }
+      ],
+      "token_array_mismatches": [],
+      "errors": [],
+      "baseline_results_sha256": "beee7b03194cea10d8f56225bf2f8bae83c014f461324b8b9603bb746b95ae36",
+      "candidate_results_sha256": "e4cb799b4cc7cc5ddf4bf764c2235791ea1d7792f673f5c3b7db3a61f3471f40"
+    }
+  },
+  "errors": [],
+  "prefix_failure_policy": "V27 single8k cold/warm auxiliary prefix failures remain separately enforced by the original comparator; this report does not suppress or reinterpret them"
+}

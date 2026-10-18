@@ -1,0 +1,32 @@
+2026-10-16T17:47:29+0800 192 systemd[1562]: Started root-p4-v37-flatmeta6-ep6-d3-16k-20261016t094727z.service - V37 V85 flat Meta6 EP6 one-bank four-lane D3 qualification.
+2026-10-16T17:47:29+0800 192 numactl[197696]: {
+2026-10-16T17:47:29+0800 192 numactl[197696]:   "modes": [
+2026-10-16T17:47:29+0800 192 numactl[197696]:     1
+2026-10-16T17:47:29+0800 192 numactl[197696]:   ],
+2026-10-16T17:47:29+0800 192 numactl[197696]:   "profile_dirs": [
+2026-10-16T17:47:29+0800 192 numactl[197696]:     "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v37-flatmeta6-20261016/results/root-p4-v37-flatmeta6-ep6-d3-16k-20261016t094727z/copy1/diagnostic",
+2026-10-16T17:47:29+0800 192 numactl[197696]:     "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v37-flatmeta6-20261016/results/root-p4-v37-flatmeta6-ep6-d3-16k-20261016t094727z/copy1/clean"
+2026-10-16T17:47:29+0800 192 numactl[197696]:   ]
+2026-10-16T17:47:29+0800 192 numactl[197696]: }
+2026-10-16T17:47:29+0800 192 numactl[197702]: Traceback (most recent call last):
+2026-10-16T17:47:29+0800 192 numactl[197702]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v37-flatmeta6-20261016/write_run_manifest_v37.py", line 38, in <module>
+2026-10-16T17:47:29+0800 192 numactl[197702]:     raise SystemExit(module.main())
+2026-10-16T17:47:29+0800 192 numactl[197702]:                      ^^^^^^^^^^^^^
+2026-10-16T17:47:29+0800 192 numactl[197702]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/write_run_manifest_v35.py", line 193, in main
+2026-10-16T17:47:29+0800 192 numactl[197702]:     "fixture_sources": fixture_source_info(),
+2026-10-16T17:47:29+0800 192 numactl[197702]:                        ^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T17:47:29+0800 192 numactl[197702]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/write_run_manifest_v35.py", line 133, in fixture_source_info
+2026-10-16T17:47:29+0800 192 numactl[197702]:     result = {name: file_info(HERE / name) for name in SOURCE_FILES}
+2026-10-16T17:47:29+0800 192 numactl[197702]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T17:47:29+0800 192 numactl[197702]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/write_run_manifest_v35.py", line 133, in <dictcomp>
+2026-10-16T17:47:29+0800 192 numactl[197702]:     result = {name: file_info(HERE / name) for name in SOURCE_FILES}
+2026-10-16T17:47:29+0800 192 numactl[197702]:                     ^^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T17:47:29+0800 192 numactl[197702]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/write_run_manifest_v35.py", line 109, in file_info
+2026-10-16T17:47:29+0800 192 numactl[197702]:     stat = path.stat()
+2026-10-16T17:47:29+0800 192 numactl[197702]:            ^^^^^^^^^^^
+2026-10-16T17:47:29+0800 192 numactl[197702]:   File "/usr/lib/python3.11/pathlib.py", line 1014, in stat
+2026-10-16T17:47:29+0800 192 numactl[197702]:     return os.stat(self, follow_symlinks=follow_symlinks)
+2026-10-16T17:47:29+0800 192 numactl[197702]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T17:47:29+0800 192 numactl[197702]: FileNotFoundError: [Errno 2] No such file or directory: '/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v37-flatmeta6-20261016/make_v37_profile.py'
+2026-10-16T17:47:29+0800 192 systemd[1562]: root-p4-v37-flatmeta6-ep6-d3-16k-20261016t094727z.service: Main process exited, code=exited, status=1/FAILURE
+2026-10-16T17:47:29+0800 192 systemd[1562]: root-p4-v37-flatmeta6-ep6-d3-16k-20261016t094727z.service: Failed with result 'exit-code'.

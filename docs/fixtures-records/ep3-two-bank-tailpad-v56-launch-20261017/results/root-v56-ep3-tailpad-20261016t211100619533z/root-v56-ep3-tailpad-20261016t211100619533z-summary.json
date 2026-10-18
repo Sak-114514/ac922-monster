@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "status": "V56_RUN_FINISHED_PARTIAL_OR_GATES_REVIEW_REQUIRED",
+  "unit": "root-v56-ep3-tailpad-20261016t211100619533z",
+  "runtime_build_id": "20261016T205939.687891Z",
+  "runtime_report_sha256": "a9d7e464819a1c03622c261f4f5af3351349e061074e0430899addcad373c3f5",
+  "runner_sha256": "725d99645f6579d5458e9a362d617aae3bf8b29ea0c5ab873e0ea0996e037e3a",
+  "model_loads": 1,
+  "run_rc_success": true,
+  "quality": {
+    "four_flow_native_canary": "NOT_RUN",
+    "tail_limit_canary_complete": false,
+    "performance_outputs": "unscored_raw_output"
+  },
+  "tail_limit_canary": {
+    "label": "v56-tail-limit-2x12k-4x12",
+    "flows": [],
+    "geometry_and_full_output_pass": false
+  },
+  "tailpad_runtime_gate": {
+    "status": "FAIL",
+    "per_window": {
+      "v56-two-flow-2x12k-512": {
+        "selected_plan_count": 0,
+        "invalid_selected_plan_count": 0,
+        "selected_plan_lines": []
+      },
+      "v56-four-flow-4x12k-512": {
+        "selected_plan_count": 0,
+        "invalid_selected_plan_count": 0,
+        "selected_plan_lines": []
+      }
+    },
+    "row_accounting": "total=4*active_lanes; scores=real_rows; pad rows excluded from scores"
+  },
+  "performance_windows": [
+    {
+      "label": "v56-two-flow-2x12k-512",
+      "request_count_expected": 2,
+      "request_count_observed": 0,
+      "flows": [],
+      "geometry_and_full_output_pass": false,
+      "clean_performance_eligible": false,
+      "ordinary_ep3_profile": false,
+      "shared_tg": null,
+      "shared_tokens": null,
+      "shared_window_seconds": null,
+      "aggregate_prefill_tok_s": null,
+      "frame_host_resource_observations": 0,
+      "raw_output_semantic_status": "unscored"
+    },
+    {
+      "label": "v56-four-flow-4x12k-512",
+      "request_count_expected": 4,
+      "request_count_observed": 0,
+      "flows": [],
+      "geometry_and_full_output_pass": false,
+      "clean_performance_eligible": false,
+      "ordinary_ep3_profile": false,
+      "shared_tg": null,
+      "shared_tokens": null,
+      "shared_window_seconds": null,
+      "aggregate_prefill_tok_s": null,
+      "frame_host_resource_observations": 0,
+      "raw_output_semantic_status": "unscored"
+    }
+  ],
+  "native_path_gates": {
+    "native_mask_selected_devices": [],
+    "native_mask_all_six_selected": false,
+    "native_block_bias_selected_devices": [],
+    "native_block_bias_all_six_selected": false,
+    "upload_pool_512_marker_present": false,
+    "ple_859_marker_present": true,
+    "input_gpu_loaded_selected": false,
+    "virtual_topk_requested_observed": false,
+    "virtual_topk_selection_scope": "observed only; canonical multi-sequence decline is allowed",
+    "sparse_query_path_lines": [],
+    "requested_runtime_marker_lines": {
+      "qsa_native_dispatch": [],
+      "block_bias_native_dispatch": [],
+      "upload_pool_512": [],
+      "input_gpu_loaded": [],
+      "input_gpu_placement": [
+        "0.03.542.209 I Qwen4exp input placement requested=1 eligible=1 destination=Meta() base_token_table_only=1 PLE_and_output_placement_unchanged=1"
+      ],
+      "virtual_topk_requested": [],
+      "graph_signature_miss_diagnostic": [],
+      "standard_sparse_diagnostic": [],
+      "target_pad_plan": [],
+      "ple_exact_copy_859": [
+        "ple-numa: copy complete bytes=28800138240 memcmp_exact=1 chunks=859"
+      ]
+    },
+    "pass": false
+  },
+  "ple_gate": {
+    "status": "PASS",
+    "requested_gpu_gib": 12,
+    "expected_selected_gpu_gib": 12,
+    "expected_gpu_nodes": 6,
+    "actual_wired_gpu_gib": 12,
+    "actual_wired_cpu_gib": 14.82,
+    "actual_wired_gpu_nodes": 6,
+    "activation_marker_count": 1,
+    "gpu_marker_values_gib": [
+      12.0
+    ],
+    "cpu_marker_values_gib": [
+      14.82
+    ],
+    "request_matches_actual": true,
+    "expected_prefix_matches_actual": true,
+    "expected_nodes_match_actual": true,
+    "ordered_exact_chunks": true,
+    "whole_copy_exact": true,
+    "actual_cpu_ddr_nodes_0_8": true,
+    "pass": true
+  },
+  "host_frame_instrumentation": {
+    "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v56-launch-20261017/results/root-v56-ep3-tailpad-20261016t211100619533z-frame-host-resources.json",
+    "frames": 0,
+    "frames_by_window": {
+      "v56-two-flow-2x12k-512": 0,
+      "v56-four-flow-4x12k-512": 0
+    },
+    "timing_semantics": "host elapsed; synchronization wait is not GPU compute time"
+  },
+  "canary_report": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v56-launch-20261017/results/root-v56-ep3-tailpad-20261016t211100619533z-semantic-canary.json",
+  "result_source": null,
+  "runtime_log": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v56-launch-20261017/results/root-v56-ep3-tailpad-20261016t211100619533z-runtime.log",
+  "monitor_report": {
+    "unit": "root-v56-ep3-tailpad-20261016t211100619533z",
+    "output": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v56-launch-20261017/results/root-v56-ep3-tailpad-20261016t211100619533z",
+    "mode": "v56-ordinary-ep3-two-bank-2x12k-then4x12k-512",
+    "final_state": {
+      "MainPID": "0",
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ActiveState": "inactive",
+      "SubState": "dead"
+    },
+    "telemetry": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v56-launch-20261017/results/root-v56-ep3-tailpad-20261016t211100619533z-telemetry.jsonl",
+    "guard_seen": true,
+    "runtime_bound_hit": false,
+    "supervisor_exit_code": 1
+  },
+  "telemetry": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-tailpad-v56-launch-20261017/results/root-v56-ep3-tailpad-20261016t211100619533z-telemetry.jsonl",
+  "profile_sha256": "6ade9e638993587610efb4b67694dda9febfd2519b3d95fe021a0100a914bc9e",
+  "automatic_retry": false,
+  "hardware_controls_modified": false
+}

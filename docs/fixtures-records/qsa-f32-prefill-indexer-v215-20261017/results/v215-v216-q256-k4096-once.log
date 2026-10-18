@@ -1,0 +1,17 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+QSA_F32_PREFILL_FIXTURE backend=CUDA3 case=q256-k4096 model=none D=128 H=4 keys=F32_pooled queries=F32 weights=1 mask=0 numerical_policy=REPORT_ONLY
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend.cpp:356: GGML_ASSERT(buf != NULL && "tensor buffer not set") failed
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v216/lib/libggml-base.so.0(+0x29068)[0x7fff9c6e9068]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v216/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fff9c6e9668]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v216/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fff9c6e9804]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v216/lib/libggml-base.so.0(ggml_backend_tensor_set+0x15c)[0x7fff9c71005c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-f32-prefill-indexer-v215-20261017/qsa-f32-prefill-indexer-fixture(+0x5848)[0x120185848]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-f32-prefill-indexer-v215-20261017/qsa-f32-prefill-indexer-fixture(+0x2d14)[0x120182d14]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fff9bdf4d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fff9bdf4f6c]

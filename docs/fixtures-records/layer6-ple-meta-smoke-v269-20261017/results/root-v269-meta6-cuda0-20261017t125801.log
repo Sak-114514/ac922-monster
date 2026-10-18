@@ -1,0 +1,66 @@
+tag=root-v269-meta6-cuda0-20261017t125801
+started_utc=2026-10-17T12:58:02Z
+visible_devices=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 2 MiB, 16125 MiB, 38, 0 %
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 16125 MiB, 37, 0 %
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 2 MiB, 16125 MiB, 38, 0 %
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 2 MiB, 16125 MiB, 38, 0 %
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 13 MiB, 16114 MiB, 38, 0 %
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 12 MiB, 16115 MiB, 38, 0 %
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GPU_PREFLIGHT rank=0 name=CUDA0 free=16585457664 total=16911433728
+GPU_PREFLIGHT rank=1 name=CUDA1 free=16585457664 total=16911433728
+GPU_PREFLIGHT rank=2 name=CUDA2 free=16585326592 total=16911433728
+GPU_PREFLIGHT rank=3 name=CUDA3 free=16585457664 total=16911433728
+GPU_PREFLIGHT rank=4 name=CUDA4 free=16573267968 total=16911433728
+GPU_PREFLIGHT rank=5 name=CUDA5 free=16574578688 total=16911433728
+PLE_SHARD rank=0 global_rows=[0,2) bytes=180 exact=1
+PLE_SHARD rank=1 global_rows=[2,4) bytes=180 exact=1
+PLE_SHARD rank=2 global_rows=[4,6) bytes=180 exact=1
+PLE_SHARD rank=3 global_rows=[6,8) bytes=180 exact=1
+PLE_SHARD rank=4 global_rows=[8,10) bytes=180 exact=1
+PLE_SHARD rank=5 global_rows=[10,12) bytes=180 exact=1
+FRAME frame=0 copy_slot_by_round_robin=0 graph_uid=1 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=1 copy_slot_by_round_robin=1 graph_uid=16 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=2 copy_slot_by_round_robin=2 graph_uid=37 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=3 copy_slot_by_round_robin=3 graph_uid=58 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=4 copy_slot_by_round_robin=0 graph_uid=79 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=5 copy_slot_by_round_robin=1 graph_uid=100 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=6 copy_slot_by_round_robin=2 graph_uid=121 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=7 copy_slot_by_round_robin=3 graph_uid=142 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=8 copy_slot_by_round_robin=0 graph_uid=163 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=9 copy_slot_by_round_robin=1 graph_uid=184 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=10 copy_slot_by_round_robin=2 graph_uid=205 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=11 copy_slot_by_round_robin=3 graph_uid=226 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=12 copy_slot_by_round_robin=0 graph_uid=247 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=13 copy_slot_by_round_robin=1 graph_uid=268 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=14 copy_slot_by_round_robin=2 graph_uid=289 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=15 copy_slot_by_round_robin=3 graph_uid=310 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=16 copy_slot_by_round_robin=0 graph_uid=331 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=17 copy_slot_by_round_robin=1 graph_uid=352 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=18 copy_slot_by_round_robin=2 graph_uid=373 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+FRAME frame=19 copy_slot_by_round_robin=3 graph_uid=394 rows=12 output_f32=1920 exact=1 canary=1 join=mirrored cuda0=1
+PASS frames=20 unique_graph_uids=20 scheduler_copies=4 meta_ranks=6 ple_type=iq4_nl rows=12 width=160 model_devices_untouched=1
+finished_utc=2026-10-17T12:58:05Z
+exit_status=0
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 2 MiB, 16125 MiB, 40, 0 %
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 16125 MiB, 39, 0 %
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 3 MiB, 16125 MiB, 39, 0 %
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 2 MiB, 16125 MiB, 39, 0 %
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 14 MiB, 16113 MiB, 39, 0 %
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 13 MiB, 16114 MiB, 40, 0 %

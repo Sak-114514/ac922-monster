@@ -1,0 +1,182 @@
+FIXTURE_BEGIN source=actual_GGUF_packed_rows types=10 route=prefill512_skew_hot64_128 tokens=512 topk=10 assignments=5120 experts=512 active_experts=258 avg_active=19.845 max_count=128 count64=1 count128=1 license=MIT-Strata-schedule arithmetic=F32_to_F16_RNE+packed_dequant_to_F16_RNE+F32accum+F32output no_engine_dispatch=1
+CPU_RNE_REFERENCE type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight K=2560 N=192 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=122880 half_hash=c96653cce92dd859 source=ggml_cpu_dequantize
+GPU_DECODE_RNE type=IQ2_XXS expert=0 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ2_XXS expert=17 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ2_XXS expert=511 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+ACTIVATION_RNE type=IQ2_XXS checked=1310720 mismatches=0 status=PASS conversion_ms=0.0748
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=1310720 nonfinite=0 status=PASS
+NUMERIC type=IQ2_XXS route=prefill512_skew_hot64_128 samples=4 outputs=768 f16_bad=0 f16_nrmse=9.31625347e-07 f16_max_abs=7.4505806e-07 f16_max_rel=8.50448015e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000234178637 f32_max_abs=0.000106543303 f32_max_rel=0.00447430997 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=1310720 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=1310720 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=13.6438 average_ms=2.7288
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=2.5743 average_ms=0.5149
+PERF_COMPARE type=IQ2_XXS K=2560 N=192 route=prefill512_skew_hot64_128 tc_graph_core_ms=2.7288 mmq_graph_core_ms=0.5149 tc_over_mmq=5.2999 f16_activation_prep_ms=0.0748 q8_1_host_prep_ms=319.4164 prep_separate=1 mmq_output_gate=finite_only
+CASE_PASS type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight K=2560 N=192 route=prefill512_skew_hot64_128 packed_bytes=129761280 strict_numeric=PASS A_B_A=PASS canary=PASS
+CPU_RNE_REFERENCE type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight K=2560 N=224 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=122880 half_hash=103c0faed099b259 source=ggml_cpu_dequantize
+GPU_DECODE_RNE type=IQ2_XS expert=0 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ2_XS expert=17 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ2_XS expert=511 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+ACTIVATION_RNE type=IQ2_XS checked=1310720 mismatches=0 status=PASS conversion_ms=0.0348
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=1310720 nonfinite=0 status=PASS
+NUMERIC type=IQ2_XS route=prefill512_skew_hot64_128 samples=4 outputs=896 f16_bad=0 f16_nrmse=7.67892714e-07 f16_max_abs=4.47034836e-07 f16_max_rel=5.70285494e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000316732342 f32_max_abs=0.000145554543 f32_max_rel=0.0482044307 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=1310720 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=1310720 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=13.1297 average_ms=2.6259
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=2.7832 average_ms=0.5566
+PERF_COMPARE type=IQ2_XS K=2560 N=224 route=prefill512_skew_hot64_128 tc_graph_core_ms=2.6259 mmq_graph_core_ms=0.5566 tc_over_mmq=4.7174 f16_activation_prep_ms=0.0348 q8_1_host_prep_ms=315.0931 prep_separate=1 mmq_output_gate=finite_only
+CASE_PASS type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight K=2560 N=224 route=prefill512_skew_hot64_128 packed_bytes=145489920 strict_numeric=PASS A_B_A=PASS canary=PASS
+CPU_RNE_REFERENCE type=IQ2_S tensor=blk.12.ffn_gate_exps.weight K=2560 N=192 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=122880 half_hash=eca911ab55bb83fe source=ggml_cpu_dequantize
+GPU_DECODE_RNE type=IQ2_S expert=0 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ2_S expert=17 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ2_S expert=511 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+ACTIVATION_RNE type=IQ2_S checked=1310720 mismatches=0 status=PASS conversion_ms=0.0369
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=1310720 nonfinite=0 status=PASS
+NUMERIC type=IQ2_S route=prefill512_skew_hot64_128 samples=4 outputs=768 f16_bad=0 f16_nrmse=1.01260366e-06 f16_max_abs=5.06639481e-07 f16_max_rel=0.000394106205 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.00028673622 f32_max_abs=0.000102803111 f32_max_rel=0.209469489 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=1310720 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=1310720 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=13.1789 average_ms=2.6358
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=2.8242 average_ms=0.5648
+PERF_COMPARE type=IQ2_S K=2560 N=192 route=prefill512_skew_hot64_128 tc_graph_core_ms=2.6358 mmq_graph_core_ms=0.5648 tc_over_mmq=4.6664 f16_activation_prep_ms=0.0369 q8_1_host_prep_ms=320.7966 prep_separate=1 mmq_output_gate=finite_only
+CASE_PASS type=IQ2_S tensor=blk.12.ffn_gate_exps.weight K=2560 N=192 route=prefill512_skew_hot64_128 packed_bytes=161218560 strict_numeric=PASS A_B_A=PASS canary=PASS
+CPU_RNE_REFERENCE type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight K=2560 N=224 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=122880 half_hash=1b681a5e4081b89a source=ggml_cpu_dequantize
+GPU_DECODE_RNE type=IQ3_XXS expert=0 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ3_XXS expert=17 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ3_XXS expert=511 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+ACTIVATION_RNE type=IQ3_XXS checked=1310720 mismatches=0 status=PASS conversion_ms=0.0502
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=1310720 nonfinite=0 status=PASS
+NUMERIC type=IQ3_XXS route=prefill512_skew_hot64_128 samples=4 outputs=896 f16_bad=0 f16_nrmse=9.90017868e-07 f16_max_abs=6.55651093e-07 f16_max_rel=0.000571654438 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.00026450775 f32_max_abs=0.000120401382 f32_max_rel=0.116492198 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=1310720 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=1310720 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=13.9233 average_ms=2.7847
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=2.7044 average_ms=0.5409
+PERF_COMPARE type=IQ3_XXS K=2560 N=224 route=prefill512_skew_hot64_128 tc_graph_core_ms=2.7847 mmq_graph_core_ms=0.5409 tc_over_mmq=5.1484 f16_activation_prep_ms=0.0502 q8_1_host_prep_ms=315.2110 prep_separate=1 mmq_output_gate=finite_only
+CASE_PASS type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight K=2560 N=224 route=prefill512_skew_hot64_128 packed_bytes=192675840 strict_numeric=PASS A_B_A=PASS canary=PASS
+CPU_RNE_REFERENCE type=IQ3_S tensor=blk.8.ffn_gate_exps.weight K=2560 N=192 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=122880 half_hash=932b88e4ae6d6d6c source=ggml_cpu_dequantize
+GPU_DECODE_RNE type=IQ3_S expert=0 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ3_S expert=17 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ3_S expert=511 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+ACTIVATION_RNE type=IQ3_S checked=1310720 mismatches=0 status=PASS conversion_ms=0.0358
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=1310720 nonfinite=0 status=PASS
+NUMERIC type=IQ3_S route=prefill512_skew_hot64_128 samples=4 outputs=768 f16_bad=0 f16_nrmse=7.52493653e-07 f16_max_abs=4.76837158e-07 f16_max_rel=4.49273637e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000260975834 f32_max_abs=0.000145725906 f32_max_rel=0.00614291346 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=1310720 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=1310720 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=13.2434 average_ms=2.6487
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=2.7535 average_ms=0.5507
+PERF_COMPARE type=IQ3_S K=2560 N=192 route=prefill512_skew_hot64_128 tc_graph_core_ms=2.6487 mmq_graph_core_ms=0.5507 tc_over_mmq=4.8096 f16_activation_prep_ms=0.0358 q8_1_host_prep_ms=315.0074 prep_separate=1 mmq_output_gate=finite_only
+CASE_PASS type=IQ3_S tensor=blk.8.ffn_gate_exps.weight K=2560 N=192 route=prefill512_skew_hot64_128 packed_bytes=216268800 strict_numeric=PASS A_B_A=PASS canary=PASS
+CPU_RNE_REFERENCE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=192 N=2560 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=9216 half_hash=5123b6ceb309fc74 source=ggml_cpu_dequantize
+GPU_DECODE_RNE type=IQ4_NL expert=0 K=192 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ4_NL expert=17 K=192 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ4_NL expert=511 K=192 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+ACTIVATION_RNE type=IQ4_NL checked=131072 mismatches=0 status=PASS conversion_ms=0.0256
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=13107200 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=prefill512_skew_hot64_128 samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.43888614e-07 f16_max_abs=5.21540642e-08 f16_max_rel=3.36093427e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000237418107 f32_max_abs=2.52760947e-05 f32_max_rel=0.0352843796 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=13107200 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=13107200 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=8.4285 average_ms=2.8095
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=1.6333 average_ms=0.5444
+PERF_COMPARE type=IQ4_NL K=192 N=2560 route=prefill512_skew_hot64_128 tc_graph_core_ms=2.8095 mmq_graph_core_ms=0.5444 tc_over_mmq=5.1605 f16_activation_prep_ms=0.0256 q8_1_host_prep_ms=24.0708 prep_separate=1 mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=192 N=2560 route=prefill512_skew_hot64_128 packed_bytes=198180864 strict_numeric=PASS A_B_A=PASS canary=PASS
+CPU_RNE_REFERENCE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=224 N=2560 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=10752 half_hash=15885714ced6498f source=ggml_cpu_dequantize
+GPU_DECODE_RNE type=IQ4_NL expert=0 K=224 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ4_NL expert=17 K=224 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ4_NL expert=511 K=224 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+ACTIVATION_RNE type=IQ4_NL checked=131072 mismatches=0 status=PASS conversion_ms=0.0266
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=13107200 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=prefill512_skew_hot64_128 samples=4 outputs=10240 f16_bad=0 f16_nrmse=4.38908152e-07 f16_max_abs=7.4505806e-08 f16_max_rel=0.000100557234 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000257553666 f32_max_abs=2.4497509e-05 f32_max_rel=0.0820279616 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=13107200 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=13107200 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=8.4244 average_ms=2.8081
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=1.6292 average_ms=0.5431
+PERF_COMPARE type=IQ4_NL K=224 N=2560 route=prefill512_skew_hot64_128 tc_graph_core_ms=2.8081 mmq_graph_core_ms=0.5431 tc_over_mmq=5.1710 f16_activation_prep_ms=0.0266 q8_1_host_prep_ms=27.7459 prep_separate=1 mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=224 N=2560 route=prefill512_skew_hot64_128 packed_bytes=198180864 strict_numeric=PASS A_B_A=PASS canary=PASS
+CPU_RNE_REFERENCE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=640 N=2560 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=30720 half_hash=7e2dce3ded6d6acd source=ggml_cpu_dequantize
+GPU_DECODE_RNE type=IQ4_NL expert=0 K=640 Kpad=768 rows=2688 checked=2064384 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ4_NL expert=17 K=640 Kpad=768 rows=2688 checked=2064384 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ4_NL expert=511 K=640 Kpad=768 rows=2688 checked=2064384 mismatches=0 first=none exact=1
+ACTIVATION_RNE type=IQ4_NL checked=393216 mismatches=0 status=PASS conversion_ms=0.0287
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=13107200 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=prefill512_skew_hot64_128 samples=4 outputs=10240 f16_bad=0 f16_nrmse=4.50351285e-07 f16_max_abs=1.1920929e-07 f16_max_rel=1.66909292e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000322877504 f32_max_abs=6.05210662e-05 f32_max_rel=0.0117129993 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=13107200 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=13107200 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=22.9325 average_ms=7.6442
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=4.1841 average_ms=1.3947
+PERF_COMPARE type=IQ4_NL K=640 N=2560 route=prefill512_skew_hot64_128 tc_graph_core_ms=7.6442 mmq_graph_core_ms=1.3947 tc_over_mmq=5.4809 f16_activation_prep_ms=0.0287 q8_1_host_prep_ms=79.1514 prep_separate=1 mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=640 N=2560 route=prefill512_skew_hot64_128 packed_bytes=594542592 strict_numeric=PASS A_B_A=PASS canary=PASS
+CPU_RNE_REFERENCE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=192 N=2560 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=9216 half_hash=87fb8e5d2a904984 source=ggml_cpu_dequantize
+GPU_DECODE_RNE type=Q2_0 expert=0 K=192 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=Q2_0 expert=17 K=192 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=Q2_0 expert=511 K=192 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+ACTIVATION_RNE type=Q2_0 checked=131072 mismatches=0 status=PASS conversion_ms=0.0225
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=13107200 nonfinite=0 status=PASS
+NUMERIC type=Q2_0 route=prefill512_skew_hot64_128 samples=4 outputs=10240 f16_bad=0 f16_nrmse=2.59223173e-07 f16_max_abs=5.21540642e-08 f16_max_rel=2.10517009e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000166822383 f32_max_abs=1.88536942e-05 f32_max_rel=0.00789266477 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=13107200 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=13107200 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=8.2780 average_ms=2.7593
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=1.5421 average_ms=0.5140
+PERF_COMPARE type=Q2_0 K=192 N=2560 route=prefill512_skew_hot64_128 tc_graph_core_ms=2.7593 mmq_graph_core_ms=0.5140 tc_over_mmq=5.3679 f16_activation_prep_ms=0.0225 q8_1_host_prep_ms=24.0581 prep_separate=1 mmq_output_gate=finite_only
+CASE_PASS type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=192 N=2560 route=prefill512_skew_hot64_128 packed_bytes=99090432 strict_numeric=PASS A_B_A=PASS canary=PASS
+CPU_RNE_REFERENCE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=640 N=2560 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=30720 half_hash=b2ed13f614c487e5 source=ggml_cpu_dequantize
+GPU_DECODE_RNE type=Q2_0 expert=0 K=640 Kpad=768 rows=2688 checked=2064384 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=Q2_0 expert=17 K=640 Kpad=768 rows=2688 checked=2064384 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=Q2_0 expert=511 K=640 Kpad=768 rows=2688 checked=2064384 mismatches=0 first=none exact=1
+ACTIVATION_RNE type=Q2_0 checked=393216 mismatches=0 status=PASS conversion_ms=0.0276
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=13107200 nonfinite=0 status=PASS
+NUMERIC type=Q2_0 route=prefill512_skew_hot64_128 samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.9458642e-07 f16_max_abs=7.4505806e-08 f16_max_rel=8.00568034e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000228822336 f32_max_abs=6.23315573e-05 f32_max_rel=0.0389607336 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=13107200 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=13107200 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=21.6883 average_ms=7.2294
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=3.9035 average_ms=1.3012
+PERF_COMPARE type=Q2_0 K=640 N=2560 route=prefill512_skew_hot64_128 tc_graph_core_ms=7.2294 mmq_graph_core_ms=1.3012 tc_over_mmq=5.5561 f16_activation_prep_ms=0.0276 q8_1_host_prep_ms=79.1516 prep_separate=1 mmq_output_gate=finite_only
+CASE_PASS type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=640 N=2560 route=prefill512_skew_hot64_128 packed_bytes=297271296 strict_numeric=PASS A_B_A=PASS canary=PASS
+FIXTURE_END status=PASS mode=--gpu source=actual_packed_rows grouped_routes=1 no_full_model=1

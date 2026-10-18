@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "status": "failed_exit_139_during_cuda_graph_structural_signature; supervisor_stopped_no_autorestart",
+  "candidate": "V25 one-load shortctx16k hierarchical EP6 runtime qualification, reusing unchanged V24 PPC64LE runner binary; timing logs enabled",
+  "runner_source": "dual-context-v24-shortctx.cpp",
+  "runner_binary_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v25-shortctx16k-hierarchical-20261016/build-runtime-v25-shortctx/dual-context-v25-shortctx",
+  "runner_sha256": "8f25242b2c8bb8fe09eba2002386d5d98f5b8de08886e9e491a6499b76a5c44d",
+  "runtime": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v63",
+    "build_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V63-build.json",
+    "build_id": "20261016T013345.175233Z",
+    "report_sha256": "1dc9d03042c477ccdedef51f9abf0c9a53f7b148ba4be923a409ddcd24817c58",
+    "dynamic_closure": "verified by remote ldd; all seven application runtime libraries resolve from runtime-perf-v63/lib",
+    "V61_not_launchable_reason": "nested Meta init source binding required V62 core fix"
+  },
+  "model": {
+    "path": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+    "size_bytes": 78615622080,
+    "weights": "IQ3_XXS; all 512 experts retained",
+    "kv_precision": "Q8_0 K/V target and draft",
+    "sha256": "not recomputed"
+  },
+  "topology": {
+    "hierarchical_ep6": "Meta2 -> 2 Meta3 islands -> six physical V100 leaves",
+    "island_split": "3,3",
+    "model_level_meta_device_count": 1,
+    "experts_pruned": false,
+    "PLE_lookup_precision_changed": false
+  },
+  "contexts": {
+    "variant": "per_seq_16k",
+    "kv_unified": false,
+    "bank_count": 2,
+    "lanes_per_bank": 2,
+    "bank_context": 32768,
+    "sequence_count_per_bank": 2,
+    "kv_streams_per_bank": 2,
+    "per_sequence_capacity": 16384,
+    "aggregate_four_stream_capacity": 65536,
+    "maximum_request_context": 16384,
+    "target_ubatch": 1024,
+    "mtp_depth": 3,
+    "mtp_ubatch": 512,
+    "prefill_batch": 8192,
+    "output_tokens_per_real_prompt": 256
+  },
+  "ple": {
+    "hybrid_numa_enabled": true,
+    "gpu_numa_nodes": 6,
+    "gpu_prefix_total_gib": 8,
+    "gpu_prefix_per_node_gib": 1.3333333333333333,
+    "cpu_lookup": "unchanged full precision path",
+    "gpu_runtime_reserve_gib_per_card": 4,
+    "cpu_ddr_runtime_reserve_gib_total": 3,
+    "reserve_modified": false
+  },
+  "capacity_review": {
+    "usable_hbm_gib_per_card": 15.47,
+    "weight_estimate_gib_per_card": [
+      9.22,
+      9.34
+    ],
+    "ple_gib_per_card": 1.3333333333333333,
+    "post_weights_and_ple_room_gib_per_card": [
+      4.8,
+      4.92
+    ],
+    "64k_tracked_lower_bound_mib_per_card": 4924.86,
+    "64k_basis": "2 banks * (748 KV/indexer + 381 RS + 908.15 target compute) + 2*425.28 MTP compute; excludes additional MTP KV/indexer and graph/allocator overhead",
+    "16k_tracked_lower_bound_mib_per_card": 3802.86,
+    "16k_basis": "2 banks * (187 KV/indexer at quarter context + 381 RS unchanged + 908.15 target compute conservatively unchanged) + 2*425.28 MTP compute; excludes additional MTP KV/indexer and graph/allocator overhead",
+    "16k_estimated_headroom_gib_per_card": [
+      1.09,
+      1.21
+    ],
+    "fit_claim": "none; V63 full-model loader and graph gates must pass with unchanged reserves"
+  },
+  "quality_gates": {
+    "native_semantics": true,
+    "full_f32_prefill_logits_preclean": true,
+    "exact_token_parity_preserved": true,
+    "clean_four_stream_measurement": true,
+    "gate_source": "reused V23 wrapper/checkers with a strict 16K context-shape policy"
+  },
+  "launch_safety": {
+    "requires_root_gpu_grant": true,
+    "gpu_free_floor_mib": 512,
+    "gpu_temp_ceiling_c": 58,
+    "corrected_v23_bmc_gpu_monitor": true,
+    "ddr_node0_8_and_unit_rss": "record-only; no DDR MemFree stop threshold",
+    "autorun": false,
+    "CUPTI": false,
+    "LD_PRELOAD": false,
+    "requires_v63_tiny_gate": true,
+    "runtime_build": "V63; actual full-model loader/graph reserve checks remain authoritative"
+  },
+  "previous_v23_result": {
+    "clean_tg_tok_s": 132.5790328725751,
+    "native_semantics": "pass",
+    "preclean_f32": "pass",
+    "exact_token_gate": "fail; not certified"
+  },
+  "open_risk": "The V25 run reached the first diagnostic prefill, then SIGSEGVed in CUDA graph structural-signature input classification. V63 tiny PLE weight-view qualification passed, but the full hierarchical graph is not qualified. Root is fixing the graph-signature issue; do not autolaunch or reuse this failed tag.",
+  "host_link_evidence": {
+    "status": "verified PPC64LE runner reuse; no runner build or execution during ldd check",
+    "binary_source": "V24 V62-linked runner, copied byte-for-byte; no recompile",
+    "runner_sha256": "8f25242b2c8bb8fe09eba2002386d5d98f5b8de08886e9e491a6499b76a5c44d",
+    "elf_build_id": "8560fce4abedc573a22840fd81d9dfdf9dc34546",
+    "v63_ldd_evidence": "v63-reused-runner.ldd.txt",
+    "v63_sha256_evidence": "v63-reused-runner.sha256.txt",
+    "v63_file_evidence": "v63-reused-runner.file.txt",
+    "v63_status_evidence": "v63-reused-runner.status.txt",
+    "v63_report_sha256": "1dc9d03042c477ccdedef51f9abf0c9a53f7b148ba4be923a409ddcd24817c58",
+    "v63_build_id": "20261016T013345.175233Z"
+  },
+  "timing": {
+    "GGML_META_TIMING": "1",
+    "LLAMA_STEP_TIMING": "1",
+    "LLAMA_STEP_TIMING_PERIOD": "32",
+    "CUPTI": "off",
+    "LD_PRELOAD": "empty",
+    "additional_gpu_sync": "none"
+  },
+  "tiny_qualification": {
+    "status": "pass; root-provided V63 nested weight-view tiny qualification",
+    "log": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-weight-view-20261016/run-v63-20261016T014000Z.log",
+    "sha256": "f1116950904c3ba2d6481653b7fe8bf53df03c12cbe80b345694784b267aa59e",
+    "scope": "80KiB true F16 four-tap view/cont/reshape/cast/mul; standalone TP3/nested two islands; exact leaf/output and CUDA graph reuse"
+  },
+  "run_outcome": {
+    "first_tag": "root-p4-v25-shortctx16k-hierarchical-ep6-d3-20261016t014451z",
+    "first_tag_status": "exit126_before_model_start_due_launcher_mode; no GPU work",
+    "model_tag": "root-p4-v25-shortctx16k-hierarchical-ep6-d3-20261016t014524z",
+    "unit_result": "exit-code 139 SIGSEGV",
+    "result_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v25-shortctx16k-hierarchical-20261016/results/root-p4-v25-shortctx16k-hierarchical-ep6-d3-20261016t014524z",
+    "failure": "ggml_cuda_graph_tensor_input during CUDA graph structural signature construction",
+    "quality_gates": "no completed semantic/F32/exact-token/clean measurement; no performance claim",
+    "supervisor_active": false
+  }
+}

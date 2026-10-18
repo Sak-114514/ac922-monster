@@ -1,0 +1,72 @@
+tag=v299-ring8-20261017a
+started_utc=2026-10-17T15:37:06Z
+visible_devices=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 3 MiB, 16124 MiB, 39, 0 %
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 3 MiB, 16124 MiB, 38, 0 %
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 3 MiB, 16124 MiB, 38, 0 %
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 3 MiB, 16124 MiB, 39, 0 %
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 15 MiB, 16112 MiB, 38, 0 %
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 13 MiB, 16114 MiB, 39, 0 %
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+GPU_PREFLIGHT rank=0 name=CUDA0 free=16584278016 total=16911433728
+GPU_PREFLIGHT rank=1 name=CUDA1 free=16584278016 total=16911433728
+GPU_PREFLIGHT rank=2 name=CUDA2 free=16584278016 total=16911433728
+GPU_PREFLIGHT rank=3 name=CUDA3 free=16584278016 total=16911433728
+GPU_PREFLIGHT rank=4 name=CUDA4 free=16571629568 total=16911433728
+GPU_PREFLIGHT rank=5 name=CUDA5 free=16573792256 total=16911433728
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+meta-plain-event-wait selected=1 children=6 destination=CUDA0 host_wait=0
+V299_META_TO_CUDA0_EVENT_WAIT probe=1 destination=CUDA0 host_wait_expected=0
+PP pinned inputs requested=1 selected=1 scheduler=0x10045d1b760 copies=4 cap=268435456 reset_preserves_slots=1 host_slots=8 device_ring_unchanged=1
+V299_PLACEMENT rows=CPU get_rows=Meta(CUDA0,CUDA1,CUDA2,CUDA3,CUDA4,CUDA5) cast=Meta(CUDA0,CUDA1,CUDA2,CUDA3,CUDA4,CUDA5) zeros=Meta(CUDA0,CUDA1,CUDA2,CUDA3,CUDA4,CUDA5) join=Meta(CUDA0,CUDA1,CUDA2,CUDA3,CUDA4,CUDA5) ple_reshape=Meta(CUDA0,CUDA1,CUDA2,CUDA3,CUDA4,CUDA5) cpu_token_get_rows=CPU output=CUDA0
+meta-context-submit FIFO active context=0x1004309b890 members=6 CPU_enqueue_atomic=1 GPU_tail_wait=1
+PP pinned input allocation scheduler=0x10045d1b760 backend=1 copy=0 old=0 need=2549760 requested=2549760 allocated=2549760 floor=0 stage_bytes=2549760 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x10045d1b760 backend=CUDA0 slot=0 source=cpu_token_embedding_get_rows bytes=2549760 private_source=1 device_event_wait=1
+V299_FRAME frame=0 slot_by_round_robin=0 graph_uid=1 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+PP pinned input allocation scheduler=0x10045d1b760 backend=1 copy=1 old=0 need=2549760 requested=2549760 allocated=2549760 floor=0 stage_bytes=5099520 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+V299_FRAME frame=1 slot_by_round_robin=1 graph_uid=17 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+PP pinned input allocation scheduler=0x10045d1b760 backend=1 copy=2 old=0 need=2549760 requested=2549760 allocated=2549760 floor=0 stage_bytes=7649280 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+V299_FRAME frame=2 slot_by_round_robin=2 graph_uid=39 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+PP pinned input allocation scheduler=0x10045d1b760 backend=1 copy=3 old=0 need=2549760 requested=2549760 allocated=2549760 floor=0 stage_bytes=10199040 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+V299_FRAME frame=3 slot_by_round_robin=3 graph_uid=61 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+PP pinned input allocation scheduler=0x10045d1b760 backend=1 copy=4 old=0 need=2549760 requested=2549760 allocated=2549760 floor=0 stage_bytes=12748800 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+V299_FRAME frame=4 slot_by_round_robin=0 graph_uid=83 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+PP pinned input allocation scheduler=0x10045d1b760 backend=1 copy=5 old=0 need=2549760 requested=2549760 allocated=2549760 floor=0 stage_bytes=15298560 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+V299_FRAME frame=5 slot_by_round_robin=1 graph_uid=105 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+PP pinned input allocation scheduler=0x10045d1b760 backend=1 copy=6 old=0 need=2549760 requested=2549760 allocated=2549760 floor=0 stage_bytes=17848320 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+V299_FRAME frame=6 slot_by_round_robin=2 graph_uid=127 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+PP pinned input allocation scheduler=0x10045d1b760 backend=1 copy=7 old=0 need=2549760 requested=2549760 allocated=2549760 floor=0 stage_bytes=20398080 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+V299_FRAME frame=7 slot_by_round_robin=3 graph_uid=149 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V299_FRAME frame=8 slot_by_round_robin=0 graph_uid=171 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V299_FRAME frame=9 slot_by_round_robin=1 graph_uid=193 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V299_FRAME frame=10 slot_by_round_robin=2 graph_uid=215 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V299_FRAME frame=11 slot_by_round_robin=3 graph_uid=237 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V299_FRAME frame=12 slot_by_round_robin=0 graph_uid=259 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V299_FRAME frame=13 slot_by_round_robin=1 graph_uid=281 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V299_FRAME frame=14 slot_by_round_robin=2 graph_uid=303 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V299_FRAME frame=15 slot_by_round_robin=3 graph_uid=325 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V299_FRAME frame=16 slot_by_round_robin=0 graph_uid=347 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V299_FRAME frame=17 slot_by_round_robin=1 graph_uid=369 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V299_FRAME frame=18 slot_by_round_robin=2 graph_uid=391 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+V299_FRAME frame=19 slot_by_round_robin=3 graph_uid=413 row_ids=3984 cpu_token_rows=249 ple_view=1 exact=1 input_canary=1 output_canary=1
+PP pinned inputs summary scheduler=0x10045d1b760 copies=20 declines=0 pinned_high_water=20398080 cap=268435456
+PP pinned source wait summary scheduler=0x10045d1b760 backend=1 host_slots=8 count=12 total_us=88 max_us=8
+V299_PIPELINE_PASS frames=20 unique_graph_uids=20 scheduler_copies=4 slots=0,1,2,3 host_slots=8 exact=20/20 cpu_f32_get_rows=20 cuda0_consumer=20 ple_reshape=20 canaries=all teardown=event_safe
+V299 verification PASS frames=20 UIDs=20 device_copies=4 host_slots=8 allocated_max=7 aggregate_wait_count=12
+finished_utc=2026-10-17T15:37:09Z
+exit_status=0
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 3 MiB, 16124 MiB, 40, 0 %
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 3 MiB, 16124 MiB, 39, 0 %
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 3 MiB, 16124 MiB, 40, 0 %
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 3 MiB, 16124 MiB, 40, 0 %
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 15 MiB, 16112 MiB, 40, 0 %
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 13 MiB, 16114 MiB, 40, 0 %

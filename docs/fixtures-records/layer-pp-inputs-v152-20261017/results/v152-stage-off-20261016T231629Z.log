@@ -1,0 +1,25 @@
+ggml_cuda_init: found 2 CUDA devices (Total VRAM: 32256 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+V152_START cuda_devices=2 cpu_devices=1 feature=GGML_SCHED_LAYER_PINNED_INPUTS requested=0 expected_copies=4 main_cap_mib=256
+SCHEDULER_READY scheduler=0x1003f560c10 order=CUDA0,CUDA1,CPU copies=4 cap_mib=256
+SCHEDULER_READY scheduler=0x10040b7da80 order=CUDA0,CUDA1,CPU copies=4 cap_mib=256
+CASE_PLAN label=A-small width=32 batch=16 row_bytes=2048 gpu0_inputs_per_copy=6144 gpu1_inputs_per_copy=2048 expected_stage_ring_bytes=32768 output_sink_bytes=16448 fresh_graph_per_frame=1
+CASE_PLAN label=B-small width=32 batch=16 row_bytes=2048 gpu0_inputs_per_copy=6144 gpu1_inputs_per_copy=2048 expected_stage_ring_bytes=32768 output_sink_bytes=16448 fresh_graph_per_frame=1
+FRAME_BEGIN scheduler=0x1003f560c10 case=A-small frame=0 seed=0 graph=0x7fff443b0900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffeafa00000
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffeafc00000
+FRAME_QUEUED scheduler=0x1003f560c10 case=A-small frame=0 seed=0 source_overwrite_after_submit=1 output_sink_slot=0 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x10040b7da80 case=B-small frame=0 seed=7 graph=0x7fff43790900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffeafa01000
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffeafc01000
+V152_SIGSEGV_BACKTRACE begin
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer-pp-inputs-v152-20261017/build-v155-diagnostics/pp-input-staging-v152(+0x36f4)[0x11d1636f4]
+linux-vdso64.so.1(__kernel_sigtramp_rt64+0x0)[0x7fff7f370504]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v155/lib/libggml-base.so.0(ggml_gallocr_alloc_graph+0x34c)[0x7fff71479b2c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v155/lib/libggml-base.so.0(ggml_backend_sched_alloc_graph+0x6b0)[0x7fff714965e0]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer-pp-inputs-v152-20261017/build-v155-diagnostics/pp-input-staging-v152(+0x6da4)[0x11d166da4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer-pp-inputs-v152-20261017/build-v155-diagnostics/pp-input-staging-v152(+0x2f50)[0x11d162f50]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fff70e84d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fff70e84f6c]
+V152_SIGSEGV_BACKTRACE end

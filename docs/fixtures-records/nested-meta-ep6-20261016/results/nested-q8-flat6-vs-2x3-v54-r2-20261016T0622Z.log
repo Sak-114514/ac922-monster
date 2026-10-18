@@ -1,0 +1,66 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=0/6 first=0 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=1/6 first=85 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=2/6 first=170 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=3/6 first=256 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=4/6 first=341 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=5/6 first=426 local=86 total=512 final-output-only-reduction=1
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_backend_meta_context: nested Meta experimental path uses generic 2-member AllReduce fallback; outer CUDA/NCCL/P2P is disabled
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=0/2 first=0 local=256 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=1/2 first=256 local=256 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=0/3 first=0 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=1/3 first=85 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=2/3 first=170 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=0/3 first=256 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=1/3 first=341 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=nested_ep6_local_partial weight=nested_ep6_weight rank=2/3 first=426 local=86 total=512 final-output-only-reduction=1
+[mp-dbg] mul_mat_id hook: type=8 ne11=1 reg=0 ptr=0x7ffcddc2c600 ne=[32,32,85]
+[mp-dbg] mul_mat_id hook: type=8 ne11=1 reg=0 ptr=0x7ffcdde2c600 ne=[32,32,85]
+[mp-dbg] mul_mat_id hook: type=8 ne11=1 reg=0 ptr=0x7ffcde02c600 ne=[32,32,86]
+[mp-dbg] mul_mat_id hook: type=8 ne11=1 reg=0 ptr=0x7ffcde22c600 ne=[32,32,85]
+[mp-dbg] mul_mat_id hook: type=8 ne11=1 reg=0 ptr=0x7ffcde42c600 ne=[32,32,85]
+[mp-dbg] mul_mat_id hook: type=8 ne11=1 reg=0 ptr=0x7ffcde62c600 ne=[32,32,86]
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+PASS flat6-local foreign_zero=1 owner_count=1 tokens=4104 canaries=8
+PASS nested2x3-local foreign_zero=1 owner_count=1 tokens=4104 canaries=8
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp:3036: fatal error
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v54/lib/libggml-base.so.0(+0x23c68)[0x7fff8d8c3c68]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v54/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fff8d8c4268]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v54/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fff8d8c4404]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v54/lib/libggml-base.so.0(+0x81be0)[0x7fff8d921be0]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v54/lib/libggml-base.so.0(ggml_backend_tensor_get+0xa8)[0x7fff8d8e8848]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v54/lib/libggml-base.so.0(ggml_backend_tensor_copy+0x228)[0x7fff8d8ea0b8]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v54/lib/libggml-base.so.0(ggml_backend_tensor_copy_async+0x11c)[0x7fff8d8ea21c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v54/lib/libggml-base.so.0(+0x630a4)[0x7fff8d9030a4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v54/lib/libggml-base.so.0(+0x87f10)[0x7fff8d927f10]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v54/lib/libggml-base.so.0(ggml_backend_graph_compute_async+0x2c)[0x7fff8d8e9d8c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v54/lib/libggml-base.so.0(ggml_backend_graph_compute+0x24)[0x7fff8d8e9df4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-meta-ep6-20261016/build/nested-meta-ep6-gpu-fixture-v54-r2(+0x5e68)[0x1100e5e68]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fff8d1c4d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fff8d1c4f6c]

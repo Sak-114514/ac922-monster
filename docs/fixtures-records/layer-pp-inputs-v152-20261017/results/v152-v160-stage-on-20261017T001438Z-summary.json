@@ -1,0 +1,75 @@
+{
+  "fixture": "layer-pp-inputs-v152-20261017",
+  "tag": "v152-v160-stage-on-20261017T001438Z",
+  "status": "PASS",
+  "run": {
+    "mode": "tiny-only",
+    "model_loaded": false,
+    "automatic_retry": false,
+    "stage_inputs": 1,
+    "cuda_visible_devices": [0, 1],
+    "scheduler_copies": 4,
+    "schedulers": 3,
+    "output_backend": "CUDA1",
+    "exact_cpu_oracle": true,
+    "canaries": true,
+    "frames": {
+      "independent_scheduler_A_small": {"count": 8, "exact": 8, "canary": 8, "ABA": true, "immediate_source_overwrite": true},
+      "independent_scheduler_B_small": {"count": 8, "exact": 8, "canary": 8, "ABA": true, "immediate_source_overwrite": true},
+      "A_reset_and_grow_128x1024": {"count": 8, "exact": 8, "canary": 8, "same_scheduler": true},
+      "invalid_cap_fallback": {"count": 1, "exact": 1, "canary": 1, "selector": "invalid-pinned-cap"}
+    },
+    "total_frames_exact": 25,
+    "stage_summaries": [
+      {"scheduler": "A", "copies": 64, "declines": 0, "pinned_high_water_bytes": 8388608, "cap_bytes": 268435456},
+      {"scheduler": "B", "copies": 32, "declines": 0, "pinned_high_water_bytes": 32768, "cap_bytes": 268435456}
+    ],
+    "stage_activation_logged": [
+      {"backend": "CUDA0", "source": "CPU GET_ROWS output", "private_source": true, "device_event_wait": true},
+      {"backend": "CUDA1", "source": "CPU host input", "private_source": true, "device_event_wait": true}
+    ],
+    "free_event_path": "PASS; stage event slots remained recorded through teardown",
+    "raw_log": "v152-v160-stage-on-20261017T001438Z.log",
+    "raw_log_sha256": "2315792f1e6b29f771217b30f66c84f0f0f3e746b2c569cdc142575b3994d1aa"
+  },
+  "provenance": {
+    "execution_runtime": "runtime-perf-v160",
+    "runtime_build_id": "20261016T232842.692185Z",
+    "runtime_report_sha256": "76bccf22d9a755bdabc2ce3bec817eccdd5cd46e4b72b6ff5dd2034b91982aca",
+    "runner_binary_sha256": "be0fd64d4d4e16b515a6e1bc113b33d1460106d2b2546b7db3c2cdbe2c1968b7",
+    "fixture_source_sha256": "23fcbcc93cc45742a4cf6666771646760fd1855c6767e601e398445b0fec0aa7",
+    "runner_build_runtime": "runtime-perf-v155 (runner reused against V160 DSOs)",
+    "v160_dsos": {
+      "libggml-base.so.0": "cb3e9a17ad475ccfae3ad6fe3be0e83d0e7d8b53a99c53ba5ed495075e2ca21d",
+      "libggml.so.0": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+      "libggml-cpu.so.0": "d51a3e28fafe2fc03584d790512d4dcb88583f9949647602e5cbef1fc0d71781",
+      "libggml-cuda.so.0": "5f663e079037bee6fe0d9cf1246433566e7103d53699ca659574f5efcbd6e53a"
+    },
+    "ldd_r": "PASS; all four ggml DSOs resolved under runtime-perf-v160"
+  },
+  "safety": {
+    "preflight": {
+      "gpus": [
+        {"index": 0, "temperature_c": 38, "memory_free_mib": 16127, "memory_used_mib": 1, "utilization_percent": 0},
+        {"index": 1, "temperature_c": 37, "memory_free_mib": 16127, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 2, "temperature_c": 37, "memory_free_mib": 16128, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 3, "temperature_c": 37, "memory_free_mib": 16128, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 4, "temperature_c": 37, "memory_free_mib": 16118, "memory_used_mib": 9, "utilization_percent": 0},
+        {"index": 5, "temperature_c": 38, "memory_free_mib": 16123, "memory_used_mib": 4, "utilization_percent": 0}
+      ],
+      "bmc": {"sample_utc": "2026-10-17T00:24:10.905462Z", "max_c": 39, "host": "Running", "chassis": "On", "masks_ok": true, "fan_target_rpm": 3000, "faults": 0, "alarms": 0}
+    },
+    "postflight": {
+      "all_six_compute_pids": 0,
+      "gpus": [
+        {"index": 0, "temperature_c": 38, "memory_free_mib": 16126, "memory_used_mib": 1, "utilization_percent": 0},
+        {"index": 1, "temperature_c": 37, "memory_free_mib": 16126, "memory_used_mib": 1, "utilization_percent": 0},
+        {"index": 2, "temperature_c": 38, "memory_free_mib": 16128, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 3, "temperature_c": 37, "memory_free_mib": 16128, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 4, "temperature_c": 37, "memory_free_mib": 16118, "memory_used_mib": 9, "utilization_percent": 0},
+        {"index": 5, "temperature_c": 38, "memory_free_mib": 16123, "memory_used_mib": 4, "utilization_percent": 0}
+      ],
+      "bmc": {"sample_utc": "2026-10-17T00:24:26.758598Z", "max_c": 39, "host": "Running", "chassis": "On", "masks_ok": true, "fan_target_rpm": 3000, "faults": 0, "alarms": 0}
+    }
+  }
+}

@@ -1,0 +1,87 @@
+ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+GRAPH_SHAPES rows=1 partial=(12,1) type=0 final=(1,2) type=26 ids=(1) unique=(1)
+p2p allreduce launch: rank 0 allreduce_0 n=12 zero=0 stream=0x1000dbf64e0
+p2p allreduce launch: rank 1 allreduce_0 n=12 zero=0 stream=0x1000dbab080
+p2p allreduce launch: rank 2 allreduce_0 n=12 zero=0 stream=0x1000dbb9940
+CUDA Graph id 9 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 10 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 11 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+p2p allreduce launch: rank 1 allreduce_0 n=12 zero=0 stream=0x1000dbab080
+p2p allreduce launch: rank 0 allreduce_0 n=12 zero=0 stream=0x1000dbf64e0
+p2p allreduce launch: rank 2 allreduce_0 n=12 zero=0 stream=0x1000dbb9940
+GRAPH_SHAPES rows=4 partial=(12,4) type=0 final=(4,2) type=26 ids=(4) unique=(4)
+p2p allreduce launch: rank 0 allreduce_0 n=48 zero=0 stream=0x1000dbf64e0
+p2p allreduce launch: rank 1 allreduce_0 n=48 zero=0 stream=0x1000dbab080
+p2p allreduce launch: rank 2 allreduce_0 n=48 zero=0 stream=0x1000dbb9940
+CUDA Graph id 20 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 21 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 22 reused
+p2p allreduce launch: rank 0 allreduce_0 n=48 zero=0 stream=0x1000dbf64e0
+p2p allreduce launch: rank 1 allreduce_0 n=48 zero=0 stream=0x1000dbab080
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+p2p allreduce launch: rank 2 allreduce_0 n=48 zero=0 stream=0x1000dbb9940
+GRAPH_SHAPES rows=8 partial=(12,8) type=0 final=(8,2) type=26 ids=(8) unique=(8)
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+p2p allreduce launch: rank 0 allreduce_0 n=96 zero=0 stream=0x1000dbf64e0
+p2p allreduce launch: rank 1 allreduce_0 n=96 zero=0 stream=0x1000dbab080
+p2p allreduce launch: rank 2 allreduce_0 n=96 zero=0 stream=0x1000dbb9940
+CUDA Graph id 31 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 32 reused
+CUDA Graph id 33 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+p2p allreduce launch: rank 0 allreduce_0 n=96 zero=0 stream=0x1000dbf64e0
+p2p allreduce launch: rank 2 allreduce_0 n=96 zero=0 stream=0x1000dbb9940
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+p2p allreduce launch: rank 1 allreduce_0 n=96 zero=0 stream=0x1000dbab080
+ARGMAX_META_FIXTURE cuda_visible_devices=GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a allreduce=none p2p_disable=unset
+Meta member rank=0 name=CUDA0 pci=0035:03:00.0
+Meta member rank=1 name=CUDA1 pci=0035:04:00.0
+Meta member rank=2 name=CUDA2 pci=0035:05:00.0
+MAP 7fff7e1f0000-7fff7fff0000 r-xp 00000000 08:04 32075957                   /usr/local/cuda-12.4/lib/libnccl.so.2.27.7
+MAP 7fff7fff0000-7fff80000000 r--p 01e00000 08:04 32075957                   /usr/local/cuda-12.4/lib/libnccl.so.2.27.7
+MAP 7fff80000000-7fff80020000 rw-p 01e10000 08:04 32075957                   /usr/local/cuda-12.4/lib/libnccl.so.2.27.7
+MAP 7fff80050000-7fff81af0000 r-xp 00000000 08:04 32072686                   /usr/lib/powerpc64le-linux-gnu/libcuda.so.550.54.15
+MAP 7fff81af0000-7fff81b00000 ---p 01aa0000 08:04 32072686                   /usr/lib/powerpc64le-linux-gnu/libcuda.so.550.54.15
+MAP 7fff81b00000-7fff81ca0000 r--p 01aa0000 08:04 32072686                   /usr/lib/powerpc64le-linux-gnu/libcuda.so.550.54.15
+MAP 7fff81ca0000-7fff81da0000 rw-p 01c40000 08:04 32072686                   /usr/lib/powerpc64le-linux-gnu/libcuda.so.550.54.15
+MAP 7fff88bc0000-7fff965f0000 r-xp 00000000 08:04 31915692                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v12/lib/libggml-cuda.so.0
+MAP 7fff965f0000-7fff96600000 r--p 0da20000 08:04 31915692                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v12/lib/libggml-cuda.so.0
+MAP 7fff96600000-7fff96610000 rw-p 0da30000 08:04 31915692                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v12/lib/libggml-cuda.so.0
+MAP 7fff96da0000-7fff96e60000 r-xp 00000000 08:04 32073999                   /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12.4.127
+MAP 7fff96e60000-7fff96e70000 r--p 000b0000 08:04 32073999                   /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12.4.127
+MAP 7fff96e70000-7fff96e80000 rw-p 000c0000 08:04 32073999                   /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12.4.127
+MAP 7fff96e80000-7fff96f90000 r-xp 00000000 08:04 31915690                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v12/lib/libggml-base.so.0
+MAP 7fff96f90000-7fff96fa0000 r--p 00100000 08:04 31915690                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v12/lib/libggml-base.so.0
+MAP 7fff96fa0000-7fff96fb0000 rw-p 00110000 08:04 31915690                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v12/lib/libggml-base.so.0
+MAP 7fff96fb0000-7fff96fc0000 r-xp 00000000 08:04 31915689                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v12/lib/libggml.so.0
+MAP 7fff96fc0000-7fff96fd0000 r--p 00000000 08:04 31915689                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v12/lib/libggml.so.0
+MAP 7fff96fd0000-7fff96fe0000 rw-p 00010000 08:04 31915689                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v12/lib/libggml.so.0
+MAP 7fff96fe0000-7fff97100000 r-xp 00000000 08:04 31915691                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v12/lib/libggml-cpu.so.0
+MAP 7fff97100000-7fff97110000 r--p 00110000 08:04 31915691                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v12/lib/libggml-cpu.so.0
+MAP 7fff97110000-7fff97120000 rw-p 00120000 08:04 31915691                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v12/lib/libggml-cpu.so.0
+PASS Meta argmax host-download label=A rows=1
+PASS Meta argmax host-download label=B rows=1
+PASS Meta argmax host-download label=A2 rows=1
+PASS Meta A/B/A graph rows=1
+PASS Meta argmax host-download label=A rows=4
+PASS Meta argmax host-download label=B rows=4
+PASS Meta argmax host-download label=A2 rows=4
+PASS Meta A/B/A graph rows=4
+PASS Meta argmax host-download label=A rows=8
+PASS Meta argmax host-download label=B rows=8
+PASS Meta argmax host-download label=A2 rows=8
+PASS Meta A/B/A graph rows=8
+PASS Meta 3-rank argmax_unique graph: partial->P2P AllReduce->finalize->views; no model load

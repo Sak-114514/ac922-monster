@@ -1,0 +1,15 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA_4STREAM_FIXTURE device=0 backend=CUDA0 no_model=1 q8_0=1 streams=4 ntps=4 gqa=[4,8] kv_view=8192 capacity=16384 width=2051 pad=2052 seeds=2
+optimization path device=0 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=0 selected=0 reason=disabled_shared_list_dynamic_smem_bytes_in_auxiliary tokens=4 width=513 auxiliary=288 count=1
+optimization path device=0 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=0 selected=0 reason=disabled_shared_list_dynamic_smem_bytes_in_auxiliary tokens=4 width=513 auxiliary=288 count=2
+CPU_FP64_SAMPLE PASS streams=4 ntps=4 heads=4 max_abs=6.97557887e-07 max_rel=0.00241701896 selected_vs_dense=3.08642001e-14
+CUDA_CASE streams=4 ntps=4 heads=4 seed=0 helper_vs_explicit_bitwise=1 finite=16384/16384 canary=PASS input_variation=PASS changed_seed=reference
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA_CASE streams=4 ntps=4 heads=4 seed=1 helper_vs_explicit_bitwise=1 finite=16384/16384 canary=PASS input_variation=PASS changed_seed=output_changed
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CPU_FP64_SAMPLE PASS streams=4 ntps=4 heads=8 max_abs=7.37835155e-07 max_rel=0.00241701896 selected_vs_dense=3.08642001e-14
+CUDA_CASE streams=4 ntps=4 heads=8 seed=0 helper_vs_explicit_bitwise=1 finite=32768/32768 canary=PASS input_variation=PASS changed_seed=reference
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA_CASE streams=4 ntps=4 heads=8 seed=1 helper_vs_explicit_bitwise=1 finite=32768/32768 canary=PASS input_variation=PASS changed_seed=output_changed
+optimization path summary device=0 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=0 selected=0 fallback_disabled_shared_list_dynamic_smem_bytes_in_auxiliary=32

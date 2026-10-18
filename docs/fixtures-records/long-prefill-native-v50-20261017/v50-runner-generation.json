@@ -1,0 +1,85 @@
+{
+  "status": "GENERATED_HOST_ONLY_NOT_COMPILED",
+  "base_source": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/dual-context-v45-long-prefill.cpp",
+  "base_source_sha256": "2729fbe857919c1b55dca73bfe0f65ad4d561172ca99542094a5126eadab9aaf",
+  "source": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-native-v50-20261017/dual-context-v50-long-prefill-native.cpp",
+  "source_sha256": "766a555bffb20631d7ce4d3020ca41d452ba05ec888c757ddf610793b2a7b965",
+  "transformations": [
+    {
+      "label": "admit only the V50 native-mask UBatch4096 recipe",
+      "expected_matches": 1
+    },
+    {
+      "label": "require the V107-qualified extended per-copy slot",
+      "expected_matches": 1
+    },
+    {
+      "label": "reuse the pinned V45 raw corpus artifact without duplicating it",
+      "expected_matches": 1
+    },
+    {
+      "label": "submit 32K and 64K prefill in one and two ordered 32K logical batches",
+      "expected_matches": 1
+    },
+    {
+      "label": "raise logical prefill batch capacity while retaining the 4096 microbatch",
+      "expected_matches": 1
+    },
+    {
+      "label": "select exactly the two long context families in V50",
+      "expected_matches": 1
+    },
+    {
+      "label": "treat each V50 short canary as a native semantic scenario",
+      "expected_matches": 1
+    },
+    {
+      "label": "hold long prefill until the custom V50 canary checker passes",
+      "expected_matches": 1
+    },
+    {
+      "label": "fail closed when the V50 canary checker marks any short semantic case non-pass",
+      "expected_matches": 1
+    },
+    {
+      "label": "record actual target and draft batch capacities for the logical batching candidate",
+      "expected_matches": 1
+    },
+    {
+      "label": "record all V50 native mask/upload/PLE rebalance launch selectors",
+      "expected_matches": 3
+    }
+  ],
+  "selected_families": [
+    "single32k",
+    "single64k"
+  ],
+  "target_ubatch": 4096,
+  "draft_ubatch": 512,
+  "logical_prefill_batch": 32768,
+  "logical_chunk_plan": {
+    "single32k": [
+      32768
+    ],
+    "single64k": [
+      32768,
+      32768
+    ]
+  },
+  "native_mask_required": true,
+  "prefill_kv_pad_tokens": 65536,
+  "upload_pool_budget_mib": 512,
+  "upload_max_copy_bytes": 67108864,
+  "ple_rebalance": {
+    "gpu_nodes": 3,
+    "gib_per_node": 4,
+    "gib_total": 12,
+    "env_semantics": "LLAMA_PLE_NUMA_GPU_GIB is the aggregate prefix; 12 GiB across three GPU nodes is 4 GiB per node"
+  },
+  "model_loads_per_process": 1,
+  "compile_performed": false,
+  "model_loaded": false,
+  "gpu_touched": false,
+  "remote_sync": false,
+  "launch_authorized": false
+}

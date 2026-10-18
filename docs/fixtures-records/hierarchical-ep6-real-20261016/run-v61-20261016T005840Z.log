@@ -1,0 +1,51 @@
+start=2026-10-16T00:58:42Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61
+binary_sha256=41cb7ceadc6f70de4b5c1a4b5a70ac0aa6794ff3c2e6cd3b294ff49c26c86881  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/hierarchical-ep6-real-20261016/hierarchical-ep6-real-fixture
+mode=dense-only
+visible=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a
+model=/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf
+temp_limit=58C memory_limit=2048MiB timeout=180s
+meta_context_views=1 meta_replay_guard=1 meta_fifo_pipeline=1
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_backend_meta_context: nested native GPU AllReduce opt-in requested; unsupported PARTIAL boundaries fail closed
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+meta-nested-gpu-ar opt-in=1 topology=2x3 leaves=6 order=A0,A1,A2,B0,B1,B2 p2p6=1 nccl6_f32=1
+meta-context-submit FIFO active context=0x10018f2cff0 members=6 CPU_enqueue_atomic=1 GPU_tail_wait=1
+[mp-dbg] mul_mat hook: type=23 ne11=64 reg=0 ptr=0x7ffcfdc5ee00
+[mp-dbg] mul_mat hook: type=21 ne11=64 reg=0 ptr=0x7ffcfdc82180
+[mp-dbg] mul_mat hook: type=23 ne11=64 reg=0 ptr=0x7ffcfde5ee00
+[mp-dbg] mul_mat hook: type=21 ne11=64 reg=0 ptr=0x7ffcfde82680
+[mp-dbg] mul_mat hook: type=23 ne11=64 reg=0 ptr=0x7ffcfe05ee00
+[mp-dbg] mul_mat hook: type=21 ne11=64 reg=0 ptr=0x7ffcfe082680
+DENSE_SHARED_BYTES complete_gate_up=1574400 gate_type=iq4_xs up_type=iq3_s K=2560 N=640 tokens=64
+DENSE_SHARED_SPLIT K=2560 N=640 flat_tp=6 nested_tp=3 outer_mirror=2 gate_type=iq4_xs up_type=iq3_s source_slices=PASS
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp:3030: GGML_ASSERT(offset_j == chunk_size_full) failed
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-base.so.0(+0x247a8)[0x7fffb5c947a8]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fffb5c94da8]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fffb5c94f44]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-base.so.0(+0x82d54)[0x7fffb5cf2d54]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v61/lib/libggml-base.so.0(ggml_backend_tensor_get+0xa8)[0x7fffb5cb9388]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/hierarchical-ep6-real-20261016/hierarchical-ep6-real-fixture(+0x9a40)[0x113169a40]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/hierarchical-ep6-real-20261016/hierarchical-ep6-real-fixture(+0xb094)[0x11316b094]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/hierarchical-ep6-real-20261016/hierarchical-ep6-real-fixture(+0x4eac)[0x113164eac]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fffb56c4d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fffb56c4f6c]

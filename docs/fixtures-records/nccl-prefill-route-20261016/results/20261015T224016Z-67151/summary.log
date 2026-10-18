@@ -1,0 +1,14 @@
+ROUTE_COMPARE tag=20261015T224016Z-67151 runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v56 device_set=GPU0-2 graph_capture=disabled
+BINARY_SHA256=b177fb71c67be9151bda91a3a7686559984a3b3ca9309992ebb63d3f2def6ad0
+SOURCE_SHA256=fd22a8942d93cdf2aaa68ed39e98aff3b34578deff769d11050d17a971eeb0cb
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 00000004:04:00.0, 1 MiB, 40
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 00000004:05:00.0, 1 MiB, 39
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 00000004:06:00.0, 1 MiB, 40
+GPU_WINDOW routes=p2p64,nccl-f32 timeout_each=15s overall_expected_under=35s
+ROUTE_START mode=p2p64 timeout=15s log=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nccl-prefill-route-20261016/results/20261015T224016Z-67151/p2p64.log
+ROUTE_START mode=nccl-f32 timeout=15s log=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nccl-prefill-route-20261016/results/20261015T224016Z-67151/nccl-f32.log
+OUTPUT_HASHES_BITWISE_EQUAL=1
+0, 0 %, 3 MiB, 41
+1, 0 %, 3 MiB, 40
+2, 0 %, 3 MiB, 41
+ROUTE_COMPARE_PASS result_dir=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nccl-prefill-route-20261016/results/20261015T224016Z-67151

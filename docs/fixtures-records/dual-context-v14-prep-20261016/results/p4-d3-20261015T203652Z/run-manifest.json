@@ -1,0 +1,520 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-10-15T20:36:52.108587+00:00",
+  "phase": "finish",
+  "runtime_revision_label": "20261015T202046.715105Z",
+  "runtime_source_git_revision": null,
+  "host": {
+    "platform": "Linux-8.8.8-ac922-gw-ppc64le-with-glibc2.36",
+    "machine": "ppc64le",
+    "python": "3.11.2"
+  },
+  "runner_binary": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/build-runtime/dual-context-v14",
+    "size_bytes": 473664,
+    "sha256": "7b99506af0b6d4c38023aa71f3b3d39997f2e082294155821b70b147522a7024"
+  },
+  "fixture_sources": {
+    "dual-context-v14.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/dual-context-v14.cpp",
+      "size_bytes": 62518,
+      "sha256": "04a3cdff4b7808684a57d4dbf7c4ca0d6c506ebdaeeb79f72dcaa5b3a5ec818f"
+    },
+    "dual-context-v14-owner.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/dual-context-v14-owner.h",
+      "size_bytes": 2319,
+      "sha256": "cfe98057cb6e2d2032a5c33afb73f6e8e1521a51eabe5d9edce543b6d22db1d3"
+    },
+    "dual-context-v14-submit-guard.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/dual-context-v14-submit-guard.h",
+      "size_bytes": 1656,
+      "sha256": "4a38e2218130f8bdf0d1d3ed4b942e2d4f2457a8e76fe43df2008cff0741ee87"
+    },
+    "dual-context-v14-ready-loop.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/dual-context-v14-ready-loop.h",
+      "size_bytes": 1644,
+      "sha256": "a3c8b10e54627bbfee03ef813c1c0f7c3c9d440fa0fc0317f4cec4a1c2e1d4df"
+    },
+    "dual-context-v14-owner-test.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/dual-context-v14-owner-test.cpp",
+      "size_bytes": 2003,
+      "sha256": "6d8b1d2ba5f237efebe0bd9ae0836c0ece0fae5024ae93fc4e1dab03565fa4c4"
+    },
+    "dual-context-v14-results.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/dual-context-v14-results.h",
+      "size_bytes": 1626,
+      "sha256": "47bd1bc701d95ea6f8d4f6af1ec8940284cf8826b3283281c1b44b7889f83410"
+    },
+    "dual-context-v14-results-test.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/dual-context-v14-results-test.cpp",
+      "size_bytes": 1167,
+      "sha256": "2bf31b10976405e13f1b2e8548ebf27c0e0d92b2f1efd3dd5ecc5c18f1babb57"
+    },
+    "generate_v14_scenarios.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/generate_v14_scenarios.py",
+      "size_bytes": 10618,
+      "sha256": "597038b932e290352f2c1b3e66fc8f997699bc21065a738fbb8764aee35241b7"
+    },
+    "compare_v14_results.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/compare_v14_results.py",
+      "size_bytes": 27092,
+      "sha256": "d43f10902abe31446a861faadf632a4a0c36fc8d625cab2272a60772ba984ee4"
+    },
+    "semantic_gate_v14.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/semantic_gate_v14.py",
+      "size_bytes": 10072,
+      "sha256": "60735017c01411d0e1e5826ca19bd9cb9d7f57c738dbbca1619c914a6d7399a4"
+    },
+    "cupti-window-policy-v14.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/cupti-window-policy-v14.h",
+      "size_bytes": 943,
+      "sha256": "9370f153da831f2deb7db4865ee6846dc50007d446e34558c18178de6e36f4db"
+    },
+    "test_cupti_window_policy_v14.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/test_cupti_window_policy_v14.cpp",
+      "size_bytes": 1089,
+      "sha256": "c6179b8fe8d2b8b6b8800cc6ea9e9f0042594c44e8fb5c65a52dd44e6de47af0"
+    },
+    "warmup-policy-v14.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/warmup-policy-v14.h",
+      "size_bytes": 418,
+      "sha256": "f32992c8a6440099222c7134cc44d543b35b26944df65a36c4910d8d6df9da5d"
+    },
+    "test_warmup_policy_v14.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/test_warmup_policy_v14.cpp",
+      "size_bytes": 1264,
+      "sha256": "fd81cad555992049c36353fa024a56f9a7d4d7eaf08210fa25374edda2172bc7"
+    },
+    "test_compare_v14_results.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/test_compare_v14_results.py",
+      "size_bytes": 18564,
+      "sha256": "e29723f0e8d72202856f308cc95bcc0ae62d644d8ae7c7d59f20ab7a86260aa4"
+    },
+    "test_semantic_gate_v14.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/test_semantic_gate_v14.py",
+      "size_bytes": 9182,
+      "sha256": "03060d4d992c209c802028e6cd8270d6e94064c660806fb5cb095b7c5017c252"
+    },
+    "native-semantic/run_semantic_native.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/native-semantic/run_semantic_native.py",
+      "size_bytes": 34556,
+      "sha256": "85b56838258de35eb492425a0286f1078ac836b1826b9f8885fe331cd92cc2ad"
+    },
+    "native-semantic/run_semantic_chat.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/native-semantic/run_semantic_chat.py",
+      "size_bytes": 50662,
+      "sha256": "08ef9fa3704e3b9b9e2f0530890a48c51041165eb65260efa51d57a2f2c82194"
+    },
+    "native-semantic/case-input.json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/native-semantic/case-input.json",
+      "size_bytes": 14172,
+      "sha256": "f2487f90c32d0e383494dc5ae68bec24d6bf0c8d31a065dfbf614447fb6b53fd"
+    },
+    "hardware-next-20261014/semantic-checks.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/hardware-next-20261014/semantic-checks.py",
+      "size_bytes": 24049,
+      "sha256": "9dcd040ef8f2b8dd157c8ab44dbabb5715078a8db2f1585319811b8a1311058c"
+    },
+    "real-corpus-token-ids.json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/real-corpus-token-ids.json",
+      "size_bytes": 1021232,
+      "sha256": "1b85382068bee8ed9108db3e5b924f020dedf00d43d6da80c9d218099d428a02"
+    },
+    "README.md": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/README.md",
+      "size_bytes": 14085,
+      "sha256": "606944450e43b81a8b4d81a52429d7e310a8e82652d3e5ed4a116517b1ad4a59"
+    },
+    "scenarios.json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/scenarios.json",
+      "size_bytes": 1156005,
+      "sha256": "c1719ce563f3a8a09ba4135c0ee3b3666452fc36fd19d061add0d98a0c85be04"
+    },
+    "plan.json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/plan.json",
+      "size_bytes": 4322,
+      "sha256": "e6af872ae1f8f220efa75535161f4f587b4ae315d30cb3fdee523a8e9a8aaa9e"
+    },
+    "input-provenance.json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/input-provenance.json",
+      "size_bytes": 5484,
+      "sha256": "766509ad6ef90a923d6155365a4aae9d8a4ecba301981f60d3b8002dce25a218"
+    },
+    "run-v14.sh": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/run-v14.sh",
+      "size_bytes": 4901,
+      "sha256": "562134cd20eade538b2612b4c9622e759ddbc66e710c42d3506acd3b789857c2"
+    },
+    "run-cpu-tests.sh": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/run-cpu-tests.sh",
+      "size_bytes": 3630,
+      "sha256": "d72749ad2101be201e5c57ac68c89a5e64612b6bb1450b55b7b4bce4e28a9a51"
+    },
+    "compile-runtime.sh": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/compile-runtime.sh",
+      "size_bytes": 3763,
+      "sha256": "dd8d7693aeb2334f73eb905739055e994ca307881eebe5deef95c96341983161"
+    },
+    "write_run_manifest.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/write_run_manifest.py",
+      "size_bytes": 9762,
+      "sha256": "89ad2bd091c213f48e1d1b9216ca99876c112fe904566119d2b7021236cfa100"
+    },
+    "r3/._README.md": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/._README.md",
+      "size_bytes": 163,
+      "sha256": "8b62c8eda3a15a3b58f120cdc7def10dcd6564f2ecd18ed37876a3e955eda0c4"
+    },
+    "r3/._buffer_drain.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/._buffer_drain.h",
+      "size_bytes": 163,
+      "sha256": "8b62c8eda3a15a3b58f120cdc7def10dcd6564f2ecd18ed37876a3e955eda0c4"
+    },
+    "r3/._collector.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/._collector.cpp",
+      "size_bytes": 163,
+      "sha256": "8b62c8eda3a15a3b58f120cdc7def10dcd6564f2ecd18ed37876a3e955eda0c4"
+    },
+    "r3/._drop_ledger.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/._drop_ledger.h",
+      "size_bytes": 163,
+      "sha256": "8b62c8eda3a15a3b58f120cdc7def10dcd6564f2ecd18ed37876a3e955eda0c4"
+    },
+    "r3/._libac922-cupti-window.so": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/._libac922-cupti-window.so",
+      "size_bytes": 163,
+      "sha256": "8b62c8eda3a15a3b58f120cdc7def10dcd6564f2ecd18ed37876a3e955eda0c4"
+    },
+    "r3/._test_buffer_drain.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/._test_buffer_drain.cpp",
+      "size_bytes": 163,
+      "sha256": "8b62c8eda3a15a3b58f120cdc7def10dcd6564f2ecd18ed37876a3e955eda0c4"
+    },
+    "r3/._test_drop_ledger.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/._test_drop_ledger.cpp",
+      "size_bytes": 163,
+      "sha256": "8b62c8eda3a15a3b58f120cdc7def10dcd6564f2ecd18ed37876a3e955eda0c4"
+    },
+    "r3/._test_trace_summary.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/._test_trace_summary.py",
+      "size_bytes": 163,
+      "sha256": "8b62c8eda3a15a3b58f120cdc7def10dcd6564f2ecd18ed37876a3e955eda0c4"
+    },
+    "r3/._test_window_filter.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/._test_window_filter.cpp",
+      "size_bytes": 163,
+      "sha256": "8b62c8eda3a15a3b58f120cdc7def10dcd6564f2ecd18ed37876a3e955eda0c4"
+    },
+    "r3/._tiny_graph_probe.cu": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/._tiny_graph_probe.cu",
+      "size_bytes": 163,
+      "sha256": "8b62c8eda3a15a3b58f120cdc7def10dcd6564f2ecd18ed37876a3e955eda0c4"
+    },
+    "r3/._trace_summary.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/._trace_summary.py",
+      "size_bytes": 163,
+      "sha256": "8b62c8eda3a15a3b58f120cdc7def10dcd6564f2ecd18ed37876a3e955eda0c4"
+    },
+    "r3/._verify_tiny_trace.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/._verify_tiny_trace.py",
+      "size_bytes": 163,
+      "sha256": "8b62c8eda3a15a3b58f120cdc7def10dcd6564f2ecd18ed37876a3e955eda0c4"
+    },
+    "r3/._window_filter.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/._window_filter.h",
+      "size_bytes": 163,
+      "sha256": "8b62c8eda3a15a3b58f120cdc7def10dcd6564f2ecd18ed37876a3e955eda0c4"
+    },
+    "r3/README.md": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/README.md",
+      "size_bytes": 5431,
+      "sha256": "05e11f12e45666cc49621666ed311006b8f06c8597e69cedf8db563ef0094111"
+    },
+    "r3/__pycache__/test_trace_summary.cpython-311.pyc": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/__pycache__/test_trace_summary.cpython-311.pyc",
+      "size_bytes": 5565,
+      "sha256": "e4cb2f9c0c81ce21bcd9288d6898ab21d781e7919ef2b1889e5813ef89d52e7c"
+    },
+    "r3/__pycache__/trace_summary.cpython-311.pyc": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/__pycache__/trace_summary.cpython-311.pyc",
+      "size_bytes": 15779,
+      "sha256": "5353e78c0119edc31ab5d3598b7b11dd1a8c8e8d58e32089e5056c2bee4f1f37"
+    },
+    "r3/__pycache__/verify_tiny_trace.cpython-311.pyc": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/__pycache__/verify_tiny_trace.cpython-311.pyc",
+      "size_bytes": 6473,
+      "sha256": "c718268eaf53758f7a9bab9a320cc8ee741e5eeaba2bbb79ea9910e5ad8c7354"
+    },
+    "r3/buffer_drain.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/buffer_drain.h",
+      "size_bytes": 407,
+      "sha256": "aaab254643d0d04e118f2379408287d52b25db926f343ad28998500290820b4b"
+    },
+    "r3/collector.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/collector.cpp",
+      "size_bytes": 34893,
+      "sha256": "83c62e3374f06592387cf4c0243952beddee3ff8244c71b152c9245c8bed73b8"
+    },
+    "r3/drop_ledger.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/drop_ledger.h",
+      "size_bytes": 752,
+      "sha256": "dec4c50d3aba04064384a7e7d623d0f2750fd2bd96afac9ad66f43a60a1a63cd"
+    },
+    "r3/libac922-cupti-window.so": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/libac922-cupti-window.so",
+      "size_bytes": 81152,
+      "sha256": "2abfa4f07a034353dcc8ac18eee7f9af1aa6c571f36c630d98308b17bed873f2"
+    },
+    "r3/test_buffer_drain.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/test_buffer_drain.cpp",
+      "size_bytes": 863,
+      "sha256": "96e9b806a0c5e693204aa9ccc03c6a844af6f96ec5f5b6016e35d0176a893c0b"
+    },
+    "r3/test_drop_ledger.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/test_drop_ledger.cpp",
+      "size_bytes": 616,
+      "sha256": "4ef12a98e947793ea49c847a86150216c39b2f982ef609702bc17e0ba2b790b9"
+    },
+    "r3/test_trace_summary.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/test_trace_summary.py",
+      "size_bytes": 3328,
+      "sha256": "b2fc890a3ee3cf82689b379109f463f077ce45bbec1c83ce64546a4571976d52"
+    },
+    "r3/test_window_filter.cpp": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/test_window_filter.cpp",
+      "size_bytes": 1029,
+      "sha256": "b7ec1330b3e51685e9f6508bd22d4ffaab7cbfc4dc921b32e309ce7fe4f3cc5b"
+    },
+    "r3/tiny_graph_probe.cu": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/tiny_graph_probe.cu",
+      "size_bytes": 3989,
+      "sha256": "14f2f12839b889e13072ae5276f80ef65d7e7a62a5357303cb58c2072a2cd7f3"
+    },
+    "r3/trace_summary.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/trace_summary.py",
+      "size_bytes": 10180,
+      "sha256": "fe5c4a0d480e9f308e7d0919a44275230b40a2ae45e5623fee6d78a636e6a041"
+    },
+    "r3/verify_tiny_trace.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/verify_tiny_trace.py",
+      "size_bytes": 2831,
+      "sha256": "d329f6527690671307f10789555d44ef1fbf45bb3b3634431c9a02a148153ba7"
+    },
+    "r3/window_filter.h": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/window_filter.h",
+      "size_bytes": 653,
+      "sha256": "82b12749c7e7df9baee47bb9ad1d9aeec9d99e98c24d6daf576754b25a08ee77"
+    },
+    "selected_cupti_collector": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/libac922-cupti-window.so",
+      "size_bytes": 81152,
+      "sha256": "2abfa4f07a034353dcc8ac18eee7f9af1aa6c571f36c630d98308b17bed873f2"
+    }
+  },
+  "runtime_libraries": {
+    "libllama-common.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v50/lib/libllama-common.so.0",
+      "size_bytes": 6585720,
+      "sha256": "402454f60c629f2108622d469d50b472b96b261707ad00a91f7afdff839b380d"
+    },
+    "libllama.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v50/lib/libllama.so.0",
+      "size_bytes": 4209600,
+      "sha256": "1347792cadea67cb5bbcfe16b0f6112221fd5cbfc80d854d9eb26be48d501206"
+    },
+    "libmtmd.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v50/lib/libmtmd.so.0",
+      "size_bytes": 2154656,
+      "sha256": "02b78e109820e28de208363e3f6d8f3cde8f43a452ec8770972d3565caed8e23"
+    },
+    "libggml.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v50/lib/libggml.so.0",
+      "size_bytes": 81144,
+      "sha256": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2"
+    },
+    "libggml-cpu.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v50/lib/libggml-cpu.so.0",
+      "size_bytes": 1280008,
+      "sha256": "c1fd8d19e54df03e97f1c71c8c95565626ec73f44f7d4f3e334bfe3e74f464fc"
+    },
+    "libggml-cuda.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v50/lib/libggml-cuda.so.0",
+      "size_bytes": 231429624,
+      "sha256": "614cc8685ba9d8c2f5a998a34af330609d7a372d7e764d07052c4ef3d808e7d1"
+    },
+    "libggml-base.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v50/lib/libggml-base.so.0",
+      "size_bytes": 1468528,
+      "sha256": "e6578aca8f533f14feb05dfc18588330b1dfc8a38dec2003899b5e6592f16c17"
+    }
+  },
+  "frozen_runtime_build_report": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V50-build.json",
+    "size_bytes": 275075,
+    "sha256": "ae8784f18b0f9b2919bd7b8472eba68bb059fe223148889e8c35bfaa331e0253",
+    "build_run_id": "20261015T202046.715105Z",
+    "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v50",
+    "run_completed": true,
+    "server_sha256": "347e5faf3b13c4c23ae92adc353637eaea21bbb1f15873a233a169c3a2c90ca6",
+    "verified_no_old_source_or_build_paths": true,
+    "server_binary": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v50/bin/llama-server",
+      "size_bytes": 72984,
+      "sha256": "347e5faf3b13c4c23ae92adc353637eaea21bbb1f15873a233a169c3a2c90ca6"
+    },
+    "link_results": [
+      {
+        "target": "ggml/src:ggml-base",
+        "returncode": 0
+      },
+      {
+        "target": "ggml/src:ggml-base",
+        "returncode": 0
+      },
+      {
+        "target": "tools/server:server-context",
+        "returncode": 0
+      },
+      {
+        "target": "tools/server:server-context",
+        "returncode": 0
+      },
+      {
+        "target": "ggml/src/ggml-cuda:ggml-cuda",
+        "returncode": 0
+      },
+      {
+        "target": "ggml/src/ggml-cuda:ggml-cuda",
+        "returncode": 0
+      },
+      {
+        "target": "ggml/src:ggml-cpu",
+        "returncode": 0
+      },
+      {
+        "target": "ggml/src:ggml-cpu",
+        "returncode": 0
+      },
+      {
+        "target": "ggml/src:ggml",
+        "returncode": 0
+      },
+      {
+        "target": "ggml/src:ggml",
+        "returncode": 0
+      },
+      {
+        "target": "src:llama",
+        "returncode": 0
+      },
+      {
+        "target": "src:llama",
+        "returncode": 0
+      },
+      {
+        "target": "common:llama-common",
+        "returncode": 0
+      },
+      {
+        "target": "common:llama-common",
+        "returncode": 0
+      },
+      {
+        "target": "tools/mtmd:mtmd",
+        "returncode": 0
+      },
+      {
+        "target": "tools/mtmd:mtmd",
+        "returncode": 0
+      },
+      {
+        "target": "tools/server:llama-server-impl",
+        "returncode": 0
+      },
+      {
+        "target": "tools/server:llama-server",
+        "returncode": 0
+      }
+    ]
+  },
+  "semantic_gate_report": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/results/p4-d3-20261015T203652Z/results.json.semantic-gate.json",
+    "size_bytes": 13561,
+    "sha256": "2520f76d4601b9d90e223dd21c2961fea3a30d898544e86612b4b44359799ebf"
+  },
+  "cupti_trace": null,
+  "model": {
+    "path": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+    "size_bytes": 78615622080,
+    "mtime_ns": 1790833321720010216,
+    "sha256": null,
+    "sha256_note": "not computed here because the integrated GGUF is multi-GB; use a pre-existing integrity manifest if available"
+  },
+  "environment": {
+    "ROOT_BANK_LANES": "2",
+    "ROOT_MTP_DEPTH": "3",
+    "ROOT_BANK_CTX": "132096",
+    "ROOT_UBATCH": "1024",
+    "ROOT_WARMUP_FRAMES": "4",
+    "ROOT_PREFILL_BATCH": "8192",
+    "ROOT_SERIAL_CPU_SUBMIT": "0",
+    "ROOT_SERVER_MTP_KV_POLICY": "1",
+    "ROOT_TURBOPREFILL": "1",
+    "ROOT_RUNTIME_REVISION": "20261015T202046.715105Z",
+    "LLAMA_ISLAND_SPLIT": "3,3",
+    "LLAMA_TURBOPREFILL": "1",
+    "LLAMA_EXPERT_PARALLEL": "1",
+    "LLAMA_MTP_GPU_CHAIN_MULTI": "1",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED": "1",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED_DEPTH": "3",
+    "LLAMA_MTP_FIXED_PREFIX_ROWS": "6",
+    "LLAMA_MTP_UNROLL_VARIABLE_LANES": "1",
+    "LLAMA_PLE_SHARD": "0",
+    "LLAMA_PLE_SHARD_ROWS": "0",
+    "ROOT_RUNTIME_SOURCE": "/home/debian/ac922-monster/experiments/standard-opt-20261014/src",
+    "ROOT_MODEL_SHA256": null,
+    "LLAMA_PREFILL_FRAME_PIPELINE": "1",
+    "LLAMA_QSA_INDEXER_IMPL": "standard",
+    "LLAMA_QSA_POOLED_MULTI": "0",
+    "LLAMA_MTP_KV_ONLY_PREFILL": "1",
+    "GGML_META_REPLAY_GUARD": "1",
+    "GGML_META_FIFO_PIPELINE": "1",
+    "GGML_META_ASYNC_COPY": "1",
+    "GGML_META_GPU_EVENT_WAIT": "1",
+    "GGML_CUDA_META_COPY_GPU_WAIT": "1",
+    "GGML_META_CONTEXT_VIEWS": "1",
+    "GGML_META_GPU_SPANS": "1",
+    "GGML_META_GPU_SPANS_PERIOD": "1",
+    "GGML_SCHED_CPU_GATHER_PIPELINE": "1",
+    "GGML_META_SHARED_DEVICE_COPY": null,
+    "GGML_CUDA_FATTN_ONECAT": "1",
+    "LLAMA_PLE_ONECAT": "0",
+    "GGML_CUDA_P2P": "1",
+    "GGML_CUDA_ALLREDUCE": "nccl",
+    "GGML_CUDA_P2P_AR_DISABLE": null,
+    "GGML_SCHED_META_SINGLE_COPY_EVENTS": "1",
+    "ROOT_BUILD_REPORT": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V50-build.json",
+    "ROOT_DYNAMIC_LIB_DIR": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v50/lib",
+    "ROOT_CUPTI_PHASE": "decode4",
+    "ROOT_CUPTI_COLLECTOR": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/r3/libac922-cupti-window.so",
+    "ROOT_CUPTI_TRACE_PATH": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/results/p4-d3-20261015T203652Z/cupti-decode4.jsonl"
+  },
+  "required_runtime_contract": {
+    "meta_context_owner_views": true,
+    "per_physical_gpu_stage_tail_order": true,
+    "confirm_from_actual_runtime_build": true
+  },
+  "invocation": {
+    "runner": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/build-runtime/dual-context-v14",
+    "model": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+    "scenarios": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/scenarios.json",
+    "results": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/results/p4-d3-20261015T203652Z/results.json"
+  },
+  "finished_at": "2026-10-15T20:43:24.067265+00:00",
+  "return_code": 139,
+  "runtime_log": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v14-prep-20261016/results/p4-d3-20261015T203652Z/runtime.log",
+    "size_bytes": 6952774,
+    "sha256": "f9e5d1094f080b6bd6658f902cb16aa9a6301d84c6448473c4bae2975d72f778"
+  }
+}

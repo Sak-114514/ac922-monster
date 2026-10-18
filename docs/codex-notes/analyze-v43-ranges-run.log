@@ -1,0 +1,1772 @@
+{
+  "prefill": {
+    "window": {
+      "source_file": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t142925953890z/root-trace-analysis/prefill-workload-window.json",
+      "request_start_monotonic_ns": 80313967799125,
+      "request_end_monotonic_ns": 80359495017515,
+      "request_duration_ms": 45527.218,
+      "nsys_session_start_utc_epoch_ns": 1792161328664561314,
+      "nsys_session_start_utc": "2026-10-16T14:35:28",
+      "nsys_session_start_local": "2026-10-16T22:35:28",
+      "window_start_nsys_ns": 41204573,
+      "window_end_nsys_ns": 45568422979,
+      "profile_start_nsys_ns": 358483396859,
+      "profile_end_nsys_ns": 404656170319,
+      "clock_mapping": "request realtime_ns minus Nsight session UTC epoch",
+      "clock_warnings": [
+        "request starts before Nsight ANALYSIS_DETAILS.startTime"
+      ]
+    },
+    "gpu_activity": {
+      "request_window_ms": 45527.218,
+      "kernel_events": 62198,
+      "memcpy_events": 2092,
+      "memset_events": 4144,
+      "per_device_kernel": {
+        "0": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:04:00.0",
+          "uuid": "80452dac-e8c1-99fd-225c-ea846276ae6f",
+          "event_count": 10297,
+          "union_ms": 4454.501
+        },
+        "1": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:05:00.0",
+          "uuid": "ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+          "event_count": 10297,
+          "union_ms": 4488.287
+        },
+        "2": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:06:00.0",
+          "uuid": "e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+          "event_count": 10505,
+          "union_ms": 4371.561
+        },
+        "3": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:03:00.0",
+          "uuid": "fadb0459-4d30-907b-289a-862b3014f165",
+          "event_count": 10297,
+          "union_ms": 3931.773
+        },
+        "4": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:04:00.0",
+          "uuid": "760ce501-32f6-69b6-215b-1020da68bbfc",
+          "event_count": 10297,
+          "union_ms": 3421.081
+        },
+        "5": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:05:00.0",
+          "uuid": "d3558623-deca-c702-3cc0-01b4aa9c667a",
+          "event_count": 10505,
+          "union_ms": 2694.212
+        }
+      },
+      "per_device_all_activity": {
+        "0": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:04:00.0",
+          "uuid": "80452dac-e8c1-99fd-225c-ea846276ae6f",
+          "event_count": 11337,
+          "union_ms": 4650.436
+        },
+        "1": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:05:00.0",
+          "uuid": "ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+          "event_count": 11341,
+          "union_ms": 4664.049
+        },
+        "2": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:06:00.0",
+          "uuid": "e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+          "event_count": 11541,
+          "union_ms": 4579.978
+        },
+        "3": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:03:00.0",
+          "uuid": "fadb0459-4d30-907b-289a-862b3014f165",
+          "event_count": 11333,
+          "union_ms": 4141.755
+        },
+        "4": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:04:00.0",
+          "uuid": "760ce501-32f6-69b6-215b-1020da68bbfc",
+          "event_count": 11341,
+          "union_ms": 3630.581
+        },
+        "5": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:05:00.0",
+          "uuid": "d3558623-deca-c702-3cc0-01b4aa9c667a",
+          "event_count": 11541,
+          "union_ms": 2930.487
+        }
+      },
+      "islands": {
+        "A_kernels": {
+          "devices": [
+            0,
+            1,
+            2
+          ],
+          "union_ms": 5979.433,
+          "share_of_request_window_pct": 13.134
+        },
+        "B_kernels": {
+          "devices": [
+            3,
+            4,
+            5
+          ],
+          "union_ms": 4268.227,
+          "share_of_request_window_pct": 9.375
+        },
+        "A_all_activity": {
+          "devices": [
+            0,
+            1,
+            2
+          ],
+          "union_ms": 6182.437,
+          "share_of_request_window_pct": 13.58
+        },
+        "B_all_activity": {
+          "devices": [
+            3,
+            4,
+            5
+          ],
+          "union_ms": 4455.814,
+          "share_of_request_window_pct": 9.787
+        }
+      },
+      "cross_island": {
+        "kernel_overlap_ms": 3694.435,
+        "kernel_overlap_share_of_request_window_pct": 8.115,
+        "all_activity_overlap_ms": 3876.818,
+        "all_activity_overlap_share_of_request_window_pct": 8.515
+      },
+      "all_gpu": {
+        "kernel_union_ms": 6553.225,
+        "any_activity_union_ms": 6761.433,
+        "idle_ms": 38765.785,
+        "idle_share_of_request_window_pct": 85.149,
+        "idle_gaps_gt_1ms": 278,
+        "idle_gaps_gt_10ms": 37,
+        "longest_idle_gap_ms": 14866.772,
+        "missing_kernel_devices": [],
+        "missing_activity_devices": []
+      },
+      "accounting_note": "Island union, overlap, API union, and idle are separate wall-time measures. Per-device and per-island percentages overlap and must not be added."
+    },
+    "kernel_categories": [
+      {
+        "category": "collective_including_rank_wait",
+        "sum_across_devices_ms": 11032.407648,
+        "share_kernel_sum_pct": 47.22490944146723,
+        "wall_union_ms": 2510.135612
+      },
+      {
+        "category": "other_unattributed",
+        "sum_across_devices_ms": 8089.030976,
+        "share_kernel_sum_pct": 34.62560190839889,
+        "wall_union_ms": 5017.68307
+      },
+      {
+        "category": "moe_explicit_names_only",
+        "sum_across_devices_ms": 2343.368119,
+        "share_kernel_sum_pct": 10.030933476960334,
+        "wall_union_ms": 1824.849142
+      },
+      {
+        "category": "gdn",
+        "sum_across_devices_ms": 1439.705232,
+        "share_kernel_sum_pct": 6.162748093878862,
+        "wall_union_ms": 1289.732608
+      },
+      {
+        "category": "attention_indexer",
+        "sum_across_devices_ms": 456.904232,
+        "share_kernel_sum_pct": 1.955807079294677,
+        "wall_union_ms": 428.033829
+      }
+    ],
+    "top_kernels_by_device_sum": [
+      {
+        "name": "k_allreduce_p2p_relay6_ordered(float *, long, p2p_ar_args)",
+        "sum_ms": 11031.685754,
+        "share_kernel_sum_pct": 47.22181932914869
+      },
+      {
+        "name": "void gated_delta_net_cuda_128x4_volta<(bool)1>(const float *, const float *, const float *, const float *, const float *, const float *, float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, uint3, uint3, float, long, int, const int *, long, long, long)",
+        "sum_ms": 1439.705232,
+        "share_kernel_sum_pct": 6.162748093878862
+      },
+      {
+        "name": "void convert_unary_cont_sat_vec4<float>(const void *, __half *, long)",
+        "sum_ms": 1081.141322,
+        "share_kernel_sum_pct": 4.627892900071903
+      },
+      {
+        "name": "void mm_ids_helper<(int)10>(const int *, int *, int *, int *, int, int, int, int, int, bool, int)",
+        "sum_ms": 865.519584,
+        "share_kernel_sum_pct": 3.7049105941644767
+      },
+      {
+        "name": "void dsv4_hc_post_f32<(bool)0>(const float *, const float *, const float *, const float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",
+        "sum_ms": 691.163375,
+        "share_kernel_sum_pct": 2.958567960417144
+      },
+      {
+        "name": "void rms_norm_f32<(int)1024, (bool)1, (bool)0>(const float *, float *, int, long, long, long, float, const float *, long, long, long, uint3, uint3, uint3, uint3, const float *, long, long, long, uint3, uint3, uint3, uint3)",
+        "sum_ms": 669.539778,
+        "share_kernel_sum_pct": 2.8660068039855373
+      },
+      {
+        "name": "volta_s884gemm_fp16_128x128_ldg8_tn",
+        "sum_ms": 559.62354,
+        "share_kernel_sum_pct": 2.395503487636656
+      },
+      {
+        "name": "void dsv4_hc_pre_f32<(bool)1>(const float *, const float *, float *, long, long, long, long, long, long, long, long, long, long, long, float)",
+        "sum_ms": 550.543086,
+        "share_kernel_sum_pct": 2.3566340376018626
+      },
+      {
+        "name": "volta_s884gemm_fp16_64x128_ldg8_tn",
+        "sum_ms": 462.29728,
+        "share_kernel_sum_pct": 1.9788923578249402
+      },
+      {
+        "name": "void flash_attn_ext_f16<(int)256, (int)256, (int)16, (int)4, (bool)0, (bool)0, (bool)0>(const char *, const char *, const char *, const char *, const char *, const int *, float *, float2 *, float, float, float, float, unsigned int, float, int, uint3, int, int, int, int, int, int, int, int, int, int, int, long, int, int, long, int, int, int, int, int, long)",
+        "sum_ms": 454.487832,
+        "share_kernel_sum_pct": 1.945463528293364
+      },
+      {
+        "name": "volta_s884gemm_fp16_64x64_ldg8_tn",
+        "sum_ms": 403.928013,
+        "share_kernel_sum_pct": 1.729039067755521
+      },
+      {
+        "name": "void mul_mat_q_moe_grouped<(ggml_type)42, (int)64, (bool)0>(const char *, const int *, const int *, const int *, const int *, float *, int, int, int, int, int, int, int)",
+        "sum_ms": 389.864453,
+        "share_kernel_sum_pct": 1.6688391215048908
+      },
+      {
+        "name": "moe_tail_f32(const float *, const float *, const float *, const float *, const float *, float *, long, int)",
+        "sum_ms": 353.943044,
+        "share_kernel_sum_pct": 1.5150752885175889
+      },
+      {
+        "name": "void cutlass::Kernel2<cutlass_70_tensorop_s884gemm_f16_128x128_tn_align8>(T1::Params)",
+        "sum_ms": 351.095621,
+        "share_kernel_sum_pct": 1.5028867166657385
+      },
+      {
+        "name": "void cutlass::Kernel2<cutlass_70_wmma_tensorop_s161616gemm_f16_32x32_64x2_tn_align2>(T1::Params)",
+        "sum_ms": 265.298021,
+        "share_kernel_sum_pct": 1.1356247354580595
+      },
+      {
+        "name": "void mul_mat_q_moe_grouped<(ggml_type)21, (int)64, (bool)0>(const char *, const int *, const int *, const int *, const int *, float *, int, int, int, int, int, int, int)",
+        "sum_ms": 248.929267,
+        "share_kernel_sum_pct": 1.0655572624291971
+      },
+      {
+        "name": "void mul_mat_q_moe_grouped<(ggml_type)17, (int)64, (bool)0>(const char *, const int *, const int *, const int *, const int *, float *, int, int, int, int, int, int, int)",
+        "sum_ms": 248.927753,
+        "share_kernel_sum_pct": 1.0655507816577123
+      },
+      {
+        "name": "void mul_mat_q_moe_grouped<(ggml_type)22, (int)64, (bool)0>(const char *, const int *, const int *, const int *, const int *, float *, int, int, int, int, int, int, int)",
+        "sum_ms": 243.132309,
+        "share_kernel_sum_pct": 1.0407430219369491
+      },
+      {
+        "name": "void unary_gated_op_kernel<&op_silu, float>(const T2 *, const T2 *, T2 *, long, long, long, long)",
+        "sum_ms": 223.260946,
+        "share_kernel_sum_pct": 0.9556824124947624
+      },
+      {
+        "name": "void k_argsort_f32_i32<(ggml_sort_order)1>(const float *, int *, int, int)",
+        "sum_ms": 213.071739,
+        "share_kernel_sum_pct": 0.9120668760490441
+      },
+      {
+        "name": "void mul_mat_q_moe_grouped<(ggml_type)20, (int)64, (bool)0>(const char *, const int *, const int *, const int *, const int *, float *, int, int, int, int, int, int, int)",
+        "sum_ms": 192.308832,
+        "share_kernel_sum_pct": 0.8231899568758879
+      },
+      {
+        "name": "void top_k_radix_histogram_select<(int)256, (int)8>(const float *, top_k_radix_state *, int *, unsigned int *, int, int, int, int, bool, bool)",
+        "sum_ms": 177.475569,
+        "share_kernel_sum_pct": 0.7596952488985721
+      },
+      {
+        "name": "void mul_mat_q_moe_grouped<(ggml_type)16, (int)64, (bool)0>(const char *, const int *, const int *, const int *, const int *, float *, int, int, int, int, int, int, int)",
+        "sum_ms": 167.69116,
+        "share_kernel_sum_pct": 0.7178124755542565
+      },
+      {
+        "name": "volta_s884gemm_fp16_256x128_ldg8_tn",
+        "sum_ms": 151.751506,
+        "share_kernel_sum_pct": 0.6495817918544222
+      },
+      {
+        "name": "void mul_mat_q_moe_grouped<(ggml_type)18, (int)64, (bool)0>(const char *, const int *, const int *, const int *, const int *, float *, int, int, int, int, int, int, int)",
+        "sum_ms": 109.653673,
+        "share_kernel_sum_pct": 0.4693793904803744
+      }
+    ],
+    "warnings": [
+      "request window is not fully covered by Nsight profile timing",
+      "CPU samples absent; capture with --sample=process-tree"
+    ],
+    "cuda_host_apis": {
+      "available": true,
+      "calls": 76631,
+      "nonzero_return_calls": 0,
+      "all_api_sum_call_ms": 22633.314,
+      "all_api_wall_union_ms": 22633.314,
+      "categories": {
+        "graph_setup": {
+          "calls": 12,
+          "sum_call_ms": 1.433,
+          "wall_union_ms": 1.433
+        },
+        "launch": {
+          "calls": 60580,
+          "sum_call_ms": 9069.478,
+          "wall_union_ms": 9069.478
+        },
+        "other": {
+          "calls": 14095,
+          "sum_call_ms": 4534.525,
+          "wall_union_ms": 4534.525
+        },
+        "sync_wait": {
+          "calls": 1944,
+          "sum_call_ms": 9027.878,
+          "wall_union_ms": 9027.878
+        }
+      },
+      "top_apis_by_summed_call_time": [
+        {
+          "api": "cudaStreamSynchronize_v3020",
+          "category": "sync_wait",
+          "calls": 1722,
+          "sum_call_ms": 9019.57,
+          "wall_union_ms": 9019.57
+        },
+        {
+          "api": "cudaLaunchKernel_v7000",
+          "category": "launch",
+          "calls": 57338,
+          "sum_call_ms": 9014.739,
+          "wall_union_ms": 9014.739
+        },
+        {
+          "api": "cudaMallocHost_v3020",
+          "category": "other",
+          "calls": 26,
+          "sum_call_ms": 1253.065,
+          "wall_union_ms": 1253.065
+        },
+        {
+          "api": "cudaEventRecord_v3020",
+          "category": "other",
+          "calls": 444,
+          "sum_call_ms": 1004.554,
+          "wall_union_ms": 1004.554
+        },
+        {
+          "api": "cudaMemcpyAsync_v3020",
+          "category": "other",
+          "calls": 1504,
+          "sum_call_ms": 1000.626,
+          "wall_union_ms": 1000.626
+        },
+        {
+          "api": "cudaMalloc_v3020",
+          "category": "other",
+          "calls": 56,
+          "sum_call_ms": 821.003,
+          "wall_union_ms": 821.003
+        },
+        {
+          "api": "cuMemCreate",
+          "category": "other",
+          "calls": 30,
+          "sum_call_ms": 130.34,
+          "wall_union_ms": 130.34
+        },
+        {
+          "api": "cudaFree_v3020",
+          "category": "other",
+          "calls": 42,
+          "sum_call_ms": 113.454,
+          "wall_union_ms": 113.454
+        },
+        {
+          "api": "cuMemSetAccess",
+          "category": "other",
+          "calls": 30,
+          "sum_call_ms": 71.314,
+          "wall_union_ms": 71.314
+        },
+        {
+          "api": "cudaFreeHost_v3020",
+          "category": "other",
+          "calls": 23,
+          "sum_call_ms": 62.689,
+          "wall_union_ms": 62.689
+        },
+        {
+          "api": "cudaMemsetAsync_v3020",
+          "category": "other",
+          "calls": 4060,
+          "sum_call_ms": 54.747,
+          "wall_union_ms": 54.747
+        },
+        {
+          "api": "cuLaunchKernel",
+          "category": "launch",
+          "calls": 3152,
+          "sum_call_ms": 37.288,
+          "wall_union_ms": 37.288
+        },
+        {
+          "api": "cudaGraphLaunch_v10000",
+          "category": "launch",
+          "calls": 90,
+          "sum_call_ms": 17.451,
+          "wall_union_ms": 17.451
+        },
+        {
+          "api": "cudaMemcpy2DAsync_v3020",
+          "category": "other",
+          "calls": 588,
+          "sum_call_ms": 9.371,
+          "wall_union_ms": 9.371
+        },
+        {
+          "api": "cudaDeviceSynchronize_v3020",
+          "category": "sync_wait",
+          "calls": 6,
+          "sum_call_ms": 7.053,
+          "wall_union_ms": 7.053
+        },
+        {
+          "api": "cudaOccupancyMaxActiveBlocksPerMultiprocessor_v6050",
+          "category": "other",
+          "calls": 3708,
+          "sum_call_ms": 6.692,
+          "wall_union_ms": 6.692
+        },
+        {
+          "api": "cuKernelGetFunction",
+          "category": "other",
+          "calls": 3152,
+          "sum_call_ms": 4.867,
+          "wall_union_ms": 4.867
+        },
+        {
+          "api": "cudaGraphInstantiate_v12000",
+          "category": "graph_setup",
+          "calls": 6,
+          "sum_call_ms": 1.389,
+          "wall_union_ms": 1.389
+        },
+        {
+          "api": "cudaEventSynchronize_v3020",
+          "category": "sync_wait",
+          "calls": 114,
+          "sum_call_ms": 0.917,
+          "wall_union_ms": 0.917
+        },
+        {
+          "api": "cudaEventQuery_v3020",
+          "category": "other",
+          "calls": 96,
+          "sum_call_ms": 0.664,
+          "wall_union_ms": 0.664
+        },
+        {
+          "api": "cudaEventCreateWithFlags_v3020",
+          "category": "other",
+          "calls": 138,
+          "sum_call_ms": 0.354,
+          "wall_union_ms": 0.354
+        },
+        {
+          "api": "cudaStreamWaitEvent_v3020",
+          "category": "sync_wait",
+          "calls": 102,
+          "sum_call_ms": 0.338,
+          "wall_union_ms": 0.338
+        },
+        {
+          "api": "cuMemAddressReserve",
+          "category": "other",
+          "calls": 12,
+          "sum_call_ms": 0.314,
+          "wall_union_ms": 0.314
+        },
+        {
+          "api": "cuMemMap",
+          "category": "other",
+          "calls": 30,
+          "sum_call_ms": 0.213,
+          "wall_union_ms": 0.213
+        },
+        {
+          "api": "cudaEventDestroy_v3020",
+          "category": "other",
+          "calls": 114,
+          "sum_call_ms": 0.194,
+          "wall_union_ms": 0.194
+        }
+      ],
+      "accounting_note": "Host API sums overlap across threads. Wall-union is reported separately; launch and sync category percentages are not additive."
+    }
+  },
+  "p4": {
+    "window": {
+      "source_file": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t142925953890z/root-trace-analysis/p4-workload-window.json",
+      "request_start_monotonic_ns": 1,
+      "request_end_monotonic_ns": 5014317074,
+      "request_duration_ms": 5014.317,
+      "nsys_session_start_utc_epoch_ns": 1792161410637985263,
+      "nsys_session_start_utc": "2026-10-16T14:36:50",
+      "nsys_session_start_local": "2026-10-16T22:36:50",
+      "window_start_nsys_ns": 152028927,
+      "window_end_nsys_ns": 5166346000,
+      "profile_start_nsys_ns": 440456820799,
+      "profile_end_nsys_ns": 445835108076,
+      "clock_mapping": "request realtime_ns minus Nsight session UTC epoch",
+      "clock_warnings": [
+        "request starts before Nsight ANALYSIS_DETAILS.startTime"
+      ]
+    },
+    "gpu_activity": {
+      "request_window_ms": 5014.317,
+      "kernel_events": 72949,
+      "memcpy_events": 3108,
+      "memset_events": 0,
+      "per_device_kernel": {
+        "0": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:04:00.0",
+          "uuid": "80452dac-e8c1-99fd-225c-ea846276ae6f",
+          "event_count": 12087,
+          "union_ms": 205.814
+        },
+        "1": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:05:00.0",
+          "uuid": "ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+          "event_count": 12087,
+          "union_ms": 200.467
+        },
+        "2": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:06:00.0",
+          "uuid": "e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+          "event_count": 12311,
+          "union_ms": 192.576
+        },
+        "3": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:03:00.0",
+          "uuid": "fadb0459-4d30-907b-289a-862b3014f165",
+          "event_count": 12088,
+          "union_ms": 160.811
+        },
+        "4": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:04:00.0",
+          "uuid": "760ce501-32f6-69b6-215b-1020da68bbfc",
+          "event_count": 12065,
+          "union_ms": 186.514
+        },
+        "5": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:05:00.0",
+          "uuid": "d3558623-deca-c702-3cc0-01b4aa9c667a",
+          "event_count": 12311,
+          "union_ms": 179.887
+        }
+      },
+      "per_device_all_activity": {
+        "0": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:04:00.0",
+          "uuid": "80452dac-e8c1-99fd-225c-ea846276ae6f",
+          "event_count": 12624,
+          "union_ms": 207.862
+        },
+        "1": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:05:00.0",
+          "uuid": "ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+          "event_count": 12597,
+          "union_ms": 202.426
+        },
+        "2": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:06:00.0",
+          "uuid": "e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+          "event_count": 12821,
+          "union_ms": 194.692
+        },
+        "3": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:03:00.0",
+          "uuid": "fadb0459-4d30-907b-289a-862b3014f165",
+          "event_count": 12597,
+          "union_ms": 163.292
+        },
+        "4": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:04:00.0",
+          "uuid": "760ce501-32f6-69b6-215b-1020da68bbfc",
+          "event_count": 12597,
+          "union_ms": 189.384
+        },
+        "5": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:05:00.0",
+          "uuid": "d3558623-deca-c702-3cc0-01b4aa9c667a",
+          "event_count": 12821,
+          "union_ms": 182.447
+        }
+      },
+      "islands": {
+        "A_kernels": {
+          "devices": [
+            0,
+            1,
+            2
+          ],
+          "union_ms": 351.663,
+          "share_of_request_window_pct": 7.013
+        },
+        "B_kernels": {
+          "devices": [
+            3,
+            4,
+            5
+          ],
+          "union_ms": 335.977,
+          "share_of_request_window_pct": 6.7
+        },
+        "A_all_activity": {
+          "devices": [
+            0,
+            1,
+            2
+          ],
+          "union_ms": 356.289,
+          "share_of_request_window_pct": 7.105
+        },
+        "B_all_activity": {
+          "devices": [
+            3,
+            4,
+            5
+          ],
+          "union_ms": 341.21,
+          "share_of_request_window_pct": 6.805
+        }
+      },
+      "cross_island": {
+        "kernel_overlap_ms": 125.245,
+        "kernel_overlap_share_of_request_window_pct": 2.498,
+        "all_activity_overlap_ms": 125.921,
+        "all_activity_overlap_share_of_request_window_pct": 2.511
+      },
+      "all_gpu": {
+        "kernel_union_ms": 562.395,
+        "any_activity_union_ms": 571.578,
+        "idle_ms": 4442.739,
+        "idle_share_of_request_window_pct": 88.601,
+        "idle_gaps_gt_1ms": 1146,
+        "idle_gaps_gt_10ms": 8,
+        "longest_idle_gap_ms": 159.476,
+        "missing_kernel_devices": [],
+        "missing_activity_devices": []
+      },
+      "accounting_note": "Island union, overlap, API union, and idle are separate wall-time measures. Per-device and per-island percentages overlap and must not be added."
+    },
+    "kernel_categories": [
+      {
+        "category": "other_unattributed",
+        "sum_across_devices_ms": 632.00867,
+        "share_kernel_sum_pct": 56.125217614109445,
+        "wall_union_ms": 402.698581
+      },
+      {
+        "category": "collective_including_rank_wait",
+        "sum_across_devices_ms": 338.583277,
+        "share_kernel_sum_pct": 30.067720593331888,
+        "wall_union_ms": 80.70513
+      },
+      {
+        "category": "moe_explicit_names_only",
+        "sum_across_devices_ms": 134.922205,
+        "share_kernel_sum_pct": 11.98169973934137,
+        "wall_union_ms": 88.638798
+      },
+      {
+        "category": "attention_indexer",
+        "sum_across_devices_ms": 12.585108,
+        "share_kernel_sum_pct": 1.1176142966473384,
+        "wall_union_ms": 10.086822
+      },
+      {
+        "category": "gdn",
+        "sum_across_devices_ms": 7.969728,
+        "share_kernel_sum_pct": 0.7077477565699554,
+        "wall_union_ms": 6.046366
+      }
+    ],
+    "top_kernels_by_device_sum": [
+      {
+        "name": "k_allreduce_p2p(float *, long, p2p_ar_args)",
+        "sum_ms": 338.583277,
+        "share_kernel_sum_pct": 30.067720593331888
+      },
+      {
+        "name": "void gemv_sm70::gemv_sm70_bf16_kernel<(int)4, (int)4, (int)256, (bool)0, (int)1024>(const unsigned short *, const float *, float *, int, int, long, long, long)",
+        "sum_ms": 282.186167,
+        "share_kernel_sum_pct": 25.059403110033966
+      },
+      {
+        "name": "void mul_mat_vec_f<__nv_bfloat16, float, (int)4, (int)256, (bool)0, (bool)0>(const T1 *, const float *, const int *, ggml_cuda_mm_fusion_args_device, float *, int, uint3, int, int, int, uint3, int, int, int, uint3, int, int, int, int)",
+        "sum_ms": 66.314364,
+        "share_kernel_sum_pct": 5.889014323871958
+      },
+      {
+        "name": "void cpy_scalar<&cpy_1_scalar<float, float>>(const char *, char *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",
+        "sum_ms": 35.894385,
+        "share_kernel_sum_pct": 3.1875831216834825
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)21, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 30.909486,
+        "share_kernel_sum_pct": 2.744901629419529
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)42, (int)2, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 27.642891,
+        "share_kernel_sum_pct": 2.4548132747262907
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)14, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 21.541072,
+        "share_kernel_sum_pct": 1.9129442538204418
+      },
+      {
+        "name": "void k_bin_bcast<&op_add, float, float, float, const float *>(const T2 *, const T3 *, T4 *, unsigned int, unsigned int, unsigned int, uint3, uint3, uint3, uint3, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, T5...)",
+        "sum_ms": 18.371201,
+        "share_kernel_sum_pct": 1.63144542614826
+      },
+      {
+        "name": "void k_get_rows<(int)32, (int)1, &dequantize_q8_0, float>(const void *, const int *, T4 *, long, long, uint3, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)",
+        "sum_ms": 17.965877,
+        "share_kernel_sum_pct": 1.5954508286307587
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)17, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 16.500899,
+        "share_kernel_sum_pct": 1.4653541813017232
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)20, (int)8, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 15.292113,
+        "share_kernel_sum_pct": 1.358008537928051
+      },
+      {
+        "name": "void rms_norm_mul_rope_multi_f32<(bool)0>(const float *, float *, int, long, long, long, int, int, long, long, long, float, const float *, int, int, const int *, float, float, float, rope_corr_dims, float, const float *, mrope_sections, bool)",
+        "sum_ms": 14.715624,
+        "share_kernel_sum_pct": 1.3068137171716516
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)23, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 14.676359,
+        "share_kernel_sum_pct": 1.3033268082505793
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)13, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 13.36516,
+        "share_kernel_sum_pct": 1.1868864290222332
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)16, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 13.133841,
+        "share_kernel_sum_pct": 1.1663442595401623
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)12, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 10.968713,
+        "share_kernel_sum_pct": 0.9740711374603631
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)21, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 10.653429,
+        "share_kernel_sum_pct": 0.9460724976470092
+      },
+      {
+        "name": "void qsa_attn_kernel<(int)3, (int)4, (bool)1, (bool)0>(const char *, const char *, const char *, const __half *, const int *, float *, float *, float2 *, int, int, int, int, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, float)",
+        "sum_ms": 10.061468,
+        "share_kernel_sum_pct": 0.8935036935765431
+      },
+      {
+        "name": "quantize_q8_1(const float *, void *, long, long, long, long, long, unsigned int, uint3)",
+        "sum_ms": 9.951526,
+        "share_kernel_sum_pct": 0.8837403485975408
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)18, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 9.907183,
+        "share_kernel_sum_pct": 0.8798024903959082
+      },
+      {
+        "name": "void mul_mat_vec_iq2_s_moe_volta<(bool)1>(const void *, const void *, const void *, const int *, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, block_q8_1 *, int, int, int)",
+        "sum_ms": 9.231138,
+        "share_kernel_sum_pct": 0.8197666482579662
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)20, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 8.907597,
+        "share_kernel_sum_pct": 0.791034749640046
+      },
+      {
+        "name": "void topk_moe_cuda<(int)512, (bool)0>(const float *, float *, int *, float *, int, int, float, float, topk_moe_config)",
+        "sum_ms": 8.384644,
+        "share_kernel_sum_pct": 0.7445941669072943
+      },
+      {
+        "name": "void rms_norm_f32<(int)1024, (bool)1, (bool)0>(const float *, float *, int, long, long, long, float, const float *, long, long, long, uint3, uint3, uint3, uint3, const float *, long, long, long, uint3, uint3, uint3, uint3)",
+        "sum_ms": 8.374342,
+        "share_kernel_sum_pct": 0.7436793028883236
+      },
+      {
+        "name": "void top_k_radix_histogram_select<(int)256, (int)8>(const float *, top_k_radix_state *, int *, unsigned int *, int, int, int, int, bool, bool)",
+        "sum_ms": 8.077315,
+        "share_kernel_sum_pct": 0.7173019669377486
+      }
+    ],
+    "warnings": [
+      "request window is not fully covered by Nsight profile timing",
+      "CPU samples absent; capture with --sample=process-tree"
+    ],
+    "cuda_host_apis": {
+      "available": true,
+      "calls": 51530,
+      "nonzero_return_calls": 0,
+      "all_api_sum_call_ms": 1133.553,
+      "all_api_wall_union_ms": 698.294,
+      "categories": {
+        "launch": {
+          "calls": 45526,
+          "sum_call_ms": 1019.544,
+          "wall_union_ms": 584.763
+        },
+        "other": {
+          "calls": 3460,
+          "sum_call_ms": 60.365,
+          "wall_union_ms": 60.137
+        },
+        "sync_wait": {
+          "calls": 2544,
+          "sum_call_ms": 53.644,
+          "wall_union_ms": 53.644
+        }
+      },
+      "top_apis_by_summed_call_time": [
+        {
+          "api": "cudaLaunchKernel_v7000",
+          "category": "launch",
+          "calls": 45520,
+          "sum_call_ms": 520.864,
+          "wall_union_ms": 500.325
+        },
+        {
+          "api": "cudaGraphLaunch_v10000",
+          "category": "launch",
+          "calls": 6,
+          "sum_call_ms": 498.68,
+          "wall_union_ms": 84.438
+        },
+        {
+          "api": "cudaMemcpyAsync_v3020",
+          "category": "other",
+          "calls": 2445,
+          "sum_call_ms": 56.887,
+          "wall_union_ms": 56.736
+        },
+        {
+          "api": "cudaStreamSynchronize_v3020",
+          "category": "sync_wait",
+          "calls": 2472,
+          "sum_call_ms": 53.454,
+          "wall_union_ms": 53.454
+        },
+        {
+          "api": "cudaEventRecord_v3020",
+          "category": "other",
+          "calls": 883,
+          "sum_call_ms": 2.033,
+          "wall_union_ms": 2.033
+        },
+        {
+          "api": "cudaMemcpy2DAsync_v3020",
+          "category": "other",
+          "calls": 42,
+          "sum_call_ms": 0.832,
+          "wall_union_ms": 0.755
+        },
+        {
+          "api": "cudaEventQuery_v3020",
+          "category": "other",
+          "calls": 90,
+          "sum_call_ms": 0.613,
+          "wall_union_ms": 0.613
+        },
+        {
+          "api": "cudaStreamWaitEvent_v3020",
+          "category": "sync_wait",
+          "calls": 72,
+          "sum_call_ms": 0.19,
+          "wall_union_ms": 0.19
+        }
+      ],
+      "accounting_note": "Host API sums overlap across threads. Wall-union is reported separately; launch and sync category percentages are not additive."
+    }
+  },
+  "p4-padded16-target": {
+    "window": {
+      "source_file": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t142925953890z/root-trace-analysis/p4-padded16-target-workload-window.json",
+      "request_start_monotonic_ns": 80396199899000,
+      "request_end_monotonic_ns": 80396372971000,
+      "request_duration_ms": 173.072,
+      "nsys_session_start_utc_epoch_ns": 1792161410637985263,
+      "nsys_session_start_utc": "2026-10-16T14:36:50",
+      "nsys_session_start_local": "2026-10-16T22:36:50",
+      "window_start_nsys_ns": 299876502,
+      "window_end_nsys_ns": 472948502,
+      "profile_start_nsys_ns": 440456820799,
+      "profile_end_nsys_ns": 445835108076,
+      "clock_mapping": "request realtime_ns minus Nsight session UTC epoch",
+      "clock_warnings": [
+        "request starts before Nsight ANALYSIS_DETAILS.startTime"
+      ]
+    },
+    "gpu_activity": {
+      "request_window_ms": 173.072,
+      "kernel_events": 27429,
+      "memcpy_events": 1002,
+      "memset_events": 0,
+      "per_device_kernel": {
+        "0": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:04:00.0",
+          "uuid": "80452dac-e8c1-99fd-225c-ea846276ae6f",
+          "event_count": 4575,
+          "union_ms": 100.169
+        },
+        "1": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:05:00.0",
+          "uuid": "ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+          "event_count": 4575,
+          "union_ms": 99.885
+        },
+        "2": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:06:00.0",
+          "uuid": "e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+          "event_count": 4575,
+          "union_ms": 100.044
+        },
+        "3": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:03:00.0",
+          "uuid": "fadb0459-4d30-907b-289a-862b3014f165",
+          "event_count": 4576,
+          "union_ms": 70.032
+        },
+        "4": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:04:00.0",
+          "uuid": "760ce501-32f6-69b6-215b-1020da68bbfc",
+          "event_count": 4553,
+          "union_ms": 99.735
+        },
+        "5": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:05:00.0",
+          "uuid": "d3558623-deca-c702-3cc0-01b4aa9c667a",
+          "event_count": 4575,
+          "union_ms": 100.754
+        }
+      },
+      "per_device_all_activity": {
+        "0": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:04:00.0",
+          "uuid": "80452dac-e8c1-99fd-225c-ea846276ae6f",
+          "event_count": 4741,
+          "union_ms": 100.838
+        },
+        "1": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:05:00.0",
+          "uuid": "ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+          "event_count": 4738,
+          "union_ms": 100.542
+        },
+        "2": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:06:00.0",
+          "uuid": "e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+          "event_count": 4738,
+          "union_ms": 100.678
+        },
+        "3": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:03:00.0",
+          "uuid": "fadb0459-4d30-907b-289a-862b3014f165",
+          "event_count": 4738,
+          "union_ms": 70.722
+        },
+        "4": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:04:00.0",
+          "uuid": "760ce501-32f6-69b6-215b-1020da68bbfc",
+          "event_count": 4738,
+          "union_ms": 100.813
+        },
+        "5": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:05:00.0",
+          "uuid": "d3558623-deca-c702-3cc0-01b4aa9c667a",
+          "event_count": 4738,
+          "union_ms": 101.433
+        }
+      },
+      "islands": {
+        "A_kernels": {
+          "devices": [
+            0,
+            1,
+            2
+          ],
+          "union_ms": 102.943,
+          "share_of_request_window_pct": 59.48
+        },
+        "B_kernels": {
+          "devices": [
+            3,
+            4,
+            5
+          ],
+          "union_ms": 103.327,
+          "share_of_request_window_pct": 59.702
+        },
+        "A_all_activity": {
+          "devices": [
+            0,
+            1,
+            2
+          ],
+          "union_ms": 104.214,
+          "share_of_request_window_pct": 60.214
+        },
+        "B_all_activity": {
+          "devices": [
+            3,
+            4,
+            5
+          ],
+          "union_ms": 104.644,
+          "share_of_request_window_pct": 60.463
+        }
+      },
+      "cross_island": {
+        "kernel_overlap_ms": 102.905,
+        "kernel_overlap_share_of_request_window_pct": 59.458,
+        "all_activity_overlap_ms": 102.969,
+        "all_activity_overlap_share_of_request_window_pct": 59.495
+      },
+      "all_gpu": {
+        "kernel_union_ms": 103.365,
+        "any_activity_union_ms": 105.889,
+        "idle_ms": 67.183,
+        "idle_share_of_request_window_pct": 38.818,
+        "idle_gaps_gt_1ms": 2,
+        "idle_gaps_gt_10ms": 2,
+        "longest_idle_gap_ms": 33.943,
+        "missing_kernel_devices": [],
+        "missing_activity_devices": []
+      },
+      "accounting_note": "Island union, overlap, API union, and idle are separate wall-time measures. Per-device and per-island percentages overlap and must not be added."
+    },
+    "kernel_categories": [
+      {
+        "category": "other_unattributed",
+        "sum_across_devices_ms": 285.847173,
+        "share_kernel_sum_pct": 50.09418676492713,
+        "wall_union_ms": 60.821866
+      },
+      {
+        "category": "collective_including_rank_wait",
+        "sum_across_devices_ms": 216.268812,
+        "share_kernel_sum_pct": 37.90070808136666,
+        "wall_union_ms": 46.392328
+      },
+      {
+        "category": "moe_explicit_names_only",
+        "sum_across_devices_ms": 59.530332,
+        "share_kernel_sum_pct": 10.432580242401482,
+        "wall_union_ms": 13.533315
+      },
+      {
+        "category": "attention_indexer",
+        "sum_across_devices_ms": 5.365272,
+        "share_kernel_sum_pct": 0.9402539643540015,
+        "wall_union_ms": 2.908715
+      },
+      {
+        "category": "gdn",
+        "sum_across_devices_ms": 3.607861,
+        "share_kernel_sum_pct": 0.6322709469507217,
+        "wall_union_ms": 1.684499
+      }
+    ],
+    "top_kernels_by_device_sum": [
+      {
+        "name": "k_allreduce_p2p(float *, long, p2p_ar_args)",
+        "sum_ms": 216.268812,
+        "share_kernel_sum_pct": 37.90070808136666
+      },
+      {
+        "name": "void gemv_sm70::gemv_sm70_bf16_kernel<(int)4, (int)4, (int)256, (bool)0, (int)1024>(const unsigned short *, const float *, float *, int, int, long, long, long)",
+        "sum_ms": 131.591066,
+        "share_kernel_sum_pct": 23.061090188916623
+      },
+      {
+        "name": "void mul_mat_vec_f<__nv_bfloat16, float, (int)4, (int)256, (bool)0, (bool)0>(const T1 *, const float *, const int *, ggml_cuda_mm_fusion_args_device, float *, int, uint3, int, int, int, uint3, int, int, int, uint3, int, int, int, int)",
+        "sum_ms": 35.359075,
+        "share_kernel_sum_pct": 6.196612295637662
+      },
+      {
+        "name": "void cpy_scalar<&cpy_1_scalar<float, float>>(const char *, char *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",
+        "sum_ms": 15.970007,
+        "share_kernel_sum_pct": 2.7987140992127064
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)21, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 14.197959,
+        "share_kernel_sum_pct": 2.488165974713971
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)42, (int)2, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 12.230957,
+        "share_kernel_sum_pct": 2.143452523393656
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)14, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 9.747065,
+        "share_kernel_sum_pct": 1.7081550585070313
+      },
+      {
+        "name": "void k_bin_bcast<&op_add, float, float, float, const float *>(const T2 *, const T3 *, T4 *, unsigned int, unsigned int, unsigned int, uint3, uint3, uint3, uint3, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, T5...)",
+        "sum_ms": 8.485701,
+        "share_kernel_sum_pct": 1.4871033575879686
+      },
+      {
+        "name": "void k_get_rows<(int)32, (int)1, &dequantize_q8_0, float>(const void *, const int *, T4 *, long, long, uint3, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)",
+        "sum_ms": 8.083069,
+        "share_kernel_sum_pct": 1.4165428465503587
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)17, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 7.460652,
+        "share_kernel_sum_pct": 1.3074654220076094
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)20, (int)8, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 7.037284,
+        "share_kernel_sum_pct": 1.233270965439401
+      },
+      {
+        "name": "void rms_norm_mul_rope_multi_f32<(bool)0>(const float *, float *, int, long, long, long, int, int, long, long, long, float, const float *, int, int, const int *, float, float, float, rope_corr_dims, float, const float *, mrope_sections, bool)",
+        "sum_ms": 6.651113,
+        "share_kernel_sum_pct": 1.165595214113364
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)23, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 6.587902,
+        "share_kernel_sum_pct": 1.1545176036323332
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)16, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 5.979883,
+        "share_kernel_sum_pct": 1.0479634018784323
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)13, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 5.919641,
+        "share_kernel_sum_pct": 1.0374061031393165
+      },
+      {
+        "name": "quantize_q8_1(const float *, void *, long, long, long, long, long, unsigned int, uint3)",
+        "sum_ms": 5.91892,
+        "share_kernel_sum_pct": 1.0372797492269148
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)12, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 4.910783,
+        "share_kernel_sum_pct": 0.860605610271434
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)21, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 4.696689,
+        "share_kernel_sum_pct": 0.8230860339583588
+      },
+      {
+        "name": "void qsa_attn_kernel<(int)3, (int)4, (bool)1, (bool)0>(const char *, const char *, const char *, const __half *, const int *, float *, float *, float2 *, int, int, int, int, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, float)",
+        "sum_ms": 4.621368,
+        "share_kernel_sum_pct": 0.8098861684437851
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)18, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 4.586644,
+        "share_kernel_sum_pct": 0.8038008518637071
+      },
+      {
+        "name": "void mul_mat_vec_iq2_s_moe_volta<(bool)1>(const void *, const void *, const void *, const int *, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, block_q8_1 *, int, int, int)",
+        "sum_ms": 4.033031,
+        "share_kernel_sum_pct": 0.706781200675862
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)20, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 4.024954,
+        "share_kernel_sum_pct": 0.7053657214103024
+      },
+      {
+        "name": "void gated_delta_net_cuda_128x4_volta<(bool)1>(const float *, const float *, const float *, const float *, const float *, const float *, float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, uint3, uint3, float, long, int, const int *, long, long, long)",
+        "sum_ms": 3.607861,
+        "share_kernel_sum_pct": 0.6322709469507217
+      },
+      {
+        "name": "void rms_norm_f32<(int)1024, (bool)1, (bool)0>(const float *, float *, int, long, long, long, float, const float *, long, long, long, uint3, uint3, uint3, uint3, const float *, long, long, long, uint3, uint3, uint3, uint3)",
+        "sum_ms": 3.224457,
+        "share_kernel_sum_pct": 0.5650801072413497
+      },
+      {
+        "name": "void top_k_radix_histogram_select<(int)256, (int)8>(const float *, top_k_radix_state *, int *, unsigned int *, int, int, int, int, bool, bool)",
+        "sum_ms": 3.111317,
+        "share_kernel_sum_pct": 0.5452525321385382
+      }
+    ],
+    "warnings": [
+      "request window is not fully covered by Nsight profile timing",
+      "CPU samples absent; capture with --sample=process-tree"
+    ],
+    "cuda_host_apis": {
+      "available": true,
+      "calls": 1089,
+      "nonzero_return_calls": 0,
+      "all_api_sum_call_ms": 550.477,
+      "all_api_wall_union_ms": 136.235,
+      "categories": {
+        "launch": {
+          "calls": 6,
+          "sum_call_ms": 498.68,
+          "wall_union_ms": 84.438
+        },
+        "other": {
+          "calls": 735,
+          "sum_call_ms": 29.742,
+          "wall_union_ms": 29.742
+        },
+        "sync_wait": {
+          "calls": 348,
+          "sum_call_ms": 22.055,
+          "wall_union_ms": 22.055
+        }
+      },
+      "top_apis_by_summed_call_time": [
+        {
+          "api": "cudaGraphLaunch_v10000",
+          "category": "launch",
+          "calls": 6,
+          "sum_call_ms": 498.68,
+          "wall_union_ms": 84.438
+        },
+        {
+          "api": "cudaMemcpyAsync_v3020",
+          "category": "other",
+          "calls": 381,
+          "sum_call_ms": 28.717,
+          "wall_union_ms": 28.717
+        },
+        {
+          "api": "cudaStreamSynchronize_v3020",
+          "category": "sync_wait",
+          "calls": 342,
+          "sum_call_ms": 22.04,
+          "wall_union_ms": 22.04
+        },
+        {
+          "api": "cudaEventRecord_v3020",
+          "category": "other",
+          "calls": 312,
+          "sum_call_ms": 0.738,
+          "wall_union_ms": 0.738
+        },
+        {
+          "api": "cudaEventQuery_v3020",
+          "category": "other",
+          "calls": 42,
+          "sum_call_ms": 0.286,
+          "wall_union_ms": 0.286
+        },
+        {
+          "api": "cudaStreamWaitEvent_v3020",
+          "category": "sync_wait",
+          "calls": 6,
+          "sum_call_ms": 0.015,
+          "wall_union_ms": 0.015
+        }
+      ],
+      "accounting_note": "Host API sums overlap across threads. Wall-union is reported separately; launch and sync category percentages are not additive."
+    }
+  },
+  "p4-padded16-step": {
+    "window": {
+      "source_file": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t142925953890z/root-trace-analysis/p4-padded16-step-workload-window.json",
+      "request_start_monotonic_ns": 80396043083000,
+      "request_end_monotonic_ns": 80396372971000,
+      "request_duration_ms": 329.888,
+      "nsys_session_start_utc_epoch_ns": 1792161410637985263,
+      "nsys_session_start_utc": "2026-10-16T14:36:50",
+      "nsys_session_start_local": "2026-10-16T22:36:50",
+      "window_start_nsys_ns": 143060502,
+      "window_end_nsys_ns": 472948502,
+      "profile_start_nsys_ns": 440456820799,
+      "profile_end_nsys_ns": 445835108076,
+      "clock_mapping": "request realtime_ns minus Nsight session UTC epoch",
+      "clock_warnings": [
+        "request starts before Nsight ANALYSIS_DETAILS.startTime"
+      ]
+    },
+    "gpu_activity": {
+      "request_window_ms": 329.888,
+      "kernel_events": 30079,
+      "memcpy_events": 1398,
+      "memset_events": 0,
+      "per_device_kernel": {
+        "0": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:04:00.0",
+          "uuid": "80452dac-e8c1-99fd-225c-ea846276ae6f",
+          "event_count": 4975,
+          "union_ms": 108.763
+        },
+        "1": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:05:00.0",
+          "uuid": "ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+          "event_count": 4975,
+          "union_ms": 108.484
+        },
+        "2": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:06:00.0",
+          "uuid": "e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+          "event_count": 5100,
+          "union_ms": 105.612
+        },
+        "3": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:03:00.0",
+          "uuid": "fadb0459-4d30-907b-289a-862b3014f165",
+          "event_count": 4976,
+          "union_ms": 77.646
+        },
+        "4": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:04:00.0",
+          "uuid": "760ce501-32f6-69b6-215b-1020da68bbfc",
+          "event_count": 4953,
+          "union_ms": 107.422
+        },
+        "5": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:05:00.0",
+          "uuid": "d3558623-deca-c702-3cc0-01b4aa9c667a",
+          "event_count": 5100,
+          "union_ms": 105.478
+        }
+      },
+      "per_device_all_activity": {
+        "0": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:04:00.0",
+          "uuid": "80452dac-e8c1-99fd-225c-ea846276ae6f",
+          "event_count": 5217,
+          "union_ms": 109.671
+        },
+        "1": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:05:00.0",
+          "uuid": "ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+          "event_count": 5202,
+          "union_ms": 109.358
+        },
+        "2": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0004:06:00.0",
+          "uuid": "e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+          "event_count": 5327,
+          "union_ms": 106.457
+        },
+        "3": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:03:00.0",
+          "uuid": "fadb0459-4d30-907b-289a-862b3014f165",
+          "event_count": 5202,
+          "union_ms": 78.592
+        },
+        "4": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:04:00.0",
+          "uuid": "760ce501-32f6-69b6-215b-1020da68bbfc",
+          "event_count": 5202,
+          "union_ms": 108.778
+        },
+        "5": {
+          "name": "Tesla V100-SXM2-16GB",
+          "bus_location": "0035:05:00.0",
+          "uuid": "d3558623-deca-c702-3cc0-01b4aa9c667a",
+          "event_count": 5327,
+          "union_ms": 106.423
+        }
+      },
+      "islands": {
+        "A_kernels": {
+          "devices": [
+            0,
+            1,
+            2
+          ],
+          "union_ms": 116.612,
+          "share_of_request_window_pct": 35.349
+        },
+        "B_kernels": {
+          "devices": [
+            3,
+            4,
+            5
+          ],
+          "union_ms": 115.958,
+          "share_of_request_window_pct": 35.151
+        },
+        "A_all_activity": {
+          "devices": [
+            0,
+            1,
+            2
+          ],
+          "union_ms": 118.547,
+          "share_of_request_window_pct": 35.935
+        },
+        "B_all_activity": {
+          "devices": [
+            3,
+            4,
+            5
+          ],
+          "union_ms": 118.019,
+          "share_of_request_window_pct": 35.775
+        }
+      },
+      "cross_island": {
+        "kernel_overlap_ms": 109.569,
+        "kernel_overlap_share_of_request_window_pct": 33.214,
+        "all_activity_overlap_ms": 109.636,
+        "all_activity_overlap_share_of_request_window_pct": 33.234
+      },
+      "all_gpu": {
+        "kernel_union_ms": 123.001,
+        "any_activity_union_ms": 126.93,
+        "idle_ms": 202.958,
+        "idle_share_of_request_window_pct": 61.523,
+        "idle_gaps_gt_1ms": 17,
+        "idle_gaps_gt_10ms": 3,
+        "longest_idle_gap_ms": 34.264,
+        "missing_kernel_devices": [],
+        "missing_activity_devices": []
+      },
+      "accounting_note": "Island union, overlap, API union, and idle are separate wall-time measures. Per-device and per-island percentages overlap and must not be added."
+    },
+    "kernel_categories": [
+      {
+        "category": "other_unattributed",
+        "sum_across_devices_ms": 303.003493,
+        "share_kernel_sum_pct": 49.39702021535076,
+        "wall_union_ms": 74.946961
+      },
+      {
+        "category": "collective_including_rank_wait",
+        "sum_across_devices_ms": 240.548418,
+        "share_kernel_sum_pct": 39.21530721996213,
+        "wall_union_ms": 52.815413
+      },
+      {
+        "category": "moe_explicit_names_only",
+        "sum_across_devices_ms": 60.54541,
+        "share_kernel_sum_pct": 9.870390641723393,
+        "wall_union_ms": 14.301808
+      },
+      {
+        "category": "attention_indexer",
+        "sum_across_devices_ms": 5.699213,
+        "share_kernel_sum_pct": 0.9291118626562824,
+        "wall_union_ms": 3.242656
+      },
+      {
+        "category": "gdn",
+        "sum_across_devices_ms": 3.607861,
+        "share_kernel_sum_pct": 0.588170060307442,
+        "wall_union_ms": 1.684499
+      }
+    ],
+    "top_kernels_by_device_sum": [
+      {
+        "name": "k_allreduce_p2p(float *, long, p2p_ar_args)",
+        "sum_ms": 240.548418,
+        "share_kernel_sum_pct": 39.21530721996213
+      },
+      {
+        "name": "void gemv_sm70::gemv_sm70_bf16_kernel<(int)4, (int)4, (int)256, (bool)0, (int)1024>(const unsigned short *, const float *, float *, int, int, long, long, long)",
+        "sum_ms": 131.591066,
+        "share_kernel_sum_pct": 21.452579582511795
+      },
+      {
+        "name": "void mul_mat_vec_f<__nv_bfloat16, float, (int)4, (int)256, (bool)0, (bool)0>(const T1 *, const float *, const int *, ggml_cuda_mm_fusion_args_device, float *, int, uint3, int, int, int, uint3, int, int, int, uint3, int, int, int, int)",
+        "sum_ms": 35.359075,
+        "share_kernel_sum_pct": 5.764398704707683
+      },
+      {
+        "name": "void cpy_scalar<&cpy_1_scalar<float, float>>(const char *, char *, long, long, long, long, long, long, long, long, long, long, long, long, long, long, long)",
+        "sum_ms": 16.148339,
+        "share_kernel_sum_pct": 2.6325763446804125
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)21, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 14.197959,
+        "share_kernel_sum_pct": 2.3146164448332653
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)42, (int)2, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 12.230957,
+        "share_kernel_sum_pct": 1.9939467502511128
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)14, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 9.747065,
+        "share_kernel_sum_pct": 1.5890112753430794
+      },
+      {
+        "name": "void k_bin_bcast<&op_add, float, float, float, const float *>(const T2 *, const T3 *, T4 *, unsigned int, unsigned int, unsigned int, uint3, uint3, uint3, uint3, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, T5...)",
+        "sum_ms": 8.603823,
+        "share_kernel_sum_pct": 1.4026347170205717
+      },
+      {
+        "name": "void k_get_rows<(int)32, (int)1, &dequantize_q8_0, float>(const void *, const int *, T4 *, long, long, uint3, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)",
+        "sum_ms": 8.083069,
+        "share_kernel_sum_pct": 1.3177390096789248
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)17, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 7.460652,
+        "share_kernel_sum_pct": 1.2162697334439543
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)20, (int)8, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 7.037284,
+        "share_kernel_sum_pct": 1.1472503388241944
+      },
+      {
+        "name": "void rms_norm_mul_rope_multi_f32<(bool)0>(const float *, float *, int, long, long, long, int, int, long, long, long, float, const float *, int, int, const int *, float, float, float, rope_corr_dims, float, const float *, mrope_sections, bool)",
+        "sum_ms": 6.719175,
+        "share_kernel_sum_pct": 1.0953907495234037
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)23, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 6.587902,
+        "share_kernel_sum_pct": 1.0739900225201353
+      },
+      {
+        "name": "quantize_q8_1(const float *, void *, long, long, long, long, long, unsigned int, uint3)",
+        "sum_ms": 6.309985,
+        "share_kernel_sum_pct": 1.0286827175406854
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)16, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 5.979883,
+        "share_kernel_sum_pct": 0.9748679743320066
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)13, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 5.919641,
+        "share_kernel_sum_pct": 0.9650470469811355
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)12, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 4.910783,
+        "share_kernel_sum_pct": 0.800578385161391
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)21, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 4.696689,
+        "share_kernel_sum_pct": 0.7656757985896074
+      },
+      {
+        "name": "void qsa_attn_kernel<(int)3, (int)4, (bool)1, (bool)0>(const char *, const char *, const char *, const __half *, const int *, float *, float *, float2 *, int, int, int, int, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, float)",
+        "sum_ms": 4.621368,
+        "share_kernel_sum_pct": 0.7533966234461036
+      },
+      {
+        "name": "void mul_mat_vec_q_moe<(ggml_type)18, (int)2, (bool)1>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 4.586644,
+        "share_kernel_sum_pct": 0.7477357575828911
+      },
+      {
+        "name": "void mul_mat_vec_iq2_s_moe_volta<(bool)1>(const void *, const void *, const void *, const int *, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, block_q8_1 *, int, int, int)",
+        "sum_ms": 4.033031,
+        "share_kernel_sum_pct": 0.6574832252383845
+      },
+      {
+        "name": "void mul_mat_vec_q<(ggml_type)20, (int)4, (bool)0, (bool)0, (bool)0>(const void *, const void *, const int *, ggml_cuda_mm_fusion_args_device, float *, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, uint3, unsigned int, unsigned int, unsigned int, unsigned int, int, int)",
+        "sum_ms": 4.024954,
+        "share_kernel_sum_pct": 0.6561664756249423
+      },
+      {
+        "name": "void rms_norm_f32<(int)1024, (bool)1, (bool)0>(const float *, float *, int, long, long, long, float, const float *, long, long, long, uint3, uint3, uint3, uint3, const float *, long, long, long, uint3, uint3, uint3, uint3)",
+        "sum_ms": 3.834461,
+        "share_kernel_sum_pct": 0.6251114324017845
+      },
+      {
+        "name": "void gated_delta_net_cuda_128x4_volta<(bool)1>(const float *, const float *, const float *, const float *, const float *, const float *, float *, float *, long, long, long, long, long, long, long, long, long, long, long, long, uint3, uint3, float, long, int, const int *, long, long, long)",
+        "sum_ms": 3.607861,
+        "share_kernel_sum_pct": 0.588170060307442
+      },
+      {
+        "name": "void topk_moe_cuda<(int)512, (bool)0>(const float *, float *, int *, float *, int, int, float, float, topk_moe_config)",
+        "sum_ms": 3.112649,
+        "share_kernel_sum_pct": 0.5074383270436137
+      }
+    ],
+    "warnings": [
+      "request window is not fully covered by Nsight profile timing",
+      "CPU samples absent; capture with --sample=process-tree"
+    ],
+    "cuda_host_apis": {
+      "available": true,
+      "calls": 4585,
+      "nonzero_return_calls": 0,
+      "all_api_sum_call_ms": 608.225,
+      "all_api_wall_union_ms": 179.006,
+      "categories": {
+        "launch": {
+          "calls": 2656,
+          "sum_call_ms": 548.088,
+          "wall_union_ms": 119.208
+        },
+        "other": {
+          "calls": 1239,
+          "sum_call_ms": 34.659,
+          "wall_union_ms": 34.475
+        },
+        "sync_wait": {
+          "calls": 690,
+          "sum_call_ms": 25.478,
+          "wall_union_ms": 25.478
+        }
+      },
+      "top_apis_by_summed_call_time": [
+        {
+          "api": "cudaGraphLaunch_v10000",
+          "category": "launch",
+          "calls": 6,
+          "sum_call_ms": 498.68,
+          "wall_union_ms": 84.438
+        },
+        {
+          "api": "cudaLaunchKernel_v7000",
+          "category": "launch",
+          "calls": 2650,
+          "sum_call_ms": 49.408,
+          "wall_union_ms": 34.769
+        },
+        {
+          "api": "cudaMemcpyAsync_v3020",
+          "category": "other",
+          "calls": 765,
+          "sum_call_ms": 33.038,
+          "wall_union_ms": 32.931
+        },
+        {
+          "api": "cudaStreamSynchronize_v3020",
+          "category": "sync_wait",
+          "calls": 648,
+          "sum_call_ms": 25.367,
+          "wall_union_ms": 25.367
+        },
+        {
+          "api": "cudaEventRecord_v3020",
+          "category": "other",
+          "calls": 420,
+          "sum_call_ms": 1.023,
+          "wall_union_ms": 1.023
+        },
+        {
+          "api": "cudaMemcpy2DAsync_v3020",
+          "category": "other",
+          "calls": 12,
+          "sum_call_ms": 0.312,
+          "wall_union_ms": 0.235
+        },
+        {
+          "api": "cudaEventQuery_v3020",
+          "category": "other",
+          "calls": 42,
+          "sum_call_ms": 0.286,
+          "wall_union_ms": 0.286
+        },
+        {
+          "api": "cudaStreamWaitEvent_v3020",
+          "category": "sync_wait",
+          "calls": 42,
+          "sum_call_ms": 0.111,
+          "wall_union_ms": 0.111
+        }
+      ],
+      "accounting_note": "Host API sums overlap across threads. Wall-union is reported separately; launch and sync category percentages are not additive."
+    }
+  }
+}

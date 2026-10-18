@@ -1,0 +1,21 @@
+SYNTAX /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-pool-turbo-20261016/apply-v47-r2/src/src/llama-context.cpp
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-pool-turbo-20261016/apply-v47-r2/src/src/llama-context.cpp: In member function ‘llama_token llama_context::inspect_mtp_gpu_chain_step(int32_t, bool)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-pool-turbo-20261016/apply-v47-r2/src/src/llama-context.cpp:2201:35: warning: comparison of integer expressions of different signedness: ‘llama_token’ {aka ‘int’} and ‘uint32_t’ {aka ‘unsigned int’} [-Wsign-compare]
+ 2201 |         for (llama_token j = 1; j < model.vocab.n_tokens(); ++j) {
+      |                                 ~~^~~~~~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-pool-turbo-20261016/apply-v47-r2/src/src/llama-context.cpp: In member function ‘int32_t llama_context::end_mtp_gpu_chain(llama_token*, int32_t)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-pool-turbo-20261016/apply-v47-r2/src/src/llama-context.cpp:2227:34: warning: comparison of integer expressions of different signedness: ‘const int’ and ‘uint32_t’ {aka ‘unsigned int’} [-Wsign-compare]
+ 2227 |         if (ids[i] < 0 || ids[i] >= model.vocab.n_tokens()) {
+      |                           ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-pool-turbo-20261016/apply-v47-r2/src/src/llama-context.cpp: In member function ‘int llama_context::decode(const llama_batch&)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-pool-turbo-20261016/apply-v47-r2/src/src/llama-context.cpp:4094:59: warning: comparison of integer expressions of different signedness: ‘uint32_t’ {aka ‘unsigned int’} and ‘int32_t’ {aka ‘int’} [-Wsign-compare]
+ 4094 |                 if (!res->mtp_token_feedback || n_outputs != (int32_t) mtp_chain_multi_lanes.size() ||
+      |                                                 ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PASS /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-pool-turbo-20261016/apply-v47-r2/src/src/llama-context.cpp
+SYNTAX /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-pool-turbo-20261016/apply-v47-r2/src/src/llama-memory-hybrid-idx.cpp
+PASS /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-pool-turbo-20261016/apply-v47-r2/src/src/llama-memory-hybrid-idx.cpp
+SYNTAX /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-pool-turbo-20261016/apply-v47-r2/src/src/models/qwen4exp.cpp
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-pool-turbo-20261016/apply-v47-r2/src/src/models/qwen4exp.cpp:1:10: fatal error: ../llama-mtp-lane-policy.h: No such file or directory
+    1 | #include "../llama-mtp-lane-policy.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.

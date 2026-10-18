@@ -1,0 +1,247 @@
+start=2026-10-16T20:04:38Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v118
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/meta3-cold-cohort-20261016/meta3-cold-cohort-v100-meta3-host1
+tag=v118-fresh-exec-meta3-20261016T200430Z
+force=force0
+scale_nodes=10000
+stack_limit_kib=8192
+limits process_timeout=30s max_temp=58C min_free=512MiB max_runtime_used=1024MiB visible_ranks=0,1,2
+env GGML_CUDA_GRAPHS_FORCE=0 GGML_CUDA_GRAPH_STRUCTURAL=1 GGML_CUDA_GRAPH_STRUCTURAL_MAX_NODES=16384 GGML_META_CHUNK_NODES=0 GGML_META_SINGLE_CHUNK_COLD_DRAIN=1 GGML_META_COLD_PREPARE_COHORT=1 GGML_CUDA_P2P_AR_DEBUG=1
+226b969a20ab25e36e596633ae68a75cb26f87a62173df46085af5b2291be567  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/meta3-cold-cohort-20261016/meta3-cold-cohort-v100-meta3-host1
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 1 MiB, 16126 MiB, 39
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 1 MiB, 16126 MiB, 38
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 1 MiB, 16126 MiB, 39
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 1 MiB, 16126 MiB, 38
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 7 MiB, 16120 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 6 MiB, 16121 MiB, 39
+FIXTURE_THREAD role=main rank=0 pthread=140735036328000 stack_bytes=8388608 status=0
+FIXTURE_CONFIG ranks=3 topology=Meta3 k=48 n=24 allreduce_bytes=96 scale_nodes=10000 force=0 sync_between=0 structural=1 max_nodes=16384 chunk_nodes=0 cold_prepare_cohort=1 cold_drain=1
+ggml[2] ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+ggml[2]   Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2]   Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml[2] P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml[2] ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml[2] ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml[2] ggml_backend_meta_context: using in-graph P2P AllReduce
+FIXTURE_DEVICE rank=0 name=CUDA0
+FIXTURE_DEVICE rank=1 name=CUDA1
+FIXTURE_DEVICE rank=2 name=CUDA2
+SPLIT_W axis=0 slices=16,16,16
+SPLIT_X axis=0 slices=16,16,16
+FIXTURE_SETUP topology=Meta3 w_x_axis0=1 ranks=3 partial_bytes=96 graphA_nodes=10003 graphB_nodes=10003 shared_first_key=1 same_node_count=1 tailA=VIEW tailB=ADD key=0x7ffd3e4f0060 uidA=1 uidB=2 scale_nodes=10000
+CHILD_GRAPH phase=A1 rank=0 uid=3 nodes=1 scale_nodes=0 key=0x7ffd3cb20060 first=flat.partial last=flat.partial allreduce_nodes=0 allreduce_bytes=0
+FIXTURE_THREAD role=rank0-submit rank=0 pthread=140735036328000 stack_bytes=8388608 status=0
+CUDA graph path config ctx=0x1003fc48b90 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x1003fc48b90 device=0 uid=3 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe3d026600
+CHILD_GRAPH phase=A1 rank=1 uid=5 nodes=1 scale_nodes=0 key=0x7ffd3b150060 first=flat.partial last=flat.partial allreduce_nodes=0 allreduce_bytes=0
+FIXTURE_THREAD role=meta-worker rank=1 pthread=140735036328000 stack_bytes=8388608 status=0
+CUDA graph path config ctx=0x1003fc49e10 device=1 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x1003fc49e10 device=1 uid=5 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe3d226600
+CHILD_GRAPH phase=A1 rank=2 uid=7 nodes=1 scale_nodes=0 key=0x7ffd39780060 first=flat.partial last=flat.partial allreduce_nodes=0 allreduce_bytes=0
+FIXTURE_THREAD role=meta-worker rank=2 pthread=140735036328000 stack_bytes=8388608 status=0
+CUDA graph path config ctx=0x1003fc4b090 device=2 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x1003fc4b090 device=2 uid=7 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe3d426600
+ggml[2] p2p-ar-path entry=dispatch device=0 rank=0 ranks=3 bytes=96 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+ggml[3] p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d52a050
+ggml[2] p2p-ar-path entry=dispatch device=1 rank=1 ranks=3 bytes=96 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+ggml[3] p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d586220
+ggml[2] p2p-ar-path entry=dispatch device=2 rank=2 ranks=3 bytes=96 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+ggml[3] p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d536a90
+CHILD_GRAPH phase=A1 rank=0 uid=4 nodes=10002 scale_nodes=10000 key=0x7ffd3cb201d0 first=flat.tail_a last=flat.view_a_placeholder allreduce_nodes=0 allreduce_bytes=0
+FIXTURE_THREAD role=rank0-submit rank=0 pthread=140735036328000 stack_bytes=8388608 status=0
+CUDA graph fallback ctx=0x1003fc48b90 device=0 uid=4 nodes=10002 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CHILD_GRAPH phase=A1 rank=1 uid=6 nodes=10002 scale_nodes=10000 key=0x7ffd3b1501d0 first=flat.tail_a last=flat.view_a_placeholder allreduce_nodes=0 allreduce_bytes=0
+FIXTURE_THREAD role=meta-worker rank=1 pthread=140735036328000 stack_bytes=8388608 status=0
+CUDA graph fallback ctx=0x1003fc49e10 device=1 uid=6 nodes=10002 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CHILD_GRAPH phase=A1 rank=2 uid=8 nodes=10002 scale_nodes=10000 key=0x7ffd397801d0 first=flat.tail_a last=flat.view_a_placeholder allreduce_nodes=0 allreduce_bytes=0
+FIXTURE_THREAD role=meta-worker rank=2 pthread=140735036328000 stack_bytes=8388608 status=0
+CUDA graph fallback ctx=0x1003fc4b090 device=2 uid=8 nodes=10002 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+SCHEDULE_BEGIN sequence=A,A,A,B,B,B,A,A,A intermediate_host_sync=0
+SUBMIT_DONE phase=A1 status=0 host_us=435877 graph_nodes=10003 uid=1
+ggml[3] ggml_backend_meta_graph_compute: graph 10003 nodes, 2 subgraphs: merged, 1 chunks
+ggml[2] meta-cold-graph-drain context=0x1003f7f02d0 ranks=3 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep
+CHILD_GRAPH phase=A2 rank=0 uid=9 nodes=10004 scale_nodes=10000 key=0x7ffc9c198260 first=flat.partial last=flat.view_a_placeholder allreduce_nodes=1 allreduce_bytes=96
+CHILD_GRAPH phase=A2 rank=2 uid=11 nodes=10004 scale_nodes=10000 key=0x7ffc9c9adfe0 first=flat.partial last=flat.view_a_placeholder allreduce_nodes=1 allreduce_bytes=96
+FIXTURE_THREAD role=meta-worker rank=2 pthread=140733715167296 stack_bytes=8388608 status=0
+CHILD_GRAPH phase=A2 rank=1 uid=10 nodes=10004 scale_nodes=10000 key=0x7ffc9c5a3120 first=flat.partial last=flat.view_a_placeholder allreduce_nodes=1 allreduce_bytes=96
+FIXTURE_THREAD role=meta-worker rank=1 pthread=140733706713152 stack_bytes=8388608 status=0
+FIXTURE_THREAD role=rank0-submit rank=0 pthread=140735036328000 stack_bytes=8388608 status=0
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe3d426600
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe3d026600
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x7ffe3d226600
+ggml[3] p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d52a050
+ggml[2] p2p-ar-path entry=dispatch device=2 rank=2 ranks=3 bytes=96 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+ggml[3] p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d536a90
+ggml[2] p2p-ar-path entry=dispatch device=1 rank=1 ranks=3 bytes=96 algorithm=one_shot blocks=64 rank-order-exact=1 selected=1
+ggml[3] p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d586220
+ggml[2] meta-cold-cohort context=0x1003f7f02d0 generation=1 chunk=0 ranks=3 votes=07 graph_votes=00 prepared=00 launch_started=00 launch_returned=00 last_prepared_us=0 first_launch_us=0 aborted=0 reason=none
+AR_LAYOUT phase=A1 rank=0 count=0 bytes=0 expected_bytes=96 result=UNCONFIRMED
+AR_LAYOUT phase=A1 rank=1 count=0 bytes=0 expected_bytes=96 result=UNCONFIRMED
+AR_LAYOUT phase=A1 rank=2 count=0 bytes=0 expected_bytes=96 result=UNCONFIRMED
+SUBMIT_DONE phase=A2 status=0 host_us=108653 graph_nodes=10003 uid=1
+ggml[2] meta-cold-graph-drain context=0x1003f7f02d0 ranks=3 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep
+CHILD_GRAPH phase=A3 rank=0 uid=9 nodes=10004 scale_nodes=10000 key=0x7ffc9c198260 first=flat.partial last=flat.view_a_placeholder allreduce_nodes=1 allreduce_bytes=96
+CHILD_GRAPH phase=A3 rank=1 uid=10 nodes=10004 scale_nodes=10000 key=0x7ffc9c5a3120 first=flat.partial last=flat.view_a_placeholder allreduce_nodes=1 allreduce_bytes=96
+CHILD_GRAPH phase=A3 rank=2 uid=11 nodes=10004 scale_nodes=10000 key=0x7ffc9c9adfe0 first=flat.partial last=flat.view_a_placeholder allreduce_nodes=1 allreduce_bytes=96
+FIXTURE_THREAD role=meta-worker rank=2 pthread=140733715167296 stack_bytes=8388608 status=0
+FIXTURE_THREAD role=meta-worker rank=1 pthread=140733706713152 stack_bytes=8388608 status=0
+FIXTURE_THREAD role=rank0-submit rank=0 pthread=140735036328000 stack_bytes=8388608 status=0
+CUDA graph path active ctx=0x1003fc49e10 device=1 uid=10 nodes=10004 mode=capture count=1
+CUDA graph path active ctx=0x1003fc48b90 device=0 uid=9 nodes=10004 mode=capture count=1
+CUDA graph path active ctx=0x1003fc4b090 device=2 uid=11 nodes=10004 mode=capture count=1
+ggml[3] p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d52a050
+ggml[3] p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d586220
+ggml[3] p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d536a90
+optimization path device=1 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=1
+ggml[3] CUDA graph executable rebuild ctx=0x1003fc49e10 device=1 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x7ffeab20d1e0 instance=0x7ffc908af4c0
+optimization path device=0 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=1
+ggml[3] CUDA graph executable rebuild ctx=0x1003fc48b90 device=0 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x1004955b9a0 instance=0x1004ae4d7b0
+optimization path device=2 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=1
+ggml[3] CUDA graph executable rebuild ctx=0x1003fc4b090 device=2 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x7ffee3ae5cd0 instance=0x7ffc99187a60
+ggml[2] meta-cold-cohort context=0x1003f7f02d0 generation=1 chunk=0 ranks=3 votes=07 graph_votes=07 prepared=07 launch_started=07 launch_returned=07 last_prepared_us=100065936410 first_launch_us=100065936417 aborted=0 reason=none
+AR_LAYOUT phase=A2 rank=0 count=1 bytes=96 expected_bytes=96 result=PASS
+AR_LAYOUT phase=A2 rank=1 count=1 bytes=96 expected_bytes=96 result=PASS
+AR_LAYOUT phase=A2 rank=2 count=1 bytes=96 expected_bytes=96 result=PASS
+SUBMIT_DONE phase=A3 status=0 host_us=238944 graph_nodes=10003 uid=1
+CHILD_GRAPH phase=B1 rank=0 uid=12 nodes=1 scale_nodes=0 key=0x7ffd3cb20060 first=flat.partial last=flat.partial allreduce_nodes=0 allreduce_bytes=0
+FIXTURE_THREAD role=rank0-submit rank=0 pthread=140735036328000 stack_bytes=8388608 status=0
+CUDA graph path active ctx=0x1003fc48b90 device=0 uid=12 nodes=1 mode=capture count=2
+optimization path device=0 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=2
+ggml[3] CUDA graph executable rebuild ctx=0x1003fc48b90 device=0 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x1004e244900 instance=0x1004e245240
+CHILD_GRAPH phase=B1 rank=1 uid=14 nodes=1 scale_nodes=0 key=0x7ffd3b150060 first=flat.partial last=flat.partial allreduce_nodes=0 allreduce_bytes=0
+FIXTURE_THREAD role=meta-worker rank=1 pthread=140735036328000 stack_bytes=8388608 status=0
+CUDA graph path active ctx=0x1003fc49e10 device=1 uid=14 nodes=1 mode=capture count=2
+optimization path device=1 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=2
+ggml[3] CUDA graph executable rebuild ctx=0x1003fc49e10 device=1 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x1004e247910 instance=0x1004e248250
+CHILD_GRAPH phase=B1 rank=2 uid=16 nodes=1 scale_nodes=0 key=0x7ffd39780060 first=flat.partial last=flat.partial allreduce_nodes=0 allreduce_bytes=0
+FIXTURE_THREAD role=meta-worker rank=2 pthread=140735036328000 stack_bytes=8388608 status=0
+CUDA graph path active ctx=0x1003fc4b090 device=2 uid=16 nodes=1 mode=capture count=2
+optimization path device=2 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=1 selected=1 reason=optin_fresh_captured_graph_executable tokens=0 width=0 auxiliary=0 count=2
+ggml[3] CUDA graph executable rebuild ctx=0x1003fc4b090 device=2 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x1004e24a750 instance=0x1004e24b090
+ggml[3] p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d52a050
+ggml[3] p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d586220
+ggml[3] p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d536a90
+CHILD_GRAPH phase=B1 rank=0 uid=13 nodes=10002 scale_nodes=10000 key=0x7ffd3cb201d0 first=flat.tail_a last=flat.tail_b allreduce_nodes=0 allreduce_bytes=0
+FIXTURE_THREAD role=rank0-submit rank=0 pthread=140735036328000 stack_bytes=8388608 status=0
+CHILD_GRAPH phase=B1 rank=1 uid=15 nodes=10002 scale_nodes=10000 key=0x7ffd3b1501d0 first=flat.tail_a last=flat.tail_b allreduce_nodes=0 allreduce_bytes=0
+FIXTURE_THREAD role=meta-worker rank=1 pthread=140735036328000 stack_bytes=8388608 status=0
+CHILD_GRAPH phase=B1 rank=2 uid=17 nodes=10002 scale_nodes=10000 key=0x7ffd397801d0 first=flat.tail_a last=flat.tail_b allreduce_nodes=0 allreduce_bytes=0
+FIXTURE_THREAD role=meta-worker rank=2 pthread=140735036328000 stack_bytes=8388608 status=0
+AR_LAYOUT phase=A3 rank=0 count=1 bytes=96 expected_bytes=96 result=PASS
+AR_LAYOUT phase=A3 rank=1 count=1 bytes=96 expected_bytes=96 result=PASS
+AR_LAYOUT phase=A3 rank=2 count=1 bytes=96 expected_bytes=96 result=PASS
+SUBMIT_DONE phase=B1 status=0 host_us=261318 graph_nodes=10003 uid=2
+ggml[3] ggml_backend_meta_graph_compute: graph 10003 nodes, 2 subgraphs: merged, 1 chunks
+ggml[2] meta-cold-graph-drain context=0x1003f7f02d0 ranks=3 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep
+CHILD_GRAPH phase=B2 rank=0 uid=18 nodes=10004 scale_nodes=10000 key=0x7ffc9c198260 first=flat.partial last=flat.tail_b allreduce_nodes=1 allreduce_bytes=96
+CHILD_GRAPH phase=B2 rank=2 uid=20 nodes=10004 scale_nodes=10000 key=0x7ffc9c9adfe0 first=flat.partial last=flat.tail_b allreduce_nodes=1 allreduce_bytes=96
+FIXTURE_THREAD role=meta-worker rank=2 pthread=140733715167296 stack_bytes=8388608 status=0
+CHILD_GRAPH phase=B2 rank=1 uid=19 nodes=10004 scale_nodes=10000 key=0x7ffc9c5a3120 first=flat.partial last=flat.tail_b allreduce_nodes=1 allreduce_bytes=96
+FIXTURE_THREAD role=meta-worker rank=1 pthread=140733706713152 stack_bytes=8388608 status=0
+FIXTURE_THREAD role=rank0-submit rank=0 pthread=140735036328000 stack_bytes=8388608 status=0
+CUDA graph fallback ctx=0x1003fc49e10 device=1 uid=19 nodes=10004 mode=eager reason=shape_or_binding_changed node= op=none count=1
+CUDA graph fallback ctx=0x1003fc48b90 device=0 uid=18 nodes=10004 mode=eager reason=shape_or_binding_changed node= op=none count=1
+CUDA graph fallback ctx=0x1003fc4b090 device=2 uid=20 nodes=10004 mode=eager reason=shape_or_binding_changed node= op=none count=1
+ggml[3] p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d586220
+ggml[3] p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d52a050
+ggml[3] p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d536a90
+ggml[2] meta-cold-cohort context=0x1003f7f02d0 generation=2 chunk=0 ranks=3 votes=07 graph_votes=00 prepared=00 launch_started=00 launch_returned=00 last_prepared_us=0 first_launch_us=0 aborted=0 reason=none
+AR_LAYOUT phase=B1 rank=0 count=0 bytes=0 expected_bytes=96 result=UNCONFIRMED
+AR_LAYOUT phase=B1 rank=1 count=0 bytes=0 expected_bytes=96 result=UNCONFIRMED
+AR_LAYOUT phase=B1 rank=2 count=0 bytes=0 expected_bytes=96 result=UNCONFIRMED
+SUBMIT_DONE phase=B2 status=0 host_us=106422 graph_nodes=10003 uid=2
+ggml[2] meta-cold-graph-drain context=0x1003f7f02d0 ranks=3 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep
+CHILD_GRAPH phase=B3 rank=0 uid=18 nodes=10004 scale_nodes=10000 key=0x7ffc9c198260 first=flat.partial last=flat.tail_b allreduce_nodes=1 allreduce_bytes=96
+CHILD_GRAPH phase=B3 rank=2 uid=20 nodes=10004 scale_nodes=10000 key=0x7ffc9c9adfe0 first=flat.partial last=flat.tail_b allreduce_nodes=1 allreduce_bytes=96
+FIXTURE_THREAD role=meta-worker rank=2 pthread=140733715167296 stack_bytes=8388608 status=0
+CHILD_GRAPH phase=B3 rank=1 uid=19 nodes=10004 scale_nodes=10000 key=0x7ffc9c5a3120 first=flat.partial last=flat.tail_b allreduce_nodes=1 allreduce_bytes=96
+FIXTURE_THREAD role=meta-worker rank=1 pthread=140733706713152 stack_bytes=8388608 status=0
+FIXTURE_THREAD role=rank0-submit rank=0 pthread=140735036328000 stack_bytes=8388608 status=0
+ggml[3] p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d52a050
+ggml[3] p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d586220
+ggml[3] p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d536a90
+ggml[3] CUDA graph executable rebuild ctx=0x1003fc4b090 device=2 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x7ffc89328790 instance=0x7ffc991fd830
+ggml[3] CUDA graph executable rebuild ctx=0x1003fc49e10 device=1 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x7ffc8c7b0030 instance=0x7ffc90925230
+ggml[3] CUDA graph executable rebuild ctx=0x1003fc48b90 device=0 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x1004941ee30 instance=0x1004aec3580
+ggml[2] meta-cold-cohort context=0x1003f7f02d0 generation=2 chunk=0 ranks=3 votes=07 graph_votes=07 prepared=07 launch_started=07 launch_returned=07 last_prepared_us=100066450372 first_launch_us=100066450379 aborted=0 reason=none
+AR_LAYOUT phase=B2 rank=0 count=1 bytes=96 expected_bytes=96 result=PASS
+AR_LAYOUT phase=B2 rank=1 count=1 bytes=96 expected_bytes=96 result=PASS
+AR_LAYOUT phase=B2 rank=2 count=1 bytes=96 expected_bytes=96 result=PASS
+SUBMIT_DONE phase=B3 status=0 host_us=146105 graph_nodes=10003 uid=2
+ggml[3] ggml_backend_meta_graph_compute: graph 10003 nodes, 2 subgraphs: merged, 1 chunks
+ggml[2] meta-cold-graph-drain context=0x1003f7f02d0 ranks=3 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep
+CHILD_GRAPH phase=A4 rank=0 uid=27 nodes=10004 scale_nodes=10000 key=0x7ffc9c198260 first=flat.partial last=flat.view_a_placeholder allreduce_nodes=1 allreduce_bytes=96
+CHILD_GRAPH phase=A4 rank=2 uid=29 nodes=10004 scale_nodes=10000 key=0x7ffc9c9adfe0 first=flat.partial last=flat.view_a_placeholder allreduce_nodes=1 allreduce_bytes=96
+FIXTURE_THREAD role=meta-worker rank=2 pthread=140733715167296 stack_bytes=8388608 status=0
+CHILD_GRAPH phase=A4 rank=1 uid=28 nodes=10004 scale_nodes=10000 key=0x7ffc9c5a3120 first=flat.partial last=flat.view_a_placeholder allreduce_nodes=1 allreduce_bytes=96
+FIXTURE_THREAD role=meta-worker rank=1 pthread=140733706713152 stack_bytes=8388608 status=0
+FIXTURE_THREAD role=rank0-submit rank=0 pthread=140735036328000 stack_bytes=8388608 status=0
+CUDA graph fallback ctx=0x1003fc48b90 device=0 uid=27 nodes=10004 mode=eager reason=shape_or_binding_changed node= op=none count=2
+CUDA graph fallback ctx=0x1003fc4b090 device=2 uid=29 nodes=10004 mode=eager reason=shape_or_binding_changed node= op=none count=2
+CUDA graph fallback ctx=0x1003fc49e10 device=1 uid=28 nodes=10004 mode=eager reason=shape_or_binding_changed node= op=none count=2
+ggml[3] p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d52a050
+ggml[3] p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d586220
+ggml[3] p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d536a90
+ggml[2] meta-cold-cohort context=0x1003f7f02d0 generation=1 chunk=0 ranks=3 votes=07 graph_votes=00 prepared=00 launch_started=00 launch_returned=00 last_prepared_us=0 first_launch_us=0 aborted=0 reason=none
+AR_LAYOUT phase=B3 rank=0 count=1 bytes=96 expected_bytes=96 result=PASS
+AR_LAYOUT phase=B3 rank=1 count=1 bytes=96 expected_bytes=96 result=PASS
+AR_LAYOUT phase=B3 rank=2 count=1 bytes=96 expected_bytes=96 result=PASS
+SUBMIT_DONE phase=A4 status=0 host_us=119994 graph_nodes=10003 uid=1
+ggml[2] meta-cold-graph-drain context=0x1003f7f02d0 ranks=3 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep
+CHILD_GRAPH phase=A5 rank=0 uid=27 nodes=10004 scale_nodes=10000 key=0x7ffc9c198260 first=flat.partial last=flat.view_a_placeholder allreduce_nodes=1 allreduce_bytes=96
+CHILD_GRAPH phase=A5 rank=2 uid=29 nodes=10004 scale_nodes=10000 key=0x7ffc9c9adfe0 first=flat.partial last=flat.view_a_placeholder allreduce_nodes=1 allreduce_bytes=96
+CHILD_GRAPH phase=A5 rank=1 uid=28 nodes=10004 scale_nodes=10000 key=0x7ffc9c5a3120 first=flat.partial last=flat.view_a_placeholder allreduce_nodes=1 allreduce_bytes=96
+FIXTURE_THREAD role=meta-worker rank=1 pthread=140733706713152 stack_bytes=8388608 status=0
+FIXTURE_THREAD role=meta-worker rank=2 pthread=140733715167296 stack_bytes=8388608 status=0
+FIXTURE_THREAD role=rank0-submit rank=0 pthread=140735036328000 stack_bytes=8388608 status=0
+ggml[3] p2p allreduce launch: rank 0 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d52a050
+ggml[3] p2p allreduce launch: rank 2 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d536a90
+ggml[3] p2p allreduce launch: rank 1 allreduce_0 n=24 zero=0 kind=0 stream=0x1003d586220
+ggml[3] CUDA graph executable rebuild ctx=0x1003fc48b90 device=0 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x1004e63c2f0 instance=0x100495d0fb0
+ggml[3] CUDA graph executable rebuild ctx=0x1003fc49e10 device=1 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x7ffc925784c0 instance=0x7ffc90924af0
+ggml[3] CUDA graph executable rebuild ctx=0x1003fc4b090 device=2 reason=explicit_fresh_exec status=0 error=no error update_result=-1 action=reinstantiate graph=0x7ffc98ef2710 instance=0x7ffc991fd0f0
+ggml[2] meta-cold-cohort context=0x1003f7f02d0 generation=1 chunk=0 ranks=3 votes=07 graph_votes=07 prepared=07 launch_started=07 launch_returned=07 last_prepared_us=100066717754 first_launch_us=100066717760 aborted=0 reason=none
+AR_LAYOUT phase=A4 rank=0 count=1 bytes=96 expected_bytes=96 result=PASS
+AR_LAYOUT phase=A4 rank=1 count=1 bytes=96 expected_bytes=96 result=PASS
+AR_LAYOUT phase=A4 rank=2 count=1 bytes=96 expected_bytes=96 result=PASS
+SUBMIT_DONE phase=A5 status=0 host_us=147347 graph_nodes=10003 uid=1
+CHILD_GRAPH phase=A6 rank=0 uid=27 nodes=10004 scale_nodes=10000 key=0x7ffc9c198260 first=flat.partial last=flat.view_a_placeholder allreduce_nodes=1 allreduce_bytes=96
+CHILD_GRAPH phase=A6 rank=2 uid=29 nodes=10004 scale_nodes=10000 key=0x7ffc9c9adfe0 first=flat.partial last=flat.view_a_placeholder allreduce_nodes=1 allreduce_bytes=96
+FIXTURE_THREAD role=meta-worker rank=2 pthread=140733715167296 stack_bytes=8388608 status=0
+CHILD_GRAPH phase=A6 rank=1 uid=28 nodes=10004 scale_nodes=10000 key=0x7ffc9c5a3120 first=flat.partial last=flat.view_a_placeholder allreduce_nodes=1 allreduce_bytes=96
+FIXTURE_THREAD role=meta-worker rank=1 pthread=140733706713152 stack_bytes=8388608 status=0
+CUDA graph path active ctx=0x1003fc49e10 device=1 uid=28 nodes=10004 mode=replay count=1
+CUDA graph path active ctx=0x1003fc4b090 device=2 uid=29 nodes=10004 mode=replay count=1
+FIXTURE_THREAD role=rank0-submit rank=0 pthread=140735036328000 stack_bytes=8388608 status=0
+CUDA graph path active ctx=0x1003fc48b90 device=0 uid=27 nodes=10004 mode=replay count=1
+AR_LAYOUT phase=A5 rank=0 count=1 bytes=96 expected_bytes=96 result=PASS
+AR_LAYOUT phase=A5 rank=1 count=1 bytes=96 expected_bytes=96 result=PASS
+AR_LAYOUT phase=A5 rank=2 count=1 bytes=96 expected_bytes=96 result=PASS
+SUBMIT_DONE phase=A6 status=0 host_us=7353 graph_nodes=10003 uid=1
+AR_LAYOUT phase=A6 rank=0 count=1 bytes=96 expected_bytes=96 result=PASS
+AR_LAYOUT phase=A6 rank=1 count=1 bytes=96 expected_bytes=96 result=PASS
+AR_LAYOUT phase=A6 rank=2 count=1 bytes=96 expected_bytes=96 result=PASS
+SYNC_DONE phase=final-schedule host_us=16203
+optimization path summary device=0 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=4 selected=4
+optimization path summary device=1 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=4 selected=4
+optimization path summary device=2 path=cuda_graph_fresh_exec scope=host_dispatch_or_capture requested=4 selected=4
+CHILD_KEY_PAIR rank=0 keyA2=0x7ffc9c198260 keyB2=0x7ffc9c198260 same=1
+CHILD_KEY_PAIR rank=1 keyA2=0x7ffc9c5a3120 keyB2=0x7ffc9c5a3120 same=1
+CHILD_KEY_PAIR rank=2 keyA2=0x7ffc9c9adfe0 keyB2=0x7ffc9c9adfe0 same=1
+CHILD_KEY_PAIR_RESULT capture_A2_B2_shared_across_all_three=1
+PASS_OUTPUT label=A exact=1 max_abs=0 host_read_canary=1 bytes=96
+PASS_OUTPUT label=B exact=1 max_abs=0 host_read_canary=1 bytes=96
+PASS_FIXTURE semantic=1 oracle_exact=1 host_read_canary=1 allreduce_96B_capture_ranks=1 shared_child_key_A2_B2=1 force=0 sync_between=0 scale_nodes=10000 schedule=A,A,A,B,B,B,A,A,A
+end=2026-10-16T20:04:42Z
+run_elapsed_seconds=4
+exit_status=0
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 2 MiB, 16125 MiB, 40
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 16125 MiB, 39
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 2 MiB, 16125 MiB, 40
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 1 MiB, 16126 MiB, 39
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 7 MiB, 16120 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 6 MiB, 16121 MiB, 39

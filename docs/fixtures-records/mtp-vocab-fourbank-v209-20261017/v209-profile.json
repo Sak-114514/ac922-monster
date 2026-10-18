@@ -1,0 +1,94 @@
+{
+  "schema": "v209-mtp-vocab-fourbank-profile-v1",
+  "status": "PREPARED_RUNTIME_PINNED_NOT_LINKED_NOT_LAUNCHED",
+  "candidate": "one model load, four-bank 16K/512 D2 then D4; vocab-parallel MTP",
+  "runtime": {
+    "name": "runtime-perf-v208",
+    "build_id": "20261017T052049.348075Z",
+    "report": "notes/V208-build.json",
+    "report_sha256": "98a2bb38c4d55f52fc98f63c793d56d4e57aa97dbc49159a3b34866d49fb3a37",
+    "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v208"
+  },
+  "runner": {
+    "source": "dual-context-v209-vocab-fourbank.cpp",
+    "source_sha256": "2963a4d67de3303d750a85c11d9e2a51b3a8132383956566a8b7342121151243",
+    "source_base": "fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/dual-context-v197-fourbank-depth.cpp",
+    "source_base_sha256": "e10176a13eb2dcaa5298baacd404894fe3cc21b7a21520b51427ab43a152293c",
+    "policy_header": "v209-kv-shape-policy.h",
+    "target_pad_header": "target-verify-pad-plan-v209.h",
+    "build": "not built; root owns host link"
+  },
+  "inherited_environment": {
+    "profile": "fixtures/layer6-d2-sidecar-chunk4096-v197-20261017/v197-profile.json",
+    "profile_sha256": "2f19e88cc8b49f8f82ccf5eb7f233be5fb201c5ad441c3380b980e0276f74e42",
+    "overlay": {
+      "LLAMA_MTP_VOCAB_PARALLEL": "1"
+    },
+    "per_family": {
+      "d2": {
+        "ROOT_PROFILE_KIND": "fourbank16k-d2",
+        "ROOT_MTP_DEPTH": "2",
+        "LLAMA_MTP_GPU_CHAIN_UNROLLED_DEPTH": "2"
+      },
+      "d4": {
+        "ROOT_PROFILE_KIND": "fourbank16k-d4",
+        "ROOT_MTP_DEPTH": "4",
+        "LLAMA_MTP_GPU_CHAIN_UNROLLED_DEPTH": "4"
+      }
+    }
+  },
+  "families": [
+    {
+      "name": "d2",
+      "profile_kind": "fourbank16k-d2",
+      "mtp_depth": 2,
+      "scenario": "v209-d2-scenarios.json"
+    },
+    {
+      "name": "d4",
+      "profile_kind": "fourbank16k-d4",
+      "mtp_depth": 4,
+      "scenario": "v209-d4-scenarios.json"
+    }
+  ],
+  "family_order": [
+    "d2",
+    "d4"
+  ],
+  "lifecycle": {
+    "model_loads": 1,
+    "require_context_and_scheduler_drain_and_destroy_between_families": true,
+    "required_runner_markers": [
+      "context-family-complete",
+      "contexts_drained=1",
+      "contexts_destroyed=1",
+      "model_retained=1"
+    ]
+  },
+  "workload": {
+    "banks": 4,
+    "requests_per_perf_family": 4,
+    "input_tokens_each": 16384,
+    "output_tokens_each": 512,
+    "native_four_case_canary_first_in_each_family": true,
+    "performance_outputs_scored": false,
+    "quality_scope": "native four-case canary per family only; four-flow output is unscored"
+  },
+  "scenario_paths": {
+    "d2": "prepared-output/copy0/fourbank16k-d2/scenarios.json",
+    "d4": "prepared-output/copy0/fourbank16k-d4/scenarios.json"
+  },
+  "safety": {
+    "max_runtime_seconds": 1800,
+    "gpu_free_floor_mib": 512,
+    "gpu_temp_ceiling_c": 58,
+    "automatic_retry": false,
+    "model_loaded": false,
+    "gpu_touched": false
+  },
+  "launcher": {
+    "owner": "root",
+    "status": "not generated here; reuse existing bounded monitor helper"
+  },
+  "launch_eligible": false
+}

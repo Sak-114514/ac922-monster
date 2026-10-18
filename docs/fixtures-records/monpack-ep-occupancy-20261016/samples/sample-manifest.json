@@ -1,0 +1,84 @@
+{
+  "purpose": "bounded EP local-occupancy operator screen; source quant bytes unchanged",
+  "source_gguf": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+  "source_gguf_size": 78615622080,
+  "source_gguf_mtime_ns": 1790833321720010216,
+  "gguf_identity": "d1f2e240bc1ef08d103cadadd9f7ae1c725b965f11eb25848fd27bb0cc33ab8b",
+  "sidecar": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf.monpack.disabled-by-p3",
+  "sidecar_size": 45586996800,
+  "sidecar_manifest": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf.monpack.manifest.json",
+  "sidecar_expert_major_layout": true,
+  "expert_global_start": 85,
+  "expert_count": 85,
+  "fixture_local_expert_ids": [
+    0,
+    84
+  ],
+  "production_global_to_local_ep_mapping_tested": false,
+  "bytes_read_from_payloads": 226304000,
+  "bytes_written_to_samples": 226304000,
+  "combined_read_plus_write_cap_bytes": 471859200,
+  "combined_read_plus_write_bytes": 452608000,
+  "formats": [
+    {
+      "type": "IQ3_XXS",
+      "tensor": "blk.35.ffn_gate_exps.weight",
+      "shape_kne": [
+        2560,
+        640,
+        512
+      ],
+      "expert_global_start": 85,
+      "expert_count": 85,
+      "expert_global_end_exclusive": 170,
+      "fixture_local_ids": [
+        0,
+        84
+      ],
+      "expert_bytes": 627200,
+      "gguf_tensor_data_offset": 33501050944,
+      "sidecar_blob_offset": 30264549376,
+      "k_tile": 256,
+      "raw_file": "IQ3_XXS-E85-169.ggml.bin",
+      "raw_bytes": 53312000,
+      "raw_sha256": "75ae8e7b3228c7b934fd6bd130d61821065e79e12dbc8922135e9e29b212e70c",
+      "packed_file": "IQ3_XXS-E85-169.monpack.bin",
+      "packed_bytes": 53312000,
+      "packed_sha256": "582c43da2dd3c7e3ced90427362e369c1c0042c254db71e2657a17c09f7dcfcd",
+      "manifest_tensor_src_sha256": "e340331d047fc61d5b922c71ff0566dbd62720e02133bf15104588554dafc463",
+      "manifest_tensor_blob_sha256": "04ef7608d1588df14344529323ff3a18f6f8650a68819b6d45c6e33f18b79d0e",
+      "t0_pass": true,
+      "inverse_tile_bytes_equal_for_every_expert": true
+    },
+    {
+      "type": "IQ3_S",
+      "tensor": "blk.8.ffn_gate_exps.weight",
+      "shape_kne": [
+        2560,
+        640,
+        512
+      ],
+      "expert_global_start": 85,
+      "expert_count": 85,
+      "expert_global_end_exclusive": 170,
+      "fixture_local_ids": [
+        0,
+        84
+      ],
+      "expert_bytes": 704000,
+      "gguf_tensor_data_offset": 7846859968,
+      "sidecar_blob_offset": 6501195776,
+      "k_tile": 256,
+      "raw_file": "IQ3_S-E85-169.ggml.bin",
+      "raw_bytes": 59840000,
+      "raw_sha256": "c87bf8e9e647c025f44fb294f2c3494e9e827aa75af7eb5c7a54b84d666ad60a",
+      "packed_file": "IQ3_S-E85-169.monpack.bin",
+      "packed_bytes": 59840000,
+      "packed_sha256": "1f7fcfdb6063e64ae32e339938cecfc533c432f54ba50d79d65e9cfb71717610",
+      "manifest_tensor_src_sha256": "3ab63e15df74a70b15b25cf7768c98de179f6b36ded4aea331a3dda8ca4a8f04",
+      "manifest_tensor_blob_sha256": "d00f22fa73c8068e5848d6ba9953db56fb4965f311f68fcf533e89849c2592e3",
+      "t0_pass": true,
+      "inverse_tile_bytes_equal_for_every_expert": true
+    }
+  ]
+}

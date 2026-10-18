@@ -1,0 +1,60 @@
+ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+FreeToken host ctx=0x1000bd73c50 kind=eager calls=4 total_us=13752 nodes=22
+FreeToken host ctx=0x1000bd73c50 kind=capture calls=4 total_us=1035 nodes=22
+FreeToken host ctx=0x1000bd73c50 kind=replay calls=4 total_us=194 nodes=22
+FreeToken host ctx=0x1000bd73c50 kind=launch calls=8 total_us=188 nodes=0
+FreeToken host ctx=0x1000bd73c50 kind=synchronize calls=37 total_us=20919 nodes=0
+FreeToken host ctx=0x1000bd73c50 kind=instantiate calls=3 total_us=265 nodes=0
+FreeToken host ctx=0x1000bd73c50 kind=exec_update calls=4 total_us=55 nodes=0
+FreeToken host ctx=0x1000bd73c50 kind=reinstantiate calls=0 total_us=0 nodes=0
+FreeToken host ctx=0x1000bd74ed0 kind=eager calls=4 total_us=9468 nodes=22
+FreeToken host ctx=0x1000bd74ed0 kind=capture calls=4 total_us=555 nodes=22
+FreeToken host ctx=0x1000bd74ed0 kind=replay calls=4 total_us=116 nodes=22
+FreeToken host ctx=0x1000bd74ed0 kind=launch calls=8 total_us=111 nodes=0
+FreeToken host ctx=0x1000bd74ed0 kind=synchronize calls=37 total_us=1099 nodes=0
+FreeToken host ctx=0x1000bd74ed0 kind=instantiate calls=3 total_us=187 nodes=0
+FreeToken host ctx=0x1000bd74ed0 kind=exec_update calls=4 total_us=26 nodes=0
+FreeToken host ctx=0x1000bd74ed0 kind=reinstantiate calls=0 total_us=0 nodes=0
+FreeToken host ctx=0x1000bd76150 kind=eager calls=4 total_us=8944 nodes=22
+FreeToken host ctx=0x1000bd76150 kind=capture calls=4 total_us=505 nodes=22
+FreeToken host ctx=0x1000bd76150 kind=replay calls=4 total_us=106 nodes=22
+FreeToken host ctx=0x1000bd76150 kind=launch calls=8 total_us=102 nodes=0
+FreeToken host ctx=0x1000bd76150 kind=synchronize calls=37 total_us=1925 nodes=0
+FreeToken host ctx=0x1000bd76150 kind=instantiate calls=3 total_us=152 nodes=0
+FreeToken host ctx=0x1000bd76150 kind=exec_update calls=4 total_us=24 nodes=0
+FreeToken host ctx=0x1000bd76150 kind=reinstantiate calls=0 total_us=0 nodes=0
+PRIVATE_SUPPORT mode=meta3-probe valid=1 cpu_supports=0 cuda_supports=na meta3_all_child_supports=1 bad_magic_valid=0 extra_src_valid=0 extra_src_cuda_supports=na extra_src_meta_supports=0 width_oob_build=null
+ID_COMPARE mode=meta3 step=A1 exact=PASS ids=128
+ID_COMPARE mode=meta3 step=B exact=PASS ids=128
+ID_COMPARE mode=meta3 step=A2 exact=PASS ids=128
+ID_COMPARE mode=meta3 step=reference-A1-A2 exact=PASS ids=128
+ID_COMPARE mode=meta3 step=private-A1-A2 exact=PASS ids=128
+DISPATCH_CASE mode=meta3 B=257 K=1025 Q=4 S=2 W=16 exact_ids=PASS A_B_A=1 b_output_changed=1 poison_mask=-inf host_read_canary=PASS input_immutable=PASS meta_output_readback=rank0_mirrored_copy_only meta_input_readback=rank0_mirrored_copy_only
+ID_COMPARE mode=meta3 step=A1 exact=PASS ids=1050112
+ID_COMPARE mode=meta3 step=B exact=PASS ids=1050112
+ID_COMPARE mode=meta3 step=A2 exact=PASS ids=1050112
+ID_COMPARE mode=meta3 step=reference-A1-A2 exact=PASS ids=1050112
+ID_COMPARE mode=meta3 step=private-A1-A2 exact=PASS ids=1050112
+DISPATCH_CASE mode=meta3 B=16384 K=65536 Q=512 S=1 W=2051 exact_ids=PASS A_B_A=1 b_output_changed=1 poison_mask=-inf host_read_canary=PASS input_immutable=PASS meta_output_readback=rank0_mirrored_copy_only meta_input_readback=rank0_mirrored_copy_only
+META3_RESULT exact_ids=PASS all_child_support_probe=PASS child_devices=3 output_readback=rank0_mirrored_copy_only

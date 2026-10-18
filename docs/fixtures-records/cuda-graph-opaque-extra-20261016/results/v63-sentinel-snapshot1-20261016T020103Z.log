@@ -1,0 +1,16 @@
+start=2026-10-16T02:01:03Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v63
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cuda-graph-opaque-extra-20261016/opaque-extra-fixture-v63
+mode=sentinel snapshot=1 expect_crash=1
+b84fb256e4bbaa69cc07dab37aab9b45476e02e39470f2926da70855fb41232a  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cuda-graph-opaque-extra-20261016/opaque-extra-fixture-v63
+gpu=GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb before=38, 1
+limits temp<58C preexisting<=512MiB runtime<=1024MiB timeout=60s
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+load_backend: failed to load /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cuda-graph-opaque-extra-20261016/backend-v63: /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cuda-graph-opaque-extra-20261016/backend-v63: cannot read file data: Is a directory
+CUDA_OPAQUE_SETUP device=CUDA0 buft=CUDA0
+OPAQUE_EXTERNAL_READY name=opaque_extra.materialized_external_producer buffer=0x100041bb7a0 buft=CUDA0 data=0x10037400800 extra=0x57800 graph_nodes=1
+OPAQUE_GRAPH_SHAPE nodes=5 external_producer_leaf=1 ancestry_expanded=0
+OPAQUE_EXTRA_CHILD_SIGNAL signal=11 expected=1 mode=sentinel
+OPAQUE_EXTRA_V63_REPRODUCED signal=SIGSEGV
+exit_status=0 after=38, 2

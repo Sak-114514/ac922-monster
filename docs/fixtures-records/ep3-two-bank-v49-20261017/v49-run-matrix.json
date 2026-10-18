@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "candidate": "V49 ordinary 3+3 EP3, two banks x two lanes, grouped 4x8K 512-token decode with V105 BF16 case8, 3-node PLE stripes, 1 MiB async-copy cap required by runner",
+  "status": "ROOT_GPU_WINDOW_AUTHORIZED_V49_V105",
+  "host_prepared": true,
+  "engine_edits": 0,
+  "model_loads_during_preparation": 0,
+  "gpu_touched_during_preparation": false,
+  "launch_authorized": true,
+  "runtime": {
+    "build_report": "notes/V105-build.json",
+    "build_id": "20261016T171746.673687Z",
+    "build_report_sha256": "a9ee42d178f785383508893780fdaed5cf9043c770698cd396b78c88cdde2b5b",
+    "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v105",
+    "runtime_lib": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v105/lib",
+    "runtime_isolation_verified": true,
+    "runner_scope": "V49 V104 host runner reused byte-for-byte; all seven runtime DSOs resolved from frozen V105 runtime; no engine or CUDA object rebuild",
+    "model_loads_per_run": 1
+  },
+  "topology": {
+    "island_split": "3,3",
+    "expert_parallel": 1,
+    "hierarchical_ep6": false,
+    "nested_meta": false,
+    "banks": 2,
+    "lanes_per_bank": 2,
+    "persistent_owner_loops": 2,
+    "ordinary_grouped_decode": "Four concurrent requests are split two per bank. Both bank owners are submitted before the coordinator joins them.",
+    "stage_grouping_claim": "This reuses full llama_decode per bank; it does not expose per-scheduler-split A/B stage interleaving. Do not claim explicit A(ctx1)/B(ctx0) staged execution from this runner."
+  },
+  "capacity": {
+    "kv_unified": false,
+    "kv_variant": "per_seq_16k",
+    "context_per_sequence": 16384,
+    "bank_context": 32768,
+    "bank_count": 2,
+    "lanes_per_bank": 2,
+    "aggregate_target_kv_cells": 65536,
+    "aggregate_capacity_note": "Two independent 16K sequences per bank; four 16K streams total. The 65,536-cell aggregate is not a per-request context. Target and draft geometries are checked after context creation.",
+    "kv_type_k": "q8_0",
+    "kv_type_v": "q8_0",
+    "historical_target_kv_plus_indexer_mib": 918,
+    "historical_draft_kv_plus_indexer_mib": 153,
+    "historical_total_target_and_draft_kv_mib": 1071,
+    "budget_is_per_gpu_fit_evidence": false
+  },
+  "execution": {
+    "target_ubatch": 1024,
+    "draft_ubatch": 512,
+    "cuda_device_max_connections": 32,
+    "cuda_device_max_connections_note": "Candidate launch environment for the two-bank target/draft/copy stream set. Do not set CUDA_DEVICE_MAX_COPY_CONNECTIONS (SM80+) or CUDA_SCALE_LAUNCH_QUEUES (unsupported/unverified on this CUDA 12.4 + driver 550 stack).",
+    "logical_batch": 8192,
+    "mtp_depth": 3,
+    "fixed_prefix_rows_per_lane": 6,
+    "verify_rows_per_bank": 8,
+    "root_serial_cpu_submit": 0,
+    "meta_async_copy_max_bytes": 1048576,
+    "turboprefill": false,
+    "real_prompt_cache": false,
+    "automatic_retry": false,
+    "gpu_reset": false
+  },
+  "scenarios": [
+    {
+      "id": "semantic_canary",
+      "kind": "semantic_p4_gate",
+      "flows": 4,
+      "checks": [
+        "exact text",
+        "strict JSON"
+      ],
+      "position": 1,
+      "status": "host scenario prepared; full-model result pending"
+    },
+    {
+      "id": "4x8k-4x512",
+      "kind": "four concurrent 8K real-corpus inputs followed by 512 output tokens each",
+      "flows": 4,
+      "input_tokens_per_flow": 8192,
+      "output_tokens_per_flow": 512,
+      "position": 2,
+      "unoptimized_baseline_added": false,
+      "status": "host scenario prepared; full-model result pending"
+    }
+  ],
+  "hardware_safety": {
+    "gpu_power_cap_w_expected": 300,
+    "cpu_scaling_max_khz_expected": 2600000,
+    "gpu_free_floor_mib": 512,
+    "gpu_temperature_ceiling_c": 58,
+    "bmc_temperature_ceiling_c": 58,
+    "fan_target_rpm_expected": {
+      "fan0": 3000,
+      "fan2": 3000,
+      "fan3": 3000
+    },
+    "fan_tach_floor_rpm": 2650,
+    "fan_monitor_state_expected": [
+      "inactive",
+      "masked"
+    ],
+    "watchdog_must_remain_active": true,
+    "power_and_fan_settings_modified": false,
+    "automatic_safety_stop": true
+  },
+  "launch_gates": [
+    "V104 V49 runner reused byte-for-byte with V105 seven-library closure and its required 1 MiB async-copy cap verified",
+    "fresh GPU/BMC/tach/fan-monitor/watchdog safety sample",
+    "all six GPUs idle, free memory >=512 MiB each, temperature <58 C",
+    "300 W per-GPU cap and 2.6 GHz CPU maximum already active",
+    "root authorizes one bounded V49 GPU window"
+  ],
+  "bounds": {
+    "runtime_max_seconds": 1800,
+    "model_loads": 1,
+    "automatic_retry": false
+  },
+  "ple_placement": {
+    "gpu_node_count": 3,
+    "total_gpu_ple_gib": 12,
+    "expected_logical_gpus": [
+      0,
+      1,
+      2
+    ],
+    "expected_numa_nodes": [
+      255,
+      254,
+      253
+    ],
+    "expected_bytes_per_gpu": 4294967296,
+    "cpu_ddr_nodes": [
+      0,
+      8
+    ],
+    "copy_chunks_required": 859,
+    "each_copy_chunk_memcmp_exact": true,
+    "whole_copy_memcmp_exact": true
+  },
+  "process_memory_policy": {
+    "numactl_cpu_nodebind": [
+      0
+    ],
+    "numactl_memory_interleave": [
+      0,
+      8
+    ],
+    "sysctl_or_kernel_changes": false,
+    "ple_mbind_policy": "loader keeps strict GPU-node/DDR-node stripes over its continuous allocation",
+    "reason": "interleave ordinary runtime allocations across DDR NUMA nodes 0 and 8; avoid concentrating first-touch pages on node 0"
+  }
+}

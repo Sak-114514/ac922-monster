@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "cmake",
+    "-E",
+    "cmake_link_script",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/build-link-scripts/ggml__src__ggml-cpu.link.txt",
+    "--verbose=1"
+  ],
+  "cwd": "/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/ggml/src",
+  "display": "cmake -E cmake_link_script /home/debian/ac922-monster/experiments/standard-opt-20261014/notes/build-link-scripts/ggml__src__ggml-cpu.link.txt --verbose=1",
+  "kind": "link-script",
+  "output_tail": "/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libggml-cpu.so.0 -o ../../bin/libggml-cpu.so.0.25.1 \"CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o\" \"CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o\" \"CMakeFiles/ggml-cpu.dir/ggml-cpu/ple-row-cache-api.cpp.o\" \"CMakeFiles/ggml-cpu.dir/ggml-cpu/repack.cpp.o\" \"CMakeFiles/ggml-cpu.dir/ggml-cpu/iqp.cpp.o\" \"CMakeFiles/ggml-cpu.dir/ggml-cpu/hbm.cpp.o\" \"CMakeFiles/ggml-cpu.dir/ggml-cpu/quants.c.o\" \"CMakeFiles/ggml-cpu.dir/ggml-cpu/traits.cpp.o\" \"CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.o\" \"CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.o\" \"CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.o\" \"CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o\" \"CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o\" \"CMakeFiles/ggml-cpu.dir/ggml-cpu/arch/powerpc/quants.c.o\"  -Wl,-rpath,/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin: ../../bin/libggml-base.so.0.25.1 /usr/lib/gcc/powerpc64le-linux-gnu/12/libgomp.so /usr/lib/powerpc64le-linux-gnu/libpthread.a\n",
+  "returncode": 0,
+  "target": "ggml/src:ggml-cpu"
+}
+
+--- combined stdout/stderr ---
+/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libggml-cpu.so.0 -o ../../bin/libggml-cpu.so.0.25.1 "CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o" "CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o" "CMakeFiles/ggml-cpu.dir/ggml-cpu/ple-row-cache-api.cpp.o" "CMakeFiles/ggml-cpu.dir/ggml-cpu/repack.cpp.o" "CMakeFiles/ggml-cpu.dir/ggml-cpu/iqp.cpp.o" "CMakeFiles/ggml-cpu.dir/ggml-cpu/hbm.cpp.o" "CMakeFiles/ggml-cpu.dir/ggml-cpu/quants.c.o" "CMakeFiles/ggml-cpu.dir/ggml-cpu/traits.cpp.o" "CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.o" "CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.o" "CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.o" "CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o" "CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o" "CMakeFiles/ggml-cpu.dir/ggml-cpu/arch/powerpc/quants.c.o"  -Wl,-rpath,/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin: ../../bin/libggml-base.so.0.25.1 /usr/lib/gcc/powerpc64le-linux-gnu/12/libgomp.so /usr/lib/powerpc64le-linux-gnu/libpthread.a

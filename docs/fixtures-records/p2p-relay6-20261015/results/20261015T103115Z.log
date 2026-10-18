@@ -1,0 +1,67 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+p2p-relay6 fixture: ranks=6 stage_est_mib=686.6 data_est_mib=57.2 allocation_limit_mib=1024 mode=threshold-window
+device rank=0 name=Tesla V100-SXM2-16GB pci=0004:04:00.0 free_before_mib=15816.4
+device rank=1 name=Tesla V100-SXM2-16GB pci=0004:05:00.0 free_before_mib=15817.0
+device rank=2 name=Tesla V100-SXM2-16GB pci=0004:06:00.0 free_before_mib=15816.7
+device rank=3 name=Tesla V100-SXM2-16GB pci=0035:03:00.0 free_before_mib=15818.6
+device rank=4 name=Tesla V100-SXM2-16GB pci=0035:04:00.0 free_before_mib=15818.4
+device rank=5 name=Tesla V100-SXM2-16GB pci=0035:05:00.0 free_before_mib=15818.6
+memory rank=0 added_mib=786.0 stage_est_mib=686.6 data_est_mib=57.2 free_after_mib=15030.4
+memory rank=1 added_mib=786.0 stage_est_mib=686.6 data_est_mib=57.2 free_after_mib=15031.0
+memory rank=2 added_mib=786.0 stage_est_mib=686.6 data_est_mib=57.2 free_after_mib=15030.7
+memory rank=3 added_mib=786.0 stage_est_mib=686.6 data_est_mib=57.2 free_after_mib=15032.6
+memory rank=4 added_mib=786.0 stage_est_mib=686.6 data_est_mib=57.2 free_after_mib=15032.4
+memory rank=5 added_mib=786.0 stage_est_mib=686.6 data_est_mib=57.2 free_after_mib=15032.6
+case=0 n=32768 zero_rank=0 path=one-shot wall_ms=5.188 max_rank_gpu_ms=5.161 rank_gpu_ms=[5.125,5.119,5.161,5.104,5.098,5.147] bitexact=1 canary=1
+case=0 n=32768 zero_rank=0 path=relay6 wall_ms=0.142 max_rank_gpu_ms=0.133 rank_gpu_ms=[0.122,0.122,0.118,0.133,0.132,0.127] bitexact=1 canary=1
+case=0 n=32768 zero_rank=0 path=one-shot wall_ms=0.122 max_rank_gpu_ms=0.111 rank_gpu_ms=[0.111,0.109,0.104,0.098,0.094,0.091] bitexact=1 canary=1
+case=0 n=32768 zero_rank=0 path=segmented wall_ms=0.186 max_rank_gpu_ms=0.174 rank_gpu_ms=[0.174,0.170,0.167,0.161,0.157,0.152] bitexact=1 canary=1
+case=0 n=32768 zero_rank=0 path=relay6 wall_ms=0.131 max_rank_gpu_ms=0.120 rank_gpu_ms=[0.110,0.109,0.105,0.120,0.119,0.116] bitexact=1 canary=1
+case=0 n=32768 zero_rank=0 path=segmented wall_ms=0.169 max_rank_gpu_ms=0.159 rank_gpu_ms=[0.159,0.155,0.151,0.144,0.140,0.136] bitexact=1 canary=1
+graph-capture n=32768 path=one-shot ranks=6 host_ms=0.204
+graph-capture n=32768 path=segmented ranks=6 host_ms=0.081
+graph-capture n=32768 path=relay6 ranks=6 host_ms=0.076
+case=0 n=32768 zero_rank=0 path=one-shot graph_replay=cold wall_ms=0.128 max_rank_gpu_ms=0.118 rank_gpu_ms=[0.118,0.115,0.110,0.104,0.100,0.096] bitexact=1 canary=1
+case=0 n=32768 zero_rank=0 path=relay6 graph_replay=cold wall_ms=0.132 max_rank_gpu_ms=0.123 rank_gpu_ms=[0.112,0.111,0.108,0.123,0.121,0.118] bitexact=1 canary=1
+case=0 n=32768 zero_rank=0 path=one-shot graph_replay=hot wall_ms=0.125 max_rank_gpu_ms=0.114 rank_gpu_ms=[0.114,0.111,0.106,0.101,0.097,0.093] bitexact=1 canary=1
+case=0 n=32768 zero_rank=0 path=segmented graph_replay=cold wall_ms=0.170 max_rank_gpu_ms=0.158 rank_gpu_ms=[0.158,0.154,0.151,0.144,0.140,0.136] bitexact=1 canary=1
+case=0 n=32768 zero_rank=0 path=relay6 graph_replay=hot wall_ms=0.129 max_rank_gpu_ms=0.119 rank_gpu_ms=[0.110,0.109,0.105,0.119,0.118,0.115] bitexact=1 canary=1
+case=0 n=32768 zero_rank=0 path=segmented graph_replay=hot wall_ms=0.165 max_rank_gpu_ms=0.154 rank_gpu_ms=[0.154,0.150,0.146,0.140,0.137,0.132] bitexact=1 canary=1
+case=1 n=40960 zero_rank=1 path=one-shot wall_ms=0.147 max_rank_gpu_ms=0.133 rank_gpu_ms=[0.133,0.128,0.126,0.120,0.116,0.113] bitexact=1 canary=1
+case=1 n=40960 zero_rank=1 path=relay6 wall_ms=0.134 max_rank_gpu_ms=0.123 rank_gpu_ms=[0.115,0.114,0.110,0.123,0.123,0.119] bitexact=1 canary=1
+case=1 n=40960 zero_rank=1 path=one-shot wall_ms=0.142 max_rank_gpu_ms=0.129 rank_gpu_ms=[0.129,0.123,0.122,0.117,0.113,0.108] bitexact=1 canary=1
+case=1 n=40960 zero_rank=1 path=segmented wall_ms=0.178 max_rank_gpu_ms=0.166 rank_gpu_ms=[0.166,0.163,0.159,0.154,0.150,0.145] bitexact=1 canary=1
+case=1 n=40960 zero_rank=1 path=relay6 wall_ms=0.134 max_rank_gpu_ms=0.125 rank_gpu_ms=[0.115,0.114,0.111,0.125,0.123,0.120] bitexact=1 canary=1
+case=1 n=40960 zero_rank=1 path=segmented wall_ms=0.186 max_rank_gpu_ms=0.175 rank_gpu_ms=[0.175,0.172,0.167,0.162,0.157,0.153] bitexact=1 canary=1
+graph-capture n=40960 path=one-shot ranks=6 host_ms=0.085
+graph-capture n=40960 path=segmented ranks=6 host_ms=0.080
+graph-capture n=40960 path=relay6 ranks=6 host_ms=0.076
+case=1 n=40960 zero_rank=1 path=one-shot graph_replay=cold wall_ms=0.145 max_rank_gpu_ms=0.131 rank_gpu_ms=[0.131,0.126,0.124,0.118,0.115,0.111] bitexact=1 canary=1
+case=1 n=40960 zero_rank=1 path=relay6 graph_replay=cold wall_ms=0.136 max_rank_gpu_ms=0.126 rank_gpu_ms=[0.116,0.115,0.111,0.126,0.126,0.122] bitexact=1 canary=1
+case=1 n=40960 zero_rank=1 path=one-shot graph_replay=hot wall_ms=0.143 max_rank_gpu_ms=0.130 rank_gpu_ms=[0.130,0.125,0.123,0.118,0.114,0.110] bitexact=1 canary=1
+case=1 n=40960 zero_rank=1 path=segmented graph_replay=cold wall_ms=0.189 max_rank_gpu_ms=0.178 rank_gpu_ms=[0.178,0.174,0.170,0.164,0.160,0.156] bitexact=1 canary=1
+case=1 n=40960 zero_rank=1 path=relay6 graph_replay=hot wall_ms=0.135 max_rank_gpu_ms=0.125 rank_gpu_ms=[0.115,0.114,0.111,0.125,0.124,0.121] bitexact=1 canary=1
+case=1 n=40960 zero_rank=1 path=segmented graph_replay=hot wall_ms=0.183 max_rank_gpu_ms=0.171 rank_gpu_ms=[0.171,0.167,0.163,0.158,0.154,0.150] bitexact=1 canary=1
+case=2 n=51200 zero_rank=2 path=one-shot wall_ms=0.168 max_rank_gpu_ms=0.156 rank_gpu_ms=[0.156,0.152,0.145,0.141,0.138,0.134] bitexact=1 canary=1
+case=2 n=51200 zero_rank=2 path=relay6 wall_ms=0.143 max_rank_gpu_ms=0.133 rank_gpu_ms=[0.122,0.122,0.119,0.133,0.133,0.128] bitexact=1 canary=1
+case=2 n=51200 zero_rank=2 path=one-shot wall_ms=0.159 max_rank_gpu_ms=0.146 rank_gpu_ms=[0.146,0.143,0.137,0.134,0.130,0.125] bitexact=1 canary=1
+case=2 n=51200 zero_rank=2 path=segmented wall_ms=0.203 max_rank_gpu_ms=0.190 rank_gpu_ms=[0.190,0.186,0.183,0.177,0.173,0.169] bitexact=1 canary=1
+case=2 n=51200 zero_rank=2 path=relay6 wall_ms=0.141 max_rank_gpu_ms=0.131 rank_gpu_ms=[0.122,0.122,0.117,0.131,0.130,0.127] bitexact=1 canary=1
+case=2 n=51200 zero_rank=2 path=segmented wall_ms=0.201 max_rank_gpu_ms=0.188 rank_gpu_ms=[0.188,0.184,0.181,0.176,0.172,0.168] bitexact=1 canary=1
+graph-capture n=51200 path=one-shot ranks=6 host_ms=0.085
+graph-capture n=51200 path=segmented ranks=6 host_ms=0.072
+graph-capture n=51200 path=relay6 ranks=6 host_ms=0.073
+case=2 n=51200 zero_rank=2 path=one-shot graph_replay=cold wall_ms=0.170 max_rank_gpu_ms=0.157 rank_gpu_ms=[0.157,0.154,0.147,0.144,0.140,0.136] bitexact=1 canary=1
+case=2 n=51200 zero_rank=2 path=relay6 graph_replay=cold wall_ms=0.143 max_rank_gpu_ms=0.134 rank_gpu_ms=[0.122,0.122,0.119,0.134,0.133,0.129] bitexact=1 canary=1
+case=2 n=51200 zero_rank=2 path=one-shot graph_replay=hot wall_ms=0.168 max_rank_gpu_ms=0.157 rank_gpu_ms=[0.157,0.154,0.147,0.143,0.139,0.135] bitexact=1 canary=1
+case=2 n=51200 zero_rank=2 path=segmented graph_replay=cold wall_ms=0.200 max_rank_gpu_ms=0.187 rank_gpu_ms=[0.187,0.183,0.180,0.175,0.172,0.166] bitexact=1 canary=1
+case=2 n=51200 zero_rank=2 path=relay6 graph_replay=hot wall_ms=0.142 max_rank_gpu_ms=0.132 rank_gpu_ms=[0.122,0.122,0.117,0.132,0.132,0.128] bitexact=1 canary=1
+case=2 n=51200 zero_rank=2 path=segmented graph_replay=hot wall_ms=0.203 max_rank_gpu_ms=0.189 rank_gpu_ms=[0.189,0.186,0.182,0.177,0.173,0.169] bitexact=1 canary=1
+p2p-relay6 fixture: PASS

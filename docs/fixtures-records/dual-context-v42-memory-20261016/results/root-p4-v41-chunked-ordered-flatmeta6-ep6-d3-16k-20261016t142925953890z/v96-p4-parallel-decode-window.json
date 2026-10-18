@@ -1,0 +1,39 @@
+{
+  "schema": "ac922-v43-p4-parallel-capture-window-v1",
+  "scenario_label": "v37-flatmeta6d3-copy1-clean-v96-p4-decode-trace-t16",
+  "request_start_monotonic_ns": 80396042968000,
+  "end_monotonic_ns": 80401060505000,
+  "request_start_realtime_ns": 1792161410780930765,
+  "end_realtime_ns": 1792161415798467765,
+  "realtime_minus_monotonic_ns": 1792081014737962765,
+  "parallel_wave_start_us": 80396042968,
+  "last_parallel_frame": 14,
+  "last_parallel_frame_complete_us": 80401060505,
+  "parallel_frame_plans": [
+    {
+      "frame": 12,
+      "active_lanes": 4,
+      "real_rows": 14,
+      "pad_rows": 2,
+      "total_rows": 16
+    },
+    {
+      "frame": 13,
+      "active_lanes": 3,
+      "real_rows": 8,
+      "pad_rows": 4,
+      "total_rows": 12
+    },
+    {
+      "frame": 14,
+      "active_lanes": 2,
+      "real_rows": 3,
+      "pad_rows": 5,
+      "total_rows": 8
+    }
+  ],
+  "parallel_frame_count_completed": 3,
+  "window_semantics": "actual P4 parallel owner phase from parallel-wave-start through final parallel frame-complete; spans the short trace output tail, not one full 16-row frame and not throughput-qualified",
+  "nsys_report": "v96-p4-two-ranges.2.nsys-rep",
+  "window_inside_second_cudaProfilerApi_range": true
+}

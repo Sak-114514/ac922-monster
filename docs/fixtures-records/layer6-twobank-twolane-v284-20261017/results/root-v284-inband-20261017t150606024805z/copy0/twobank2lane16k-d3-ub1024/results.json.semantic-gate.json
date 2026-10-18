@@ -1,0 +1,84 @@
+{
+  "schema": "v284-native4-two-bank-two-lane-d3-v1",
+  "status": "pass",
+  "scope": "four pinned native canaries only; not a full quality suite",
+  "bank_lane_map": {
+    "capital-en": [
+      0,
+      0
+    ],
+    "arithmetic-zh": [
+      1,
+      0
+    ],
+    "logic-en": [
+      0,
+      1
+    ],
+    "strict-json-zh": [
+      1,
+      1
+    ]
+  },
+  "native_source_sha256": "f2487f90c32d0e383494dc5ae68bec24d6bf0c8d31a065dfbf614447fb6b53fd",
+  "cases": [
+    {
+      "id": "capital-en",
+      "bank": 0,
+      "bank_lane": 0,
+      "checker": "exact_text",
+      "expected_input_tokens": 32,
+      "actual_input_tokens": 32,
+      "status": "pass",
+      "reason": "exact expected answer",
+      "expected": "Paris",
+      "actual": "Paris"
+    },
+    {
+      "id": "arithmetic-zh",
+      "bank": 1,
+      "bank_lane": 0,
+      "checker": "exact_text",
+      "expected_input_tokens": 35,
+      "actual_input_tokens": 35,
+      "status": "pass",
+      "reason": "exact expected answer",
+      "expected": "9805",
+      "actual": "9805"
+    },
+    {
+      "id": "logic-en",
+      "bank": 0,
+      "bank_lane": 1,
+      "checker": "exact_text",
+      "expected_input_tokens": 41,
+      "actual_input_tokens": 41,
+      "status": "pass",
+      "reason": "exact expected answer",
+      "expected": "NO",
+      "actual": "NO"
+    },
+    {
+      "id": "strict-json-zh",
+      "bank": 1,
+      "bank_lane": 1,
+      "checker": "strict_json",
+      "expected_input_tokens": 47,
+      "actual_input_tokens": 47,
+      "status": "pass",
+      "reason": "JSON values exactly match expected fields",
+      "expected": {
+        "ok": true,
+        "count": 3,
+        "colors": [
+          "红",
+          "蓝"
+        ]
+      },
+      "actual": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+    }
+  ],
+  "model_loaded_by_checker": false,
+  "gpu_touched_by_checker": false,
+  "performance_claimed": false
+}

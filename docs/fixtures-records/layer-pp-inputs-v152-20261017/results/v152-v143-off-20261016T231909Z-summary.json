@@ -1,0 +1,64 @@
+{
+  "fixture": "layer-pp-inputs-v152-20261017",
+  "tag": "v152-v143-off-20261016T231909Z",
+  "status": "segfault-before-output-verification",
+  "run": {
+    "mode": "stage-off",
+    "runtime_id": "runtime-perf-v143",
+    "runner_binary_sha256": "91a51bfb77f88ea42fa774dd3b19287158cf5558704fc64b23d99b7fb2c5cc48",
+    "exit_status": 139,
+    "frames": [
+      {"scheduler": "A-small", "frame": 0, "seed": 0, "queued": true},
+      {"scheduler": "B-small", "frame": 0, "seed": 7, "queued": false}
+    ],
+    "graph_geometry": {"rows_ne": [32, 16], "mm0_src1_ne": [32, 16]},
+    "failure": {
+      "kind": "segmentation-fault",
+      "stack": [
+        "v152_segv_handler",
+        "ggml_gallocr_alloc_graph+0x34c",
+        "ggml_backend_sched_alloc_graph+0x690",
+        "graph_case::submit(int)",
+        "main"
+      ],
+      "output_oracle_checked": false
+    },
+    "raw_log": "v152-v143-off-20261016T231909Z.log",
+    "raw_log_sha256": "900aab929625b03fa1793481a8225bd04cb1f120092ccec406b68eb4f2d05fed"
+  },
+  "runtime_closure": {
+    "ldd_r": "PASS; all four ggml DSOs resolved to runtime-perf-v143",
+    "debug_line_resolution": "addr2line reported symbol names but no source line (?:?)",
+    "dsos": {
+      "libggml-base.so.0": "beee6adf3e5fc7801e3e2291e039119707f0a8cfbee4ac75555192bf3182279a",
+      "libggml.so.0": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+      "libggml-cpu.so.0": "d51a3e28fafe2fc03584d790512d4dcb88583f9949647602e5cbef1fc0d71781",
+      "libggml-cuda.so.0": "5f663e079037bee6fe0d9cf1246433566e7103d53699ca659574f5efcbd6e53a"
+    }
+  },
+  "safety": {
+    "preflight": {
+      "gpus": [
+        {"index": 0, "temperature_c": 38, "memory_free_mib": 16124, "memory_used_mib": 3, "utilization_percent": 0},
+        {"index": 1, "temperature_c": 37, "memory_free_mib": 16124, "memory_used_mib": 3, "utilization_percent": 0},
+        {"index": 2, "temperature_c": 37, "memory_free_mib": 16127, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 3, "temperature_c": 37, "memory_free_mib": 16127, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 4, "temperature_c": 37, "memory_free_mib": 16118, "memory_used_mib": 9, "utilization_percent": 0},
+        {"index": 5, "temperature_c": 38, "memory_free_mib": 16123, "memory_used_mib": 4, "utilization_percent": 0}
+      ],
+      "bmc": {"sample_utc": "2026-10-16T23:28:34.363348Z", "max_c": 39, "host": "Running", "chassis": "On", "masks_ok": true, "fan_target_rpm": 3000, "faults": 0, "alarms": 0}
+    },
+    "postflight": {
+      "all_six_compute_pids": 0,
+      "gpus": [
+        {"index": 0, "temperature_c": 38, "memory_free_mib": 16124, "memory_used_mib": 4, "utilization_percent": 0},
+        {"index": 1, "temperature_c": 37, "memory_free_mib": 16124, "memory_used_mib": 3, "utilization_percent": 0},
+        {"index": 2, "temperature_c": 37, "memory_free_mib": 16127, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 3, "temperature_c": 37, "memory_free_mib": 16127, "memory_used_mib": 0, "utilization_percent": 0},
+        {"index": 4, "temperature_c": 37, "memory_free_mib": 16118, "memory_used_mib": 9, "utilization_percent": 0},
+        {"index": 5, "temperature_c": 38, "memory_free_mib": 16123, "memory_used_mib": 4, "utilization_percent": 0}
+      ],
+      "bmc": {"sample_utc": "2026-10-16T23:28:51.490696Z", "max_c": 39.062, "host": "Running", "chassis": "On", "masks_ok": true, "fan_target_rpm": 3000, "faults": 0, "alarms": 0}
+    }
+  }
+}

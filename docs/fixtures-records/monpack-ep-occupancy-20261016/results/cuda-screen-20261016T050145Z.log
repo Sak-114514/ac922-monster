@@ -1,0 +1,16 @@
+utc=20261016T050145Z mode=cuda-operator-screen runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v75/lib visible=3
+built /tmp/monpack-ep-occupancy-cuda.NNrpKj/monpack-ep-occupancy against V75; host g++ only, no NVCC
+4d2666af6339df197d7cc73a7ed7b5aa6e3732d7bb5c0e09c290842763560394  /tmp/monpack-ep-occupancy-cuda.NNrpKj/monpack-ep-occupancy
+7d4cdf24f0c8463d7063452df25f78e214aaa0c2b054af3d3af63cc5d2d2d5c5  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v75/lib/libggml-cuda.so.0
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 39, 2 MiB, 0 %
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 38, 2 MiB, 0 %
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 38, 2 MiB, 0 %
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 38, 2 MiB, 0 %
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 38, 6 MiB, 0 %
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 39, 6 MiB, 0 %
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml_new_object: not enough space in the context's memory pool (needed 84080, available 23552)
+./run-cuda-screen.sh: line 43: 154262 Segmentation fault      timeout --signal=INT --kill-after=3s 50s "$tmp_dir/monpack-ep-occupancy" --cuda "$fixture_dir/samples"
+runner_exit_status=139
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 38, 3 MiB, 0 %

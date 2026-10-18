@@ -1,0 +1,45 @@
+2026-10-16T19:24:00+0800 192 systemd[1562]: Started root-p4-v39-validated-force-flatmeta6-ep6-d3-16k-20261016t112358332578z.service - V39 V91 signature-validated FORCE, single-chunk cold drain, flat Meta6 EP6 qualification.
+2026-10-16T19:24:00+0800 192 numactl[216781]: V39_PREFLIGHT_PROFILE_PASS runtime_id=20261016T105807.099646Z PLE_prefix_GiB=12
+2026-10-16T19:24:00+0800 192 numactl[216784]: {
+2026-10-16T19:24:00+0800 192 numactl[216784]:   "modes": [
+2026-10-16T19:24:00+0800 192 numactl[216784]:     1
+2026-10-16T19:24:00+0800 192 numactl[216784]:   ],
+2026-10-16T19:24:00+0800 192 numactl[216784]:   "profile_dirs": [
+2026-10-16T19:24:00+0800 192 numactl[216784]:     "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v39-validated-force-20261016/results/root-p4-v39-validated-force-flatmeta6-ep6-d3-16k-20261016t112358332578z/copy1/diagnostic",
+2026-10-16T19:24:00+0800 192 numactl[216784]:     "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v39-validated-force-20261016/results/root-p4-v39-validated-force-flatmeta6-ep6-d3-16k-20261016t112358332578z/copy1/clean"
+2026-10-16T19:24:00+0800 192 numactl[216784]:   ]
+2026-10-16T19:24:00+0800 192 numactl[216784]: }
+2026-10-16T19:28:27+0800 192 numactl[217576]: Traceback (most recent call last):
+2026-10-16T19:28:27+0800 192 numactl[217576]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 51, in <module>
+2026-10-16T19:28:27+0800 192 numactl[217576]:     raise SystemExit(main())
+2026-10-16T19:28:27+0800 192 numactl[217576]:                      ^^^^^^
+2026-10-16T19:28:27+0800 192 numactl[217576]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 45, in main
+2026-10-16T19:28:27+0800 192 numactl[217576]:     result = extract(args.input.read_text(encoding="utf-8", errors="replace"), args.mode, args.profile)
+2026-10-16T19:28:27+0800 192 numactl[217576]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T19:28:27+0800 192 numactl[217576]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 26, in extract
+2026-10-16T19:28:27+0800 192 numactl[217576]:     raise ValueError(f"mode {mode}/{name}: expected one complete family, starts={starts}, ends={stops}")
+2026-10-16T19:28:27+0800 192 numactl[217576]: ValueError: mode 1/diagnostic: expected one complete family, starts=[1938], ends=[]
+2026-10-16T19:28:27+0800 192 numactl[217578]: Traceback (most recent call last):
+2026-10-16T19:28:27+0800 192 numactl[217578]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 51, in <module>
+2026-10-16T19:28:27+0800 192 numactl[217578]:     raise SystemExit(main())
+2026-10-16T19:28:27+0800 192 numactl[217578]:                      ^^^^^^
+2026-10-16T19:28:27+0800 192 numactl[217578]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 45, in main
+2026-10-16T19:28:27+0800 192 numactl[217578]:     result = extract(args.input.read_text(encoding="utf-8", errors="replace"), args.mode, args.profile)
+2026-10-16T19:28:27+0800 192 numactl[217578]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T19:28:27+0800 192 numactl[217578]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 26, in extract
+2026-10-16T19:28:27+0800 192 numactl[217578]:     raise ValueError(f"mode {mode}/{name}: expected one complete family, starts={starts}, ends={stops}")
+2026-10-16T19:28:27+0800 192 numactl[217578]: ValueError: mode 1/clean: expected one complete family, starts=[], ends=[]
+2026-10-16T19:28:27+0800 192 numactl[217580]: Traceback (most recent call last):
+2026-10-16T19:28:27+0800 192 numactl[217580]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 51, in <module>
+2026-10-16T19:28:27+0800 192 numactl[217580]:     raise SystemExit(main())
+2026-10-16T19:28:27+0800 192 numactl[217580]:                      ^^^^^^
+2026-10-16T19:28:27+0800 192 numactl[217580]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 45, in main
+2026-10-16T19:28:27+0800 192 numactl[217580]:     result = extract(args.input.read_text(encoding="utf-8", errors="replace"), args.mode, args.profile)
+2026-10-16T19:28:27+0800 192 numactl[217580]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-16T19:28:27+0800 192 numactl[217580]:   File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/extract_variant_log_v22.py", line 26, in extract
+2026-10-16T19:28:27+0800 192 numactl[217580]:     raise ValueError(f"mode {mode}/{name}: expected one complete family, starts={starts}, ends={stops}")
+2026-10-16T19:28:27+0800 192 numactl[217580]: ValueError: mode 1/diagnostic: expected one complete family, starts=[1938], ends=[]
+2026-10-16T19:28:27+0800 192 numactl[216768]: run_rc=139 final_rc=139 output=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v39-validated-force-20261016/results/root-p4-v39-validated-force-flatmeta6-ep6-d3-16k-20261016t112358332578z variants=1
+2026-10-16T19:28:27+0800 192 systemd[1562]: root-p4-v39-validated-force-flatmeta6-ep6-d3-16k-20261016t112358332578z.service: Main process exited, code=exited, status=139/n/a
+2026-10-16T19:28:27+0800 192 systemd[1562]: root-p4-v39-validated-force-flatmeta6-ep6-d3-16k-20261016t112358332578z.service: Failed with result 'exit-code'.
+2026-10-16T19:28:27+0800 192 systemd[1562]: root-p4-v39-validated-force-flatmeta6-ep6-d3-16k-20261016t112358332578z.service: Consumed 2min 3.360s CPU time.

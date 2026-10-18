@@ -1,0 +1,996 @@
+{
+  "analysis_window": {
+    "duration_ms": 10484.234129,
+    "end_us": 18609475925.064,
+    "kind": "single_request_prefill_trace_window",
+    "source": "R3 CUPTI prefill1 window_start_ns/window_stop_ns mapped by V14 start/stop host brackets",
+    "start_us": 18598991690.935
+  },
+  "clean_performance_claim": false,
+  "clock_mapping": {
+    "analysis_window_cupti_ns_approx": [
+      1792099613729658934,
+      1792099624213893063
+    ],
+    "analysis_window_host_us_approx": [
+      18598991690.935,
+      18609475925.064
+    ],
+    "mapped_trace_window_host_us_approx": [
+      18598991690.935,
+      18609475925.064
+    ],
+    "mapping_source": "intersection of start/stop host brackets",
+    "selected_offset_bracket_ns": [
+      -1792081014737969063,
+      -1792081014737966934
+    ],
+    "selected_offset_midpoint_ns": -1792081014737967999,
+    "source": "V14 start/stop host-before/after brackets around R3 CUPTI timestamps",
+    "start_host_after_us": 18598991692,
+    "start_host_before_us": 18598991688,
+    "start_offset_bracket_ns": [
+      -1792081014737970934,
+      -1792081014737966934
+    ],
+    "stop_host_after_us": 18610972032,
+    "stop_host_before_us": 18609475924,
+    "stop_offset_bracket_ns": [
+      -1792081014737969063,
+      -1792081013241861063
+    ],
+    "uncertainty_us": 2.129,
+    "warnings": []
+  },
+  "collector_provenance": {
+    "abi": "ac922-cupti-window-markers-v1",
+    "frozen_sha256_allowlist": [
+      "2abfa4f07a034353dcc8ac18eee7f9af1aa6c571f36c630d98308b17bed873f2",
+      "2fd1c3400b7aa90583ff96ce2350d0f7f33682b85e4bcd2bf644c1d8f871309a"
+    ],
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cupti-window-20261016/r4/libac922-cupti-window.so",
+    "required_markers": [
+      "ac922_trace_prepare",
+      "ac922_trace_start",
+      "ac922_trace_stop",
+      "ac922_trace_last_error"
+    ],
+    "revision": "r4",
+    "sha256": "2fd1c3400b7aa90583ff96ce2350d0f7f33682b85e4bcd2bf644c1d8f871309a",
+    "verified": true
+  },
+  "context_mapping_note": "CUPTI provides device/context/stream IDs but V14 does not currently emit a direct target-vs-MTP context map. No role is inferred from initialization order; provide --context-map only if backed by an explicit log mapping.",
+  "copies": {
+    "by_type": {
+      "memcpy": {
+        "bytes": 11112328768,
+        "interval_union_ms": 186.919964,
+        "records": 7734,
+        "sum_record_durations_ms": 278.15805
+      },
+      "memcpy2_p2p": {
+        "bytes": 2013265920,
+        "interval_union_ms": 49.931593,
+        "records": 48,
+        "sum_record_durations_ms": 60.771302
+      }
+    },
+    "semantics": "CUPTI memory-copy activity intervals; P2P MEMCPY2 is separate from kernel busy"
+  },
+  "diagnostic_profile_only": true,
+  "event_counts_in_trace": {
+    "concurrent_kernel": 154178,
+    "device": 6,
+    "memcpy": 7734,
+    "memcpy2_p2p": 48,
+    "runtime_api": 244035
+  },
+  "island_mapping_note": "Island labels require --islands with verified CUPTI-visible device IDs; without it, per-device results are authoritative.",
+  "kernel_busy": {
+    "active_device_count": 6,
+    "aggregate_gpu_capacity_percent": 25.798164666937367,
+    "aggregate_gpu_capacity_percent_denominator": "configured_visible_device_count",
+    "by_kernel_name_classification": {
+      "allreduce": {
+        "classification": "name-pattern heuristic; overlapping classes can double-count device time",
+        "device_busy_ms": 5854.490804,
+        "percent_of_analysis_window_one_gpu": 55.84090103259082,
+        "percent_of_total_device_kernel_busy": 36.07549978426429
+      },
+      "attention": {
+        "classification": "name-pattern heuristic; overlapping classes can double-count device time",
+        "device_busy_ms": 548.709327,
+        "percent_of_analysis_window_one_gpu": 5.233661517365757,
+        "percent_of_total_device_kernel_busy": 3.381158818165308
+      },
+      "gdn": {
+        "classification": "name-pattern heuristic; overlapping classes can double-count device time",
+        "device_busy_ms": 740.746248,
+        "percent_of_analysis_window_one_gpu": 7.065334853130119,
+        "percent_of_total_device_kernel_busy": 4.564494505937323
+      },
+      "moe": {
+        "classification": "name-pattern heuristic; overlapping classes can double-count device time",
+        "device_busy_ms": 3386.047485,
+        "percent_of_analysis_window_one_gpu": 32.29656495016642,
+        "percent_of_total_device_kernel_busy": 20.86489831552328
+      },
+      "other": {
+        "classification": "name-pattern heuristic; overlapping classes can double-count device time",
+        "device_busy_ms": 5698.446044,
+        "percent_of_analysis_window_one_gpu": 54.352525648371085,
+        "percent_of_total_device_kernel_busy": 35.1139485761098
+      }
+    },
+    "classification_note": "MoE/QSA/GDN/AllReduce labels are name-pattern heuristics; 'other' is unclassified. Device-time classes may overlap if kernels overlap on a device.",
+    "configured_visible_device_count": 6,
+    "context_role_mapping_status": "not_explicitly_mapped",
+    "device_kernel_busy_ms_sum": 16228.439908,
+    "kernel_busy_percent_of_window_device_ms": 154.7889880016242,
+    "per_context": [
+      {
+        "context_id": 1,
+        "device_id": 0,
+        "island": "island0",
+        "kernel_busy_ms": 2828.314883,
+        "kernel_busy_percent_of_window": 26.976838252559784,
+        "role_mapping": {
+          "role": "unknown"
+        }
+      },
+      {
+        "context_id": 2,
+        "device_id": 1,
+        "island": "island0",
+        "kernel_busy_ms": 2819.635486,
+        "kernel_busy_percent_of_window": 26.894053025778245,
+        "role_mapping": {
+          "role": "unknown"
+        }
+      },
+      {
+        "context_id": 3,
+        "device_id": 2,
+        "island": "island0",
+        "kernel_busy_ms": 2513.454632,
+        "kernel_busy_percent_of_window": 23.973659888495227,
+        "role_mapping": {
+          "role": "unknown"
+        }
+      },
+      {
+        "context_id": 4,
+        "device_id": 3,
+        "island": "island1",
+        "kernel_busy_ms": 2845.100001,
+        "kernel_busy_percent_of_window": 27.136936909204348,
+        "role_mapping": {
+          "role": "unknown"
+        }
+      },
+      {
+        "context_id": 5,
+        "device_id": 4,
+        "island": "island1",
+        "kernel_busy_ms": 2825.205681,
+        "kernel_busy_percent_of_window": 26.947182276150407,
+        "role_mapping": {
+          "role": "unknown"
+        }
+      },
+      {
+        "context_id": 6,
+        "device_id": 5,
+        "island": "island1",
+        "kernel_busy_ms": 2396.729225,
+        "kernel_busy_percent_of_window": 22.860317649436194,
+        "role_mapping": {
+          "role": "unknown"
+        }
+      }
+    ],
+    "per_device": [
+      {
+        "device": {
+          "compute_capability": [
+            7,
+            0
+          ],
+          "name": "Tesla V100-SXM2-16GB",
+          "uuid": "80452dace8c199fd225cea846276ae6f"
+        },
+        "device_id": 0,
+        "gpu_idle_ms_in_analysis_window": 7655.919246,
+        "gpu_kernel_gaps": {
+          "count": 21503,
+          "max_ms": 2344.104927,
+          "p50_ms": 0.000608,
+          "p90_ms": 0.003972,
+          "top_gaps_ms": [
+            2344.104927,
+            1125.292908,
+            979.97384,
+            650.289628,
+            613.046878,
+            398.254332,
+            259.602984,
+            44.608771,
+            39.172253,
+            27.403226
+          ],
+          "total_ms": 7655.919246
+        },
+        "island": "island0",
+        "kernel_busy_by_category": {
+          "allreduce": {
+            "busy_ms": 1072.969374,
+            "busy_percent_of_analysis_window": 10.234122595870922
+          },
+          "attention": {
+            "busy_ms": 90.883304,
+            "busy_percent_of_analysis_window": 0.8668568717729367
+          },
+          "gdn": {
+            "busy_ms": 129.633292,
+            "busy_percent_of_analysis_window": 1.2364593388984588
+          },
+          "moe": {
+            "busy_ms": 588.125379,
+            "busy_percent_of_analysis_window": 5.609616990269333
+          },
+          "other": {
+            "busy_ms": 946.703534,
+            "busy_percent_of_analysis_window": 9.029782455748132
+          }
+        },
+        "kernel_busy_ms": 2828.314883,
+        "kernel_busy_percent_of_window": 26.976838252559784,
+        "kernel_records": 21503
+      },
+      {
+        "device": {
+          "compute_capability": [
+            7,
+            0
+          ],
+          "name": "Tesla V100-SXM2-16GB",
+          "uuid": "ac5b33c1276dc1ae15a646f7894daefb"
+        },
+        "device_id": 1,
+        "gpu_idle_ms_in_analysis_window": 7664.598643,
+        "gpu_kernel_gaps": {
+          "count": 21508,
+          "max_ms": 2344.128158,
+          "p50_ms": 0.000609,
+          "p90_ms": 0.003973,
+          "top_gaps_ms": [
+            2344.128158,
+            1123.796401,
+            973.897207,
+            650.32782,
+            613.078377,
+            398.019011,
+            261.766031,
+            41.676956,
+            35.206101,
+            33.761883
+          ],
+          "total_ms": 7664.598643
+        },
+        "island": "island0",
+        "kernel_busy_by_category": {
+          "allreduce": {
+            "busy_ms": 1057.509637,
+            "busy_percent_of_analysis_window": 10.08666559701168
+          },
+          "attention": {
+            "busy_ms": 91.660142,
+            "busy_percent_of_analysis_window": 0.8742664544896296
+          },
+          "gdn": {
+            "busy_ms": 130.470307,
+            "busy_percent_of_analysis_window": 1.2444428977326207
+          },
+          "moe": {
+            "busy_ms": 586.581646,
+            "busy_percent_of_analysis_window": 5.594892662473849
+          },
+          "other": {
+            "busy_ms": 953.413754,
+            "busy_percent_of_analysis_window": 9.093785414070469
+          }
+        },
+        "kernel_busy_ms": 2819.635486,
+        "kernel_busy_percent_of_window": 26.894053025778245,
+        "kernel_records": 21508
+      },
+      {
+        "device": {
+          "compute_capability": [
+            7,
+            0
+          ],
+          "name": "Tesla V100-SXM2-16GB",
+          "uuid": "e6529eb8aa1f1d025d63dfb7995bf1eb"
+        },
+        "device_id": 2,
+        "gpu_idle_ms_in_analysis_window": 7970.779497,
+        "gpu_kernel_gaps": {
+          "count": 21503,
+          "max_ms": 2344.175743,
+          "p50_ms": 0.00061,
+          "p90_ms": 0.003973,
+          "top_gaps_ms": [
+            2344.175743,
+            1122.139317,
+            966.966798,
+            650.390909,
+            613.172153,
+            398.148681,
+            263.624815,
+            46.340586,
+            40.383214,
+            32.514802
+          ],
+          "total_ms": 7970.779497
+        },
+        "island": "island0",
+        "kernel_busy_by_category": {
+          "allreduce": {
+            "busy_ms": 742.343674,
+            "busy_percent_of_analysis_window": 7.080571311800776
+          },
+          "attention": {
+            "busy_ms": 93.004104,
+            "busy_percent_of_analysis_window": 0.8870853402896188
+          },
+          "gdn": {
+            "busy_ms": 131.564834,
+            "busy_percent_of_analysis_window": 1.2548826397922956
+          },
+          "moe": {
+            "busy_ms": 591.875044,
+            "busy_percent_of_analysis_window": 5.645381786761508
+          },
+          "other": {
+            "busy_ms": 954.666976,
+            "busy_percent_of_analysis_window": 9.10573880985103
+          }
+        },
+        "kernel_busy_ms": 2513.454632,
+        "kernel_busy_percent_of_window": 23.973659888495227,
+        "kernel_records": 21503
+      },
+      {
+        "device": {
+          "compute_capability": [
+            7,
+            0
+          ],
+          "name": "Tesla V100-SXM2-16GB",
+          "uuid": "fadb04594d30907b289a862b3014f165"
+        },
+        "device_id": 3,
+        "gpu_idle_ms_in_analysis_window": 7639.134128,
+        "gpu_kernel_gaps": {
+          "count": 26304,
+          "max_ms": 1303.606506,
+          "p50_ms": 0.000608,
+          "p90_ms": 0.004068,
+          "top_gaps_ms": [
+            1303.606506,
+            1275.18308,
+            643.184624,
+            542.141299,
+            540.057558,
+            460.330261,
+            436.973798,
+            234.50696,
+            112.930565,
+            37.933208
+          ],
+          "total_ms": 7639.134128
+        },
+        "island": "island1",
+        "kernel_busy_by_category": {
+          "allreduce": {
+            "busy_ms": 1178.925611,
+            "busy_percent_of_analysis_window": 11.244747079226544
+          },
+          "attention": {
+            "busy_ms": 90.66017,
+            "busy_percent_of_analysis_window": 0.8647285904196732
+          },
+          "gdn": {
+            "busy_ms": 116.075382,
+            "busy_percent_of_analysis_window": 1.107142215366297
+          },
+          "moe": {
+            "busy_ms": 530.599395,
+            "busy_percent_of_analysis_window": 5.060926611056226
+          },
+          "other": {
+            "busy_ms": 928.839443,
+            "busy_percent_of_analysis_window": 8.859392413135607
+          }
+        },
+        "kernel_busy_ms": 2845.100001,
+        "kernel_busy_percent_of_window": 27.136936909204348,
+        "kernel_records": 26304
+      },
+      {
+        "device": {
+          "compute_capability": [
+            7,
+            0
+          ],
+          "name": "Tesla V100-SXM2-16GB",
+          "uuid": "760ce50132f669b6215b1020da68bbfc"
+        },
+        "device_id": 4,
+        "gpu_idle_ms_in_analysis_window": 7659.028448,
+        "gpu_kernel_gaps": {
+          "count": 31681,
+          "max_ms": 1305.819521,
+          "p50_ms": 0.000607,
+          "p90_ms": 0.002596,
+          "top_gaps_ms": [
+            1305.819521,
+            1270.943873,
+            644.443405,
+            541.135566,
+            528.78484,
+            460.12203,
+            455.127012,
+            234.25542,
+            85.090676,
+            41.3312
+          ],
+          "total_ms": 7659.028448
+        },
+        "island": "island1",
+        "kernel_busy_by_category": {
+          "allreduce": {
+            "busy_ms": 1122.577421,
+            "busy_percent_of_analysis_window": 10.70729065363855
+          },
+          "attention": {
+            "busy_ms": 90.26534,
+            "busy_percent_of_analysis_window": 0.8609626501026034
+          },
+          "gdn": {
+            "busy_ms": 115.610385,
+            "busy_percent_of_analysis_window": 1.1027070130016934
+          },
+          "moe": {
+            "busy_ms": 543.341308,
+            "busy_percent_of_analysis_window": 5.1824606481944775
+          },
+          "other": {
+            "busy_ms": 953.411227,
+            "busy_percent_of_analysis_window": 9.093761311213083
+          }
+        },
+        "kernel_busy_ms": 2825.205681,
+        "kernel_busy_percent_of_window": 26.947182276150407,
+        "kernel_records": 31680
+      },
+      {
+        "device": {
+          "compute_capability": [
+            7,
+            0
+          ],
+          "name": "Tesla V100-SXM2-16GB",
+          "uuid": "d3558623decac7023cc001b4aa9c667a"
+        },
+        "device_id": 5,
+        "gpu_idle_ms_in_analysis_window": 8087.504904,
+        "gpu_kernel_gaps": {
+          "count": 31681,
+          "max_ms": 1307.915114,
+          "p50_ms": 0.000607,
+          "p90_ms": 0.002629,
+          "top_gaps_ms": [
+            1307.915114,
+            1266.555947,
+            645.394975,
+            542.095113,
+            536.994202,
+            535.576414,
+            449.949657,
+            234.056211,
+            39.921324,
+            37.761255
+          ],
+          "total_ms": 8087.504904
+        },
+        "island": "island1",
+        "kernel_busy_by_category": {
+          "allreduce": {
+            "busy_ms": 680.165087,
+            "busy_percent_of_analysis_window": 6.487503795042348
+          },
+          "attention": {
+            "busy_ms": 92.236267,
+            "busy_percent_of_analysis_window": 0.8797616102912957
+          },
+          "gdn": {
+            "busy_ms": 117.392048,
+            "busy_percent_of_analysis_window": 1.1197007483387535
+          },
+          "moe": {
+            "busy_ms": 545.524713,
+            "busy_percent_of_analysis_window": 5.20328625141103
+          },
+          "other": {
+            "busy_ms": 961.41111,
+            "busy_percent_of_analysis_window": 9.170065244352767
+          }
+        },
+        "kernel_busy_ms": 2396.729225,
+        "kernel_busy_percent_of_window": 22.860317649436194,
+        "kernel_records": 31680
+      }
+    ],
+    "per_island": [
+      {
+        "aggregate_capacity_percent": 25.94818372227775,
+        "aggregate_device_busy_ms": 8161.405001,
+        "busy_any_gpu_ms": 3288.17184,
+        "busy_any_gpu_percent_of_analysis_window": 31.363014212976474,
+        "device_ids": [
+          0,
+          1,
+          2
+        ],
+        "island": "island0"
+      },
+      {
+        "aggregate_capacity_percent": 25.648145611596984,
+        "aggregate_device_busy_ms": 8067.034907,
+        "busy_any_gpu_ms": 3553.480923,
+        "busy_any_gpu_percent_of_analysis_window": 33.89356703863438,
+        "device_ids": [
+          3,
+          4,
+          5
+        ],
+        "island": "island1"
+      }
+    ],
+    "semantics": "union of CUPTI concurrent-kernel activity intervals clipped to the selected analysis window; not an event envelope",
+    "top_kernel_names_by_clipped_sum_ms": [
+      {
+        "count": 2304,
+        "name": "_Z19k_allreduce_p2p_segPfl11p2p_ar_args",
+        "sum_ms": 5854.175552
+      },
+      {
+        "count": 5040,
+        "name": "_ZN7cutlass7Kernel2I50cutlass_70_tensorop_s884gemm_f16_128x128_tn_align8EEvNT_6ParamsE",
+        "sum_ms": 862.341274
+      },
+      {
+        "count": 864,
+        "name": "_Z32gated_delta_net_cuda_128x4_voltaILb1EEvPKfS1_S1_S1_S1_S1_PfS2_llllllllllll5uint3S3_fliPKilll",
+        "sum_ms": 740.746248
+      },
+      {
+        "count": 19152,
+        "name": "_Z27convert_unary_cont_sat_vec4IfEvPKvP6__halfl",
+        "sum_ms": 588.877943
+      },
+      {
+        "count": 192,
+        "name": "_Z18flash_attn_ext_f16ILi256ELi256ELi16ELi4ELb0ELb0ELb0EEvPKcS1_S1_S1_S1_PKiPfP6float2ffffjfi5uint3iiiiiiiiiiiliiliiiiil",
+        "sum_ms": 544.63155
+      },
+      {
+        "count": 3456,
+        "name": "_Z13mm_ids_helperILi10EEvPKiPiS2_S2_iiiiibi",
+        "sum_ms": 449.375128
+      },
+      {
+        "count": 2304,
+        "name": "_Z16dsv4_hc_post_f32ILb0EEvPKfS1_S1_S1_Pfllllllllllllllll",
+        "sum_ms": 361.06978
+      },
+      {
+        "count": 2752,
+        "name": "volta_s884gemm_fp16_64x64_ldg8_tn",
+        "sum_ms": 353.062149
+      },
+      {
+        "count": 4659,
+        "name": "_Z12rms_norm_f32ILi1024ELb1ELb0EEvPKfPfilllfS1_lll5uint3S3_S3_S3_S1_lllS3_S3_S3_S3_",
+        "sum_ms": 347.647368
+      },
+      {
+        "count": 720,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type42ELi64ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "sum_ms": 344.184336
+      },
+      {
+        "count": 720,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type42ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "sum_ms": 334.52864
+      },
+      {
+        "count": 624,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type21ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "sum_ms": 319.786123
+      },
+      {
+        "count": 3072,
+        "name": "_Z15dsv4_hc_pre_f32ILb1EEvPKfS1_Pflllllllllllf",
+        "sum_ms": 285.795035
+      },
+      {
+        "count": 4128,
+        "name": "volta_s884gemm_fp16_128x128_ldg8_tn",
+        "sum_ms": 258.369009
+      },
+      {
+        "count": 624,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type21ELi64ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "sum_ms": 255.114862
+      },
+      {
+        "count": 480,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type22ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "sum_ms": 245.189904
+      },
+      {
+        "count": 480,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type17ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "sum_ms": 240.633318
+      },
+      {
+        "count": 480,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type22ELi64ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "sum_ms": 237.01144
+      },
+      {
+        "count": 480,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type17ELi64ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "sum_ms": 229.240745
+      },
+      {
+        "count": 432,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type20ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "sum_ms": 228.999358
+      },
+      {
+        "count": 432,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type16ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "sum_ms": 192.964963
+      },
+      {
+        "count": 432,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type20ELi64ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "sum_ms": 170.923022
+      },
+      {
+        "count": 4032,
+        "name": "_ZN7cutlass7Kernel2I61cutlass_70_wmma_tensorop_s161616gemm_f16_32x32_64x2_tn_align2EEvNT_6ParamsE",
+        "sum_ms": 169.710569
+      },
+      {
+        "count": 432,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type16ELi64ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "sum_ms": 167.127378
+      },
+      {
+        "count": 288,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type18ELi32ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "sum_ms": 139.793499
+      },
+      {
+        "count": 1152,
+        "name": "_Z17k_argsort_f32_i32IL15ggml_sort_order1EEvPKfPiii",
+        "sum_ms": 126.66747
+      },
+      {
+        "count": 2304,
+        "name": "_Z21unary_gated_op_kernelIXadL_ZN38_INTERNAL_9b06fd10_8_unary_cu_eb6d53667op_siluEfEEfEvPKT0_S3_PS1_llll",
+        "sum_ms": 115.343683
+      },
+      {
+        "count": 288,
+        "name": "_Z21mul_mat_q_moe_groupedIL9ggml_type18ELi64ELb0EEvPKcPKiS4_S4_S4_Pfiiiiiii",
+        "sum_ms": 111.490999
+      },
+      {
+        "count": 11568,
+        "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+        "sum_ms": 105.607915
+      },
+      {
+        "count": 1152,
+        "name": "_Z28top_k_radix_histogram_selectILi256ELi8EEvPKfP17top_k_radix_statePiPjiiiibb",
+        "sum_ms": 97.426068
+      },
+      {
+        "count": 480,
+        "name": "_Z12moe_tail_f32PKfS0_S0_S0_S0_Pfli",
+        "sum_ms": 83.781625
+      },
+      {
+        "count": 888,
+        "name": "_Z17concat_copies_f3218concat_copies_args",
+        "sum_ms": 76.344293
+      },
+      {
+        "count": 768,
+        "name": "volta_s884gemm_fp16_128x64_ldg8_tn",
+        "sum_ms": 75.904404
+      },
+      {
+        "count": 483,
+        "name": "_Z26moe_weighted_reduction_f32PKfS0_S0_Pfli",
+        "sum_ms": 75.619089
+      },
+      {
+        "count": 2304,
+        "name": "_Z17quantize_mmq_q8_1IL18mmq_q8_1_ds_layout0ELb1EEvPKfPKiPvllllliii",
+        "sum_ms": 74.134111
+      },
+      {
+        "count": 384,
+        "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+        "sum_ms": 68.47801
+      },
+      {
+        "count": 1374,
+        "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_addEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+        "sum_ms": 60.903801
+      },
+      {
+        "count": 2043,
+        "name": "_Z16k_get_rows_floatIffEvPKT_PKiPT0_ll5uint3mmmmmmmmm",
+        "sum_ms": 58.002189
+      },
+      {
+        "count": 864,
+        "name": "_Z23ssm_conv_long_token_f32ILb1ELm128ELm4ELl32EEvPKfS1_S1_iiiiPfiiil",
+        "sum_ms": 57.414717
+      },
+      {
+        "count": 3072,
+        "name": "_Z13mul_mat_vec_qIL9ggml_type8ELi8ELb0ELb1ELb0EEvPKvS2_PKi31ggml_cuda_mm_fusion_args_devicePfj5uint3jjjS7_jjjS7_jjjjii",
+        "sum_ms": 56.554681
+      }
+    ],
+    "window_ms": 10484.234129
+  },
+  "kind": "single8k_prefill_probe",
+  "label": "single8k-pp-probe-32",
+  "measurement_complete": true,
+  "prefill_probe_context": {
+    "cupti_trace_window_ms": 10484.234129,
+    "note": "runner prefill wall includes start/stop marker overhead; CUPTI window is the measured activity interval",
+    "result_prefill_input_tokens": 8192,
+    "result_prefill_wall_ms_including_marker_overhead": 11980.427000000001,
+    "result_single_request_prefill_tok_s_profiled": 683.7819720449029
+  },
+  "run_environment": {
+    "cuda_visible_devices": null,
+    "llama_island_split": "3,3",
+    "root_bank_lanes": "2",
+    "root_mtp_depth": "3",
+    "root_serial_cpu_submit": "0",
+    "root_turboprefill": "0",
+    "root_warmup_frames": "4"
+  },
+  "runtime_host_api": {
+    "api_interval_union_ms": 5511.782254,
+    "api_interval_union_percent_of_analysis_window": 52.57210194070438,
+    "by_category": {
+      "event_api": {
+        "calls": 6388,
+        "host_api_union_ms": 38.929671,
+        "host_api_union_percent_of_analysis_window": 0.3713163071427246,
+        "sum_of_clipped_call_durations_ms": 38.929671
+      },
+      "launch": {
+        "calls": 65498,
+        "host_api_union_ms": 1432.596129,
+        "host_api_union_percent_of_analysis_window": 13.66428974566064,
+        "sum_of_clipped_call_durations_ms": 2767.312929
+      },
+      "memcpy_memset_api": {
+        "calls": 14902,
+        "host_api_union_ms": 141.678743,
+        "host_api_union_percent_of_analysis_window": 1.3513504301483346,
+        "sum_of_clipped_call_durations_ms": 143.596183
+      },
+      "other_runtime_api": {
+        "calls": 148364,
+        "host_api_union_ms": 765.069094,
+        "host_api_union_percent_of_analysis_window": 7.297329347918457,
+        "sum_of_clipped_call_durations_ms": 1044.268119
+      },
+      "sync_wait": {
+        "calls": 8883,
+        "host_api_union_ms": 3223.930471,
+        "host_api_union_percent_of_analysis_window": 30.750271610993703,
+        "sum_of_clipped_call_durations_ms": 3223.930471
+      }
+    },
+    "correlation_coverage_percent": 93.15291563275434,
+    "gpu_correlation_ids": 51584,
+    "matched_runtime_gpu_correlation_ids": 48052,
+    "runtime_correlation_ids": 244035,
+    "semantics": "union of CUPTI runtime API host intervals; excludes non-runtime host work and may overlap across threads",
+    "top_api_sum_durations": [
+      {
+        "api_name": "cudaStreamSynchronize_v3020",
+        "calls": 7134,
+        "sum_duration_ms": 3210.809284
+      },
+      {
+        "api_name": "cudaGraphLaunch_v10000",
+        "calls": 1125,
+        "sum_duration_ms": 2141.886269
+      },
+      {
+        "api_name": "cudaLaunchKernel_v7000",
+        "calls": 64373,
+        "sum_duration_ms": 625.42666
+      },
+      {
+        "api_name": "cudaGraphInstantiate_v12000",
+        "calls": 225,
+        "sum_duration_ms": 592.399885
+      },
+      {
+        "api_name": "cudaGraphDestroy_v10000",
+        "calls": 102,
+        "sum_duration_ms": 92.384252
+      },
+      {
+        "api_name": "cudaMemcpyAsync_v3020",
+        "calls": 6890,
+        "sum_duration_ms": 81.489936
+      },
+      {
+        "api_name": "cudaMallocHost_v3020",
+        "calls": 96,
+        "sum_duration_ms": 81.391713
+      },
+      {
+        "api_name": "cudaGraphExecDestroy_v10000",
+        "calls": 102,
+        "sum_duration_ms": 65.980013
+      },
+      {
+        "api_name": "cudaMemsetAsync_v3020",
+        "calls": 7802,
+        "sum_duration_ms": 57.204164
+      },
+      {
+        "api_name": "cudaMalloc_v3020",
+        "calls": 20,
+        "sum_duration_ms": 56.585376
+      },
+      {
+        "api_name": "cudaGetDevice_v3020",
+        "calls": 73795,
+        "sum_duration_ms": 33.443153
+      },
+      {
+        "api_name": "cudaFreeHost_v3020",
+        "calls": 96,
+        "sum_duration_ms": 26.539535
+      },
+      {
+        "api_name": "cudaGetLastError_v3020",
+        "calls": 56379,
+        "sum_duration_ms": 22.745653
+      },
+      {
+        "api_name": "cudaEventElapsedTime_v3020",
+        "calls": 1632,
+        "sum_duration_ms": 17.961967
+      },
+      {
+        "api_name": "cudaEventRecord_v3020",
+        "calls": 3295,
+        "sum_duration_ms": 13.878055
+      },
+      {
+        "api_name": "cudaFree_v3020",
+        "calls": 20,
+        "sum_duration_ms": 13.18083
+      },
+      {
+        "api_name": "cudaFuncGetAttributes_v3020",
+        "calls": 33,
+        "sum_duration_ms": 11.337463
+      },
+      {
+        "api_name": "cudaFuncSetAttribute_v9000",
+        "calls": 156,
+        "sum_duration_ms": 10.944057
+      },
+      {
+        "api_name": "cudaSetDevice_v3020",
+        "calls": 7260,
+        "sum_duration_ms": 9.457241
+      },
+      {
+        "api_name": "cudaGraphExecUpdate_v10020",
+        "calls": 225,
+        "sum_duration_ms": 9.304188
+      },
+      {
+        "api_name": "cudaOccupancyMaxActiveBlocksPerMultiprocessor_v6050",
+        "calls": 4190,
+        "sum_duration_ms": 7.155442
+      },
+      {
+        "api_name": "cudaEventSynchronize_v3020",
+        "calls": 789,
+        "sum_duration_ms": 6.468678
+      },
+      {
+        "api_name": "cudaEventQuery_v3020",
+        "calls": 831,
+        "sum_duration_ms": 5.944021
+      },
+      {
+        "api_name": "cudaStreamBeginCapture_v10000",
+        "calls": 225,
+        "sum_duration_ms": 4.482755
+      },
+      {
+        "api_name": "cudaDeviceSynchronize_v3020",
+        "calls": 6,
+        "sum_duration_ms": 3.570825
+      },
+      {
+        "api_name": "cudaDeviceGetAttribute_v5000",
+        "calls": 5074,
+        "sum_duration_ms": 3.130542
+      },
+      {
+        "api_name": "cudaStreamWaitEvent_v3020",
+        "calls": 954,
+        "sum_duration_ms": 3.081684
+      },
+      {
+        "api_name": "cudaMemcpy2DAsync_v3020",
+        "calls": 162,
+        "sum_duration_ms": 2.714273
+      },
+      {
+        "api_name": "cudaStreamEndCapture_v10000",
+        "calls": 225,
+        "sum_duration_ms": 2.227278
+      },
+      {
+        "api_name": "cudaMemcpyPeerAsync_v4000",
+        "calls": 48,
+        "sum_duration_ms": 2.18781
+      }
+    ]
+  },
+  "shared_generation_window": null,
+  "skipped_untimed_rows_by_analyzer": 0,
+  "status": "valid_diagnostic_profile",
+  "trace_integrity": {
+    "buffer_starvation_selected_window": 0,
+    "dropped_pre_window_phase": 0,
+    "dropped_prepare_phase": 0,
+    "dropped_read_total": 0,
+    "dropped_selected_window_phase": 0,
+    "events_stored": 405995,
+    "kernel_records_in_window": 154178,
+    "parse_errors_selected_window": 0,
+    "record_overflow": 0,
+    "trace_valid": true,
+    "untimed_activity_records_during_window": 0
+  },
+  "warning": "CUPTI Activity instrumentation can perturb timing; these values are a diagnostic profile, not clean performance data."
+}

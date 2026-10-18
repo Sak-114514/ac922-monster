@@ -1,0 +1,24 @@
+tag=root-v109-a2
+root=/home/debian/ac922-monster/experiments/standard-opt-20261014
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/prefill-batched-cublas-v109-20261017/results/prefill-batched-cublas-root-v109-a2
+source_bundle_sha256=c6a37c0c588664b248f3f519bf1434e3d71175834e0579301af939027875be87
+CUDA_VISIBLE_DEVICES=
+compile_scope=one fixture TU; host timeout=120s; no GPU launch/model load
+9025f3e6dc1373268c25c721d63de3ea4ef98eda2f7e64849f0bf9c88949138f  prefill-batched-cublas-v109.cu
+c36ff4e1f0b9708bf963e92b7ef4b64020545926f28c22703a0c1290b6ac3ec4  route-pack-prefix.cuh
+0f90648d3c10129acff97b5cf4aa43313435c1107df4e87440380b2211ef4414  check-results.py
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2024 NVIDIA Corporation
+Built on Thu_Mar_28_02:21:02_PDT_2024
+Cuda compilation tools, release 12.4, V12.4.131
+Build cuda_12.4.r12.4/compiler.34097967_0
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/prefill-batched-cublas-v109-20261017/prefill-batched-cublas-v109.cu(345): error: argument of type "void *" is incompatible with parameter of type "half *"
+      convert(qweight, f16_weight, f16_elements, stream);
+                       ^
+
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/prefill-batched-cublas-v109-20261017/prefill-batched-cublas-v109.cu(643): error: argument of type "void *" is incompatible with parameter of type "half *"
+          converter(g.qweight->data, g.f16_weight->data, weight_elements, stream);
+                                     ^
+
+2 errors detected in the compilation of "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/prefill-batched-cublas-v109-20261017/prefill-batched-cublas-v109.cu".

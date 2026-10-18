@@ -1,0 +1,70 @@
+{
+  "schema": "v223-static-contract-check-v1",
+  "status": "PASS",
+  "compiled": false,
+  "model_loaded": false,
+  "gpu_touched": false,
+  "launch_eligible": false,
+  "checks": [
+    {
+      "name": "frozen_runtime",
+      "status": "pass",
+      "detail": "profile binds the verified V218 build report"
+    },
+    {
+      "name": "V219_parent_identity",
+      "status": "pass",
+      "detail": "parent runner SHA-256 matches the V219 profile"
+    },
+    {
+      "name": "V223_runner_identity",
+      "status": "pass",
+      "detail": "derived runner SHA-256 matches V223 profile"
+    },
+    {
+      "name": "scenario_identity",
+      "status": "pass",
+      "detail": "scenario SHA-256 matches V223 profile"
+    },
+    {
+      "name": "bounded_scenario_order",
+      "status": "pass",
+      "detail": "Paris semantic canary then exactly one 32K prompt"
+    },
+    {
+      "name": "single_ub256_family",
+      "status": "pass",
+      "detail": "profile selects only target UB256"
+    },
+    {
+      "name": "target_only_window_order",
+      "status": "pass",
+      "detail": "start < target decode < existing sync < stop < subsequent MTP prefill"
+    },
+    {
+      "name": "one_capture_marker",
+      "status": "pass",
+      "detail": "only the selected long target decode arms CUPTI"
+    },
+    {
+      "name": "phase_gate",
+      "status": "pass",
+      "detail": "V223 allows only off or target32k1"
+    },
+    {
+      "name": "CUPTI_selection",
+      "status": "pass",
+      "detail": "exact V223 long scenario is the sole selected label"
+    },
+    {
+      "name": "bounded_CUPTI_memory",
+      "status": "pass",
+      "detail": "record table cap 1275068416 bytes (<2 GiB)"
+    },
+    {
+      "name": "guarded_pending_launch",
+      "status": "pass",
+      "detail": "profile keeps root-owned guards and no automatic retry"
+    }
+  ]
+}

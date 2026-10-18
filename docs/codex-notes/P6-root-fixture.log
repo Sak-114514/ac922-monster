@@ -1,0 +1,13 @@
+fixture=CPU-only; CUDA APIs=none; max_gpu_numa_placement_per_phase=67108864 bytes; model_size=78615622080 ple_offset=47039862208 ple_bytes=28800138240 ple_rows=320001536 row_bytes=90 page_size=65536 node=255
+reference source=O_DIRECT file_offset=47039862208 payload_bytes=67086912 direct_io_bytes=67088384 fnv64=0x46f0e5238e667cec
+mbind node=255 bytes=67108864 rc=-1 errno=22 (Invalid argument)
+phase=file_mmap payload_bytes=67086912 fnv64=0x46f0e5238e667cec exact_vs_ODIRECT=PASS
+mapping=0x7fff78850000 budget_bytes=67108864 page_size=65536 resident_pages=1024/1024 node255_pages=0 node255_bytes=0
+numa_maps=7fff78850000 default file=/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf mapped=1024 active=0 N0=1024 kernelpagesize_kB=64
+snapshot window phase=file_mmap seconds=5 (fixture holds only this 64 MiB mapping)
+file-backed mapping did not land on target GPU NUMA node; running bounded anonymous-copy fallback
+mbind node=255 bytes=67108864 rc=-1 errno=22 (Invalid argument)
+phase=anonymous_mmap copied_bytes=67086912 fnv64=0x46f0e5238e667cec exact_vs_ODIRECT=PASS
+mapping=0x7fff78850000 budget_bytes=67108864 page_size=65536 resident_pages=1024/1024 node255_pages=0 node255_bytes=0
+numa_maps=7fff78850000 default anon=2305 dirty=2305 active=0 N0=2305 kernelpagesize_kB=64
+snapshot window phase=anonymous_mmap seconds=5 (fixture holds only this 64 MiB mapping)

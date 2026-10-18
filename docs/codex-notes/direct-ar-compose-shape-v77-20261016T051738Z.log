@@ -1,0 +1,66 @@
+V77build=20261016T051430.291943Z
+	linux-vdso64.so.1 (0x00007fff805a0000)
+	libggml.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml.so.0 (0x00007fff80540000)
+	libggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml-cuda.so.0 (0x00007fff72aa0000)
+	libggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml-base.so.0 (0x00007fff72920000)
+	libstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fff725f0000)
+	libm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fff724c0000)
+	libgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fff72480000)
+	libc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fff72220000)
+	libggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml-cpu.so.0 (0x00007fff72060000)
+	libcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fff71f80000)
+	libcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fff6b260000)
+	libcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fff694a0000)
+	libnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff67640000)
+	/lib64/ld64.so.2 (0x00007fff805c0000)
+	libgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fff675c0000)
+	libdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff67590000)
+	libpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff67560000)
+	librt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff67530000)
+	libcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff536a0000)
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA Graph id 1 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 2 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 3 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 4 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 5 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 6 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 1 reused
+CUDA Graph id 2 reused
+CUDA Graph id 3 reused
+CUDA Graph id 4 reused
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+p2p allreduce launch: rank 0 allreduce_0 n=1048832 zero=0 kind=1 stream=0x10007922060
+p2p allreduce launch: rank 1 allreduce_0 n=1048832 zero=0 kind=1 stream=0x1000422c6a0
+p2p allreduce launch: rank 2 allreduce_0 n=1048832 zero=0 kind=1 stream=0x10004ee46c0
+p2p allreduce launch: rank 3 allreduce_0 n=1048832 zero=0 kind=1 stream=0x1000597a490
+p2p allreduce launch: rank 4 allreduce_0 n=1048832 zero=0 kind=1 stream=0x10006418fb0
+p2p allreduce launch: rank 5 allreduce_0 n=1048832 zero=0 kind=1 stream=0x10006ec1520
+PASS_DIRECT_AR label=ordinary-segmented bytes=4195328 ranks=6 exact=1 canary=1
+CUDA Graph id 1 reused
+CUDA Graph id 2 reused
+CUDA Graph id 3 reused
+CUDA Graph id 4 reused
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+DIRECT_COMPOSE_SHAPE children=49 scalar_nodes_per_child=150 ar6=48
+CUDA compose uploaded ranks=6 persistent_host_launchers=6
+CUDA compose ready ranks=6 children_per_rank=49 ar6_per_rank=48 expected_ar6=48
+PASS_DIRECT_AR label=composed-segmented-first bytes=4195328 ranks=6 exact=1 canary=1
+PASS_DIRECT_AR label=composed-segmented-changed-input bytes=4195328 ranks=6 exact=1 canary=1
+DIRECT_SEGMENTED_AR_AND_COMPOSE_PASS

@@ -1,0 +1,78 @@
+ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+meta-cpu-async-copy context=0x1001d0e07b0 instance=1 requested=1 enabled=1 reason=per_context_opt_in
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+meta-cpu-async-copy context=0x1001e3b4f00 instance=2 requested=1 enabled=1 reason=per_context_opt_in
+meta CPU->Meta async copy active context=0x1001b4da660 source=A_temporary_cpu_0 src_op=NONE flags=0 bytes=32768 slot=0
+meta CPU->Meta async copy active context=0x1001e721f20 source=B_temporary_cpu_0 src_op=NONE flags=0 bytes=32768 slot=0
+meta-cpu-async-copy fallback context=0x1001b4da660 reason=weights_source source=A_temporary_cpu_0 src_op=NONE flags=0 bytes=32768 src_usage=1 dst_usage=2
+meta-cpu-async-copy summary context=0x1001e721f20 copies=3 bytes=98304 slot_waits=1
+meta-cpu-async-copy summary context=0x1001b4da660 copies=6 bytes=196608 slot_waits=1
+meta-cpu-async-copy fallback-summary context=0x1001b4da660 reason=weights_source count=1
+DEVICE member=0 name=CUDA0 pci=0035:03:00.0
+DEVICE member=1 name=CUDA1 pci=0035:04:00.0
+DEVICE member=2 name=CUDA2 pci=0035:05:00.0
+ROUTE_EXPECTATION per_context_opt_in=1 Meta_event_record_sync=1 generic_event_query=unavailable
+SOURCE_PLAN owner=A index=0 source=A_temporary_cpu_0 usage=2 host=1 contiguous=1 bytes=32768
+SOURCE_RELEASE owner=A index=0 mutated=1 freed=1 weights_source=0
+SOURCE_PLAN owner=A index=1 source=A_temporary_cpu_1 usage=2 host=1 contiguous=1 bytes=32768
+SOURCE_RELEASE owner=A index=1 mutated=1 freed=1 weights_source=0
+SOURCE_PLAN owner=A index=2 source=A_temporary_cpu_2 usage=2 host=1 contiguous=1 bytes=32768
+SOURCE_RELEASE owner=A index=2 mutated=1 freed=1 weights_source=0
+READBACK_BARRIER owner=A phase=A-before-B backend_synchronize=1
+DESTINATION_READBACK owner=A index=0 rank=0 exact=1 canary=1
+DESTINATION_READBACK owner=A index=0 rank=1 exact=1 canary=1
+DESTINATION_READBACK owner=A index=0 rank=2 exact=1 canary=1
+DESTINATION_READBACK owner=A index=1 rank=0 exact=1 canary=1
+DESTINATION_READBACK owner=A index=1 rank=1 exact=1 canary=1
+DESTINATION_READBACK owner=A index=1 rank=2 exact=1 canary=1
+DESTINATION_READBACK owner=A index=2 rank=0 exact=1 canary=1
+DESTINATION_READBACK owner=A index=2 rank=1 exact=1 canary=1
+DESTINATION_READBACK owner=A index=2 rank=2 exact=1 canary=1
+SOURCE_PLAN owner=B index=0 source=B_temporary_cpu_0 usage=2 host=1 contiguous=1 bytes=32768
+SOURCE_RELEASE owner=B index=0 mutated=1 freed=1 weights_source=0
+SOURCE_PLAN owner=B index=1 source=B_temporary_cpu_1 usage=2 host=1 contiguous=1 bytes=32768
+SOURCE_RELEASE owner=B index=1 mutated=1 freed=1 weights_source=0
+SOURCE_PLAN owner=B index=2 source=B_temporary_cpu_2 usage=2 host=1 contiguous=1 bytes=32768
+SOURCE_RELEASE owner=B index=2 mutated=1 freed=1 weights_source=0
+READBACK_BARRIER owner=B phase=B-pending-teardown backend_synchronize=1
+DESTINATION_READBACK owner=B index=0 rank=0 exact=1 canary=1
+DESTINATION_READBACK owner=B index=0 rank=1 exact=1 canary=1
+DESTINATION_READBACK owner=B index=0 rank=2 exact=1 canary=1
+DESTINATION_READBACK owner=B index=1 rank=0 exact=1 canary=1
+DESTINATION_READBACK owner=B index=1 rank=1 exact=1 canary=1
+DESTINATION_READBACK owner=B index=1 rank=2 exact=1 canary=1
+DESTINATION_READBACK owner=B index=2 rank=0 exact=1 canary=1
+DESTINATION_READBACK owner=B index=2 rank=1 exact=1 canary=1
+DESTINATION_READBACK owner=B index=2 rank=2 exact=1 canary=1
+SOURCE_PLAN owner=A index=0 source=A_temporary_cpu_0 usage=2 host=1 contiguous=1 bytes=32768
+SOURCE_RELEASE owner=A index=0 mutated=1 freed=1 weights_source=0
+SOURCE_PLAN owner=A index=1 source=A_temporary_cpu_1 usage=2 host=1 contiguous=1 bytes=32768
+SOURCE_RELEASE owner=A index=1 mutated=1 freed=1 weights_source=0
+SOURCE_PLAN owner=A index=2 source=A_temporary_cpu_2 usage=2 host=1 contiguous=1 bytes=32768
+SOURCE_RELEASE owner=A index=2 mutated=1 freed=1 weights_source=0
+READBACK_BARRIER owner=A phase=A-after-B backend_synchronize=1
+DESTINATION_READBACK owner=A index=0 rank=0 exact=1 canary=1
+DESTINATION_READBACK owner=A index=0 rank=1 exact=1 canary=1
+DESTINATION_READBACK owner=A index=0 rank=2 exact=1 canary=1
+DESTINATION_READBACK owner=A index=1 rank=0 exact=1 canary=1
+DESTINATION_READBACK owner=A index=1 rank=1 exact=1 canary=1
+DESTINATION_READBACK owner=A index=1 rank=2 exact=1 canary=1
+DESTINATION_READBACK owner=A index=2 rank=0 exact=1 canary=1
+DESTINATION_READBACK owner=A index=2 rank=1 exact=1 canary=1
+DESTINATION_READBACK owner=A index=2 rank=2 exact=1 canary=1
+SOURCE_PLAN owner=A index=0 source=A_temporary_cpu_0 usage=1 host=1 contiguous=1 bytes=32768
+SOURCE_RELEASE owner=A index=0 mutated=1 freed=1 weights_source=1
+WEIGHTS_FALLBACK_BARRIER owner=A backend_synchronize=1
+DESTINATION_READBACK owner=A index=0 rank=0 exact=1 canary=1
+DESTINATION_READBACK owner=A index=0 rank=1 exact=1 canary=1
+DESTINATION_READBACK owner=A index=0 rank=2 exact=1 canary=1
+DESTROY source_backend=CPU before_meta_contexts=1
+PASS V58_CPU_TO_META_ASYNC_DISPATCH owners=A/B/A tensors=3 ranks=3 source_contexts_freed=1 readback_exact=1 weights_fallback=1

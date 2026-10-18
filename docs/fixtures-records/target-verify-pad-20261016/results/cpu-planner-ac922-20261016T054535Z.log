@@ -1,0 +1,8 @@
+PASS pad_flag default=off exact_optin=1 invalid_rejected=1
+PASS pad_default_off real_rows=6 lane_rows=2,4 pad_rows=0
+PASS pad_row_map active_lanes=2 prepad_rows=7 rows=8 lane0_real=3 lane0_pad=1 lane1_real=4 logits_hidden_requested=8
+PASS inactive_lane excluded=1 active_rows=4 absent_lane_pad=0
+PASS accept_lengths 0..3 hidden=real_row rs_slot=3..0 kv_past=seed_plus_accepted
+PASS shorter_drafts lengths=0..2 fixed_rows=4 fake_outputs_unaccepted=1 single_tail_rollback=1
+PASS bounds d4_rejected=1 three_active_lanes_rejected=1
+PASS target-verify-pad CPU planner suite

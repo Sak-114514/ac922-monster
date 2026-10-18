@@ -1,0 +1,41 @@
+{
+  "base_profile": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v38-flatmeta6-combined-20261016/v38-flatmeta6-combined-exact-env.json",
+  "candidate_profile": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v39-validated-force-20261016/v39-exact-env.json",
+  "changed": {
+    "GGML_META_SINGLE_CHUNK_COLD_DRAIN": {
+      "from": null,
+      "to": "1"
+    },
+    "LD_LIBRARY_PATH": {
+      "from": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v89/lib",
+      "to": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v91/lib"
+    },
+    "ROOT_BUILD_REPORT": {
+      "from": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V89-build.json",
+      "to": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V91-build.json"
+    },
+    "ROOT_DYNAMIC_LIB_DIR": {
+      "from": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v89/lib",
+      "to": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v91/lib"
+    },
+    "ROOT_RUNTIME_REVISION": {
+      "from": "20261016T101245.741848Z",
+      "to": "20261016T105807.099646Z"
+    }
+  },
+  "added": {
+    "GGML_META_SINGLE_CHUNK_COLD_DRAIN": "1"
+  },
+  "removed": [],
+  "semantic_changes_without_environment_value_change": {
+    "GGML_CUDA_GRAPHS_FORCE": "1 remains set; V91 changes FORCE to immediate capture only for valid structural binding signatures, with explicit fallback when invalid."
+  },
+  "hardware_caps": {
+    "gpu_power_limit_w_each": 300,
+    "cpu_scaling_max_khz": 2600000,
+    "cpu_scaling_min_khz": 2300000,
+    "cpu_governor": "ondemand",
+    "cpu_idle_sample_khz": 2300000,
+    "comparison_note": "V37 comparison baseline used 180 W GPU caps and 2.3 GHz CPU cap; any speed delta is confounded by these hardware-cap changes. Exact token comparisons remain valid."
+  }
+}

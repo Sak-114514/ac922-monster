@@ -1,0 +1,8 @@
+SYNTAX llama-memory-hybrid-idx.cpp
+PASS llama-memory-hybrid-idx.cpp
+SYNTAX qwen4exp.cpp
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-device-bias-20261016/apply-v47/src/src/models/qwen4exp.cpp: In function ‘bool qwen4exp_qsa_mblk_fast(const llama_memory_hybrid_idx_context*, const llama_ubatch&, const llama_cparams&, const llama_hparams&, uint32_t)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-device-bias-20261016/apply-v47/src/src/models/qwen4exp.cpp:1582:25: warning: comparison of integer expressions of different signedness: ‘const uint32_t’ {aka ‘const unsigned int’} and ‘int’ [-Wsign-compare]
+ 1582 |     if (ubatch.n_tokens > qwen4exp_qsa_gather_max_tokens()) {
+      |         ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PASS qwen4exp.cpp

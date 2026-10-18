@@ -1,0 +1,27 @@
+utc=20261016T045440Z mode=host-plan-only runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v75/lib
+built /tmp/monpack-ep-occupancy-host.wptPwn/monpack-ep-occupancy against V75; host g++ only, no NVCC
+81827e6ce571b03a71400a6d5d5ac0f3d8bfc9df7ad0a1512ade8dc30fb2f855  /tmp/monpack-ep-occupancy-host.wptPwn/monpack-ep-occupancy
+7d4cdf24f0c8463d7063452df25f78e214aaa0c2b054af3d3af63cc5d2d2d5c5  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v75/lib/libggml-cuda.so.0
+	linux-vdso64.so.1 (0x00007fff85550000)
+	libggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v75/lib/libggml-cuda.so.0 (0x00007fff77a90000)
+	libggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v75/lib/libggml-base.so.0 (0x00007fff77910000)
+	libstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fff775e0000)
+	libm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fff774b0000)
+	libgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fff77470000)
+	libc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fff77210000)
+	libcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fff77130000)
+	libcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fff70410000)
+	libcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fff6e650000)
+	libnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff6c7f0000)
+	/lib64/ld64.so.2 (0x00007fff85570000)
+	libgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fff6c770000)
+	libdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff6c740000)
+	libpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff6c710000)
+	librt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff6c6e0000)
+	libcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff58850000)
+HOST_PLAN PASS formats=IQ3_XXS,IQ3_S K=2560 N=640 local_E=85 T=1024 n_used=2 rows_total=2048 rows_per_expert=24..25 oracle=selected_tokens_0_to_30_plus_41_x_rows16 fp64_accumulation=1 production_EP_mapping=not_tested
+PASS exact sampled GGUF/Monpack bytes, 85 contiguous full-K/N experts per format
+PASS route work: 1024 tokens x top-2 = 2048 rows; per-expert 24..25; 8 experts at 25
+PASS selected FP64 oracle schedule: tokens 0..30 plus 41 x 2 slots x 16 rows; includes local IDs 0 and 84
+PASS sample disk payload=226304000 bytes; combined read+write=452608000 bytes (<450 MiB)
+LIMIT production global-ID/owner routing and EP dispatch are not tested

@@ -1,0 +1,37 @@
+{
+  "baseline": "/home/debian/ac922-monster/experiments/standard-opt-20261014/source-before",
+  "patch": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/P1-final.patch",
+  "files": {
+    "ggml/src/ggml-cpu/ple-row-cache-api.h": {
+      "before_sha256": "6ef24c3f5a66f93f5d5379dcf782b148a96f3994461d5247a2d7504865600dd0",
+      "after_sha256": "d065ad8f5f02bfa35f805295a902962c68fb99160b56fef8352991c2a390b0cc",
+      "source": "copied from verified 64-row batch API"
+    },
+    "ggml/src/ggml-cpu/ple-row-cache.h": {
+      "before_sha256": "5decc25e36a3a30389d8c79b393f6255c8a888bbf74675b12bdbd8431d25c1bc",
+      "after_sha256": "5090f86fb23ff20a52facf0863ebbeda65a11db9860c0ab742a121693d2375bc",
+      "source": "restored real GET_ROWS gate, dispatch and stats path"
+    },
+    "ggml/src/ggml-cpu/ple-row-cache-api.cpp": {
+      "before_sha256": "a47f33071edd767611b3b0cb406784d17631f21d9a5c2d246af22531771cebdc",
+      "after_sha256": "a47f33071edd767611b3b0cb406784d17631f21d9a5c2d246af22531771cebdc",
+      "source": "unchanged out-of-line cache registry"
+    }
+  },
+  "verified_prior_build": {
+    "build_run_id": "20261014T101113.159568Z",
+    "changed_cpu_objects": [
+      {"object": "ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o", "returncode": 0},
+      {"object": "ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ple-row-cache-api.cpp.o", "returncode": 0}
+    ],
+    "cuda_objects_affected": 0
+  },
+  "p1_test_build": {
+    "new_objects": [
+      "fixtures/P1-build/objects/ops.cpp.o",
+      "fixtures/P1-build/objects/ple-row-cache-api.cpp.o"
+    ],
+    "output": "fixtures/P1-build/runtime/libggml-cpu.so.0.25.1",
+    "scope": "relinked CPU DSO only using existing stable CPU objects; build-reuse objects and shared source tree left untouched"
+  }
+}

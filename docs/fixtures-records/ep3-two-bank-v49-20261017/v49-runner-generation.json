@@ -1,0 +1,68 @@
+{
+  "status": "GENERATED_HOST_ONLY_NOT_COMPILED",
+  "base_source": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v32-parent-walkfast-2bank2-20261016/dual-context-v24-shortctx.cpp",
+  "base_source_sha256": "25ae12fdfb76564f3d56e35c9f0e6f4f8332b17ba4d5a75506896e0f761d1538",
+  "source": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/ep3-two-bank-v49-20261017/dual-context-v49-ep3-two-bank.cpp",
+  "source_sha256": "eea315f1cee993210345ac54f2a5e9e61bc3d2a58aaa24170fa13aace57c402c",
+  "transformations": [
+    {
+      "label": "pin one async-copy recipe",
+      "expected_matches": 1
+    },
+    {
+      "label": "retain the two-lane per-bank shape",
+      "expected_matches": 1
+    },
+    {
+      "label": "pin target UBatch 1024",
+      "expected_matches": 1
+    },
+    {
+      "label": "retain draft UBatch 512",
+      "expected_matches": 1
+    },
+    {
+      "label": "pin D3 fixed-prefix and verify-row budget",
+      "expected_matches": 1
+    },
+    {
+      "label": "require ordinary non-hierarchical 3+3 topology",
+      "expected_matches": 1
+    },
+    {
+      "label": "require the V103 fast path and ordinary-Meta3 relay profile",
+      "expected_matches": 1
+    },
+    {
+      "label": "run one clean scenario family without a duplicate diagnostic pass",
+      "expected_matches": 1
+    },
+    {
+      "label": "assert two-bank aggregate KV geometry",
+      "expected_matches": 1
+    },
+    {
+      "label": "record the actual V49 topology, row budget, and V103 runtime identity",
+      "expected_matches": 1
+    },
+    {
+      "label": "label actual ordinary EP3 route and selected V103 decode kernel",
+      "expected_matches": 1
+    }
+  ],
+  "model_loads_per_process": 1,
+  "banks": 2,
+  "lanes_per_bank": 2,
+  "per_sequence_context": 16384,
+  "aggregate_target_kv_cells": 65536,
+  "target_ubatch": 1024,
+  "draft_ubatch": 512,
+  "mtp_depth": 3,
+  "verify_rows_per_bank": 8,
+  "topology": "ordinary-3plus3-ep3; hierarchy=0; nested=0",
+  "compile_performed": false,
+  "model_loaded": false,
+  "gpu_touched": false,
+  "remote_action": false,
+  "launch_authorized": false
+}

@@ -1,0 +1,84 @@
+DISPATCH_CONFIG mode=segmented entry=dispatch elements=2621440 payload_bytes=10485760 compact=1 relay_max=0 ring_min=204800 blocks=64 zero_rank=3 contexts=2
+COMM_READY context=0 cap_floats=2621440 small_cap_floats=51200 segment_cap_floats=436907 small_stage_mib=2.3438 segmented_stage_mib=20.0000 payload_mib=10.000
+HBM phase=after_context_0 rank=0 free_before_mib=15812.312 free_after_mib=15734.312 added_mib=78.000
+HBM phase=after_context_0 rank=1 free_before_mib=15811.875 free_after_mib=15733.938 added_mib=77.938
+HBM phase=after_context_0 rank=2 free_before_mib=15810.750 free_after_mib=15732.812 added_mib=77.938
+HBM phase=after_context_0 rank=3 free_before_mib=15810.938 free_after_mib=15733.000 added_mib=77.938
+HBM phase=after_context_0 rank=4 free_before_mib=15806.625 free_after_mib=15728.688 added_mib=77.938
+HBM phase=after_context_0 rank=5 free_before_mib=15807.750 free_after_mib=15729.812 added_mib=77.938
+COMM_READY context=1 cap_floats=2621440 small_cap_floats=51200 segment_cap_floats=436907 small_stage_mib=2.3438 segmented_stage_mib=20.0000 payload_mib=10.000
+HBM phase=after_context_1 rank=0 free_before_mib=15812.312 free_after_mib=15696.312 added_mib=116.000
+HBM phase=after_context_1 rank=1 free_before_mib=15811.875 free_after_mib=15695.938 added_mib=115.938
+HBM phase=after_context_1 rank=2 free_before_mib=15810.750 free_after_mib=15694.812 added_mib=115.938
+HBM phase=after_context_1 rank=3 free_before_mib=15810.938 free_after_mib=15695.000 added_mib=115.938
+HBM phase=after_context_1 rank=4 free_before_mib=15806.625 free_after_mib=15690.688 added_mib=115.938
+HBM phase=after_context_1 rank=5 free_before_mib=15807.750 free_after_mib=15691.812 added_mib=115.938
+GRAPH_READY mode=segmented context=0 ranks=6 actual_dispatcher=1 payload_bytes=10485760
+GRAPH_READY mode=segmented context=1 ranks=6 actual_dispatcher=1 payload_bytes=10485760
+INPUT_CHANGE mode=segmented entry=dispatch context=0 rank=0 changed=1
+INPUT_CHANGE mode=segmented entry=dispatch context=0 rank=1 changed=1
+INPUT_CHANGE mode=segmented entry=dispatch context=0 rank=2 changed=1
+INPUT_CHANGE mode=segmented entry=dispatch context=0 rank=3 changed=1
+INPUT_CHANGE mode=segmented entry=dispatch context=0 rank=4 changed=1
+INPUT_CHANGE mode=segmented entry=dispatch context=0 rank=5 changed=1
+PASS_OUTPUT mode=segmented entry=dispatch context=0 frame=A0 exact=1 canary=1 zero_rank=3 payload_bytes=10485760
+TIMING mode=segmented context=0 rep=0 frame=0 wall_ms=0.161 max_gpu_event_ms=5.402 gpu_event_ms=[5.402,5.381,5.363,5.346,5.333,5.365]
+PASS_OUTPUT mode=segmented entry=dispatch context=0 frame=B exact=1 canary=1 zero_rank=3 payload_bytes=10485760
+TIMING mode=segmented context=0 rep=1 frame=1 wall_ms=0.091 max_gpu_event_ms=4.875 gpu_event_ms=[4.875,4.866,4.857,4.850,4.843,4.832]
+PASS_OUTPUT mode=segmented entry=dispatch context=0 frame=A2 exact=1 canary=1 zero_rank=3 payload_bytes=10485760
+TIMING mode=segmented context=0 rep=2 frame=0 wall_ms=0.088 max_gpu_event_ms=5.340 gpu_event_ms=[5.340,5.331,5.324,5.316,5.309,5.298]
+PASS_ABA mode=segmented entry=dispatch context=0 frames=A0,B,A2 exact=1 zero_rank=3 payload_bytes=10485760
+PASS_NEGATIVE_ZERO mode=segmented entry=dispatch context=0 zero_rank=3 expected_bits=00000000 exact=1 canary=1 payload_bytes=10485760
+SUMMARY mode=segmented entry=dispatch payload_bytes=10485760 zero_rank=3 context=0 reps=3 avg_wall_ms=0.113 avg_max_gpu_event_ms=5.206
+INPUT_CHANGE mode=segmented entry=dispatch context=1 rank=0 changed=1
+INPUT_CHANGE mode=segmented entry=dispatch context=1 rank=1 changed=1
+INPUT_CHANGE mode=segmented entry=dispatch context=1 rank=2 changed=1
+INPUT_CHANGE mode=segmented entry=dispatch context=1 rank=3 changed=1
+INPUT_CHANGE mode=segmented entry=dispatch context=1 rank=4 changed=1
+INPUT_CHANGE mode=segmented entry=dispatch context=1 rank=5 changed=1
+PASS_OUTPUT mode=segmented entry=dispatch context=1 frame=A0 exact=1 canary=1 zero_rank=3 payload_bytes=10485760
+TIMING mode=segmented context=1 rep=0 frame=0 wall_ms=0.154 max_gpu_event_ms=5.341 gpu_event_ms=[5.341,5.327,5.314,5.300,5.292,5.327]
+PASS_OUTPUT mode=segmented entry=dispatch context=1 frame=B exact=1 canary=1 zero_rank=3 payload_bytes=10485760
+TIMING mode=segmented context=1 rep=1 frame=1 wall_ms=0.112 max_gpu_event_ms=6.127 gpu_event_ms=[6.099,6.089,6.127,6.119,6.112,6.102]
+PASS_OUTPUT mode=segmented entry=dispatch context=1 frame=A2 exact=1 canary=1 zero_rank=3 payload_bytes=10485760
+TIMING mode=segmented context=1 rep=2 frame=0 wall_ms=0.092 max_gpu_event_ms=5.410 gpu_event_ms=[5.410,5.401,5.393,5.382,5.376,5.368]
+PASS_ABA mode=segmented entry=dispatch context=1 frames=A0,B,A2 exact=1 zero_rank=3 payload_bytes=10485760
+PASS_NEGATIVE_ZERO mode=segmented entry=dispatch context=1 zero_rank=3 expected_bits=00000000 exact=1 canary=1 payload_bytes=10485760
+SUMMARY mode=segmented entry=dispatch payload_bytes=10485760 zero_rank=3 context=1 reps=3 avg_wall_ms=0.119 avg_max_gpu_event_ms=5.626
+HBM phase=after_graphs rank=0 free_before_mib=15812.312 free_after_mib=15696.500 added_mib=115.812
+HBM phase=after_graphs rank=1 free_before_mib=15811.875 free_after_mib=15695.938 added_mib=115.938
+HBM phase=after_graphs rank=2 free_before_mib=15810.750 free_after_mib=15694.812 added_mib=115.938
+HBM phase=after_graphs rank=3 free_before_mib=15810.938 free_after_mib=15695.000 added_mib=115.938
+HBM phase=after_graphs rank=4 free_before_mib=15806.625 free_after_mib=15690.688 added_mib=115.938
+HBM phase=after_graphs rank=5 free_before_mib=15807.750 free_after_mib=15691.812 added_mib=115.938
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+P2P compact staging selected ranks=6 max_tensor=10.00 MiB small_arena=2.34 MiB segmented_arena=20.00 MiB per_rank old_arena=120.00 MiB
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+P2P compact staging selected ranks=6 max_tensor=10.00 MiB small_arena=2.34 MiB segmented_arena=20.00 MiB per_rank old_arena=120.00 MiB
+p2p-ar-path entry=dispatch device=0 rank=0 ranks=6 bytes=10485760 algorithm=compact_segmented blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 0 allreduce_0 n=2621440 zero=0 kind=2 stream=0x100156462c0
+p2p-ar-path entry=dispatch device=1 rank=1 ranks=6 bytes=10485760 algorithm=compact_segmented blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 1 allreduce_0 n=2621440 zero=0 kind=2 stream=0x100160df950
+p2p-ar-path entry=dispatch device=2 rank=2 ranks=6 bytes=10485760 algorithm=compact_segmented blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 2 allreduce_0 n=2621440 zero=0 kind=2 stream=0x100160e5360
+p2p-ar-path entry=dispatch device=3 rank=3 ranks=6 bytes=10485760 algorithm=compact_segmented blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 3 allreduce_0 n=2621440 zero=1 kind=2 stream=0x100160eae10
+p2p-ar-path entry=dispatch device=4 rank=4 ranks=6 bytes=10485760 algorithm=compact_segmented blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 4 allreduce_0 n=2621440 zero=0 kind=2 stream=0x100160f08c0
+p2p-ar-path entry=dispatch device=5 rank=5 ranks=6 bytes=10485760 algorithm=compact_segmented blocks=64 rank-order-exact=1 selected=1
+p2p allreduce launch: rank 5 allreduce_0 n=2621440 zero=0 kind=2 stream=0x100160f6370
+p2p allreduce launch: rank 0 allreduce_0 n=2621440 zero=0 kind=2 stream=0x100160fbe20
+p2p allreduce launch: rank 1 allreduce_0 n=2621440 zero=0 kind=2 stream=0x100160fe210
+p2p allreduce launch: rank 2 allreduce_0 n=2621440 zero=0 kind=2 stream=0x10016100600
+p2p allreduce launch: rank 3 allreduce_0 n=2621440 zero=1 kind=2 stream=0x100161029f0
+p2p allreduce launch: rank 4 allreduce_0 n=2621440 zero=0 kind=2 stream=0x10016104de0
+p2p allreduce launch: rank 5 allreduce_0 n=2621440 zero=0 kind=2 stream=0x100161071d0

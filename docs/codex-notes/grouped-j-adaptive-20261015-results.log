@@ -1,0 +1,23 @@
+DEVICE name=Tesla V100-SXM2-16GB cc=700 experts=512 total_tokens=10240 skew=top16x128,next48x64,next112x24,next160x12,next160x3,last16x2 cold_experts=448 cold_tokens=5120 hot_experts=64 hot_tokens=5120 threshold=32
+CORRECTNESS type=IQ2_XXS N=192 K=2560 baseline=J64 adaptive=coldJ32_hotJ64 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight N=192 K=2560 route=zipf_like experts=512 assignments=10240 threshold=32 baseline=J64 nodes=1 avg_us=1479.6202 adaptive=coldJ32_hotJ64 nodes=2 avg_us=966.0587 speedup=1.5316
+CASE_DONE type=IQ2_XXS raw_sample_rows=16 repeated_to_experts=512 synthetic_route=1 random_fp32_scale_mantissas=1
+CORRECTNESS type=IQ2_XS N=224 K=2560 baseline=J64 adaptive=coldJ32_hotJ64 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight N=224 K=2560 route=zipf_like experts=512 assignments=10240 threshold=32 baseline=J64 nodes=1 avg_us=1733.4357 adaptive=coldJ32_hotJ64 nodes=2 avg_us=1048.7040 speedup=1.6529
+CASE_DONE type=IQ2_XS raw_sample_rows=16 repeated_to_experts=512 synthetic_route=1 random_fp32_scale_mantissas=1
+CORRECTNESS type=IQ2_S N=192 K=2560 baseline=J64 adaptive=coldJ32_hotJ64 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF type=IQ2_S tensor=blk.12.ffn_gate_exps.weight N=192 K=2560 route=zipf_like experts=512 assignments=10240 threshold=32 baseline=J64 nodes=1 avg_us=1744.7765 adaptive=coldJ32_hotJ64 nodes=2 avg_us=1053.0389 speedup=1.6569
+CASE_DONE type=IQ2_S raw_sample_rows=16 repeated_to_experts=512 synthetic_route=1 random_fp32_scale_mantissas=1
+CORRECTNESS type=IQ3_XXS N=224 K=2560 baseline=J64 adaptive=coldJ32_hotJ64 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight N=224 K=2560 route=zipf_like experts=512 assignments=10240 threshold=32 baseline=J64 nodes=1 avg_us=1298.2955 adaptive=coldJ32_hotJ64 nodes=2 avg_us=954.6752 speedup=1.3599
+CASE_DONE type=IQ3_XXS raw_sample_rows=16 repeated_to_experts=512 synthetic_route=1 random_fp32_scale_mantissas=1
+CORRECTNESS type=IQ3_S N=192 K=2560 baseline=J64 adaptive=coldJ32_hotJ64 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF type=IQ3_S tensor=blk.8.ffn_gate_exps.weight N=192 K=2560 route=zipf_like experts=512 assignments=10240 threshold=32 baseline=J64 nodes=1 avg_us=1357.8922 adaptive=coldJ32_hotJ64 nodes=2 avg_us=985.1477 speedup=1.3784
+CASE_DONE type=IQ3_S raw_sample_rows=16 repeated_to_experts=512 synthetic_route=1 random_fp32_scale_mantissas=1
+CORRECTNESS type=IQ4_NL N=768 K=640 baseline=J64 adaptive=coldJ32_hotJ64 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF type=IQ4_NL tensor=blk.0.ffn_down_exps.weight N=768 K=640 route=zipf_like experts=512 assignments=10240 threshold=32 baseline=J64 nodes=1 avg_us=1123.3280 adaptive=coldJ32_hotJ64 nodes=2 avg_us=824.6955 speedup=1.3621
+CASE_DONE type=IQ4_NL raw_sample_rows=16 repeated_to_experts=512 synthetic_route=1 random_fp32_scale_mantissas=1
+CORRECTNESS type=Q2_0 N=768 K=640 baseline=J64 adaptive=coldJ32_hotJ64 exact=1 bitdiff=0 max_abs=0 nonfinite=0 first_diff=none
+PERF type=Q2_0 tensor=blk.1.ffn_down_exps.weight N=768 K=640 route=zipf_like experts=512 assignments=10240 threshold=32 baseline=J64 nodes=1 avg_us=1325.0304 adaptive=coldJ32_hotJ64 nodes=2 avg_us=801.0155 speedup=1.6542
+CASE_DONE type=Q2_0 raw_sample_rows=16 repeated_to_experts=512 synthetic_route=1 random_fp32_scale_mantissas=1
+SUMMARY cases=7 failed_exact_comparisons=0 route=synthetic_zipf_like real_weights=packed_rows_only full_model=0

@@ -1,0 +1,23 @@
+{
+  "runtime_build_id": "20261017T213747.611128Z",
+  "report_sha256": "103ee393981ef68fe33961d178aa5eedc7d212efea2788d03a6a96da8284264c",
+  "default_enabled": false,
+  "new_flag": "GGML_CUDA_GRAPH_SNAPSHOT_CROSS_UID=1",
+  "changes": [
+    "samecontext+raw_key bounded8memo candidates",
+    "full live descriptors+source/view closure checked",
+    "original graph UID rawfastpath/canonical compare/readiness preserved"
+  ],
+  "cpu_tests": {
+    "normal": "PASS cross-UID live match preserves full-builder signature\nPASS cross-UID mode still checks raw key and node identities\nPASS multi-slot A/B/A, UID-version candidates, and context isolation\nPASS cross-UID mode rejects all descriptor/source/view/extra mutations\nPASS new graph-parent descendant rejected before read\nPASS new external-parent descendant rejected before read\nPASS entry capacity eviction and context drop release\nPASS oversized snapshot does not evict a valid slot\nRESULT passed=8 failed=0 CPU_only=1 GPU_touched=0 model_loaded=0\n",
+    "asan_ubsan": "PASS cross-UID live match preserves full-builder signature\nPASS cross-UID mode still checks raw key and node identities\nPASS multi-slot A/B/A, UID-version candidates, and context isolation\nPASS cross-UID mode rejects all descriptor/source/view/extra mutations\nPASS new graph-parent descendant rejected before read\nPASS new external-parent descendant rejected before read\nPASS entry capacity eviction and context drop release\nPASS oversized snapshot does not evict a valid slot\nRESULT passed=8 failed=0 CPU_only=1 GPU_touched=0 model_loaded=0\n",
+    "model_loaded": false,
+    "gpu_touched": false
+  },
+  "source_sha256": {
+    "fixtures/snapshot-cross-uid-v352-20261018/test-cross-uid.cpp": "030761fcd9dc8eb771e4b17f742897714830ab522682a0e74fc09807001a166f",
+    "src/ggml/src/ggml-cuda/ggml-cuda.cu": "cecb639ccd56be159fb9c2fdb6d61b85de080f5faf11ce1816e94fe300cc2e47",
+    "src/ggml/src/ggml-cuda/graph-structural-snapshot-cache.h": "3e935ed506e07b2a1cdd3addb742079931258681f08ebb17c3a49313d12a7abd"
+  },
+  "full_model_status": "V353 native1699/64Kperformance running; no performance win claimed"
+}

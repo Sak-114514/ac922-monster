@@ -1,0 +1,45 @@
+{
+  "argv": [
+    "/usr/bin/c++",
+    "-DGGML_BACKEND_SHARED",
+    "-DGGML_SHARED",
+    "-DGGML_USE_CPU",
+    "-DGGML_USE_CUDA",
+    "-DLLAMA_SHARED",
+    "-Dllama_common_EXPORTS",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/common/.",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/vendor/nlohmann/..",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/vendor/sheredom/..",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/../include",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/../include",
+    "-O3",
+    "-DNDEBUG",
+    "-fPIC",
+    "-Wmissing-declarations",
+    "-Wmissing-noreturn",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Wcast-qual",
+    "-Wno-unused-function",
+    "-Wno-array-bounds",
+    "-Wextra-semi",
+    "-o",
+    "CMakeFiles/llama-common.dir/speculative.cpp.o",
+    "-c",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/src/common/speculative.cpp"
+  ],
+  "cwd": "/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/common",
+  "display": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -DGGML_USE_CUDA -DLLAMA_SHARED -Dllama_common_EXPORTS -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/common/. -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/vendor/nlohmann/.. -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/vendor/sheredom/.. -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/src/../include -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/../include -O3 -DNDEBUG -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama-common.dir/speculative.cpp.o -c /home/debian/ac922-monster/experiments/standard-opt-20261014/src/common/speculative.cpp",
+  "error": null,
+  "error_repr": null,
+  "error_type": null,
+  "object": "common/CMakeFiles/llama-common.dir/speculative.cpp.o",
+  "returncode": 0,
+  "traceback": null
+}
+
+--- combined stdout/stderr ---
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/common/speculative.cpp:4063:17: warning: no previous declaration for ‘bool common_mtp_process_from_target_private(common_speculative*, llama_context*, const llama_batch*)’ [-Wmissing-declarations]
+ 4063 | extern "C" bool common_mtp_process_from_target_private(
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

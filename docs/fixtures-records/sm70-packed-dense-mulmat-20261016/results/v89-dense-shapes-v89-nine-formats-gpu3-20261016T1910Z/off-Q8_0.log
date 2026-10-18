@@ -1,0 +1,54 @@
+RUNTIME_MAP 7fffae170000-7fffbbcb0000 r-xp 00000000 08:04 33496339                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v89/lib/libggml-cuda.so.0
+RUNTIME_MAP 7fffbbcb0000-7fffbbcc0000 r--p 0db30000 08:04 33496339                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v89/lib/libggml-cuda.so.0
+RUNTIME_MAP 7fffbbcc0000-7fffbbcd0000 rw-p 0db40000 08:04 33496339                   /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v89/lib/libggml-cuda.so.0
+FIXTURE_START mode=off device=CUDA0 Tesla V100-SXM2-16GB layout=2d ordinary_quantized_mul_mat ep_ids=none model_load=none
+DENSE_FIXTURE_START mode=off format=Q8_0 type=q8_0 K=5120 N=512 weight_bytes=2785280 layout=2d ordinary_mul_mat source=original_gguf_tensor_rows_as_matrix semantic_claim=none shapes=32,24,48,64
+SHAPE_RESULT mode=off format=Q8_0 tokens=32 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=off format=Q8_0 tokens=32 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=off format=Q8_0 tokens=32 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=off format=Q8_0 tokens=32 A_vs_B=changed A2_exact=1
+SHAPE_RESULT mode=off format=Q8_0 tokens=24 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=off format=Q8_0 tokens=24 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=off format=Q8_0 tokens=24 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=off format=Q8_0 tokens=24 A_vs_B=changed A2_exact=1
+SHAPE_RESULT mode=off format=Q8_0 tokens=48 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=off format=Q8_0 tokens=48 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=off format=Q8_0 tokens=48 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=off format=Q8_0 tokens=48 A_vs_B=changed A2_exact=1
+SHAPE_RESULT mode=off format=Q8_0 tokens=64 frame=A0 readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=off format=Q8_0 tokens=64 frame=B readback=exact canary=PASS finite=PASS
+SHAPE_RESULT mode=off format=Q8_0 tokens=64 frame=A2 readback=exact canary=PASS finite=PASS
+INPUT_CHANGE mode=off format=Q8_0 tokens=64 A_vs_B=changed A2_exact=1
+PASS_DTYPE mode=off format=Q8_0 shapes=4 layout=2d weights_unchanged=1 canary=PASS
+PASS_DENSE_MULMAT_FIXTURE mode=off dtype=Q8_0 source=raw_bytes output=F32 exact_gates=PASS
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA graph path config ctx=0x10008e91030 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=0 structural_active=0 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x10008e91030 device=0 uid=2 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+sm70 decode linear chunks active: dense columns=32 chunk=4 type=q8_0
+[mp-dbg] mul_mat hook: type=8 ne11=4 reg=0 ptr=0x10037400000
+[mp-dbg] mul_mat hook: type=8 ne11=4 reg=0 ptr=0x10037400000
+[mp-dbg] mul_mat hook: type=8 ne11=4 reg=0 ptr=0x10037400000
+[mp-dbg] mul_mat hook: type=8 ne11=4 reg=0 ptr=0x10037400000
+[mp-dbg] mul_mat hook: type=8 ne11=4 reg=0 ptr=0x10037400000
+[mp-dbg] mul_mat hook: type=8 ne11=4 reg=0 ptr=0x10037400000
+CUDA Graph id 2 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10008e91030 device=0 uid=2 nodes=1 mode=capture count=1
+CUDA Graph id 2 reused
+CUDA graph path active ctx=0x10008e91030 device=0 uid=2 nodes=1 mode=replay count=1
+CUDA graph fallback ctx=0x10008e91030 device=0 uid=4 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+sm70 decode linear chunks active: dense columns=24 chunk=4 type=q8_0
+CUDA Graph id 4 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10008e91030 device=0 uid=4 nodes=1 mode=capture count=2
+CUDA Graph id 4 reused
+CUDA graph path active ctx=0x10008e91030 device=0 uid=4 nodes=1 mode=replay count=2
+sm70 decode linear chunks active: dense columns=48 chunk=4 type=q8_0
+CUDA Graph id 6 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 6 reused
+sm70 decode linear chunks active: dense columns=64 chunk=4 type=q8_0
+CUDA Graph id 8 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 8 reused

@@ -1,0 +1,29 @@
+CASE_BEGIN mode=ordered payload_bytes=41943040 entry=dispatch zero_rank=-1
+command_binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-40m-20261016/relay6-ordered-40m-v94-host1 timeout=15s
+CASE_END mode=ordered payload_bytes=41943040 entry=dispatch zero_rank=-1 status=0 safety=0
+PASS case mode=ordered payload_bytes=41943040 entry=dispatch zero_rank=-1 kind=4 algorithm=relay6_ordered ranks=0..5 contexts=1 A/B/A=exact negative_zero_bits=0x80000000
+CASE_BEGIN mode=ordered payload_bytes=41943040 entry=dispatch zero_rank=0
+command_binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-40m-20261016/relay6-ordered-40m-v94-host1 timeout=15s
+CASE_END mode=ordered payload_bytes=41943040 entry=dispatch zero_rank=0 status=0 safety=0
+PASS case mode=ordered payload_bytes=41943040 entry=dispatch zero_rank=0 kind=4 algorithm=relay6_ordered ranks=0..5 contexts=1 A/B/A=exact negative_zero_bits=0x00000000
+CASE_BEGIN mode=ordered payload_bytes=41943040 entry=dispatch zero_rank=3
+command_binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-40m-20261016/relay6-ordered-40m-v94-host1 timeout=15s
+CASE_END mode=ordered payload_bytes=41943040 entry=dispatch zero_rank=3 status=0 safety=0
+PASS case mode=ordered payload_bytes=41943040 entry=dispatch zero_rank=3 kind=4 algorithm=relay6_ordered ranks=0..5 contexts=1 A/B/A=exact negative_zero_bits=0x00000000
+CASE_BEGIN mode=ordered payload_bytes=41943040 entry=graph_append zero_rank=-1
+command_binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-40m-20261016/relay6-ordered-40m-v94-host1 timeout=15s
+CASE_END mode=ordered payload_bytes=41943040 entry=graph_append zero_rank=-1 status=0 safety=0
+PASS case mode=ordered payload_bytes=41943040 entry=graph_append zero_rank=-1 kind=4 algorithm=relay6_ordered ranks=0..5 contexts=1 A/B/A=exact negative_zero_bits=0x80000000
+CASE_BEGIN mode=ordered payload_bytes=41943040 entry=graph_append zero_rank=0
+command_binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-40m-20261016/relay6-ordered-40m-v94-host1 timeout=15s
+CASE_END mode=ordered payload_bytes=41943040 entry=graph_append zero_rank=0 status=0 safety=0
+PASS case mode=ordered payload_bytes=41943040 entry=graph_append zero_rank=0 kind=4 algorithm=relay6_ordered ranks=0..5 contexts=1 A/B/A=exact negative_zero_bits=0x00000000
+CASE_BEGIN mode=ordered payload_bytes=41943040 entry=graph_append zero_rank=3
+command_binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-40m-20261016/relay6-ordered-40m-v94-host1 timeout=15s
+CASE_END mode=ordered payload_bytes=41943040 entry=graph_append zero_rank=3 status=0 safety=0
+PASS case mode=ordered payload_bytes=41943040 entry=graph_append zero_rank=3 kind=4 algorithm=relay6_ordered ranks=0..5 contexts=1 A/B/A=exact negative_zero_bits=0x00000000
+CASE_BEGIN mode=relay payload_bytes=41943040 entry=dispatch zero_rank=3
+command_binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-40m-20261016/relay6-ordered-40m-v94-host1 timeout=12s
+CASE_END mode=relay payload_bytes=41943040 entry=dispatch zero_rank=3 status=0 safety=0
+PASS case mode=relay payload_bytes=41943040 entry=dispatch zero_rank=3 kind=3 algorithm=relay6 ranks=0..5 contexts=1 A/B/A=exact negative_zero_bits=0x00000000
+PASS V94 40 MiB ordered Relay6 cases=7; one communicator; no model load; results=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-40m-20261016/results/v94-ordered-40m-v94-40m-host1-20261016T122500Z

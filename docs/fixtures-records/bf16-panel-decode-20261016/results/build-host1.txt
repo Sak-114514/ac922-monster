@@ -1,0 +1,33 @@
+header=/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-cuda/kernel_sm70_bf16.cuh
+header_sha256=cc8edc374923244b47313b675d2c9870378fc70fb29b14725841668bd02185c5
+source=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/bf16-panel-decode-20261016/bf16-panel-decode-fixture.cu
+source_sha256=53426f6119d05a93f32f7c39907c61e293aac9a69a721012b04e404cba986e3d
+tag=host1
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/bf16-panel-decode-20261016/results/bf16-panel-decode-host1
+CUDA_VISIBLE_DEVICES=
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2024 NVIDIA Corporation
+Built on Thu_Mar_28_02:21:02_PDT_2024
+Cuda compilation tools, release 12.4, V12.4.131
+Build cuda_12.4.r12.4/compiler.34097967_0
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/bf16-panel-decode-20261016/bf16-panel-decode-fixture.cu(57): warning #177-D: function "<unnamed>::stage" was declared but never referenced
+  void stage(const char *message) {
+       ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+binary_sha256=3f6c67a7dcc0434d0bcdc1a07e78ec27d792f91f4cecc43feb354f4dcd26013a
+depfile_sha256=1511e6ff21ff4abb8f0514c04e56d2c54c39315ef24c1e78af7fe887a567e87e
+dependency_header_sha256=cc8edc374923244b47313b675d2c9870378fc70fb29b14725841668bd02185c5
+ldd_closure=
+	linux-vdso64.so.1 (0x00007fff9cb20000)
+	libcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fff9c920000)
+	libstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fff9c5f0000)
+	libgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fff9c5b0000)
+	libc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fff9c350000)
+	/lib64/ld64.so.2 (0x00007fff9cb40000)
+	libdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff9c320000)
+	libpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff9c2f0000)
+	librt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff9c2c0000)
+	libm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fff9c190000)
+host fixture compile complete; GPU not launched

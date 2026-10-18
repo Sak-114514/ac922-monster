@@ -1,0 +1,145 @@
+ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+meta-cpu-async-copy context=0x1000cd90610 instance=1 requested=1 enabled=1 reason=per_context_opt_in max_copy_bytes=1048576
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+meta-cpu-async-copy context=0x1000e064f80 instance=2 requested=1 enabled=1 reason=per_context_opt_in max_copy_bytes=1048576
+DEVICE member=0 name=CUDA0 pci=0035:03:00.0
+DEVICE member=1 name=CUDA1 pci=0035:04:00.0
+DEVICE member=2 name=CUDA2 pci=0035:05:00.0
+ROUTE_EXPECTATION V59 per_context_opt_in=1 max_copy_bytes=1048576 Meta3_event_query_trace=required
+SOURCE_PLAN owner=A index=0 frame=0 source=A_temporary_cpu_0_frame_0 usage=2 host=1 contiguous=1 bytes=1048576
+SOURCE_PLAN owner=A index=1 frame=0 source=A_temporary_cpu_1_frame_0 usage=2 host=1 contiguous=1 bytes=1048576
+SOURCE_PLAN owner=A index=2 frame=0 source=A_temporary_cpu_2_frame_0 usage=2 host=1 contiguous=1 bytes=1048576
+SOURCE_PLAN owner=A index=3 frame=0 source=A_temporary_cpu_3_frame_0 usage=2 host=1 contiguous=1 bytes=1048576
+SOURCE_PLAN owner=A index=4 frame=0 source=A_temporary_cpu_4_frame_0 usage=2 host=1 contiguous=1 bytes=1048576
+PHASE_BEGIN owner=A label=A-before-B
+META_EVENT_NEW_TRACE device=0x1000cd903b8 event=0x1000a89f870
+META_EVENT_RECORD_TRACE backend=0x1000b18aa00 event=0x1000a89f870
+meta CPU->Meta async copy active context=0x1000cd90610 source=A_temporary_cpu_0_frame_0 src_op=NONE flags=0 bytes=1048576 slot=0
+META_EVENT_QUERY_TRACE device=0x1000cd903b8 event=0x1000a89f870 status=1
+META_EVENT_RECORD_TRACE backend=0x1000b18aa00 event=0x1000a89f870
+META_EVENT_QUERY_TRACE device=0x1000cd903b8 event=0x1000a89f870 status=1
+META_EVENT_RECORD_TRACE backend=0x1000b18aa00 event=0x1000a89f870
+META_EVENT_QUERY_TRACE device=0x1000cd903b8 event=0x1000a89f870 status=1
+META_EVENT_RECORD_TRACE backend=0x1000b18aa00 event=0x1000a89f870
+META_EVENT_QUERY_TRACE device=0x1000cd903b8 event=0x1000a89f870 status=1
+META_EVENT_RECORD_TRACE backend=0x1000b18aa00 event=0x1000a89f870
+SOURCE_RELEASE owner=A index=0 frame=0 mutated=1 freed=1
+SOURCE_RELEASE owner=A index=1 frame=0 mutated=1 freed=1
+SOURCE_RELEASE owner=A index=2 frame=0 mutated=1 freed=1
+SOURCE_RELEASE owner=A index=3 frame=0 mutated=1 freed=1
+SOURCE_RELEASE owner=A index=4 frame=0 mutated=1 freed=1
+READBACK_BARRIER owner=A phase=A-before-B backend_synchronize=1 copies=5 bytes=5242880
+DESTINATION_READBACK owner=A phase=A-before-B index=0 rank=0 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-before-B index=0 rank=1 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-before-B index=0 rank=2 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-before-B index=1 rank=0 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-before-B index=1 rank=1 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-before-B index=1 rank=2 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-before-B index=2 rank=0 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-before-B index=2 rank=1 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-before-B index=2 rank=2 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-before-B index=3 rank=0 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-before-B index=3 rank=1 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-before-B index=3 rank=2 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-before-B index=4 rank=0 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-before-B index=4 rank=1 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-before-B index=4 rank=2 exact=1 canary=1 bytes=1048576
+PHASE_END owner=A label=A-before-B
+SOURCE_PLAN owner=B index=0 frame=1 source=B_temporary_cpu_0_frame_1 usage=2 host=1 contiguous=1 bytes=1048576
+SOURCE_PLAN owner=B index=1 frame=1 source=B_temporary_cpu_1_frame_1 usage=2 host=1 contiguous=1 bytes=1048576
+SOURCE_PLAN owner=B index=2 frame=1 source=B_temporary_cpu_2_frame_1 usage=2 host=1 contiguous=1 bytes=1048576
+SOURCE_PLAN owner=B index=3 frame=1 source=B_temporary_cpu_3_frame_1 usage=2 host=1 contiguous=1 bytes=1048576
+SOURCE_PLAN owner=B index=4 frame=1 source=B_temporary_cpu_4_frame_1 usage=2 host=1 contiguous=1 bytes=1048576
+PHASE_BEGIN owner=B label=B-pending-teardown
+META_EVENT_NEW_TRACE device=0x1000cd903b8 event=0x1000a8da4f0
+META_EVENT_RECORD_TRACE backend=0x1000e3d2000 event=0x1000a8da4f0
+meta CPU->Meta async copy active context=0x1000e064f80 source=B_temporary_cpu_0_frame_1 src_op=NONE flags=0 bytes=1048576 slot=0
+META_EVENT_QUERY_TRACE device=0x1000cd903b8 event=0x1000a8da4f0 status=1
+META_EVENT_RECORD_TRACE backend=0x1000e3d2000 event=0x1000a8da4f0
+META_EVENT_QUERY_TRACE device=0x1000cd903b8 event=0x1000a8da4f0 status=1
+META_EVENT_RECORD_TRACE backend=0x1000e3d2000 event=0x1000a8da4f0
+META_EVENT_QUERY_TRACE device=0x1000cd903b8 event=0x1000a8da4f0 status=1
+META_EVENT_RECORD_TRACE backend=0x1000e3d2000 event=0x1000a8da4f0
+META_EVENT_QUERY_TRACE device=0x1000cd903b8 event=0x1000a8da4f0 status=1
+META_EVENT_RECORD_TRACE backend=0x1000e3d2000 event=0x1000a8da4f0
+SOURCE_RELEASE owner=B index=0 frame=1 mutated=1 freed=1
+SOURCE_RELEASE owner=B index=1 frame=1 mutated=1 freed=1
+SOURCE_RELEASE owner=B index=2 frame=1 mutated=1 freed=1
+SOURCE_RELEASE owner=B index=3 frame=1 mutated=1 freed=1
+SOURCE_RELEASE owner=B index=4 frame=1 mutated=1 freed=1
+READBACK_BARRIER owner=B phase=B-pending-teardown backend_synchronize=1 copies=5 bytes=5242880
+DESTINATION_READBACK owner=B phase=B-pending-teardown index=0 rank=0 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=B phase=B-pending-teardown index=0 rank=1 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=B phase=B-pending-teardown index=0 rank=2 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=B phase=B-pending-teardown index=1 rank=0 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=B phase=B-pending-teardown index=1 rank=1 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=B phase=B-pending-teardown index=1 rank=2 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=B phase=B-pending-teardown index=2 rank=0 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=B phase=B-pending-teardown index=2 rank=1 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=B phase=B-pending-teardown index=2 rank=2 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=B phase=B-pending-teardown index=3 rank=0 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=B phase=B-pending-teardown index=3 rank=1 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=B phase=B-pending-teardown index=3 rank=2 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=B phase=B-pending-teardown index=4 rank=0 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=B phase=B-pending-teardown index=4 rank=1 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=B phase=B-pending-teardown index=4 rank=2 exact=1 canary=1 bytes=1048576
+PHASE_END owner=B label=B-pending-teardown
+SOURCE_PLAN owner=A index=0 frame=2 source=A_temporary_cpu_0_frame_2 usage=2 host=1 contiguous=1 bytes=1048576
+SOURCE_PLAN owner=A index=1 frame=2 source=A_temporary_cpu_1_frame_2 usage=2 host=1 contiguous=1 bytes=1048576
+SOURCE_PLAN owner=A index=2 frame=2 source=A_temporary_cpu_2_frame_2 usage=2 host=1 contiguous=1 bytes=1048576
+SOURCE_PLAN owner=A index=3 frame=2 source=A_temporary_cpu_3_frame_2 usage=2 host=1 contiguous=1 bytes=1048576
+SOURCE_PLAN owner=A index=4 frame=2 source=A_temporary_cpu_4_frame_2 usage=2 host=1 contiguous=1 bytes=1048576
+PHASE_BEGIN owner=A label=A-after-B
+META_EVENT_QUERY_TRACE device=0x1000cd903b8 event=0x1000a89f870 status=1
+META_EVENT_RECORD_TRACE backend=0x1000b18aa00 event=0x1000a89f870
+META_EVENT_QUERY_TRACE device=0x1000cd903b8 event=0x1000a89f870 status=1
+META_EVENT_RECORD_TRACE backend=0x1000b18aa00 event=0x1000a89f870
+META_EVENT_QUERY_TRACE device=0x1000cd903b8 event=0x1000a89f870 status=1
+META_EVENT_RECORD_TRACE backend=0x1000b18aa00 event=0x1000a89f870
+META_EVENT_QUERY_TRACE device=0x1000cd903b8 event=0x1000a89f870 status=1
+META_EVENT_RECORD_TRACE backend=0x1000b18aa00 event=0x1000a89f870
+META_EVENT_QUERY_TRACE device=0x1000cd903b8 event=0x1000a89f870 status=1
+META_EVENT_RECORD_TRACE backend=0x1000b18aa00 event=0x1000a89f870
+SOURCE_RELEASE owner=A index=0 frame=2 mutated=1 freed=1
+SOURCE_RELEASE owner=A index=1 frame=2 mutated=1 freed=1
+SOURCE_RELEASE owner=A index=2 frame=2 mutated=1 freed=1
+SOURCE_RELEASE owner=A index=3 frame=2 mutated=1 freed=1
+SOURCE_RELEASE owner=A index=4 frame=2 mutated=1 freed=1
+READBACK_BARRIER owner=A phase=A-after-B backend_synchronize=1 copies=5 bytes=5242880
+DESTINATION_READBACK owner=A phase=A-after-B index=0 rank=0 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-after-B index=0 rank=1 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-after-B index=0 rank=2 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-after-B index=1 rank=0 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-after-B index=1 rank=1 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-after-B index=1 rank=2 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-after-B index=2 rank=0 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-after-B index=2 rank=1 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-after-B index=2 rank=2 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-after-B index=3 rank=0 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-after-B index=3 rank=1 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-after-B index=3 rank=2 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-after-B index=4 rank=0 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-after-B index=4 rank=1 exact=1 canary=1 bytes=1048576
+DESTINATION_READBACK owner=A phase=A-after-B index=4 rank=2 exact=1 canary=1 bytes=1048576
+PHASE_END owner=A label=A-after-B
+meta-cpu-async-copy fallback context=0x1000cd90610 reason=copy_policy_limit bytes=2097152 max_copy_bytes=1048576 source=A_temporary_cpu_5_frame_3
+meta-cpu-async-copy summary context=0x1000e064f80 copies=5 bytes=5242880 slot_waits=1
+meta-cpu-async-copy summary context=0x1000cd90610 copies=10 bytes=10485760 slot_waits=1
+meta-cpu-async-copy fallback-summary context=0x1000cd90610 reason=copy_policy_limit count=1
+EVENT_QUERY_WRAPPER_SUMMARY meta_event_new=2 meta_event_record=15 meta_event_query=13
+SOURCE_PLAN owner=A index=5 frame=3 source=A_temporary_cpu_5_frame_3 usage=2 host=1 contiguous=1 bytes=2097152
+SOURCE_RELEASE owner=A index=5 frame=3 mutated=1 freed=1
+READBACK_BARRIER owner=A phase=two-mib-policy-fallback backend_synchronize=1 bytes=2097152
+DESTINATION_READBACK owner=A phase=two-mib-policy-fallback index=5 rank=0 exact=1 canary=1 bytes=2097152
+DESTINATION_READBACK owner=A phase=two-mib-policy-fallback index=5 rank=1 exact=1 canary=1 bytes=2097152
+DESTINATION_READBACK owner=A phase=two-mib-policy-fallback index=5 rank=2 exact=1 canary=1 bytes=2097152
+DESTROY source_backend=CPU before_meta_contexts=1
+PASS V59_CPU_TO_META_ASYNC_QUERY_REUSE owners=A/B/A small_bytes=1048576 small_copies_per_phase=5 large_bytes=2097152 policy_fallback=1 ranks=3 source_contexts_freed=1 readback_exact=1 canary=1

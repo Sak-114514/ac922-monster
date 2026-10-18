@@ -1,0 +1,109 @@
+{
+  "windows": [
+    [
+      206724592128,
+      206736842381
+    ],
+    [
+      206736961000,
+      206744807019
+    ]
+  ],
+  "target_wall_seconds": 20.096272,
+  "target_spans": 192,
+  "counts_by_gpu": {
+    "0": 32,
+    "1": 32,
+    "2": 32,
+    "3": 32,
+    "4": 32,
+    "5": 32
+  },
+  "stream_envelope_concurrency_fraction": {
+    "0": 0.025931924090199416,
+    "1": 0.4601111091649237,
+    "2": 0.10951449104590145,
+    "3": 0.061468316113555785,
+    "4": 0.07481437353156845,
+    "5": 0.1831732273528145,
+    "6": 0.08498655870103669
+  },
+  "average_active_stream_envelopes": 2.58858802269396,
+  "max_calibration_bracket_us": 24,
+  "per_gpu": {
+    "0": {
+      "median_ms": 300.196,
+      "sum_s": 9.78081
+    },
+    "1": {
+      "median_ms": 270.6645,
+      "sum_s": 8.686403
+    },
+    "2": {
+      "median_ms": 271.178,
+      "sum_s": 8.675323
+    },
+    "3": {
+      "median_ms": 267.543,
+      "sum_s": 8.553616
+    },
+    "4": {
+      "median_ms": 267.0005,
+      "sum_s": 8.534478
+    },
+    "5": {
+      "median_ms": 243.008,
+      "sum_s": 7.790339
+    }
+  },
+  "scope": "CUDA stream event envelopes, not SM/kernel busy.192 target spans, split windows exclude draft. Calibrated timestamps approximate.",
+  "chunks": [
+    {
+      "wall_s": 12.250253,
+      "spans": 96,
+      "mean_active_envelopes": 2.1179294827625195,
+      "histogram_fraction": {
+        "0": 0.02698442228091126,
+        "1": 0.5633273859731713,
+        "2": 0.12874370839524701,
+        "3": 0.05056858825691192,
+        "4": 0.058096024629042356,
+        "5": 0.12065440607634798,
+        "6": 0.05162546438836814
+      },
+      "sum_s_by_gpu": {
+        "0": 4.92197,
+        "1": 4.306937,
+        "2": 4.318489,
+        "3": 4.263832,
+        "4": 4.252691,
+        "5": 3.881253
+      },
+      "service_rate_only_upper_bound_tok_s_not_forecast": 6657.496896567838
+    },
+    {
+      "wall_s": 7.846019,
+      "spans": 96,
+      "mean_active_envelopes": 3.323443009760746,
+      "histogram_fraction": {
+        "0": 0.02428862331330067,
+        "1": 0.2989560693136226,
+        "2": 0.07949126811953935,
+        "3": 0.07848642732065778,
+        "4": 0.10091729321583341,
+        "5": 0.2807859629195392,
+        "6": 0.13707435579750699
+      },
+      "sum_s_by_gpu": {
+        "0": 4.85884,
+        "1": 4.379466,
+        "2": 4.356834,
+        "3": 4.289784,
+        "4": 4.281787,
+        "5": 3.909086
+      },
+      "service_rate_only_upper_bound_tok_s_not_forecast": 6743.996509454932
+    }
+  ],
+  "service_rate_bound_caveat": "Not a predicted request throughput: ignores fill/drain bubbles, two chunk drains, MTP work and memory dependencies."
+}

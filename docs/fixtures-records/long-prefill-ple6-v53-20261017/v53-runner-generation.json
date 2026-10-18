@@ -1,0 +1,31 @@
+{
+  "status": "GENERATED_HOST_ONLY_NOT_COMPILED",
+  "base_source": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-native-v50-20261017/dual-context-v50-long-prefill-native.cpp",
+  "base_source_sha256": "766a555bffb20631d7ce4d3020ca41d452ba05ec888c757ddf610793b2a7b965",
+  "source": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-ple6-v53-20261017/dual-context-v53-ple6.cpp",
+  "source_sha256": "8088c5598dc4df5fc147f9a7e8bcbff0707b8aeeada4cffc4b440b0259f06300",
+  "changes": [
+    {
+      "label": "enforce 6 GiB total PLE prefix / 2 GiB per GPU node",
+      "expected_matches": 1
+    },
+    {
+      "label": "log the selected total and per-node PLE capacities",
+      "expected_matches": 1
+    }
+  ],
+  "ple_gpu_gib_total": 6,
+  "ple_gpu_nodes": 3,
+  "ple_gpu_gib_per_node": 2,
+  "runner_fields": [
+    "ple_gpu_gib_total",
+    "ple_gpu_gib_per_node"
+  ],
+  "target_ubatch": 4096,
+  "draft_ubatch": 512,
+  "logical_prefill_batch": 32768,
+  "compile_performed": false,
+  "model_loaded": false,
+  "gpu_touched": false,
+  "remote_sync": false
+}

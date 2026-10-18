@@ -1,0 +1,45 @@
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77
+tag=v77-dispatch10m-diag
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-dispatcher-10m-20261016/relay6-dispatcher-10m-v77-dispatch10m-diag
+payload_bytes=10485760
+ec3a0108e4fe1f1f527a4b746f90852a3da5386bb226d86d2c8de3b7420ce2c9  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-dispatcher-10m-20261016/relay6-dispatcher-10m-v77-dispatch10m-diag
+UUIDs=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a
+limits temp<58C preexisting<=512MiB used<=512MiB/mode timeout=25s total<=60s
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 2 MiB, 39
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 2 MiB, 38
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 1 MiB, 39
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 2 MiB, 39
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 6 MiB, 39
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 7 MiB, 40
+RUN_MODE_BEGIN mode=segmented
+SIGDIAG_READY
+SIGDIAG_READY
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+P2P compact staging selected ranks=6 max_tensor=10.00 MiB small_arena=2.34 MiB segmented_arena=20.00 MiB per_rank old_arena=120.00 MiB
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+P2P compact staging selected ranks=6 max_tensor=10.00 MiB small_arena=2.34 MiB segmented_arena=20.00 MiB per_rank old_arena=120.00 MiB
+p2p allreduce launch: rank 0 allreduce_0 n=2621440 zero=0 kind=2 stream=0x1003ceee8f0
+p2p allreduce launch: rank 1 allreduce_0 n=2621440 zero=0 kind=2 stream=0x1003d5fa970
+p2p allreduce launch: rank 2 allreduce_0 n=2621440 zero=0 kind=2 stream=0x1003d600380
+p2p allreduce launch: rank 3 allreduce_0 n=2621440 zero=1 kind=2 stream=0x1003d605e30
+p2p allreduce launch: rank 4 allreduce_0 n=2621440 zero=0 kind=2 stream=0x1003d60b8e0
+p2p allreduce launch: rank 5 allreduce_0 n=2621440 zero=0 kind=2 stream=0x1003d611390
+p2p allreduce launch: rank 0 allreduce_0 n=2621440 zero=0 kind=2 stream=0x1003d616e40
+p2p allreduce launch: rank 1 allreduce_0 n=2621440 zero=0 kind=2 stream=0x1003d619230
+p2p allreduce launch: rank 2 allreduce_0 n=2621440 zero=0 kind=2 stream=0x1003d61b620
+p2p allreduce launch: rank 3 allreduce_0 n=2621440 zero=1 kind=2 stream=0x1003d61da10
+p2p allreduce launch: rank 4 allreduce_0 n=2621440 zero=0 kind=2 stream=0x1003d61fe00
+p2p allreduce launch: rank 5 allreduce_0 n=2621440 zero=0 kind=2 stream=0x1003d6221f0
+
+SIGDIAG_BEGIN
+signal=11 fault=0x860
+RUN_MODE_END mode=segmented status=139

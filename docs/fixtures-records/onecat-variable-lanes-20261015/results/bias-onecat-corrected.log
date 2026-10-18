@@ -1,0 +1,19 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+RUNTIME_GATE GGML_CUDA_FATTN_ONECAT=1 cuda_device_index=0 visible_gpu_count=1
+ggml_cuda_get_best_fattn_kernel: using opt-in Onecat Flash-V100 XQA decode path (QH=24 KVH=2 T=1 S=1 n_kv=2303)
+CASE name=t1_s1_bias0 t=1 streams=1 total_query_rows=1 nkv=2303 partial_tail=1 gathered=1 kv=q8_0/q8_0 mask=causal-triangular max_bias=0.0 prefix=2299 env=1 onecat_supported=1 expected_path=onecat alloc=4865728 buft=4865728
+CPU_ORACLE name=t1_s1_bias0 sampled_rows=4 max_abs=7.7158213e-05 atol=0.01 PASS
+OUTPUT name=t1_s1_bias0 elements=6144 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/onecat-variable-lanes-20261015/results/bias-onecat-corrected/t1_s1_bias0.f32
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+MASK_ORACLE name=t1_s1_bias0 mutated_future_keys=3 max_abs=0 exact=1 PASS
+MASK_BIAS_INPUT name=t1_s1_bias8 current=0 previous=-1 future=-inf PASS
+CASE name=t1_s1_bias8 t=1 streams=1 total_query_rows=1 nkv=2303 partial_tail=1 gathered=1 kv=q8_0/q8_0 mask=causal-triangular max_bias=8.0 prefix=2299 env=1 onecat_supported=0 expected_path=stock_fallback alloc=0 buft=4741120
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CPU_ORACLE name=t1_s1_bias8 sampled_rows=4 max_abs=0.0013146996 atol=0.01 PASS
+OUTPUT name=t1_s1_bias8 elements=6144 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/onecat-variable-lanes-20261015/results/bias-onecat-corrected/t1_s1_bias8.f32
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x10026f569f0 device=0 reason=exec_update_failed update_result=2 action=reinstantiate
+MASK_ORACLE name=t1_s1_bias8 mutated_future_keys=3 max_abs=0 exact=1 PASS
+KEY_BIAS_FALLBACK env=1 onecat_supported=0 stock_masked_fallback=1 PASS
+PASS fixture=onecat_variable_lanes suite=bias T=1,3,6,9,10,12 plus S=2/3 q8/q8 causal_mask partial_tail keybias ABA canary

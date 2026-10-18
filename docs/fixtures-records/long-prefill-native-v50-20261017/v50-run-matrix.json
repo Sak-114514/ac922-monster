@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "candidate": "V50 native-mask + 512 MiB upload pool + first-three-GPU PLE rebalance + 32K logical prefill batches",
+  "status": "HOST_PREPARED_V107_FREEZE_PENDING",
+  "host_prepared": true,
+  "engine_edits": 0,
+  "compile_performed": false,
+  "model_loaded": false,
+  "gpu_touched": false,
+  "remote_sync": false,
+  "launch_authorized": false,
+  "runtime_closure": {
+    "status": "PENDING_V107_FREEZE",
+    "report_remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V107-build.json",
+    "report_local_path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/notes/V107-build.json",
+    "build_id": null,
+    "report_sha256": null,
+    "runtime_dir": null,
+    "runtime_lib": null,
+    "root_fill_entry": "Run prepare_v50_profile.py with V50_BUILD_REPORT pointing at the frozen local V107 build report. Never fall back to V102/V103."
+  },
+  "topology": {
+    "island_split": "3,3",
+    "expert_parallel": 1,
+    "hierarchical_ep6": false,
+    "nested_meta": false,
+    "model_loads": 1,
+    "contexts_live_at_once": 1,
+    "context_families_sequential": [
+      "single32k",
+      "single64k"
+    ],
+    "deferred_four_flow_cases": true
+  },
+  "profile": {
+    "target_ubatch": 4096,
+    "draft_ubatch": 512,
+    "logical_prefill_batch": 32768,
+    "logical_prefill_chunk_plan": {
+      "single32k": [
+        32768
+      ],
+      "single64k": [
+        32768,
+        32768
+      ]
+    },
+    "logical_prefill_chunk_count": {
+      "single32k": 1,
+      "single64k": 2
+    },
+    "mtp_depth": 3,
+    "semantic_canary_outputs": 32,
+    "performance_outputs_per_long_case": 32,
+    "prefill_kv_pad_tokens": 65536,
+    "compact_mask": true,
+    "compact_mask_native": true,
+    "fixed_ubatch": true,
+    "turboprefill_pinned_cap_mib": 1024,
+    "cuda_device_max_connections": 32,
+    "upload_pool_budget_mib": 512,
+    "upload_pool_default_mib": 64,
+    "upload_pool_extra_ddr_mib": 448,
+    "upload_per_copy_max_bytes": 67108864,
+    "upload_ring_slots": 2,
+    "upload_ring_owner_capacity_estimate_mib": 384,
+    "upload_ring_owner_capacity_formula": "3 owners * 2 slots * 64 MiB",
+    "ple_gpu_numa_nodes": 3,
+    "ple_gpu_gib_per_node": 4,
+    "cpu_bind_node": 0,
+    "memory_policy": "interleave",
+    "memory_nodes": [
+      0,
+      8
+    ],
+    "ple_gpu_gib_total": 12,
+    "ple_gpu_gib_env_semantics": "LLAMA_PLE_NUMA_GPU_GIB=12 is the aggregate prefix; three nodes receive 4 GiB each."
+  },
+  "scenarios": [
+    {
+      "family": "single32k",
+      "order": [
+        "semantic canary",
+        "32,768-token input + 32 outputs"
+      ],
+      "input_tokens": 32768,
+      "context_per_sequence": 33280,
+      "context_slack_tokens": 512
+    },
+    {
+      "family": "single64k",
+      "order": [
+        "semantic canary",
+        "65,536-token input + 32 outputs"
+      ],
+      "input_tokens": 65536,
+      "context_per_sequence": 66048,
+      "context_slack_tokens": 512
+    }
+  ],
+  "memory_budget_reference": {
+    "native_mask_f16_bytes_per_gpu": 536870912,
+    "native_mask_f16_mib_per_gpu": 512,
+    "native_mask_f32_full_shape_temporary_expected": false,
+    "ub4096_target_compute_historical_estimate_mib": 953.76,
+    "draft512_compute_historical_estimate_mib": 249.28,
+    "prefill_batch_tokens": 32768,
+    "previous_prefill_batch_tokens": 8192,
+    "n_batch_capacity_ratio": 4,
+    "n_batch_scaled_buffers": "some host and MTP row buffers may grow with n_batch; byte growth is unmeasured",
+    "status": "estimates only; no V107/full-model per-GPU fit proof; keep the existing 512 MiB per-GPU free guard"
+  },
+  "quality_and_safety": {
+    "native_semantic_canary_required": true,
+    "native_kernel_actual_dispatch_marker_required": "ROOT_FILL_FROM_V107_RUNTIME_LOG",
+    "upload_pool_active_limit_marker_required": "ROOT_FILL_FROM_V107_RUNTIME_LOG",
+    "ple_first_three_rebalance_marker_required": "ROOT_FILL_FROM_V107_RUNTIME_LOG",
+    "gpu_free_floor_mib": 512,
+    "gpu_temperature_ceiling_c": 58,
+    "bmc_temperature_ceiling_c": 58,
+    "gpu_power_cap_w_expected": 300,
+    "cpu_max_khz_expected": 2600000,
+    "fan_target_rpm_expected": {
+      "fan0": 3000,
+      "fan2": 3000,
+      "fan3": 3000
+    },
+    "fan_tach_floor_rpm": 2650,
+    "watchdog_active_required": true,
+    "fan_monitor_policy": [
+      "inactive",
+      "masked"
+    ],
+    "automatic_retry": false,
+    "gpu_reset": false,
+    "mutate_power_or_fans": false
+  },
+  "launch_contract": {
+    "runtime_max_seconds": 1800,
+    "one_model_load": true,
+    "root_authorization_tokens": [
+      "V50_REQUIRED_GATES_PASSED=1",
+      "V50_GPU_WINDOW_AUTHORIZED=1"
+    ],
+    "profile_launch_eligible": false
+  }
+}

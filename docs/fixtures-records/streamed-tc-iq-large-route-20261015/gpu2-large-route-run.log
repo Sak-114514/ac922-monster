@@ -1,0 +1,1064 @@
+FIXTURE_BEGIN source=actual_GGUF_packed_rows valid_type_shapes=10 routes_per_shape=6 experts=512 topk=10 license=MIT-Strata-schedule arithmetic=F32_to_F16_RNE+packed_dequant_to_F16_RNE+F32accum+F32output no_engine_dispatch=1 q8_prepare=engine_Q8_1_quantize+route_helper+tile_offsets
+CPU_RNE_REFERENCE type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight K=2560 N=192 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=122880 half_hash=c96653cce92dd859 source=ggml_cpu_dequantize
+ROUTE tokens=1024 topk=10 assignments=10240 name=balanced active_experts=512 mean_active=20.000 min_count=20 max_count=20 hot_e0=20 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=512
+GPU_DECODE_RNE type=IQ2_XXS expert=0 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ2_XXS expert=17 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ2_XXS expert=511 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=balanced broadcast=1 id_helper_ms=3.0351 tc_offset_scan_ms=0.0338 mmq_offset_scan_ms=0.0102 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_XXS checked=2621440 mismatches=0 status=PASS conversion_ms=0.0512
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=2621440 nonfinite=0 status=PASS
+NUMERIC type=IQ2_XXS route=balanced samples=4 outputs=768 f16_bad=0 f16_nrmse=7.9199341e-07 f16_max_abs=3.7252903e-07 f16_max_rel=1.61661473e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.00029268369 f32_max_abs=0.000172495842 f32_max_rel=0.00673776542 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=2621440 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=2621440 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=25.2150 average_ms=5.0430
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=4.8343 average_ms=0.9669
+PERF_COMPARE type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight K=2560 N=192 tokens=1024 assignments=10240 route=balanced broadcast=1 route_id_gpu_ms=3.0351 tc_offset_gpu_ms=0.0338 mmq_offset_gpu_ms=0.0102 tc_graph_core_ms=5.0430 mmq_graph_core_ms=0.9669 tc_over_mmq_core=5.2158 tc_plus_route_f16_ms=8.1631 mmq_plus_route_q8_ms=12.2053 tc_over_mmq_including_gpu_prep=0.6688 f16_gpu_prep_ms=0.0512 q8_1_gpu_prep_ms=8.1930 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight K=2560 N=192 tokens=1024 assignments=10240 route=balanced packed_bytes=129761280 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=1024 topk=10 assignments=10240 name=onehot_e0 active_experts=512 mean_active=20.000 min_count=18 max_count=1024 hot_e0=1024 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=519 mmq_tiles=543
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=onehot_e0 broadcast=1 id_helper_ms=0.0993 tc_offset_scan_ms=0.0123 mmq_offset_scan_ms=0.0102 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_XXS checked=2621440 mismatches=0 status=PASS conversion_ms=0.0317
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=2621440 nonfinite=0 status=PASS
+NUMERIC type=IQ2_XXS route=onehot_e0 samples=4 outputs=768 f16_bad=0 f16_nrmse=7.48152656e-07 f16_max_abs=3.7252903e-07 f16_max_rel=4.09493901e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000266110307 f32_max_abs=0.000172495842 f32_max_rel=0.00673776542 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=2621440 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=2621440 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=25.2723 average_ms=5.0545
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=4.9244 average_ms=0.9849
+PERF_COMPARE type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight K=2560 N=192 tokens=1024 assignments=10240 route=onehot_e0 broadcast=1 route_id_gpu_ms=0.0993 tc_offset_gpu_ms=0.0123 mmq_offset_gpu_ms=0.0102 tc_graph_core_ms=5.0545 mmq_graph_core_ms=0.9849 tc_over_mmq_core=5.1320 tc_plus_route_f16_ms=5.1978 mmq_plus_route_q8_ms=1.1876 tc_over_mmq_including_gpu_prep=4.3766 f16_gpu_prep_ms=0.0317 q8_1_gpu_prep_ms=0.0932 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight K=2560 N=192 tokens=1024 assignments=10240 route=onehot_e0 packed_bytes=129761280 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=balanced active_experts=512 mean_active=40.000 min_count=40 max_count=40 hot_e0=40 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1024
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=balanced broadcast=1 id_helper_ms=0.1554 tc_offset_scan_ms=0.0123 mmq_offset_scan_ms=0.0102 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_XXS checked=5242880 mismatches=0 status=PASS conversion_ms=0.0512
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=5242880 nonfinite=0 status=PASS
+NUMERIC type=IQ2_XXS route=balanced samples=4 outputs=768 f16_bad=0 f16_nrmse=7.9199341e-07 f16_max_abs=3.7252903e-07 f16_max_rel=1.61661473e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.00029268369 f32_max_abs=0.000172495842 f32_max_rel=0.00673776542 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=5242880 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=5242880 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=28.0627 average_ms=5.6125
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=8.8310 average_ms=1.7662
+PERF_COMPARE type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight K=2560 N=192 tokens=2048 assignments=20480 route=balanced broadcast=1 route_id_gpu_ms=0.1554 tc_offset_gpu_ms=0.0123 mmq_offset_gpu_ms=0.0102 tc_graph_core_ms=5.6125 mmq_graph_core_ms=1.7662 tc_over_mmq_core=3.1778 tc_plus_route_f16_ms=5.8314 mmq_plus_route_q8_ms=2.1100 tc_over_mmq_including_gpu_prep=2.7637 f16_gpu_prep_ms=0.0512 q8_1_gpu_prep_ms=0.1782 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight K=2560 N=192 tokens=2048 assignments=20480 route=balanced packed_bytes=129761280 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=onehot_e0 active_experts=512 mean_active=40.000 min_count=36 max_count=2048 hot_e0=2048 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=527 mmq_tiles=1086
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=onehot_e0 broadcast=1 id_helper_ms=0.1555 tc_offset_scan_ms=0.0123 mmq_offset_scan_ms=0.0102 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_XXS checked=5242880 mismatches=0 status=PASS conversion_ms=0.0512
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=5242880 nonfinite=0 status=PASS
+NUMERIC type=IQ2_XXS route=onehot_e0 samples=4 outputs=768 f16_bad=0 f16_nrmse=7.48152656e-07 f16_max_abs=3.7252903e-07 f16_max_rel=4.09493901e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000266110307 f32_max_abs=0.000172495842 f32_max_rel=0.00673776542 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=5242880 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=5242880 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=29.2833 average_ms=5.8567
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=9.4075 average_ms=1.8815
+PERF_COMPARE type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight K=2560 N=192 tokens=2048 assignments=20480 route=onehot_e0 broadcast=1 route_id_gpu_ms=0.1555 tc_offset_gpu_ms=0.0123 mmq_offset_gpu_ms=0.0102 tc_graph_core_ms=5.8567 mmq_graph_core_ms=1.8815 tc_over_mmq_core=3.1128 tc_plus_route_f16_ms=6.0756 mmq_plus_route_q8_ms=2.2274 tc_over_mmq_including_gpu_prep=2.7276 f16_gpu_prep_ms=0.0512 q8_1_gpu_prep_ms=0.1802 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight K=2560 N=192 tokens=2048 assignments=20480 route=onehot_e0 packed_bytes=129761280 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=balanced active_experts=512 mean_active=80.000 min_count=80 max_count=80 hot_e0=80 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1536
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=balanced broadcast=1 id_helper_ms=0.4529 tc_offset_scan_ms=0.0133 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_XXS checked=10485760 mismatches=0 status=PASS conversion_ms=0.0911
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=10485760 nonfinite=0 status=PASS
+NUMERIC type=IQ2_XXS route=balanced samples=4 outputs=768 f16_bad=0 f16_nrmse=7.9199341e-07 f16_max_abs=3.7252903e-07 f16_max_rel=1.61661473e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.00029268369 f32_max_abs=0.000172495842 f32_max_rel=0.00673776542 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=10485760 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=10485760 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=33.3988 average_ms=6.6798
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=13.2188 average_ms=2.6438
+PERF_COMPARE type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight K=2560 N=192 tokens=4096 assignments=40960 route=balanced broadcast=1 route_id_gpu_ms=0.4529 tc_offset_gpu_ms=0.0133 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=6.6798 mmq_graph_core_ms=2.6438 tc_over_mmq_core=2.5266 tc_plus_route_f16_ms=7.2371 mmq_plus_route_q8_ms=3.4940 tc_over_mmq_including_gpu_prep=2.0713 f16_gpu_prep_ms=0.0911 q8_1_gpu_prep_ms=0.3881 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight K=2560 N=192 tokens=4096 assignments=40960 route=balanced packed_bytes=129761280 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=onehot_e0 active_experts=512 mean_active=80.000 min_count=72 max_count=4096 hot_e0=4096 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=543 mmq_tiles=1661
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=onehot_e0 broadcast=1 id_helper_ms=0.4617 tc_offset_scan_ms=0.0164 mmq_offset_scan_ms=0.0102 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_XXS checked=10485760 mismatches=0 status=PASS conversion_ms=0.0952
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=10485760 nonfinite=0 status=PASS
+NUMERIC type=IQ2_XXS route=onehot_e0 samples=4 outputs=768 f16_bad=0 f16_nrmse=7.48152656e-07 f16_max_abs=3.7252903e-07 f16_max_rel=4.09493901e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000266110307 f32_max_abs=0.000172495842 f32_max_rel=0.00673776542 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=10485760 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=10485760 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=35.4161 average_ms=7.0832
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=14.1507 average_ms=2.8301
+PERF_COMPARE type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight K=2560 N=192 tokens=4096 assignments=40960 route=onehot_e0 broadcast=1 route_id_gpu_ms=0.4617 tc_offset_gpu_ms=0.0164 mmq_offset_gpu_ms=0.0102 tc_graph_core_ms=7.0832 mmq_graph_core_ms=2.8301 tc_over_mmq_core=2.5028 tc_plus_route_f16_ms=7.6566 mmq_plus_route_q8_ms=3.6851 tc_over_mmq_including_gpu_prep=2.0777 f16_gpu_prep_ms=0.0952 q8_1_gpu_prep_ms=0.3830 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_XXS tensor=blk.1.ffn_gate_exps.weight K=2560 N=192 tokens=4096 assignments=40960 route=onehot_e0 packed_bytes=129761280 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+CPU_RNE_REFERENCE type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight K=2560 N=224 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=122880 half_hash=103c0faed099b259 source=ggml_cpu_dequantize
+ROUTE tokens=1024 topk=10 assignments=10240 name=balanced active_experts=512 mean_active=20.000 min_count=20 max_count=20 hot_e0=20 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=512
+GPU_DECODE_RNE type=IQ2_XS expert=0 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ2_XS expert=17 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ2_XS expert=511 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=balanced broadcast=1 id_helper_ms=0.0901 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_XS checked=2621440 mismatches=0 status=PASS conversion_ms=0.0297
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=2621440 nonfinite=0 status=PASS
+NUMERIC type=IQ2_XS route=balanced samples=4 outputs=896 f16_bad=0 f16_nrmse=7.46638514e-07 f16_max_abs=5.21540642e-07 f16_max_rel=4.27102581e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000261405858 f32_max_abs=0.000145554543 f32_max_rel=0.0184496956 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=2621440 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=2621440 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=22.8198 average_ms=4.5640
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=4.4851 average_ms=0.8970
+PERF_COMPARE type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight K=2560 N=224 tokens=1024 assignments=10240 route=balanced broadcast=1 route_id_gpu_ms=0.0901 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=4.5640 mmq_graph_core_ms=0.8970 tc_over_mmq_core=5.0879 tc_plus_route_f16_ms=4.6950 mmq_plus_route_q8_ms=1.0885 tc_over_mmq_including_gpu_prep=4.3133 f16_gpu_prep_ms=0.0297 q8_1_gpu_prep_ms=0.0922 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight K=2560 N=224 tokens=1024 assignments=10240 route=balanced packed_bytes=145489920 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=1024 topk=10 assignments=10240 name=onehot_e0 active_experts=512 mean_active=20.000 min_count=18 max_count=1024 hot_e0=1024 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=519 mmq_tiles=543
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=onehot_e0 broadcast=1 id_helper_ms=0.1044 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_XS checked=2621440 mismatches=0 status=PASS conversion_ms=0.0307
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=2621440 nonfinite=0 status=PASS
+NUMERIC type=IQ2_XS route=onehot_e0 samples=4 outputs=896 f16_bad=0 f16_nrmse=7.48748451e-07 f16_max_abs=5.21540642e-07 f16_max_rel=4.27102581e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000314516787 f32_max_abs=0.000145554543 f32_max_rel=0.0184496956 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=2621440 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=2621440 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=22.9437 average_ms=4.5887
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=4.6848 average_ms=0.9370
+PERF_COMPARE type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight K=2560 N=224 tokens=1024 assignments=10240 route=onehot_e0 broadcast=1 route_id_gpu_ms=0.1044 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=4.5887 mmq_graph_core_ms=0.9370 tc_over_mmq_core=4.8975 tc_plus_route_f16_ms=4.7352 mmq_plus_route_q8_ms=1.1407 tc_over_mmq_including_gpu_prep=4.1510 f16_gpu_prep_ms=0.0307 q8_1_gpu_prep_ms=0.0901 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight K=2560 N=224 tokens=1024 assignments=10240 route=onehot_e0 packed_bytes=145489920 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=balanced active_experts=512 mean_active=40.000 min_count=40 max_count=40 hot_e0=40 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1024
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=balanced broadcast=1 id_helper_ms=0.1393 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_XS checked=5242880 mismatches=0 status=PASS conversion_ms=0.0502
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=5242880 nonfinite=0 status=PASS
+NUMERIC type=IQ2_XS route=balanced samples=4 outputs=896 f16_bad=0 f16_nrmse=7.46638514e-07 f16_max_abs=5.21540642e-07 f16_max_rel=4.27102581e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000261405858 f32_max_abs=0.000145554543 f32_max_rel=0.0184496956 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=5242880 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=5242880 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=25.6778 average_ms=5.1356
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=8.5606 average_ms=1.7121
+PERF_COMPARE type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight K=2560 N=224 tokens=2048 assignments=20480 route=balanced broadcast=1 route_id_gpu_ms=0.1393 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=5.1356 mmq_graph_core_ms=1.7121 tc_over_mmq_core=2.9995 tc_plus_route_f16_ms=5.3363 mmq_plus_route_q8_ms=2.0378 tc_over_mmq_including_gpu_prep=2.6186 f16_gpu_prep_ms=0.0502 q8_1_gpu_prep_ms=0.1772 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight K=2560 N=224 tokens=2048 assignments=20480 route=balanced packed_bytes=145489920 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=onehot_e0 active_experts=512 mean_active=40.000 min_count=36 max_count=2048 hot_e0=2048 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=527 mmq_tiles=1086
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=onehot_e0 broadcast=1 id_helper_ms=0.1411 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_XS checked=5242880 mismatches=0 status=PASS conversion_ms=0.0502
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=5242880 nonfinite=0 status=PASS
+NUMERIC type=IQ2_XS route=onehot_e0 samples=4 outputs=896 f16_bad=0 f16_nrmse=7.48748451e-07 f16_max_abs=5.21540642e-07 f16_max_rel=4.27102581e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000314516787 f32_max_abs=0.000145554543 f32_max_rel=0.0184496956 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=5242880 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=5242880 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=25.9492 average_ms=5.1898
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=9.0778 average_ms=1.8156
+PERF_COMPARE type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight K=2560 N=224 tokens=2048 assignments=20480 route=onehot_e0 broadcast=1 route_id_gpu_ms=0.1411 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=5.1898 mmq_graph_core_ms=1.8156 tc_over_mmq_core=2.8585 tc_plus_route_f16_ms=5.3924 mmq_plus_route_q8_ms=2.1420 tc_over_mmq_including_gpu_prep=2.5174 f16_gpu_prep_ms=0.0502 q8_1_gpu_prep_ms=0.1761 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight K=2560 N=224 tokens=2048 assignments=20480 route=onehot_e0 packed_bytes=145489920 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=balanced active_experts=512 mean_active=80.000 min_count=80 max_count=80 hot_e0=80 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1536
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=balanced broadcast=1 id_helper_ms=0.4213 tc_offset_scan_ms=0.0154 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_XS checked=10485760 mismatches=0 status=PASS conversion_ms=0.0942
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=10485760 nonfinite=0 status=PASS
+NUMERIC type=IQ2_XS route=balanced samples=4 outputs=896 f16_bad=0 f16_nrmse=7.46638514e-07 f16_max_abs=5.21540642e-07 f16_max_rel=4.27102581e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000261405858 f32_max_abs=0.000145554543 f32_max_rel=0.0184496956 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=10485760 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=10485760 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=31.2054 average_ms=6.2411
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=12.8061 average_ms=2.5612
+PERF_COMPARE type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight K=2560 N=224 tokens=4096 assignments=40960 route=balanced broadcast=1 route_id_gpu_ms=0.4213 tc_offset_gpu_ms=0.0154 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=6.2411 mmq_graph_core_ms=2.5612 tc_over_mmq_core=2.4368 tc_plus_route_f16_ms=6.7720 mmq_plus_route_q8_ms=3.3799 tc_over_mmq_including_gpu_prep=2.0036 f16_gpu_prep_ms=0.0942 q8_1_gpu_prep_ms=0.3881 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight K=2560 N=224 tokens=4096 assignments=40960 route=balanced packed_bytes=145489920 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=onehot_e0 active_experts=512 mean_active=80.000 min_count=72 max_count=4096 hot_e0=4096 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=543 mmq_tiles=1661
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=onehot_e0 broadcast=1 id_helper_ms=0.4078 tc_offset_scan_ms=0.0123 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_XS checked=10485760 mismatches=0 status=PASS conversion_ms=0.0911
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=10485760 nonfinite=0 status=PASS
+NUMERIC type=IQ2_XS route=onehot_e0 samples=4 outputs=896 f16_bad=0 f16_nrmse=7.48748451e-07 f16_max_abs=5.21540642e-07 f16_max_rel=4.27102581e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000314516787 f32_max_abs=0.000145554543 f32_max_rel=0.0184496956 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=10485760 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=10485760 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=33.1059 average_ms=6.6212
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=13.6571 average_ms=2.7314
+PERF_COMPARE type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight K=2560 N=224 tokens=4096 assignments=40960 route=onehot_e0 broadcast=1 route_id_gpu_ms=0.4078 tc_offset_gpu_ms=0.0123 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=6.6212 mmq_graph_core_ms=2.7314 tc_over_mmq_core=2.4241 tc_plus_route_f16_ms=7.1324 mmq_plus_route_q8_ms=3.5242 tc_over_mmq_including_gpu_prep=2.0238 f16_gpu_prep_ms=0.0911 q8_1_gpu_prep_ms=0.3758 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_XS tensor=blk.0.ffn_gate_exps.weight K=2560 N=224 tokens=4096 assignments=40960 route=onehot_e0 packed_bytes=145489920 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+CPU_RNE_REFERENCE type=IQ2_S tensor=blk.12.ffn_gate_exps.weight K=2560 N=192 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=122880 half_hash=eca911ab55bb83fe source=ggml_cpu_dequantize
+ROUTE tokens=1024 topk=10 assignments=10240 name=balanced active_experts=512 mean_active=20.000 min_count=20 max_count=20 hot_e0=20 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=512
+GPU_DECODE_RNE type=IQ2_S expert=0 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ2_S expert=17 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ2_S expert=511 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=balanced broadcast=1 id_helper_ms=0.0881 tc_offset_scan_ms=0.0102 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_S checked=2621440 mismatches=0 status=PASS conversion_ms=0.0297
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=2621440 nonfinite=0 status=PASS
+NUMERIC type=IQ2_S route=balanced samples=4 outputs=768 f16_bad=0 f16_nrmse=9.84676711e-07 f16_max_abs=4.76837158e-07 f16_max_rel=0.00118578085 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000307971985 f32_max_abs=0.000112295151 f32_max_rel=0.209469489 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=2621440 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=2621440 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=22.8495 average_ms=4.5699
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=4.4923 average_ms=0.8985
+PERF_COMPARE type=IQ2_S tensor=blk.12.ffn_gate_exps.weight K=2560 N=192 tokens=1024 assignments=10240 route=balanced broadcast=1 route_id_gpu_ms=0.0881 tc_offset_gpu_ms=0.0102 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=4.5699 mmq_graph_core_ms=0.8985 tc_over_mmq_core=5.0864 tc_plus_route_f16_ms=4.6979 mmq_plus_route_q8_ms=1.0879 tc_over_mmq_including_gpu_prep=4.3183 f16_gpu_prep_ms=0.0297 q8_1_gpu_prep_ms=0.0922 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_S tensor=blk.12.ffn_gate_exps.weight K=2560 N=192 tokens=1024 assignments=10240 route=balanced packed_bytes=161218560 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=1024 topk=10 assignments=10240 name=onehot_e0 active_experts=512 mean_active=20.000 min_count=18 max_count=1024 hot_e0=1024 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=519 mmq_tiles=543
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=onehot_e0 broadcast=1 id_helper_ms=0.1157 tc_offset_scan_ms=0.0154 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_S checked=2621440 mismatches=0 status=PASS conversion_ms=0.0338
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=2621440 nonfinite=0 status=PASS
+NUMERIC type=IQ2_S route=onehot_e0 samples=4 outputs=768 f16_bad=0 f16_nrmse=9.81995222e-07 f16_max_abs=5.36441803e-07 f16_max_rel=0.00118578085 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.00035080334 f32_max_abs=0.000141702592 f32_max_rel=0.209469489 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=2621440 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=2621440 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=22.9591 average_ms=4.5918
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=4.7032 average_ms=0.9406
+PERF_COMPARE type=IQ2_S tensor=blk.12.ffn_gate_exps.weight K=2560 N=192 tokens=1024 assignments=10240 route=onehot_e0 broadcast=1 route_id_gpu_ms=0.1157 tc_offset_gpu_ms=0.0154 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=4.5918 mmq_graph_core_ms=0.9406 tc_over_mmq_core=4.8816 tc_plus_route_f16_ms=4.7567 mmq_plus_route_q8_ms=1.1618 tc_over_mmq_including_gpu_prep=4.0941 f16_gpu_prep_ms=0.0338 q8_1_gpu_prep_ms=0.0963 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_S tensor=blk.12.ffn_gate_exps.weight K=2560 N=192 tokens=1024 assignments=10240 route=onehot_e0 packed_bytes=161218560 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=balanced active_experts=512 mean_active=40.000 min_count=40 max_count=40 hot_e0=40 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1024
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=balanced broadcast=1 id_helper_ms=0.1422 tc_offset_scan_ms=0.0123 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_S checked=5242880 mismatches=0 status=PASS conversion_ms=0.0502
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=5242880 nonfinite=0 status=PASS
+NUMERIC type=IQ2_S route=balanced samples=4 outputs=768 f16_bad=0 f16_nrmse=9.84676711e-07 f16_max_abs=4.76837158e-07 f16_max_rel=0.00118578085 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000307971985 f32_max_abs=0.000112295151 f32_max_rel=0.209469489 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=5242880 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=5242880 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=25.7075 average_ms=5.1415
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=8.6559 average_ms=1.7312
+PERF_COMPARE type=IQ2_S tensor=blk.12.ffn_gate_exps.weight K=2560 N=192 tokens=2048 assignments=20480 route=balanced broadcast=1 route_id_gpu_ms=0.1422 tc_offset_gpu_ms=0.0123 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=5.1415 mmq_graph_core_ms=1.7312 tc_over_mmq_core=2.9700 tc_plus_route_f16_ms=5.3462 mmq_plus_route_q8_ms=2.0567 tc_over_mmq_including_gpu_prep=2.5994 f16_gpu_prep_ms=0.0502 q8_1_gpu_prep_ms=0.1741 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_S tensor=blk.12.ffn_gate_exps.weight K=2560 N=192 tokens=2048 assignments=20480 route=balanced packed_bytes=161218560 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=onehot_e0 active_experts=512 mean_active=40.000 min_count=36 max_count=2048 hot_e0=2048 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=527 mmq_tiles=1086
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=onehot_e0 broadcast=1 id_helper_ms=0.1416 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_S checked=5242880 mismatches=0 status=PASS conversion_ms=0.0502
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=5242880 nonfinite=0 status=PASS
+NUMERIC type=IQ2_S route=onehot_e0 samples=4 outputs=768 f16_bad=0 f16_nrmse=9.81995222e-07 f16_max_abs=5.36441803e-07 f16_max_rel=0.00118578085 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.00035080334 f32_max_abs=0.000141702592 f32_max_rel=0.209469489 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=5242880 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=5242880 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=27.3316 average_ms=5.4663
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=9.2078 average_ms=1.8416
+PERF_COMPARE type=IQ2_S tensor=blk.12.ffn_gate_exps.weight K=2560 N=192 tokens=2048 assignments=20480 route=onehot_e0 broadcast=1 route_id_gpu_ms=0.1416 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=5.4663 mmq_graph_core_ms=1.8416 tc_over_mmq_core=2.9683 tc_plus_route_f16_ms=5.6693 mmq_plus_route_q8_ms=2.1705 tc_over_mmq_including_gpu_prep=2.6120 f16_gpu_prep_ms=0.0502 q8_1_gpu_prep_ms=0.1782 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_S tensor=blk.12.ffn_gate_exps.weight K=2560 N=192 tokens=2048 assignments=20480 route=onehot_e0 packed_bytes=161218560 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=balanced active_experts=512 mean_active=80.000 min_count=80 max_count=80 hot_e0=80 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1536
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=balanced broadcast=1 id_helper_ms=0.4097 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0082 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_S checked=10485760 mismatches=0 status=PASS conversion_ms=0.0901
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=10485760 nonfinite=0 status=PASS
+NUMERIC type=IQ2_S route=balanced samples=4 outputs=768 f16_bad=0 f16_nrmse=9.84676711e-07 f16_max_abs=4.76837158e-07 f16_max_rel=0.00118578085 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000307971985 f32_max_abs=0.000112295151 f32_max_rel=0.209469489 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=10485760 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=10485760 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=31.0876 average_ms=6.2175
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=12.8584 average_ms=2.5717
+PERF_COMPARE type=IQ2_S tensor=blk.12.ffn_gate_exps.weight K=2560 N=192 tokens=4096 assignments=40960 route=balanced broadcast=1 route_id_gpu_ms=0.4097 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0082 tc_graph_core_ms=6.2175 mmq_graph_core_ms=2.5717 tc_over_mmq_core=2.4177 tc_plus_route_f16_ms=6.7286 mmq_plus_route_q8_ms=3.3787 tc_over_mmq_including_gpu_prep=1.9915 f16_gpu_prep_ms=0.0901 q8_1_gpu_prep_ms=0.3891 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_S tensor=blk.12.ffn_gate_exps.weight K=2560 N=192 tokens=4096 assignments=40960 route=balanced packed_bytes=161218560 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=onehot_e0 active_experts=512 mean_active=80.000 min_count=72 max_count=4096 hot_e0=4096 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=543 mmq_tiles=1661
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=onehot_e0 broadcast=1 id_helper_ms=0.4282 tc_offset_scan_ms=0.0164 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ2_S checked=10485760 mismatches=0 status=PASS conversion_ms=0.0932
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=10485760 nonfinite=0 status=PASS
+NUMERIC type=IQ2_S route=onehot_e0 samples=4 outputs=768 f16_bad=0 f16_nrmse=9.81995222e-07 f16_max_abs=5.36441803e-07 f16_max_rel=0.00118578085 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.00035080334 f32_max_abs=0.000141702592 f32_max_rel=0.209469489 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=10485760 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=10485760 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=33.0465 average_ms=6.6093
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=13.8598 average_ms=2.7720
+PERF_COMPARE type=IQ2_S tensor=blk.12.ffn_gate_exps.weight K=2560 N=192 tokens=4096 assignments=40960 route=onehot_e0 broadcast=1 route_id_gpu_ms=0.4282 tc_offset_gpu_ms=0.0164 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=6.6093 mmq_graph_core_ms=2.7720 tc_over_mmq_core=2.3843 tc_plus_route_f16_ms=7.1470 mmq_plus_route_q8_ms=3.5903 tc_over_mmq_including_gpu_prep=1.9907 f16_gpu_prep_ms=0.0932 q8_1_gpu_prep_ms=0.3809 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ2_S tensor=blk.12.ffn_gate_exps.weight K=2560 N=192 tokens=4096 assignments=40960 route=onehot_e0 packed_bytes=161218560 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+CPU_RNE_REFERENCE type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight K=2560 N=224 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=122880 half_hash=1b681a5e4081b89a source=ggml_cpu_dequantize
+ROUTE tokens=1024 topk=10 assignments=10240 name=balanced active_experts=512 mean_active=20.000 min_count=20 max_count=20 hot_e0=20 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=512
+GPU_DECODE_RNE type=IQ3_XXS expert=0 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ3_XXS expert=17 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ3_XXS expert=511 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=balanced broadcast=1 id_helper_ms=0.0932 tc_offset_scan_ms=0.0123 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ3_XXS checked=2621440 mismatches=0 status=PASS conversion_ms=0.0297
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=2621440 nonfinite=0 status=PASS
+NUMERIC type=IQ3_XXS route=balanced samples=4 outputs=896 f16_bad=0 f16_nrmse=8.51273949e-07 f16_max_abs=5.58793545e-07 f16_max_rel=0.000571654438 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000293459132 f32_max_abs=0.000120401382 f32_max_rel=0.116492198 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=2621440 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=2621440 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=22.4328 average_ms=4.4866
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=4.3039 average_ms=0.8608
+PERF_COMPARE type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight K=2560 N=224 tokens=1024 assignments=10240 route=balanced broadcast=1 route_id_gpu_ms=0.0932 tc_offset_gpu_ms=0.0123 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=4.4866 mmq_graph_core_ms=0.8608 tc_over_mmq_core=5.2122 tc_plus_route_f16_ms=4.6217 mmq_plus_route_q8_ms=1.0553 tc_over_mmq_including_gpu_prep=4.3794 f16_gpu_prep_ms=0.0297 q8_1_gpu_prep_ms=0.0922 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight K=2560 N=224 tokens=1024 assignments=10240 route=balanced packed_bytes=192675840 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=1024 topk=10 assignments=10240 name=onehot_e0 active_experts=512 mean_active=20.000 min_count=18 max_count=1024 hot_e0=1024 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=519 mmq_tiles=543
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=onehot_e0 broadcast=1 id_helper_ms=0.0635 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ3_XXS checked=2621440 mismatches=0 status=PASS conversion_ms=0.0297
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=2621440 nonfinite=0 status=PASS
+NUMERIC type=IQ3_XXS route=onehot_e0 samples=4 outputs=896 f16_bad=0 f16_nrmse=8.30653465e-07 f16_max_abs=5.58793545e-07 f16_max_rel=0.000571654438 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000237070962 f32_max_abs=0.000112295151 f32_max_rel=0.116492198 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=2621440 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=2621440 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=22.4287 average_ms=4.4857
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=4.4380 average_ms=0.8876
+PERF_COMPARE type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight K=2560 N=224 tokens=1024 assignments=10240 route=onehot_e0 broadcast=1 route_id_gpu_ms=0.0635 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=4.4857 mmq_graph_core_ms=0.8876 tc_over_mmq_core=5.0538 tc_plus_route_f16_ms=4.5902 mmq_plus_route_q8_ms=1.0484 tc_over_mmq_including_gpu_prep=4.3784 f16_gpu_prep_ms=0.0297 q8_1_gpu_prep_ms=0.0881 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight K=2560 N=224 tokens=1024 assignments=10240 route=onehot_e0 packed_bytes=192675840 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=balanced active_experts=512 mean_active=40.000 min_count=40 max_count=40 hot_e0=40 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1024
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=balanced broadcast=1 id_helper_ms=0.1412 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ3_XXS checked=5242880 mismatches=0 status=PASS conversion_ms=0.0502
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=5242880 nonfinite=0 status=PASS
+NUMERIC type=IQ3_XXS route=balanced samples=4 outputs=896 f16_bad=0 f16_nrmse=8.51273949e-07 f16_max_abs=5.58793545e-07 f16_max_rel=0.000571654438 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000293459132 f32_max_abs=0.000120401382 f32_max_rel=0.116492198 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=5242880 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=5242880 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=25.2918 average_ms=5.0584
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=8.0497 average_ms=1.6099
+PERF_COMPARE type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight K=2560 N=224 tokens=2048 assignments=20480 route=balanced broadcast=1 route_id_gpu_ms=0.1412 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=5.0584 mmq_graph_core_ms=1.6099 tc_over_mmq_core=3.1420 tc_plus_route_f16_ms=5.2609 mmq_plus_route_q8_ms=1.9364 tc_over_mmq_including_gpu_prep=2.7168 f16_gpu_prep_ms=0.0502 q8_1_gpu_prep_ms=0.1761 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight K=2560 N=224 tokens=2048 assignments=20480 route=balanced packed_bytes=192675840 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=onehot_e0 active_experts=512 mean_active=40.000 min_count=36 max_count=2048 hot_e0=2048 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=527 mmq_tiles=1086
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=onehot_e0 broadcast=1 id_helper_ms=0.1612 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ3_XXS checked=5242880 mismatches=0 status=PASS conversion_ms=0.0502
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=5242880 nonfinite=0 status=PASS
+NUMERIC type=IQ3_XXS route=onehot_e0 samples=4 outputs=896 f16_bad=0 f16_nrmse=8.30653465e-07 f16_max_abs=5.58793545e-07 f16_max_rel=0.000571654438 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000237070962 f32_max_abs=0.000112295151 f32_max_rel=0.116492198 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=5242880 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=5242880 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=25.6553 average_ms=5.1311
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=8.6149 average_ms=1.7230
+PERF_COMPARE type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight K=2560 N=224 tokens=2048 assignments=20480 route=onehot_e0 broadcast=1 route_id_gpu_ms=0.1612 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=5.1311 mmq_graph_core_ms=1.7230 tc_over_mmq_core=2.9780 tc_plus_route_f16_ms=5.3537 mmq_plus_route_q8_ms=2.0696 tc_over_mmq_including_gpu_prep=2.5869 f16_gpu_prep_ms=0.0502 q8_1_gpu_prep_ms=0.1761 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight K=2560 N=224 tokens=2048 assignments=20480 route=onehot_e0 packed_bytes=192675840 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=balanced active_experts=512 mean_active=80.000 min_count=80 max_count=80 hot_e0=80 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1536
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=balanced broadcast=1 id_helper_ms=0.4082 tc_offset_scan_ms=0.0123 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ3_XXS checked=10485760 mismatches=0 status=PASS conversion_ms=0.0891
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=10485760 nonfinite=0 status=PASS
+NUMERIC type=IQ3_XXS route=balanced samples=4 outputs=896 f16_bad=0 f16_nrmse=8.51273949e-07 f16_max_abs=5.58793545e-07 f16_max_rel=0.000571654438 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000293459132 f32_max_abs=0.000120401382 f32_max_rel=0.116492198 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=10485760 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=10485760 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=30.6657 average_ms=6.1331
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=12.0474 average_ms=2.4095
+PERF_COMPARE type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight K=2560 N=224 tokens=4096 assignments=40960 route=balanced broadcast=1 route_id_gpu_ms=0.4082 tc_offset_gpu_ms=0.0123 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=6.1331 mmq_graph_core_ms=2.4095 tc_over_mmq_core=2.5454 tc_plus_route_f16_ms=6.6427 mmq_plus_route_q8_ms=3.2089 tc_over_mmq_including_gpu_prep=2.0701 f16_gpu_prep_ms=0.0891 q8_1_gpu_prep_ms=0.3820 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight K=2560 N=224 tokens=4096 assignments=40960 route=balanced packed_bytes=192675840 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=onehot_e0 active_experts=512 mean_active=80.000 min_count=72 max_count=4096 hot_e0=4096 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=543 mmq_tiles=1661
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=onehot_e0 broadcast=1 id_helper_ms=0.4075 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ3_XXS checked=10485760 mismatches=0 status=PASS conversion_ms=0.0901
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=10485760 nonfinite=0 status=PASS
+NUMERIC type=IQ3_XXS route=onehot_e0 samples=4 outputs=896 f16_bad=0 f16_nrmse=8.30653465e-07 f16_max_abs=5.58793545e-07 f16_max_rel=0.000571654438 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000237070962 f32_max_abs=0.000112295151 f32_max_rel=0.116492198 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=10485760 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=10485760 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=32.4536 average_ms=6.4907
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=12.8901 average_ms=2.5780
+PERF_COMPARE type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight K=2560 N=224 tokens=4096 assignments=40960 route=onehot_e0 broadcast=1 route_id_gpu_ms=0.4075 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=6.4907 mmq_graph_core_ms=2.5780 tc_over_mmq_core=2.5177 tc_plus_route_f16_ms=6.9996 mmq_plus_route_q8_ms=3.3736 tc_over_mmq_including_gpu_prep=2.0748 f16_gpu_prep_ms=0.0901 q8_1_gpu_prep_ms=0.3789 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ3_XXS tensor=blk.35.ffn_gate_exps.weight K=2560 N=224 tokens=4096 assignments=40960 route=onehot_e0 packed_bytes=192675840 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+CPU_RNE_REFERENCE type=IQ3_S tensor=blk.8.ffn_gate_exps.weight K=2560 N=192 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=122880 half_hash=932b88e4ae6d6d6c source=ggml_cpu_dequantize
+ROUTE tokens=1024 topk=10 assignments=10240 name=balanced active_experts=512 mean_active=20.000 min_count=20 max_count=20 hot_e0=20 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=512
+GPU_DECODE_RNE type=IQ3_S expert=0 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ3_S expert=17 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ3_S expert=511 K=2560 Kpad=2560 rows=384 checked=983040 mismatches=0 first=none exact=1
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=balanced broadcast=1 id_helper_ms=0.1106 tc_offset_scan_ms=0.0174 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ3_S checked=2621440 mismatches=0 status=PASS conversion_ms=0.0328
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=2621440 nonfinite=0 status=PASS
+NUMERIC type=IQ3_S route=balanced samples=4 outputs=768 f16_bad=0 f16_nrmse=6.30719013e-07 f16_max_abs=4.76837158e-07 f16_max_rel=8.47636698e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000225343894 f32_max_abs=0.00012563169 f32_max_rel=0.0102424727 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=2621440 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=2621440 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=23.0339 average_ms=4.6068
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=4.4513 average_ms=0.8903
+PERF_COMPARE type=IQ3_S tensor=blk.8.ffn_gate_exps.weight K=2560 N=192 tokens=1024 assignments=10240 route=balanced broadcast=1 route_id_gpu_ms=0.1106 tc_offset_gpu_ms=0.0174 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=4.6068 mmq_graph_core_ms=0.8903 tc_over_mmq_core=5.1746 tc_plus_route_f16_ms=4.7675 mmq_plus_route_q8_ms=1.1063 tc_over_mmq_including_gpu_prep=4.3093 f16_gpu_prep_ms=0.0328 q8_1_gpu_prep_ms=0.0963 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ3_S tensor=blk.8.ffn_gate_exps.weight K=2560 N=192 tokens=1024 assignments=10240 route=balanced packed_bytes=216268800 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=1024 topk=10 assignments=10240 name=onehot_e0 active_experts=512 mean_active=20.000 min_count=18 max_count=1024 hot_e0=1024 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=519 mmq_tiles=543
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=onehot_e0 broadcast=1 id_helper_ms=0.0911 tc_offset_scan_ms=0.0123 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ3_S checked=2621440 mismatches=0 status=PASS conversion_ms=0.0297
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=2621440 nonfinite=0 status=PASS
+NUMERIC type=IQ3_S route=onehot_e0 samples=4 outputs=768 f16_bad=0 f16_nrmse=5.57105576e-07 f16_max_abs=2.83122063e-07 f16_max_rel=1.07281806e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000264838444 f32_max_abs=0.00012563169 f32_max_rel=0.0464900921 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=2621440 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=2621440 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=23.1864 average_ms=4.6373
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=4.6060 average_ms=0.9212
+PERF_COMPARE type=IQ3_S tensor=blk.8.ffn_gate_exps.weight K=2560 N=192 tokens=1024 assignments=10240 route=onehot_e0 broadcast=1 route_id_gpu_ms=0.0911 tc_offset_gpu_ms=0.0123 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=4.6373 mmq_graph_core_ms=0.9212 tc_over_mmq_core=5.0340 tc_plus_route_f16_ms=4.7704 mmq_plus_route_q8_ms=1.1127 tc_over_mmq_including_gpu_prep=4.2873 f16_gpu_prep_ms=0.0297 q8_1_gpu_prep_ms=0.0911 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ3_S tensor=blk.8.ffn_gate_exps.weight K=2560 N=192 tokens=1024 assignments=10240 route=onehot_e0 packed_bytes=216268800 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=balanced active_experts=512 mean_active=40.000 min_count=40 max_count=40 hot_e0=40 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1024
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=balanced broadcast=1 id_helper_ms=0.1411 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ3_S checked=5242880 mismatches=0 status=PASS conversion_ms=0.0502
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=5242880 nonfinite=0 status=PASS
+NUMERIC type=IQ3_S route=balanced samples=4 outputs=768 f16_bad=0 f16_nrmse=6.30719013e-07 f16_max_abs=4.76837158e-07 f16_max_rel=8.47636698e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000225343894 f32_max_abs=0.00012563169 f32_max_rel=0.0102424727 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=5242880 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=5242880 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=25.8222 average_ms=5.1644
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=8.3988 average_ms=1.6798
+PERF_COMPARE type=IQ3_S tensor=blk.8.ffn_gate_exps.weight K=2560 N=192 tokens=2048 assignments=20480 route=balanced broadcast=1 route_id_gpu_ms=0.1411 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=5.1644 mmq_graph_core_ms=1.6798 tc_over_mmq_core=3.0745 tc_plus_route_f16_ms=5.3669 mmq_plus_route_q8_ms=2.0062 tc_over_mmq_including_gpu_prep=2.6752 f16_gpu_prep_ms=0.0502 q8_1_gpu_prep_ms=0.1761 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ3_S tensor=blk.8.ffn_gate_exps.weight K=2560 N=192 tokens=2048 assignments=20480 route=balanced packed_bytes=216268800 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=onehot_e0 active_experts=512 mean_active=40.000 min_count=36 max_count=2048 hot_e0=2048 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=527 mmq_tiles=1086
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=onehot_e0 broadcast=1 id_helper_ms=0.1420 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ3_S checked=5242880 mismatches=0 status=PASS conversion_ms=0.0502
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=5242880 nonfinite=0 status=PASS
+NUMERIC type=IQ3_S route=onehot_e0 samples=4 outputs=768 f16_bad=0 f16_nrmse=5.57105576e-07 f16_max_abs=2.83122063e-07 f16_max_rel=1.07281806e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000264838444 f32_max_abs=0.00012563169 f32_max_rel=0.0464900921 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=5242880 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=5242880 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=26.2830 average_ms=5.2566
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=8.9917 average_ms=1.7983
+PERF_COMPARE type=IQ3_S tensor=blk.8.ffn_gate_exps.weight K=2560 N=192 tokens=2048 assignments=20480 route=onehot_e0 broadcast=1 route_id_gpu_ms=0.1420 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=5.2566 mmq_graph_core_ms=1.7983 tc_over_mmq_core=2.9230 tc_plus_route_f16_ms=5.4601 mmq_plus_route_q8_ms=2.1247 tc_over_mmq_including_gpu_prep=2.5698 f16_gpu_prep_ms=0.0502 q8_1_gpu_prep_ms=0.1751 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ3_S tensor=blk.8.ffn_gate_exps.weight K=2560 N=192 tokens=2048 assignments=20480 route=onehot_e0 packed_bytes=216268800 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=balanced active_experts=512 mean_active=80.000 min_count=80 max_count=80 hot_e0=80 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1536
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=balanced broadcast=1 id_helper_ms=0.4076 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ3_S checked=10485760 mismatches=0 status=PASS conversion_ms=0.0901
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=10485760 nonfinite=0 status=PASS
+NUMERIC type=IQ3_S route=balanced samples=4 outputs=768 f16_bad=0 f16_nrmse=6.30719013e-07 f16_max_abs=4.76837158e-07 f16_max_rel=8.47636698e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000225343894 f32_max_abs=0.00012563169 f32_max_rel=0.0102424727 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=10485760 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=10485760 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=31.1910 average_ms=6.2382
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=12.5112 average_ms=2.5022
+PERF_COMPARE type=IQ3_S tensor=blk.8.ffn_gate_exps.weight K=2560 N=192 tokens=4096 assignments=40960 route=balanced broadcast=1 route_id_gpu_ms=0.4076 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=6.2382 mmq_graph_core_ms=2.5022 tc_over_mmq_core=2.4930 tc_plus_route_f16_ms=6.7472 mmq_plus_route_q8_ms=3.3134 tc_over_mmq_including_gpu_prep=2.0364 f16_gpu_prep_ms=0.0901 q8_1_gpu_prep_ms=0.3942 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ3_S tensor=blk.8.ffn_gate_exps.weight K=2560 N=192 tokens=4096 assignments=40960 route=balanced packed_bytes=216268800 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=onehot_e0 active_experts=512 mean_active=80.000 min_count=72 max_count=4096 hot_e0=4096 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=543 mmq_tiles=1661
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=onehot_e0 broadcast=1 id_helper_ms=0.4244 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0102 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ3_S checked=10485760 mismatches=0 status=PASS conversion_ms=0.0891
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=10485760 nonfinite=0 status=PASS
+NUMERIC type=IQ3_S route=onehot_e0 samples=4 outputs=768 f16_bad=0 f16_nrmse=5.57105576e-07 f16_max_abs=2.83122063e-07 f16_max_rel=1.07281806e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000264838444 f32_max_abs=0.00012563169 f32_max_rel=0.0464900921 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=10485760 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=10485760 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=5 total_ms=33.1039 average_ms=6.6208
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=5 total_ms=13.4472 average_ms=2.6894
+PERF_COMPARE type=IQ3_S tensor=blk.8.ffn_gate_exps.weight K=2560 N=192 tokens=4096 assignments=40960 route=onehot_e0 broadcast=1 route_id_gpu_ms=0.4244 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0102 tc_graph_core_ms=6.6208 mmq_graph_core_ms=2.6894 tc_over_mmq_core=2.4618 tc_plus_route_f16_ms=7.1455 mmq_plus_route_q8_ms=3.5009 tc_over_mmq_including_gpu_prep=2.0411 f16_gpu_prep_ms=0.0891 q8_1_gpu_prep_ms=0.3768 q8_1_prep_source=engine_quantize_scatter_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ3_S tensor=blk.8.ffn_gate_exps.weight K=2560 N=192 tokens=4096 assignments=40960 route=onehot_e0 packed_bytes=216268800 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+CPU_RNE_REFERENCE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=192 N=2560 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=9216 half_hash=5123b6ceb309fc74 source=ggml_cpu_dequantize
+ROUTE tokens=1024 topk=10 assignments=10240 name=balanced active_experts=512 mean_active=20.000 min_count=20 max_count=20 hot_e0=20 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=512
+GPU_DECODE_RNE type=IQ4_NL expert=0 K=192 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ4_NL expert=17 K=192 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ4_NL expert=511 K=192 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=balanced broadcast=0 id_helper_ms=0.0614 tc_offset_scan_ms=0.0133 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=2621440 mismatches=0 status=PASS conversion_ms=0.0276
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=26214400 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=balanced samples=4 outputs=10240 f16_bad=0 f16_nrmse=2.72957713e-07 f16_max_abs=3.7252903e-08 f16_max_rel=9.20210035e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000193468978 f32_max_abs=3.01711261e-05 f32_max_rel=0.00946991325 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=26214400 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=26214400 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=15.9898 average_ms=5.3299
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=2.7228 average_ms=0.9076
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=192 N=2560 tokens=1024 assignments=10240 route=balanced broadcast=0 route_id_gpu_ms=0.0614 tc_offset_gpu_ms=0.0133 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=5.3299 mmq_graph_core_ms=0.9076 tc_over_mmq_core=5.8725 tc_plus_route_f16_ms=5.4323 mmq_plus_route_q8_ms=1.0714 tc_over_mmq_including_gpu_prep=5.0701 f16_gpu_prep_ms=0.0276 q8_1_gpu_prep_ms=0.0932 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=192 N=2560 tokens=1024 assignments=10240 route=balanced packed_bytes=198180864 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=1024 topk=10 assignments=10240 name=onehot_e0 active_experts=512 mean_active=20.000 min_count=18 max_count=1024 hot_e0=1024 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=519 mmq_tiles=543
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=onehot_e0 broadcast=0 id_helper_ms=0.0922 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=2621440 mismatches=0 status=PASS conversion_ms=0.0266
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=26214400 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=onehot_e0 samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.62468883e-07 f16_max_abs=5.96046448e-08 f16_max_rel=2.31398933e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000219977733 f32_max_abs=2.46204436e-05 f32_max_rel=0.00293622641 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=26214400 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=26214400 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=16.1802 average_ms=5.3934
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=2.8416 average_ms=0.9472
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=192 N=2560 tokens=1024 assignments=10240 route=onehot_e0 broadcast=0 route_id_gpu_ms=0.0922 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=5.3934 mmq_graph_core_ms=0.9472 tc_over_mmq_core=5.6941 tc_plus_route_f16_ms=5.5235 mmq_plus_route_q8_ms=1.0772 tc_over_mmq_including_gpu_prep=5.1274 f16_gpu_prep_ms=0.0266 q8_1_gpu_prep_ms=0.0287 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=192 N=2560 tokens=1024 assignments=10240 route=onehot_e0 packed_bytes=198180864 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=balanced active_experts=512 mean_active=40.000 min_count=40 max_count=40 hot_e0=40 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1024
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=balanced broadcast=0 id_helper_ms=0.1396 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=5242880 mismatches=0 status=PASS conversion_ms=0.0420
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=52428800 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=balanced samples=4 outputs=10240 f16_bad=0 f16_nrmse=2.72957713e-07 f16_max_abs=3.7252903e-08 f16_max_rel=9.20210035e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000193468978 f32_max_abs=3.01711261e-05 f32_max_rel=0.00946991325 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=52428800 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=52428800 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=18.3726 average_ms=6.1242
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=6.5925 average_ms=2.1975
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=192 N=2560 tokens=2048 assignments=20480 route=balanced broadcast=0 route_id_gpu_ms=0.1396 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=6.1242 mmq_graph_core_ms=2.1975 tc_over_mmq_core=2.7869 tc_plus_route_f16_ms=6.3171 mmq_plus_route_q8_ms=2.3894 tc_over_mmq_including_gpu_prep=2.6438 f16_gpu_prep_ms=0.0420 q8_1_gpu_prep_ms=0.0430 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=192 N=2560 tokens=2048 assignments=20480 route=balanced packed_bytes=198180864 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=onehot_e0 active_experts=512 mean_active=40.000 min_count=36 max_count=2048 hot_e0=2048 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=527 mmq_tiles=1086
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=onehot_e0 broadcast=0 id_helper_ms=0.1413 tc_offset_scan_ms=0.0102 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=5242880 mismatches=0 status=PASS conversion_ms=0.0440
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=52428800 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=onehot_e0 samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.62468883e-07 f16_max_abs=5.96046448e-08 f16_max_rel=2.31398933e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000219977733 f32_max_abs=2.46204436e-05 f32_max_rel=0.00293622641 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=52428800 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=52428800 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=18.6788 average_ms=6.2263
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=5.4364 average_ms=1.8121
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=192 N=2560 tokens=2048 assignments=20480 route=onehot_e0 broadcast=0 route_id_gpu_ms=0.1413 tc_offset_gpu_ms=0.0102 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=6.2263 mmq_graph_core_ms=1.8121 tc_over_mmq_core=3.4359 tc_plus_route_f16_ms=6.4218 mmq_plus_route_q8_ms=2.0057 tc_over_mmq_including_gpu_prep=3.2018 f16_gpu_prep_ms=0.0440 q8_1_gpu_prep_ms=0.0430 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=192 N=2560 tokens=2048 assignments=20480 route=onehot_e0 packed_bytes=198180864 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=balanced active_experts=512 mean_active=80.000 min_count=80 max_count=80 hot_e0=80 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1536
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=balanced broadcast=0 id_helper_ms=0.4050 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=10485760 mismatches=0 status=PASS conversion_ms=0.0758
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=104857600 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=balanced samples=4 outputs=10240 f16_bad=0 f16_nrmse=2.72957713e-07 f16_max_abs=3.7252903e-08 f16_max_rel=9.20210035e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000193468978 f32_max_abs=3.01711261e-05 f32_max_rel=0.00946991325 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=104857600 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=104857600 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=23.1762 average_ms=7.7254
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=7.8940 average_ms=2.6313
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=192 N=2560 tokens=4096 assignments=40960 route=balanced broadcast=0 route_id_gpu_ms=0.4050 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=7.7254 mmq_graph_core_ms=2.6313 tc_over_mmq_core=2.9359 tc_plus_route_f16_ms=8.2174 mmq_plus_route_q8_ms=3.1183 tc_over_mmq_including_gpu_prep=2.6353 f16_gpu_prep_ms=0.0758 q8_1_gpu_prep_ms=0.0727 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=192 N=2560 tokens=4096 assignments=40960 route=balanced packed_bytes=198180864 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=onehot_e0 active_experts=512 mean_active=80.000 min_count=72 max_count=4096 hot_e0=4096 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=543 mmq_tiles=1661
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=onehot_e0 broadcast=0 id_helper_ms=0.4636 tc_offset_scan_ms=0.0123 mmq_offset_scan_ms=0.0102 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=10485760 mismatches=0 status=PASS conversion_ms=0.0809
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=104857600 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=onehot_e0 samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.62468883e-07 f16_max_abs=5.96046448e-08 f16_max_rel=2.31398933e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000219977733 f32_max_abs=2.46204436e-05 f32_max_rel=0.00293622641 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=104857600 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=104857600 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=27.2998 average_ms=9.0999
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=9.6440 average_ms=3.2147
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=192 N=2560 tokens=4096 assignments=40960 route=onehot_e0 broadcast=0 route_id_gpu_ms=0.4636 tc_offset_gpu_ms=0.0123 mmq_offset_gpu_ms=0.0102 tc_graph_core_ms=9.0999 mmq_graph_core_ms=3.2147 tc_over_mmq_core=2.8307 tc_plus_route_f16_ms=9.6567 mmq_plus_route_q8_ms=3.7705 tc_over_mmq_including_gpu_prep=2.5612 f16_gpu_prep_ms=0.0809 q8_1_gpu_prep_ms=0.0819 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=192 N=2560 tokens=4096 assignments=40960 route=onehot_e0 packed_bytes=198180864 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+CPU_RNE_REFERENCE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=224 N=2560 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=10752 half_hash=15885714ced6498f source=ggml_cpu_dequantize
+ROUTE tokens=1024 topk=10 assignments=10240 name=balanced active_experts=512 mean_active=20.000 min_count=20 max_count=20 hot_e0=20 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=512
+GPU_DECODE_RNE type=IQ4_NL expert=0 K=224 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ4_NL expert=17 K=224 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ4_NL expert=511 K=224 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=balanced broadcast=0 id_helper_ms=0.1014 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=2621440 mismatches=0 status=PASS conversion_ms=0.0276
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=26214400 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=balanced samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.3816746e-07 f16_max_abs=5.21540642e-08 f16_max_rel=0.000100557234 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000284546926 f32_max_abs=2.5421381e-05 f32_max_rel=0.0820279616 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=26214400 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=26214400 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=16.0993 average_ms=5.3664
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=2.7453 average_ms=0.9151
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=224 N=2560 tokens=1024 assignments=10240 route=balanced broadcast=0 route_id_gpu_ms=0.1014 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=5.3664 mmq_graph_core_ms=0.9151 tc_over_mmq_core=5.8642 tc_plus_route_f16_ms=5.5067 mmq_plus_route_q8_ms=1.0554 tc_over_mmq_including_gpu_prep=5.2177 f16_gpu_prep_ms=0.0276 q8_1_gpu_prep_ms=0.0297 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=224 N=2560 tokens=1024 assignments=10240 route=balanced packed_bytes=198180864 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=1024 topk=10 assignments=10240 name=onehot_e0 active_experts=512 mean_active=20.000 min_count=18 max_count=1024 hot_e0=1024 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=519 mmq_tiles=543
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=onehot_e0 broadcast=0 id_helper_ms=0.0911 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=2621440 mismatches=0 status=PASS conversion_ms=0.0276
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=26214400 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=onehot_e0 samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.17407436e-07 f16_max_abs=5.21540642e-08 f16_max_rel=0.000100557234 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000284256325 f32_max_abs=3.88324261e-05 f32_max_rel=0.0820279616 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=26214400 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=26214400 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=16.2857 average_ms=5.4286
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=2.8754 average_ms=0.9585
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=224 N=2560 tokens=1024 assignments=10240 route=onehot_e0 broadcast=0 route_id_gpu_ms=0.0911 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=5.4286 mmq_graph_core_ms=0.9585 tc_over_mmq_core=5.6638 tc_plus_route_f16_ms=5.5586 mmq_plus_route_q8_ms=1.0885 tc_over_mmq_including_gpu_prep=5.1066 f16_gpu_prep_ms=0.0276 q8_1_gpu_prep_ms=0.0297 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=224 N=2560 tokens=1024 assignments=10240 route=onehot_e0 packed_bytes=198180864 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=balanced active_experts=512 mean_active=40.000 min_count=40 max_count=40 hot_e0=40 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1024
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=balanced broadcast=0 id_helper_ms=0.1381 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=5242880 mismatches=0 status=PASS conversion_ms=0.0451
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=52428800 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=balanced samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.3816746e-07 f16_max_abs=5.21540642e-08 f16_max_rel=0.000100557234 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000284546926 f32_max_abs=2.5421381e-05 f32_max_rel=0.0820279616 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=52428800 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=52428800 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=18.4883 average_ms=6.1628
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=5.1917 average_ms=1.7306
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=224 N=2560 tokens=2048 assignments=20480 route=balanced broadcast=0 route_id_gpu_ms=0.1381 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=6.1628 mmq_graph_core_ms=1.7306 tc_over_mmq_core=3.5611 tc_plus_route_f16_ms=6.3572 mmq_plus_route_q8_ms=1.9240 tc_over_mmq_including_gpu_prep=3.3042 f16_gpu_prep_ms=0.0451 q8_1_gpu_prep_ms=0.0461 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=224 N=2560 tokens=2048 assignments=20480 route=balanced packed_bytes=198180864 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=onehot_e0 active_experts=512 mean_active=40.000 min_count=36 max_count=2048 hot_e0=2048 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=527 mmq_tiles=1086
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=onehot_e0 broadcast=0 id_helper_ms=0.1404 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=5242880 mismatches=0 status=PASS conversion_ms=0.0461
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=52428800 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=onehot_e0 samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.17407436e-07 f16_max_abs=5.21540642e-08 f16_max_rel=0.000100557234 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000284256325 f32_max_abs=3.88324261e-05 f32_max_rel=0.0820279616 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=52428800 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=52428800 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=18.8058 average_ms=6.2686
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=5.4682 average_ms=1.8227
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=224 N=2560 tokens=2048 assignments=20480 route=onehot_e0 broadcast=0 route_id_gpu_ms=0.1404 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=6.2686 mmq_graph_core_ms=1.8227 tc_over_mmq_core=3.4391 tc_plus_route_f16_ms=6.4664 mmq_plus_route_q8_ms=2.0185 tc_over_mmq_including_gpu_prep=3.2036 f16_gpu_prep_ms=0.0461 q8_1_gpu_prep_ms=0.0461 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=224 N=2560 tokens=2048 assignments=20480 route=onehot_e0 packed_bytes=198180864 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=balanced active_experts=512 mean_active=80.000 min_count=80 max_count=80 hot_e0=80 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1536
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=balanced broadcast=0 id_helper_ms=0.4105 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=10485760 mismatches=0 status=PASS conversion_ms=0.0819
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=104857600 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=balanced samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.3816746e-07 f16_max_abs=5.21540642e-08 f16_max_rel=0.000100557234 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000284546926 f32_max_abs=2.5421381e-05 f32_max_rel=0.0820279616 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=104857600 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=104857600 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=23.2980 average_ms=7.7660
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=7.9514 average_ms=2.6505
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=224 N=2560 tokens=4096 assignments=40960 route=balanced broadcast=0 route_id_gpu_ms=0.4105 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=7.7660 mmq_graph_core_ms=2.6505 tc_over_mmq_core=2.9301 tc_plus_route_f16_ms=8.2697 mmq_plus_route_q8_ms=3.1459 tc_over_mmq_including_gpu_prep=2.6287 f16_gpu_prep_ms=0.0819 q8_1_gpu_prep_ms=0.0758 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=224 N=2560 tokens=4096 assignments=40960 route=balanced packed_bytes=198180864 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=onehot_e0 active_experts=512 mean_active=80.000 min_count=72 max_count=4096 hot_e0=4096 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=543 mmq_tiles=1661
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=onehot_e0 broadcast=0 id_helper_ms=0.4081 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=10485760 mismatches=0 status=PASS conversion_ms=0.0829
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=104857600 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=onehot_e0 samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.17407436e-07 f16_max_abs=5.21540642e-08 f16_max_rel=0.000100557234 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000284256325 f32_max_abs=3.88324261e-05 f32_max_rel=0.0820279616 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=104857600 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=104857600 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=24.4029 average_ms=8.1343
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=8.4726 average_ms=2.8242
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=224 N=2560 tokens=4096 assignments=40960 route=onehot_e0 broadcast=0 route_id_gpu_ms=0.4081 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=8.1343 mmq_graph_core_ms=2.8242 tc_over_mmq_core=2.8802 tc_plus_route_f16_ms=8.6367 mmq_plus_route_q8_ms=3.3183 tc_over_mmq_including_gpu_prep=2.6027 f16_gpu_prep_ms=0.0829 q8_1_gpu_prep_ms=0.0768 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=224 N=2560 tokens=4096 assignments=40960 route=onehot_e0 packed_bytes=198180864 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+CPU_RNE_REFERENCE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=640 N=2560 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=30720 half_hash=7e2dce3ded6d6acd source=ggml_cpu_dequantize
+ROUTE tokens=1024 topk=10 assignments=10240 name=balanced active_experts=512 mean_active=20.000 min_count=20 max_count=20 hot_e0=20 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=512
+GPU_DECODE_RNE type=IQ4_NL expert=0 K=640 Kpad=768 rows=2688 checked=2064384 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ4_NL expert=17 K=640 Kpad=768 rows=2688 checked=2064384 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=IQ4_NL expert=511 K=640 Kpad=768 rows=2688 checked=2064384 mismatches=0 first=none exact=1
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=balanced broadcast=0 id_helper_ms=0.1024 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=7864320 mismatches=0 status=PASS conversion_ms=0.0625
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=26214400 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=balanced samples=4 outputs=10240 f16_bad=0 f16_nrmse=4.28238481e-07 f16_max_abs=1.49011612e-07 f16_max_rel=2.11457577e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000228723191 f32_max_abs=5.23552299e-05 f32_max_rel=0.0180539718 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=26214400 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=26214400 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=41.5898 average_ms=13.8633
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=7.0789 average_ms=2.3596
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=640 N=2560 tokens=1024 assignments=10240 route=balanced broadcast=0 route_id_gpu_ms=0.1024 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=13.8633 mmq_graph_core_ms=2.3596 tc_over_mmq_core=5.8752 tc_plus_route_f16_ms=14.0394 mmq_plus_route_q8_ms=2.5337 tc_over_mmq_including_gpu_prep=5.5410 f16_gpu_prep_ms=0.0625 q8_1_gpu_prep_ms=0.0625 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=640 N=2560 tokens=1024 assignments=10240 route=balanced packed_bytes=594542592 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=1024 topk=10 assignments=10240 name=onehot_e0 active_experts=512 mean_active=20.000 min_count=18 max_count=1024 hot_e0=1024 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=519 mmq_tiles=543
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=onehot_e0 broadcast=0 id_helper_ms=0.0922 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0102 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=7864320 mismatches=0 status=PASS conversion_ms=0.0614
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=26214400 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=onehot_e0 samples=4 outputs=10240 f16_bad=0 f16_nrmse=4.64375253e-07 f16_max_abs=9.68575478e-08 f16_max_rel=0.000111716827 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.00031175353 f32_max_abs=5.23552299e-05 f32_max_rel=0.0152283718 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=26214400 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=26214400 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=41.9256 average_ms=13.9752
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=7.4045 average_ms=2.4682
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=640 N=2560 tokens=1024 assignments=10240 route=onehot_e0 broadcast=0 route_id_gpu_ms=0.0922 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0102 tc_graph_core_ms=13.9752 mmq_graph_core_ms=2.4682 tc_over_mmq_core=5.6621 tc_plus_route_f16_ms=14.1401 mmq_plus_route_q8_ms=2.6361 tc_over_mmq_including_gpu_prep=5.3640 f16_gpu_prep_ms=0.0614 q8_1_gpu_prep_ms=0.0655 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=640 N=2560 tokens=1024 assignments=10240 route=onehot_e0 packed_bytes=594542592 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=balanced active_experts=512 mean_active=40.000 min_count=40 max_count=40 hot_e0=40 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1024
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=balanced broadcast=0 id_helper_ms=0.1397 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=15728640 mismatches=0 status=PASS conversion_ms=0.1157
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=52428800 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=balanced samples=4 outputs=10240 f16_bad=0 f16_nrmse=4.28238481e-07 f16_max_abs=1.49011612e-07 f16_max_rel=2.11457577e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000228723191 f32_max_abs=5.23552299e-05 f32_max_rel=0.0180539718 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=52428800 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=52428800 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=47.3856 average_ms=15.7952
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=13.4861 average_ms=4.4954
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=640 N=2560 tokens=2048 assignments=20480 route=balanced broadcast=0 route_id_gpu_ms=0.1397 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=15.7952 mmq_graph_core_ms=4.4954 tc_over_mmq_core=3.5137 tc_plus_route_f16_ms=16.0619 mmq_plus_route_q8_ms=4.7590 tc_over_mmq_including_gpu_prep=3.3751 f16_gpu_prep_ms=0.1157 q8_1_gpu_prep_ms=0.1147 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=640 N=2560 tokens=2048 assignments=20480 route=balanced packed_bytes=594542592 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=onehot_e0 active_experts=512 mean_active=40.000 min_count=36 max_count=2048 hot_e0=2048 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=527 mmq_tiles=1086
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=onehot_e0 broadcast=0 id_helper_ms=0.1876 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0082 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=15728640 mismatches=0 status=PASS conversion_ms=0.1157
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=52428800 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=onehot_e0 samples=4 outputs=10240 f16_bad=0 f16_nrmse=4.64375253e-07 f16_max_abs=9.68575478e-08 f16_max_rel=0.000111716827 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.00031175353 f32_max_abs=5.23552299e-05 f32_max_rel=0.0152283718 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=52428800 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=52428800 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=48.5652 average_ms=16.1884
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=14.2541 average_ms=4.7514
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=640 N=2560 tokens=2048 assignments=20480 route=onehot_e0 broadcast=0 route_id_gpu_ms=0.1876 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0082 tc_graph_core_ms=16.1884 mmq_graph_core_ms=4.7514 tc_over_mmq_core=3.4071 tc_plus_route_f16_ms=16.5030 mmq_plus_route_q8_ms=5.0598 tc_over_mmq_including_gpu_prep=3.2616 f16_gpu_prep_ms=0.1157 q8_1_gpu_prep_ms=0.1126 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=640 N=2560 tokens=2048 assignments=20480 route=onehot_e0 packed_bytes=594542592 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=balanced active_experts=512 mean_active=80.000 min_count=80 max_count=80 hot_e0=80 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1536
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=balanced broadcast=0 id_helper_ms=0.4487 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=31457280 mismatches=0 status=PASS conversion_ms=0.2202
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=104857600 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=balanced samples=4 outputs=10240 f16_bad=0 f16_nrmse=4.28238481e-07 f16_max_abs=1.49011612e-07 f16_max_rel=2.11457577e-05 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000228723191 f32_max_abs=5.23552299e-05 f32_max_rel=0.0180539718 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=104857600 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=104857600 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=59.5333 average_ms=19.8444
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=20.3100 average_ms=6.7700
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=640 N=2560 tokens=4096 assignments=40960 route=balanced broadcast=0 route_id_gpu_ms=0.4487 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=19.8444 mmq_graph_core_ms=6.7700 tc_over_mmq_core=2.9312 tc_plus_route_f16_ms=20.5246 mmq_plus_route_q8_ms=7.4399 tc_over_mmq_including_gpu_prep=2.7587 f16_gpu_prep_ms=0.2202 q8_1_gpu_prep_ms=0.2120 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=640 N=2560 tokens=4096 assignments=40960 route=balanced packed_bytes=594542592 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=onehot_e0 active_experts=512 mean_active=80.000 min_count=72 max_count=4096 hot_e0=4096 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=543 mmq_tiles=1661
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=onehot_e0 broadcast=0 id_helper_ms=0.4057 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=IQ4_NL checked=31457280 mismatches=0 status=PASS conversion_ms=0.2202
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=104857600 nonfinite=0 status=PASS
+NUMERIC type=IQ4_NL route=onehot_e0 samples=4 outputs=10240 f16_bad=0 f16_nrmse=4.64375253e-07 f16_max_abs=9.68575478e-08 f16_max_rel=0.000111716827 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.00031175353 f32_max_abs=5.23552299e-05 f32_max_rel=0.0152283718 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=104857600 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=104857600 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=62.1957 average_ms=20.7319
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=21.7907 average_ms=7.2636
+PERF_COMPARE type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=640 N=2560 tokens=4096 assignments=40960 route=onehot_e0 broadcast=0 route_id_gpu_ms=0.4057 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=20.7319 mmq_graph_core_ms=7.2636 tc_over_mmq_core=2.8542 tc_plus_route_f16_ms=21.3690 mmq_plus_route_q8_ms=7.8935 tc_over_mmq_including_gpu_prep=2.7072 f16_gpu_prep_ms=0.2202 q8_1_gpu_prep_ms=0.2150 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=IQ4_NL tensor=blk.0.ffn_down_exps.weight K=640 N=2560 tokens=4096 assignments=40960 route=onehot_e0 packed_bytes=594542592 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+CPU_RNE_REFERENCE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=192 N=2560 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=9216 half_hash=87fb8e5d2a904984 source=ggml_cpu_dequantize
+ROUTE tokens=1024 topk=10 assignments=10240 name=balanced active_experts=512 mean_active=20.000 min_count=20 max_count=20 hot_e0=20 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=512
+GPU_DECODE_RNE type=Q2_0 expert=0 K=192 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=Q2_0 expert=17 K=192 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=Q2_0 expert=511 K=192 Kpad=256 rows=2688 checked=688128 mismatches=0 first=none exact=1
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=balanced broadcast=0 id_helper_ms=0.0901 tc_offset_scan_ms=0.0102 mmq_offset_scan_ms=0.0102 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=Q2_0 checked=2621440 mismatches=0 status=PASS conversion_ms=0.0256
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=26214400 nonfinite=0 status=PASS
+NUMERIC type=Q2_0 route=balanced samples=4 outputs=10240 f16_bad=0 f16_nrmse=2.21189809e-07 f16_max_abs=2.98023224e-08 f16_max_rel=7.77508577e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000193646219 f32_max_abs=1.83843076e-05 f32_max_rel=0.0052723292 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=26214400 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=26214400 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=15.9928 average_ms=5.3309
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=2.5876 average_ms=0.8625
+PERF_COMPARE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=192 N=2560 tokens=1024 assignments=10240 route=balanced broadcast=0 route_id_gpu_ms=0.0901 tc_offset_gpu_ms=0.0102 mmq_offset_gpu_ms=0.0102 tc_graph_core_ms=5.3309 mmq_graph_core_ms=0.8625 tc_over_mmq_core=6.1805 tc_plus_route_f16_ms=5.4569 mmq_plus_route_q8_ms=0.9905 tc_over_mmq_including_gpu_prep=5.5090 f16_gpu_prep_ms=0.0256 q8_1_gpu_prep_ms=0.0276 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=192 N=2560 tokens=1024 assignments=10240 route=balanced packed_bytes=99090432 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=1024 topk=10 assignments=10240 name=onehot_e0 active_experts=512 mean_active=20.000 min_count=18 max_count=1024 hot_e0=1024 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=519 mmq_tiles=543
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=onehot_e0 broadcast=0 id_helper_ms=0.0922 tc_offset_scan_ms=0.0102 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=Q2_0 checked=2621440 mismatches=0 status=PASS conversion_ms=0.0256
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=26214400 nonfinite=0 status=PASS
+NUMERIC type=Q2_0 route=onehot_e0 samples=4 outputs=10240 f16_bad=0 f16_nrmse=2.17298909e-07 f16_max_abs=3.35276127e-08 f16_max_rel=2.55013536e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.00017186453 f32_max_abs=1.74120069e-05 f32_max_rel=0.00813631714 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=26214400 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=26214400 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=16.1833 average_ms=5.3944
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=2.7044 average_ms=0.9015
+PERF_COMPARE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=192 N=2560 tokens=1024 assignments=10240 route=onehot_e0 broadcast=0 route_id_gpu_ms=0.0922 tc_offset_gpu_ms=0.0102 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=5.3944 mmq_graph_core_ms=0.9015 tc_over_mmq_core=5.9841 tc_plus_route_f16_ms=5.5224 mmq_plus_route_q8_ms=1.0315 tc_over_mmq_including_gpu_prep=5.3537 f16_gpu_prep_ms=0.0256 q8_1_gpu_prep_ms=0.0287 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=192 N=2560 tokens=1024 assignments=10240 route=onehot_e0 packed_bytes=99090432 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=balanced active_experts=512 mean_active=40.000 min_count=40 max_count=40 hot_e0=40 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1024
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=balanced broadcast=0 id_helper_ms=0.1382 tc_offset_scan_ms=0.0205 mmq_offset_scan_ms=0.0082 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=Q2_0 checked=5242880 mismatches=0 status=PASS conversion_ms=0.0420
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=52428800 nonfinite=0 status=PASS
+NUMERIC type=Q2_0 route=balanced samples=4 outputs=10240 f16_bad=0 f16_nrmse=2.21189809e-07 f16_max_abs=2.98023224e-08 f16_max_rel=7.77508577e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000193646219 f32_max_abs=1.83843076e-05 f32_max_rel=0.0052723292 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=52428800 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=52428800 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=18.3859 average_ms=6.1286
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=4.9603 average_ms=1.6534
+PERF_COMPARE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=192 N=2560 tokens=2048 assignments=20480 route=balanced broadcast=0 route_id_gpu_ms=0.1382 tc_offset_gpu_ms=0.0205 mmq_offset_gpu_ms=0.0082 tc_graph_core_ms=6.1286 mmq_graph_core_ms=1.6534 tc_over_mmq_core=3.7066 tc_plus_route_f16_ms=6.3293 mmq_plus_route_q8_ms=1.8418 tc_over_mmq_including_gpu_prep=3.4365 f16_gpu_prep_ms=0.0420 q8_1_gpu_prep_ms=0.0420 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=192 N=2560 tokens=2048 assignments=20480 route=balanced packed_bytes=99090432 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=onehot_e0 active_experts=512 mean_active=40.000 min_count=36 max_count=2048 hot_e0=2048 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=527 mmq_tiles=1086
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=onehot_e0 broadcast=0 id_helper_ms=0.1428 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=Q2_0 checked=5242880 mismatches=0 status=PASS conversion_ms=0.0430
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=52428800 nonfinite=0 status=PASS
+NUMERIC type=Q2_0 route=onehot_e0 samples=4 outputs=10240 f16_bad=0 f16_nrmse=2.17298909e-07 f16_max_abs=3.35276127e-08 f16_max_rel=2.55013536e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.00017186453 f32_max_abs=1.74120069e-05 f32_max_rel=0.00813631714 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=52428800 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=52428800 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=18.7525 average_ms=6.2508
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=5.2306 average_ms=1.7435
+PERF_COMPARE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=192 N=2560 tokens=2048 assignments=20480 route=onehot_e0 broadcast=0 route_id_gpu_ms=0.1428 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=6.2508 mmq_graph_core_ms=1.7435 tc_over_mmq_core=3.5852 tc_plus_route_f16_ms=6.4479 mmq_plus_route_q8_ms=1.9396 tc_over_mmq_including_gpu_prep=3.3244 f16_gpu_prep_ms=0.0430 q8_1_gpu_prep_ms=0.0440 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=192 N=2560 tokens=2048 assignments=20480 route=onehot_e0 packed_bytes=99090432 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=balanced active_experts=512 mean_active=80.000 min_count=80 max_count=80 hot_e0=80 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1536
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=balanced broadcast=0 id_helper_ms=0.4052 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=Q2_0 checked=10485760 mismatches=0 status=PASS conversion_ms=0.0758
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=104857600 nonfinite=0 status=PASS
+NUMERIC type=Q2_0 route=balanced samples=4 outputs=10240 f16_bad=0 f16_nrmse=2.21189809e-07 f16_max_abs=2.98023224e-08 f16_max_rel=7.77508577e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000193646219 f32_max_abs=1.83843076e-05 f32_max_rel=0.0052723292 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=104857600 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=104857600 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=22.9847 average_ms=7.6616
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=7.5827 average_ms=2.5276
+PERF_COMPARE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=192 N=2560 tokens=4096 assignments=40960 route=balanced broadcast=0 route_id_gpu_ms=0.4052 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=7.6616 mmq_graph_core_ms=2.5276 tc_over_mmq_core=3.0312 tc_plus_route_f16_ms=8.1538 mmq_plus_route_q8_ms=3.0146 tc_over_mmq_including_gpu_prep=2.7047 f16_gpu_prep_ms=0.0758 q8_1_gpu_prep_ms=0.0727 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=192 N=2560 tokens=4096 assignments=40960 route=balanced packed_bytes=99090432 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=onehot_e0 active_experts=512 mean_active=80.000 min_count=72 max_count=4096 hot_e0=4096 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=543 mmq_tiles=1661
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=onehot_e0 broadcast=0 id_helper_ms=0.4298 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0102 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=Q2_0 checked=10485760 mismatches=0 status=PASS conversion_ms=0.0758
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=104857600 nonfinite=0 status=PASS
+NUMERIC type=Q2_0 route=onehot_e0 samples=4 outputs=10240 f16_bad=0 f16_nrmse=2.17298909e-07 f16_max_abs=3.35276127e-08 f16_max_rel=2.55013536e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.00017186453 f32_max_abs=1.74120069e-05 f32_max_rel=0.00813631714 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=104857600 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=104857600 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=24.1408 average_ms=8.0469
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=8.1050 average_ms=2.7017
+PERF_COMPARE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=192 N=2560 tokens=4096 assignments=40960 route=onehot_e0 broadcast=0 route_id_gpu_ms=0.4298 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0102 tc_graph_core_ms=8.0469 mmq_graph_core_ms=2.7017 tc_over_mmq_core=2.9785 tc_plus_route_f16_ms=8.5637 mmq_plus_route_q8_ms=3.2144 tc_over_mmq_including_gpu_prep=2.6642 f16_gpu_prep_ms=0.0758 q8_1_gpu_prep_ms=0.0727 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=192 N=2560 tokens=4096 assignments=40960 route=onehot_e0 packed_bytes=99090432 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+CPU_RNE_REFERENCE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=640 N=2560 rows=48 decoded_f16=explicit_RNE=1 finite=1 count=30720 half_hash=b2ed13f614c487e5 source=ggml_cpu_dequantize
+ROUTE tokens=1024 topk=10 assignments=10240 name=balanced active_experts=512 mean_active=20.000 min_count=20 max_count=20 hot_e0=20 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=512
+GPU_DECODE_RNE type=Q2_0 expert=0 K=640 Kpad=768 rows=2688 checked=2064384 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=Q2_0 expert=17 K=640 Kpad=768 rows=2688 checked=2064384 mismatches=0 first=none exact=1
+GPU_DECODE_RNE type=Q2_0 expert=511 K=640 Kpad=768 rows=2688 checked=2064384 mismatches=0 first=none exact=1
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=balanced broadcast=0 id_helper_ms=0.0911 tc_offset_scan_ms=0.0123 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=Q2_0 checked=7864320 mismatches=0 status=PASS conversion_ms=0.0625
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=26214400 nonfinite=0 status=PASS
+NUMERIC type=Q2_0 route=balanced samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.40803771e-07 f16_max_abs=7.4505806e-08 f16_max_rel=9.18004541e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000207073552 f32_max_abs=6.23315573e-05 f32_max_rel=0.00371094059 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=26214400 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=26214400 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=41.0501 average_ms=13.6834
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=6.4952 average_ms=2.1651
+PERF_COMPARE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=640 N=2560 tokens=1024 assignments=10240 route=balanced broadcast=0 route_id_gpu_ms=0.0911 tc_offset_gpu_ms=0.0123 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=13.6834 mmq_graph_core_ms=2.1651 tc_over_mmq_core=6.3200 tc_plus_route_f16_ms=13.8493 mmq_plus_route_q8_ms=2.3289 tc_over_mmq_including_gpu_prep=5.9467 f16_gpu_prep_ms=0.0625 q8_1_gpu_prep_ms=0.0635 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=640 N=2560 tokens=1024 assignments=10240 route=balanced packed_bytes=297271296 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=1024 topk=10 assignments=10240 name=onehot_e0 active_experts=512 mean_active=20.000 min_count=18 max_count=1024 hot_e0=1024 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=519 mmq_tiles=543
+GPU_ROUTE_PREP tokens=1024 assignments=10240 route=onehot_e0 broadcast=0 id_helper_ms=0.0922 tc_offset_scan_ms=0.0102 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=Q2_0 checked=7864320 mismatches=0 status=PASS conversion_ms=0.0614
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=26214400 nonfinite=0 status=PASS
+NUMERIC type=Q2_0 route=onehot_e0 samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.56862074e-07 f16_max_abs=1.1920929e-07 f16_max_rel=4.92026775e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000229138862 f32_max_abs=6.23315573e-05 f32_max_rel=0.00371094059 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=26214400 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=26214400 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=41.6676 average_ms=13.8892
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=6.8649 average_ms=2.2883
+PERF_COMPARE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=640 N=2560 tokens=1024 assignments=10240 route=onehot_e0 broadcast=0 route_id_gpu_ms=0.0922 tc_offset_gpu_ms=0.0102 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=13.8892 mmq_graph_core_ms=2.2883 tc_over_mmq_core=6.0697 tc_plus_route_f16_ms=14.0530 mmq_plus_route_q8_ms=2.4542 tc_over_mmq_including_gpu_prep=5.7261 f16_gpu_prep_ms=0.0614 q8_1_gpu_prep_ms=0.0645 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=640 N=2560 tokens=1024 assignments=10240 route=onehot_e0 packed_bytes=297271296 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=balanced active_experts=512 mean_active=40.000 min_count=40 max_count=40 hot_e0=40 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1024
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=balanced broadcast=0 id_helper_ms=0.1403 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0102 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=Q2_0 checked=15728640 mismatches=0 status=PASS conversion_ms=0.1147
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=52428800 nonfinite=0 status=PASS
+NUMERIC type=Q2_0 route=balanced samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.40803771e-07 f16_max_abs=7.4505806e-08 f16_max_rel=9.18004541e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000207073552 f32_max_abs=6.23315573e-05 f32_max_rel=0.00371094059 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=52428800 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=52428800 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=47.2822 average_ms=15.7607
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=12.7242 average_ms=4.2414
+PERF_COMPARE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=640 N=2560 tokens=2048 assignments=20480 route=balanced broadcast=0 route_id_gpu_ms=0.1403 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0102 tc_graph_core_ms=15.7607 mmq_graph_core_ms=4.2414 tc_over_mmq_core=3.7159 tc_plus_route_f16_ms=16.0269 mmq_plus_route_q8_ms=4.5045 tc_over_mmq_including_gpu_prep=3.5579 f16_gpu_prep_ms=0.1147 q8_1_gpu_prep_ms=0.1126 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=640 N=2560 tokens=2048 assignments=20480 route=balanced packed_bytes=297271296 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=2048 topk=10 assignments=20480 name=onehot_e0 active_experts=512 mean_active=40.000 min_count=36 max_count=2048 hot_e0=2048 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=527 mmq_tiles=1086
+GPU_ROUTE_PREP tokens=2048 assignments=20480 route=onehot_e0 broadcast=0 id_helper_ms=0.1412 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=Q2_0 checked=15728640 mismatches=0 status=PASS conversion_ms=0.1147
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=52428800 nonfinite=0 status=PASS
+NUMERIC type=Q2_0 route=onehot_e0 samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.56862074e-07 f16_max_abs=1.1920929e-07 f16_max_rel=4.92026775e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000229138862 f32_max_abs=6.23315573e-05 f32_max_rel=0.00371094059 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=52428800 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=52428800 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=48.3543 average_ms=16.1181
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=13.4513 average_ms=4.4838
+PERF_COMPARE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=640 N=2560 tokens=2048 assignments=20480 route=onehot_e0 broadcast=0 route_id_gpu_ms=0.1412 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=16.1181 mmq_graph_core_ms=4.4838 tc_over_mmq_core=3.5948 tc_plus_route_f16_ms=16.3853 mmq_plus_route_q8_ms=4.7499 tc_over_mmq_including_gpu_prep=3.4496 f16_gpu_prep_ms=0.1147 q8_1_gpu_prep_ms=0.1157 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=640 N=2560 tokens=2048 assignments=20480 route=onehot_e0 packed_bytes=297271296 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=balanced active_experts=512 mean_active=80.000 min_count=80 max_count=80 hot_e0=80 tc_partial64_experts=512 tc_partial128_experts=512 mmq_partial32_experts=512 tc_tiles=512 mmq_tiles=1536
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=balanced broadcast=0 id_helper_ms=0.4061 tc_offset_scan_ms=0.0123 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_balanced words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=Q2_0 checked=31457280 mismatches=0 status=PASS conversion_ms=0.2202
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=104857600 nonfinite=0 status=PASS
+NUMERIC type=Q2_0 route=balanced samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.40803771e-07 f16_max_abs=7.4505806e-08 f16_max_rel=9.18004541e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000207073552 f32_max_abs=6.23315573e-05 f32_max_rel=0.00371094059 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=104857600 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=104857600 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=58.6148 average_ms=19.5383
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=19.2440 average_ms=6.4147
+PERF_COMPARE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=640 N=2560 tokens=4096 assignments=40960 route=balanced broadcast=0 route_id_gpu_ms=0.4061 tc_offset_gpu_ms=0.0123 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=19.5383 mmq_graph_core_ms=6.4147 tc_over_mmq_core=3.0459 tc_plus_route_f16_ms=20.1768 mmq_plus_route_q8_ms=7.0420 tc_over_mmq_including_gpu_prep=2.8652 f16_gpu_prep_ms=0.2202 q8_1_gpu_prep_ms=0.2120 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=640 N=2560 tokens=4096 assignments=40960 route=balanced packed_bytes=297271296 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+ROUTE tokens=4096 topk=10 assignments=40960 name=onehot_e0 active_experts=512 mean_active=80.000 min_count=72 max_count=4096 hot_e0=4096 tc_partial64_experts=511 tc_partial128_experts=511 mmq_partial32_experts=511 tc_tiles=543 mmq_tiles=1661
+GPU_ROUTE_PREP tokens=4096 assignments=40960 route=onehot_e0 broadcast=0 id_helper_ms=0.4048 tc_offset_scan_ms=0.0113 mmq_offset_scan_ms=0.0092 exact_map=PASS source=engine_ggml_cuda_launch_mm_ids_helper+engine_tile_offset_scan
+CANARY label=Q8_1_onehot_e0 words=256 mismatches=0 status=PASS
+ACTIVATION_RNE type=Q2_0 checked=31457280 mismatches=0 status=PASS conversion_ms=0.2202
+GRAPH_CAPTURE label=A_streamed_tc status=PASS
+GRAPH_CAPTURE label=B_original_grouped_mmq status=PASS
+CANARY label=A_first words=64 mismatches=0 status=PASS
+FINITE label=TC_first count=104857600 nonfinite=0 status=PASS
+NUMERIC type=Q2_0 route=onehot_e0 samples=4 outputs=10240 f16_bad=0 f16_nrmse=3.56862074e-07 f16_max_abs=1.1920929e-07 f16_max_rel=4.92026775e-06 f16_nonfinite=0 f16_status=PASS f32_bad=0 f32_nrmse=0.000229138862 f32_max_abs=6.23315573e-05 f32_max_rel=0.00371094059 f32_nonfinite=0 f32_status=PASS
+CANARY label=B_middle words=64 mismatches=0 status=PASS
+FINITE label=MMQ_reference count=104857600 nonfinite=0 status=PASS
+CANARY label=A_second words=64 mismatches=0 status=PASS
+ABA_REPLAY label=A_after_B count=104857600 bitdiff=0 max_abs=0 status=PASS
+TIMING label=streamed_tc_decode_plus_mma cuda_graph_replays=3 total_ms=61.2495 average_ms=20.4165
+TIMING label=grouped_mmq_core_q8_1 cuda_graph_replays=3 total_ms=20.7053 average_ms=6.9018
+PERF_COMPARE type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=640 N=2560 tokens=4096 assignments=40960 route=onehot_e0 broadcast=0 route_id_gpu_ms=0.4048 tc_offset_gpu_ms=0.0113 mmq_offset_gpu_ms=0.0092 tc_graph_core_ms=20.4165 mmq_graph_core_ms=6.9018 tc_over_mmq_core=2.9582 tc_plus_route_f16_ms=21.0527 mmq_plus_route_q8_ms=7.5267 tc_over_mmq_including_gpu_prep=2.7971 f16_gpu_prep_ms=0.2202 q8_1_gpu_prep_ms=0.2109 q8_1_prep_source=engine_quantize_mmq_q8_1_cuda mmq_output_gate=finite_only
+CASE_PASS type=Q2_0 tensor=blk.1.ffn_down_exps.weight K=640 N=2560 tokens=4096 assignments=40960 route=onehot_e0 packed_bytes=297271296 strict_numeric=PASS A_B_A=PASS route_map_exact=PASS route_Q8_canary=PASS output_canary=PASS
+FIXTURE_END status=PASS mode=--gpu source=actual_packed_rows no_full_model=1 matrix=1

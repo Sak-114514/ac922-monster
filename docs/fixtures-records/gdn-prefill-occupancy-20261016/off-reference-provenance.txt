@@ -1,0 +1,31 @@
+Run tag: root-gpu3-20261016T130844Z
+Result: OFF matrix completed on physical GPU3 with the V95 runtime. Root reported
+all 8 cases passed the full F64, A/B/A, and canary checks; GPU was released.
+
+The large binary was kept on the AC922 and was not copied into this workspace.
+Remote path:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/gdn-prefill-occupancy-20261016/results/root-gpu3-20261016T130844Z/off.bin
+
+OFF binary SHA256:
+1f64287292fdb9b21ca65d3b161e968aa6edbc02f226a2cb68ad168cf03e76eb
+Remote size at capture: 462 MiB
+
+Source and build closure used for this OFF reference:
+fixture C++ source SHA256 d0201838c4e604e6976e0d4ae8c81069c422fd7e45c70c3adb8b0eb05c015a88
+fixture build script SHA256 3d684f9e5695a88680f9cfd5176c549ed70fb6ae8803285cec8e4cb42e081712
+fixture full OFF/ON runner SHA256 436da71b176ce7b2ce932e770fb4ed614020ab62ea0157aacf48317ffa3e3d72
+CUDA host binary SHA256 f6f87c7db26aaa20f38f467ae7e00b7c770a097239b84d862ff39b52e7641a8a
+V95 gated_delta_net.cu SHA256 a50a0671dff2485ed7ef68d921136ee39f6901510b2f2967f6f5906652871295
+V95 ggml-cuda.cu SHA256 0ba4880b2182b770181d276ffb703834ff7a079a829a8f565ffdb05026b31bbc
+V95 libggml.so.0 SHA256 73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2
+V95 libggml-cuda.so.0 SHA256 e633a79fb01d7405b6dcbcb81878e0987b042a7f2f568236fe15f268bd727482
+V95 libggml-base.so.0 SHA256 417e4c69ad42ced855bc96627c89ad68d7fe6af5e25b897020ff9f022796c124
+
+Dispatch record in off.log: volta_gdn_x4 requested=0, selected=0,
+reason=env_disabled. Grid CTA counts in the per-case lines are estimates from
+the source launch dimensions; this run did not measure achieved SM occupancy.
+
+The first remote invocation returned 127 before any GPU work because only the
+binary/C++ inputs had been staged and the build/run shell scripts were absent.
+That failed attempt did not produce the above result. The successful GPU3 run
+used the fresh root-gpu3-20261016T130844Z tag.

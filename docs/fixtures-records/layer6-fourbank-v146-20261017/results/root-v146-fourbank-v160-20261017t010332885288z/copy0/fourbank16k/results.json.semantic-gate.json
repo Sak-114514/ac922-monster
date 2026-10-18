@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-17T01:06:47.370111+00:00",
+  "checker": "run_semantic_native.evaluate_case",
+  "generated_python_executed": false,
+  "id_slot_policy": "null; local bank/lane IDs are not HTTP slots",
+  "status": "fail",
+  "semantic_scenario_count": 1,
+  "scenarios": [
+    {
+      "label": "v146-native-fourbank-canary",
+      "kind": "semantic_p4_gate",
+      "status": "pass",
+      "case_count": 4,
+      "cases": [
+        {
+          "id": "capital-en",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "Paris"
+        },
+        {
+          "id": "arithmetic-zh",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "9805"
+        },
+        {
+          "id": "logic-en",
+          "checker": "exact_text",
+          "status": "pass",
+          "reason": "exact expected answer",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "NO"
+        },
+        {
+          "id": "strict-json-zh",
+          "checker": "strict_json",
+          "status": "pass",
+          "reason": "JSON values exactly match expected fields",
+          "id_slot": null,
+          "id_slot_policy": "not_applicable_local_bank_lane",
+          "output": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+        }
+      ],
+      "missing_lane_ids": [],
+      "unexpected_lane_ids": []
+    }
+  ],
+  "errors": [
+    "serial semantic cases do not cover the frozen 16-case source exactly",
+    "P4 semantic cases do not cover the frozen 16-case source exactly"
+  ]
+}

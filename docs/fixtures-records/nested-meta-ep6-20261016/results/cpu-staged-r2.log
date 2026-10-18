@@ -1,0 +1,29 @@
+patching file ggml/src/ggml-backend-meta.cpp
+patching file ggml/src/ggml-ep-private.h
+PASS: patch applies cleanly to private baseline copies and matches candidate
+PASS: nested EP offset composition covers 0..511 exactly once; repeated materialization is stable
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-meta-ep6-20261016/tests/nested-meta-ep6-gpu-fixture.cpp: In function ‘std::vector<int> {anonymous}::make_routes(int)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-meta-ep6-20261016/tests/nested-meta-ep6-gpu-fixture.cpp:241:31: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+  241 |     std::vector<int32_t> route(size_t(kTokens));
+      |                               ^~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-meta-ep6-20261016/tests/nested-meta-ep6-gpu-fixture.cpp:241:31: note: add parentheses to declare a variable
+  241 |     std::vector<int32_t> route(size_t(kTokens));
+      |                               ^~~~~~~~~~~~~~~~~
+      |                                (              )
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-meta-ep6-20261016/tests/nested-meta-ep6-gpu-fixture.cpp:245:56: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+  245 |             route[size_t(expert * kRowsPerExpert + row)] = (expert + shift) % kExperts;
+      |                                                        ^
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-meta-ep6-20261016/tests/nested-meta-ep6-gpu-fixture.cpp:245:58: error: assignment of read-only location ‘*({anonymous}::route + ((sizetype)((expert * ((int){anonymous}::kRowsPerExpert)) + row)))’
+  245 |             route[size_t(expert * kRowsPerExpert + row)] = (expert + shift) % kExperts;
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-meta-ep6-20261016/tests/nested-meta-ep6-gpu-fixture.cpp:248:95: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+  248 |     for (size_t i = 0; i < kCanaryIds.size(); ++i) route[size_t(kExperts * kRowsPerExpert) + i] = (kCanaryIds[i] + shift) % kExperts;
+      |                                                                                               ^
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-meta-ep6-20261016/tests/nested-meta-ep6-gpu-fixture.cpp:248:97: error: assignment of read-only location ‘*({anonymous}::route + ((sizetype)(((size_t)(((int){anonymous}::kExperts) * ((int){anonymous}::kRowsPerExpert))) + i)))’
+  248 |     for (size_t i = 0; i < kCanaryIds.size(); ++i) route[size_t(kExperts * kRowsPerExpert) + i] = (kCanaryIds[i] + shift) % kExperts;
+      |                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/nested-meta-ep6-20261016/tests/nested-meta-ep6-gpu-fixture.cpp:249:12: error: could not convert ‘{anonymous}::route’ from ‘std::vector<int>(size_t)’ {aka ‘std::vector<int>(long unsigned int)’} to ‘std::vector<int>’
+  249 |     return route;
+      |            ^~~~~
+      |            |
+      |            std::vector<int>(size_t) {aka std::vector<int>(long unsigned int)}

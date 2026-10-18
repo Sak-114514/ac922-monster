@@ -1,0 +1,74 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+DEVICE ordinal=0 name=CUDA0 pci=0004:04:00.0
+DEVICE ordinal=1 name=CUDA1 pci=0004:05:00.0
+DEVICE ordinal=2 name=CUDA2 pci=0004:06:00.0
+DEVICE ordinal=3 name=CUDA3 pci=0035:03:00.0
+DEVICE ordinal=4 name=CUDA4 pci=0035:04:00.0
+DEVICE ordinal=5 name=CUDA5 pci=0035:05:00.0
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+GGML_SCHED_META_SINGLE_COPY_EVENTS active scheduler=0x10015b618f0 copies=1 Meta backends=0,1 members=3,3 fifo=1 gpu_event_wait=1
+
+## SPLIT #0: CPU # 0 inputs
+
+## SPLIT #1: Meta(CUDA0,CUDA1,CUDA2) # 1 inputs: [turbo_cpu_rows_flat_for_meta_a (   1K)] 
+
+## SPLIT #2: Meta(CUDA3,CUDA4,CUDA5) # 2 inputs: [turbo_meta_a_state_cpy ( 128K)] [rs_s_copy_extra (   0K)] 
+GRAPH nodes=23 backends=3 splits=3 copies=1 cpu_get_rows=1 ids_view=1 ids_reshape=1 heads=4 head_dim=4 gather_reshape=1 gather_flatten=1 A_gemms=4 B_gemms=4 mirrored_bridge_expected=1
+ZERO_CPU_VIEW_ASSERT split=2 name=rs_s_copy_extra bytes=0 backend=CPU in_metab_split_inputs=1
+FIFO prefill host snapshots enabled, stable device input addresses
+meta-replay-ready backend=0x100145d58d0 graph_uid=3 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+TurboPrefill requested=1 selected=0 scheduler=0x10015b618f0 reason=Meta_graph_not_warmed_and_replay_ready
+CPU result staging active: pinned FIFO snapshots
+meta-replay-ready backend=0x100145d58d0 graph_uid=3 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffcd6200000
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffcd6220000
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffcd7220000
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffcd8220000
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffcd9400000
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffcd9420000
+meta-replay-ready backend=0x100145d58d0 graph_uid=3 ctx_uid=3 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x100148f42c0 graph_uid=4 ctx_uid=0 subgraphs=0 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x100148f42c0 graph_uid=4 ctx_uid=4 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x100145d58d0 graph_uid=3 ctx_uid=3 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+TurboPrefill requested=1 selected=0 scheduler=0x10015b618f0 reason=Meta_graph_not_warmed_and_replay_ready
+meta-replay-ready backend=0x100145d58d0 graph_uid=3 ctx_uid=3 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+CUDA Graph id 5 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 6 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 7 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-replay-ready backend=0x100145d58d0 graph_uid=3 ctx_uid=3 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x100148f42c0 graph_uid=4 ctx_uid=4 subgraphs=1 backends=3 p2p=1 merge_tried=0 ready_cb=1 merged=0 chunks=0
+CUDA Graph id 8 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 9 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 10 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-replay-ready backend=0x100148f42c0 graph_uid=4 ctx_uid=4 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x100145d58d0 graph_uid=3 ctx_uid=3 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x100148f42c0 graph_uid=4 ctx_uid=4 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+REPLAY_READY warm_serial=1 graph_uid=1
+meta-replay-ready backend=0x100145d58d0 graph_uid=3 ctx_uid=3 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+meta-replay-ready backend=0x100148f42c0 graph_uid=4 ctx_uid=4 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+TurboPrefill FIFO prune stale_keys=1 stale_bytes=0 live_keys=1
+meta-replay-ready backend=0x100145d58d0 graph_uid=3 ctx_uid=3 subgraphs=1 backends=3 p2p=1 merge_tried=1 ready_cb=1 merged=0 chunks=0
+CUDA Graph id 5 reused
+CUDA Graph id 6 reused
+CUDA Graph id 7 reused
+TurboPrefill selected=1 scheduler=0x10015b618f0 frame=0 seq=17 range=0..16 cpu_prelude=serial A=enqueued B=awaiting_seal pinned_ring=264192 pinned_high_water=264192 cap=268435456
+meta cross-device event wait active: CUDA stream dependencies
+TurboPrefill unplanned MetaB input tensor=rs_s_copy_extra source=CPU
+TurboPrefill aborted and drained scheduler=0x10015b618f0; context must invalidate the logical batch state
+FIFO prefill: frames=3 staged_inputs=5 cross_copies=2 cpu_gathers=0 host_results=5
+FAIL turbo-backend-fixture: V41 expected rejection did not drain/release the aborted frame

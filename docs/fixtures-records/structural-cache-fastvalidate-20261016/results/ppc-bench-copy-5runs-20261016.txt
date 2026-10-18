@@ -1,0 +1,53 @@
+PASS unchanged full closure accepted
+PASS raw-key mismatch rejected
+PASS UID mismatch rejected
+PASS empty graph identity rejected
+PASS graph node identity change rejected
+PASS node type mutation rejected
+PASS node buffer mutation rejected
+PASS node shape mutation rejected
+PASS node stride mutation rejected
+PASS node op mutation rejected
+PASS node op params mutation rejected
+PASS node flags mutation rejected
+PASS node view offset mutation rejected
+PASS node data binding mutation rejected
+PASS node name mutation rejected
+PASS node opaque extra identity mutation rejected
+PASS node padding mutation rejected
+PASS node CUDA event/data mutation rejected
+PASS node source rewiring rejected
+PASS node view rewiring rejected
+PASS node invalid extra state rejected
+PASS external type mutation rejected
+PASS external buffer mutation rejected
+PASS external data binding mutation rejected
+PASS external event/data mutation rejected
+PASS external descendant rewiring rejected
+PASS external view rewiring rejected
+PASS external invalid extra state rejected
+PASS changed graph edge rejected before new descendant read
+PASS changed external edge rejected before new descendant read
+PASS same-address ABA descriptor change rejected
+RESULT passed=31 failed=0
+RUN=1
+MICROBENCH nodes=633 external=256 iterations=300 ref_validate_us=334.520 candidate_validate_us=286.996 speedup=1.166 signature_copy_us=175.946 index_bytes=9208 snapshot_bytes=915536
+MICROBENCH nodes=2048 external=256 iterations=40 ref_validate_us=829.133 candidate_validate_us=777.493 speedup=1.066 signature_copy_us=454.468 index_bytes=20528 snapshot_bytes=2375816
+MICROBENCH nodes=4000 external=256 iterations=12 ref_validate_us=1509.838 candidate_validate_us=1427.886 speedup=1.057 signature_copy_us=838.234 index_bytes=36144 snapshot_bytes=4390280
+RUN=2
+MICROBENCH nodes=633 external=256 iterations=300 ref_validate_us=342.839 candidate_validate_us=286.679 speedup=1.196 signature_copy_us=176.289 index_bytes=9208 snapshot_bytes=915536
+MICROBENCH nodes=2048 external=256 iterations=40 ref_validate_us=845.529 candidate_validate_us=772.581 speedup=1.094 signature_copy_us=454.212 index_bytes=20528 snapshot_bytes=2375816
+MICROBENCH nodes=4000 external=256 iterations=12 ref_validate_us=1543.308 candidate_validate_us=1430.877 speedup=1.079 signature_copy_us=838.386 index_bytes=36144 snapshot_bytes=4390280
+RUN=3
+MICROBENCH nodes=633 external=256 iterations=300 ref_validate_us=327.586 candidate_validate_us=287.401 speedup=1.140 signature_copy_us=182.383 index_bytes=9208 snapshot_bytes=915536
+MICROBENCH nodes=2048 external=256 iterations=40 ref_validate_us=831.254 candidate_validate_us=774.799 speedup=1.073 signature_copy_us=466.901 index_bytes=20528 snapshot_bytes=2375816
+MICROBENCH nodes=4000 external=256 iterations=12 ref_validate_us=1551.975 candidate_validate_us=1427.553 speedup=1.087 signature_copy_us=862.022 index_bytes=36144 snapshot_bytes=4390280
+RUN=4
+MICROBENCH nodes=633 external=256 iterations=300 ref_validate_us=346.286 candidate_validate_us=288.322 speedup=1.201 signature_copy_us=175.976 index_bytes=9208 snapshot_bytes=915536
+MICROBENCH nodes=2048 external=256 iterations=40 ref_validate_us=851.900 candidate_validate_us=769.599 speedup=1.107 signature_copy_us=454.068 index_bytes=20528 snapshot_bytes=2375816
+MICROBENCH nodes=4000 external=256 iterations=12 ref_validate_us=1554.429 candidate_validate_us=1427.561 speedup=1.089 signature_copy_us=837.929 index_bytes=36144 snapshot_bytes=4390280
+RUN=5
+MICROBENCH nodes=633 external=256 iterations=300 ref_validate_us=335.745 candidate_validate_us=286.453 speedup=1.172 signature_copy_us=176.885 index_bytes=9208 snapshot_bytes=915536
+MICROBENCH nodes=2048 external=256 iterations=40 ref_validate_us=824.200 candidate_validate_us=770.740 speedup=1.069 signature_copy_us=452.299 index_bytes=20528 snapshot_bytes=2375816
+MICROBENCH nodes=4000 external=256 iterations=12 ref_validate_us=1512.301 candidate_validate_us=1426.003 speedup=1.061 signature_copy_us=882.180 index_bytes=36144 snapshot_bytes=4390280
+CPU_CAP_AFTER_KHZ=2300000

@@ -1,0 +1,593 @@
+{
+  "schema_version": 1,
+  "candidate": "V53 V108 dual-native-mask + PLE GPU prefix 6 GiB total / 2 GiB per first-three GPU node",
+  "host_prepared": true,
+  "launch_eligible": true,
+  "model_loads_per_process": 1,
+  "runtime_closure": {
+    "status": "V108_FROZEN",
+    "report_path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/notes/V108-build.json",
+    "report_remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V108-build.json",
+    "report_sha256": "3e90e390e8689b8680f1408232a0ecc57ac9f0da00cdaff3f4de669432cb2bc7",
+    "build_id": "20261016T183414.662729Z",
+    "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108",
+    "runtime_lib": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108/lib"
+  },
+  "runner_build_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-ple6-v53-20261017/build-v53-20261016T183414.662729Z-8088c5598dc4",
+  "runtime_fill_entry": {
+    "status": "V108_FROZEN",
+    "report_path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/notes/V108-build.json",
+    "report_remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V108-build.json",
+    "report_sha256": "3e90e390e8689b8680f1408232a0ecc57ac9f0da00cdaff3f4de669432cb2bc7",
+    "build_id": "20261016T183414.662729Z",
+    "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108",
+    "runtime_lib": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108/lib"
+  },
+  "runtime_log_markers": {
+    "qsa_native_dispatch": "path=qsa_position_mask_native scope=host_dispatch_or_capture requested=1 selected=1",
+    "block_bias_native_dispatch": "path=qsa_block_bias_native scope=host_dispatch_or_capture requested=1 selected=1",
+    "upload_pool_512": "aggregate_limit_bytes=536870912",
+    "ple_first3_rebalance": "copy complete bytes=28800138240 memcmp_exact=1 chunks=859"
+  },
+  "environment": {
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_VISIBLE_DEVICES": "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+    "LD_LIBRARY_PATH": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108/lib",
+    "LLAMA_ISLAND_SPLIT": "3,3",
+    "GGML_CUDA_P2P": "1",
+    "GGML_CUDA_ALLREDUCE": "nccl",
+    "LLAMA_QSA_INDEXER_IMPL": "standard",
+    "GGML_SM70_BF16_GEMV": "1",
+    "GGML_SM70_MOE_REWORK": "1",
+    "GGML_CUDA_MOE_GROUPED": "1",
+    "GGML_CUDA_VOLTA_GDN_X4": "1",
+    "LLAMA_QSA_SPARSE_KERNEL": "1",
+    "LLAMA_QSA_GATHER_MAX_TOKENS": "32",
+    "GGML_CUDA_TOPK_STABLE": "1",
+    "LLAMA_MTP_FOLD": "1",
+    "LLAMA_MTP_GPU_CHAIN": "1",
+    "LLAMA_MTP_GPU_EMBED": "1",
+    "LLAMA_MTP_FIFO": "1",
+    "LLAMA_MTP_N_UBATCH": "512",
+    "LLAMA_MTP_PAD": "6",
+    "LLAMA_DRAFT_DETP": "0",
+    "LLAMA_GPU_ARGMAX": "1",
+    "GGML_CUDA_GRAPH_OPT": "1",
+    "GGML_FT_GRAPH_CACHE": "1",
+    "GGML_FT_GRAPH_CACHE_MIN_NODES": "32",
+    "GGML_META_ASYNC_COPY": "1",
+    "GGML_META_FIFO_PIPELINE": "1",
+    "GGML_META_COMPACT_ARENA": "1",
+    "GGML_META_PACKED_CACHE": "1",
+    "LLAMA_QWEN4EXP_HC_FUSION": "0",
+    "LLAMA_HC_FUSED": "1",
+    "LLAMA_PREFILL_KV_PAD": "65536",
+    "LLAMA_PLE_SHARD": "0",
+    "LLAMA_PLE_SHARD_ROWS": "0",
+    "MONSTER_MONPACK": "0",
+    "LLAMA_PLE_ONECAT": "0",
+    "GGML_CUDA_FATTN_ONECAT": "1",
+    "LLAMA_MONOMOE_SM70": "0",
+    "GGML_CUDA_VOLTA_Q8_HEAD_TC": "0",
+    "GGML_CPU_PLE_PAGE_BATCH": "1",
+    "GGML_CPU_PLE_PAGE_BATCH_LOG_PERIOD": "1",
+    "LLAMA_LOAD_RECLAIM_GPU_PAGES": "1",
+    "LLAMA_SPEC_PAD_MULTI": "20",
+    "LLAMA_SPEC_PAD_MULTI_AUTO": "1",
+    "LLAMA_MTP_DRAFT_GRAPH_CACHE": "0",
+    "LLAMA_MTP_DRAFT_GRAPH_CACHE_LOG": "1",
+    "LLAMA_MTP_SEQ_LAYOUT": "1",
+    "LLAMA_MTP_FOLD_MULTI": "1",
+    "LLAMA_MTP_GPU_CHAIN_MULTI": "1",
+    "GGML_SM70_DECODE_LINEAR_CHUNKS": "4",
+    "GGML_CPU_PLE_GET_ROWS_THREADS": "32",
+    "GGML_CPU_PLE_DECODE_THREADS": "4",
+    "LLAMA_PREFILL_FAIR_SHARE": "1",
+    "GGML_CUDA_GRAPH_STRUCTURAL": "1",
+    "GGML_CUDA_GRAPH_PATH_LOG": "1",
+    "GGML_OPTIMIZATION_PATH_LOG": "1",
+    "LLAMA_GREEDY_SUPPRESSION_FAST": "1",
+    "LLAMA_PLE_PREFETCH": "1",
+    "GGML_CPU_PLE_ROW_CACHE": "1",
+    "LLAMA_MTP_KV_ONLY_PREFILL": "1",
+    "LLAMA_PLE_NUMA_HYBRID": "1",
+    "LLAMA_MTP_VERIFY_ROW_BUDGET": "16",
+    "GGML_CUDA_META_COPY_GPU_WAIT": "1",
+    "GGML_META_GPU_EVENT_WAIT": "1",
+    "GGML_CUDA_META_COPY_TOPOLOGY": "1",
+    "LLAMA_DECODE_KV_PAD": "8192",
+    "LLAMA_TARGET_FIFO_MULTI": "1",
+    "GGML_CUDA_MOE_ADAPTIVE_J": "1",
+    "LLAMA_MTP_GPU_CHAIN_SINGLE": "0",
+    "LLAMA_EXPERT_PARALLEL": "1",
+    "GGML_META_P2P_COLD": "1",
+    "LLAMA_ARGMAX_PINNED_OUTPUT": "1",
+    "LLAMA_GPU_ARGMAX_UNIQUE": "1",
+    "LLAMA_MTP_FUSE_CATCHUP_SEED": "1",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED": "1",
+    "LLAMA_MTP_FIXED_PREFIX_ROWS": "6",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED_DEPTH": "3",
+    "LLAMA_PREFILL_FRAME_PIPELINE": "1",
+    "LLAMA_PREFILL_LAZY_RESERVE": "1",
+    "GGML_META_REPLAY_GUARD": "1",
+    "GGML_SCHED_CPU_GATHER_PIPELINE": "1",
+    "GGML_CUDA_NCCL_F32": "1",
+    "GGML_SCHED_META_SINGLE_COPY_EVENTS": "1",
+    "LLAMA_MTP_UNROLL_VARIABLE_LANES": "1",
+    "GGML_CUDA_IQ2S_VOLTA_EP": "1",
+    "LLAMA_PLE_NUMA_CPU_BALANCE": "1",
+    "LLAMA_TURBOPREFILL": "1",
+    "ROOT_MTP_DEPTH": "3",
+    "ROOT_BANK_LANES": "4",
+    "ROOT_META_CPU_COPY_VARIANTS": "1",
+    "ROOT_UBATCH": "4096",
+    "ROOT_TURBOPREFILL": "1",
+    "ROOT_KV_UNIFIED": "0",
+    "ROOT_BANK_CTX": "65536",
+    "LLAMA_PREFILL_SEPARATE_STREAM_RESERVE": "1",
+    "ROOT_FATAL_BACKTRACE": "1",
+    "LLAMA_QSA_BIAS_DEVICE": "1",
+    "GGML_CUDA_GRAPH_SNAPSHOT_CACHE": "1",
+    "GGML_CUDA_P2P_AR_BLOCKS": "64",
+    "GGML_META_NESTED_EXPERIMENTAL": "0",
+    "GGML_META_CONTEXT_VIEWS": "1",
+    "LLAMA_QSA_POOLED_MULTI": "0",
+    "LLAMA_QSA_MULTI_CELL_SEL": "0",
+    "GGML_TURBOPREFILL_PINNED_CAP_MIB": "1024",
+    "GGML_META_CPU_ASYNC_COPY": "1",
+    "GGML_META_NCCL_MIN_BYTES": "0",
+    "GGML_META_ASYNC_INPUTS": "0",
+    "GGML_META_CPU_ASYNC_COPY_MAX_BYTES": "67108864",
+    "ROOT_DYNAMIC_LIB_DIR": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v108/lib",
+    "ROOT_BUILD_REPORT": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V108-build.json",
+    "ROOT_RUNTIME_SOURCE": "/home/debian/ac922-monster/experiments/standard-opt-20261014/src",
+    "ROOT_MTP_UBATCH": "512",
+    "ROOT_WARMUP_FRAMES": "4",
+    "ROOT_PREFILL_LOGITS_BEFORE_MTP": "0",
+    "ROOT_SERIAL_CPU_SUBMIT": "0",
+    "ROOT_SERVER_MTP_KV_POLICY": "1",
+    "LLAMA_HIERARCHICAL_EP6": "0",
+    "GGML_META_NESTED_GPU_AR": "0",
+    "LLAMA_PLE_NUMA_GPU_NODES": "3",
+    "LLAMA_PLE_NUMA_GPU_GIB": "6",
+    "ROOT_KV_VARIANT": "per_seq_16k_x4",
+    "ROOT_PREFILL_BATCH": "32768",
+    "LD_PRELOAD": "",
+    "AC922_SYNC_AUDIT": "0",
+    "ROOT_CUPTI_PHASE": "off",
+    "GGML_META_TIMING": "1",
+    "LLAMA_STEP_TIMING": "1",
+    "LLAMA_STEP_TIMING_PERIOD": "32",
+    "GGML_CUDA_GRAPH_STRUCTURAL_TRACE": "1",
+    "GGML_META_FRAGMENT_CACHE": "1",
+    "GGML_META_FRAGMENT_CACHE_CAP": "64",
+    "GGML_META_FRAGMENT_CACHE_MIB": "128",
+    "V27_BASELINE_RESULT_ROOT": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v27-shortctx16k-hierarchical-20261016/results/root-p4-v27-shortctx16k-hierarchical-ep6-d3-20261016t022431z/copy1",
+    "V27_BASELINE_DIAGNOSTIC_SHA256": "16cb38688dc2e4581c0f5990dcf432949f431dad842e44ac5560c082cdf6f994",
+    "V27_BASELINE_CLEAN_SHA256": "beee7b03194cea10d8f56225bf2f8bae83c014f461324b8b9603bb746b95ae36",
+    "LLAMA_MTP_UNROLL_D3_LANES4": "1",
+    "GGML_META_FRAGMENT_PARENT_SIG": "1",
+    "LLAMA_QSA_STANDARD_SPARSE": "1",
+    "ROOT_TARGET_VERIFY_PAD_PER_ACTIVE_LANE": "1",
+    "GGML_META_NESTED_COMPOSE": "0",
+    "GGML_META_PARENT_WALK_FAST": "1",
+    "ROOT_NSYS_PREFILL_PROFILE": "0",
+    "LLAMA_QSA_STANDARD_HEAD_LOOP": "1",
+    "GGML_CUDA_GET_ROWS_NARROW": "1",
+    "GGML_CUDA_MOE_FUSED_T16": "1",
+    "GGML_SM70_FUSED_PROJ": "0",
+    "LLAMA_HC_COMBINE_SMALL_MAX_TOKENS": "32",
+    "GGML_META_NESTED_ASYNC": "0",
+    "GGML_CUDA_QSA_PREFILL_DIRECT_LIST": "1",
+    "GGML_CUDA_P2P_AR_RELAY6": "0",
+    "GGML_CUDA_P2P_AR_RELAY_MAX_BYTES": "41943040",
+    "GGML_CUDA_P2P_AR_COMPACT_STAGE": "1",
+    "GGML_CUDA_P2P_AR_RING_MIN_BYTES": "4194304",
+    "ROOT_RUNTIME_REVISION": "20261016T183414.662729Z",
+    "LLAMA_FIFO_SINGLE_ISLAND": "1",
+    "GGML_META_DEBUG": "1",
+    "GGML_META_CHUNK_NODES": "0",
+    "GGML_CUDA_GRAPH_STRUCTURAL_MAX_NODES": "16384",
+    "GGML_SM70_DECODE_LINEAR_PACKED": "1",
+    "GGML_CUDA_GRAPHS_FORCE": "0",
+    "GGML_META_SINGLE_CHUNK_COLD_DRAIN": "1",
+    "GGML_CUDA_P2P_AR_RELAY6_ORDERED": "1",
+    "GGML_META_COLD_PREPARE_COHORT": "1",
+    "GGML_CUDA_P2P_AR_ELIDE_UNUSED_SEGMENT": "1",
+    "GGML_CUDA_P2P_AR_RELAY_LEADER_STAGE": "1",
+    "GGML_CUDA_GRAPH_VARIANTS_CAP": "1",
+    "GGML_TURBOPREFILL_TRACE": "1",
+    "GGML_META_SHARED_DEVICE_COPY": "0",
+    "GGML_SM70_BF16_DECODE_PANEL": "1",
+    "LLAMA_QSA_POOLED_SINGLE": "0",
+    "ROOT_PER_SEQUENCE_CONTEXT": "16384",
+    "ROOT_PROFILE_KIND": "clean",
+    "ROOT_PREFILL_LOGITS_DIR": "off",
+    "GGML_META_GPU_SPANS": "0",
+    "GGML_META_GPU_SPANS_PERIOD": "0",
+    "ROOT_V45_LONG_ONLY": "0",
+    "GGML_TURBOPREFILL_PLAN_TRACE": "1",
+    "CUDA_DEVICE_MAX_CONNECTIONS": "32",
+    "ROOT_V50_CORPUS_SOURCE": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/v45-real-corpus-source.json",
+    "ROOT_VARIANT_DIR": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-ple6-v53-20261017/results/pending/copy1/single32k",
+    "ROOT_V50_LONG_ONLY": "1",
+    "LLAMA_PREFILL_FIXED_UBATCH": "1",
+    "LLAMA_QSA_COMPACT_MASK": "1",
+    "LLAMA_QSA_COMPACT_MASK_NATIVE": "1",
+    "GGML_META_CPU_ASYNC_COPY_BUDGET_MIB": "512",
+    "LLAMA_QSA_BLOCK_BIAS_NATIVE": "1"
+  },
+  "context_families": [
+    {
+      "id": "single32k",
+      "lanes": 1,
+      "context_per_sequence": 33280,
+      "bank_context": 33280,
+      "input_tokens": 32768,
+      "logical_chunks": 1,
+      "max_output_tokens": 32,
+      "kv_pad_tokens": 65536
+    },
+    {
+      "id": "single64k",
+      "lanes": 1,
+      "context_per_sequence": 66048,
+      "bank_context": 66048,
+      "input_tokens": 65536,
+      "logical_chunks": 2,
+      "max_output_tokens": 32,
+      "kv_pad_tokens": 65536
+    }
+  ],
+  "logical_prefill_batching": {
+    "target_n_batch": 32768,
+    "target_n_ubatch": 4096,
+    "draft_n_ubatch": 512,
+    "chunk_plan": {
+      "single32k": [
+        32768
+      ],
+      "single64k": [
+        32768,
+        32768
+      ]
+    },
+    "capacity_ratio_vs_previous_profile": 4,
+    "memory_status": "unmeasured_estimate_only; allocations indexed by n_batch or cached MTP rows may grow; per-GPU-free guard remains unchanged"
+  },
+  "launch_binding": {
+    "cpu_bind_node": 0,
+    "memory_policy": "interleave",
+    "memory_nodes": [
+      0,
+      8
+    ],
+    "runner_env_key": "ROOT_V50_LONG_ONLY=1"
+  },
+  "input_artifacts": {
+    "runner_source": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-ple6-v53-20261017/dual-context-v53-ple6.cpp",
+      "sha256": "8088c5598dc4df5fc147f9a7e8bcbff0707b8aeeada4cffc4b440b0259f06300"
+    },
+    "scenario_map": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-ple6-v53-20261017/v53-scenarios.json",
+      "sha256": "7826fab9daba8f57d268061a6d3c0c7896118bc1d1ee2d8d0e1ac6e9a435e3e7"
+    },
+    "supervisor_source": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-ple6-v53-20261017/run-v53-supervisor.py",
+      "sha256": "df31bc2420f6742d50e1b1f9fad10494d0e453c63cc721b288e44450a22eeef7"
+    },
+    "memory_sampler_source": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-ple6-v53-20261017/sample_v53_memory.py",
+      "sha256": "d4a5498c110686a2ca305a38fc35a127a098446454b59b0bec505f96458662f7"
+    },
+    "host_build_script": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-ple6-v53-20261017/build-v53-host.sh",
+      "sha256": "deaf254d8031dfaae4f5736734ec71418b31f54204f5424e874939bf8dd474ae"
+    },
+    "semantic_checker": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-ple6-v53-20261017/verify_v53_semantic_canary.py",
+      "sha256": "f1e0bed8dc49f30a5d44c4efdf9449269cf1c11b6c6ddaf77397ec0c8c8b4080"
+    },
+    "runtime_marker_verifier": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-ple6-v53-20261017/verify_v53_runtime_markers.py",
+      "sha256": "3d9e275f86b49d103e52d4d86661c7b19a0f5b588e0cb0ccacaa2af7c4b88ab7"
+    },
+    "v45_raw_corpus": {
+      "local_path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/v45-real-corpus-source.json",
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/v45-real-corpus-source.json",
+      "sha256": "bd231acb8ce9423222dd0e5b043b2c274163106dc99af8d5a2380916b7df957c"
+    },
+    "v50_source_runner": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-native-v50-20261017/dual-context-v50-long-prefill-native.cpp",
+      "sha256": "766a555bffb20631d7ce4d3020ca41d452ba05ec888c757ddf610793b2a7b965",
+      "evidence_scope": "pinned source ancestor only; V53 changes the PLE capacity assertion and runner logging"
+    },
+    "v52_scenario_map_sha256": "79ceb966fa052f460a5c9b4082cdbc7a03e3550dbab92c3246150a38e5cf4e94",
+    "v52_profile_sha256": "4b311ca8faf015049c4d11538d28c1c66cf78d1088ccd8ad6f5026d761cd46ca",
+    "v108_report": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/notes/V108-build.json",
+      "sha256": "3e90e390e8689b8680f1408232a0ecc57ac9f0da00cdaff3f4de669432cb2bc7",
+      "build_id": "20261016T183414.662729Z"
+    },
+    "v108_native_gate": {
+      "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/qsa-block-bias-native-20261017/results/V108-native-block-bias-gates.json",
+      "sha256": "6d9dc5575cf2b7a162b23ba9e5c7ddbac1e7f499aadd5a8782d9b7032ce34145"
+    }
+  },
+  "memory_budget": {
+    "schema_version": 1,
+    "candidate": "V53 V108 native masks + PLE GPU prefix 6 GiB total / 2 GiB per first-three GPU node",
+    "status": "ESTIMATES_ONLY_NOT_A_FIT_PROOF",
+    "model_and_math": {
+      "original_gguf": true,
+      "expert_pruning": false,
+      "weight_quantization_change": false,
+      "cpu_ple_lookup_math_changed": false
+    },
+    "predecessor_failure": {
+      "fixture": "V52",
+      "single64k_completed": false,
+      "failed_device_allocation_mib": 4305.92,
+      "automatic_retry": false,
+      "interpretation": "allocation failure, not a throughput result or proof that the revised placement fits"
+    },
+    "placement_alternatives": {
+      "A": {
+        "meta_weight_per_gpu_gib": 7.44,
+        "ple_gpu_per_gpu_gib": 4.0
+      },
+      "B": {
+        "meta_weight_per_gpu_gib": 9.34,
+        "ple_gpu_per_gpu_gib": 0.0
+      },
+      "preference": "A-like PLE-on-GPU placement",
+      "v53_selected_ple_gpu_total_gib": 6,
+      "v53_selected_ple_gpu_per_first_three_nodes_gib": 2,
+      "status": "planning figures only; the V53 6/2 placement still requires the real per-GPU memory gate"
+    },
+    "ple_placement": {
+      "environment": "LLAMA_PLE_NUMA_GPU_NODES=3 LLAMA_PLE_NUMA_GPU_GIB=6",
+      "environment_semantics": "aggregate GPU PLE prefix in GiB",
+      "gpu_numa_nodes": [
+        255,
+        254,
+        253
+      ],
+      "gpu_prefix_total_gib": 6,
+      "gpu_prefix_per_node_gib": 2,
+      "cpu_ple_previous_estimate_gib": 14.82,
+      "cpu_ple_candidate_estimate_gib": 20.82,
+      "cpu_ple_increase_estimate_gib": 6,
+      "physical_ddr_nodes": [
+        0,
+        8
+      ],
+      "physical_ddr_total_gib_estimate": 31.57,
+      "arithmetic_ddr_remainder_before_upload_and_runtime_gib": 10.75,
+      "upload_pool_max_gib": 0.5,
+      "arithmetic_ddr_remainder_if_upload_pool_fully_allocated_gib": 10.25,
+      "warning": "These are planning estimates only. Capture actual node0/node8 DDR availability, swap, file cache, memory pressure and page faults before/during/after the run. Do not treat the arithmetic remainder as a memory-fit result or add an arbitrary DDR admission threshold."
+    },
+    "upload_pool": {
+      "budget_mib": 512,
+      "default_budget_mib": 64,
+      "additional_host_ddr_mib_over_default": 448,
+      "per_copy_max_bytes": 67108864,
+      "ring_slots": 2,
+      "ring_owner_capacity_estimate_mib": 384,
+      "ring_owner_capacity_formula": "3 owners * 2 slots * 64 MiB",
+      "headroom_mib_over_ring_owner_capacity": 128,
+      "status": "bounded setting retained from V52; actual allocation/use must be logged"
+    },
+    "qsa_and_workspace_reference": {
+      "native_f16_mask_payload_formula": "65536 keys * 4096 queries * 2 bytes",
+      "native_f16_mask_payload_mib_per_gpu_estimate": 512,
+      "native_f32_block_bias_requested": true,
+      "target_ubatch": 4096,
+      "target_compute_historical_estimate_mib": 953.76,
+      "draft_ubatch": 512,
+      "draft_compute_historical_estimate_mib": 249.28,
+      "logical_n_batch": 32768,
+      "n_batch_capacity_ratio_vs_8192": 4,
+      "n_batch_scaled_memory": "unquantified; host batch and MTP row buffers may grow with n_batch",
+      "warning": "V52's native dual-mask run still failed a 4305.92 MiB allocation. Native-mask and block-bias fixtures plus historical workspace estimates do not prove V53 full-model memory fit."
+    },
+    "required_runtime_observations": {
+      "physical_ddr_nodes": [
+        0,
+        8
+      ],
+      "record": [
+        "MemFree",
+        "MemAvailable",
+        "FilePages",
+        "Active(file)",
+        "Inactive(file)",
+        "SwapFree",
+        "pgfault",
+        "pgmajfault",
+        "pswpin",
+        "pswpout",
+        "memory PSI",
+        "runner smaps_rollup"
+      ],
+      "sample_points": [
+        "before model load",
+        "during run",
+        "after model/context cleanup"
+      ],
+      "thresholds_added": false,
+      "actions_forbidden": [
+        "drop_caches",
+        "sysctl changes",
+        "swap changes",
+        "driver changes",
+        "BMC/fan changes"
+      ]
+    },
+    "admission": {
+      "per_gpu_free_floor_mib": 512,
+      "gpu_temperature_ceiling_c": 58,
+      "bmc_temperature_ceiling_c": 58,
+      "automatic_retry": false,
+      "gpu_reset": false,
+      "mutate_power_or_fans": false,
+      "not_a_fit_proof": true
+    }
+  },
+  "micro_gates": {
+    "inherited_v107_cpu_upload_guards": {
+      "status": "PASS",
+      "artifact": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/cpu-upload-budget-20261017/root-extended-cpu-suite.log",
+      "sha256": "37cb794a0dbf34ef310a6d9a15e3c08e8210c605363fe92d391d61866544915c",
+      "scope": "512 MiB process broker and 64 MiB per-copy slot guards; inherited unchanged"
+    },
+    "v108_native_block_bias": {
+      "status": "PASS",
+      "artifact": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/qsa-block-bias-native-20261017/results/V108-native-block-bias-gates.json",
+      "sha256": "6d9dc5575cf2b7a162b23ba9e5c7ddbac1e7f499aadd5a8782d9b7032ce34145",
+      "build_id": "20261016T183414.662729Z",
+      "large_shape": [
+        16384,
+        4096
+      ],
+      "large_backend_root_buffer_bytes": 268648576,
+      "scope": "ratios4/64 A/B/A originalexpression vs nativehelper vs constructor; exactF32, poison,canary,immutableinputs,integerfloatcast2^24ties"
+    }
+  },
+  "hardware_safety": {
+    "gpu_power_limit_w_expected": 300,
+    "cpu_scaling_max_khz_expected": 2600000,
+    "gpu_free_min_mib": 512,
+    "gpu_temperature_max_c": 58,
+    "bmc_temperature_max_c": 58,
+    "fan_target_rpm_expected": {
+      "fan0": 3000,
+      "fan2": 3000,
+      "fan3": 3000
+    },
+    "fan_tach_min_rpm": 2650,
+    "fan_monitor_state_expected": [
+      "inactive",
+      "masked"
+    ],
+    "watchdog_required_active": true,
+    "mutate_power_or_fans": false
+  },
+  "launch_contract": {
+    "runtime_max_seconds": 1800,
+    "model_loads": 1,
+    "automatic_retry": false,
+    "gpu_reset": false,
+    "required_root_tokens": [
+      "V53_REQUIRED_GATES_PASSED=1",
+      "V53_GPU_WINDOW_AUTHORIZED=1"
+    ],
+    "profile_launch_eligible": false
+  },
+  "pending_launch_gates": [],
+  "v50_predecessor_run": {
+    "unit": "root-v50-native-longprefill-20261016t182811225636z",
+    "partial_summary": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-native-v50-20261017/results/root-v50-native-longprefill-20261016t182811225636z-partial-outcome.json",
+    "status": "32K complete; 64K CUDA OOM at 4561.92 MiB allocation on device0; not a V52 fit proof"
+  },
+  "profile_geometry": {
+    "target_ubatch": 4096,
+    "draft_ubatch": 512,
+    "logical_n_batch": 32768,
+    "mtp_depth": 3,
+    "context_families": [
+      "single32k",
+      "single64k"
+    ],
+    "ple_gpu_gib_total": 6,
+    "ple_gpu_nodes": 3,
+    "ple_gpu_gib_per_node": 2,
+    "ple_cpu_resident_estimate_gib": 20.82,
+    "physical_ddr_estimate_gib": 31.57,
+    "arithmetic_ddr_remainder_estimate_gib": 10.75
+  },
+  "runner_build": {
+    "status": "V108_HOST_LINK_AND_LDD_VERIFIED",
+    "mode": "compile/link the single V53 C++ runner against frozen V108 DSOs; no engine or CUDA rebuild",
+    "source_path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/long-prefill-ple6-v53-20261017/dual-context-v53-ple6.cpp",
+    "source_sha256": "8088c5598dc4df5fc147f9a7e8bcbff0707b8aeeada4cffc4b440b0259f06300",
+    "binary_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-ple6-v53-20261017/build-v53-20261016T183414.662729Z-8088c5598dc4/dual-context-v53-ple6",
+    "runtime_build_id": "20261016T183414.662729Z",
+    "runtime_report_sha256": "3e90e390e8689b8680f1408232a0ecc57ac9f0da00cdaff3f4de669432cb2bc7",
+    "compile_performed": false,
+    "runtime_link_proof": false,
+    "verified_runner_sha256": "76f50e907f79cc7738ed4b410525167600cf103e59b15cdad646d1b20f110dc2",
+    "verified_runner_record_sha256": "7e2616e6feb476e4e54ab0b9569ddb903996fadfe2b883d4684ccf146103a21d",
+    "verified_v108_ldd_sha256": "b832c7b81e054ebc03329c78421cc8088a89e4eaa3a9a9304b0434e9e1539096"
+  },
+  "v52_predecessor": {
+    "status": "single32k_pass_single64k_oom",
+    "unit": "root-v52-native-blockbias-longprefill-20261016t184705547367z",
+    "failed_allocation_mib": 4305.92,
+    "selected_change_for_v53": "reduce aggregate GPU PLE prefix from 12 GiB (4 GiB/node) to 6 GiB (2 GiB/node), returning 2 GiB to each of the first three GPUs",
+    "no_retry": true
+  },
+  "ple_placement": {
+    "gpu_prefix_total_gib": 6,
+    "gpu_nodes": 3,
+    "gpu_prefix_per_node_gib": 2,
+    "gpu_numa_nodes": [
+      255,
+      254,
+      253
+    ],
+    "cpu_ple_estimate_gib": 20.82,
+    "cpu_lookup_math_changed": false,
+    "expert_pruning": false,
+    "physical_ddr_nodes": [
+      0,
+      8
+    ],
+    "cpu_bind_node": 0,
+    "memory_policy": "interleave",
+    "actual_capacity_and_fault_sampling": "record-only; no arbitrary DDR admission threshold"
+  },
+  "profile_generation": {
+    "status": "V53_PROFILE_PREPARED_LAUNCH_BLOCKED",
+    "v52_profile_sha256": "4b311ca8faf015049c4d11538d28c1c66cf78d1088ccd8ad6f5026d761cd46ca",
+    "v52_scenario_sha256": "79ceb966fa052f460a5c9b4082cdbc7a03e3550dbab92c3246150a38e5cf4e94",
+    "v108_report_sha256": "3e90e390e8689b8680f1408232a0ecc57ac9f0da00cdaff3f4de669432cb2bc7",
+    "v108_native_gate_sha256": "6d9dc5575cf2b7a162b23ba9e5c7ddbac1e7f499aadd5a8782d9b7032ce34145",
+    "runner_source_sha256": "8088c5598dc4df5fc147f9a7e8bcbff0707b8aeeada4cffc4b440b0259f06300",
+    "scenario_sha256": "7826fab9daba8f57d268061a6d3c0c7896118bc1d1ee2d8d0e1ac6e9a435e3e7",
+    "supervisor_sha256": "df31bc2420f6742d50e1b1f9fad10494d0e453c63cc721b288e44450a22eeef7",
+    "memory_sampler_sha256": "d4a5498c110686a2ca305a38fc35a127a098446454b59b0bec505f96458662f7",
+    "host_build_script_sha256": "deaf254d8031dfaae4f5736734ec71418b31f54204f5424e874939bf8dd474ae",
+    "semantic_checker_sha256": "f1e0bed8dc49f30a5d44c4efdf9449269cf1c11b6c6ddaf77397ec0c8c8b4080",
+    "runtime_verifier_sha256": "3d9e275f86b49d103e52d4d86661c7b19a0f5b588e0cb0ccacaa2af7c4b88ab7",
+    "ple_gpu_gib_total": 6,
+    "ple_gpu_nodes": 3,
+    "ple_gpu_gib_per_node": 2,
+    "ple_cpu_estimate_gib": 20.82,
+    "physical_ddr_estimate_gib": 31.57,
+    "arithmetic_ddr_remainder_gib": 10.75,
+    "families": [
+      "single32k",
+      "single64k"
+    ],
+    "launch_eligible": false,
+    "compile_performed": false,
+    "model_loaded": false,
+    "gpu_touched": false,
+    "remote_sync": false
+  },
+  "host_build_proof": {
+    "profile_sha256": "99342f7a82f7ccbd2e1296ec3b0408f6260de9f217e995867e0c41a361bcd764",
+    "runner_sha256": "76f50e907f79cc7738ed4b410525167600cf103e59b15cdad646d1b20f110dc2",
+    "runner_record_sha256": "7e2616e6feb476e4e54ab0b9569ddb903996fadfe2b883d4684ccf146103a21d",
+    "runtime_build_id": "20261016T183414.662729Z"
+  },
+  "launch_authorization": {
+    "root_authorized": true,
+    "required_gate_tokens_present": true,
+    "safety_sample_bmc_age_seconds": 2.8452203273773193,
+    "system_controls_modified": false
+  }
+}

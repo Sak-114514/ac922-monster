@@ -1,0 +1,72 @@
+ggml_backend_meta_context: nested Meta experimental path uses generic 2-member AllReduce fallback; outer CUDA/NCCL/P2P is disabled
+ggml_backend_meta_context: nested Meta experimental path uses generic 2-member AllReduce fallback; outer CUDA/NCCL/P2P is disabled
+meta-context-view owner-create owner=10 epoch=1 backend-context=1
+meta-context-view bind owner=10 epoch=1 buffer=7 view=A.ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=10 epoch=1 buffer=7 view=A.ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=10 epoch=1 buffer=7 view=A.ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=10 epoch=1 buffer=7 view=A.ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view owner-create owner=14 epoch=1 backend-context=2
+meta-context-view bind owner=14 epoch=1 buffer=8 view=A.ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view owner-create owner=15 epoch=1 backend-context=3
+meta-context-view bind owner=15 epoch=1 buffer=9 view=A.ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=14 epoch=1 buffer=8 view=A.ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=15 epoch=1 buffer=9 view=A.ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=14 epoch=1 buffer=8 view=A.ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=15 epoch=1 buffer=9 view=A.ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=14 epoch=1 buffer=8 view=A.ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=15 epoch=1 buffer=9 view=A.ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view owner-create owner=16 epoch=1 backend-context=4
+meta-context-view bind owner=16 epoch=1 buffer=7 view=B.ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=16 epoch=1 buffer=7 view=B.ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=16 epoch=1 buffer=7 view=B.ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=16 epoch=1 buffer=7 view=B.ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view owner-create owner=20 epoch=1 backend-context=5
+meta-context-view bind owner=20 epoch=1 buffer=8 view=B.ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view owner-create owner=21 epoch=1 backend-context=6
+meta-context-view bind owner=21 epoch=1 buffer=9 view=B.ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=20 epoch=1 buffer=8 view=B.ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=21 epoch=1 buffer=9 view=B.ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=20 epoch=1 buffer=8 view=B.ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=21 epoch=1 buffer=9 view=B.ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=20 epoch=1 buffer=8 view=B.ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=21 epoch=1 buffer=9 view=B.ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view owner-unbind owner=14 epoch=1 removed=4
+meta-context-view owner-unbind owner=15 epoch=1 removed=4
+meta-context-view owner-unbind owner=10 epoch=1 removed=4
+meta-context-view owner-retire owner=10 epoch=1
+meta-context-view owner-retire owner=15 epoch=1
+meta-context-view owner-retire owner=14 epoch=1
+meta-context-view owner-create owner=22 epoch=2 backend-context=1
+meta-context-view bind owner=22 epoch=2 buffer=7 view=A-rebuilt.ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=22 epoch=2 buffer=7 view=A-rebuilt.ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=22 epoch=2 buffer=7 view=A-rebuilt.ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=22 epoch=2 buffer=7 view=A-rebuilt.ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view owner-create owner=23 epoch=2 backend-context=2
+meta-context-view bind owner=23 epoch=2 buffer=8 view=A-rebuilt.ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view owner-create owner=24 epoch=2 backend-context=3
+meta-context-view bind owner=24 epoch=2 buffer=9 view=A-rebuilt.ple.tap_view.0 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=23 epoch=2 buffer=8 view=A-rebuilt.ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=24 epoch=2 buffer=9 view=A-rebuilt.ple.tap_view.1 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=23 epoch=2 buffer=8 view=A-rebuilt.ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=24 epoch=2 buffer=9 view=A-rebuilt.ple.tap_view.2 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=23 epoch=2 buffer=8 view=A-rebuilt.ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view bind owner=24 epoch=2 buffer=9 view=A-rebuilt.ple.tap_view.3 root=blk.1.ple_conv1d.weight capacity=4
+meta-context-view owner-unbind owner=23 epoch=2 removed=4
+meta-context-view owner-unbind owner=24 epoch=2 removed=4
+meta-context-view owner-unbind owner=22 epoch=2 removed=4
+meta-context-view owner-retire owner=22 epoch=2
+meta-context-view owner-retire owner=24 epoch=2
+meta-context-view owner-retire owner=23 epoch=2
+meta-context-view owner-unbind owner=20 epoch=1 removed=4
+meta-context-view owner-unbind owner=21 epoch=1 removed=4
+meta-context-view owner-unbind owner=16 epoch=1 removed=4
+meta-context-view owner-retire owner=16 epoch=1
+meta-context-view owner-retire owner=21 epoch=1
+meta-context-view owner-retire owner=20 epoch=1
+SETUP nested=Meta2{Meta3CPU,Meta3CPU} duplicate_cpu_leaves=1 root_backends=2 schedulers=2 shared_weights=1 graph_compute=0
+PASS weight-view-read label=A-initial taps=4 rows=19 api=ggml_backend_tensor_get exact=1
+PASS weight-view-read label=B-live-with-A taps=4 rows=19 api=ggml_backend_tensor_get exact=1
+PASS weight-view-read label=A-after-reset-rebuild-same-address taps=4 rows=19 api=ggml_backend_tensor_get exact=1
+PASS weight-view-read label=B-after-A-reset-rebuild taps=4 rows=19 api=ggml_backend_tensor_get exact=1
+PASS weight-view-read label=B-after-A-owner-teardown taps=4 rows=19 api=ggml_backend_tensor_get exact=1
+NESTED_OWNER_CPU_FIXTURE_PASS private_api=0 cuda_loaded=0 graph_compute=0

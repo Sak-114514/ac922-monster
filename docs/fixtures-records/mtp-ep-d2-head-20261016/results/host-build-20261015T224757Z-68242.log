@@ -1,0 +1,31 @@
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mtp-ep-d2-head-20261016/mtp-ep-d2-head-fixture.cpp: In function ‘int main(int, char**)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mtp-ep-d2-head-20261016/mtp-ep-d2-head-fixture.cpp:621:59: warning: ‘llama_context* llama_new_context_with_model(llama_model*, llama_context_params)’ is deprecated: use llama_init_from_model instead [-Wdeprecated-declarations]
+  621 |         ContextGuard step_ctx{llama_new_context_with_model(model.model, cp)};
+      |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+In file included from /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mtp-ep-d2-head-20261016/mtp-ep-d2-head-fixture.cpp:1:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/include/llama.h:551:49: note: declared here
+  551 |     DEPRECATED(LLAMA_API struct llama_context * llama_new_context_with_model(
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/include/llama.h:30:36: note: in definition of macro ‘DEPRECATED’
+   30 | #    define DEPRECATED(func, hint) func __attribute__((deprecated(hint)))
+      |                                    ^~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mtp-ep-d2-head-20261016/mtp-ep-d2-head-fixture.cpp:628:60: warning: ‘llama_context* llama_new_context_with_model(llama_model*, llama_context_params)’ is deprecated: use llama_init_from_model instead [-Wdeprecated-declarations]
+  628 |         ContextGuard graph_ctx{llama_new_context_with_model(model.model, cp)};
+      |                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/include/llama.h:551:49: note: declared here
+  551 |     DEPRECATED(LLAMA_API struct llama_context * llama_new_context_with_model(
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/include/llama.h:30:36: note: in definition of macro ‘DEPRECATED’
+   30 | #    define DEPRECATED(func, hint) func __attribute__((deprecated(hint)))
+      |                                    ^~~~
+built /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mtp-ep-d2-head-20261016/head-only/mtp-ep-d2-head-fixture against /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v56/lib; host link only, no GPU or model load
+48627309a67a171e4416881b186aa2f3b711131997372483b3caa85c77678722  fixtures/mtp-ep-d2-head-20261016/head-only/mtp-ep-d2-head-fixture
+84669dc3a1bec3f297c4305563605d700c9b32c9c99b4bbbbfaa3aac4d0fa322  runtime-perf-v56/lib/libllama.so.0
+f85aa368136840f01d6b6a63b0ae4c143433b42acee9e726955112d3d9819135  runtime-perf-v56/lib/libggml-cuda.so.0
+c1fd8d19e54df03e97f1c71c8c95565626ec73f44f7d4f3e334bfe3e74f464fc  runtime-perf-v56/lib/libggml-cpu.so.0
+	libllama.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v56/lib/libllama.so.0 (0x00007fff9a490000)
+	libggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v56/lib/libggml-cpu.so.0 (0x00007fff99a40000)
+	libggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v56/lib/libggml-cuda.so.0 (0x00007fff8bfb0000)
+	libcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fff8be50000)
+	libcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fff85130000)
+	libcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff6d5f0000)

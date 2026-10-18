@@ -1,0 +1,37 @@
+V231_FIXTURE mode=candidate format=Q2_0 tensor=blk.1.ffn_down_exps.weight quant=q2_0 K=640 source_N=2560 tested_N=64 E=512 raw_expert170_171_bytes=460800 prefix_bytes_per_expert=11520 bank_bytes=5898240 synthetic_bank=alternating_exact_raw_slices requantize=0 model_load=0 grouped=1 small_j=1 adaptive_j=0 grouped_j_override=unset mmq_moe_j_override=unset expected_global_j32_baseline=E512_totalAssignments2560_avg5
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ROUTE_EXPECTED mode=candidate format=Q2_0 distribution=uniform5 E=512 T=256 topk=10 assignments=2560 active_experts=512 inactive_experts=0 min_nonzero=5 max_count=5 cold_nonempty_count_le16=512 hot_count_gt16=0 count16=0 count17=0 count20=0 expected_j16_tiles=512 expected_j32_tiles=0 global_j32_tiles=512 classification=CPU_EXPECTATION_ONLY
+[mp-dbg] mul_mat_id hook: type=42 ne11=1 reg=0 ptr=0x10017400000 ne=[640,64,512]
+optimization path device=3 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_small_J16_J32 tokens=256 width=64 auxiliary=512 count=1
+optimization path device=3 path=mmq_moe_small_j scope=host_dispatch_or_capture requested=1 selected=1 reason=gpu_prefix_J16_cold_J32_hot_original_dot_kernels tokens=256 width=64 auxiliary=512 count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+[mp-dbg] mul_mat_id hook: type=42 ne11=1 reg=0 ptr=0x10017400000 ne=[640,64,512]
+optimization path device=3 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_small_J16_J32 tokens=256 width=64 auxiliary=512 count=2
+optimization path device=3 path=mmq_moe_small_j scope=host_dispatch_or_capture requested=1 selected=1 reason=gpu_prefix_J16_cold_J32_hot_original_dot_kernels tokens=256 width=64 auxiliary=512 count=2
+MUL_MAT_ID_TIMING mode=candidate format=Q2_0 distribution=uniform5 K=640 N=64 E=512 T=256 topk=10 output_elements=163840 warmups=1 samples=5 median_us=152.159 min_us=151.530 max_us=358.556 scope=full_graph_compute_ids_helper_classify_and_matmul bank_buffer_bytes=5898368 graph_buffer_bytes=5283840 result=REPORT_ONLY
+SMALLJ_COMPARE format=Q2_0 distribution=uniform5 elements=163840 bitdiff=0 max_abs=0 max_rel=0 rms=0 nonfinite=0 verdict=REPORT_ONLY
+ROUTE_EXPECTED mode=candidate format=Q2_0 distribution=skew_hot20 E=512 T=256 topk=10 assignments=2560 active_experts=512 inactive_experts=0 min_nonzero=4 max_count=26 cold_nonempty_count_le16=492 hot_count_gt16=20 count16=0 count17=0 count20=0 expected_j16_tiles=492 expected_j32_tiles=20 global_j32_tiles=512 classification=CPU_EXPECTATION_ONLY
+[mp-dbg] mul_mat_id hook: type=42 ne11=1 reg=0 ptr=0x10017400000 ne=[640,64,512]
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+[mp-dbg] mul_mat_id hook: type=42 ne11=1 reg=0 ptr=0x10017400000 ne=[640,64,512]
+MUL_MAT_ID_TIMING mode=candidate format=Q2_0 distribution=skew_hot20 K=640 N=64 E=512 T=256 topk=10 output_elements=163840 warmups=1 samples=5 median_us=174.820 min_us=172.539 max_us=286.355 scope=full_graph_compute_ids_helper_classify_and_matmul bank_buffer_bytes=5898368 graph_buffer_bytes=5283840 result=REPORT_ONLY
+SMALLJ_COMPARE format=Q2_0 distribution=skew_hot20 elements=163840 bitdiff=0 max_abs=0 max_rel=0 rms=0 nonfinite=0 verdict=REPORT_ONLY
+ROUTE_EXPECTED mode=candidate format=Q2_0 distribution=allhot10 E=512 T=256 topk=10 assignments=2560 active_experts=10 inactive_experts=502 min_nonzero=256 max_count=256 cold_nonempty_count_le16=0 hot_count_gt16=10 count16=0 count17=0 count20=0 expected_j16_tiles=0 expected_j32_tiles=80 global_j32_tiles=80 classification=CPU_EXPECTATION_ONLY
+[mp-dbg] mul_mat_id hook: type=42 ne11=1 reg=0 ptr=0x10017400000 ne=[640,64,512]
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+[mp-dbg] mul_mat_id hook: type=42 ne11=1 reg=0 ptr=0x10017400000 ne=[640,64,512]
+MUL_MAT_ID_TIMING mode=candidate format=Q2_0 distribution=allhot10 K=640 N=64 E=512 T=256 topk=10 output_elements=163840 warmups=1 samples=5 median_us=73.267 min_us=71.396 max_us=186.134 scope=full_graph_compute_ids_helper_classify_and_matmul bank_buffer_bytes=5898368 graph_buffer_bytes=5283840 result=REPORT_ONLY
+SMALLJ_COMPARE format=Q2_0 distribution=allhot10 elements=163840 bitdiff=0 max_abs=0 max_rel=0 rms=0 nonfinite=0 verdict=REPORT_ONLY
+ROUTE_EXPECTED mode=candidate format=Q2_0 distribution=boundary16_17_20 E=512 T=256 topk=10 assignments=2560 active_experts=512 inactive_experts=0 min_nonzero=4 max_count=20 cold_nonempty_count_le16=510 hot_count_gt16=2 count16=2 count17=1 count20=1 expected_j16_tiles=510 expected_j32_tiles=2 global_j32_tiles=512 classification=CPU_EXPECTATION_ONLY
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+MUL_MAT_ID_TIMING mode=candidate format=Q2_0 distribution=boundary16_17_20 K=640 N=64 E=512 T=256 topk=10 output_elements=163840 warmups=1 samples=5 median_us=176.054 min_us=174.771 max_us=273.120 scope=full_graph_compute_ids_helper_classify_and_matmul bank_buffer_bytes=5898368 graph_buffer_bytes=5283840 result=REPORT_ONLY
+SMALLJ_COMPARE format=Q2_0 distribution=boundary16_17_20 elements=163840 bitdiff=0 max_abs=0 max_rel=0 rms=0 nonfinite=0 verdict=REPORT_ONLY
+V231_FIXTURE COMPLETE mode=candidate format=Q2_0 distributions=4 verdict=REPORT_ONLY
+optimization path summary device=3 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=8 selected=8
+optimization path summary device=3 path=mmq_moe_small_j scope=host_dispatch_or_capture requested=8 selected=8

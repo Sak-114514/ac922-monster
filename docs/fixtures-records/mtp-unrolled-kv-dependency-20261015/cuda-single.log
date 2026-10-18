@@ -1,0 +1,389 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA graph path config ctx=0x1003c6168c0 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=0 structural_active=0 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1003c6168c0 device=0 uid=2 nodes=7 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+node-trace 106682070158 dev 0 begin ADD depth0_k_values
+node-trace 106682073238 dev 0 end ADD depth0_k_values
+node-trace 106682073268 dev 0 begin SET_ROWS depth0_SET_ROWS_K
+node-trace 106682073767 dev 0 end SET_ROWS depth0_SET_ROWS_K
+node-trace 106682073777 dev 0 begin ADD depth0_v_values
+node-trace 106682073792 dev 0 end ADD depth0_v_values
+node-trace 106682073799 dev 0 begin SET_ROWS depth0_SET_ROWS_V
+node-trace 106682073810 dev 0 end SET_ROWS depth0_SET_ROWS_V
+node-trace 106682073816 dev 0 begin ADD depth0_hidden1
+node-trace 106682073827 dev 0 end ADD depth0_hidden1
+node-trace 106682073842 dev 0 begin MUL_MAT depth0_logits
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x10017400480
+node-trace 106682081079 dev 0 end MUL_MAT depth0_logits
+node-trace 106682081111 dev 0 begin ARGMAX depth0_GPU_ARGMAX_token1
+node-trace 106682081398 dev 0 end ARGMAX depth0_GPU_ARGMAX_token1
+CUDA graph fallback ctx=0x1003c6168c0 device=0 uid=4 nodes=13 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+node-trace 106682081630 dev 0 begin GET_ROWS node_0
+node-trace 106682083516 dev 0 end GET_ROWS node_0
+node-trace 106682083526 dev 0 begin ADD node_1
+node-trace 106682083544 dev 0 end ADD node_1
+node-trace 106682083550 dev 0 begin GET_ROWS sequential_depth1_GET_ROWS_K_base
+node-trace 106682083562 dev 0 end GET_ROWS sequential_depth1_GET_ROWS_K_base
+node-trace 106682083570 dev 0 begin MUL node_3
+node-trace 106682083624 dev 0 end MUL node_3
+node-trace 106682083632 dev 0 begin GET_ROWS sequential_depth1_GET_ROWS_V_base
+node-trace 106682083643 dev 0 end GET_ROWS sequential_depth1_GET_ROWS_V_base
+node-trace 106682083649 dev 0 begin ADD node_5
+node-trace 106682083660 dev 0 end ADD node_5
+node-trace 106682083665 dev 0 begin ADD sequential_depth1_hidden2
+node-trace 106682083676 dev 0 end ADD sequential_depth1_hidden2
+node-trace 106682083685 dev 0 begin MUL_MAT node_7
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x10017400480
+node-trace 106682083709 dev 0 end MUL_MAT node_7
+node-trace 106682083715 dev 0 begin ARGMAX sequential_depth1_GPU_ARGMAX_token2
+node-trace 106682083725 dev 0 end ARGMAX sequential_depth1_GPU_ARGMAX_token2
+node-trace 106682083731 dev 0 begin ADD node_9
+node-trace 106682083742 dev 0 end ADD node_9
+node-trace 106682083747 dev 0 begin SET_ROWS depth1_SET_ROWS_K
+node-trace 106682083761 dev 0 end SET_ROWS depth1_SET_ROWS_K
+node-trace 106682083767 dev 0 begin ADD node_11
+node-trace 106682083777 dev 0 end ADD node_11
+node-trace 106682083782 dev 0 begin SET_ROWS depth1_SET_ROWS_V
+node-trace 106682083793 dev 0 end SET_ROWS depth1_SET_ROWS_V
+CUDA Graph id 2 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1003c6168c0 device=0 uid=2 nodes=7 mode=capture count=1
+node-trace 106682084156 dev 0 begin ADD depth0_k_values
+node-trace 106682084170 dev 0 end ADD depth0_k_values
+node-trace 106682084176 dev 0 begin SET_ROWS depth0_SET_ROWS_K
+node-trace 106682084185 dev 0 end SET_ROWS depth0_SET_ROWS_K
+node-trace 106682084191 dev 0 begin ADD depth0_v_values
+node-trace 106682084199 dev 0 end ADD depth0_v_values
+node-trace 106682084204 dev 0 begin SET_ROWS depth0_SET_ROWS_V
+node-trace 106682084212 dev 0 end SET_ROWS depth0_SET_ROWS_V
+node-trace 106682084217 dev 0 begin ADD depth0_hidden1
+node-trace 106682084225 dev 0 end ADD depth0_hidden1
+node-trace 106682084230 dev 0 begin MUL_MAT depth0_logits
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x10017400480
+node-trace 106682084244 dev 0 end MUL_MAT depth0_logits
+node-trace 106682084250 dev 0 begin ARGMAX depth0_GPU_ARGMAX_token1
+node-trace 106682084257 dev 0 end ARGMAX depth0_GPU_ARGMAX_token1
+CUDA Graph id 4 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1003c6168c0 device=0 uid=4 nodes=13 mode=capture count=2
+node-trace 106682084570 dev 0 begin GET_ROWS node_0
+node-trace 106682084587 dev 0 end GET_ROWS node_0
+node-trace 106682084593 dev 0 begin ADD node_1
+node-trace 106682084601 dev 0 end ADD node_1
+node-trace 106682084607 dev 0 begin GET_ROWS sequential_depth1_GET_ROWS_K_base
+node-trace 106682084615 dev 0 end GET_ROWS sequential_depth1_GET_ROWS_K_base
+node-trace 106682084621 dev 0 begin MUL node_3
+node-trace 106682084629 dev 0 end MUL node_3
+node-trace 106682084635 dev 0 begin GET_ROWS sequential_depth1_GET_ROWS_V_base
+node-trace 106682084642 dev 0 end GET_ROWS sequential_depth1_GET_ROWS_V_base
+node-trace 106682084647 dev 0 begin ADD node_5
+node-trace 106682084655 dev 0 end ADD node_5
+node-trace 106682084660 dev 0 begin ADD sequential_depth1_hidden2
+node-trace 106682084667 dev 0 end ADD sequential_depth1_hidden2
+node-trace 106682084674 dev 0 begin MUL_MAT node_7
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x10017400480
+node-trace 106682084687 dev 0 end MUL_MAT node_7
+node-trace 106682084693 dev 0 begin ARGMAX sequential_depth1_GPU_ARGMAX_token2
+node-trace 106682084700 dev 0 end ARGMAX sequential_depth1_GPU_ARGMAX_token2
+node-trace 106682084705 dev 0 begin ADD node_9
+node-trace 106682084713 dev 0 end ADD node_9
+node-trace 106682084718 dev 0 begin SET_ROWS depth1_SET_ROWS_K
+node-trace 106682084725 dev 0 end SET_ROWS depth1_SET_ROWS_K
+node-trace 106682084731 dev 0 begin ADD node_11
+node-trace 106682084738 dev 0 end ADD node_11
+node-trace 106682084743 dev 0 begin SET_ROWS depth1_SET_ROWS_V
+node-trace 106682084750 dev 0 end SET_ROWS depth1_SET_ROWS_V
+MTP_UNROLLED_KV_DEPENDENCY_BEGIN mode=cuda lanes=4 depth=2 GGML_CUDA_GRAPH_OPT=1
+DEVICE_ENV mode=cuda CUDA_VISIBLE_DEVICES=GPU-fadb0459-4d30-907b-289a-862b3014f165 cuda_reg_devices=1 GGML_CUDA_GRAPH_OPT=1
+BACKEND_CHECK label=seq-depth0 op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=seq-depth0 op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=seq-depth0 op=ARGMAX assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=seq-depth1 op=GET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=seq-depth1 op=GET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=seq-depth1 op=ARGMAX assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=seq-depth1 op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=seq-depth1 op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+DEBUG_TENSOR label=seq-input-h0 name=depth0_seed_hidden data=0x10017400400 type=f32 ne=8,4 first=0.07,0.083,0.096,0.109
+DEBUG_TENSOR label=seq-s0-v0 name=depth0_v_values data=0x10017400e00 type=f32 ne=8,4 first=0.1,0.106,0.112,0.118
+DEBUG_TENSOR label=seq-s0-h1 name=depth0_hidden1 data=0x10017400e00 type=f32 ne=8,4 first=0.1,0.106,0.112,0.118
+DEBUG_TENSOR label=seq-s0-logits name=depth0_logits data=0x10017400e80 type=f32 ne=16,4 first=0.07961,-0.037304,0.007472,0.056466
+DEBUG_TENSOR label=seq-input-h0 name=depth0_seed_hidden data=0x10017400400 type=f32 ne=8,4 first=-0.07,-0.082,-0.094,-0.106
+DEBUG_TENSOR label=seq-s0-v0 name=depth0_v_values data=0x10017400e00 type=f32 ne=8,4 first=-0.18,-0.224,-0.268,-0.312
+DEBUG_TENSOR label=seq-s0-h1 name=depth0_hidden1 data=0x10017400e00 type=f32 ne=8,4 first=-0.18,-0.224,-0.268,-0.312
+DEBUG_TENSOR label=seq-s0-logits name=depth0_logits data=0x10017400e80 type=f32 ne=16,4 first=-0.23078,0.078236,-0.020488,-0.150144
+SEQUENTIAL_REFERENCE mode=cuda D=2 lanes=4 tokens1=4 tokens2=4 cache_cells=16 poisoned_future_cells=verified
+BACKEND_CHECK label=alias-model-order op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=alias-model-order op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=alias-model-order op=GET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=alias-model-order op=GET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=alias-model-order op=ARGMAX assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=alias-model-order op=ARGMAX assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=alias-model-order op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=alias-model-order op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+GRAPH_LAYOUT label=alias-model-order nodes=20 set_k_node=1 read_k_node=9 set_v_node=3 read_v_node=11 direct_write_read_edge_k=0 direct_write_read_edge_v=0 set_rows_src2_alias_k=1 set_rows_src2_alias_v=1 cache_tensor_data_alias_k=1 cache_tensor_data_alias_v=1
+GRAPH_NODE label=alias-model-order index=1 op=SET_ROWS name=unrolled_depth0_SET_ROWS_K
+GRAPH_NODE label=alias-model-order index=3 op=SET_ROWS name=unrolled_depth0_SET_ROWS_V
+GRAPH_NODE label=alias-model-order index=6 op=ARGMAX name=unrolled_depth0_GPU_ARGMAX_token1
+GRAPH_NODE label=alias-model-order index=7 op=GET_ROWS name=node_7
+GRAPH_NODE label=alias-model-order index=9 op=GET_ROWS name=depth1_GET_ROWS_K_base_alias
+GRAPH_NODE label=alias-model-order index=11 op=GET_ROWS name=depth1_GET_ROWS_V_base_alias
+GRAPH_NODE label=alias-model-order index=15 op=ARGMAX name=unrolled_depth1_GPU_ARGMAX_token2
+GRAPH_NODE label=alias-model-order index=17 op=SET_ROWS name=unrolled_depth1_SET_ROWS_K
+GRAPH_NODE label=alias-model-order index=19 op=SET_ROWS name=unrolled_depth1_SET_ROWS_V
+node-trace 106682097582 dev 0 begin ADD node_0
+node-trace 106682097598 dev 0 end ADD node_0
+node-trace 106682097604 dev 0 begin SET_ROWS unrolled_depth0_SET_ROWS_K
+node-trace 106682097616 dev 0 end SET_ROWS unrolled_depth0_SET_ROWS_K
+node-trace 106682097622 dev 0 begin ADD node_2
+node-trace 106682097633 dev 0 end ADD node_2
+node-trace 106682097639 dev 0 begin SET_ROWS unrolled_depth0_SET_ROWS_V
+node-trace 106682097649 dev 0 end SET_ROWS unrolled_depth0_SET_ROWS_V
+node-trace 106682097655 dev 0 begin ADD node_4
+node-trace 106682097666 dev 0 end ADD node_4
+node-trace 106682097672 dev 0 begin MUL_MAT node_5
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x10017400480
+node-trace 106682097690 dev 0 end MUL_MAT node_5
+node-trace 106682097696 dev 0 begin ARGMAX unrolled_depth0_GPU_ARGMAX_token1
+node-trace 106682097706 dev 0 end ARGMAX unrolled_depth0_GPU_ARGMAX_token1
+node-trace 106682097712 dev 0 begin GET_ROWS node_7
+node-trace 106682097722 dev 0 end GET_ROWS node_7
+node-trace 106682097728 dev 0 begin ADD node_8
+node-trace 106682097739 dev 0 end ADD node_8
+node-trace 106682097744 dev 0 begin GET_ROWS depth1_GET_ROWS_K_base_alias
+node-trace 106682097755 dev 0 end GET_ROWS depth1_GET_ROWS_K_base_alias
+node-trace 106682097761 dev 0 begin MUL node_10
+node-trace 106682097772 dev 0 end MUL node_10
+node-trace 106682097778 dev 0 begin GET_ROWS depth1_GET_ROWS_V_base_alias
+node-trace 106682097788 dev 0 end GET_ROWS depth1_GET_ROWS_V_base_alias
+node-trace 106682097793 dev 0 begin ADD node_12
+node-trace 106682097804 dev 0 end ADD node_12
+node-trace 106682097809 dev 0 begin ADD unrolled_depth1_hidden2
+node-trace 106682097820 dev 0 end ADD unrolled_depth1_hidden2
+node-trace 106682097826 dev 0 begin MUL_MAT node_14
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x10017400480
+node-trace 106682097843 dev 0 end MUL_MAT node_14
+node-trace 106682097848 dev 0 begin ARGMAX unrolled_depth1_GPU_ARGMAX_token2
+node-trace 106682097858 dev 0 end ARGMAX unrolled_depth1_GPU_ARGMAX_token2
+node-trace 106682097864 dev 0 begin ADD node_16
+node-trace 106682097874 dev 0 end ADD node_16
+node-trace 106682097880 dev 0 begin SET_ROWS unrolled_depth1_SET_ROWS_K
+node-trace 106682097890 dev 0 end SET_ROWS unrolled_depth1_SET_ROWS_K
+node-trace 106682097895 dev 0 begin ADD node_18
+node-trace 106682097906 dev 0 end ADD node_18
+node-trace 106682097911 dev 0 begin SET_ROWS unrolled_depth1_SET_ROWS_V
+node-trace 106682097921 dev 0 end SET_ROWS unrolled_depth1_SET_ROWS_V
+PARITY label=alias-model-order-A h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=0.1/0.1 first_tok=0/0 first_k=0.1/0.1 first_v=0.03/0.03 first_h2=0.3314/0.3314 first_ck=0.1/0.1 first_cv=0.03/0.03
+CUDA Graph id 6 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+node-trace 106682098275 dev 0 begin ADD node_0
+node-trace 106682098292 dev 0 end ADD node_0
+node-trace 106682098299 dev 0 begin SET_ROWS unrolled_depth0_SET_ROWS_K
+node-trace 106682098307 dev 0 end SET_ROWS unrolled_depth0_SET_ROWS_K
+node-trace 106682098312 dev 0 begin ADD node_2
+node-trace 106682098320 dev 0 end ADD node_2
+node-trace 106682098325 dev 0 begin SET_ROWS unrolled_depth0_SET_ROWS_V
+node-trace 106682098333 dev 0 end SET_ROWS unrolled_depth0_SET_ROWS_V
+node-trace 106682098338 dev 0 begin ADD node_4
+node-trace 106682098346 dev 0 end ADD node_4
+node-trace 106682098352 dev 0 begin MUL_MAT node_5
+node-trace 106682098361 dev 0 end MUL_MAT node_5
+node-trace 106682098367 dev 0 begin ARGMAX unrolled_depth0_GPU_ARGMAX_token1
+node-trace 106682098374 dev 0 end ARGMAX unrolled_depth0_GPU_ARGMAX_token1
+node-trace 106682098380 dev 0 begin GET_ROWS node_7
+node-trace 106682098387 dev 0 end GET_ROWS node_7
+node-trace 106682098393 dev 0 begin ADD node_8
+node-trace 106682098400 dev 0 end ADD node_8
+node-trace 106682098406 dev 0 begin GET_ROWS depth1_GET_ROWS_K_base_alias
+node-trace 106682098413 dev 0 end GET_ROWS depth1_GET_ROWS_K_base_alias
+node-trace 106682098419 dev 0 begin MUL node_10
+node-trace 106682098426 dev 0 end MUL node_10
+node-trace 106682098432 dev 0 begin GET_ROWS depth1_GET_ROWS_V_base_alias
+node-trace 106682098439 dev 0 end GET_ROWS depth1_GET_ROWS_V_base_alias
+node-trace 106682098444 dev 0 begin ADD node_12
+node-trace 106682098452 dev 0 end ADD node_12
+node-trace 106682098457 dev 0 begin ADD unrolled_depth1_hidden2
+node-trace 106682098464 dev 0 end ADD unrolled_depth1_hidden2
+node-trace 106682098470 dev 0 begin MUL_MAT node_14
+node-trace 106682098479 dev 0 end MUL_MAT node_14
+node-trace 106682098484 dev 0 begin ARGMAX unrolled_depth1_GPU_ARGMAX_token2
+node-trace 106682098491 dev 0 end ARGMAX unrolled_depth1_GPU_ARGMAX_token2
+node-trace 106682098497 dev 0 begin ADD node_16
+node-trace 106682098504 dev 0 end ADD node_16
+node-trace 106682098509 dev 0 begin SET_ROWS unrolled_depth1_SET_ROWS_K
+node-trace 106682098517 dev 0 end SET_ROWS unrolled_depth1_SET_ROWS_K
+node-trace 106682098522 dev 0 begin ADD node_18
+node-trace 106682098529 dev 0 end ADD node_18
+node-trace 106682098534 dev 0 begin SET_ROWS unrolled_depth1_SET_ROWS_V
+node-trace 106682098541 dev 0 end SET_ROWS unrolled_depth1_SET_ROWS_V
+PARITY label=alias-model-order-B h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=-0.18/-0.18 first_tok=13/13 first_k=-0.04/-0.04 first_v=-0.11/-0.11 first_h2=-0.322256/-0.322256 first_ck=700/700 first_cv=-900/-900
+CUDA Graph id 6 reused
+CUDA graph path active ctx=0x1003c6168c0 device=0 uid=6 nodes=20 mode=replay count=1
+PARITY label=alias-model-order-A2 h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=0.1/0.1 first_tok=0/0 first_k=0.1/0.1 first_v=0.03/0.03 first_h2=0.3314/0.3314 first_ck=0.1/0.1 first_cv=0.03/0.03
+PARITY label=alias-model-order-A_B_A replay h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=0.1/0.1 first_tok=0/0 first_k=0.1/0.1 first_v=0.03/0.03 first_h2=0.3314/0.3314 first_ck=0.1/0.1 first_cv=0.03/0.03
+BACKEND_CHECK label=alias-read-first op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=alias-read-first op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=alias-read-first op=GET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=alias-read-first op=GET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=alias-read-first op=ARGMAX assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=alias-read-first op=ARGMAX assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=alias-read-first op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=alias-read-first op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+GRAPH_LAYOUT label=alias-read-first nodes=20 set_k_node=18 read_k_node=6 set_v_node=19 read_v_node=8 direct_write_read_edge_k=0 direct_write_read_edge_v=0 set_rows_src2_alias_k=1 set_rows_src2_alias_v=1 cache_tensor_data_alias_k=1 cache_tensor_data_alias_v=1
+GRAPH_NODE label=alias-read-first index=3 op=ARGMAX name=unrolled_depth0_GPU_ARGMAX_token1
+GRAPH_NODE label=alias-read-first index=4 op=GET_ROWS name=node_4
+GRAPH_NODE label=alias-read-first index=6 op=GET_ROWS name=depth1_GET_ROWS_K_base_alias
+GRAPH_NODE label=alias-read-first index=8 op=GET_ROWS name=depth1_GET_ROWS_V_base_alias
+GRAPH_NODE label=alias-read-first index=12 op=ARGMAX name=unrolled_depth1_GPU_ARGMAX_token2
+GRAPH_NODE label=alias-read-first index=14 op=SET_ROWS name=unrolled_depth1_SET_ROWS_K
+GRAPH_NODE label=alias-read-first index=16 op=SET_ROWS name=unrolled_depth1_SET_ROWS_V
+GRAPH_NODE label=alias-read-first index=18 op=SET_ROWS name=unrolled_depth0_SET_ROWS_K
+GRAPH_NODE label=alias-read-first index=19 op=SET_ROWS name=unrolled_depth0_SET_ROWS_V
+node-trace 106682111624 dev 0 begin ADD node_0
+node-trace 106682111640 dev 0 end ADD node_0
+node-trace 106682111646 dev 0 begin ADD node_1
+node-trace 106682111658 dev 0 end ADD node_1
+node-trace 106682111665 dev 0 begin MUL_MAT node_2
+node-trace 106682111678 dev 0 end MUL_MAT node_2
+node-trace 106682111683 dev 0 begin ARGMAX unrolled_depth0_GPU_ARGMAX_token1
+node-trace 106682111693 dev 0 end ARGMAX unrolled_depth0_GPU_ARGMAX_token1
+node-trace 106682111699 dev 0 begin GET_ROWS node_4
+node-trace 106682111710 dev 0 end GET_ROWS node_4
+node-trace 106682111716 dev 0 begin ADD node_5
+node-trace 106682111727 dev 0 end ADD node_5
+node-trace 106682111733 dev 0 begin GET_ROWS depth1_GET_ROWS_K_base_alias
+node-trace 106682111743 dev 0 end GET_ROWS depth1_GET_ROWS_K_base_alias
+node-trace 106682111749 dev 0 begin MUL node_7
+node-trace 106682111759 dev 0 end MUL node_7
+node-trace 106682111765 dev 0 begin GET_ROWS depth1_GET_ROWS_V_base_alias
+node-trace 106682111775 dev 0 end GET_ROWS depth1_GET_ROWS_V_base_alias
+node-trace 106682111781 dev 0 begin ADD node_9
+node-trace 106682111792 dev 0 end ADD node_9
+node-trace 106682111797 dev 0 begin ADD unrolled_depth1_hidden2
+node-trace 106682111807 dev 0 end ADD unrolled_depth1_hidden2
+node-trace 106682111814 dev 0 begin MUL_MAT node_11
+node-trace 106682111826 dev 0 end MUL_MAT node_11
+node-trace 106682111831 dev 0 begin ARGMAX unrolled_depth1_GPU_ARGMAX_token2
+node-trace 106682111841 dev 0 end ARGMAX unrolled_depth1_GPU_ARGMAX_token2
+node-trace 106682111847 dev 0 begin ADD node_13
+node-trace 106682111857 dev 0 end ADD node_13
+node-trace 106682111863 dev 0 begin SET_ROWS unrolled_depth1_SET_ROWS_K
+node-trace 106682111873 dev 0 end SET_ROWS unrolled_depth1_SET_ROWS_K
+node-trace 106682111879 dev 0 begin ADD node_15
+node-trace 106682111889 dev 0 end ADD node_15
+node-trace 106682111895 dev 0 begin SET_ROWS unrolled_depth1_SET_ROWS_V
+node-trace 106682111905 dev 0 end SET_ROWS unrolled_depth1_SET_ROWS_V
+node-trace 106682111910 dev 0 begin ADD node_17
+node-trace 106682111921 dev 0 end ADD node_17
+node-trace 106682111926 dev 0 begin SET_ROWS unrolled_depth0_SET_ROWS_K
+node-trace 106682111936 dev 0 end SET_ROWS unrolled_depth0_SET_ROWS_K
+node-trace 106682111942 dev 0 begin SET_ROWS unrolled_depth0_SET_ROWS_V
+node-trace 106682111951 dev 0 end SET_ROWS unrolled_depth0_SET_ROWS_V
+ALIAS_HAZARD outcome=REPRODUCED cache_write_read_direct_edge=0 matches_sequential=0 set0_node=18 read_node=6 set0_node_before_read=0
+BACKEND_CHECK label=versioned-cache-edge op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=versioned-cache-edge op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=versioned-cache-edge op=GET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=versioned-cache-edge op=GET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=versioned-cache-edge op=ARGMAX assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=versioned-cache-edge op=ARGMAX assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=versioned-cache-edge op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+BACKEND_CHECK label=versioned-cache-edge op=SET_ROWS assigned=CUDA0 dev_type=1 expected_type=1 status=PASS
+GRAPH_LAYOUT label=versioned-cache-edge nodes=20 set_k_node=7 read_k_node=8 set_v_node=10 read_v_node=11 direct_write_read_edge_k=1 direct_write_read_edge_v=1 set_rows_src2_alias_k=1 set_rows_src2_alias_v=1 cache_tensor_data_alias_k=1 cache_tensor_data_alias_v=1
+GRAPH_NODE label=versioned-cache-edge index=3 op=ARGMAX name=unrolled_depth0_GPU_ARGMAX_token1
+GRAPH_NODE label=versioned-cache-edge index=4 op=GET_ROWS name=node_4
+GRAPH_NODE label=versioned-cache-edge index=7 op=SET_ROWS name=unrolled_depth0_SET_ROWS_K
+GRAPH_NODE label=versioned-cache-edge index=8 op=GET_ROWS name=depth1_GET_ROWS_K_versioned
+GRAPH_NODE label=versioned-cache-edge index=10 op=SET_ROWS name=unrolled_depth0_SET_ROWS_V
+GRAPH_NODE label=versioned-cache-edge index=11 op=GET_ROWS name=depth1_GET_ROWS_V_versioned
+GRAPH_NODE label=versioned-cache-edge index=15 op=ARGMAX name=unrolled_depth1_GPU_ARGMAX_token2
+GRAPH_NODE label=versioned-cache-edge index=17 op=SET_ROWS name=unrolled_depth1_SET_ROWS_K
+GRAPH_NODE label=versioned-cache-edge index=19 op=SET_ROWS name=unrolled_depth1_SET_ROWS_V
+node-trace 106682124445 dev 0 begin ADD node_0
+node-trace 106682124460 dev 0 end ADD node_0
+node-trace 106682124466 dev 0 begin ADD node_1
+node-trace 106682124477 dev 0 end ADD node_1
+node-trace 106682124484 dev 0 begin MUL_MAT node_2
+node-trace 106682124497 dev 0 end MUL_MAT node_2
+node-trace 106682124502 dev 0 begin ARGMAX unrolled_depth0_GPU_ARGMAX_token1
+node-trace 106682124513 dev 0 end ARGMAX unrolled_depth0_GPU_ARGMAX_token1
+node-trace 106682124519 dev 0 begin GET_ROWS node_4
+node-trace 106682124529 dev 0 end GET_ROWS node_4
+node-trace 106682124535 dev 0 begin ADD node_5
+node-trace 106682124545 dev 0 end ADD node_5
+node-trace 106682124551 dev 0 begin ADD node_6
+node-trace 106682124561 dev 0 end ADD node_6
+node-trace 106682124567 dev 0 begin SET_ROWS unrolled_depth0_SET_ROWS_K
+node-trace 106682124577 dev 0 end SET_ROWS unrolled_depth0_SET_ROWS_K
+node-trace 106682124583 dev 0 begin GET_ROWS depth1_GET_ROWS_K_versioned
+node-trace 106682124593 dev 0 end GET_ROWS depth1_GET_ROWS_K_versioned
+node-trace 106682124599 dev 0 begin MUL node_9
+node-trace 106682124610 dev 0 end MUL node_9
+node-trace 106682124615 dev 0 begin SET_ROWS unrolled_depth0_SET_ROWS_V
+node-trace 106682124626 dev 0 end SET_ROWS unrolled_depth0_SET_ROWS_V
+node-trace 106682124631 dev 0 begin GET_ROWS depth1_GET_ROWS_V_versioned
+node-trace 106682124641 dev 0 end GET_ROWS depth1_GET_ROWS_V_versioned
+node-trace 106682124647 dev 0 begin ADD node_12
+node-trace 106682124657 dev 0 end ADD node_12
+node-trace 106682124663 dev 0 begin ADD unrolled_depth1_hidden2
+node-trace 106682124673 dev 0 end ADD unrolled_depth1_hidden2
+node-trace 106682124679 dev 0 begin MUL_MAT node_14
+node-trace 106682124691 dev 0 end MUL_MAT node_14
+node-trace 106682124697 dev 0 begin ARGMAX unrolled_depth1_GPU_ARGMAX_token2
+node-trace 106682124706 dev 0 end ARGMAX unrolled_depth1_GPU_ARGMAX_token2
+node-trace 106682124712 dev 0 begin ADD node_16
+node-trace 106682124722 dev 0 end ADD node_16
+node-trace 106682124728 dev 0 begin SET_ROWS unrolled_depth1_SET_ROWS_K
+node-trace 106682124738 dev 0 end SET_ROWS unrolled_depth1_SET_ROWS_K
+node-trace 106682124744 dev 0 begin ADD node_18
+node-trace 106682124754 dev 0 end ADD node_18
+node-trace 106682124759 dev 0 begin SET_ROWS unrolled_depth1_SET_ROWS_V
+node-trace 106682124769 dev 0 end SET_ROWS unrolled_depth1_SET_ROWS_V
+PARITY label=versioned-edge-A h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=0.1/0.1 first_tok=0/0 first_k=0.1/0.1 first_v=0.03/0.03 first_h2=0.3314/0.3314 first_ck=0.1/0.1 first_cv=0.03/0.03
+CUDA Graph id 10 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+node-trace 106682125118 dev 0 begin ADD node_0
+node-trace 106682125127 dev 0 end ADD node_0
+node-trace 106682125133 dev 0 begin ADD node_1
+node-trace 106682125140 dev 0 end ADD node_1
+node-trace 106682125146 dev 0 begin MUL_MAT node_2
+node-trace 106682125155 dev 0 end MUL_MAT node_2
+node-trace 106682125161 dev 0 begin ARGMAX unrolled_depth0_GPU_ARGMAX_token1
+node-trace 106682125168 dev 0 end ARGMAX unrolled_depth0_GPU_ARGMAX_token1
+node-trace 106682125174 dev 0 begin GET_ROWS node_4
+node-trace 106682125181 dev 0 end GET_ROWS node_4
+node-trace 106682125187 dev 0 begin ADD node_5
+node-trace 106682125195 dev 0 end ADD node_5
+node-trace 106682125200 dev 0 begin ADD node_6
+node-trace 106682125207 dev 0 end ADD node_6
+node-trace 106682125213 dev 0 begin SET_ROWS unrolled_depth0_SET_ROWS_K
+node-trace 106682125220 dev 0 end SET_ROWS unrolled_depth0_SET_ROWS_K
+node-trace 106682125226 dev 0 begin GET_ROWS depth1_GET_ROWS_K_versioned
+node-trace 106682125233 dev 0 end GET_ROWS depth1_GET_ROWS_K_versioned
+node-trace 106682125239 dev 0 begin MUL node_9
+node-trace 106682125246 dev 0 end MUL node_9
+node-trace 106682125252 dev 0 begin SET_ROWS unrolled_depth0_SET_ROWS_V
+node-trace 106682125259 dev 0 end SET_ROWS unrolled_depth0_SET_ROWS_V
+node-trace 106682125264 dev 0 begin GET_ROWS depth1_GET_ROWS_V_versioned
+node-trace 106682125271 dev 0 end GET_ROWS depth1_GET_ROWS_V_versioned
+node-trace 106682125277 dev 0 begin ADD node_12
+node-trace 106682125284 dev 0 end ADD node_12
+node-trace 106682125289 dev 0 begin ADD unrolled_depth1_hidden2
+node-trace 106682125296 dev 0 end ADD unrolled_depth1_hidden2
+node-trace 106682125302 dev 0 begin MUL_MAT node_14
+node-trace 106682125311 dev 0 end MUL_MAT node_14
+node-trace 106682125316 dev 0 begin ARGMAX unrolled_depth1_GPU_ARGMAX_token2
+node-trace 106682125327 dev 0 end ARGMAX unrolled_depth1_GPU_ARGMAX_token2
+node-trace 106682125333 dev 0 begin ADD node_16
+node-trace 106682125341 dev 0 end ADD node_16
+node-trace 106682125346 dev 0 begin SET_ROWS unrolled_depth1_SET_ROWS_K
+node-trace 106682125353 dev 0 end SET_ROWS unrolled_depth1_SET_ROWS_K
+node-trace 106682125359 dev 0 begin ADD node_18
+node-trace 106682125366 dev 0 end ADD node_18
+node-trace 106682125371 dev 0 begin SET_ROWS unrolled_depth1_SET_ROWS_V
+node-trace 106682125378 dev 0 end SET_ROWS unrolled_depth1_SET_ROWS_V
+PARITY label=versioned-edge-B h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=-0.18/-0.18 first_tok=13/13 first_k=-0.04/-0.04 first_v=-0.11/-0.11 first_h2=-0.322256/-0.322256 first_ck=700/700 first_cv=-900/-900
+CUDA Graph id 10 reused
+CUDA graph path active ctx=0x1003c6168c0 device=0 uid=10 nodes=20 mode=replay count=2
+PARITY label=versioned-edge-A2 h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=0.1/0.1 first_tok=0/0 first_k=0.1/0.1 first_v=0.03/0.03 first_h2=0.3314/0.3314 first_ck=0.1/0.1 first_cv=0.03/0.03
+PARITY label=versioned-edge-A_B_A replay h1=1 token1=1 kread=1 vread=1 h2=1 token2=1 cache_k=1 cache_v=1 status=PASS first_h1=0.1/0.1 first_tok=0/0 first_k=0.1/0.1 first_v=0.03/0.03 first_h2=0.3314/0.3314 first_ck=0.1/0.1 first_cv=0.03/0.03
+MODE_PASS mode=cuda exact_sequential=1 alias_node_order=1 explicit_edge=1 A_B_A=1 GGML_CUDA_GRAPH_OPT=1
+MTP_UNROLLED_KV_DEPENDENCY_END status=PASS mode=cuda

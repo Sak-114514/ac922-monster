@@ -1,0 +1,302 @@
+{
+  "checks": {
+    "cpu_copy_32m_context_policy_observed": true,
+    "cpu_copy_dispatch_observed": true,
+    "flat_six_device_p2p_initialized": true,
+    "graphs_force_selected_when_requested": true,
+    "packed_dense_decode_selected_when_requested": true,
+    "ple_12_gib_prefix_selected": true,
+    "single_chunk_cold_drain_observed_when_requested": true,
+    "structural_snapshot_stats_all_six_devices": false,
+    "wholegraph_flat_merge_selected": true
+  },
+  "cpu_copy_active_transfers": 2,
+  "cpu_copy_cap_expected": 33554432,
+  "cpu_copy_caps_observed": [
+    33554432
+  ],
+  "cpu_copy_fallbacks": [
+    "3.00.389.109 I meta-cpu-async-copy fallback context=0x1003f8ddbb0 reason=invalid_or_empty_copy source=rs_s_copy (view) src_op=VIEW flags=16 bytes=0 src_usage=2 dst_usage=2"
+  ],
+  "cpu_copy_summaries": [],
+  "graphs_force_examples": [
+    "optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=80 width=0 auxiliary=0 count=1",
+    "optimization path device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=80 width=0 auxiliary=0 count=1",
+    "optimization path device=2 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=80 width=0 auxiliary=0 count=1",
+    "optimization path device=3 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=80 width=0 auxiliary=0 count=1",
+    "optimization path device=4 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=80 width=0 auxiliary=0 count=1",
+    "optimization path device=5 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=80 width=0 auxiliary=0 count=1",
+    "optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=72 width=0 auxiliary=0 count=2",
+    "optimization path device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=72 width=0 auxiliary=0 count=2",
+    "optimization path device=2 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=72 width=0 auxiliary=0 count=2",
+    "optimization path device=3 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=72 width=0 auxiliary=0 count=2",
+    "optimization path device=4 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=72 width=0 auxiliary=0 count=2",
+    "optimization path device=5 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=72 width=0 auxiliary=0 count=2",
+    "optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=57 width=0 auxiliary=0 count=128",
+    "optimization path device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=57 width=0 auxiliary=0 count=128",
+    "optimization path device=2 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=57 width=0 auxiliary=0 count=128",
+    "optimization path device=3 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=57 width=0 auxiliary=0 count=128"
+  ],
+  "graphs_force_fallback_examples": [
+    "CUDA graph structural rejected graph device=0 reason=external_cap nodes=78 external=4096 uid=105",
+    "optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=78 width=0 auxiliary=0 count=1",
+    "CUDA graph fallback ctx=0x1003fb4b4e0 device=0 uid=105 nodes=78 mode=eager reason=initial_or_changed_warmup node= op=none count=1",
+    "CUDA graph structural rejected graph device=1 reason=external_cap nodes=78 external=4096 uid=203",
+    "optimization path device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=78 width=0 auxiliary=0 count=1",
+    "CUDA graph fallback ctx=0x1003f8da620 device=1 uid=203 nodes=78 mode=eager reason=initial_or_changed_warmup node= op=none count=1",
+    "CUDA graph structural rejected graph device=2 reason=external_cap nodes=78 external=4096 uid=301",
+    "optimization path device=2 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=78 width=0 auxiliary=0 count=1",
+    "CUDA graph fallback ctx=0x1003fb54e90 device=2 uid=301 nodes=78 mode=eager reason=initial_or_changed_warmup node= op=none count=1",
+    "CUDA graph structural rejected graph device=3 reason=external_cap nodes=78 external=4096 uid=399",
+    "optimization path device=3 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=78 width=0 auxiliary=0 count=1",
+    "CUDA graph fallback ctx=0x1004a204de0 device=3 uid=399 nodes=78 mode=eager reason=initial_or_changed_warmup node= op=none count=1",
+    "CUDA graph structural rejected graph device=4 reason=external_cap nodes=78 external=4096 uid=497",
+    "optimization path device=4 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=78 width=0 auxiliary=0 count=1",
+    "CUDA graph fallback ctx=0x10040d6c430 device=4 uid=497 nodes=78 mode=eager reason=initial_or_changed_warmup node= op=none count=1",
+    "CUDA graph structural rejected graph device=5 reason=external_cap nodes=78 external=4096 uid=595",
+    "optimization path device=5 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=78 width=0 auxiliary=0 count=1",
+    "CUDA graph fallback ctx=0x10040d6d6b0 device=5 uid=595 nodes=78 mode=eager reason=initial_or_changed_warmup node= op=none count=1",
+    "CUDA graph structural rejected graph device=0 reason=external_cap nodes=57 external=4096 uid=106",
+    "optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=57 width=0 auxiliary=0 count=2",
+    "CUDA graph fallback ctx=0x1003fb4b4e0 device=0 uid=106 nodes=57 mode=eager reason=initial_or_changed_warmup node= op=none count=2",
+    "CUDA graph structural rejected graph device=1 reason=external_cap nodes=57 external=4096 uid=204",
+    "optimization path device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=57 width=0 auxiliary=0 count=2",
+    "CUDA graph fallback ctx=0x1003f8da620 device=1 uid=204 nodes=57 mode=eager reason=initial_or_changed_warmup node= op=none count=2"
+  ],
+  "graphs_force_fallback_or_rejection_count": 48,
+  "graphs_force_requested": true,
+  "graphs_force_selected_count": 24,
+  "merged_chunk_histogram": {
+    "1": 9
+  },
+  "merged_graph_count": 9,
+  "merged_graph_examples": [
+    {
+      "chunks": 1,
+      "line": "3.14.995.898 W ggml_backend_meta_graph_compute: graph 487 nodes, 10 subgraphs: merged, 1 chunks",
+      "nodes": 487,
+      "state": "merged",
+      "subgraphs": 10
+    },
+    {
+      "chunks": 1,
+      "line": "3.15.295.768 W ggml_backend_meta_graph_compute: graph 7274 nodes, 98 subgraphs: merged, 1 chunks",
+      "nodes": 7274,
+      "state": "merged",
+      "subgraphs": 98
+    },
+    {
+      "chunks": 1,
+      "line": "3.15.514.425 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 1,
+      "line": "3.17.869.133 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 1,
+      "line": "3.17.889.811 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 1,
+      "line": "3.17.938.877 W ggml_backend_meta_graph_compute: graph 7094 nodes, 98 subgraphs: merged, 1 chunks",
+      "nodes": 7094,
+      "state": "merged",
+      "subgraphs": 98
+    },
+    {
+      "chunks": 1,
+      "line": "3.18.036.553 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 1,
+      "line": "3.18.046.141 W ggml_backend_meta_graph_compute: graph 159 nodes, 4 subgraphs: merged, 1 chunks",
+      "nodes": 159,
+      "state": "merged",
+      "subgraphs": 4
+    },
+    {
+      "chunks": 1,
+      "line": "3.18.382.608 W ggml_backend_meta_graph_compute: graph 7094 nodes, 98 subgraphs: merged, 1 chunks",
+      "nodes": 7094,
+      "state": "merged",
+      "subgraphs": 98
+    }
+  ],
+  "meta_p2p_examples": [
+    "2.58.562.071 I ggml_backend_meta_context: using in-graph P2P AllReduce",
+    "2.59.103.770 I ggml_backend_meta_context: using in-graph P2P AllReduce"
+  ],
+  "meta_p2p_marker_count": 2,
+  "p2p_init_count": 2,
+  "p2p_init_examples": [
+    "2.58.435.708 I ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices",
+    "2.59.079.441 I ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices"
+  ],
+  "packed_examples": [
+    "optimization path device=0 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=1",
+    "optimization path device=0 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=2",
+    "optimization path device=1 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=1",
+    "optimization path device=1 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=2",
+    "optimization path device=2 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=1",
+    "optimization path device=2 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=2",
+    "optimization path device=3 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=1",
+    "optimization path device=3 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=2",
+    "optimization path device=4 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=1",
+    "optimization path device=4 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=2",
+    "optimization path device=5 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=1",
+    "optimization path device=5 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=2",
+    "optimization path device=0 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=128",
+    "optimization path device=2 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=128",
+    "optimization path device=3 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=128",
+    "optimization path device=5 path=dense_decode_packed_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=original_mmvq_reduction_broadcast_weight_channels tokens=32 width=4 auxiliary=8 count=128"
+  ],
+  "packed_requested": true,
+  "packed_selected_count": 56,
+  "ple_placement_records": [
+    {
+      "cpu_gib": 14.82,
+      "gpu_gib": 12.0,
+      "line": "1.10.057.128 I load_tensors: hybrid PLE enabled; 12.00 GiB on CUDA UUID-mapped GPU NUMA nodes (stripe map above) and 14.82 GiB strictly bound in 32 MiB stripes to CPU nodes 0/8; row format unchanged"
+    }
+  ],
+  "relay6_payload_histogram": {
+    "327680": 11
+  },
+  "relay6_ranks": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "relay6_records": 11,
+  "relay6_records_sample": [
+    {
+      "bytes": 327680,
+      "device": 0,
+      "line": "3.00.675.448 I P2P relay6 selected device=0 rank=0 bytes=327680 rank-order-exact=1 cross-payload=4V entry=dispatch",
+      "rank": 0,
+      "rank_order_exact": 1
+    },
+    {
+      "bytes": 327680,
+      "device": 1,
+      "line": "3.00.676.254 I P2P relay6 selected device=1 rank=1 bytes=327680 rank-order-exact=1 cross-payload=4V entry=dispatch",
+      "rank": 1,
+      "rank_order_exact": 1
+    },
+    {
+      "bytes": 327680,
+      "device": 2,
+      "line": "3.00.677.079 I P2P relay6 selected device=2 rank=2 bytes=327680 rank-order-exact=1 cross-payload=4V entry=dispatch",
+      "rank": 2,
+      "rank_order_exact": 1
+    },
+    {
+      "bytes": 327680,
+      "device": 3,
+      "line": "3.00.677.997 I P2P relay6 selected device=3 rank=3 bytes=327680 rank-order-exact=1 cross-payload=4V entry=dispatch",
+      "rank": 3,
+      "rank_order_exact": 1
+    },
+    {
+      "bytes": 327680,
+      "device": 4,
+      "line": "3.00.678.872 I P2P relay6 selected device=4 rank=4 bytes=327680 rank-order-exact=1 cross-payload=4V entry=dispatch",
+      "rank": 4,
+      "rank_order_exact": 1
+    },
+    {
+      "bytes": 327680,
+      "device": 5,
+      "line": "3.00.679.643 I P2P relay6 selected device=5 rank=5 bytes=327680 rank-order-exact=1 cross-payload=4V entry=dispatch",
+      "rank": 5,
+      "rank_order_exact": 1
+    },
+    {
+      "bytes": 327680,
+      "device": 2,
+      "line": "3.18.409.684 I P2P relay6 selected device=2 rank=2 bytes=327680 rank-order-exact=1 cross-payload=4V entry=dispatch",
+      "rank": 2,
+      "rank_order_exact": 1
+    },
+    {
+      "bytes": 327680,
+      "device": 1,
+      "line": "3.18.411.499 I P2P relay6 selected device=1 rank=1 bytes=327680 rank-order-exact=1 cross-payload=4V entry=dispatch",
+      "rank": 1,
+      "rank_order_exact": 1
+    },
+    {
+      "bytes": 327680,
+      "device": 4,
+      "line": "P2P relay6 selected device=4 rank=4 bytes=327680 rank-order-exact=1 cross-payload=4V entry=dispatch",
+      "rank": 4,
+      "rank_order_exact": 1
+    },
+    {
+      "bytes": 327680,
+      "device": 3,
+      "line": "3.18.414.382 I P2P relay6 selected device=3 rank=3 bytes=327680 rank-order-exact=1 cross-payload=4V entry=dispatch",
+      "rank": 3,
+      "rank_order_exact": 1
+    },
+    {
+      "bytes": 327680,
+      "device": 5,
+      "line": "3.18.415.941 I P2P relay6 selected device=5 rank=5 bytes=327680 rank-order-exact=1 cross-payload=4V entry=dispatch",
+      "rank": 5,
+      "rank_order_exact": 1
+    }
+  ],
+  "single_chunk_cold_drain_examples": [
+    "3.14.996.748 I meta-cold-graph-drain context=0x100533d0de0 ranks=6 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "3.15.307.224 I meta-cold-graph-drain context=0x1003f8ddbb0 ranks=6 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "3.15.514.983 I meta-cold-graph-drain context=0x100533d0de0 ranks=6 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "3.17.870.089 I meta-cold-graph-drain context=0x100533d0de0 ranks=6 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "3.17.950.201 I meta-cold-graph-drain context=0x1003f8ddbb0 ranks=6 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep",
+    "3.18.393.434 I meta-cold-graph-drain context=0x1003f8ddbb0 ranks=6 chunks=1 ready_at_entry=0 action=drain_before_capture_and_lockstep"
+  ],
+  "single_chunk_cold_drain_marker_count": 6,
+  "single_chunk_cold_drain_requested": true,
+  "snapshot_devices": [],
+  "snapshot_hit_ratio": 0.0,
+  "snapshot_hits_total": 0,
+  "snapshot_miss_reason": "V88 trace emits aggregate hit/miss counts; no per-miss reason marker exists",
+  "snapshot_misses_total": 0,
+  "snapshot_stats": [],
+  "status": "FAIL",
+  "structural_rejection_count": 12,
+  "structural_rejection_examples": [
+    "CUDA graph structural rejected graph device=0 reason=external_cap nodes=78 external=4096 uid=105",
+    "CUDA graph structural rejected graph device=1 reason=external_cap nodes=78 external=4096 uid=203",
+    "CUDA graph structural rejected graph device=2 reason=external_cap nodes=78 external=4096 uid=301",
+    "CUDA graph structural rejected graph device=3 reason=external_cap nodes=78 external=4096 uid=399",
+    "CUDA graph structural rejected graph device=4 reason=external_cap nodes=78 external=4096 uid=497",
+    "CUDA graph structural rejected graph device=5 reason=external_cap nodes=78 external=4096 uid=595",
+    "CUDA graph structural rejected graph device=0 reason=external_cap nodes=57 external=4096 uid=106",
+    "CUDA graph structural rejected graph device=1 reason=external_cap nodes=57 external=4096 uid=204",
+    "CUDA graph structural rejected graph device=2 reason=external_cap nodes=57 external=4096 uid=302",
+    "CUDA graph structural rejected graph device=3 reason=external_cap nodes=57 external=4096 uid=400",
+    "CUDA graph structural rejected graph device=4 reason=external_cap nodes=57 external=4096 uid=498",
+    "CUDA graph structural rejected graph device=5 reason=external_cap nodes=57 external=4096 uid=596"
+  ],
+  "structural_snapshot_summary_count": 0,
+  "unmerged_graph_count": 0,
+  "unmerged_graph_examples": [],
+  "wholegraph_merge_selected": true
+}

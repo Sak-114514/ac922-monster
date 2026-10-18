@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "comparison": "V32 generated token arrays against frozen V27, case by case",
+  "status": "fail",
+  "baseline_root": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v27-shortctx16k-hierarchical-20261016/results/root-p4-v27-shortctx16k-hierarchical-ep6-d3-20261016t022431z/copy1",
+  "candidate_root": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/results/root-p4-v33-target_pad_only-16k-hierarchical-ep6-d3-20261016t061425z/copy1",
+  "profiles": {
+    "diagnostic": {
+      "profile": "diagnostic",
+      "status": "fail",
+      "baseline_flow_count": 42,
+      "candidate_flow_count": 8,
+      "matching_flow_count": 8,
+      "exact_token_array_count": 8,
+      "missing_from_candidate": [
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-01",
+          "flow_id": "parallel2-add-en"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-01",
+          "flow_id": "parallel2-subtract-zh"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-01",
+          "flow_id": "python-clamp"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-01",
+          "flow_id": "vocabulary-en-zh"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-02",
+          "flow_id": "parallel4-add"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-02",
+          "flow_id": "parallel4-divide"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-02",
+          "flow_id": "parallel4-multiply"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-02",
+          "flow_id": "parallel4-subtract"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-03",
+          "flow_id": "slot-reuse-0"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-03",
+          "flow_id": "slot-reuse-1"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-03",
+          "flow_id": "slot-reuse-2"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-dual-sem-03",
+          "flow_id": "slot-reuse-3"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-real8k-p4-2x2",
+          "flow_id": "real8k-0"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-real8k-p4-2x2",
+          "flow_id": "real8k-1"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-real8k-p4-2x2",
+          "flow_id": "real8k-2"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-real8k-p4-2x2",
+          "flow_id": "real8k-3"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-real8k-0",
+          "flow_id": "real8k-0"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-real8k-0",
+          "flow_id": "real8k-1"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-real8k-1",
+          "flow_id": "real8k-2"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-real8k-1",
+          "flow_id": "real8k-3"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-01-0",
+          "flow_id": "python-clamp"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-01-0",
+          "flow_id": "vocabulary-en-zh"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-01-1",
+          "flow_id": "parallel2-add-en"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-01-1",
+          "flow_id": "parallel2-subtract-zh"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-02-0",
+          "flow_id": "parallel4-add"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-02-0",
+          "flow_id": "parallel4-subtract"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-02-1",
+          "flow_id": "parallel4-divide"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-02-1",
+          "flow_id": "parallel4-multiply"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-03-0",
+          "flow_id": "slot-reuse-0"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-03-0",
+          "flow_id": "slot-reuse-1"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-03-1",
+          "flow_id": "slot-reuse-2"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-serial-sem-03-1",
+          "flow_id": "slot-reuse-3"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-single8k-pp-probe-32",
+          "flow_id": "real8k0-pp-probe-32"
+        },
+        {
+          "label": "v24-shortctx-copy1-diagnostic-single8k-pp-warm-32",
+          "flow_id": "real8k0-pp-warm-32"
+        }
+      ],
+      "unexpected_in_candidate": [],
+      "token_array_mismatches": [],
+      "errors": [],
+      "baseline_results_sha256": "16cb38688dc2e4581c0f5990dcf432949f431dad842e44ac5560c082cdf6f994",
+      "candidate_results_sha256": "85d6cda8ea159edace99447e5b532f546c3234ce0332983ca1b34a8705935b9b"
+    }
+  },
+  "errors": [
+    "missing V32 candidate file: /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/results/root-p4-v33-target_pad_only-16k-hierarchical-ep6-d3-20261016t061425z/copy1/clean/results.json"
+  ],
+  "prefix_failure_policy": "V27 single8k cold/warm auxiliary prefix failures remain separately enforced by the original comparator; this report does not suppress or reinterpret them"
+}

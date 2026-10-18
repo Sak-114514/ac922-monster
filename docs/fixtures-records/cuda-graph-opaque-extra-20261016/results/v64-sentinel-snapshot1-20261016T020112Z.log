@@ -1,0 +1,26 @@
+start=2026-10-16T02:01:12Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v64
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cuda-graph-opaque-extra-20261016/opaque-extra-fixture-v64
+mode=sentinel snapshot=1 expect_crash=0
+8b4689e856e37f85ef5ee503a099efc429d22980e92fd3926cf2fa1b6a99fd6c  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cuda-graph-opaque-extra-20261016/opaque-extra-fixture-v64
+gpu=GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb before=38, 2
+limits temp<58C preexisting<=512MiB runtime<=1024MiB timeout=60s
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+load_backend: failed to load /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cuda-graph-opaque-extra-20261016/backend-v64: /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cuda-graph-opaque-extra-20261016/backend-v64: cannot read file data: Is a directory
+CUDA_OPAQUE_SETUP device=CUDA0 buft=CUDA0
+OPAQUE_EXTERNAL_READY name=opaque_extra.materialized_external_producer buffer=0x1000464b710 buft=CUDA0 data=0x10037400800 extra=0x57800 graph_nodes=1
+OPAQUE_GRAPH_SHAPE nodes=5 external_producer_leaf=1 ancestry_expanded=0
+CUDA graph structural opaque node device=0 name=opaque_extra.materialized_external_producer op=2
+CUDA graph structural rejected graph device=0 reason=opaque_node_extra nodes=5 external=0 uid=0
+CUDA graph structural opaque node device=0 name=opaque_extra.materialized_external_producer op=2
+CUDA graph structural rejected graph device=0 reason=opaque_node_extra nodes=5 external=0 uid=4
+PASS OPAQUE_EXTRA_FRAME frame=0 sequence=A exact=1 canary=1
+CUDA Graph id 4 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+PASS OPAQUE_EXTRA_FRAME frame=1 sequence=B exact=1 canary=1
+CUDA Graph id 4 reused
+PASS OPAQUE_EXTRA_FRAME frame=2 sequence=A exact=1 canary=1
+CUDA graph structural stats device=0 attempts=4 built=2 reject_too_large=0 reject_graph=2 reject_external=0 reject_missing=0 active_matches=0 variant_matches=0 lookup_misses=2 cross_descriptor_replays=0 flat_snapshot_hits=0 flat_snapshot_misses=2 signature_build_us=69 lookup_us=2
+OPAQUE_EXTRA_CHILD_PASS mode=sentinel structural=1 snapshot=1 output_exact=1 frames=ABA
+exit_status=0 after=39, 2

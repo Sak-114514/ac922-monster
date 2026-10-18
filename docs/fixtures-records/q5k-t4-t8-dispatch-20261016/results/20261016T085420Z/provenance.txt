@@ -1,0 +1,23 @@
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v83/lib
+gpu_uuid=GPU-fadb0459-4d30-907b-289a-862b3014f165
+{
+  "schema": "ac922-q5k-output-row-slice-v1",
+  "source_path": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+  "source_tensor": "output.weight",
+  "type": "Q5_K",
+  "gguf_shape_ne": [2560,248320],
+  "gguf_data_offset": 11026368,
+  "tensor_payload_offset": 0,
+  "rows_copied": 2048,
+  "row_bytes": 1760,
+  "payload_bytes": 3604480,
+  "payload_file": "output-q5k-first2048.raw",
+  "read_scope": "first 2048 contiguous output.weight rows only"
+}
+37f8db597eb0a511b2a968bf7fa6da30cc2c2c6b6a31a3305d4658770645ebc1  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/q5k-t4-t8-dispatch-20261016/output-q5k-first2048.raw
+a12e4b682ece603784b565f1a6ef229202093a18205a02fbf537f43c47859faf  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/q5k-t4-t8-dispatch-20261016/q5k-dispatch-fixture
+8f5affea7438e730f42ab9294e9302a0e22c1d1e09c3204349f9b459a41850e9  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v83/lib/libggml-cuda.so.0
+7a95bd46168f701861d006a6cf133ea2032b3cfa7d82276624245e6f78129293  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v83/lib/libggml-base.so.0
+	libggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v83/lib/libggml-base.so.0 (0x00007fff8c340000)
+	libggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin/libggml-cpu.so.0 (0x00007fff8ba80000)
+	libggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin/libggml-cuda.so.0 (0x00007fff7dee0000)

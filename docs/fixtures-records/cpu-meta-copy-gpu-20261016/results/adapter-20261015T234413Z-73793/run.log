@@ -1,0 +1,28 @@
+ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+meta-cpu-async-copy context=0x10034e50750 instance=1 requested=1 enabled=1 reason=per_context_opt_in
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+meta-cpu-async-copy context=0x10036124d20 instance=2 requested=1 enabled=1 reason=per_context_opt_in
+DEVICE member=0 name=CUDA0 pci=0035:03:00.0
+DEVICE member=1 name=CUDA1 pci=0035:04:00.0
+DEVICE member=2 name=CUDA2 pci=0035:05:00.0
+ROUTE_EXPECTATION per_context_opt_in=1 Meta_event_record_sync=1 generic_event_query=unavailable
+/home/debian/ac922-monster/src/ggml/src/ggml-alloc.c:1170: GGML_ASSERT(ggml_get_no_alloc(ctx) == true) failed
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v58/lib/libggml-base.so.0(+0x24428)[0x7fff93424428]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v58/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fff93424a28]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v58/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fff93424bc4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v58/lib/libggml-base.so.0(+0x43864)[0x7fff93443864]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v58/lib/libggml-base.so.0(ggml_backend_alloc_ctx_tensors_from_buft+0x54)[0x7fff93445424]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v58/lib/libggml-base.so.0(ggml_backend_alloc_ctx_tensors+0x34)[0x7fff934454a4]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cpu-meta-copy-gpu-20261016/bin/cpu-meta-copy-adapter-fixture(+0x3940)[0x105e93940]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cpu-meta-copy-gpu-20261016/bin/cpu-meta-copy-adapter-fixture(+0x4390)[0x105e94390]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cpu-meta-copy-gpu-20261016/bin/cpu-meta-copy-adapter-fixture(+0x2338)[0x105e92338]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fff761b4d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fff761b4f6c]

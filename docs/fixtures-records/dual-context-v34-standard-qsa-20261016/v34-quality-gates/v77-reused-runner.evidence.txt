@@ -1,0 +1,39 @@
+V77 frozen build report and reused V29-qualified runner
+dc3d61c8228e40aa2135e087b02429d15905cce59306c1b5edd759dbf0d48a12  /home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V77-build.json
+8f25242b2c8bb8fe09eba2002386d5d98f5b8de08886e9e491a6499b76a5c44d  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v28-shortctx16k-hierarchical-20261016/build-runtime-v28-shortctx/dual-context-v28-shortctx
+c44880bd2a977b4f1eb9bbd0f40c1039f5067a2d1964a70670064602f800dda3  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libllama-common.so.0
+4113f9ace2ce998f70bc375f3251fc056f7850ea893d8dad7786acc63f9986b6  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libllama.so.0
+02b78e109820e28de208363e3f6d8f3cde8f43a452ec8770972d3565caed8e23  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libmtmd.so.0
+73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml.so.0
+c1fd8d19e54df03e97f1c71c8c95565626ec73f44f7d4f3e334bfe3e74f464fc  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml-cpu.so.0
+fbc31a99664e4f0c8d8e2134d4e3c87993e8749bcabeaa7c148b5f717cb53b5d  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml-cuda.so.0
+7a95bd46168f701861d006a6cf133ea2032b3cfa7d82276624245e6f78129293  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml-base.so.0
+
+PPC64LE runner ELF:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v28-shortctx16k-hierarchical-20261016/build-runtime-v28-shortctx/dual-context-v28-shortctx: ELF 64-bit LSB pie executable, 64-bit PowerPC or cisco 7500, OpenPOWER ELF V2 ABI, version 1 (GNU/Linux), dynamically linked, interpreter /lib64/ld64.so.2, BuildID[sha1]=8560fce4abedc573a22840fd81d9dfdf9dc34546, for GNU/Linux 3.10.0, not stripped
+
+V77 dynamic library resolution:
+	linux-vdso64.so.1 (0x00007fff84d00000)
+	libllama-common.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libllama-common.so.0 (0x00007fff84720000)
+	libmtmd.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libmtmd.so.0 (0x00007fff84520000)
+	libllama.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libllama.so.0 (0x00007fff84190000)
+	libggml.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml.so.0 (0x00007fff84160000)
+	libggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml-cpu.so.0 (0x00007fff83fa0000)
+	libggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml-cuda.so.0 (0x00007fff76500000)
+	libggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77/lib/libggml-base.so.0 (0x00007fff76380000)
+	libstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fff76050000)
+	libgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fff76010000)
+	libc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fff75db0000)
+	libm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fff75c80000)
+	/lib64/ld64.so.2 (0x00007fff84d20000)
+	libgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fff75c00000)
+	libcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fff75b20000)
+	libcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fff6ee00000)
+	libcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fff6d040000)
+	libnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff6b1e0000)
+	libdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff6b1b0000)
+	libpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff6b180000)
+	librt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff6b150000)
+	libcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff572c0000)
+
+No runner rebuild was performed for V32; libraries are the V77 frozen closure.

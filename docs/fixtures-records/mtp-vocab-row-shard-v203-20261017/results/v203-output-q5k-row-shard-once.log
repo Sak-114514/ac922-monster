@@ -1,0 +1,64 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+[mp-dbg] mul_mat hook: type=13 ne11=1 reg=0 ptr=0x7ffd60000000
+[mp-dbg] mul_mat hook: type=13 ne11=1 reg=0 ptr=0x7ffd60000000
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+[mp-dbg] mul_mat hook: type=13 ne11=1 reg=0 ptr=0x7ffd60000000
+[mp-dbg] mul_mat hook: type=13 ne11=1 reg=0 ptr=0x7ffd60000000
+[mp-dbg] mul_mat hook: type=13 ne11=1 reg=0 ptr=0x7ffd52000000
+[mp-dbg] mul_mat hook: type=13 ne11=1 reg=0 ptr=0x7ffd52000000
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+cuda-context-cleanup device=0 q8_cache_freed_bytes=2097152
+cuda-context-cleanup device=1 q8_cache_freed_bytes=2097152
+cuda-context-cleanup device=3 q8_cache_freed_bytes=2097152
+cuda-context-cleanup device=5 q8_cache_freed_bytes=2097152
+cuda-context-cleanup device=5 q8_cache_freed_bytes=2097152
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+cuda-context-cleanup device=0 q8_cache_freed_bytes=2097152
+cuda-context-cleanup device=1 q8_cache_freed_bytes=2097152
+cuda-context-cleanup device=3 q8_cache_freed_bytes=2097152
+cuda-context-cleanup device=5 q8_cache_freed_bytes=2097152
+cuda-context-cleanup device=5 q8_cache_freed_bytes=2097152
+SOURCE tensor=output.weight type=q5_K shape=2560x248320 bytes=437043200 row_bytes=1760 data_offset=11026368 mode=header-plus-output-tensor-only
+DEVICE visible=0 name=CUDA0
+DEVICE visible=1 name=CUDA1
+DEVICE visible=3 name=CUDA3
+DEVICE visible=5 name=CUDA5
+P2P owner=5 sources=0,1,3 verified=1
+PREFLIGHT device=0 name=CUDA0 head_or_shard_bytes=109260800 free_bytes=16583229440 total_bytes=16911433728
+PREFLIGHT device=1 name=CUDA1 head_or_shard_bytes=109260800 free_bytes=16583229440 total_bytes=16911433728
+PREFLIGHT device=3 name=CUDA3 head_or_shard_bytes=109260800 free_bytes=16583229440 total_bytes=16911433728
+PREFLIGHT device=5 name=CUDA5 head_or_shard_bytes=437043200 free_bytes=16564944896 total_bytes=16911433728
+TIMING mode=full_gpu5 steps=2 M_per_step=1 median_us=1522.408 buffer_bytes=439050496
+ALLOC mode=row_shard device=0 backend_buffer_bytes=109777920
+ALLOC mode=row_shard device=1 backend_buffer_bytes=109777920
+ALLOC mode=row_shard device=3 backend_buffer_bytes=109777920
+ALLOC mode=row_shard device=5 backend_buffer_bytes=444016896
+TIMING mode=four_gpu_row_shard steps=2 M_per_step=1 median_us=548.982 peer_bytes=1489920 argmax_device=5
+RESULT steps=2 full_logits=496640 bitdiff=0 max_abs=0 argmax_diff=0 reference_argmax=41867,69365, sharded_argmax=41867,69365,
+PREFLIGHT device=0 name=CUDA0 head_or_shard_bytes=109260800 free_bytes=16543383552 total_bytes=16911433728
+PREFLIGHT device=1 name=CUDA1 head_or_shard_bytes=109260800 free_bytes=16543383552 total_bytes=16911433728
+PREFLIGHT device=3 name=CUDA3 head_or_shard_bytes=109260800 free_bytes=16543383552 total_bytes=16911433728
+PREFLIGHT device=5 name=CUDA5 head_or_shard_bytes=437043200 free_bytes=16523001856 total_bytes=16911433728
+TIMING mode=full_gpu5 steps=4 M_per_step=1 median_us=3032.292 buffer_bytes=441057792
+ALLOC mode=row_shard device=0 backend_buffer_bytes=110295040
+ALLOC mode=row_shard device=1 backend_buffer_bytes=110295040
+ALLOC mode=row_shard device=3 backend_buffer_bytes=110295040
+ALLOC mode=row_shard device=5 backend_buffer_bytes=450990592
+TIMING mode=four_gpu_row_shard steps=4 M_per_step=1 median_us=1073.460 peer_bytes=2979840 argmax_device=5
+RESULT steps=4 full_logits=993280 bitdiff=0 max_abs=0 argmax_diff=0 reference_argmax=41867,69365,69788,80846, sharded_argmax=41867,69365,69788,80846,
+PASS production_q5_k_output_weight_row_shard proof=operator_only full_model_load=0 requantization=0

@@ -1,0 +1,18 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+[mp-dbg] mul_mat hook: type=0 ne11=4 reg=0 ptr=0x10037400000
+INDEXER_FIXTURE backend=CUDA3 case=decode-q1 model=none D=128 H=4 K_semantics=pooled_blocks input=Q8_0_roundtrip_then_F32_pool mask=F16_zero weights=F32_one selector=stable_cpu_blocks gold=F64_sampled score_delta_is_informational=1
+INDEXER_ARM backend=CUDA3 case=decode-q1 arm=stock K=8192 Q=1 cell_ratio=4 topk_width=2051 f32_decode_q8_0=1 score_nonfinite=0 gold_sample_queries=1 gold_max_abs=7.14417648e-06 gold_max_rel=0.000131753635 vs_stock_max_abs=0 vs_stock_rms_abs=0 vs_stock_max_rel=0 vs_stock_count_gt_1e5=0 vs_stock_count_gt_1e3=0 selected_id_diff_vs_stock=0 selected_id_first_diff=0 block_cutoff_margin_min=0.00635910034 block_cutoff_margin_max=0.00635910034 cell_cutoff_structural_tie=1 graph_bytes=4327424 result=REPORT_ONLY
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x10037400000
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x10037400000
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x10037400000
+[mp-dbg] mul_mat hook: type=0 ne11=1 reg=0 ptr=0x10037400000
+INDEXER_ARM backend=CUDA3 case=decode-q1 arm=headloop K=8192 Q=1 cell_ratio=4 topk_width=2051 f32_decode_q8_0=1 score_nonfinite=0 gold_sample_queries=1 gold_max_abs=7.14417648e-06 gold_max_rel=0.000131753635 vs_stock_max_abs=0 vs_stock_rms_abs=0 vs_stock_max_rel=0 vs_stock_count_gt_1e5=0 vs_stock_count_gt_1e3=0 selected_id_diff_vs_stock=0 selected_id_first_diff=-1 block_cutoff_margin_min=0.00635910034 block_cutoff_margin_max=0.00635910034 cell_cutoff_structural_tie=1 graph_bytes=4262400 result=REPORT_ONLY
+INDEXER_ARM backend=CUDA3 case=decode-q1 arm=lightning K=8192 Q=1 cell_ratio=4 topk_width=2051 f32_decode_q8_0=1 score_nonfinite=0 gold_sample_queries=1 gold_max_abs=1.02613115e-05 gold_max_rel=6.98492992e-05 vs_stock_max_abs=1.52587891e-05 vs_stock_rms_abs=1.83746395e-06 vs_stock_max_rel=0.000112044818 vs_stock_count_gt_1e5=6 vs_stock_count_gt_1e3=0 selected_id_diff_vs_stock=0 selected_id_first_diff=-1 block_cutoff_margin_min=0.00636291504 block_cutoff_margin_max=0.00636291504 cell_cutoff_structural_tie=1 graph_bytes=4245632 result=REPORT_ONLY
+INDEXER_COMPARE backend=CUDA3 case=decode-q1 stock_headloop_max_abs=0 stock_lightning_max_abs=1.52587891e-05 score_differences_are_not_quality_verdict=1
+INDEXER_FIXTURE PASS

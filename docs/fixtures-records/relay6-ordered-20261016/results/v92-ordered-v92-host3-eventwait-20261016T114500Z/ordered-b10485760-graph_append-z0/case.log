@@ -1,0 +1,78 @@
+DISPATCH_CONFIG mode=ordered entry=graph_append elements=2621440 payload_bytes=10485760 compact=1 relay_max=10485760 ring_min=204800 blocks=64 zero_rank=0 contexts=2
+COMM_READY context=0 cap_floats=2621440 small_cap_floats=2621440 segment_cap_floats=436907 small_stage_mib=120.0000 segmented_stage_mib=20.0000 payload_mib=10.000
+HBM phase=after_context_0 rank=0 free_before_mib=15813.438 free_after_mib=15619.438 added_mib=194.000
+HBM phase=after_context_0 rank=1 free_before_mib=15813.000 free_after_mib=15619.000 added_mib=194.000
+HBM phase=after_context_0 rank=2 free_before_mib=15811.875 free_after_mib=15617.875 added_mib=194.000
+HBM phase=after_context_0 rank=3 free_before_mib=15812.062 free_after_mib=15618.062 added_mib=194.000
+HBM phase=after_context_0 rank=4 free_before_mib=15807.750 free_after_mib=15613.750 added_mib=194.000
+HBM phase=after_context_0 rank=5 free_before_mib=15808.875 free_after_mib=15614.875 added_mib=194.000
+COMM_READY context=1 cap_floats=2621440 small_cap_floats=2621440 segment_cap_floats=436907 small_stage_mib=120.0000 segmented_stage_mib=20.0000 payload_mib=10.000
+HBM phase=after_context_1 rank=0 free_before_mib=15813.438 free_after_mib=15465.625 added_mib=347.812
+HBM phase=after_context_1 rank=1 free_before_mib=15813.000 free_after_mib=15465.000 added_mib=348.000
+HBM phase=after_context_1 rank=2 free_before_mib=15811.875 free_after_mib=15463.875 added_mib=348.000
+HBM phase=after_context_1 rank=3 free_before_mib=15812.062 free_after_mib=15464.062 added_mib=348.000
+HBM phase=after_context_1 rank=4 free_before_mib=15807.750 free_after_mib=15459.750 added_mib=348.000
+HBM phase=after_context_1 rank=5 free_before_mib=15808.875 free_after_mib=15460.875 added_mib=348.000
+GRAPH_READY mode=ordered context=0 ranks=6 actual_dispatcher=1 payload_bytes=10485760
+GRAPH_READY mode=ordered context=1 ranks=6 actual_dispatcher=1 payload_bytes=10485760
+INPUT_CHANGE mode=ordered entry=graph_append context=0 rank=0 changed=1
+INPUT_CHANGE mode=ordered entry=graph_append context=0 rank=1 changed=1
+INPUT_CHANGE mode=ordered entry=graph_append context=0 rank=2 changed=1
+INPUT_CHANGE mode=ordered entry=graph_append context=0 rank=3 changed=1
+INPUT_CHANGE mode=ordered entry=graph_append context=0 rank=4 changed=1
+INPUT_CHANGE mode=ordered entry=graph_append context=0 rank=5 changed=1
+PASS_OUTPUT mode=ordered entry=graph_append context=0 frame=A0 exact=1 canary=1 zero_rank=0 payload_bytes=10485760
+TIMING mode=ordered context=0 rep=0 frame=0 wall_ms=0.153 max_gpu_event_ms=1.400 gpu_event_ms=[1.346,1.400,1.372,1.260,1.315,1.338]
+PASS_OUTPUT mode=ordered entry=graph_append context=0 frame=B exact=1 canary=1 zero_rank=0 payload_bytes=10485760
+TIMING mode=ordered context=0 rep=1 frame=1 wall_ms=0.091 max_gpu_event_ms=1.314 gpu_event_ms=[1.247,1.314,1.308,1.222,1.293,1.286]
+PASS_OUTPUT mode=ordered entry=graph_append context=0 frame=A2 exact=1 canary=1 zero_rank=0 payload_bytes=10485760
+TIMING mode=ordered context=0 rep=2 frame=0 wall_ms=0.089 max_gpu_event_ms=1.377 gpu_event_ms=[1.305,1.377,1.370,1.281,1.357,1.351]
+PASS_ABA mode=ordered entry=graph_append context=0 frames=A0,B,A2 exact=1 zero_rank=0 payload_bytes=10485760
+PASS_NEGATIVE_ZERO mode=ordered entry=graph_append context=0 zero_rank=0 expected_bits=00000000 exact=1 canary=1 payload_bytes=10485760
+SUMMARY mode=ordered entry=graph_append payload_bytes=10485760 zero_rank=0 context=0 reps=3 avg_wall_ms=0.111 avg_max_gpu_event_ms=1.364
+INPUT_CHANGE mode=ordered entry=graph_append context=1 rank=0 changed=1
+INPUT_CHANGE mode=ordered entry=graph_append context=1 rank=1 changed=1
+INPUT_CHANGE mode=ordered entry=graph_append context=1 rank=2 changed=1
+INPUT_CHANGE mode=ordered entry=graph_append context=1 rank=3 changed=1
+INPUT_CHANGE mode=ordered entry=graph_append context=1 rank=4 changed=1
+INPUT_CHANGE mode=ordered entry=graph_append context=1 rank=5 changed=1
+PASS_OUTPUT mode=ordered entry=graph_append context=1 frame=A0 exact=1 canary=1 zero_rank=0 payload_bytes=10485760
+TIMING mode=ordered context=1 rep=0 frame=0 wall_ms=0.143 max_gpu_event_ms=1.354 gpu_event_ms=[1.303,1.354,1.323,1.215,1.269,1.295]
+PASS_OUTPUT mode=ordered entry=graph_append context=1 frame=B exact=1 canary=1 zero_rank=0 payload_bytes=10485760
+TIMING mode=ordered context=1 rep=1 frame=1 wall_ms=0.095 max_gpu_event_ms=1.373 gpu_event_ms=[1.295,1.373,1.367,1.269,1.351,1.346]
+PASS_OUTPUT mode=ordered entry=graph_append context=1 frame=A2 exact=1 canary=1 zero_rank=0 payload_bytes=10485760
+TIMING mode=ordered context=1 rep=2 frame=0 wall_ms=0.145 max_gpu_event_ms=1.283 gpu_event_ms=[1.195,1.267,1.254,1.166,1.240,1.283]
+PASS_ABA mode=ordered entry=graph_append context=1 frames=A0,B,A2 exact=1 zero_rank=0 payload_bytes=10485760
+PASS_NEGATIVE_ZERO mode=ordered entry=graph_append context=1 zero_rank=0 expected_bits=00000000 exact=1 canary=1 payload_bytes=10485760
+SUMMARY mode=ordered entry=graph_append payload_bytes=10485760 zero_rank=0 context=1 reps=3 avg_wall_ms=0.127 avg_max_gpu_event_ms=1.337
+HBM phase=after_graphs rank=0 free_before_mib=15813.438 free_after_mib=15465.625 added_mib=347.812
+HBM phase=after_graphs rank=1 free_before_mib=15813.000 free_after_mib=15465.000 added_mib=348.000
+HBM phase=after_graphs rank=2 free_before_mib=15811.875 free_after_mib=15463.875 added_mib=348.000
+HBM phase=after_graphs rank=3 free_before_mib=15812.062 free_after_mib=15464.062 added_mib=348.000
+HBM phase=after_graphs rank=4 free_before_mib=15807.750 free_after_mib=15459.750 added_mib=348.000
+HBM phase=after_graphs rank=5 free_before_mib=15808.875 free_after_mib=15460.875 added_mib=348.000
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+P2P compact staging selected ranks=6 max_tensor=10.00 MiB small_arena=120.00 MiB segmented_arena=20.00 MiB per_rank old_arena=120.00 MiB
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+P2P compact staging selected ranks=6 max_tensor=10.00 MiB small_arena=120.00 MiB segmented_arena=20.00 MiB per_rank old_arena=120.00 MiB
+p2p-ar-path entry=graph_append device=0 rank=0 ranks=6 bytes=10485760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=0 rank=0 bytes=10485760 rank-order-exact=1 cross-payload=2V entry=graph_append
+p2p-ar-path entry=graph_append device=1 rank=1 ranks=6 bytes=10485760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=1 rank=1 bytes=10485760 rank-order-exact=1 cross-payload=2V entry=graph_append
+p2p-ar-path entry=graph_append device=2 rank=2 ranks=6 bytes=10485760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=2 rank=2 bytes=10485760 rank-order-exact=1 cross-payload=2V entry=graph_append
+p2p-ar-path entry=graph_append device=3 rank=3 ranks=6 bytes=10485760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=3 rank=3 bytes=10485760 rank-order-exact=1 cross-payload=2V entry=graph_append
+p2p-ar-path entry=graph_append device=4 rank=4 ranks=6 bytes=10485760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=4 rank=4 bytes=10485760 rank-order-exact=1 cross-payload=2V entry=graph_append
+p2p-ar-path entry=graph_append device=5 rank=5 ranks=6 bytes=10485760 algorithm=relay6_ordered blocks=64 rank-order-exact=1 selected=1
+P2P relay6 selected device=5 rank=5 bytes=10485760 rank-order-exact=1 cross-payload=2V entry=graph_append

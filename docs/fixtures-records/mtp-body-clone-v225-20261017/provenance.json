@@ -1,0 +1,148 @@
+{
+  "fixture": "mtp-body-clone-v225-20261017",
+  "status": "host_linked_r5_full_rawcopy_passed",
+  "prepared_at": "2026-10-17",
+  "source": {
+    "path": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+    "payload_sha256": "4e763743cdf6f7db5829f43e29e237df51b3f282c9ac855d4f5d65ec784a56ed",
+    "payload_sha256_note": "Full SHA-256 was computed over the selected GGUF body and exact readbacks from GPU5, GPU0, and GPU1 in the passing r5 raw-copy gate.",
+    "header_source": "GGUF API gguf_init_from_file(no_alloc=true) plus its metadata-only ggml tensor descriptors",
+    "selection": "all tensors whose exact name prefix is blk.48.",
+    "expected_tensor_count": 32,
+    "expected_payload_bytes": 2775621632,
+    "expected_payload_gib": 2.585,
+    "independent_metadata_reference": "../layer6-two-bank-v57-20261017/v122-layer-bytes.json",
+    "known_tensor_header_reference": "../ep-consumer-validation-20261015/GGUF-MTP-EP-METADATA.md",
+    "current_fixture_source_sha256": "89a35200e304a0ee915f756badeabe6703b72808d8d4122db2e633b063d32f93",
+    "preserved_asrun_r3_r4_source": {
+      "path": "results/v225-source-asrun-r3-r4.cpp",
+      "sha256": "8488ccf071393a9b7c967579fde23a74ba0792361da13d75be9f695fc34ad8cc",
+      "meaning": "Exact pre-FD_CLOEXEC source used by the r3/r4 binary; the r3/r4 runtime binary remains preserved under build-v225-r3-v251."
+    }
+  },
+  "copy_plan": {
+    "gpu5_source_population": "The fixture reads only selected raw GGUF ranges in bounded chunks into a temporary GPU5 tensor bank; it does not attach to or modify a live llama_model pointer.",
+    "source_gpu_visible_ordinal": 5,
+    "clone_gpu_visible_ordinals": [
+      0,
+      1
+    ],
+    "copy_api": "ggml_backend_tensor_copy",
+    "direct_copy_preflight_api": "ggml_backend_buffer_copy_tensor on a 1-byte CUDA tensor; a false return aborts before any full-weight copy",
+    "raw_types_shapes_strides_and_bytes": "Copied without transcode, dequantization, requantization, or graph execution; explicit equality checks cover source/destination type plus all four ne and nb fields.",
+    "maximum_per_owner_backend_buffer_bytes": 3221225472,
+    "minimum_free_memory_after_allocation_bytes": 536870912,
+    "host_staging_bound_bytes": 33554432,
+    "host_staging_detail": "Four 8 MiB chunks during byte verification; one 8 MiB chunk during file-to-GPU5 loading. SHA-256 is computed by one external sha256sum subprocess per full byte stream over a pipe; no extra payload files or implementation dependency are used."
+  },
+  "verification": {
+    "read_scope": "GGUF metadata directory plus payload ranges for the selected blk.48 tensors only; no mmap and no full-model CPU payload load.",
+    "checks": [
+      "32 selected tensors and exact aggregate byte count",
+      "three known Q8_0 MTP expert header types, shapes, byte sizes, and absolute file offsets",
+      "source GPU5 and clone GPU0/GPU1 types, dimensions, strides, and byte counts match",
+      "bidirectional peer capability and direct-copy callback probe for GPU5 to GPU0/GPU1",
+      "chunked readback of every source and clone payload byte against the source file",
+      "aggregate selected-payload SHA-256 equality across all source and clone byte streams"
+    ],
+    "not_claimed": [
+      "full-model inference quality or output parity",
+      "MTP graph execution or scheduler placement",
+      "performance or end-to-end throughput improvement",
+      "production integration or API route"
+    ]
+  },
+  "authorization": {
+    "host_build_gate": [
+      "MTP_BODY_CLONE_BUILD_AUTHORIZED=1",
+      "runtime-perf-v251 frozen"
+    ],
+    "preserved_first_attempt_log": "results/v225-host-link-v228-r1.log",
+    "next_build_output_dir": "build-v225-r5-v251",
+    "gpu_run_gates": [
+      "MTP_BODY_CLONE_GPU_AUTHORIZED=1"
+    ],
+    "state": "R5 passed the full 32-tensor raw copy and aggregate SHA-256 gate after the FD_CLOEXEC fix. GPU run remains off until root requests another bounded test; no model inference or quality/performance test was run."
+  },
+  "host_build_r3": {
+    "runtime": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v251",
+    "runtime_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V251-build.json",
+    "runtime_report_sha256": "a58f268c55c3fd6a5c9771c280dcabf30cb371119b2c2746cde47782d56538d3",
+    "runtime_manifest_sha256": "49e0f19338510a888548c5e12a9fdf210bb43b3b6c997e90b557d9f26e8c8356",
+    "source_sha256": "8488ccf071393a9b7c967579fde23a74ba0792361da13d75be9f695fc34ad8cc",
+    "binary_sha256": "271dffd59661217df17b12b636a52b3ab6d472b32ee9cbf3978e1f557349e1e2",
+    "output_dir": "build-v225-r3-v251",
+    "log": "results/v225-host-link-v251-r3-20261017.log",
+    "ldd": "build-v225-r3-v251/ldd.txt",
+    "status": "host_linked_ldd_verified"
+  },
+  "host_build_r5": {
+    "runtime": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v251",
+    "runtime_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V251-build.json",
+    "runtime_report_sha256": "a58f268c55c3fd6a5c9771c280dcabf30cb371119b2c2746cde47782d56538d3",
+    "runtime_manifest_sha256": "49e0f19338510a888548c5e12a9fdf210bb43b3b6c997e90b557d9f26e8c8356",
+    "output_dir": "build-v225-r5-v251",
+    "log": "results/v225-host-link-v251-r5-20261017.log",
+    "binary": "build-v225-r5-v251/mtp-body-clone-fixture",
+    "binary_sha256": "a4450f41a8f635c391cd24d2f6527319aa39ebe5267119a3acc3f6873784fedd",
+    "source_sha256": "89a35200e304a0ee915f756badeabe6703b72808d8d4122db2e633b063d32f93",
+    "ldd": "build-v225-r5-v251/ldd.txt",
+    "ldd_sha256": "88415b1e79b798e846d10e111a718c28367ee234a63b74d31462fccc296c9c39",
+    "link_time_provenance": "build-v225-r5-v251/provenance-at-r5-link.sha256",
+    "status": "host_linked_ldd_verified"
+  },
+  "raw_copy_attempts": {
+    "r3": {
+      "status": "timed_out_partial_not_passed",
+      "timeout_seconds": 90,
+      "source_header_tensors": 32,
+      "source_header_bytes": 2775621632,
+      "verify_rows_completed": 11,
+      "full_payload_sha256": null,
+      "log": "results/v225-r3-raw-clone-20261017T113559Z.log",
+      "log_sha256": "4eacd773ce6ada2664bd3dd8ed10d46d8343dfe7c1530ab4613fce08294046d9",
+      "guard": "results/v225-r3-raw-clone-20261017T113559Z.guard.jsonl",
+      "guard_sha256": "91b9b8ebcf0794a941fd4e470f07c28e8c0f3258a6a8120b5c786e981ac0e329"
+    },
+    "r4": {
+      "status": "timed_out_sha_pipe_eof_deadlock_not_passed",
+      "timeout_seconds": 180,
+      "source_header_tensors": 32,
+      "source_header_bytes": 2775621632,
+      "verify_rows_completed": 11,
+      "full_payload_sha256": null,
+      "log": "results/v225-r4-raw-clone-20261017T113936Z.log",
+      "log_sha256": "2a1520c236f5b211aeabfe0a80a44476b1e6dc1507d40134e848bc53485d6228",
+      "guard": "results/v225-r4-raw-clone-20261017T113936Z.guard.jsonl",
+      "guard_sha256": "9c16a6ac4995f6314e6c9cb5366337c69def601e5c4472daf47911df6aea7d1b"
+    },
+    "r5": {
+      "status": "pass_full_byte_exact",
+      "timeout_seconds": 180,
+      "source_header_tensors": 32,
+      "source_header_bytes": 2775621632,
+      "verified_tensor_rows": 32,
+      "host_staging_bytes": 33554432,
+      "payload_sha256": "4e763743cdf6f7db5829f43e29e237df51b3f282c9ac855d4f5d65ec784a56ed",
+      "log": "results/v225-r5-raw-clone-20261017T114815Z.log",
+      "log_sha256": "32e299dac38c82be230b6d79dfa06b79dd78a9bab416b5c401df45cde216d536",
+      "guard": "results/v225-r5-raw-clone-20261017T114815Z.guard.jsonl",
+      "guard_sha256": "47479a35a924a9028f32b5a7b6327d1ac04e210953a59c62c2e75bed40c8cc9d",
+      "maximum_observed_temp_c": 41,
+      "minimum_observed_free_mib": 13158
+    }
+  },
+  "sha_stream_regression": {
+    "status": "pass_local_cpu_only",
+    "streams": 4,
+    "timeout_seconds": 8,
+    "artifact_dir": "results/v225-sha-streams-r5-local-2",
+    "first_harness_attempt": "results/v225-sha-streams-r5-local",
+    "known_sha256": [
+      "d90dc48dde270c18d4018492c8d5a04348d66a1db71696bc758230fc02616e1d",
+      "c5eb75efa70a3bd1a0335319380ea9c2a2d8d9ac06bbae8b13937cd9976735e1",
+      "60d13c028e0875b269aea60b6d9ce2e0939e7a3bd1c97d9c271275afaa6b5106",
+      "974dfdef3c2cc342bebe256d15f8a8fec9d4fe0d1dbc97cc24a26e499aa0e469"
+    ]
+  }
+}

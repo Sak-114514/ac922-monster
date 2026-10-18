@@ -1,0 +1,20 @@
+init: the tokens of sequence 0 in the input batch have inconsistent sequence positions:
+ - the last position stored in the memory module of the context (i.e. the KV cache) for sequence 0 is X = 63
+ - the tokens for sequence 0 in the input batch have a starting position of Y = 100
+ it is required that the sequence positions remain consecutive: Y = X + 1
+init: the tokens of sequence 0 in the input batch have inconsistent sequence positions:
+ - the last position stored in the memory module of the context (i.e. the KV cache) for sequence 0 is X = 63
+ - the tokens for sequence 0 in the input batch have a starting position of Y = 63
+ it is required that the sequence positions remain consecutive: Y = X + 1
+init: the tokens of sequence 0 in the input batch have inconsistent sequence positions:
+ - the last position stored in the memory module of the context (i.e. the KV cache) for sequence 0 is X = 63
+ - the tokens for sequence 0 in the input batch have a starting position of Y = 60
+ it is required that the sequence positions remain consecutive: Y = X + 1
+init: sequence 0 positions are not continuous
+case=default_gap_100_101 allow_forward_gap=0 accepted=0 seq0_max_reads=1 seq0_min_reads=0
+case=allow_gap_100_101 allow_forward_gap=1 accepted=1 seq0_max_reads=1 seq0_min_reads=0
+case=allow_overlap_63_64 allow_forward_gap=1 accepted=0 seq0_max_reads=1 seq0_min_reads=0
+case=allow_backward_60_61 allow_forward_gap=1 accepted=0 seq0_max_reads=1 seq0_min_reads=0
+case=allow_internal_hole_100_102 allow_forward_gap=1 accepted=0 seq0_max_reads=1 seq0_min_reads=0
+case=default_contiguous_64_65 allow_forward_gap=0 accepted=1 seq0_max_reads=1 seq0_min_reads=0
+V345_REAL_BATCH_ALLOCATOR_PASS cases=6 fake_vocab=none actual_llama_vocab=default token_validation=skipped_by_embd_only expected_memory_calls_only=sequence_position_queries model_loaded=0 gpu_touched=0

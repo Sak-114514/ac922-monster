@@ -1,0 +1,122 @@
+{
+  "schema": "relay6-ordered-40m-v94-fixture-summary-v1",
+  "run_tag": "v94-40m-host1-20261016T122500Z",
+  "result": "PASS",
+  "scope": "one-communicator 40 MiB operator fixture; no model load or engine rebuild",
+  "cases_passed": 7,
+  "cases_expected": 7,
+  "all_exit_statuses_zero": true,
+  "all_runner_safety_checks_passed": true,
+  "runtime": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v94",
+  "runtime_build_id": "20261016T121300.582979Z",
+  "runtime_report_sha256": "95131cd92341a18b828a627236a1d61b598373059509b81e505502d7d9c19258",
+  "included_allreduce_source_sha256": "b0790248c39350d862e09d0841575a8c7bad1e3c5de19fe50e55c8c9ad311b19",
+  "fixture_binary_sha256": "7276f68fc909afa673d35ff508d5ca92e16470084920f70a9a217eb9b5c0b847",
+  "fixture_build_log_sha256": "864bc15aab9b5e2968ba605632b08683b21e2b033c22c8f6501a056acfa11c8e",
+  "dso_sha256": {
+    "libggml-cuda.so.0": "703d0e3f8689e9b90e8b44d9b54e6d1398b8bd34b691082f2f4b7dd2a7824dd2",
+    "libggml-base.so.0": "417e4c69ad42ced855bc96627c89ad68d7fe6af5e25b897020ff9f022796c124",
+    "libggml.so.0": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+    "libggml-cpu.so.0": "c1fd8d19e54df03e97f1c71c8c95565626ec73f44f7d4f3e334bfe3e74f464fc"
+  },
+  "run_log_sha256": "ae9833873ee976ba4ee2c7aed2878f6d1bef9e212a30d9625d318d7f8d12fc18",
+  "provenance_sha256": "5ec7f416a2478e29a955bb4390c268a239f52a9cbaa8f254151394bd3b428016",
+  "actual_selection": {
+    "ordered_kind4_40MiB_dispatch_zero_ranks_-1_0_3": "PASS on all six ranks",
+    "ordered_kind4_40MiB_graph_append_zero_ranks_-1_0_3": "PASS on all six ranks",
+    "relay_kind3_40MiB_dispatch_zero_rank_3": "PASS control on all six ranks"
+  },
+  "numeric_gates": {
+    "rank_ordered_fp32_oracle_exact": "PASS",
+    "A_B_A_three_replays": "PASS",
+    "changed_B_inputs_each_rank": "PASS",
+    "all_negative_zero_signs_for_zero_ranks_-1_0_3": "PASS",
+    "output_canaries": "PASS",
+    "single_communicator_added_memory_limit_1GiB": "PASS",
+    "maximum_after_graphs_added_memory_mib": 644.0
+  },
+  "timing_max_gpu_event_ms_three_replays_context0": {
+    "ordered_kind4_dispatch_zero_rank3": 4.296,
+    "ordered_kind4_graph_append_zero_rank3": 4.82,
+    "relay_kind3_dispatch_zero_rank3": 7.187,
+    "scope": "bounded operator fixture timing only; not model throughput"
+  },
+  "postflight": {
+    "runner_final_idle_assertion": "PASS",
+    "temperature_c": [
+      39,
+      38,
+      39,
+      38,
+      39,
+      39
+    ],
+    "utilization_percent": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "memory_used_mib": [
+      2,
+      2,
+      3,
+      3,
+      7,
+      6
+    ]
+  },
+  "cases": [
+    {
+      "id": "ordered-b41943040-dispatch-z-1",
+      "validation": "PASS",
+      "validation_sha256": "f0f50e313baed38907f8c478fc39c85fcbb363a12f73132ce2b5a56f1d0b4c94",
+      "combined_log_sha256": "ea08b86b91ce1094e78bce6e9bc7e2a3bfdeafb59420ba9aa6401525133ef4fe",
+      "avg_max_gpu_event_ms": 4.704
+    },
+    {
+      "id": "ordered-b41943040-dispatch-z0",
+      "validation": "PASS",
+      "validation_sha256": "072cb055bd785c504ea198a27354210dbc3580acf3cb2355c171d8d80530b759",
+      "combined_log_sha256": "4624a14395c1dd84c4b22dadce4b45e6e371523da86837a3d22c453de9f6430f",
+      "avg_max_gpu_event_ms": 4.346
+    },
+    {
+      "id": "ordered-b41943040-dispatch-z3",
+      "validation": "PASS",
+      "validation_sha256": "72c841839239b7922e714b78135a70b3dea8e74d7ccb7587c9a934330715dccc",
+      "combined_log_sha256": "886fb2e8dc4b995bc7ad59f7f5c454071eddda955b7acc44991af591f6c383d2",
+      "avg_max_gpu_event_ms": 4.296
+    },
+    {
+      "id": "ordered-b41943040-graph_append-z-1",
+      "validation": "PASS",
+      "validation_sha256": "0abfcd23dfebce51e9602230c57a9b56ac285ca632f2ec2bc596396819e9ad0d",
+      "combined_log_sha256": "1c78f361752cb4c3453706c854219c800550c68cd31573cfb9b474dfe055cdae",
+      "avg_max_gpu_event_ms": 4.319
+    },
+    {
+      "id": "ordered-b41943040-graph_append-z0",
+      "validation": "PASS",
+      "validation_sha256": "ebedd6453176d78ba21a3b18b1b027fdd8c19195426ee8a176d9177e20a91461",
+      "combined_log_sha256": "8816d1ea09b37875ad7b093e2173af49311d8af0862eaf39f3aca5527241d87a",
+      "avg_max_gpu_event_ms": 4.319
+    },
+    {
+      "id": "ordered-b41943040-graph_append-z3",
+      "validation": "PASS",
+      "validation_sha256": "192d106865b2a433d32938b2c1c1ec9e87a0db9dbb836d1b12b91efecd590926",
+      "combined_log_sha256": "4caf14b7e2c82239451c956e1c1dbab6e105761abcc1ada1e756c26634b0665b",
+      "avg_max_gpu_event_ms": 4.82
+    },
+    {
+      "id": "relay-b41943040-dispatch-z3",
+      "validation": "PASS",
+      "validation_sha256": "165d01628defd4c0bcdf66b239fd9173de96ff93db4865a276de13811a52edae",
+      "combined_log_sha256": "78d500edffb116ae99165d084fa498bfc2ad0affd2734fd9e117d710c605ee9d",
+      "avg_max_gpu_event_ms": 7.187
+    }
+  ]
+}

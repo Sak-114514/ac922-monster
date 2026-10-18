@@ -1,0 +1,45 @@
+Host-only verification on AC922 (POWER9), 2026-10-16
+===================================================
+
+Runtime/API baseline
+--------------------
+V77 runtime: /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77
+V77 build ID: 20261016T051430.291943Z
+Private helper: src/src/llama-qsa-standard-sparse.h
+Helper SHA256: f00a0518305cb071d93a24d08de8b504b2101dfe8f07a4b308dc832eeeb83230
+CUDA fixture source SHA256: d10de9753ee1f4f0dfcfe7be4de4b54255bef115ec000f2f1df47587c05b0934
+
+Host graph results
+------------------
+PASS streams=1 ntps=4 heads=4 output=[1024,12] nodes=51
+PASS streams=1 ntps=4 heads=8 output=[2048,12] nodes=51
+PASS streams=1 ntps=32 heads=4 output=[1024,96] nodes=51
+PASS streams=1 ntps=32 heads=8 output=[2048,96] nodes=51
+PASS streams=2 ntps=4 heads=4 output=[1024,24] nodes=93
+PASS streams=2 ntps=4 heads=8 output=[2048,24] nodes=93
+PASS streams=2 ntps=32 heads=4 output=[1024,192] nodes=93
+PASS streams=2 ntps=32 heads=8 output=[2048,192] nodes=93
+
+Each graph contains one tagged explicit-cell FLASH_ATTN_EXT node per stream.
+The fixture checked output concat order, per-stream K/V view roots, and true
+stream offsets `s * nb3` with active view length 2112 and backing capacity 4096.
+
+Q8_0 FP64 CPU oracle
+--------------------
+Across the same eight cases, selected-order vs dense-masked FP64 max error was
+1.03e-14 absolute and 5.02e-12 relative. This is mathematical CPU evidence,
+not a GGML dense FA output or full-model quality claim. See
+host-q8-oracle-results.json for each case.
+
+V77 host links
+-------------
+Host-only binary SHA256:
+24a27a91029bc97c6cdbb783aa7f7926df95f45fcd2fcc2d57ad457286402dfb
+
+CUDA-enabled C++ fixture SHA256:
+cf2786f716f9f73beb13ab64c0bdd4f2cf7eecbdd3cc029f7d0b2082cba66a9d
+
+Both use the V77 runtime directory in RPATH. The CUDA-enabled binary was
+compiled and linked only; `--cuda DEVICE` has not been run and requires a
+separate root-granted GPU window.
+

@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "status": "host-ready; V33-local candidate uses the CPU-fixture-qualified 10 MiB copy cap and the unchanged 64 MiB pinned budget; target pad on; diagnostic warm-8K Nsight prefill capture; relay off",
+  "model": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+  "runtime": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v77",
+    "build_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V77-build.json",
+    "build_id": "20261016T051430.291943Z",
+    "report_sha256": "dc3d61c8228e40aa2135e087b02429d15905cce59306c1b5edd759dbf0d48a12"
+  },
+  "runner": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/build-runtime-v33-pad-10m/dual-context-target-verify-pad",
+    "sha256": "829c7f2c6b2249b13d6c89a3ffad0fda6c36d56f3383f4ba32fc3c28eac9477f",
+    "source_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/dual-context-target-verify-pad.cpp",
+    "source_sha256": "762b9d7ca0a15bb04cf5adbf4635dc067949da08acad84c0b1e90696bb1ccbef"
+  },
+  "launcher": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/run-v33-pad-10m.sh",
+    "mode": "V33-local quality-gate fork; V32 semantics/token/aux checks retained, with only 1 MiB CPU-copy cap invariant raised to CPU-fixture-qualified 10 MiB",
+    "sha256": "bf2f17c6d3fa551c512493bf36312fc950a35386a35d96807a87660422df1c36"
+  },
+  "profile_source": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v32-parent-walkfast-2bank2-20261016/v32-parent-walkfast-exact-env.json",
+    "local_copy": "../dual-context-v32-parent-walkfast-2bank2-20261016/v32-parent-walkfast-exact-env.json",
+    "sha256": "3604e539e177ee4ee1ecd4593943b44b7510fa4ed96f19b2b168be66bf5e434d",
+    "copy_cap_override": {
+      "variable": "GGML_META_CPU_ASYNC_COPY_MAX_BYTES",
+      "baseline_bytes": 1048576,
+      "candidate_bytes": 10485760,
+      "all_other_profile_values_unchanged": true
+    }
+  },
+  "geometry": {
+    "bank_count": 2,
+    "lanes_per_bank": 2,
+    "mtp_depth": 3,
+    "kv_variant": "per_seq_16k",
+    "per_sequence_context": 16384,
+    "bank_context": 32768,
+    "target_ubatch": 1024,
+    "mtp_ubatch": 512,
+    "quality_gates": "unchanged V32/V27 native semantics, F32 preclean, exact arrays, auxiliary prefixes, and clean P4 gates"
+  },
+  "candidate_modes": {
+    "target_pad_only": {
+      "enabled": true,
+      "environment": {
+        "ROOT_TARGET_VERIFY_PAD_PER_ACTIVE_LANE": "1",
+        "GGML_META_CPU_ASYNC_COPY": "1",
+        "GGML_META_CPU_ASYNC_COPY_MAX_BYTES": "10485760"
+      },
+      "relay_enabled": false,
+      "requires": [
+        "V33_GPU_WINDOW_AUTHORIZED=1"
+      ]
+    },
+    "target_pad_relay10m": {
+      "enabled": false,
+      "environment": {
+        "ROOT_TARGET_VERIFY_PAD_PER_ACTIVE_LANE": "1",
+        "GGML_CUDA_P2P_AR_RELAY6": "1",
+        "GGML_CUDA_P2P_AR_RELAY_MAX_BYTES": "10485760",
+        "GGML_CUDA_P2P_AR_COMPACT_STAGE": "1",
+        "GGML_CUDA_P2P_AR_RING_MIN_BYTES": "4194304",
+        "GGML_CUDA_P2P_AR_BLOCKS": "64",
+        "GGML_META_CPU_ASYNC_COPY": "1",
+        "GGML_META_CPU_ASYNC_COPY_MAX_BYTES": "10485760"
+      },
+      "relay_enabled": true,
+      "capacity_gate": {
+        "status": "pending",
+        "dispatcher_evidence_path": null,
+        "dispatcher_evidence_sha256": null,
+        "capacity_evidence_path": null,
+        "capacity_evidence_sha256": null,
+        "required_payload_bytes": 10485760,
+        "required_ranks": 6,
+        "required_dispatch_kind": 3,
+        "required_min_gpu_free_mib": 512
+      },
+      "requires": [
+        "V33_RELAY_DISPATCHER_CAPACITY_GATE_PASSED=1",
+        "V33_GPU_WINDOW_AUTHORIZED=1"
+      ]
+    }
+  },
+  "safety": {
+    "gpu_free_floor_mib": 512,
+    "gpu_temperature_ceiling_c": 58,
+    "bmc_temperature_ceiling_c": 58,
+    "fan_monitor_policy": "leave the user's current mask state unchanged; watchdog must remain active",
+    "allowed_fan_targets": [
+      3000,
+      3500,
+      4000,
+      4300
+    ],
+    "tach_low_rpm": 2650,
+    "tach_samples_before_stop": 2,
+    "ddr_free_stop_threshold": null,
+    "runtime_max_seconds": 1800,
+    "no_automatic_retry": true,
+    "model_loads": 1
+  },
+  "profiling": {
+    "default": "prefill",
+    "nsys_binary": "/usr/local/cuda-12.4/nsight-systems-2023.4.4/target-linux-ppc64le/nsys",
+    "decode_capture_range": "cudaProfilerApi via runner cudaProfilerStart/Stop when a scenario opts in",
+    "prefill_capture_range": "requires the candidate runner's opt-in prefill profiler marker; otherwise only the existing CUPTI prefill1 marker is available",
+    "profiled_results_are_diagnostic_only": true,
+    "prefill_marker_supported": true,
+    "prefill_marker_env": "ROOT_NSYS_PREFILL_PROFILE=1",
+    "prefill_marker_scenario": "single8k-pp-warm-32; warm uncached prompt, diagnostic family only",
+    "prefill_window_artifact": "copy1/diagnostic/nsys-prefill-window.json",
+    "prefill_activation_prefixes": [
+      "nsys-prefill-range active=1 profile=diagnostic scenario=single8k-pp-warm-32",
+      "nsys-prefill-range-start scenario=single8k-pp-warm-32",
+      "nsys-prefill-range-stop scenario=single8k-pp-warm-32"
+    ],
+    "prefill_clean_policy": "only the diagnostic warm-prefill stage is within cudaProfilerStart/Stop; clean P4 is later and makes no profiler API calls",
+    "decode_marker_supported": false,
+    "decode_marker_status": "no dedicated V33 decode profile selector; separate optional work only",
+    "nsys_process_instrumented_entire_run": true,
+    "clean_scope_note": "The clean-family scenario follows profiler capture stop and has no profiler API calls, but runs in the same Nsight-injected process; treat all performance numbers from this process as diagnostic-only.",
+    "capture_end_before_clean_family": true
+  },
+  "quality_gate_files": [
+    {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v32-parent-walkfast-2bank2-20261016/run-v32-shortctx.sh",
+      "sha256": "a8bbd3f78ae2c847613acb8b006dd8bcced76264cf561d228a7c8485ce215830"
+    },
+    {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v32-parent-walkfast-2bank2-20261016/write_run_manifest_v24short.py",
+      "sha256": "39d5fc5e0423c3b71ffdf8983602b9c9784feef298f206ef4c994a22c041db01"
+    },
+    {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v32-parent-walkfast-2bank2-20261016/compare_v24_shortctx_results.py",
+      "sha256": "c2e9e35d478d6ecc78de88ba2cc172c1bd7a670fc637fa0ebf804a93fed2481b"
+    },
+    {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v32-parent-walkfast-2bank2-20261016/preclean_quality_gate_v22.py",
+      "sha256": "4b97209a30737eea347ef3d5293019254b9b42180ba5b5e5f55f076c06224fbc"
+    }
+  ],
+  "pad_preflight": {
+    "status": "CPU planner tests and V77 host link PASS; model/GPU qualification pending",
+    "source_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/target-verify-pad-20261016/dual-context-target-verify-pad.cpp",
+    "source_sha256": "f30824ffc0025b1d60a6f2b90a6e5d3ac4e9c85a4dec629dad302de37406da4d",
+    "cpu_test_log": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/target-verify-pad-20261016/results/cpu-planner-ac922-final-20261016T054924Z.log",
+    "cpu_test_log_sha256": "b64f8cf37a9b38779b3303e8dbb6c0fb2ce69b41acc4aca5c3ce3996f572d5fa",
+    "required_runtime_marker": "target-verify-pad-plan active=1; two active lanes; rows total=8; real_rows+pad_rows=8; score_rows=real_rows; output_rows=8"
+  },
+  "baseline": {
+    "v27_result_root": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v27-shortctx16k-hierarchical-20261016/results/root-p4-v27-shortctx16k-hierarchical-ep6-d3-20261016t022431z/copy1",
+    "diagnostic_sha256": "16cb38688dc2e4581c0f5990dcf432949f431dad842e44ac5560c082cdf6f994",
+    "clean_sha256": "beee7b03194cea10d8f56225bf2f8bae83c014f461324b8b9603bb746b95ae36"
+  },
+  "nsys_capture": {
+    "status": "optional; no profiler is enabled by default",
+    "binary": "/usr/local/cuda-12.4/nsight-systems-2023.4.4/target-linux-ppc64le/nsys",
+    "version": "2023.4.4.54-234433681190v0",
+    "capture_range": "cudaProfilerApi",
+    "capture_range_end": "stop",
+    "profiled_rate_policy": "diagnostic-only; clean V32/V33 result family remains outside the profiler capture range"
+  },
+  "monitor_helper_sha256": "861009dce5ba8a5573e6147151fdd4fea804510b55b5cac1f1f58344860b7341",
+  "cpu_copy_10m": {
+    "status": "CPU/Meta nested six-rank qualification PASS; exact values and canaries, source lifetime, event re-use, and 11 MiB fallback passed; process pinned budget remains 64 MiB",
+    "max_copy_bytes": 10485760,
+    "process_pinned_budget_bytes": 67108864,
+    "evidence_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cpu-meta-10m-20261016/results/gpu-v77-20261016T060340Z-168555/validation-corrected.log",
+    "evidence_sha256": "09e87ad9b62e4a0fe8154de68d9eb05cf09c14be94116e2c1ae4c78cc2ccbcbd",
+    "runtime_log_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cpu-meta-10m-20261016/results/gpu-v77-20261016T060340Z-168555/run.log",
+    "runtime_log_sha256": "c6e7799a31a99d7a5d5113a6bc8c2899dfb83f72852f1e4d23bffae9b4de9c3b",
+    "observed_validation": "copies=4+3 eligible_bytes=10MiB cap_fallback=11MiB events=6/21/5 exact/canary readbacks=48; capacity remains unchanged at 64 MiB"
+  },
+  "v33_files": {
+    "dual-context-target-verify-pad.cpp": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/dual-context-target-verify-pad.cpp",
+      "sha256": "762b9d7ca0a15bb04cf5adbf4635dc067949da08acad84c0b1e90696bb1ccbef"
+    },
+    "run-v33-pad-10m.sh": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/run-v33-pad-10m.sh",
+      "sha256": "bf2f17c6d3fa551c512493bf36312fc950a35386a35d96807a87660422df1c36"
+    },
+    "build-v33-pad-10m-runner.sh": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/build-v33-pad-10m-runner.sh",
+      "sha256": "ef1c5e121020bc37bf5adc0f4359af589d52fdb2a9669a7271e02faeb9ff29f9"
+    },
+    "target-verify-pad-exact-env.json": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/target-verify-pad-exact-env.json",
+      "sha256": "378669387fba33e16dfb13c4ec96b46808ce66f67c3a689ead929b317f46d86c"
+    },
+    "v33-quality-gates/run-v33-shortctx.sh": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/v33-quality-gates/run-v33-shortctx.sh",
+      "sha256": "e32e303035fbe5a7de3c3425c7d03c24e33825bf2d2ecea00227137552516f1f"
+    },
+    "v33-quality-gates/compare_v24_shortctx_results.py": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/v33-quality-gates/compare_v24_shortctx_results.py",
+      "sha256": "1cc7963d1d49edcaab157e56ffb94bdfb5f996a2981e707caeb0ddc154ee8fb3"
+    },
+    "v33-quality-gates/write_run_manifest_v24short.py": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/v33-quality-gates/write_run_manifest_v24short.py",
+      "sha256": "66766a913e892f30118cf61e415c7effdc7f92adfd732a42ca0a25a3197e1297"
+    },
+    "dual-context-v15-owner.h": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/dual-context-v15-owner.h",
+      "sha256": "172cf33efed70365032bf476a822953a13b6fe6313520d40d8fede5acde64030"
+    },
+    "dual-context-v14-results.h": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/dual-context-v14-results.h",
+      "sha256": "47bd1bc701d95ea6f8d4f6af1ec8940284cf8826b3283281c1b44b7889f83410"
+    },
+    "cupti-window-policy-v14.h": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/cupti-window-policy-v14.h",
+      "sha256": "9370f153da831f2deb7db4865ee6846dc50007d446e34558c18178de6e36f4db"
+    },
+    "warmup-policy-v14.h": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/warmup-policy-v14.h",
+      "sha256": "f32992c8a6440099222c7134cc44d543b35b26944df65a36c4910d8d6df9da5d"
+    },
+    "fatal-backtrace-v15.h": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/fatal-backtrace-v15.h",
+      "sha256": "d2221972784ae14e3ca31609fd67fc039f567cb5a23511805e2ee130835c1166"
+    },
+    "prefill-logit-dump-v16.h": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/prefill-logit-dump-v16.h",
+      "sha256": "0f210135e1106e4e8f394321d9d1732b4e8cacfc1ea9398b6a261c69d95905d5"
+    },
+    "cupti-failure-policy-v16.h": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/cupti-failure-policy-v16.h",
+      "sha256": "4707b59525eb7cbc2ac16d944abfcc92a6e089958e5db22e641c1f1355fad596"
+    },
+    "kv-layout-policy-v24short.h": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/kv-layout-policy-v24short.h",
+      "sha256": "411e0b125fc59aead261f0a11625abb375efa1567efef948e0df1f1af4d57998"
+    },
+    "copy-mode-policy-v22.h": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/copy-mode-policy-v22.h",
+      "sha256": "c389d9ab763218a0b580c843694324dc087e4089f83a593cb0deb81699327733"
+    },
+    "dual-context-v14-submit-guard.h": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/dual-context-v14-submit-guard.h",
+      "sha256": "4a38e2218130f8bdf0d1d3ed4b942e2d4f2457a8e76fe43df2008cff0741ee87"
+    },
+    "autonomous-owner-loop-v23.h": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/autonomous-owner-loop-v23.h",
+      "sha256": "b52a9af08764abe559f2760d933613bee782520bfd64596208f7bc6c06dd82e8"
+    },
+    "target-verify-pad-plan.h": {
+      "remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/target-verify-pad-plan.h",
+      "sha256": "db2a89eb1b137d8c9364a67e1c22c10e2e128743d515e8d20ccb965cecaf5802"
+    }
+  },
+  "quality_gate_files_v33": [
+    {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/v33-quality-gates/run-v33-shortctx.sh",
+      "sha256": "e32e303035fbe5a7de3c3425c7d03c24e33825bf2d2ecea00227137552516f1f"
+    },
+    {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/v33-quality-gates/compare_v24_shortctx_results.py",
+      "sha256": "1cc7963d1d49edcaab157e56ffb94bdfb5f996a2981e707caeb0ddc154ee8fb3"
+    },
+    {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/v33-quality-gates/write_run_manifest_v24short.py",
+      "sha256": "66766a913e892f30118cf61e415c7effdc7f92adfd732a42ca0a25a3197e1297"
+    }
+  ],
+  "host_build_evidence": {
+    "status_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/build-runtime-v33-pad-10m/STATUS.txt",
+    "status_sha256": "5fa0debb7f5f28aa7e6b85f6c0a696eb1126a35791bcbb4dccb919058dd812ec",
+    "sha_manifest_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/build-runtime-v33-pad-10m/sha256.txt",
+    "ldd_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v33-combined-20261016/build-runtime-v33-pad-10m/ldd.txt",
+    "runner_sha256": "829c7f2c6b2249b13d6c89a3ffad0fda6c36d56f3383f4ba32fc3c28eac9477f",
+    "runtime_build_id": "20261016T051430.291943Z",
+    "host_link_only": true,
+    "no_model_gpu_nvcc": true,
+    "sha_manifest_sha256": "135b4c0b53f4536b4ae909646281df7eda0b841cf87e6df21eb02c7628be28ac",
+    "ldd_sha256": "9de1941bc641ca37587406f3114be879eea575f647472ee73f365abcc48d1088"
+  }
+}

@@ -1,0 +1,143 @@
+ggml_cuda_init: found 2 CUDA devices (Total VRAM: 32256 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+PP pinned inputs requested=1 selected=1 scheduler=0x10013ee0bb0 copies=4 cap=268435456 reset_preserves_slots=1
+PP stable CPU input leafs requested=1 selected=1 scheduler=0x10013ee0bb0 reason=pinned-ordinary-cuda-pipeline
+PP pinned inputs requested=1 selected=1 scheduler=0x100154fe160 copies=4 cap=268435456 reset_preserves_slots=1
+PP stable CPU input leafs requested=1 selected=1 scheduler=0x100154fe160 reason=pinned-ordinary-cuda-pipeline
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=32 split_us=99 check_us=0 first_alloc_us=0 wait_us=20 reserve_us=44 retry_alloc_us=10 total_us=173 backend_ids_changed=1 reserved=1
+V152_START cuda_devices=2 cpu_devices=1 feature=GGML_SCHED_LAYER_PINNED_INPUTS requested=1 expected_copies=4 main_cap_mib=256
+SCHEDULER_READY scheduler=0x10013ee0bb0 order=CUDA0,CUDA1,CPU copies=4 cap_mib=256
+SCHEDULER_READY scheduler=0x100154fe160 order=CUDA0,CUDA1,CPU copies=4 cap_mib=256
+CASE_PLAN label=A-small width=32 batch=16 row_bytes=2048 gpu0_inputs_per_copy=6144 gpu1_inputs_per_copy=2048 expected_stage_ring_bytes=32768 output_sink_bytes=16448 fresh_graph_per_frame=1
+CASE_PLAN label=B-small width=32 batch=16 row_bytes=2048 gpu0_inputs_per_copy=6144 gpu1_inputs_per_copy=2048 expected_stage_ring_bytes=32768 output_sink_bytes=16448 fresh_graph_per_frame=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-small frame=0 seed=0 graph=0x7fff1e520900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+PP pinned inputs active scheduler=0x10013ee0bb0 backend=CUDA0 slot=0 source=A-small.frame0.cpu_embedding_rows bytes=2048 private_source=1 device_event_wait=1
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfa00000
+PP pinned inputs active scheduler=0x10013ee0bb0 backend=CUDA1 slot=0 source=A-small.frame0.input.host1 bytes=2048 private_source=1 device_event_wait=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x10013ee0bb0 source=CUDA0 destination=CUDA1 slot=0 waits=1
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfc00000
+sched-alloc-timing sched=0x100154fe160 nodes=6 first_ne0=32 split_us=46 check_us=0 first_alloc_us=0 wait_us=21 reserve_us=44 retry_alloc_us=9 total_us=122 backend_ids_changed=1 reserved=1
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-small frame=0 seed=0 source_overwrite_after_submit=1 output_sink_slot=0 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x100154fe160 case=B-small frame=0 seed=7 graph=0x7fff1d900900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+PP pinned inputs active scheduler=0x100154fe160 backend=CUDA0 slot=0 source=B-small.frame0.cpu_embedding_rows bytes=2048 private_source=1 device_event_wait=1
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfa01000
+PP pinned inputs active scheduler=0x100154fe160 backend=CUDA1 slot=0 source=B-small.frame0.input.host1 bytes=2048 private_source=1 device_event_wait=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x100154fe160 source=CUDA0 destination=CUDA1 slot=0 waits=1
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfc01000
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=32 split_us=37 check_us=0 first_alloc_us=9 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=46 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x100154fe160 case=B-small frame=0 seed=7 source_overwrite_after_submit=1 output_sink_slot=0 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-small frame=1 seed=1 graph=0x7fff1cce0900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfa00000
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x10013ee0bb0 source=CUDA0 destination=CUDA1 slot=1 waits=2
+[mp-dbg] mul_mat hook: type=0 ne11=16 reg=0 ptr=0x7ffecfc00000
+sched-alloc-timing sched=0x100154fe160 nodes=6 first_ne0=32 split_us=32 check_us=0 first_alloc_us=8 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=40 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-small frame=1 seed=1 source_overwrite_after_submit=1 output_sink_slot=1 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x100154fe160 case=B-small frame=1 seed=3 graph=0x7fff1c0c0900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x100154fe160 source=CUDA0 destination=CUDA1 slot=1 waits=2
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=32 split_us=31 check_us=0 first_alloc_us=9 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=40 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x100154fe160 case=B-small frame=1 seed=3 source_overwrite_after_submit=1 output_sink_slot=1 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-small frame=2 seed=0 graph=0x7fff071d0900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+sched-alloc-timing sched=0x100154fe160 nodes=6 first_ne0=32 split_us=30 check_us=1 first_alloc_us=7 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=38 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-small frame=2 seed=0 source_overwrite_after_submit=1 output_sink_slot=2 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x100154fe160 case=B-small frame=2 seed=7 graph=0x7fff065b0900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=32 split_us=31 check_us=0 first_alloc_us=8 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=39 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x100154fe160 case=B-small frame=2 seed=7 source_overwrite_after_submit=1 output_sink_slot=2 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-small frame=3 seed=2 graph=0x7fff05990900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+sched-alloc-timing sched=0x100154fe160 nodes=6 first_ne0=32 split_us=30 check_us=0 first_alloc_us=7 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=38 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-small frame=3 seed=2 source_overwrite_after_submit=1 output_sink_slot=3 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x100154fe160 case=B-small frame=3 seed=1 graph=0x7fff04d70900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=32 split_us=31 check_us=0 first_alloc_us=8 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=39 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x100154fe160 case=B-small frame=3 seed=1 source_overwrite_after_submit=1 output_sink_slot=3 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-small frame=4 seed=3 graph=0x7fff04150900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+sched-alloc-timing sched=0x100154fe160 nodes=6 first_ne0=32 split_us=30 check_us=0 first_alloc_us=8 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=38 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-small frame=4 seed=3 source_overwrite_after_submit=1 output_sink_slot=4 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x100154fe160 case=B-small frame=4 seed=6 graph=0x7ffeef1d0900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=32 split_us=30 check_us=0 first_alloc_us=8 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=38 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x100154fe160 case=B-small frame=4 seed=6 source_overwrite_after_submit=1 output_sink_slot=4 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-small frame=5 seed=4 graph=0x7ffeee5b0900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+sched-alloc-timing sched=0x100154fe160 nodes=6 first_ne0=32 split_us=29 check_us=1 first_alloc_us=7 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=37 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-small frame=5 seed=4 source_overwrite_after_submit=1 output_sink_slot=5 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x100154fe160 case=B-small frame=5 seed=2 graph=0x7ffeed990900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=32 split_us=30 check_us=0 first_alloc_us=8 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=38 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x100154fe160 case=B-small frame=5 seed=2 source_overwrite_after_submit=1 output_sink_slot=5 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-small frame=6 seed=5 graph=0x7ffeecd70900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+sched-alloc-timing sched=0x100154fe160 nodes=6 first_ne0=32 split_us=29 check_us=0 first_alloc_us=8 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=37 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-small frame=6 seed=5 source_overwrite_after_submit=1 output_sink_slot=6 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x100154fe160 case=B-small frame=6 seed=5 graph=0x7ffeec150900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=32 split_us=30 check_us=0 first_alloc_us=8 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=38 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x100154fe160 case=B-small frame=6 seed=5 source_overwrite_after_submit=1 output_sink_slot=6 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-small frame=7 seed=6 graph=0x7ffeeb530900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+sched-alloc-timing sched=0x100154fe160 nodes=6 first_ne0=32 split_us=29 check_us=0 first_alloc_us=8 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=37 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-small frame=7 seed=6 source_overwrite_after_submit=1 output_sink_slot=7 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x100154fe160 case=B-small frame=7 seed=4 graph=0x7ffeea910900 rows_ne=32x16 mm0_src1_ne=32x16 fresh_graph=1
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=128 split_us=35 check_us=0 first_alloc_us=0 wait_us=16 reserve_us=863 retry_alloc_us=9 total_us=923 backend_ids_changed=0 reserved=1
+FRAME_QUEUED scheduler=0x100154fe160 case=B-small frame=7 seed=4 source_overwrite_after_submit=1 output_sink_slot=7 fresh_graph_retained=1
+FRAME_RESULT phase=independent-A-small-reset-ring scheduler=0x10013ee0bb0 case=A-small frame=0 exact=1 canary=1 elements=512
+FRAME_RESULT phase=independent-A-small-reset-ring scheduler=0x10013ee0bb0 case=A-small frame=1 exact=1 canary=1 elements=512
+FRAME_RESULT phase=independent-A-small-reset-ring scheduler=0x10013ee0bb0 case=A-small frame=2 exact=1 canary=1 elements=512
+FRAME_RESULT phase=independent-A-small-reset-ring scheduler=0x10013ee0bb0 case=A-small frame=3 exact=1 canary=1 elements=512
+FRAME_RESULT phase=independent-A-small-reset-ring scheduler=0x10013ee0bb0 case=A-small frame=4 exact=1 canary=1 elements=512
+FRAME_RESULT phase=independent-A-small-reset-ring scheduler=0x10013ee0bb0 case=A-small frame=5 exact=1 canary=1 elements=512
+FRAME_RESULT phase=independent-A-small-reset-ring scheduler=0x10013ee0bb0 case=A-small frame=6 exact=1 canary=1 elements=512
+FRAME_RESULT phase=independent-A-small-reset-ring scheduler=0x10013ee0bb0 case=A-small frame=7 exact=1 canary=1 elements=512
+PASS_PHASE phase=independent-A-small-reset-ring frames=8 exact_cpu_oracle=1 output_on_cuda1=1 final_drain=1
+FRAME_RESULT phase=independent-B-small-reset-ring scheduler=0x100154fe160 case=B-small frame=0 exact=1 canary=1 elements=512
+FRAME_RESULT phase=independent-B-small-reset-ring scheduler=0x100154fe160 case=B-small frame=1 exact=1 canary=1 elements=512
+FRAME_RESULT phase=independent-B-small-reset-ring scheduler=0x100154fe160 case=B-small frame=2 exact=1 canary=1 elements=512
+FRAME_RESULT phase=independent-B-small-reset-ring scheduler=0x100154fe160 case=B-small frame=3 exact=1 canary=1 elements=512
+FRAME_RESULT phase=independent-B-small-reset-ring scheduler=0x100154fe160 case=B-small frame=4 exact=1 canary=1 elements=512
+FRAME_RESULT phase=independent-B-small-reset-ring scheduler=0x100154fe160 case=B-small frame=5 exact=1 canary=1 elements=512
+FRAME_RESULT phase=independent-B-small-reset-ring scheduler=0x100154fe160 case=B-small frame=6 exact=1 canary=1 elements=512
+FRAME_RESULT phase=independent-B-small-reset-ring scheduler=0x100154fe160 case=B-small frame=7 exact=1 canary=1 elements=512
+PASS_PHASE phase=independent-B-small-reset-ring frames=8 exact_cpu_oracle=1 output_on_cuda1=1 final_drain=1
+CASE_PLAN label=A-large-grow width=128 batch=1024 row_bytes=524288 gpu0_inputs_per_copy=1572864 gpu1_inputs_per_copy=524288 expected_stage_ring_bytes=8388608 output_sink_bytes=4194368 fresh_graph_per_frame=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-large-grow frame=0 seed=0 graph=0x10019298b80 rows_ne=128x1024 mm0_src1_ne=128x1024 fresh_graph=1
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=128 split_us=36 check_us=0 first_alloc_us=9 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=45 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-large-grow frame=0 seed=0 source_overwrite_after_submit=1 output_sink_slot=0 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-large-grow frame=1 seed=1 graph=0x1001b060600 rows_ne=128x1024 mm0_src1_ne=128x1024 fresh_graph=1
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=128 split_us=34 check_us=1 first_alloc_us=8 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=43 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-large-grow frame=1 seed=1 source_overwrite_after_submit=1 output_sink_slot=1 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-large-grow frame=2 seed=0 graph=0x1001be63380 rows_ne=128x1024 mm0_src1_ne=128x1024 fresh_graph=1
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=128 split_us=34 check_us=0 first_alloc_us=8 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=43 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-large-grow frame=2 seed=0 source_overwrite_after_submit=1 output_sink_slot=2 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-large-grow frame=3 seed=2 graph=0x1001cc68a80 rows_ne=128x1024 mm0_src1_ne=128x1024 fresh_graph=1
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=128 split_us=35 check_us=0 first_alloc_us=9 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=44 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-large-grow frame=3 seed=2 source_overwrite_after_submit=1 output_sink_slot=3 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-large-grow frame=4 seed=3 graph=0x1001da6f500 rows_ne=128x1024 mm0_src1_ne=128x1024 fresh_graph=1
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=128 split_us=36 check_us=1 first_alloc_us=8 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=45 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-large-grow frame=4 seed=3 source_overwrite_after_submit=1 output_sink_slot=4 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-large-grow frame=5 seed=4 graph=0x1001e8733c0 rows_ne=128x1024 mm0_src1_ne=128x1024 fresh_graph=1
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=128 split_us=32 check_us=0 first_alloc_us=9 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=41 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-large-grow frame=5 seed=4 source_overwrite_after_submit=1 output_sink_slot=5 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-large-grow frame=6 seed=5 graph=0x1001f676e80 rows_ne=128x1024 mm0_src1_ne=128x1024 fresh_graph=1
+sched-alloc-timing sched=0x10013ee0bb0 nodes=6 first_ne0=128 split_us=33 check_us=1 first_alloc_us=8 wait_us=0 reserve_us=0 retry_alloc_us=0 total_us=42 backend_ids_changed=0 reserved=0
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-large-grow frame=6 seed=5 source_overwrite_after_submit=1 output_sink_slot=6 fresh_graph_retained=1
+FRAME_BEGIN scheduler=0x10013ee0bb0 case=A-large-grow frame=7 seed=6 graph=0x7fff1d4d0900 rows_ne=128x1024 mm0_src1_ne=128x1024 fresh_graph=1
+PP stable CPU input leafs summary scheduler=0x10013ee0bb0 groups=64
+PP pinned inputs summary scheduler=0x10013ee0bb0 copies=64 declines=0 pinned_high_water=8388608 cap=268435456
+PP stable CPU input leafs summary scheduler=0x100154fe160 groups=32
+PP pinned inputs summary scheduler=0x100154fe160 copies=32 declines=0 pinned_high_water=32768 cap=268435456
+PP pinned inputs requested=1 selected=0 scheduler=0x1001d069030 copies=4 reason=invalid-pinned-cap
+PP stable CPU input leafs requested=1 selected=0 scheduler=0x1001d069030 reason=requires-private-pinned-inputs
+sched-alloc-timing sched=0x1001d069030 nodes=6 first_ne0=128 split_us=40 check_us=0 first_alloc_us=0 wait_us=16 reserve_us=809 retry_alloc_us=9 total_us=874 backend_ids_changed=1 reserved=1
+FRAME_QUEUED scheduler=0x10013ee0bb0 case=A-large-grow frame=7 seed=6 source_overwrite_after_submit=1 output_sink_slot=7 fresh_graph_retained=1
+FRAME_RESULT phase=large-growth-eight-async-ABA scheduler=0x10013ee0bb0 case=A-large-grow frame=0 exact=1 canary=1 elements=131072
+FRAME_RESULT phase=large-growth-eight-async-ABA scheduler=0x10013ee0bb0 case=A-large-grow frame=1 exact=1 canary=1 elements=131072
+FRAME_RESULT phase=large-growth-eight-async-ABA scheduler=0x10013ee0bb0 case=A-large-grow frame=2 exact=1 canary=1 elements=131072
+FRAME_RESULT phase=large-growth-eight-async-ABA scheduler=0x10013ee0bb0 case=A-large-grow frame=3 exact=1 canary=1 elements=131072
+FRAME_RESULT phase=large-growth-eight-async-ABA scheduler=0x10013ee0bb0 case=A-large-grow frame=4 exact=1 canary=1 elements=131072
+FRAME_RESULT phase=large-growth-eight-async-ABA scheduler=0x10013ee0bb0 case=A-large-grow frame=5 exact=1 canary=1 elements=131072
+FRAME_RESULT phase=large-growth-eight-async-ABA scheduler=0x10013ee0bb0 case=A-large-grow frame=6 exact=1 canary=1 elements=131072
+FRAME_RESULT phase=large-growth-eight-async-ABA scheduler=0x10013ee0bb0 case=A-large-grow frame=7 exact=1 canary=1 elements=131072
+PASS_PHASE phase=large-growth-eight-async-ABA frames=8 exact_cpu_oracle=1 output_on_cuda1=1 final_drain=1
+FREE_EVENT_TEST scheduler=0x10013ee0bb0 submissions=8 backend_drained=1 stage_events_recorded=1
+SCHEDULER_READY scheduler=0x1001d069030 order=CUDA0,CUDA1,CPU copies=4 cap_mib=1
+CASE_PLAN label=invalid-cap-fallback width=128 batch=1024 row_bytes=524288 gpu0_inputs_per_copy=1572864 gpu1_inputs_per_copy=524288 expected_stage_ring_bytes=8388608 output_sink_bytes=524296 fresh_graph_per_frame=1
+FRAME_BEGIN scheduler=0x1001d069030 case=invalid-cap-fallback frame=0 seed=0 graph=0x10015be7480 rows_ne=128x1024 mm0_src1_ne=128x1024 fresh_graph=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x1001d069030 source=CUDA0 destination=CUDA1 slot=0 waits=1
+FRAME_QUEUED scheduler=0x1001d069030 case=invalid-cap-fallback frame=0 seed=0 source_overwrite_after_submit=1 output_sink_slot=0 fresh_graph_retained=1
+FRAME_RESULT phase=budget-rejection-fallback-exact scheduler=0x1001d069030 case=invalid-cap-fallback frame=0 exact=1 canary=1 elements=131072
+PASS_PHASE phase=budget-rejection-fallback-exact frames=1 exact_cpu_oracle=1 output_on_cuda1=1 final_drain=1
+INVALID_CAP_EXPECTATION scheduler=0x1001d069030 cap_mib=1 gpu0_need_per_copy=1572864 expected_selector=invalid-pinned-cap original_copy_fallback=1 exact=1
+V152_PASS phases=4 schedules=3 copies=4 source_overwrite=1 ABA=1 independent_scheduler_interleave=1 reset=1 growth=1 free_event=1 invalid_cap_fallback=1 exact_cpu_oracle=1 output_backend=CUDA1

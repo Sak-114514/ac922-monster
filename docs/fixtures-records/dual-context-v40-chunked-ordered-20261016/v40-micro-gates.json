@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "authorization_note": "V92 ordered and packed gates are independently hashed. Root's one-window authorization is an environment gate; host preflight never starts a model.",
+  "source_v39_micro_report_sha256": "f133e6b594f8be50f61b02353e1e6ac7708194c9038e86a93adeef0ee2d57b79",
+  "micro_gates": {
+    "mtp": {
+      "status": "PASS",
+      "required": true,
+      "evidence_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mtp-d3-four-lane-20261016/results/mtp-d3-four-lane-20261016T034003Z-128380.log",
+      "evidence_sha256": "eca71aa3f9f21fb0fb198090f3e5c5a10f386750a5d7d458fef090aa8e52a5a5",
+      "evidence": "Four-lane D3 real MTP head fixture passed exact full-logit/hidden/token/KV checks and three-lane ragged fallback."
+    },
+    "cpu_async_copy_32m": {
+      "status": "PASS",
+      "required": true,
+      "evidence_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/cpu-meta-large-shapes-20261016/results/gpu-v80-large-shapes-20261016T100423Z-201536/run.log",
+      "evidence_sha256": "819e6814e575a5cfea249d4d8a3d8558d4ed8a7c1bcde511c8e67c583331cef8",
+      "evidence": "Bounded GPU adapter run admitted 16/20/32 MiB, fell back at 33 MiB, and passed 72 exact/canary readbacks plus 12 source mutation/free checks; aggregate pinned budget stayed 64 MiB."
+    },
+    "decode_linear_packed": {
+      "status": "PASS",
+      "required": true,
+      "evidence_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/q5k-v87-linear-packed-20261016/results/v87-linear-packed-v87-corrected-20261016T101424Z/run.log",
+      "evidence_sha256": "70672eb00d63cc5d7d1e548a63145bb1f98ff907074f41c4ded1fcb80d98348c",
+      "evidence": "15 OFF/ON shapes passed byte-exact output; packed T8/T12/T16 selection was observed and T16 timing improved in the Q5_K fixture."
+    },
+    "ple12_policy_and_reserves": {
+      "status": "PASS",
+      "required": true,
+      "evidence_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V89-build.json",
+      "evidence_sha256": "4f1d5799decf78e8139dc10a6d7296ee6af5b8f81dddbdf1deba36f10b0afc47",
+      "evidence": "Root confirmed the V89 12 GiB parser/geometry test passed with six 2 GiB stripes and the existing per-GPU 4 GiB HBM plus 3 GiB DDR reserves unchanged. Full-model loader capacity checks remain authoritative; do not force the 12 GiB placement."
+    },
+    "single_chunk_cold_drain": {
+      "status": "PASS",
+      "required": true,
+      "evidence_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/flatmeta6-cold-flat-ar-20261016/results/v89-force1-sync0-20261016T110835Z.log",
+      "evidence_sha256": "4b8518096d987c34ce6e85df300c2a87ac99107472857e492eae940c593059e1",
+      "evidence": "V90 six-rank bounded fixture observed two chunks=1 cold drains before capture/lockstep; both measured A/B 96-byte ARs on every rank passed exact oracle and canary checks."
+    },
+    "chunk512_cold_large_graph": {
+      "status": "NOT_APPLICABLE",
+      "required": false,
+      "evidence_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/flatmeta6-cold-flat-ar-20261016/results/v91-depth-force1-sync0-20261016T113821Z.log",
+      "evidence_sha256": "800245bc91230c3f0a761fbd211d722b760111266558f5fec615cfd67e3a9b39",
+      "evidence": "V40 disables wholegraph with CHUNK_NODES=512 and FORCE=0. The retained V90/wholegraph FORCE=1 scale_nodes=10000 arm stalled on a 96-byte AllReduce at call 3 on ranks 0/3 and timed out; it is not a blocker for the chunked route."
+    },
+    "packed_dense_nine_formats_t24_t64": {
+      "status": "PASS",
+      "required": true,
+      "evidence_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/sm70-packed-dense-mulmat-20261016/results/v89-dense-shapes-v89-nine-formats-gpu3-20261016T1910Z/validation.log",
+      "evidence_sha256": "78d1e28178980a751d3fa347a28801c5e74d170960b73ff61ed52753e8a4e63d",
+      "evidence": "Nine formats each passed T24/T32/T48/T64 OFF/ON exact output and canary checks; this is the nine-format evidence, not a separate 16-case claim."
+    },
+    "ordered_relay6_kind4_and_small_fallback": {
+      "status": "PASS",
+      "required": true,
+      "evidence_paths": [
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-20261016/results/v92-ordered-v92-host3-eventwait-20261016T114500Z/summary.json",
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-20261016/results/v92-ordered-v92-host3-eventwait-20261016T114500Z/run.log"
+      ],
+      "evidence_sha256": [
+        "586fed0b3e086dab753059d8de8a60ce02c4b87e4846c6cc1de9f2db0528c605",
+        "d00796bc82df2c29c89b9e2e5bdaa3629d5d67264bee9c365f129877cf27bdbd"
+      ],
+      "evidence": "V92 bounded ordered relay fixture must pass kind4 on all six ranks for >=200 KiB dispatch/graph_append and the one_shot fallback below threshold, with exact oracle, A/B/A, negative-zero, and canaries."
+    }
+  },
+  "required_micro_gates": [
+    "mtp",
+    "cpu_async_copy_32m",
+    "decode_linear_packed",
+    "ple12_policy_and_reserves",
+    "single_chunk_cold_drain",
+    "packed_dense_nine_formats_t24_t64",
+    "ordered_relay6_kind4_and_small_fallback"
+  ],
+  "not_applicable_gates": [
+    "chunk512_cold_large_graph"
+  ],
+  "pending_launch_gates": []
+}

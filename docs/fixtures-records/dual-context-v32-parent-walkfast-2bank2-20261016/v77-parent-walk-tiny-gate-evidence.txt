@@ -1,0 +1,14 @@
+V77 V32 pre-run tiny qualification evidence (2026-10-16)
+
+Direct shape control: /home/debian/ac922-monster/experiments/standard-opt-20261014/notes/direct-ar-compose-shape-20261016T050911Z.log
+SHA-256: c27a589039148eba6b0e3096b63fb8c2afe86e23d022cf72c8fb89db1aa5fba6
+Result: 49 child graphs x 150 scalar nodes, 48 segmented AR6 boundaries, 64 blocks, 4,195,328 bytes; ordinary segmented and composed first/changed-input replay both passed exact/canary checks across all six ranks.
+
+Parent-walk plus nested-compose/PLE integration: /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/parent-walk-linear-20261016/integration/STATUS.md
+SHA-256: b6a3aabdf90ee62d8590bf2a02409a35590029a0e97e79c127ef6626fb68634b
+Result: stable 16 parent-walk selections; original/prepared hit deltas +16 each; composition replays +16; ordinary AR, async AR, and cold drains each 0; exact/canary changed-frame 5/6/7; same-UID/new-buffer, new-UID, and PLE owner-reset invalidation all passed.
+
+Nested log SHA-256: 2811cf9480596c53f34679dc18a51d83a112976f46669b452462510bb851c5b8
+PLE owner log SHA-256: e60facfca9fce60801fb95e8f0c1b3f2bf2ee981973f694802503a6a24fcd8ed
+
+This qualifies only the fixture paths. V32 full-model behavior and performance remain unverified until its single authorized run completes.

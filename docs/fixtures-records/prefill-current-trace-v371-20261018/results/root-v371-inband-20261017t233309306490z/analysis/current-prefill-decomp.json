@@ -1,0 +1,290 @@
+{
+  "trace": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/prefill-current-trace-v371-20261018/results/root-v371-inband-20261017t233309306490z/cupti/target-chunk1.jsonl",
+  "metadata": {
+    "record": "trace_meta",
+    "schema": 1,
+    "trace_valid": true,
+    "clock": "CUPTI nanoseconds",
+    "window_start_ns": 1792280183050947836,
+    "window_stop_ns": 1792280190496743655,
+    "events_stored": 72219,
+    "event_capacity": 4194304,
+    "event_record_size_bytes": 304,
+    "event_storage_capacity_bytes": 1275068416,
+    "name_field_capacity_bytes": 128,
+    "name_truncated_records": 384,
+    "callback_buffers": 64,
+    "callback_buffer_bytes": 4194304,
+    "callback_pool_capacity_bytes": 268435456,
+    "buffers_completed": 4,
+    "buffer_starvation": 0,
+    "buffer_starvation_selected_window": 0,
+    "record_overflow": 0,
+    "parse_errors": 0,
+    "parse_errors_selected_window": 0,
+    "bad_buffers": 0,
+    "bad_buffers_selected_window": 0,
+    "unknown_activity_kinds": 6,
+    "kernel_records_in_window": 384,
+    "untimed_activity_records_during_window": 0,
+    "device_count": 6,
+    "device_table_overflow": 0,
+    "context_stream_pair_count": 11,
+    "context_stream_pair_capacity": 4096,
+    "context_stream_pair_overflow": 0,
+    "drop_query_scope": "global_queue_null_context_stream_zero_v1",
+    "drop_query_resets_counter_on_read": true,
+    "per_context_stream_drop_counts_available": false,
+    "per_context_stream_drop_count_note": "V1 global completion callbacks provide null context and stream zero; contextId in activity records is not a CUcontext handle",
+    "prepare_drop_query_ok": true,
+    "start_drop_query_ok": true,
+    "stop_drop_query_ok": true,
+    "dropped_prepare_phase": 0,
+    "dropped_pre_window_phase": 0,
+    "dropped_selected_window_phase": 0,
+    "dropped_read_total": 0,
+    "memcpy2_enabled_by_memcpy_v1": true,
+    "kernel_activity_kind": "CONCURRENT_KERNEL",
+    "ordinary_KERNEL_kind_enabled": false,
+    "observed_context_streams": [
+      {
+        "device_id": 0,
+        "context_id": 1,
+        "stream_id": 84
+      },
+      {
+        "device_id": 1,
+        "context_id": 2,
+        "stream_id": 84
+      },
+      {
+        "device_id": 1,
+        "context_id": 2,
+        "stream_id": 85
+      },
+      {
+        "device_id": 2,
+        "context_id": 3,
+        "stream_id": 85
+      },
+      {
+        "device_id": 2,
+        "context_id": 3,
+        "stream_id": 86
+      },
+      {
+        "device_id": 3,
+        "context_id": 4,
+        "stream_id": 86
+      },
+      {
+        "device_id": 3,
+        "context_id": 4,
+        "stream_id": 87
+      },
+      {
+        "device_id": 4,
+        "context_id": 5,
+        "stream_id": 87
+      },
+      {
+        "device_id": 4,
+        "context_id": 5,
+        "stream_id": 88
+      },
+      {
+        "device_id": 5,
+        "context_id": 6,
+        "stream_id": 88
+      },
+      {
+        "device_id": 5,
+        "context_id": 6,
+        "stream_id": 89
+      }
+    ],
+    "error": ""
+  },
+  "window_seconds": 7.445795819,
+  "owner_pthread_id": 140732682565696,
+  "selected_cupti_runtime_thread_id": 3784144960,
+  "api_thread_counts": {
+    "3784144960": 64856
+  },
+  "owner_cuda_api_union_ms": 4811.908832,
+  "owner_outside_recorded_runtime_api_ms": 2633.886987,
+  "owner_api_groups": [
+    {
+      "name": "other",
+      "count": 42498,
+      "union_ms": 35.932735,
+      "sum_ms": 35.932735
+    },
+    {
+      "name": "synchronize",
+      "count": 402,
+      "union_ms": 4438.972397,
+      "sum_ms": 4438.972397
+    },
+    {
+      "name": "event_stream_wait",
+      "count": 8640,
+      "union_ms": 22.714312,
+      "sum_ms": 22.714312
+    },
+    {
+      "name": "memcpy",
+      "count": 7488,
+      "union_ms": 67.825963,
+      "sum_ms": 67.825963
+    },
+    {
+      "name": "graph_launch",
+      "count": 384,
+      "union_ms": 13.087659,
+      "sum_ms": 13.087659
+    },
+    {
+      "name": "graph_other",
+      "count": 5420,
+      "union_ms": 154.09581,
+      "sum_ms": 154.09581
+    },
+    {
+      "name": "graph_instantiate",
+      "count": 24,
+      "union_ms": 79.279956,
+      "sum_ms": 79.279956
+    }
+  ],
+  "owner_api_names": [
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "count": 384,
+      "union_ms": 3550.074455
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "count": 18,
+      "union_ms": 888.897942
+    },
+    {
+      "name": "cudaGraphExecDestroy_v10000",
+      "count": 49,
+      "union_ms": 106.816397
+    },
+    {
+      "name": "cudaMemcpyAsync_v3020",
+      "count": 6842,
+      "union_ms": 59.22304
+    },
+    {
+      "name": "cudaGraphInstantiate_v12000",
+      "count": 12,
+      "union_ms": 49.745268
+    },
+    {
+      "name": "cudaGraphDestroy_v10000",
+      "count": 43,
+      "union_ms": 40.063626
+    },
+    {
+      "name": "cudaGraphInstantiateWithFlags_v11040",
+      "count": 12,
+      "union_ms": 29.534688
+    },
+    {
+      "name": "cudaStreamWaitEvent_v3020",
+      "count": 8640,
+      "union_ms": 22.714312
+    },
+    {
+      "name": "cudaLaunchKernel_v7000",
+      "count": 4640,
+      "union_ms": 14.414384
+    },
+    {
+      "name": "cudaGraphLaunch_v10000",
+      "count": 384,
+      "union_ms": 13.087659
+    },
+    {
+      "name": "cudaEventRecord_v3020",
+      "count": 8128,
+      "union_ms": 10.763839
+    },
+    {
+      "name": "cudaMemcpyPeerAsync_v4000",
+      "count": 640,
+      "union_ms": 8.574992
+    },
+    {
+      "name": "cudaGetDevice_v3020",
+      "count": 23846,
+      "union_ms": 7.011946
+    },
+    {
+      "name": "cudaGraphUpload_v10000",
+      "count": 12,
+      "union_ms": 4.42774
+    },
+    {
+      "name": "cudaGraphNodeGetType_v10000",
+      "count": 5292,
+      "union_ms": 2.603172
+    },
+    {
+      "name": "cudaSetDevice_v3020",
+      "count": 768,
+      "union_ms": 1.415488
+    }
+  ],
+  "kernel_count": 384,
+  "kernel_busy_ms": {
+    "0": 0.257591,
+    "1": 0.26115,
+    "2": 0.260569,
+    "3": 0.255552,
+    "4": 0.256439,
+    "5": 0.258344
+  },
+  "kernel_or_copy_busy_ms": {
+    "0": 79.973458,
+    "1": 119.957559,
+    "2": 163.355121,
+    "3": 170.659659,
+    "4": 125.168104,
+    "5": 155.136945
+  },
+  "active_gpu_time_fraction": {
+    "0": 0.935891061667051,
+    "1": 0.02014118794626592,
+    "2": 0.04268731116544199,
+    "3": 0.0012804392212410196,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0
+  },
+  "average_active_gpu": 0.10935712794087296,
+  "kernel_names_top": [
+    {
+      "name": "__nv_static_47__98afc331_18_bridge_r3_cap32_cu_16eee3c6_418522__ZN58_GLOBAL__N__98afc331_18_bridge_r3_cap32_cu_16eee3c6_4185222",
+      "count": 384,
+      "sum_ms": 1.549645
+    }
+  ],
+  "concat_kernels": [],
+  "copies": {
+    "memcpy": {
+      "count": 6339,
+      "bytes": 2607810060,
+      "sum_ms": 165.600501
+    },
+    "memcpy_p2p": {
+      "count": 640,
+      "bytes": 13421772800,
+      "sum_ms": 333.345736
+    }
+  },
+  "scope": "Diagnostic target second32768 chunk only; API wall overlaps GPU work, outside-owner remainder is not assigned to PLE; kernel sum across devices is not wall; current env mask2D/window2048/deviceTail."
+}

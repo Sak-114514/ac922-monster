@@ -1,0 +1,30 @@
+utc=20261016T050327Z mode=cuda-operator-screen runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v75/lib visible=3
+built /tmp/monpack-ep-occupancy-cuda.qYhzyX/monpack-ep-occupancy against V75; host g++ only, no NVCC
+077b7200f360c21ad445875ff6c6f7a16abf0c381863f09915175e4c8e79be08  /tmp/monpack-ep-occupancy-cuda.qYhzyX/monpack-ep-occupancy
+7d4cdf24f0c8463d7063452df25f78e214aaa0c2b054af3d3af63cc5d2d2d5c5  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v75/lib/libggml-cuda.so.0
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 39, 2 MiB, 0 %
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 38, 2 MiB, 0 %
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 38, 2 MiB, 0 %
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 38, 3 MiB, 0 %
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 38, 6 MiB, 0 %
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 39, 6 MiB, 0 %
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+[mp-reg] type=18 ne=[2560,640,85] ptr=0x1003b600000
+[mp-dbg] mul_mat_id hook: type=18 ne11=1 reg=0 ptr=0x10037400000 ne=[2560,640,85]
+[mp-dbg] mul_mat_id hook: type=18 ne11=1 reg=1 ptr=0x1003b600000 ne=[2560,640,85]
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+[mp-dbg] mul_mat_id hook: type=18 ne11=1 reg=0 ptr=0x10037400000 ne=[2560,640,85]
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+[mp-dbg] mul_mat_id hook: type=18 ne11=1 reg=1 ptr=0x1003b600000 ne=[2560,640,85]
+[mp-reg] type=21 ne=[2560,640,85] ptr=0x7ffef6a00000
+[mp-dbg] mul_mat_id hook: type=21 ne11=1 reg=0 ptr=0x7ffef2000000 ne=[2560,640,85]
+[mp-dbg] mul_mat_id hook: type=21 ne11=1 reg=1 ptr=0x7ffef6a00000 ne=[2560,640,85]
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA_SCREEN V75 T=1024 n_used=2 M_total=2048 expected_TC_min_M=16 full_KN=2560x640 local_E=85 production_EP_mapping=not_tested
+format=IQ3_XXS full_elements=1310720 full_stock_vs_monpack_finite=yes full_stock_vs_monpack_max_abs=0.003962427378 full_stock_vs_monpack_rmse=0.0006593814846 oracle_elements=1024 stock_oracle_max_abs=0.002147302083 stock_oracle_rmse=0.000644310941 monpack_oracle_max_abs=0.0002058437056 monpack_oracle_rmse=5.15934746e-05 stock_first_completion_wall_ms=12.405206 monpack_first_completion_wall_ms=17.438143 repeated_wall_n=3_stock_mean_ms=1.035751667 stock_p50_ms=0.910284 stock_p95_ms=1.292943 monpack_mean_ms=8.912031333 monpack_p50_ms=8.870397 monpack_p95_ms=8.996679 timing_kind=host_graph_compute_plus_synchronize numeric_tolerance_applied=no
+format=IQ3_S full_elements=1310720 full_stock_vs_monpack_finite=yes full_stock_vs_monpack_max_abs=0.003248602152 full_stock_vs_monpack_rmse=0.0006405348229 oracle_elements=1024 stock_oracle_max_abs=0.001919173565 stock_oracle_rmse=0.000628273449 monpack_oracle_max_abs=0.0001797159269 monpack_oracle_rmse=5.014927192e-05 stock_first_completion_wall_ms=3.441479 monpack_first_completion_wall_ms=9.977958 repeated_wall_n=3_stock_mean_ms=1.00969 stock_p50_ms=0.939499 stock_p95_ms=1.153964 monpack_mean_ms=9.866518 monpack_p50_ms=9.837813 monpack_p95_ms=9.9289 timing_kind=host_graph_compute_plus_synchronize numeric_tolerance_applied=no
+CUDA_SCREEN_COMPLETE finite=yes performance_or_EP_claim=no
+runner_exit_status=0
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 39, 3 MiB, 41 %

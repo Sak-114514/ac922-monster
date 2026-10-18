@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-15T19:24:57.214912+00:00",
+  "semantic_source": {
+    "path": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/results/20261014T172531Z/native-semantics/case-input.json",
+    "sha256": "f2487f90c32d0e383494dc5ae68bec24d6bf0c8d31a065dfbf614447fb6b53fd",
+    "case_count": 16
+  },
+  "real_corpus_source": {
+    "path": "/Users/lyx/Desktop/ssh/flashnext-llama-experiment/final-results/ROUND19/real-corpus-token-ids.json",
+    "sha256": "1b85382068bee8ed9108db3e5b924f020dedf00d43d6da80c9d218099d428a02",
+    "recording_type": "r19_real_corpus_token_ids",
+    "tokenizer_server": "http://127.0.0.1:18002",
+    "corpus_id": "llama-v100-v3-repository-mixed-prose-code-v1",
+    "assembled_text_sha256": "4beb8354e7e5a8622b9e65e7021164a985a61ad991e2077ff84b5ad32f48da21",
+    "source_token_count": 89149,
+    "task_suffix_token_sha256": "ca865819d0bd92a5bf0a2ce30231a5280aef94ca42f3127b8e260fe8d3ac6e35"
+  },
+  "derived_8k_windows": [
+    {
+      "id": "real8k-0",
+      "input_tokens": 8192,
+      "body_start_in_two_saved_flows": 0,
+      "body_end_exclusive_in_two_saved_flows": 8155,
+      "task_suffix_tokens": 37,
+      "token_sha256": "eb693b9eea64c6b60325dfd7329b1df8faa31295bc13ba5f943d67be4ae203b5"
+    },
+    {
+      "id": "real8k-1",
+      "input_tokens": 8192,
+      "body_start_in_two_saved_flows": 2718,
+      "body_end_exclusive_in_two_saved_flows": 10873,
+      "task_suffix_tokens": 37,
+      "token_sha256": "9c47f2ec264ca4702a7dcab71f87de26bf881052bda47fd947849b8b5b202147"
+    },
+    {
+      "id": "real8k-2",
+      "input_tokens": 8192,
+      "body_start_in_two_saved_flows": 5436,
+      "body_end_exclusive_in_two_saved_flows": 13591,
+      "task_suffix_tokens": 37,
+      "token_sha256": "11bde497b6144c4051df7ad7428922ae972cc13be4cae8f857a69d7caa72b6a1"
+    },
+    {
+      "id": "real8k-3",
+      "input_tokens": 8192,
+      "body_start_in_two_saved_flows": 8155,
+      "body_end_exclusive_in_two_saved_flows": 16310,
+      "task_suffix_tokens": 37,
+      "token_sha256": "72da55c75fccd86e2541c38ba4877b7be2c1016cfb385c1811538086310c0cef"
+    }
+  ],
+  "window_overlap_note": "four unique 8K token arrays are sliding windows over the two adjacent saved 8K corpus flows; windows overlap by design because the saved token recording contains only c1/c2 profiles, not the full corpus token array",
+  "model_token_ids_are_precomputed": true,
+  "runner_does_not_retokenize_raw_8k_prompt": true
+}

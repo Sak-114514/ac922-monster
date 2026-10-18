@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "gates": {
+    "ordered_relay6_40m_ub4096": {
+      "status": "PASS",
+      "required": true,
+      "runtime_build_id": "20261016T121300.582979Z",
+      "local_evidence_paths": [
+        "fixtures/relay6-ordered-40m-20261016/results/v94-ordered-40m-v94-40m-host1-20261016T122500Z/summary.json",
+        "fixtures/relay6-ordered-40m-20261016/results/v94-ordered-40m-v94-40m-host1-20261016T122500Z/run.log"
+      ],
+      "remote_evidence_paths": [
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-40m-20261016/results/v94-ordered-40m-v94-40m-host1-20261016T122500Z/summary.json",
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-40m-20261016/results/v94-ordered-40m-v94-40m-host1-20261016T122500Z/run.log"
+      ],
+      "evidence_sha256": [
+        "6059e7aa06d49c338d92a06495d135f39ada4ecad182639e2a3cb62c4b2eaf83",
+        "ae9833873ee976ba4ee2c7aed2878f6d1bef9e212a30d9625d318d7f8d12fc18"
+      ],
+      "cases_passed": 7,
+      "cases_expected": 7,
+      "summary": "V94 V100 fixture passed ordered kind4 for 40 MiB dispatch and graph_append on all six ranks at zero ranks -1, 0, and 3; the kind3 control passed. Exact rank-order FP32, A/B/A, changed input, negative-zero and canary checks passed. Maximum added device memory was 644 MiB/GPU."
+    },
+    "v94_cold_cohort": {
+      "status": "PASS",
+      "required": true,
+      "runtime_build_id": "20261016T121300.582979Z",
+      "local_evidence_paths": [
+        "fixtures/dual-context-v41-ub4096-20261016/v94-cold-cohort-summary.json",
+        "fixtures/flatmeta6-cohort-v93-20261016/results/primary-scale10000-20261016T121950Z.log",
+        "fixtures/flatmeta6-cohort-v93-20261016/results/small-graphs-disabled-20261016T121959Z.log"
+      ],
+      "remote_evidence_paths": [
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v41-ub4096-20261016/v94-cold-cohort-summary.json",
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/flatmeta6-cohort-v93-20261016/results/primary-scale10000-20261016T121950Z.log",
+        "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/flatmeta6-cohort-v93-20261016/results/small-graphs-disabled-20261016T121959Z.log"
+      ],
+      "evidence_sha256": [
+        "f866df2de9407a26675d0040021ebbd25fac47fa679cd215332ad31633fb85cd",
+        "135e02bd943a72021c701248b601c018cc24dbf556ef969bdd9b18208836ac0c",
+        "e1fcb55cdaa99d9d2041337a14c89a03b9437c5983fcc0ad13f88fefa107c1bd"
+      ],
+      "summary": "V94 chunkless cold-cohort fixture passed nine submissions with 3 eager and 3 fully prepared capture cohorts, all six devices, hot replay on all six, exact F32 oracle and canaries, 12 reinstantiate update_result=2 events, and no abort/Xid/stall. A separate graphs-disabled arm passed without capture/replay."
+    }
+  }
+}

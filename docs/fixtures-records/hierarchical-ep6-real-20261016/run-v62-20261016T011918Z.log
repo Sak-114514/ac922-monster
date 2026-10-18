@@ -1,0 +1,860 @@
+start=2026-10-16T01:19:19Z
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v62
+binary_sha256=a7a8095b307e5f8ad7ce869c8b57bd88b497fb8faa24fb10a64dd0f982c7bf2c  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/hierarchical-ep6-real-20261016/hierarchical-ep6-real-fixture
+mode=full
+visible=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a
+model=/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf
+temp_limit=58C memory_limit=2048MiB timeout=600s
+meta_context_views=1 meta_replay_guard=1 meta_fifo_pipeline=1
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+meta-cpu-async-copy context=0x1002dbc23f0 instance=1 requested=1 enabled=1 reason=per_context_opt_in max_copy_bytes=1048576
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+meta-cpu-async-copy context=0x1002fd04e10 instance=3 requested=1 enabled=1 reason=per_context_opt_in max_copy_bytes=1048576
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+meta-cpu-async-copy context=0x1003008aac0 instance=4 requested=1 enabled=1 reason=per_context_opt_in max_copy_bytes=1048576
+ggml_backend_meta_context: nested native GPU AllReduce opt-in requested; unsupported PARTIAL boundaries fail closed
+meta-cpu-async-copy context=0x1002fd04aa0 instance=2 requested=1 enabled=1 reason=per_context_opt_in max_copy_bytes=1048576
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 6 devices
+meta-nested-gpu-ar opt-in=1 topology=2x3 leaves=6 order=A0,A1,A2,B0,B1,B2 p2p6=1 nccl6_f32=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=0/6 first=0 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=1/6 first=85 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=2/6 first=170 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=3/6 first=256 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=4/6 first=341 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=5/6 first=426 local=86 total=512 final-output-only-reduction=1
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x10031edc180: requires exactly two Meta backends plus CPU
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=0/2 first=0 local=256 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=1/2 first=256 local=256 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=0/3 first=0 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=1/3 first=85 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=2/3 first=170 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=0/3 first=256 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=1/3 first=341 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.1.ffn_gate_exps.weight rank=2/3 first=426 local=86 total=512 final-output-only-reduction=1
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x100314036c0: requires exactly two Meta backends plus CPU
+meta-context-submit FIFO active context=0x1002dbc23f0 members=6 CPU_enqueue_atomic=1 GPU_tail_wait=1
+meta-compact-arena backend=0x1002f7da900 subgraphs=1 graph_nodes=1 bytes=27264 saved=0
+CUDA graph path config ctx=0x1002dbc2760 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002dbc2760 device=0 uid=3 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+optimization path device=0 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_slice_preserved_in_each_chunk tokens=64 width=640 auxiliary=85 count=1
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_xxs
+CUDA graph path config ctx=0x1002dbc39e0 device=1 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002dbc39e0 device=1 uid=4 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+optimization path device=1 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_slice_preserved_in_each_chunk tokens=64 width=640 auxiliary=85 count=1
+CUDA graph path config ctx=0x1002dbc4d00 device=2 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002dbc4d00 device=2 uid=5 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+optimization path device=2 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_slice_preserved_in_each_chunk tokens=64 width=640 auxiliary=86 count=1
+CUDA graph path config ctx=0x1002dbc6040 device=3 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002dbc6040 device=3 uid=6 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+optimization path device=3 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_slice_preserved_in_each_chunk tokens=64 width=640 auxiliary=85 count=1
+CUDA graph path config ctx=0x1002dbc7380 device=4 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002dbc7380 device=4 uid=7 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+optimization path device=4 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_slice_preserved_in_each_chunk tokens=64 width=640 auxiliary=85 count=1
+CUDA graph path config ctx=0x1002dbc86c0 device=5 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002dbc86c0 device=5 uid=8 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+optimization path device=5 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_slice_preserved_in_each_chunk tokens=64 width=640 auxiliary=86 count=1
+meta-compact-arena backend=0x1002f7da900 subgraphs=2 graph_nodes=2 bytes=54528 saved=768
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002dbc2760 device=0 uid=11 nodes=1 mode=capture count=1
+optimization path device=0 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_slice_preserved_in_each_chunk tokens=64 width=640 auxiliary=85 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002dbc39e0 device=1 uid=13 nodes=1 mode=capture count=1
+optimization path device=1 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_slice_preserved_in_each_chunk tokens=64 width=640 auxiliary=85 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002dbc4d00 device=2 uid=15 nodes=1 mode=capture count=1
+optimization path device=2 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_slice_preserved_in_each_chunk tokens=64 width=640 auxiliary=86 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002dbc6040 device=3 uid=17 nodes=1 mode=capture count=1
+optimization path device=3 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_slice_preserved_in_each_chunk tokens=64 width=640 auxiliary=85 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002dbc7380 device=4 uid=19 nodes=1 mode=capture count=1
+optimization path device=4 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_slice_preserved_in_each_chunk tokens=64 width=640 auxiliary=85 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002dbc86c0 device=5 uid=21 nodes=1 mode=capture count=1
+optimization path device=5 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_slice_preserved_in_each_chunk tokens=64 width=640 auxiliary=86 count=2
+CUDA graph fallback ctx=0x1002dbc2760 device=0 uid=12 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002dbc39e0 device=1 uid=14 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002dbc4d00 device=2 uid=16 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002dbc6040 device=3 uid=18 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002dbc7380 device=4 uid=20 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002dbc86c0 device=5 uid=22 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+meta-context-submit FIFO active context=0x1002fd04aa0 members=2 CPU_enqueue_atomic=1 GPU_tail_wait=1
+meta-compact-arena backend=0x100303ab4e0 subgraphs=1 graph_nodes=1 bytes=3264 saved=0
+meta-context-submit FIFO active context=0x1002fd04e10 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+meta-compact-arena backend=0x1002ae831c0 subgraphs=1 graph_nodes=1 bytes=9264 saved=0
+CUDA graph path config ctx=0x1002fd05180 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002fd05180 device=0 uid=27 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1002fd06400 device=1 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002fd06400 device=1 uid=28 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1002fd07680 device=2 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1002fd07680 device=2 uid=29 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+meta-context-submit FIFO active context=0x1003008aac0 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+meta-compact-arena backend=0x10030410b50 subgraphs=1 graph_nodes=1 bytes=9264 saved=0
+CUDA graph path config ctx=0x1003008ae90 device=3 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1003008ae90 device=3 uid=30 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1003008c130 device=4 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1003008c130 device=4 uid=31 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1003008d470 device=5 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1003008d470 device=5 uid=32 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+meta-compact-arena backend=0x100303ab4e0 subgraphs=2 graph_nodes=2 bytes=6528 saved=256
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002fd05180 device=0 uid=39 nodes=1 mode=capture count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002fd06400 device=1 uid=40 nodes=1 mode=capture count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002fd07680 device=2 uid=41 nodes=1 mode=capture count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1003008ae90 device=3 uid=42 nodes=1 mode=capture count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1003008c130 device=4 uid=43 nodes=1 mode=capture count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1003008d470 device=5 uid=44 nodes=1 mode=capture count=1
+meta-nested-gpu-ar sequence=1 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+CUDA graph fallback ctx=0x1002fd05180 device=0 uid=45 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002fd06400 device=1 uid=46 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1002fd07680 device=2 uid=47 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1003008ae90 device=3 uid=48 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1003008c130 device=4 uid=49 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph fallback ctx=0x1003008d470 device=5 uid=50 nodes=1 mode=eager reason=initial_or_changed_warmup node= op=none count=2
+CUDA graph path active ctx=0x1002dbc2760 device=0 uid=53 nodes=1 mode=replay count=1
+CUDA graph path active ctx=0x1002dbc39e0 device=1 uid=54 nodes=1 mode=replay count=1
+CUDA graph path active ctx=0x1002dbc4d00 device=2 uid=55 nodes=1 mode=replay count=1
+CUDA graph path active ctx=0x1002dbc6040 device=3 uid=56 nodes=1 mode=replay count=1
+CUDA graph path active ctx=0x1002dbc7380 device=4 uid=57 nodes=1 mode=replay count=1
+CUDA graph path active ctx=0x1002dbc86c0 device=5 uid=58 nodes=1 mode=replay count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002dbc2760 device=0 uid=73 nodes=3 mode=eager reason=shape_or_binding_changed node= op=none count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002dbc7380 device=4 uid=77 nodes=3 mode=eager reason=shape_or_binding_changed node= op=none count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002dbc39e0 device=1 uid=74 nodes=3 mode=eager reason=shape_or_binding_changed node= op=none count=1
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_xxs
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002dbc86c0 device=5 uid=78 nodes=3 mode=eager reason=shape_or_binding_changed node= op=none count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002dbc6040 device=3 uid=76 nodes=3 mode=eager reason=shape_or_binding_changed node= op=none count=1
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_xxs
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_xxs
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_xxs
+CUDA graph fallback ctx=0x1002dbc4d00 device=2 uid=75 nodes=3 mode=eager reason=shape_or_binding_changed node= op=none count=1
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_xxs
+CUDA graph path active ctx=0x1002fd05180 device=0 uid=83 nodes=1 mode=replay count=1
+CUDA graph path active ctx=0x1002fd06400 device=1 uid=84 nodes=1 mode=replay count=1
+CUDA graph path active ctx=0x1002fd07680 device=2 uid=85 nodes=1 mode=replay count=1
+CUDA graph path active ctx=0x1003008ae90 device=3 uid=86 nodes=1 mode=replay count=1
+CUDA graph path active ctx=0x1003008c130 device=4 uid=87 nodes=1 mode=replay count=1
+CUDA graph path active ctx=0x1003008d470 device=5 uid=88 nodes=1 mode=replay count=1
+CUDA graph path active ctx=0x1002fd05180 device=0 uid=95 nodes=1 mode=replay count=2
+CUDA graph path active ctx=0x1002fd06400 device=1 uid=96 nodes=1 mode=replay count=2
+CUDA graph path active ctx=0x1002fd07680 device=2 uid=97 nodes=1 mode=replay count=2
+CUDA graph path active ctx=0x1003008ae90 device=3 uid=98 nodes=1 mode=replay count=2
+CUDA graph path active ctx=0x1003008c130 device=4 uid=99 nodes=1 mode=replay count=2
+CUDA graph path active ctx=0x1003008d470 device=5 uid=100 nodes=1 mode=replay count=2
+meta-nested-gpu-ar sequence=2 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002fd05180 device=0 uid=101 nodes=1 mode=capture count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002fd06400 device=1 uid=102 nodes=1 mode=capture count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002fd07680 device=2 uid=103 nodes=1 mode=capture count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1003008ae90 device=3 uid=104 nodes=1 mode=capture count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1003008c130 device=4 uid=105 nodes=1 mode=capture count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1003008d470 device=5 uid=106 nodes=1 mode=capture count=2
+meta-nested-gpu-ar sequence=3 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.0.ffn_gate_exps.weight rank=0/6 first=0 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.0.ffn_gate_exps.weight rank=1/6 first=85 local=85 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.0.ffn_gate_exps.weight rank=2/6 first=170 local=86 total=512 final-output-only-reduction=1
+expert-parallel: node=hier_ep6.real_quant_local_partial weight=blk.0.ffn_gate_exps.weight rank=3/6 first=256 local=85 total=512 final-output-only-reduction=1
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x10031eac3f0: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x100312a8600: requires exactly two Meta backends plus CPU
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_xs
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_xs
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_xs
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_xs
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_xs
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_xs
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-nested-gpu-ar sequence=4 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+meta-nested-gpu-ar sequence=5 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-nested-gpu-ar sequence=6 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x100312ecf30: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x100312a6650: requires exactly two Meta backends plus CPU
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_s
+optimization path device=0 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=1 selected=1 reason=native_volta_kernel_with_contiguous_expert_range tokens=8 width=640 auxiliary=10 count=1
+optimization path device=0 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=1 selected=1 reason=native_volta_kernel_with_contiguous_expert_range tokens=8 width=640 auxiliary=10 count=2
+optimization path device=1 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=1 selected=1 reason=native_volta_kernel_with_contiguous_expert_range tokens=8 width=640 auxiliary=10 count=1
+optimization path device=1 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=1 selected=1 reason=native_volta_kernel_with_contiguous_expert_range tokens=8 width=640 auxiliary=10 count=2
+optimization path device=2 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=1 selected=1 reason=native_volta_kernel_with_contiguous_expert_range tokens=8 width=640 auxiliary=10 count=1
+optimization path device=2 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=1 selected=1 reason=native_volta_kernel_with_contiguous_expert_range tokens=8 width=640 auxiliary=10 count=2
+optimization path device=3 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=1 selected=1 reason=native_volta_kernel_with_contiguous_expert_range tokens=8 width=640 auxiliary=10 count=1
+optimization path device=3 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=1 selected=1 reason=native_volta_kernel_with_contiguous_expert_range tokens=8 width=640 auxiliary=10 count=2
+optimization path device=4 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=1 selected=1 reason=native_volta_kernel_with_contiguous_expert_range tokens=8 width=640 auxiliary=10 count=1
+optimization path device=4 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=1 selected=1 reason=native_volta_kernel_with_contiguous_expert_range tokens=8 width=640 auxiliary=10 count=2
+optimization path device=5 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=1 selected=1 reason=native_volta_kernel_with_contiguous_expert_range tokens=8 width=640 auxiliary=10 count=1
+optimization path device=5 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=1 selected=1 reason=native_volta_kernel_with_contiguous_expert_range tokens=8 width=640 auxiliary=10 count=2
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_s
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_s
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_s
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_s
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq2_s
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+meta-nested-gpu-ar sequence=7 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+meta-nested-gpu-ar sequence=8 route=p2p6-rank-order ranks=A0,A1,A2,B0,B1,B2 bytes=1638400 tensors=6 host_stage=0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x10031ec7200: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x100312a3bf0: requires exactly two Meta backends plus CPU
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq3_xxs
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq3_xxs
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq3_xxs
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq3_xxs
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq3_xxs
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq3_xxs
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x10031412f60: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x100312a12a0: requires exactly two Meta backends plus CPU
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq3_s
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq3_s
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq3_s
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq3_s
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq3_s
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq3_s
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x100312ea1b0: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x10031ee49d0: requires exactly two Meta backends plus CPU
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq4_nl
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002dbc2760 device=0 uid=845 nodes=1 mode=capture count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002dbc39e0 device=1 uid=847 nodes=1 mode=capture count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002dbc4d00 device=2 uid=849 nodes=1 mode=capture count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002dbc6040 device=3 uid=851 nodes=1 mode=capture count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002dbc7380 device=4 uid=853 nodes=1 mode=capture count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1002dbc86c0 device=5 uid=855 nodes=1 mode=capture count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002fd05180 device=0 uid=861 nodes=1 mode=eager reason=shape_or_binding_changed node= op=none count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002fd06400 device=1 uid=862 nodes=1 mode=eager reason=shape_or_binding_changed node= op=none count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002fd07680 device=2 uid=863 nodes=1 mode=eager reason=shape_or_binding_changed node= op=none count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1003008ae90 device=3 uid=864 nodes=1 mode=eager reason=shape_or_binding_changed node= op=none count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1003008c130 device=4 uid=865 nodes=1 mode=eager reason=shape_or_binding_changed node= op=none count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1003008d470 device=5 uid=866 nodes=1 mode=eager reason=shape_or_binding_changed node= op=none count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002fd05180 device=0 uid=879 nodes=1 mode=eager reason=shape_or_binding_changed node= op=none count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002fd06400 device=1 uid=880 nodes=1 mode=eager reason=shape_or_binding_changed node= op=none count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002fd07680 device=2 uid=881 nodes=1 mode=eager reason=shape_or_binding_changed node= op=none count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1003008ae90 device=3 uid=882 nodes=1 mode=eager reason=shape_or_binding_changed node= op=none count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1003008c130 device=4 uid=883 nodes=1 mode=eager reason=shape_or_binding_changed node= op=none count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1003008d470 device=5 uid=884 nodes=1 mode=eager reason=shape_or_binding_changed node= op=none count=2
+CUDA graph path active ctx=0x1002dbc2760 device=0 uid=887 nodes=1 mode=replay count=2
+CUDA graph path active ctx=0x1002dbc39e0 device=1 uid=888 nodes=1 mode=replay count=2
+CUDA graph path active ctx=0x1002dbc4d00 device=2 uid=889 nodes=1 mode=replay count=2
+CUDA graph path active ctx=0x1002dbc6040 device=3 uid=890 nodes=1 mode=replay count=2
+CUDA graph path active ctx=0x1002dbc7380 device=4 uid=891 nodes=1 mode=replay count=2
+CUDA graph path active ctx=0x1002dbc86c0 device=5 uid=892 nodes=1 mode=replay count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002dbc7380 device=4 uid=911 nodes=3 mode=eager reason=shape_or_binding_changed node= op=none count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002dbc86c0 device=5 uid=912 nodes=3 mode=eager reason=shape_or_binding_changed node= op=none count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002dbc4d00 device=2 uid=909 nodes=3 mode=eager reason=shape_or_binding_changed node= op=none count=2
+CUDA graph fallback ctx=0x1002dbc2760 device=0 uid=907 nodes=3 mode=eager reason=shape_or_binding_changed node= op=none count=2
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq4_nl
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002dbc39e0 device=1 uid=908 nodes=3 mode=eager reason=shape_or_binding_changed node= op=none count=2
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq4_nl
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x1002dbc6040 device=3 uid=910 nodes=3 mode=eager reason=shape_or_binding_changed node= op=none count=2
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq4_nl
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq4_nl
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=iq4_nl
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1003144d520: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x10031eed880: requires exactly two Meta backends plus CPU
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=q2_0
+EP fallback: GGML_SM70_MOE_REWORK skipped; standard MMVQ maps global routes to local expert slices
+GGUF_CASE name=blk.1.ffn_gate_exps.weight type=iq2_xxs ne=2560,640,512 bytes=216268800 offset=2016154944
+GGUF_CASE name=blk.0.ffn_gate_exps.weight type=iq2_xs ne=2560,640,512 bytes=242483200 offset=1227835328
+GGUF_CASE name=blk.12.ffn_gate_exps.weight type=iq2_s ne=2560,640,512 bytes=268697600 offset=11190584128
+GGUF_CASE name=blk.35.ffn_gate_exps.weight type=iq3_xxs ne=2560,640,512 bytes=321126400 offset=33501050944
+GGUF_CASE name=blk.8.ffn_gate_exps.weight type=iq3_s ne=2560,640,512 bytes=360448000 offset=7846859968
+GGUF_CASE name=blk.0.ffn_down_exps.weight type=iq4_nl ne=640,2560,512 bytes=471859200 offset=755054528
+GGUF_CASE name=blk.1.ffn_down_exps.weight type=q2_0 ne=640,2560,512 bytes=235929600 offset=1779303744
+PASS blk.1.ffn_gate_exps.weight/flat6/A foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_gate_exps.weight/nested/A foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_gate_exps.weight/flat6/B foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_gate_exps.weight/nested/B foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_gate_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_gate_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=640
+PASS REAL_FORMAT type=iq2_xxs tensor=blk.1.ffn_gate_exps.weight T=64 bytes=216268800 ABA=PASS
+PASS blk.0.ffn_gate_exps.weight/flat6/A foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_gate_exps.weight/nested/A foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_gate_exps.weight/flat6/B foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_gate_exps.weight/nested/B foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_gate_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_gate_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=640
+PASS REAL_FORMAT type=iq2_xs tensor=blk.0.ffn_gate_exps.weight T=64 bytes=242483200 ABA=PASS
+PASS blk.12.ffn_gate_exps.weight/flat6/A foreign_zero=1 owners=6 routes=640
+PASS blk.12.ffn_gate_exps.weight/nested/A foreign_zero=1 owners=6 routes=640
+PASS blk.12.ffn_gate_exps.weight/flat6/B foreign_zero=1 owners=6 routes=640
+PASS blk.12.ffn_gate_exps.weight/nested/B foreign_zero=1 owners=6 routes=640
+PASS blk.12.ffn_gate_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=640
+PASS blk.12.ffn_gate_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=640
+PASS REAL_FORMAT type=iq2_s tensor=blk.12.ffn_gate_exps.weight T=64 bytes=268697600 ABA=PASS
+PASS blk.35.ffn_gate_exps.weight/flat6/A foreign_zero=1 owners=6 routes=640
+PASS blk.35.ffn_gate_exps.weight/nested/A foreign_zero=1 owners=6 routes=640
+PASS blk.35.ffn_gate_exps.weight/flat6/B foreign_zero=1 owners=6 routes=640
+PASS blk.35.ffn_gate_exps.weight/nested/B foreign_zero=1 owners=6 routes=640
+PASS blk.35.ffn_gate_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=640
+PASS blk.35.ffn_gate_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=640
+PASS REAL_FORMAT type=iq3_xxs tensor=blk.35.ffn_gate_exps.weight T=64 bytes=321126400 ABA=PASS
+PASS blk.8.ffn_gate_exps.weight/flat6/A foreign_zero=1 owners=6 routes=640
+PASS blk.8.ffn_gate_exps.weight/nested/A foreign_zero=1 owners=6 routes=640
+PASS blk.8.ffn_gate_exps.weight/flat6/B foreign_zero=1 owners=6 routes=640
+PASS blk.8.ffn_gate_exps.weight/nested/B foreign_zero=1 owners=6 routes=640
+PASS blk.8.ffn_gate_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=640
+PASS blk.8.ffn_gate_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=640
+PASS REAL_FORMAT type=iq3_s tensor=blk.8.ffn_gate_exps.weight T=64 bytes=360448000 ABA=PASS
+PASS blk.0.ffn_down_exps.weight/flat6/A foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_down_exps.weight/nested/A foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_down_exps.weight/flat6/B foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_down_exps.weight/nested/B foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_down_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=640
+PASS blk.0.ffn_down_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=640
+PASS REAL_FORMAT type=iq4_nl tensor=blk.0.ffn_down_exps.weight T=64 bytes=471859200 ABA=PASS
+PASS blk.1.ffn_down_exps.weight/flat6/A foreign_zero=1 owners=6 rsm70 decode linear chunks active: moe tokens=64 chunk=8 type=q2_0
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=q2_0
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=q2_0
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=q2_0
+sm70 decode linear chunks active: moe tokens=64 chunk=8 type=q2_0
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x10031eb7820: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1005c6b90b0: requires exactly two Meta backends plus CPU
+[mp-dbg] mul_mat_id hook: type=17 ne11=1 reg=0 ptr=0x7ff064c00000 ne=[2560,640,85]
+optimization path device=0 path=ep_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route tokens=8 width=640 auxiliary=85 count=1
+[mp-dbg] mul_mat_id hook: type=17 ne11=1 reg=0 ptr=0x7ff067400000 ne=[2560,640,85]
+optimization path device=1 path=ep_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route tokens=8 width=640 auxiliary=85 count=1
+[mp-dbg] mul_mat_id hook: type=17 ne11=1 reg=0 ptr=0x7ff069c00000 ne=[2560,640,86]
+optimization path device=2 path=ep_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route tokens=8 width=640 auxiliary=86 count=1
+[mp-dbg] mul_mat_id hook: type=17 ne11=1 reg=0 ptr=0x7ff06c400000 ne=[2560,640,85]
+optimization path device=3 path=ep_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route tokens=8 width=640 auxiliary=85 count=1
+[mp-dbg] mul_mat_id hook: type=17 ne11=1 reg=0 ptr=0x7ff06ec00000 ne=[2560,640,85]
+optimization path device=4 path=ep_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route tokens=8 width=640 auxiliary=85 count=1
+[mp-dbg] mul_mat_id hook: type=17 ne11=1 reg=0 ptr=0x7ff071400000 ne=[2560,640,86]
+optimization path device=5 path=ep_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route tokens=8 width=640 auxiliary=86 count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=0 path=ep_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route tokens=8 width=640 auxiliary=85 count=2
+CUDA graph fallback ctx=0x1002dbc2760 device=0 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=1 path=ep_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route tokens=8 width=640 auxiliary=85 count=2
+CUDA graph fallback ctx=0x1002dbc39e0 device=1 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=2 path=ep_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route tokens=8 width=640 auxiliary=86 count=2
+CUDA graph fallback ctx=0x1002dbc4d00 device=2 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=3 path=ep_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route tokens=8 width=640 auxiliary=85 count=2
+CUDA graph fallback ctx=0x1002dbc6040 device=3 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=4 path=ep_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route tokens=8 width=640 auxiliary=85 count=2
+CUDA graph fallback ctx=0x1002dbc7380 device=4 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=5 path=ep_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route tokens=8 width=640 auxiliary=86 count=2
+CUDA graph fallback ctx=0x1002dbc86c0 device=5 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x1002fd05180 device=0 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x1002fd06400 device=1 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x1002fd07680 device=2 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x1003008ae90 device=3 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x1003008c130 device=4 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x1003008d470 device=5 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x100312e7e00: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x100312e9870: requires exactly two Meta backends plus CPU
+optimization path device=0 path=ep_mmq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route_grouped_or_regular tokens=128 width=640 auxiliary=85 count=1
+optimization path device=0 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=128 width=640 auxiliary=85 count=1
+optimization path device=0 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_type_shared_or_explicit_override tokens=128 width=640 auxiliary=85 count=1
+optimization path device=1 path=ep_mmq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route_grouped_or_regular tokens=128 width=640 auxiliary=85 count=1
+optimization path device=1 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=128 width=640 auxiliary=85 count=1
+optimization path device=1 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_type_shared_or_explicit_override tokens=128 width=640 auxiliary=85 count=1
+optimization path device=2 path=ep_mmq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route_grouped_or_regular tokens=128 width=640 auxiliary=86 count=1
+optimization path device=2 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=128 width=640 auxiliary=86 count=1
+optimization path device=2 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_type_shared_or_explicit_override tokens=128 width=640 auxiliary=86 count=1
+optimization path device=3 path=ep_mmq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route_grouped_or_regular tokens=128 width=640 auxiliary=85 count=1
+optimization path device=3 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=128 width=640 auxiliary=85 count=1
+optimization path device=3 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_type_shared_or_explicit_override tokens=128 width=640 auxiliary=85 count=1
+optimization path device=4 path=ep_mmq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route_grouped_or_regular tokens=128 width=640 auxiliary=85 count=1
+optimization path device=4 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=128 width=640 auxiliary=85 count=1
+optimization path device=4 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_type_shared_or_explicit_override tokens=128 width=640 auxiliary=85 count=1
+optimization path device=5 path=ep_mmq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route_grouped_or_regular tokens=128 width=640 auxiliary=86 count=1
+optimization path device=5 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=128 width=640 auxiliary=86 count=1
+optimization path device=5 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_type_shared_or_explicit_override tokens=128 width=640 auxiliary=86 count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=0 path=ep_mmq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route_grouped_or_regular tokens=128 width=640 auxiliary=85 count=2
+optimization path device=0 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=128 width=640 auxiliary=85 count=2
+optimization path device=0 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_type_shared_or_explicit_override tokens=128 width=640 auxiliary=85 count=2
+CUDA graph fallback ctx=0x1002dbc2760 device=0 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=1 path=ep_mmq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route_grouped_or_regular tokens=128 width=640 auxiliary=85 count=2
+optimization path device=1 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=128 width=640 auxiliary=85 count=2
+optimization path device=1 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_type_shared_or_explicit_override tokens=128 width=640 auxiliary=85 count=2
+CUDA graph fallback ctx=0x1002dbc39e0 device=1 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=2 path=ep_mmq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route_grouped_or_regular tokens=128 width=640 auxiliary=86 count=2
+optimization path device=2 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=128 width=640 auxiliary=86 count=2
+optimization path device=2 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_type_shared_or_explicit_override tokens=128 width=640 auxiliary=86 count=2
+CUDA graph fallback ctx=0x1002dbc4d00 device=2 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=3 path=ep_mmq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route_grouped_or_regular tokens=128 width=640 auxiliary=85 count=2
+optimization path device=3 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=128 width=640 auxiliary=85 count=2
+optimization path device=3 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_type_shared_or_explicit_override tokens=128 width=640 auxiliary=85 count=2
+CUDA graph fallback ctx=0x1002dbc6040 device=3 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=4 path=ep_mmq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route_grouped_or_regular tokens=128 width=640 auxiliary=85 count=2
+optimization path device=4 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=128 width=640 auxiliary=85 count=2
+optimization path device=4 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_type_shared_or_explicit_override tokens=128 width=640 auxiliary=85 count=2
+CUDA graph fallback ctx=0x1002dbc7380 device=4 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=5 path=ep_mmq scope=host_dispatch_or_capture requested=1 selected=1 reason=contiguous_expert_route_grouped_or_regular tokens=128 width=640 auxiliary=86 count=2
+optimization path device=5 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_launch tokens=128 width=640 auxiliary=86 count=2
+optimization path device=5 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_type_shared_or_explicit_override tokens=128 width=640 auxiliary=86 count=2
+CUDA graph fallback ctx=0x1002dbc86c0 device=5 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x1002fd05180 device=0 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x1002fd06400 device=1 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x1002fd07680 device=2 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x1003008ae90 device=3 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x1003008c130 device=4 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph fallback ctx=0x1003008d470 device=5 reason=exec_update_failed update_result=2 action=reinstantiate
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1003103ac10: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1005c77b2d0: requires exactly two Meta backends plus CPU
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1003bedc2b0: requires exactly two Meta backends plus CPU
+meta-compact-arena backend=0x1002f7da900 subgraphs=2 graph_nodes=4 bytes=55488 saved=960
+optimization path device=0 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=8 width=640 auxiliary=17 count=1
+optimization path device=0 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=8 width=640 auxiliary=85 count=1
+optimization path device=1 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=8 width=640 auxiliary=17 count=1
+optimization path device=1 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=8 width=640 auxiliary=85 count=1
+optimization path device=2 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=8 width=640 auxiliary=17 count=1
+optimization path device=2 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=8 width=640 auxiliary=86 count=1
+optimization path device=3 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=8 width=640 auxiliary=17 count=1
+optimization path device=3 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=8 width=640 auxiliary=85 count=1
+optimization path device=4 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=8 width=640 auxiliary=17 count=1
+optimization path device=4 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=8 width=640 auxiliary=85 count=1
+optimization path device=5 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=8 width=640 auxiliary=17 count=1
+optimization path device=5 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=8 width=640 auxiliary=86 count=1
+meta-compact-arena backend=0x1002f7da900 subgraphs=2 graph_nodes=25 bytes=61536 saved=7200
+optimization path device=0 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=8 width=640 auxiliary=17 count=2
+optimization path device=0 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=8 width=640 auxiliary=85 count=2
+optimization path device=1 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=8 width=640 auxiliary=17 count=2
+optimization path device=1 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=8 width=640 auxiliary=85 count=2
+optimization path device=2 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=8 width=640 auxiliary=17 count=2
+optimization path device=2 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=8 width=640 auxiliary=86 count=2
+optimization path device=3 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=8 width=640 auxiliary=17 count=2
+optimization path device=3 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=8 width=640 auxiliary=85 count=2
+optimization path device=4 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=8 width=640 auxiliary=17 count=2
+optimization path device=4 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=8 width=640 auxiliary=85 count=2
+optimization path device=5 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=8 width=640 auxiliary=17 count=2
+optimization path device=5 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=8 width=640 auxiliary=86 count=2
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1005c454a80: requires exactly two Meta backends plus CPU
+meta-compact-arena backend=0x100303ab4e0 subgraphs=2 graph_nodes=4 bytes=6848 saved=320
+meta-compact-arena backend=0x1002ae831c0 subgraphs=1 graph_nodes=4 bytes=9744 saved=0
+meta-compact-arena backend=0x10030410b50 subgraphs=1 graph_nodes=4 bytes=9744 saved=0
+meta-compact-arena backend=0x100303ab4e0 subgraphs=2 graph_nodes=25 bytes=8864 saved=2400
+meta-compact-arena backend=0x1002ae831c0 subgraphs=1 graph_nodes=24 bytes=12768 saved=0
+meta-compact-arena backend=0x10030410b50 subgraphs=1 graph_nodes=24 bytes=12768 saved=0
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x100312af9b0: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1003c1a01c0: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1003c172450: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1003c172450: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x100312f1cd0: requires exactly two Meta backends plus CPU
+optimization path device=0 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_or_backend_ineligible tokens=64 width=640 auxiliary=17 count=1
+optimization path device=1 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_or_backend_ineligible tokens=64 width=640 auxiliary=17 count=1
+optimization path device=2 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_or_backend_ineligible tokens=64 width=640 auxiliary=17 count=1
+optimization path device=3 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_or_backend_ineligible tokens=64 width=640 auxiliary=17 count=1
+optimization path device=4 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_or_backend_ineligible tokens=64 width=640 auxiliary=17 count=1
+optimization path device=5 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_or_backend_ineligible tokens=64 width=640 auxiliary=17 count=1
+optimization path device=0 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_or_backend_ineligible tokens=64 width=640 auxiliary=17 count=2
+optimization path device=1 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_or_backend_ineligible tokens=64 width=640 auxiliary=17 count=2
+optimization path device=2 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_or_backend_ineligible tokens=64 width=640 auxiliary=17 count=2
+optimization path device=3 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_or_backend_ineligible tokens=64 width=640 auxiliary=17 count=2
+optimization path device=4 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_or_backend_ineligible tokens=64 width=640 auxiliary=17 count=2
+optimization path device=5 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_or_backend_ineligible tokens=64 width=640 auxiliary=17 count=2
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1003c2686d0: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1005c6eae40: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1005c6eae40: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1005c688b30: requires exactly two Meta backends plus CPU
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1005c688b30: requires exactly two Meta backends plus CPU
+DENSE_PROGRESS construct flat
+P2P AllReduce fixed-grid blocks=64 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: cold collectives use rank-ordered P2P AllReduce
+ggml_backend_meta_context: using in-graph P2P AllReduce
+meta-cpu-async-copy context=0x1005c45a200 instance=203 requested=1 enabled=1 reason=per_context_opt_in max_copy_bytes=1048576
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1003c267360: requires exactly two Meta backends plus CPU
+DENSE_PROGRESS construct nested
+GGML_SCHED_META_SINGLE_COPY_EVENTS requested but disabled for scheduler=0x1005c5c43f0: requires exactly two Meta backends plus CPU
+DENSE_PROGRESS both constructed
+meta-context-submit FIFO active context=0x1005c45a200 members=3 CPU_enqueue_atomic=1 GPU_tail_wait=1
+meta-compact-arena backend=0x1003145c3c0 subgraphs=1 graph_nodes=3 bytes=9696 saved=0
+CUDA graph path config ctx=0x1004bde5d30 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1004bde5d30 device=0 uid=1979 nodes=3 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+sm70 decode linear chunks active: dense columns=64 chunk=8 type=iq4_xs
+[mp-dbg] mul_mat hook: type=23 ne11=8 reg=0 ptr=0x7ffcddc85400
+[mp-dbg] mul_mat hook: type=23 ne11=8 reg=0 ptr=0x7ffcddc85400
+[mp-dbg] mul_mat hook: type=23 ne11=8 reg=0 ptr=0x7ffcddc85400
+[mp-dbg] mul_mat hook: type=23 ne11=8 reg=0 ptr=0x7ffcddc85400
+[mp-dbg] mul_mat hook: type=23 ne11=8 reg=0 ptr=0x7ffcddc85400
+[mp-dbg] mul_mat hook: type=23 ne11=8 reg=0 ptr=0x7ffcddc85400
+sm70 decode linear chunks active: dense columns=64 chunk=8 type=iq3_s
+CUDA graph path config ctx=0x1004bdea3d0 device=1 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1004bdea3d0 device=1 uid=1980 nodes=3 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA graph path config ctx=0x1005c444dd0 device=2 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=1 graph_opt_requested=1
+CUDA graph fallback ctx=0x1005c444dd0 device=2 uid=1981 nodes=3 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA Graph id 1984 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 1985 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 1986 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 1987 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 1988 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 1989 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 1979 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1004bde5d30 device=0 uid=1979 nodes=3 mode=capture count=1
+CUDA Graph id 1980 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1004bdea3d0 device=1 uid=1980 nodes=3 mode=capture count=1
+CUDA Graph id 1981 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x1005c444dd0 device=2 uid=1981 nodes=3 mode=capture count=1
+CUDA Graph id 1984 reused
+CUDA Graph id 1985 reused
+CUDA Graph id 1986 reused
+CUDA Graph id 1987 reused
+CUDA Graph id 1988 reused
+CUDA Graph id 1989 reused
+CUDA Graph id 1984 reused
+CUDA Graph id 1985 reused
+CUDA Graph id 1986 reused
+CUDA Graph id 1987 reused
+CUDA Graph id 1988 reused
+CUDA Graph id 1989 reused
+CUDA Graph id 1979 reused
+CUDA graph path active ctx=0x1004bde5d30 device=0 uid=1979 nodes=3 mode=replay count=1
+CUDA Graph id 1980 reused
+CUDA graph path active ctx=0x1004bdea3d0 device=1 uid=1980 nodes=3 mode=replay count=1
+CUDA Graph id 1981 reused
+CUDA graph path active ctx=0x1005c444dd0 device=2 uid=1981 nodes=3 mode=replay count=1
+CUDA Graph id 1984 reused
+CUDA Graph id 1985 reused
+CUDA Graph id 1986 reused
+CUDA Graph id 1987 reused
+CUDA Graph id 1988 reused
+CUDA Graph id 1989 reused
+outes=640
+PASS blk.1.ffn_down_exps.weight/nested/A foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_down_exps.weight/flat6/B foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_down_exps.weight/nested/B foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_down_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=640
+PASS blk.1.ffn_down_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=640
+PASS REAL_FORMAT type=q2_0 tensor=blk.1.ffn_down_exps.weight T=64 bytes=235929600 ABA=PASS
+PASS blk.0.ffn_gate_exps.weight/flat6/A foreign_zero=1 owners=6 routes=80
+PASS blk.0.ffn_gate_exps.weight/nested/A foreign_zero=1 owners=6 routes=80
+PASS blk.0.ffn_gate_exps.weight/flat6/B foreign_zero=1 owners=6 routes=80
+PASS blk.0.ffn_gate_exps.weight/nested/B foreign_zero=1 owners=6 routes=80
+PASS blk.0.ffn_gate_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=80
+PASS blk.0.ffn_gate_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=80
+PASS REAL_FORMAT type=iq2_xs tensor=blk.0.ffn_gate_exps.weight T=8 bytes=242483200 ABA=PASS
+PASS blk.0.ffn_gate_exps.weight/flat6/A foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_gate_exps.weight/nested/A foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_gate_exps.weight/flat6/B foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_gate_exps.weight/nested/B foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_gate_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_gate_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=1280
+PASS REAL_FORMAT type=iq2_xs tensor=blk.0.ffn_gate_exps.weight T=128 bytes=242483200 ABA=PASS
+PASS blk.0.ffn_down_exps.weight/flat6/A foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_down_exps.weight/nested/A foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_down_exps.weight/flat6/B foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_down_exps.weight/nested/B foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_down_exps.weight/flat6/A2 foreign_zero=1 owners=6 routes=1280
+PASS blk.0.ffn_down_exps.weight/nested/A2 foreign_zero=1 owners=6 routes=1280
+PASS REAL_FORMAT type=iq4_nl tensor=blk.0.ffn_down_exps.weight T=128 bytes=471859200 ABA=PASS
+FULL_BLOCK0_BYTES complete_weights=956825600 tokens=8 pruned=0
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/flat6/A routes=80 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/nested/A routes=80 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/flat6/B routes=80 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/nested/B routes=80 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/flat6/A2 routes=80 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/nested/A2 routes=80 exact_zero=1
+PASS FULL_BLOCK0_GGUF_MOE T=8 formats=IQ2_XS/IQ2_XS/IQ4_NL all512=1 foreign_zero=1 ABA=PASS
+FULL_BLOCK0_BYTES complete_weights=956825600 tokens=64 pruned=0
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/flat6/A routes=640 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/nested/A routes=640 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/flat6/B routes=640 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/nested/B routes=640 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/flat6/A2 routes=640 exact_zero=1
+PASS FULL_MOE_FOREIGN_ZERO label=full-block0/nested/A2 routes=640 exact_zero=1
+PASS FULL_BLOCK0_GGUF_MOE T=64 formats=IQ2_XS/IQ2_XS/IQ4_NL all512=1 foreign_zero=1 ABA=PASS
+DENSE_SHARED_BYTES complete_gate_up=1574400 gate_type=iq4_xs up_type=iq3_s K=2560 N=640 tokens=64
+DENSE_SHARED_SPLIT K=2560 N=640 reference_tp=3 nested_tp=3 outer_mirror=2 gate_type=iq4_xs up_type=iq3_s source_slices=PASS
+DENSE_SHARED_FRAME label=standaloneTP3/A tokens=64 values=40960
+DENSE_SHARED_FRAME label=nested/island0/A tokens=64 values=40960
+DENSE_SHARED_FRAME label=nested/island1/A tokens=64 values=40960
+DENSE_SHARED_FRAME label=standaloneTP3/B tokens=64 values=40960
+DENSE_SHARED_FRAME label=nested/island0/B tokens=64 values=40960
+DENSE_SHARED_FRAME label=nested/island1/B tokens=64 values=40960
+DENSE_SHARED_FRAME label=standaloneTP3/A2 tokens=64 values=40960
+DENSE_SHARED_FRAME label=nested/island0/A2 tokensCUDA Graph id 1984 reused
+CUDA Graph id 1985 reused
+CUDA Graph id 1986 reused
+CUDA Graph id 1987 reused
+CUDA Graph id 1988 reused
+CUDA Graph id 1989 reused
+meta-nested-gpu-ar-summary context=0x1002fd04aa0 calls=36 log_first=8 topology=2x3
+optimization path summary device=0 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=12 selected=12
+optimization path summary device=0 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=64 selected=64
+optimization path summary device=0 path=ep_mmq scope=host_dispatch_or_capture requested=14 selected=14
+optimization path summary device=0 path=ep_mmvq scope=host_dispatch_or_capture requested=19 selected=19
+optimization path summary device=0 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=90 selected=90
+optimization path summary device=0 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=14 selected=0 fallback_shape_type_shared_or_explicit_override=14
+optimization path summary device=0 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=14 selected=14
+optimization path summary device=0 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=24 selected=12 fallback_shape_or_backend_ineligible=12
+optimization path summary device=1 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=12 selected=12
+optimization path summary device=1 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=64 selected=64
+optimization path summary device=1 path=ep_mmq scope=host_dispatch_or_capture requested=14 selected=14
+optimization path summary device=1 path=ep_mmvq scope=host_dispatch_or_capture requested=19 selected=19
+optimization path summary device=1 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=90 selected=90
+optimization path summary device=1 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=14 selected=0 fallback_shape_type_shared_or_explicit_override=14
+optimization path summary device=1 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=14 selected=14
+optimization path summary device=1 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=24 selected=12 fallback_shape_or_backend_ineligible=12
+optimization path summary device=2 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=12 selected=12
+optimization path summary device=2 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=64 selected=64
+optimization path summary device=2 path=ep_mmq scope=host_dispatch_or_capture requested=14 selected=14
+optimization path summary device=2 path=ep_mmvq scope=host_dispatch_or_capture requested=19 selected=19
+optimization path summary device=2 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=90 selected=90
+optimization path summary device=2 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=14 selected=0 fallback_shape_type_shared_or_explicit_override=14
+optimization path summary device=2 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=14 selected=14
+optimization path summary device=2 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=24 selected=12 fallback_shape_or_backend_ineligible=12
+optimization path summary device=3 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=12 selected=12
+optimization path summary device=3 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=64 selected=64
+optimization path summary device=3 path=ep_mmq scope=host_dispatch_or_capture requested=14 selected=14
+optimization path summary device=3 path=ep_mmvq scope=host_dispatch_or_capture requested=19 selected=19
+optimization path summary device=3 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=90 selected=90
+optimization path summary device=3 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=14 selected=0 fallback_shape_type_shared_or_explicit_override=14
+optimization path summary device=3 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=14 selected=14
+optimization path summary device=3 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=24 selected=12 fallback_shape_or_backend_ineligible=12
+optimization path summary device=4 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=12 selected=12
+optimization path summary device=4 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=64 selected=64
+optimization path summary device=4 path=ep_mmq scope=host_dispatch_or_capture requested=14 selected=14
+optimization path summary device=4 path=ep_mmvq scope=host_dispatch_or_capture requested=19 selected=19
+optimization path summary device=4 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=90 selected=90
+optimization path summary device=4 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=14 selected=0 fallback_shape_type_shared_or_explicit_override=14
+optimization path summary device=4 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=14 selected=14
+optimization path summary device=4 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=24 selected=12 fallback_shape_or_backend_ineligible=12
+optimization path summary device=5 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=12 selected=12
+optimization path summary device=5 path=ep_iq2s_volta scope=host_dispatch_or_capture requested=64 selected=64
+optimization path summary device=5 path=ep_mmq scope=host_dispatch_or_capture requested=14 selected=14
+optimization path summary device=5 path=ep_mmvq scope=host_dispatch_or_capture requested=19 selected=19
+optimization path summary device=5 path=ep_mmvq_chunks scope=host_dispatch_or_capture requested=90 selected=90
+optimization path summary device=5 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=14 selected=0 fallback_shape_type_shared_or_explicit_override=14
+optimization path summary device=5 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=14 selected=14
+optimization path summary device=5 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=24 selected=12 fallback_shape_or_backend_ineligible=12
+=64 values=40960
+DENSE_SHARED_FRAME label=nested/island1/A2 tokens=64 values=40960
+PASS DENSE_SHARED_MIRROR_TP3 T=64 exact_reference_tp3=1 island_mirror=1 ABA=PASS
+HIERARCHICAL_EP6_REAL_FIXTURE_PASS model_load=0 core_modified=0 full_precision_changed=0

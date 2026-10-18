@@ -1,0 +1,19 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+QSA_DIRECT_LIST_FIXTURE device=0 mode=direct_list env_GGML_CUDA_QSA_PREFILL_DIRECT_LIST=1 hpw_env=2 fp64_oracle=0 no_model=1 capacity=16384 view=8192 width=2051 padded=2052
+QSA_DISPATCH_LOG requested=1 enabled=1
+QSA_LAUNCH_EXPECTED case=gqa8_t128 nsm=80 n_split=3 per=171 n_work=513 baseline_dynamic_smem_bytes=5472 direct_dynamic_smem_bytes=0 reduction_static_smem_bytes=4352 hpw=4 n_grp=2
+optimization path device=0 path=qsa_prefill_head_warps scope=host_dispatch_or_capture requested=1 selected=1 reason=original_per_head_math_hpw_in_width_warps_in_auxiliary tokens=128 width=2 auxiliary=4 count=1
+optimization path device=0 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=1 selected=1 reason=direct_list_dynamic_smem_bytes_in_auxiliary tokens=128 width=513 auxiliary=0 count=1
+QSA_WARMUP PASS case=gqa8_t128 full_values=524288 exact=finite canary=PASS
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=0 path=qsa_prefill_head_warps scope=host_dispatch_or_capture requested=1 selected=1 reason=original_per_head_math_hpw_in_width_warps_in_auxiliary tokens=128 width=2 auxiliary=4 count=2
+optimization path device=0 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=1 selected=1 reason=direct_list_dynamic_smem_bytes_in_auxiliary tokens=128 width=513 auxiliary=0 count=2
+QSA_GRAPH_WALL case=gqa8_t128 seed=0 rep=1 ms=1.675 replay_exact=1
+QSA_GRAPH_WALL case=gqa8_t128 seed=0 rep=2 ms=1.430 replay_exact=1
+QSA_GRAPH_WALL case=gqa8_t128 seed=0 rep=3 ms=1.489 replay_exact=1
+QSA_TIMING_SUMMARY case=gqa8_t128 reps=3 mean_graph_wall_ms=1.531
+QSA_CHANGED_INPUT PASS case=gqa8_t128 output_changed=1 seed0_seed1=distinct canary=PASS
+QSA_OUTPUT_FILES case=gqa8_t128 seed0=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-direct-list-prefill-20261016/results/qsa-head-warps-gpu3-v82-20261016T075323Z/gqa8_t128/hpw2/gqa8_t128-seed0.bin seed1=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-direct-list-prefill-20261016/results/qsa-head-warps-gpu3-v82-20261016T075323Z/gqa8_t128/hpw2/gqa8_t128-seed1.bin full_values=524288
+optimization path summary device=0 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=2 selected=2
+optimization path summary device=0 path=qsa_prefill_head_warps scope=host_dispatch_or_capture requested=2 selected=2

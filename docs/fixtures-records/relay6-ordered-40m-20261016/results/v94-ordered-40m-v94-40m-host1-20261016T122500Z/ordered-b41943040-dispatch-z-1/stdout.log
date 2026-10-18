@@ -1,0 +1,30 @@
+DISPATCH_CONFIG mode=ordered entry=dispatch elements=10485760 payload_bytes=41943040 compact=1 relay_max=41943040 ring_min=204800 blocks=64 zero_rank=-1 contexts=1
+COMM_READY context=0 cap_floats=10485760 small_cap_floats=10485760 segment_cap_floats=1747627 small_stage_mib=480.0000 segmented_stage_mib=80.0000 payload_mib=40.000
+HBM phase=after_context_0 rank=0 free_before_mib=15817.750 free_after_mib=15173.750 added_mib=644.000
+HBM phase=after_context_0 rank=1 free_before_mib=15817.750 free_after_mib=15173.750 added_mib=644.000
+HBM phase=after_context_0 rank=2 free_before_mib=15817.750 free_after_mib=15173.750 added_mib=644.000
+HBM phase=after_context_0 rank=3 free_before_mib=15817.750 free_after_mib=15173.750 added_mib=644.000
+HBM phase=after_context_0 rank=4 free_before_mib=15813.312 free_after_mib=15169.312 added_mib=644.000
+HBM phase=after_context_0 rank=5 free_before_mib=15814.375 free_after_mib=15170.375 added_mib=644.000
+GRAPH_READY mode=ordered context=0 ranks=6 actual_dispatcher=1 payload_bytes=41943040
+INPUT_CHANGE mode=ordered entry=dispatch context=0 rank=0 changed=1
+INPUT_CHANGE mode=ordered entry=dispatch context=0 rank=1 changed=1
+INPUT_CHANGE mode=ordered entry=dispatch context=0 rank=2 changed=1
+INPUT_CHANGE mode=ordered entry=dispatch context=0 rank=3 changed=1
+INPUT_CHANGE mode=ordered entry=dispatch context=0 rank=4 changed=1
+INPUT_CHANGE mode=ordered entry=dispatch context=0 rank=5 changed=1
+PASS_OUTPUT mode=ordered entry=dispatch context=0 frame=A0 exact=1 canary=1 zero_rank=-1 payload_bytes=41943040
+TIMING mode=ordered context=0 rep=0 frame=0 wall_ms=0.153 max_gpu_event_ms=4.369 gpu_event_ms=[4.097,4.360,4.343,4.049,4.336,4.369]
+PASS_OUTPUT mode=ordered entry=dispatch context=0 frame=B exact=1 canary=1 zero_rank=-1 payload_bytes=41943040
+TIMING mode=ordered context=0 rep=1 frame=1 wall_ms=0.093 max_gpu_event_ms=5.386 gpu_event_ms=[4.377,4.946,5.386,4.543,4.945,4.938]
+PASS_OUTPUT mode=ordered entry=dispatch context=0 frame=A2 exact=1 canary=1 zero_rank=-1 payload_bytes=41943040
+TIMING mode=ordered context=0 rep=2 frame=0 wall_ms=0.091 max_gpu_event_ms=4.356 gpu_event_ms=[4.019,4.322,4.317,3.995,4.314,4.356]
+PASS_ABA mode=ordered entry=dispatch context=0 frames=A0,B,A2 exact=1 zero_rank=-1 payload_bytes=41943040
+PASS_NEGATIVE_ZERO mode=ordered entry=dispatch context=0 zero_rank=-1 expected_bits=80000000 exact=1 canary=1 payload_bytes=41943040
+SUMMARY mode=ordered entry=dispatch payload_bytes=41943040 zero_rank=-1 context=0 reps=3 avg_wall_ms=0.112 avg_max_gpu_event_ms=4.704
+HBM phase=after_graphs rank=0 free_before_mib=15817.750 free_after_mib=15173.750 added_mib=644.000
+HBM phase=after_graphs rank=1 free_before_mib=15817.750 free_after_mib=15173.750 added_mib=644.000
+HBM phase=after_graphs rank=2 free_before_mib=15817.750 free_after_mib=15173.750 added_mib=644.000
+HBM phase=after_graphs rank=3 free_before_mib=15817.750 free_after_mib=15173.750 added_mib=644.000
+HBM phase=after_graphs rank=4 free_before_mib=15813.312 free_after_mib=15169.312 added_mib=644.000
+HBM phase=after_graphs rank=5 free_before_mib=15814.375 free_after_mib=15170.375 added_mib=644.000

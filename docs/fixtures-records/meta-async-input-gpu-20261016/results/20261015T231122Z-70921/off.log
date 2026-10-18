@@ -1,0 +1,78 @@
+ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+P2P AllReduce fixed-grid blocks=8 threads=512 flag_capacity=64 immutable_per_communicator=1
+ggml_cuda_p2p_ar_init: in-graph P2P AllReduce on 3 devices
+ggml_backend_meta_context: using in-graph P2P AllReduce
+RUN_CONFIG mode=off GGML_META_ASYNC_INPUTS=0 copy_only=1
+DEVICE member=0 name=CUDA0 pci=0035:03:00.0
+DEVICE member=1 name=CUDA1 pci=0035:04:00.0
+DEVICE member=2 name=CUDA2 pci=0035:05:00.0
+GRAPH_NODE_PLAN family=A name=shared_async_mirrored_weight op=NONE buffer_meta=1 usage=1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=A name=shared_async_partial_weight op=NONE buffer_meta=1 usage=1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=A name=shared_async_bias op=NONE buffer_meta=1 usage=1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=A name=A_shared_mirrored_matmul op=MUL_MAT buffer_meta=0 usage=-1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=A name=A_shared_partial_matmul op=MUL_MAT buffer_meta=0 usage=-1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=A name=A_input_add op=ADD buffer_meta=0 usage=-1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=A name=node_3 op=ADD buffer_meta=0 usage=-1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=A name=node_4 op=ADD buffer_meta=0 usage=-1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=A name=node_5 op=SQR buffer_meta=0 usage=-1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=A name=A_async_input_output op=SUM buffer_meta=0 usage=-1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+INPUT_SCOPE_PLAN family=A tensor=A_compute_input_0 flag_input=1 buffer_meta=1 usage=COMPUTE scheduler_backend=Meta graph_leaf=1
+INPUT_SCOPE_PLAN family=A tensor=A_compute_input_1 flag_input=1 buffer_meta=1 usage=COMPUTE scheduler_backend=Meta graph_leaf=1
+INPUT_SCOPE_PLAN family=A tensor=A_compute_input_2 flag_input=1 buffer_meta=1 usage=COMPUTE scheduler_backend=Meta graph_leaf=1
+GRAPH_NODE_AUDIT family=A index=0 name=A_shared_mirrored_matmul op=MUL_MAT buffer_meta=0 assigned_backend=Meta(CUDA0,CUDA1,CUDA2) view_src=none
+GRAPH_NODE_AUDIT family=A index=1 name=A_shared_partial_matmul op=MUL_MAT buffer_meta=0 assigned_backend=Meta(CUDA0,CUDA1,CUDA2) view_src=none
+GRAPH_NODE_AUDIT family=A index=2 name=A_input_add op=ADD buffer_meta=0 assigned_backend=Meta(CUDA0,CUDA1,CUDA2) view_src=none
+GRAPH_NODE_AUDIT family=A index=3 name=node_3 op=ADD buffer_meta=0 assigned_backend=Meta(CUDA0,CUDA1,CUDA2) view_src=none
+GRAPH_NODE_AUDIT family=A index=4 name=node_4 op=ADD buffer_meta=0 assigned_backend=Meta(CUDA0,CUDA1,CUDA2) view_src=none
+GRAPH_NODE_AUDIT family=A index=5 name=node_5 op=SQR buffer_meta=0 assigned_backend=Meta(CUDA0,CUDA1,CUDA2) view_src=none
+GRAPH_NODE_AUDIT family=A index=6 name=A_async_input_output op=SUM buffer_meta=0 assigned_backend=Meta(CUDA0,CUDA1,CUDA2) view_src=none
+GRAPH_NODE_PLAN family=B name=shared_async_mirrored_weight op=NONE buffer_meta=1 usage=1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=B name=shared_async_partial_weight op=NONE buffer_meta=1 usage=1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=B name=shared_async_bias op=NONE buffer_meta=1 usage=1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=B name=B_shared_mirrored_matmul op=MUL_MAT buffer_meta=0 usage=-1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=B name=B_shared_partial_matmul op=MUL_MAT buffer_meta=0 usage=-1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=B name=B_input_add op=ADD buffer_meta=0 usage=-1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=B name=node_3 op=ADD buffer_meta=0 usage=-1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=B name=node_4 op=ADD buffer_meta=0 usage=-1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=B name=node_5 op=SQR buffer_meta=0 usage=-1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+GRAPH_NODE_PLAN family=B name=B_async_input_output op=SUM buffer_meta=0 usage=-1 assigned_backend=Meta(CUDA0,CUDA1,CUDA2)
+INPUT_SCOPE_PLAN family=B tensor=B_compute_input_0 flag_input=1 buffer_meta=1 usage=COMPUTE scheduler_backend=Meta graph_leaf=1
+INPUT_SCOPE_PLAN family=B tensor=B_compute_input_1 flag_input=1 buffer_meta=1 usage=COMPUTE scheduler_backend=Meta graph_leaf=1
+INPUT_SCOPE_PLAN family=B tensor=B_compute_input_2 flag_input=1 buffer_meta=1 usage=COMPUTE scheduler_backend=Meta graph_leaf=1
+GRAPH_NODE_AUDIT family=B index=0 name=B_shared_mirrored_matmul op=MUL_MAT buffer_meta=0 assigned_backend=Meta(CUDA0,CUDA1,CUDA2) view_src=none
+GRAPH_NODE_AUDIT family=B index=1 name=B_shared_partial_matmul op=MUL_MAT buffer_meta=0 assigned_backend=Meta(CUDA0,CUDA1,CUDA2) view_src=none
+GRAPH_NODE_AUDIT family=B index=2 name=B_input_add op=ADD buffer_meta=0 assigned_backend=Meta(CUDA0,CUDA1,CUDA2) view_src=none
+GRAPH_NODE_AUDIT family=B index=3 name=node_3 op=ADD buffer_meta=0 assigned_backend=Meta(CUDA0,CUDA1,CUDA2) view_src=none
+GRAPH_NODE_AUDIT family=B index=4 name=node_4 op=ADD buffer_meta=0 assigned_backend=Meta(CUDA0,CUDA1,CUDA2) view_src=none
+GRAPH_NODE_AUDIT family=B index=5 name=node_5 op=SQR buffer_meta=0 assigned_backend=Meta(CUDA0,CUDA1,CUDA2) view_src=none
+GRAPH_NODE_AUDIT family=B index=6 name=B_async_input_output op=SUM buffer_meta=0 assigned_backend=Meta(CUDA0,CUDA1,CUDA2) view_src=none
+OWNERS static_weight_buffer=0x1001d1eaa50 A_sched=0x1001f905b10 A_meta=0x1001ed92280 A_input=0x1001fb9e4e0 B_sched=0x1001fa51eb0 B_meta=0x1001f0ff2e0 B_input=0x1001fea5120 distinct_schedulers=1 distinct_meta_contexts=1 shared_weights=1
+CASE_BEGIN family=A phase=A-before-B frame=0 partial_before_readback=0
+READBACK_BARRIER family=A phase=A-before-B point=after-full-before-partial exact=1
+READBACK_BARRIER family=A phase=A-before-B point=after-partial exact=1
+SCOPE_FINISH family=A phase=A-before-B sources_mutated_and_freed=1
+COPY_ONLY_RESULT family=A phase=A-before-B frame=0 input_readback=exact partial_write=exact sources_mutated_and_freed=1 graph_compute=skipped
+CASE_BEGIN family=B phase=B frame=1 partial_before_readback=1
+READBACK_BARRIER family=B phase=B point=after-partial exact=1
+SCOPE_FINISH family=B phase=B sources_mutated_and_freed=1
+COPY_ONLY_RESULT family=B phase=B frame=1 input_readback=exact partial_write=exact sources_mutated_and_freed=1 graph_compute=skipped
+CASE_BEGIN family=A phase=A-after-B frame=2 partial_before_readback=0
+READBACK_BARRIER family=A phase=A-after-B point=after-full-before-partial exact=1
+READBACK_BARRIER family=A phase=A-after-B point=after-partial exact=1
+SCOPE_FINISH family=A phase=A-after-B sources_mutated_and_freed=1
+COPY_ONLY_RESULT family=A phase=A-after-B frame=2 input_readback=exact partial_write=exact sources_mutated_and_freed=1 graph_compute=skipped
+DESTROY owner=B after_scope_finish=1 owner=A_retained=1
+CASE_BEGIN family=A phase=A-after-B-destroy frame=3 partial_before_readback=1
+READBACK_BARRIER family=A phase=A-after-B-destroy point=after-partial exact=1
+SCOPE_FINISH family=A phase=A-after-B-destroy sources_mutated_and_freed=1
+COPY_ONLY_RESULT family=A phase=A-after-B-destroy frame=3 input_readback=exact partial_write=exact sources_mutated_and_freed=1 graph_compute=skipped
+PASS META_ASYNC_INPUT_FIXTURE mode=off input_tensors=3 compute_usage=1 owners=A/B/A teardown_B=1 copy_only=1

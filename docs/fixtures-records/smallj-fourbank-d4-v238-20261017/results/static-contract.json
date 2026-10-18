@@ -1,0 +1,71 @@
+{
+  "schema": "v238-static-contract-v1",
+  "status": "PASS",
+  "host_build_performed_here": false,
+  "model_loaded": false,
+  "gpu_touched": false,
+  "launch_performed": false,
+  "launch_eligible": false,
+  "checks": [
+    {
+      "name": "frozen_candidate_source",
+      "status": "pass",
+      "detail": "V238 candidate source hash matches the frozen hostlink source"
+    },
+    {
+      "name": "unchanged_kv_policy",
+      "status": "pass",
+      "detail": "V221 KV shape policy is unchanged and byte-identical"
+    },
+    {
+      "name": "d4_context_and_pad_fit",
+      "status": "pass",
+      "detail": "request plus D4 lookahead/seed 16901 <= 17152; verify rows 5 <= PAD6"
+    },
+    {
+      "name": "prior_d4_evidence_exists",
+      "status": "pass",
+      "detail": "V209 D4 feasibility evidence is present and hash-pinned; not treated as V238 performance"
+    },
+    {
+      "name": "v235_runtime_pin",
+      "status": "pass",
+      "detail": "V235 report is pinned; root-reported hostlink passed, no V238 model or GPU activity"
+    },
+    {
+      "name": "scenario_shape",
+      "status": "pass",
+      "detail": "one D4 family, native canary then four disjoint 16K/512 flows"
+    },
+    {
+      "name": "candidate_environment",
+      "status": "pass",
+      "detail": "D4 generic non-unrolled GPU chain, PAD6, four one-lane banks, V234 small-J/cache/pinned overlay"
+    },
+    {
+      "name": "family_scoped_checker",
+      "status": "pass",
+      "detail": "separate D4 checker hashes scenarios, attests D4/generic GPU-chain results, and never invokes D3 gate"
+    },
+    {
+      "name": "window_gate_and_guard",
+      "status": "pass",
+      "detail": "window release is required before credential read; root in-band guard and 30-minute cap; no retry"
+    },
+    {
+      "name": "comparison_summary_scope",
+      "status": "pass",
+      "detail": "summary covers all output IDs, acceptance, full PP, shared TG and inclusive TG against V234"
+    },
+    {
+      "name": "synthetic_checker_fixture_label",
+      "status": "pass",
+      "detail": "CPU-only checker test labels transformed V234 data as synthetic and includes a rejecting negative case"
+    },
+    {
+      "name": "syntax_and_json",
+      "status": "pass",
+      "detail": "Python AST, bash syntax, and fixture JSON parse"
+    }
+  ]
+}

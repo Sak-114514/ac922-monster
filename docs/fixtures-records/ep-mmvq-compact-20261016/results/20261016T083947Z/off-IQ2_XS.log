@@ -1,0 +1,20 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+optimization path device=0 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=4 width=640 auxiliary=17 count=1
+optimization path device=0 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=4 width=640 auxiliary=85 count=1
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=0 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=1 selected=1 reason=eligible tokens=4 width=640 auxiliary=17 count=2
+optimization path device=0 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=1 selected=1 reason=original_MMID_route_preserved_for_fused_epilogue tokens=4 width=640 auxiliary=85 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path summary device=0 path=ep_fused_mmvq scope=host_dispatch_or_capture requested=4 selected=4
+optimization path summary device=0 path=moe_gate_up_glu_fusion scope=host_dispatch_or_capture requested=4 selected=4
+fixture mode=off format=IQ2_XS op=fused_gate_up_swiglu K=2560 N=640 local_experts=85 top_k=10 owner_offset=170 global_experts=512 sample=expert170 raw_rows_permuted=yes semantic_claim=no
+PASS case mode=off format=IQ2_XS tokens=4 frame=A replay=0 foreign_zero=yes source_readback=exact changed_inputs=restored local_routes_distinct=yes
+PASS case mode=off format=IQ2_XS tokens=4 frame=B replay=1 foreign_zero=yes source_readback=exact changed_inputs=yes local_routes_distinct=yes
+PASS case mode=off format=IQ2_XS tokens=4 frame=A replay=2 foreign_zero=yes source_readback=exact changed_inputs=restored local_routes_distinct=yes
+TIMING graph_compute_wall mode=off format=IQ2_XS tokens=4 reps=5 median_ms=0.043 min_ms=0.043 max_ms=0.105
+PASS case mode=off format=IQ2_XS tokens=8 frame=A replay=0 foreign_zero=yes source_readback=exact changed_inputs=restored local_routes_distinct=yes
+PASS case mode=off format=IQ2_XS tokens=8 frame=B replay=1 foreign_zero=yes source_readback=exact changed_inputs=yes local_routes_distinct=yes
+PASS case mode=off format=IQ2_XS tokens=8 frame=A replay=2 foreign_zero=yes source_readback=exact changed_inputs=restored local_routes_distinct=yes
+TIMING graph_compute_wall mode=off format=IQ2_XS tokens=8 reps=5 median_ms=0.061 min_ms=0.060 max_ms=0.120
+PASS dtype operator fixture; synthetic E85 dispatch data only, no semantic claim

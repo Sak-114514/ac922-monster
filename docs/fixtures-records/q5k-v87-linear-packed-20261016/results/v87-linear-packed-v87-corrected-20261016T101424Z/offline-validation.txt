@@ -1,0 +1,21 @@
+V87 Q5_K packed fixture offline validation
+run_tag=v87-corrected-20261016T101424Z
+build_id=20261016T095614.374883Z
+binary_sha256=6e8059e0048f813d620ea3978261dc15851a22cce0ea4d190cf5ad2c5a257da0
+off_log_sha256=1ff4a039c88ee5c70e2ce1bef50878b75bade83c77a460cffee0a588fe3b52d4
+on_log_sha256=1861559c44eb504e7465b0bd48505954056f1de8126d48c2ad549d127e634633
+
+The GPU processes both exited zero. The initial wrapper post-validation exited
+nonzero because merged CUDA graph diagnostics split two timing fields across
+stdout/stderr writes. The raw logs are preserved. The fixture-only log parser
+was corrected for those exact split-field forms and run offline:
+
+PASS Q5_K A/B/A shapes T4x4,T8x2,T16,T12,T6; input, output canary and T4-prefix bitwise gates
+PASS V87 packed-path selected summary and direct T16 marker; T6 kept chunk4 tail fallback
+SCOPE summary selection counts are process-wide; direct token marker is required for T16
+
+CPU byte comparisons: 15 OFF/ON output files and the changed-input B file all
+matched exactly.
+
+Post-run GPU3: 38 C, 1 MiB used, 16126 MiB free, 0% utilization, no compute PID.
+No GPU rerun was performed during offline validation.

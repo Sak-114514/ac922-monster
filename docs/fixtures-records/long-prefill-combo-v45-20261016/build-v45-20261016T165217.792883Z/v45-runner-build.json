@@ -1,0 +1,49 @@
+{
+  "runtime_build_id": "20261016T165217.792883Z",
+  "runtime_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V104-build.json",
+  "runtime_report_sha256": "c4d1cad0966ec159cedaa767ee43a32129596375b98eddfd490574e849fc678a",
+  "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v104",
+  "profile": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/v45-exact-env-v104-combo-ub2048.json",
+  "profile_sha256": "f5a62ee21f0a87f205d82d326070bf1e5d35c34300ebe4ea6788cb897daa43f9",
+  "runner_source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/dual-context-v45-long-prefill.cpp",
+  "runner_source_sha256": "2729fbe857919c1b55dca73bfe0f65ad4d561172ca99542094a5126eadab9aaf",
+  "kv_header": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/kv-layout-policy-v45.h",
+  "kv_header_sha256": "ac8693550fff8f9606598e7dfad89543ef01133ae80d1796cf93335ac917b4f0",
+  "input_owners": {
+    "source": "debian",
+    "kv_header": "debian",
+    "profile": "debian",
+    "runtime_report": "debian"
+  },
+  "runner_binary": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/build-v45-20261016T165217.792883Z/dual-context-v45-long-prefill",
+  "runner_sha256": "f7250756862ccd757f5338ad59787abc829f6daea8d07b8dc21427fa1fede337",
+  "runner_owner": "debian",
+  "build_owner": "debian",
+  "target_ubatch": 2048,
+  "pinned_cap_mib": 1024,
+  "plan_trace_enabled": true,
+  "long_only": false,
+  "selected_families": [
+    "four8k_context4x16k",
+    "single32k",
+    "single64k"
+  ],
+  "ldd_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/build-v45-20261016T165217.792883Z/ldd.txt",
+  "ldd_sha256": "b458ebfea4b43e00730473cd2152aad4bd899138c34fd09df8e972c947a3f120",
+  "runner_build_mode": "reused_v103_binary",
+  "runner_reuse": {
+    "source_runtime_build_id": "20261016T162913.468680Z",
+    "source_report_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V103-build.json",
+    "source_report_sha256": "a31c1fb88f19f6dcb4214f65064bbf7a2558cc668d06ce5a9ef393dd3d1520d8",
+    "source_build_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/build-v45-20261016T162913.468680Z",
+    "source_build_record_sha256": "706d502bf32334bf66af33135b82b81b1271ed83482b56f674dddf748d935441",
+    "source_runner_sha256": "f7250756862ccd757f5338ad59787abc829f6daea8d07b8dc21427fa1fede337",
+    "reason": "V104 changes private model-TU/helper logic only; V45 runner source/header/data layout and ABI are unchanged. New V104 runtime linkage is independently resolved and recorded."
+  },
+  "prefill_kv_pad_tokens": 65536,
+  "cuda_device_max_connections": 32,
+  "compiler": "not invoked; V103 V45 runner binary reused",
+  "compile_scope": "V103 V45 runner binary reused and runtime-perf-v104 LD closure revalidated; no engine/CUDA object build, no model load, no GPU execution",
+  "model_loads": 0,
+  "gpu_touched": false
+}

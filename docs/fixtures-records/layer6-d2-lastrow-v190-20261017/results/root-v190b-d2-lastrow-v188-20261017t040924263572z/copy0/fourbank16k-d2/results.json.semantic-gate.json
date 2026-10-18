@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "scope": "four frozen native canaries for d2; this does not score the performance case or claim the full 16-case suite",
+  "native_source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/native-semantic/case-input.json",
+  "native_source_sha256": "f2487f90c32d0e383494dc5ae68bec24d6bf0c8d31a065dfbf614447fb6b53fd",
+  "expected_native_source_sha256": "f2487f90c32d0e383494dc5ae68bec24d6bf0c8d31a065dfbf614447fb6b53fd",
+  "runtime_build_id": "20261017T035403.305011Z",
+  "case_count": 4,
+  "cases": [
+    {
+      "id": "capital-en",
+      "bank": 0,
+      "checker": "exact_text",
+      "prompt_sha256": "678afb9d5078d3ef479ad3e40b6e01e132b65aac62879b62ac421f37a4c5de53",
+      "expected_input_tokens": 32,
+      "actual_input_tokens": 32,
+      "status": "pass",
+      "reason": "exact expected answer",
+      "expected": "Paris",
+      "actual": "Paris",
+      "token_ids": [
+        57590
+      ]
+    },
+    {
+      "id": "arithmetic-zh",
+      "bank": 1,
+      "checker": "exact_text",
+      "prompt_sha256": "66a63b3484247e7484205590e2d97f029e4cca6d04dad810a4bf875ea5ab3cb9",
+      "expected_input_tokens": 35,
+      "actual_input_tokens": 35,
+      "status": "pass",
+      "reason": "exact expected answer",
+      "expected": "9805",
+      "actual": "9805",
+      "token_ids": [
+        24,
+        23,
+        15,
+        20
+      ]
+    },
+    {
+      "id": "logic-en",
+      "bank": 2,
+      "checker": "exact_text",
+      "prompt_sha256": "58744d376b8998e4096757e147962eeec82dddab03c495e0fbf84e000fc2591d",
+      "expected_input_tokens": 41,
+      "actual_input_tokens": 41,
+      "status": "pass",
+      "reason": "exact expected answer",
+      "expected": "NO",
+      "actual": "NO",
+      "token_ids": [
+        8725
+      ]
+    },
+    {
+      "id": "strict-json-zh",
+      "bank": 3,
+      "checker": "strict_json",
+      "prompt_sha256": "67df94ecb8366efe4bde382cda2f805ec358be2a81d4c21717131bfe18beff22",
+      "expected_input_tokens": 47,
+      "actual_input_tokens": 47,
+      "status": "pass",
+      "reason": "JSON values exactly match expected fields",
+      "expected": {
+        "ok": true,
+        "count": 3,
+        "colors": [
+          "红",
+          "蓝"
+        ]
+      },
+      "actual": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}",
+      "token_ids": [
+        4754,
+        547,
+        763,
+        1802,
+        1288,
+        1767,
+        763,
+        18,
+        1288,
+        20391,
+        35580,
+        96469,
+        2129,
+        97460,
+        89254
+      ]
+    }
+  ],
+  "errors": [],
+  "model_loaded_by_checker": false,
+  "gpu_touched_by_checker": false,
+  "schema": "v190-family-native4-report-v1",
+  "family": "d2",
+  "mtp_depth": 2
+}

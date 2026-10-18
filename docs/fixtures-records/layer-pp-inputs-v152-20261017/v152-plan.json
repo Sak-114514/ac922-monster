@@ -1,0 +1,90 @@
+{
+  "fixture": "layer-pp-inputs-v152-20261017",
+  "status": "v160-stage-on-tiny-pass-25-of-25",
+  "runtime": {
+    "id": "runtime-perf-v155",
+    "build_id": "20261016T225705.918689Z",
+    "report_sha256": "b5f4884cef3df093d45f2bfe7be3bcfb1caa0ea1943e7344c8cf4bf14fe28d92",
+    "backend_source_sha256": "77090a924f2b61f2d774675cd7965732cd13f436bf6abb1fe55d0e80e532a07c",
+    "fixture_source_sha256": "23fcbcc93cc45742a4cf6666771646760fd1855c6767e601e398445b0fec0aa7"
+  },
+  "feature": {
+    "env": "GGML_SCHED_LAYER_PINNED_INPUTS",
+    "value": "1",
+    "cap_env": "GGML_SCHED_LAYER_PINNED_CAP_MIB",
+    "cap_mib": 256,
+    "expected_parallel_copies": 4
+  },
+  "diagnostic_modes": [
+    {"stage_inputs": 0, "runtime": "runtime-perf-v155", "purpose": "same-shape scheduler fallback diagnostic", "authorized_runs": 1},
+    {"stage_inputs": 1, "runtime": "runtime-perf-v155", "purpose": "pinned input staging diagnostic", "authorized_runs": 1},
+    {"stage_inputs": 0, "runtime": "runtime-perf-v143", "purpose": "runtime regression control", "authorized_runs": 1},
+    {"stage_inputs": 0, "runtime": "runtime-perf-v155", "preload": "standalone ggml-alloc.c debug library", "purpose": "allocator leaf size-query source-line trace", "authorized_runs": 1},
+    {"stage_inputs": 0, "runtime": "runtime-perf-v155", "preload": "guarded standalone ggml-alloc.c copy", "purpose": "bad leaf tensor/buffer-id diagnostic", "authorized_runs": 1}
+  ],
+  "topology": ["CUDA0", "CUDA1", "CPU"],
+  "graph": [
+    "CPU GET_ROWS using CPU WEIGHTS embedding and CPU token IDs",
+    "CUDA0 MUL_MAT -> ADD(host input) -> ADD(host input)",
+    "CUDA1 MUL_MAT -> ADD(host input); final output remains on CUDA1"
+  ],
+  "scenarios": {
+    "small_interleaved": {
+      "width": 32,
+      "batch": 16,
+      "submissions_per_scheduler": 8,
+      "scheduler_count": 2,
+      "seeds_a": [0, 1, 0, 2, 3, 4, 5, 6],
+      "independent_scheduler_interleave": true,
+      "immediate_source_overwrite": true,
+      "fresh_graph_per_frame": true,
+      "retain_frame_contexts_until_final_drain": true
+    },
+    "reset_and_grow": {
+      "from": "32x16",
+      "to": "128x1024",
+      "same_scheduler": true,
+      "submissions": 8
+    },
+    "invalid_cap_fallback": {
+      "cap_mib": 1,
+      "expected_scheduler_selection": "invalid-pinned-cap",
+      "expected_exact_fallback": true
+    },
+    "cpu_budget_mock": {
+      "cap_mib_for_mock": 256,
+      "per_copy_payload_bytes": {
+        "cuda0": 1572864,
+        "cuda1": 524288
+      },
+      "mock_cases": ["exact-cap-accept", "cap-plus-256-decline", "aggregate-slots-decline", "overflow-decline"]
+    }
+  },
+  "memory_estimate": {
+    "large_input_bytes_each": 524288,
+    "cuda0_stage_bytes_per_copy": 1572864,
+    "cuda1_stage_bytes_per_copy": 524288,
+    "large_stage_ring_bytes_per_scheduler": 8388608,
+    "large_output_sink_bytes_eight_frames": 4194368,
+    "note": "Planning arithmetic only; actual allocation sizes must be read from V155 runtime logs."
+  },
+  "gpu_window_authorized": true,
+  "latest_result": "results/v152-v160-stage-on-20261017T001438Z-summary.json",
+  "prior_run_preserved": [
+    "results/v152-tiny-20261016T230217Z.log",
+    "results/v152-tiny-20261016T230217Z-summary.json",
+    "results/v152-freshgraph-tiny-20261016T231314Z.log",
+    "results/v152-freshgraph-tiny-20261016T231314Z-summary.json",
+    "results/v152-stage-off-20261016T231629Z.log",
+    "results/v152-stage-on-20261016T231729Z.log",
+    "results/v152-stage-diagnostics-summary.json",
+    "results/v152-v143-off-20261016T231909Z.log",
+    "results/v152-v143-off-20261016T231909Z-summary.json",
+    "results/v152-galloc-debug-off-20261016T232155Z.log",
+    "results/v152-galloc-debug-off-20261016T232155Z-summary.json",
+    "results/v152-galloc-badleaf-20261016T20261016T232954Z.log",
+    "results/v152-galloc-badleaf-summary.json",
+    "results/v152-v160-stage-on-20261017T001438Z.log",
+    "results/V152-leaf-rotation-causality.md"
+  ]
+}

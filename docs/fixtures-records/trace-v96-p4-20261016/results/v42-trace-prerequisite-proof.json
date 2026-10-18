@@ -1,0 +1,70 @@
+{
+  "status": "V42_TRACE_PREREQUISITES_PASS",
+  "outcome": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z/v42-outcome.json",
+  "outcome_sha256": "85235952a9390ec436ecf2ac5b20aaad97ac5d8b2ca7edb49b6c99d313ad5e1c",
+  "supervisor_manifest": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z-supervisor-manifest.json",
+  "supervisor_manifest_sha256": "98d0651583fae0d88cf347e0f9578f7d6e66ee862192456d6f5c4ff7f1eaf944",
+  "v42_profile_sha256": "ab510ee320c9a85cbed674970b6185dda9561848a1dce98b785dd5737f44e0a1",
+  "v96_build_id": "20261016T125920.508355Z",
+  "v96_report_sha256": "c17cbcfc2b940bc982fff61d1a3606c380cfdd5c90c2c4de33b9da82e3b554f8",
+  "v96_ldd_sha256": "3fb10e6d080053b9eccc4143aac323e90bf573927fdd4c0346985c32bb74dde8",
+  "canonical_v37_comparator": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v42-memory-20261016/results/root-p4-v41-chunked-ordered-flatmeta6-ep6-d3-16k-20261016t132440202842z/v37-token-comparison-offline.json",
+  "canonical_v37_comparator_sha256": "16335c500668dfe0c8268d2a49df1f05ef0c739838a0247f524f60c56d1e9cd6",
+  "canonical_v37_comparator_source": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v40-chunked-ordered-20261016/compare_v40_vs_v37_token_arrays.py",
+  "canonical_v37_comparator_source_sha256": "df71f59b507bc3906428f977b87073f28d06e6bdc75a99959c0ae05441f50749",
+  "v37_compared_flows": 47,
+  "v37_exact_token_arrays": 32,
+  "v37_token_mismatches_informational": 15,
+  "v37_comparator_status_informational": "FAIL",
+  "outcome_v37_comparator_field": {
+    "status": "FAIL_EXACT_TOKEN_PARITY_INFORMATIONAL",
+    "blocking_for_performance": false,
+    "compared_flows": 47,
+    "exact_token_arrays": 32,
+    "mismatches": 15,
+    "diagnostic": {
+      "compared": 42,
+      "exact": 32,
+      "mismatches": 10
+    },
+    "clean": {
+      "compared": 5,
+      "exact": 0,
+      "mismatches": 5
+    },
+    "representative_first_divergences": [
+      {
+        "label": "flatmeta6d3-copy1-diagnostic-real8k-p4-1x4",
+        "flow": "real8k-0",
+        "first_diff_index": 3,
+        "baseline_token": 510,
+        "candidate_token": 248068
+      },
+      {
+        "label": "flatmeta6d3-copy1-clean-real8k-p4-1x4-clean",
+        "flow": "real8k-0",
+        "first_diff_index": 3,
+        "baseline_token": 510,
+        "candidate_token": 248068
+      }
+    ],
+    "investigation_status": "Recorded for separate cross-revision analysis; no additional model load was done."
+  },
+  "evidence_artifacts": {
+    "semantic_report_sha256": "77f71724f69c1d380ee0281c8775785268f04f4eec26141eca3d187a13442b9c",
+    "clean_semantic_report_sha256": "77f71724f69c1d380ee0281c8775785268f04f4eec26141eca3d187a13442b9c",
+    "preclean_f32_report_sha256": "f3f8d4c8f9372c7c5f273304a1c98290320ebe928e0d01a354e7240408db5a8a",
+    "activation_report_sha256": "014d904962ca8d1f96e7b904a635bfbc7f150852a86fc79989d3fd8f01ae5746",
+    "diagnostic_run_manifest_sha256": "4ed0d9fe10290b36303677bf922255e8899530b9aadd49fd08116e3394d345cb",
+    "clean_run_manifest_sha256": "a7bbaa2ef5bec219e9dc3f080b1b98cd89a7437fa852449c15e8761df0bd4bd4"
+  },
+  "model_loads": 1,
+  "model_run_rc": 0,
+  "performance_valid": true,
+  "performance_validity_basis": "Observed clean workload measurements; user override says cross-revision token differences alone do not invalidate performance. Native semantic, same-run F32/P4, and activation gates passed.",
+  "final_validator_rc": null,
+  "supervisor_exit_code": 1,
+  "systemd_exec_main_status": "2",
+  "v27_token_comparator": null,
+  "no_v41_quality_token_used": true
+}

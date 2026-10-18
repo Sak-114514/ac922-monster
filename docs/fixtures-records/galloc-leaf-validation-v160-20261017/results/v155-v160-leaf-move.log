@@ -1,0 +1,15 @@
+V160 leaf-slot regression; CPU allocator APIs only; no CUDA library linked
+v155_runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v155
+v160_runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v160
+
+--- old V155: expect child failure at stale leaf slot ---
+MOVE stage=alloc_graph leaf-order=[unallocated,preallocated] nodes=1 leaves=2
+V160 leaf-move RED reproduced: child signal=11 at alloc_graph
+
+--- fixed V160: expect reserve request then recovery ---
+MOVE stage=alloc_graph leaf-order=[unallocated,preallocated] nodes=1 leaves=2
+MOVE result=alloc_graph_false_requires_reserve
+MOVE result=reserve_then_alloc_pass
+V160 leaf-move FIXED: alloc_graph requested reserve; reserve+alloc passed
+
+V160_COMPARISON_PASS

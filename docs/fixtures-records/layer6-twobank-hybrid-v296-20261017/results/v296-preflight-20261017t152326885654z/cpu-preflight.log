@@ -1,0 +1,9 @@
+fatal-backtrace-v15 enabled=1 prewarmed=1 main_altstack=1 handlers=SIGSEGV,SIGBUS
+runner-environment ld_preload= sync_audit=0
+runner-diagnostics common_log_threshold=4 ggml_info_verbosity=4 ggml_info_visible=1
+cupti-marker phase=off dso_loaded=0 profiled=0
+fatal-backtrace-v15 reinstalled point=before-backend-init
+mtp-owner-policy mode=model-default env_override=unset owner=V289R3-selected
+v296-cpu-budget profile=twobank2lane16k-d3-ub1024 decode_threads_per_bank=16 decode_threads_total_max=32 prefill_threads_per_bank=16 prefill_threads_total_max=32 owner_threads_total_max=2
+V296 static-preflight=PASS families=1 model_loads=0 gpu_touched=0 preclean_full_logits=off
+V296 preflight-only complete backend_initialized=0 model_loaded=0 gpu_touched=0

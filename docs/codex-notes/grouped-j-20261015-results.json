@@ -1,0 +1,393 @@
+{
+  "schema": "grouped-mmq-j-fixture-v1",
+  "label": "grouped-j-20261015",
+  "finished_utc": "2026-10-15T03:25:12Z",
+  "device": {
+    "uuid": "GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+    "model": "Tesla V100-SXM2-16GB",
+    "compute_capability": "sm_70"
+  },
+  "command": "CUDA_VISIBLE_DEVICES=GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb timeout 300s fixtures/grouped-j-20261015/grouped-j-fixture fixtures/volta-tc-real/manifest.json",
+  "kernel_only": true,
+  "graph_nodes": 1,
+  "route": {
+    "kind": "synthetic_uniform",
+    "experts": 512,
+    "assignments_per_expert": 20,
+    "total_assignments": 10240,
+    "ids_dst": "identity",
+    "actual_router_output": false
+  },
+  "weights": {
+    "source": "fixtures/volta-tc-real/manifest.json",
+    "packed_real_rows": true,
+    "expert_id": 0,
+    "sample_rows_per_format": 16,
+    "repeated_across_output_rows_and_experts": true,
+    "model_hash": null,
+    "full_model_loaded": false
+  },
+  "timing": {
+    "warmup_graph_replays": 8,
+    "timed_graph_replays": 120,
+    "method": "CUDA events around repeated one-node CUDA graph launches"
+  },
+  "correctness_reference": "J32 exact FP32 output",
+  "correctness": {
+    "IQ2_XXS": {
+      "16": {
+        "exact": true,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "nonfinite": 0
+      },
+      "64": {
+        "exact": true,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "nonfinite": 0
+      }
+    },
+    "IQ2_XS": {
+      "16": {
+        "exact": true,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "nonfinite": 0
+      },
+      "64": {
+        "exact": true,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "nonfinite": 0
+      }
+    },
+    "IQ2_S": {
+      "16": {
+        "exact": true,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "nonfinite": 0
+      },
+      "64": {
+        "exact": true,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "nonfinite": 0
+      }
+    },
+    "IQ3_XXS": {
+      "16": {
+        "exact": true,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "nonfinite": 0
+      },
+      "64": {
+        "exact": true,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "nonfinite": 0
+      }
+    },
+    "IQ3_S": {
+      "16": {
+        "exact": true,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "nonfinite": 0
+      },
+      "64": {
+        "exact": true,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "nonfinite": 0
+      }
+    },
+    "IQ4_NL": {
+      "16": {
+        "exact": true,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "nonfinite": 0
+      },
+      "64": {
+        "exact": true,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "nonfinite": 0
+      }
+    },
+    "Q2_0": {
+      "16": {
+        "exact": true,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "nonfinite": 0
+      },
+      "64": {
+        "exact": true,
+        "bitdiff": 0,
+        "max_abs": 0.0,
+        "nonfinite": 0
+      }
+    }
+  },
+  "performance": {
+    "IQ2_XXS": {
+      "32": {
+        "tensor": "blk.1.ffn_gate_exps.weight",
+        "N": 192,
+        "K": 2560,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 942.8054,
+        "latency_reduction_vs_j64_pct": 27.37,
+        "reference_nonfinite": 0
+      },
+      "16": {
+        "tensor": "blk.1.ffn_gate_exps.weight",
+        "N": 192,
+        "K": 2560,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 1250.0992,
+        "latency_increase_vs_j32_pct": 32.59
+      },
+      "64": {
+        "tensor": "blk.1.ffn_gate_exps.weight",
+        "N": 192,
+        "K": 2560,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 1298.0053,
+        "latency_increase_vs_j32_pct": 37.67
+      }
+    },
+    "IQ2_XS": {
+      "32": {
+        "tensor": "blk.0.ffn_gate_exps.weight",
+        "N": 224,
+        "K": 2560,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 903.6118,
+        "latency_reduction_vs_j64_pct": 44.69,
+        "reference_nonfinite": 0
+      },
+      "16": {
+        "tensor": "blk.0.ffn_gate_exps.weight",
+        "N": 224,
+        "K": 2560,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 1326.0288,
+        "latency_increase_vs_j32_pct": 46.75
+      },
+      "64": {
+        "tensor": "blk.0.ffn_gate_exps.weight",
+        "N": 224,
+        "K": 2560,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 1633.8518,
+        "latency_increase_vs_j32_pct": 80.81
+      }
+    },
+    "IQ2_S": {
+      "32": {
+        "tensor": "blk.12.ffn_gate_exps.weight",
+        "N": 192,
+        "K": 2560,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 904.2517,
+        "latency_reduction_vs_j64_pct": 45.37,
+        "reference_nonfinite": 0
+      },
+      "16": {
+        "tensor": "blk.12.ffn_gate_exps.weight",
+        "N": 192,
+        "K": 2560,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 1349.4357,
+        "latency_increase_vs_j32_pct": 49.23
+      },
+      "64": {
+        "tensor": "blk.12.ffn_gate_exps.weight",
+        "N": 192,
+        "K": 2560,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 1655.3387,
+        "latency_increase_vs_j32_pct": 83.06
+      }
+    },
+    "IQ3_XXS": {
+      "32": {
+        "tensor": "blk.35.ffn_gate_exps.weight",
+        "N": 224,
+        "K": 2560,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 865.9968,
+        "latency_reduction_vs_j64_pct": 33.8,
+        "reference_nonfinite": 0
+      },
+      "16": {
+        "tensor": "blk.35.ffn_gate_exps.weight",
+        "N": 224,
+        "K": 2560,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 1182.3786,
+        "latency_increase_vs_j32_pct": 36.53
+      },
+      "64": {
+        "tensor": "blk.35.ffn_gate_exps.weight",
+        "N": 224,
+        "K": 2560,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 1308.1088,
+        "latency_increase_vs_j32_pct": 51.05
+      }
+    },
+    "IQ3_S": {
+      "32": {
+        "tensor": "blk.8.ffn_gate_exps.weight",
+        "N": 192,
+        "K": 2560,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 877.0304,
+        "latency_reduction_vs_j64_pct": 35.42,
+        "reference_nonfinite": 0
+      },
+      "16": {
+        "tensor": "blk.8.ffn_gate_exps.weight",
+        "N": 192,
+        "K": 2560,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 1269.2907,
+        "latency_increase_vs_j32_pct": 44.73
+      },
+      "64": {
+        "tensor": "blk.8.ffn_gate_exps.weight",
+        "N": 192,
+        "K": 2560,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 1358.1056,
+        "latency_increase_vs_j32_pct": 54.85
+      }
+    },
+    "IQ4_NL": {
+      "32": {
+        "tensor": "blk.0.ffn_down_exps.weight",
+        "N": 768,
+        "K": 640,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 725.1371,
+        "latency_reduction_vs_j64_pct": 34.34,
+        "reference_nonfinite": 0
+      },
+      "16": {
+        "tensor": "blk.0.ffn_down_exps.weight",
+        "N": 768,
+        "K": 640,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 1002.6923,
+        "latency_increase_vs_j32_pct": 38.28
+      },
+      "64": {
+        "tensor": "blk.0.ffn_down_exps.weight",
+        "N": 768,
+        "K": 640,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 1104.3157,
+        "latency_increase_vs_j32_pct": 52.29
+      }
+    },
+    "Q2_0": {
+      "32": {
+        "tensor": "blk.1.ffn_down_exps.weight",
+        "N": 768,
+        "K": 640,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 664.9003,
+        "latency_reduction_vs_j64_pct": 48.74,
+        "reference_nonfinite": 0
+      },
+      "16": {
+        "tensor": "blk.1.ffn_down_exps.weight",
+        "N": 768,
+        "K": 640,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 907.0933,
+        "latency_increase_vs_j32_pct": 36.43
+      },
+      "64": {
+        "tensor": "blk.1.ffn_down_exps.weight",
+        "N": 768,
+        "K": 640,
+        "experts": 512,
+        "tokens_per_expert": 20,
+        "graph_nodes": 1,
+        "timed_graph_replays": 120,
+        "avg_kernel_us": 1297.2374,
+        "latency_increase_vs_j32_pct": 95.1
+      }
+    }
+  },
+  "raw_log": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/grouped-j-20261015-results.log",
+  "summary_line": "SUMMARY cases=7 failed_exact_comparisons=0 route=synthetic_uniform_20_per_expert real_weights=packed_rows_only full_model=0",
+  "caveat": "Packed-real-weights / synthetic-route kernel fixture only; not a model benchmark or end-to-end throughput result."
+}

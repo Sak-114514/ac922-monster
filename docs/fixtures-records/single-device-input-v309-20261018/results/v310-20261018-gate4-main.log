@@ -1,0 +1,136 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+V309_DEVICE rank=0 name=CUDA0 free=16581328896 total=16911433728
+V309_DEVICE rank=1 name=CUDA1 free=16581918720 total=16911433728
+V309_DEVICE rank=2 name=CUDA2 free=16581918720 total=16911433728
+V309_DEVICE rank=3 name=CUDA3 free=16581263360 total=16911433728
+V309_DEVICE rank=4 name=CUDA4 free=16567959552 total=16911433728
+V309_DEVICE rank=5 name=CUDA5 free=16570515456 total=16911433728
+PP pinned inputs requested=1 selected=1 scheduler=0x100359fdce0 copies=4 cap=268435456 reset_preserves_slots=1 host_slots=4 device_ring_unchanged=1
+PP single device inputs requested=1 selected=1 device_ring=4 gpu_devices=6 reason=plain-six-cuda-pinned-pipeline
+PP single device input selected=1 source=v309_external_cpu_input backend=CUDA0 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=cpu_get_rows_prefix backend=CUDA0 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=v309_external_cpu_input backend=CUDA1 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=cpu_get_rows_prefix backend=CUDA1 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=v309_external_cpu_input backend=CUDA2 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=cpu_get_rows_prefix backend=CUDA2 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=v309_external_cpu_input backend=CUDA3 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=cpu_get_rows_prefix backend=CUDA3 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=v309_external_cpu_input backend=CUDA4 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=cpu_get_rows_prefix backend=CUDA4 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+V309_ALLOC frame=0 graph_slot=0 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=15493 reset_pending_transition=0 alloc_pending_transition=0
+PP pinned input allocation scheduler=0x100359fdce0 backend=0 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=5099520 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x100359fdce0 backend=CUDA0 slot=0 source=v309_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=1 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=10199040 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x100359fdce0 backend=CUDA1 slot=0 source=v309_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=2 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=15298560 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x100359fdce0 backend=CUDA2 slot=0 source=v309_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=3 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=20398080 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x100359fdce0 backend=CUDA3 slot=0 source=v309_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=4 copy=0 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=25497600 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned inputs active scheduler=0x100359fdce0 backend=CUDA4 slot=0 source=v309_external_cpu_input bytes=2549760 private_source=1 device_event_wait=1
+V309_FRAME frame=0 graph_uid=1 graph_slot=0 graph_copies=4 window=0 submit_order=0 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+PP single device input selected=1 source=v309_external_cpu_input backend=CUDA0 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=cpu_get_rows_prefix backend=CUDA0 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=v309_external_cpu_input backend=CUDA1 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=cpu_get_rows_prefix backend=CUDA1 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=v309_external_cpu_input backend=CUDA2 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=cpu_get_rows_prefix backend=CUDA2 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=v309_external_cpu_input backend=CUDA3 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=cpu_get_rows_prefix backend=CUDA3 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=v309_external_cpu_input backend=CUDA4 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=cpu_get_rows_prefix backend=CUDA4 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+V309_ALLOC frame=1 graph_slot=1 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=12044 reset_pending_transition=0 alloc_pending_transition=0
+PP pinned input allocation scheduler=0x100359fdce0 backend=0 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=30597120 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=1 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=35696640 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=2 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=40796160 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=3 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=45895680 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=4 copy=1 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=50995200 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+V309_FRAME frame=1 graph_uid=9 graph_slot=1 graph_copies=4 window=0 submit_order=1 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+PP single device input selected=1 source=v309_external_cpu_input backend=CUDA0 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=cpu_get_rows_prefix backend=CUDA0 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=v309_external_cpu_input backend=CUDA1 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+PP single device input selected=1 source=cpu_get_rows_prefix backend=CUDA1 physical_device_copies=1 device_ring=4 host_slots=4 logical_saved_bytes=7649280
+V309_ALLOC frame=2 graph_slot=2 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=12107 reset_pending_transition=0 alloc_pending_transition=0
+PP pinned input allocation scheduler=0x100359fdce0 backend=0 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=56094720 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=1 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=61194240 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=2 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=66293760 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=3 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=71393280 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=4 copy=2 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=76492800 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+V309_FRAME frame=2 graph_uid=17 graph_slot=2 graph_copies=4 window=0 submit_order=2 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_ALLOC frame=3 graph_slot=3 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11685 reset_pending_transition=0 alloc_pending_transition=0
+PP pinned input allocation scheduler=0x100359fdce0 backend=0 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=81592320 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=1 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=86691840 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=2 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=91791360 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=3 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=96890880 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+PP pinned input allocation scheduler=0x100359fdce0 backend=4 copy=3 old=0 need=5099520 requested=5099520 allocated=5099520 floor=0 stage_bytes=101990400 cap=268435456 budget_exact_fallback=0 allocation_exact_retry=0 event_fence_unchanged=1
+V309_FRAME frame=3 graph_uid=25 graph_slot=3 graph_copies=4 window=0 submit_order=3 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_WINDOW_PASS window=0 submitted=4 drained=1 exact=24/24 canaries=all
+V309_ALLOC frame=4 graph_slot=0 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11686 reset_pending_transition=0 alloc_pending_transition=0
+V309_FRAME frame=4 graph_uid=33 graph_slot=0 graph_copies=4 window=1 submit_order=0 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_ALLOC frame=5 graph_slot=1 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11604 reset_pending_transition=0 alloc_pending_transition=0
+V309_FRAME frame=5 graph_uid=41 graph_slot=1 graph_copies=4 window=1 submit_order=1 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_ALLOC frame=6 graph_slot=2 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11630 reset_pending_transition=0 alloc_pending_transition=0
+V309_FRAME frame=6 graph_uid=49 graph_slot=2 graph_copies=4 window=1 submit_order=2 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_ALLOC frame=7 graph_slot=3 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11639 reset_pending_transition=0 alloc_pending_transition=0
+V309_FRAME frame=7 graph_uid=57 graph_slot=3 graph_copies=4 window=1 submit_order=3 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_WINDOW_PASS window=1 submitted=4 drained=1 exact=24/24 canaries=all
+V309_ALLOC frame=8 graph_slot=0 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11678 reset_pending_transition=0 alloc_pending_transition=0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+V309_FRAME frame=8 graph_uid=65 graph_slot=0 graph_copies=4 window=2 submit_order=0 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_ALLOC frame=9 graph_slot=1 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11611 reset_pending_transition=0 alloc_pending_transition=0
+V309_FRAME frame=9 graph_uid=73 graph_slot=1 graph_copies=4 window=2 submit_order=1 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_ALLOC frame=10 graph_slot=2 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11632 reset_pending_transition=0 alloc_pending_transition=0
+V309_FRAME frame=10 graph_uid=81 graph_slot=2 graph_copies=4 window=2 submit_order=2 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_ALLOC frame=11 graph_slot=3 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11612 reset_pending_transition=0 alloc_pending_transition=0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+V309_FRAME frame=11 graph_uid=89 graph_slot=3 graph_copies=4 window=2 submit_order=3 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_WINDOW_PASS window=2 submitted=4 drained=1 exact=24/24 canaries=all
+V309_ALLOC frame=12 graph_slot=0 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11694 reset_pending_transition=0 alloc_pending_transition=0
+V309_FRAME frame=12 graph_uid=97 graph_slot=0 graph_copies=4 window=3 submit_order=0 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_ALLOC frame=13 graph_slot=1 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11619 reset_pending_transition=0 alloc_pending_transition=0
+V309_FRAME frame=13 graph_uid=105 graph_slot=1 graph_copies=4 window=3 submit_order=1 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_ALLOC frame=14 graph_slot=2 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11616 reset_pending_transition=0 alloc_pending_transition=0
+V309_FRAME frame=14 graph_uid=113 graph_slot=2 graph_copies=4 window=3 submit_order=2 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_ALLOC frame=15 graph_slot=3 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11601 reset_pending_transition=0 alloc_pending_transition=0
+V309_FRAME frame=15 graph_uid=121 graph_slot=3 graph_copies=4 window=3 submit_order=3 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_WINDOW_PASS window=3 submitted=4 drained=1 exact=24/24 canaries=all
+V309_ALLOC frame=16 graph_slot=0 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11682 reset_pending_transition=0 alloc_pending_transition=0
+V309_FRAME frame=16 graph_uid=129 graph_slot=0 graph_copies=4 window=4 submit_order=0 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_ALLOC frame=17 graph_slot=1 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11621 reset_pending_transition=0 alloc_pending_transition=0
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+V309_FRAME frame=17 graph_uid=137 graph_slot=1 graph_copies=4 window=4 submit_order=1 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_ALLOC frame=18 graph_slot=2 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11649 reset_pending_transition=0 alloc_pending_transition=0
+V309_FRAME frame=18 graph_uid=145 graph_slot=2 graph_copies=4 window=4 submit_order=2 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_ALLOC frame=19 graph_slot=3 prior_pending_before_reset=0 prior_pending_after_reset=0 prior_pending_before_alloc=0 prior_pending_after_alloc=0 alloc_us=11920 reset_pending_transition=0 alloc_pending_transition=0
+V309_FRAME frame=19 graph_uid=153 graph_slot=3 graph_copies=4 window=4 submit_order=3 queued_before_drain=1 cpu_external=1 row_ids=1 cpu_get_rows=1 stages=6 poison_after_submit=1 readbacks=6 query_supported=6 pending_readbacks=6 exact=queued canaries=queued
+V309_WINDOW_PASS window=4 submitted=4 drained=1 exact=24/24 canaries=all
+PP single device input decline=1 reason=foreign-view-alias source=inplace_view_level2
+V309_NEGATIVE_PREFLIGHT graph_uid=161 allocated=1 compute=0 cpu_peer_view=1 cpu_inplace_scale=1 legacy_kernels_skipped=1
+PP pinned inputs summary scheduler=0x100359fdce0 copies=200 declines=0 pinned_high_water=101990400 cap=268435456
+PP pinned source wait summary scheduler=0x100359fdce0 backend=0 host_slots=4 count=16 total_us=151 max_us=12
+PP pinned source wait summary scheduler=0x100359fdce0 backend=1 host_slots=4 count=16 total_us=136 max_us=11
+PP pinned source wait summary scheduler=0x100359fdce0 backend=2 host_slots=4 count=16 total_us=177 max_us=18
+PP pinned source wait summary scheduler=0x100359fdce0 backend=3 host_slots=4 count=16 total_us=170 max_us=14
+PP pinned source wait summary scheduler=0x100359fdce0 backend=4 host_slots=4 count=16 total_us=183 max_us=16
+V309_FIXTURE_PASS frames=20 unique_graph_uids=20 graph_copies=4 graph_ring_wraps=5 stages=6 cpu_external=20 cpu_get_rows=20 poison_after_submit=20 negative_views_allocated_only=1 four_submit_windows=5 max_pending_readbacks=6 max_pending_prior_frames=0 reset_pending_transitions=0 alloc_pending_transitions=0 query_supported_frames=20 exact=all canaries=all

@@ -1,0 +1,372 @@
+{
+  "schema": "v163-layer6-largeub-force-profile-overlay-v1",
+  "status": "HOST_PREPARED_NO_BUILD_NO_MODEL_NO_GPU",
+  "base_profile": {
+    "path": "fixtures/layer6-longprefill-v58-20261017/v160-layer-profile.json",
+    "sha256": "6c5181b4708932dd1517792b89d6faeb935eacb0e2031098521bb9753829ecf2",
+    "runtime_name": "runtime-perf-v160",
+    "runtime_build_id": "20261016T232842.692185Z",
+    "runtime_report_sha256": "76bccf22d9a755bdabc2ce3bec817eccdd5cd46e4b72b6ff5dd2034b91982aca"
+  },
+  "runner_lineage": {
+    "base_source": "fixtures/layer6-longprefill-v58-20261017/dual-context-v131-layer-longprefill.cpp",
+    "base_source_sha256": "51427a9a58965d82b92c3f714a29ae588bb4c8a573df83fee1bff43a8998e920",
+    "derived_source": "fixtures/layer6-largeub-force-v163-20261017/dual-context-v163-layer-largeub-force.cpp",
+    "derived_source_sha256": "0db36b1b9f8e9597edfd4ad62e9ff73a04d6ca802cc8366cca57adfd32e7763c",
+    "patch": "fixtures/layer6-largeub-force-v163-20261017/v163-runner.patch",
+    "patch_sha256": "8b0c31d68af053c78c12436613803c9f313798eb7edcd82430e8e41023d2ab3f",
+    "minimal_transformations": [
+      {
+        "label": "namespace the runner CLI",
+        "matches": 1
+      },
+      {
+        "label": "replace the old 1024/65536 guards with explicit V163 settings",
+        "matches": 1
+      },
+      {
+        "label": "replace legacy context matrix with ordered 64K UB families",
+        "matches": 1
+      },
+      {
+        "label": "initialize common params from the first UBatch before model load",
+        "matches": 1
+      },
+      {
+        "label": "set the family-specific target UBatch before context construction",
+        "matches": 1
+      },
+      {
+        "label": "guard actual draft UBatch independently",
+        "matches": 1
+      },
+      {
+        "label": "log actual target and draft UBatch per context family",
+        "matches": 1
+      },
+      {
+        "label": "add flushed target/MTP graph-phase boundaries",
+        "matches": 1
+      },
+      {
+        "label": "mark the target prefill graph phase",
+        "matches": 1
+      },
+      {
+        "label": "close the synchronized target prefill phase",
+        "matches": 1
+      },
+      {
+        "label": "mark the MTP prefill graph phase",
+        "matches": 1
+      },
+      {
+        "label": "close the synchronized MTP prefill phase",
+        "matches": 1
+      },
+      {
+        "label": "set the exact per-family UBatch environment before initialization",
+        "matches": 1
+      },
+      {
+        "label": "record exact target and draft UBatch at family boundaries",
+        "matches": 1
+      },
+      {
+        "label": "use a V163-specific family profile label",
+        "matches": 1
+      },
+      {
+        "label": "namespace runtime prefill profile markers",
+        "matches": 1
+      },
+      {
+        "label": "permit only the explicit optional prefill Nsight window",
+        "matches": 1
+      },
+      {
+        "label": "bracket only first-family long prefill with optional cudaProfilerApi markers",
+        "matches": 1
+      }
+    ]
+  },
+  "candidate_label": "V163 layer6 large-UB force-graph diagnostic",
+  "run_tag_prefix": "root-v163-layer6-largeub-force",
+  "execution_plan": {
+    "model_loads_per_process": 1,
+    "target_weight_split_quant_expert_profile": "V131/V160 plain-CUDA LAYER6; original full model, expert placement, Q8 KV, standard QSA",
+    "context_family_order": [
+      "single64k-ub2048",
+      "single64k-ub4096"
+    ],
+    "family_lifecycle": "construct target+MTP contexts, canary then one 64K prompt, drain/destroy the contexts, retain model; then repeat for the next UB",
+    "context_total": 66048,
+    "context_per_sequence": 66048,
+    "lanes": 1,
+    "kv_unified": false,
+    "target_n_batch": 32768,
+    "draft_n_ubatch": 512,
+    "mtp_depth": 3,
+    "target_ubatch_by_family": {
+      "single64k-ub2048": 2048,
+      "single64k-ub4096": 4096
+    },
+    "scenario_files": {
+      "single64k-ub2048": {
+        "path": "prepared-output/copy0/single64k-ub2048/scenarios.json",
+        "sha256": "0deabb5a724b9561beceaad61153029ac77bf67943c191bd02d5309a8c5c220e",
+        "scenario_order": [
+          "v163-single64k-ub2048-native-semantic-canary",
+          "v163-single64k-ub2048-native-mask-long-prefill"
+        ],
+        "long_prompt_tokens": 65536
+      },
+      "single64k-ub4096": {
+        "path": "prepared-output/copy0/single64k-ub4096/scenarios.json",
+        "sha256": "dfc265cba0a877f23292dc85945bffb59bce7a52ea8574625ff9c030012c7459",
+        "scenario_order": [
+          "v163-single64k-ub4096-native-semantic-canary",
+          "v163-single64k-ub4096-native-mask-long-prefill"
+        ],
+        "long_prompt_tokens": 65536
+      }
+    },
+    "native_canary_precedes_one_64k_prompt_in_each_family": true
+  },
+  "environment_overrides": {
+    "ROOT_UBATCH": "2048",
+    "ROOT_BANK_LANES": "1",
+    "ROOT_PER_SEQUENCE_CONTEXT": "66048",
+    "ROOT_BANK_CTX": "66048",
+    "ROOT_KV_UNIFIED": "0",
+    "ROOT_KV_VARIANT": "per_seq_64k_plus512_x1",
+    "ROOT_V131_LONG_ONLY": null,
+    "LLAMA_PREFILL_KV_PAD": "8192",
+    "GGML_CUDA_GRAPH_OPT": "1",
+    "GGML_CUDA_GRAPH_STRUCTURAL": "1",
+    "GGML_CUDA_GRAPHS_FORCE": "1",
+    "LLAMA_GRAPH_REUSE_DISABLE": "0",
+    "LLAMA_LAYER_PREFILL_REBUILD": "1",
+    "GGML_SCHED_LAYER_PINNED_INPUTS": "1",
+    "GGML_SCHED_LAYER_PINNED_CAP_MIB": "1024",
+    "CUDA_SCALE_LAUNCH_QUEUES": "4x",
+    "GGML_TURBOPREFILL_TRACE": "1",
+    "LLAMA_FULL_STEP_TIMING": "1"
+  },
+  "effective_environment": {
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "LD_LIBRARY_PATH": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v160/lib",
+    "ROOT_RUNTIME_REVISION": "20261016T232842.692185Z",
+    "ROOT_DYNAMIC_LIB_DIR": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v160/lib",
+    "ROOT_BUILD_REPORT": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/V160-build.json",
+    "CUDA_VISIBLE_DEVICES": "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb,GPU-fadb0459-4d30-907b-289a-862b3014f165,GPU-760ce501-32f6-69b6-215b-1020da68bbfc,GPU-d3558623-deca-c702-3cc0-01b4aa9c667a",
+    "GGML_CUDA_P2P": "1",
+    "LLAMA_ISLAND_SPLIT": null,
+    "LLAMA_EXPERT_PARALLEL": "0",
+    "LLAMA_HIERARCHICAL_EP6": "0",
+    "LLAMA_DRAFT_DETP": "0",
+    "LLAMA_PLE_SHARD": "0",
+    "LLAMA_PLE_SHARD_ROWS": "0",
+    "LLAMA_PLE_NUMA_HYBRID": "1",
+    "LLAMA_PLE_NUMA_GPU_NODES": "6",
+    "LLAMA_PLE_NUMA_GPU_GIB": "12",
+    "LLAMA_QSA_INDEXER_IMPL": "standard",
+    "LLAMA_QSA_SPARSE_KERNEL": "1",
+    "LLAMA_QSA_GATHER_MAX_TOKENS": "32",
+    "LLAMA_QSA_STANDARD_SPARSE": "1",
+    "LLAMA_QSA_STANDARD_HEAD_LOOP": "1",
+    "LLAMA_QSA_BIAS_DEVICE": "1",
+    "GGML_CUDA_GET_ROWS_NARROW": "1",
+    "GGML_CUDA_MOE_GROUPED": "1",
+    "GGML_CUDA_MOE_ADAPTIVE_J": "1",
+    "GGML_CUDA_MOE_FUSED_T16": "1",
+    "GGML_CUDA_TOPK_STABLE": "1",
+    "GGML_CUDA_VOLTA_GDN_X4": "1",
+    "GGML_SM70_BF16_GEMV": "1",
+    "GGML_SM70_MOE_REWORK": "1",
+    "GGML_SM70_BF16_DECODE_PANEL": "1",
+    "GGML_CUDA_GRAPH_OPT": "1",
+    "GGML_CUDA_GRAPH_STRUCTURAL": "1",
+    "GGML_CUDA_GRAPH_STRUCTURAL_TRACE": "1",
+    "GGML_CUDA_GRAPH_STRUCTURAL_MAX_NODES": "16384",
+    "GGML_CUDA_GRAPH_PATH_LOG": "1",
+    "GGML_CUDA_GRAPH_SNAPSHOT_CACHE": "1",
+    "GGML_FT_GRAPH_CACHE": "1",
+    "GGML_FT_GRAPH_CACHE_MIN_NODES": "32",
+    "GGML_OPTIMIZATION_PATH_LOG": "1",
+    "GGML_SM70_DECODE_LINEAR_CHUNKS": "4",
+    "GGML_SM70_DECODE_LINEAR_PACKED": "1",
+    "LLAMA_PLE_PREFETCH": "1",
+    "LLAMA_PLE_NUMA_CPU_BALANCE": "1",
+    "LLAMA_PLE_ONECAT": "0",
+    "GGML_CUDA_FATTN_ONECAT": "1",
+    "LLAMA_HC_FUSED": "1",
+    "LLAMA_QWEN4EXP_HC_FUSION": "0",
+    "LLAMA_MTP_FOLD": "1",
+    "LLAMA_MTP_FOLD_MULTI": "0",
+    "LLAMA_MTP_SEQ_LAYOUT": "1",
+    "LLAMA_MTP_GPU_CHAIN": "1",
+    "LLAMA_MTP_GPU_CHAIN_SINGLE": "0",
+    "LLAMA_MTP_GPU_CHAIN_MULTI": "0",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED": "0",
+    "LLAMA_MTP_GPU_CHAIN_UNROLLED_DEPTH": "3",
+    "LLAMA_MTP_UNROLL_VARIABLE_LANES": "0",
+    "LLAMA_MTP_UNROLL_D3_LANES4": "0",
+    "LLAMA_MTP_GPU_EMBED": "1",
+    "LLAMA_MTP_DRAFT_GRAPH_CACHE": "0",
+    "LLAMA_MTP_DRAFT_GRAPH_CACHE_LOG": "1",
+    "LLAMA_MTP_FUSE_CATCHUP_SEED": "1",
+    "LLAMA_MTP_N_UBATCH": "512",
+    "LLAMA_MTP_PAD": "6",
+    "LLAMA_MTP_FIXED_PREFIX_ROWS": "6",
+    "LLAMA_MTP_VERIFY_ROW_BUDGET": "4",
+    "LLAMA_GPU_ARGMAX": "1",
+    "LLAMA_ARGMAX_PINNED_OUTPUT": "1",
+    "LLAMA_GPU_ARGMAX_UNIQUE": "1",
+    "LLAMA_GREEDY_SUPPRESSION_FAST": "1",
+    "LLAMA_MTP_KV_ONLY_PREFILL": "1",
+    "LLAMA_MTP_RELEASE_PREFILL_HISTORY": "1",
+    "LLAMA_MTP_FIFO": "0",
+    "LLAMA_TARGET_FIFO_MULTI": "0",
+    "ROOT_MTP_DEPTH": "3",
+    "ROOT_TARGET_VERIFY_PAD_PER_ACTIVE_LANE": "1",
+    "ROOT_WARMUP_FRAMES": "4",
+    "ROOT_UBATCH": "2048",
+    "ROOT_PREFILL_BATCH": "32768",
+    "ROOT_KV_UNIFIED": "0",
+    "ROOT_BANK_LANES": "1",
+    "ROOT_PER_SEQUENCE_CONTEXT": "66048",
+    "ROOT_BANK_CTX": "66048",
+    "ROOT_KV_VARIANT": "per_seq_64k_plus512_x1",
+    "ROOT_V131_CORPUS_SOURCE": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/v45-real-corpus-source.json",
+    "ROOT_PREFILL_LOGITS_DIR": "off",
+    "ROOT_PREFILL_LOGITS_BEFORE_MTP": "0",
+    "ROOT_SERIAL_CPU_SUBMIT": "0",
+    "ROOT_SERVER_MTP_KV_POLICY": "1",
+    "ROOT_CUPTI_PHASE": "off",
+    "ROOT_NSYS_PREFILL_PROFILE": "0",
+    "ROOT_FATAL_BACKTRACE": "1",
+    "LLAMA_STEP_TIMING": "1",
+    "LLAMA_STEP_TIMING_PERIOD": "32",
+    "LLAMA_FULL_STEP_TIMING": "1",
+    "CUDA_DEVICE_MAX_CONNECTIONS": "32",
+    "LLAMA_PREFILL_FRAME_PIPELINE": "0",
+    "LLAMA_PREFILL_LAZY_RESERVE": "0",
+    "LLAMA_TURBOPREFILL": "0",
+    "ROOT_TURBOPREFILL": "0",
+    "LLAMA_FIFO_SINGLE_ISLAND": "0",
+    "LLAMA_QSA_COMPACT_MASK": "1",
+    "LLAMA_QSA_COMPACT_MASK_NATIVE": "1",
+    "LLAMA_PREFILL_FIXED_UBATCH": "1",
+    "LLAMA_PREFILL_KV_PAD": "8192",
+    "LLAMA_DECODE_KV_PAD": "8192",
+    "LLAMA_SPEC_PAD_MULTI": "20",
+    "LLAMA_SPEC_PAD_MULTI_AUTO": "1",
+    "LLAMA_LOAD_RECLAIM_GPU_PAGES": "1",
+    "LLAMA_LOAD_RECLAIM_GPU_PAGES_STREAM": "1",
+    "LLAMA_LOAD_PREFETCH": "0",
+    "LLAMA_MONOMOE_SM70": "0",
+    "GGML_CUDA_VOLTA_Q8_HEAD_TC": "0",
+    "GGML_SM70_FUSED_PROJ": "0",
+    "GGML_CUDA_IQ2S_VOLTA_EP": "0",
+    "GGML_CPU_PLE_PAGE_BATCH": "1",
+    "GGML_CPU_PLE_PAGE_BATCH_LOG_PERIOD": "1",
+    "GGML_CPU_PLE_GET_ROWS_THREADS": "32",
+    "GGML_CPU_PLE_DECODE_THREADS": "4",
+    "LLAMA_QSA_POOLED_SINGLE": "0",
+    "LLAMA_QSA_POOLED_MULTI": "0",
+    "LLAMA_QSA_MULTI_CELL_SEL": "0",
+    "LLAMA_PREFILL_FAIR_SHARE": "1",
+    "GGML_META_ASYNC_INPUTS": "0",
+    "GGML_META_ASYNC_COPY": "0",
+    "GGML_META_CPU_ASYNC_COPY": "0",
+    "GGML_META_CPU_ASYNC_COPY_BUDGET_MIB": null,
+    "GGML_META_CPU_ASYNC_COPY_MAX_BYTES": null,
+    "GGML_META_NCCL_MIN_BYTES": "0",
+    "GGML_CUDA_NCCL_F32": "0",
+    "GGML_CUDA_ALLREDUCE": null,
+    "GGML_CUDA_P2P_AR_DISABLE": "1",
+    "GGML_CUDA_P2P_AR_RELAY6": "0",
+    "GGML_CUDA_P2P_AR_RELAY6_ORDERED": "0",
+    "GGML_CUDA_P2P_AR_ELIDE_UNUSED_SEGMENT": "0",
+    "GGML_CUDA_P2P_AR_RELAY_LEADER_STAGE": "0",
+    "GGML_META_FIFO_PIPELINE": "0",
+    "GGML_META_GPU_EVENT_WAIT": "0",
+    "GGML_CUDA_META_COPY_GPU_WAIT": "0",
+    "GGML_CUDA_META_COPY_TOPOLOGY": "0",
+    "GGML_META_FRAGMENT_PARENT_SIG": "0",
+    "GGML_META_FRAGMENT_CACHE": "0",
+    "GGML_META_PARENT_WALK_FAST": "0",
+    "GGML_META_CONTEXT_VIEWS": "0",
+    "GGML_META_REPLAY_GUARD": "0",
+    "GGML_META_NESTED_EXPERIMENTAL": "0",
+    "GGML_META_NESTED_GPU_AR": "0",
+    "GGML_META_NESTED_COMPOSE": "0",
+    "GGML_META_NESTED_ASYNC": "0",
+    "GGML_META_SHARED_DEVICE_COPY": "0",
+    "GGML_META_GPU_SPANS": "0",
+    "GGML_META_GPU_SPANS_PERIOD": "0",
+    "GGML_TURBOPREFILL_TRACE": "1",
+    "OMP_WAIT_POLICY": "PASSIVE",
+    "GOMP_SPINCOUNT": "0",
+    "LLAMA_GRAPH_REUSE_DISABLE": "0",
+    "LLAMA_LAYER_PREFILL_REBUILD": "1",
+    "GGML_SCHED_LAYER_PINNED_INPUTS": "1",
+    "GGML_SCHED_LAYER_PINNED_CAP_MIB": "1024",
+    "CUDA_SCALE_LAUNCH_QUEUES": "4x",
+    "GGML_SCHED_ALLOC_TIMING": "1",
+    "GGML_CUDA_GRAPHS_FORCE": "1"
+  },
+  "force_graph_contract": {
+    "requested": true,
+    "compatible_graph_required": true,
+    "structural_signature_valid_required": true,
+    "invalid_or_unavailable_signature": "retain existing eager/warmup fallback",
+    "core_modified": false,
+    "source": "src/ggml/src/ggml-cuda/ggml-cuda.cu:7678-7705"
+  },
+  "optional_nsys_prefill": {
+    "enabled_by_default": false,
+    "environment": "ROOT_NSYS_PREFILL_PROFILE=1",
+    "selected_scenario": "v163-single64k-ub2048-native-mask-long-prefill",
+    "window": "only prefill_banks_on_persistent_owners, including natural owner joins and context synchronization",
+    "requires": "ROOT_CUPTI_PHASE=off; first-family semantic canary may precede the capture, and cudaProfilerStart/Stop must resolve before the selected long prefill",
+    "nsys_options": [
+      "--capture-range=cudaProfilerApi",
+      "--capture-range-end=stop",
+      "--trace=cuda,osrt",
+      "--cuda-graph-trace=node",
+      "--sample=none",
+      "--cpuctxsw=none"
+    ],
+    "no_profile_claim": "disabled unless the wrapper and runner flag are both explicitly selected"
+  },
+  "v160_motivation": {
+    "runtime_log": "fixtures/layer6-longprefill-v58-20261017/results/root-v160-layer6-fullstep-diagnostic-prefill-rebuild-pinned-queues4x-20261017t001845638707z-runtime.log",
+    "observation": "V160's changed long-prefill graphs took eager fallback under prefill rebuild; capture/replay was observed for warmed decode graphs. Force is a diagnostic candidate; this overlay does not claim that changed long-prefill graphs are structurally eligible.",
+    "eager_log_lines": [
+      4818,
+      5036
+    ],
+    "decode_capture_replay_log_lines": [
+      10884,
+      10997
+    ]
+  },
+  "resource_guard": {
+    "gpu_free_floor_mib": 512,
+    "gpu_temperature_ceiling_c": 58,
+    "bmc_temperature_ceiling_c": 58,
+    "automatic_retry": false,
+    "on_guard": "stop the unit; retain the completed UB2048 data; do not retry UB4096",
+    "pinned_cap_mib": 1024,
+    "pinned_cap_is_existing_hard_max": true
+  },
+  "safety": {
+    "model_loaded": false,
+    "gpu_touched": false,
+    "remote_compile": false,
+    "runner_host_linked": false,
+    "engine_cuda_rebuild": false
+  }
+}

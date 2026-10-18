@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "cmake",
+    "-E",
+    "cmake_link_script",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/build-link-scripts/ggml__src__ggml.link.txt",
+    "--verbose=1"
+  ],
+  "cwd": "/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/ggml/src",
+  "display": "cmake -E cmake_link_script /home/debian/ac922-monster/experiments/standard-opt-20261014/notes/build-link-scripts/ggml__src__ggml.link.txt --verbose=1",
+  "kind": "link-script",
+  "output_tail": "/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libggml.so.0 -o ../../bin/libggml.so.0.25.1 \"CMakeFiles/ggml.dir/ggml-backend-dl.cpp.o\" \"CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o\"  -Wl,-rpath,/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin: -ldl ../../bin/libggml-cpu.so.0.25.1 ../../bin/libggml-cuda.so.0.25.1 ../../bin/libggml-base.so.0.25.1 /usr/local/cuda/targets/ppc64le-linux/lib/stubs/libcuda.so -ldl\n",
+  "returncode": 0,
+  "target": "ggml/src:ggml"
+}
+
+--- combined stdout/stderr ---
+/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libggml.so.0 -o ../../bin/libggml.so.0.25.1 "CMakeFiles/ggml.dir/ggml-backend-dl.cpp.o" "CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o"  -Wl,-rpath,/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/bin: -ldl ../../bin/libggml-cpu.so.0.25.1 ../../bin/libggml-cuda.so.0.25.1 ../../bin/libggml-base.so.0.25.1 /usr/local/cuda/targets/ppc64le-linux/lib/stubs/libcuda.so -ldl

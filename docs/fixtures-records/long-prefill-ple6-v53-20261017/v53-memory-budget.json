@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "candidate": "V53 V108 native masks + PLE GPU prefix 6 GiB total / 2 GiB per first-three GPU node",
+  "status": "ESTIMATES_ONLY_NOT_A_FIT_PROOF",
+  "model_and_math": {
+    "original_gguf": true,
+    "expert_pruning": false,
+    "weight_quantization_change": false,
+    "cpu_ple_lookup_math_changed": false
+  },
+  "predecessor_failure": {
+    "fixture": "V52",
+    "single64k_completed": false,
+    "failed_device_allocation_mib": 4305.92,
+    "automatic_retry": false,
+    "interpretation": "allocation failure, not a throughput result or proof that the revised placement fits"
+  },
+  "placement_alternatives": {
+    "A": {"meta_weight_per_gpu_gib": 7.44, "ple_gpu_per_gpu_gib": 4.0},
+    "B": {"meta_weight_per_gpu_gib": 9.34, "ple_gpu_per_gpu_gib": 0.0},
+    "preference": "A-like PLE-on-GPU placement",
+    "v53_selected_ple_gpu_total_gib": 6,
+    "v53_selected_ple_gpu_per_first_three_nodes_gib": 2,
+    "status": "planning figures only; the V53 6/2 placement still requires the real per-GPU memory gate"
+  },
+  "ple_placement": {
+    "environment": "LLAMA_PLE_NUMA_GPU_NODES=3 LLAMA_PLE_NUMA_GPU_GIB=6",
+    "environment_semantics": "aggregate GPU PLE prefix in GiB",
+    "gpu_numa_nodes": [255, 254, 253],
+    "gpu_prefix_total_gib": 6,
+    "gpu_prefix_per_node_gib": 2,
+    "cpu_ple_previous_estimate_gib": 14.82,
+    "cpu_ple_candidate_estimate_gib": 20.82,
+    "cpu_ple_increase_estimate_gib": 6,
+    "physical_ddr_nodes": [0, 8],
+    "physical_ddr_total_gib_estimate": 31.57,
+    "arithmetic_ddr_remainder_before_upload_and_runtime_gib": 10.75,
+    "upload_pool_max_gib": 0.5,
+    "arithmetic_ddr_remainder_if_upload_pool_fully_allocated_gib": 10.25,
+    "warning": "These are planning estimates only. Capture actual node0/node8 DDR availability, swap, file cache, memory pressure and page faults before/during/after the run. Do not treat the arithmetic remainder as a memory-fit result or add an arbitrary DDR admission threshold."
+  },
+  "upload_pool": {
+    "budget_mib": 512,
+    "default_budget_mib": 64,
+    "additional_host_ddr_mib_over_default": 448,
+    "per_copy_max_bytes": 67108864,
+    "ring_slots": 2,
+    "ring_owner_capacity_estimate_mib": 384,
+    "ring_owner_capacity_formula": "3 owners * 2 slots * 64 MiB",
+    "headroom_mib_over_ring_owner_capacity": 128,
+    "status": "bounded setting retained from V52; actual allocation/use must be logged"
+  },
+  "qsa_and_workspace_reference": {
+    "native_f16_mask_payload_formula": "65536 keys * 4096 queries * 2 bytes",
+    "native_f16_mask_payload_mib_per_gpu_estimate": 512,
+    "native_f32_block_bias_requested": true,
+    "target_ubatch": 4096,
+    "target_compute_historical_estimate_mib": 953.76,
+    "draft_ubatch": 512,
+    "draft_compute_historical_estimate_mib": 249.28,
+    "logical_n_batch": 32768,
+    "n_batch_capacity_ratio_vs_8192": 4,
+    "n_batch_scaled_memory": "unquantified; host batch and MTP row buffers may grow with n_batch",
+    "warning": "V52's native dual-mask run still failed a 4305.92 MiB allocation. Native-mask and block-bias fixtures plus historical workspace estimates do not prove V53 full-model memory fit."
+  },
+  "required_runtime_observations": {
+    "physical_ddr_nodes": [0, 8],
+    "record": ["MemFree", "MemAvailable", "FilePages", "Active(file)", "Inactive(file)", "SwapFree", "pgfault", "pgmajfault", "pswpin", "pswpout", "memory PSI", "runner smaps_rollup"],
+    "sample_points": ["before model load", "during run", "after model/context cleanup"],
+    "thresholds_added": false,
+    "actions_forbidden": ["drop_caches", "sysctl changes", "swap changes", "driver changes", "BMC/fan changes"]
+  },
+  "admission": {
+    "per_gpu_free_floor_mib": 512,
+    "gpu_temperature_ceiling_c": 58,
+    "bmc_temperature_ceiling_c": 58,
+    "automatic_retry": false,
+    "gpu_reset": false,
+    "mutate_power_or_fans": false,
+    "not_a_fit_proof": true
+  }
+}

@@ -1,0 +1,400 @@
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=2
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=3
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=4
+cuda_call operation=select one visible V100 cuda_error=0 text=no error
+cuda_call operation=verify selected device cuda_error=0 text=no error
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=100 slot=0 cuda_error=0 text=no error
+bridge_launch phase=prime frame=100 slot=0 generation=101 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=100 slot=0 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=100 slot=0 cuda_error=0 text=no error
+frame_submit phase=prime frame=100 family=B slot=0 bias=101 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=frame_h2d frame=101 slot=1 cuda_error=0 text=no error
+bridge_launch phase=prime frame=101 slot=1 generation=102 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=101 slot=1 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=101 slot=1 cuda_error=0 text=no error
+frame_submit phase=prime frame=101 family=A slot=1 bias=102 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=frame_h2d frame=102 slot=2 cuda_error=0 text=no error
+bridge_launch phase=prime frame=102 slot=2 generation=103 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=102 slot=2 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=102 slot=2 cuda_error=0 text=no error
+frame_submit phase=prime frame=102 family=A slot=2 bias=103 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=frame_h2d frame=103 slot=3 cuda_error=0 text=no error
+bridge_launch phase=prime frame=103 slot=3 generation=104 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=103 slot=3 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=103 slot=3 cuda_error=0 text=no error
+frame_submit phase=prime frame=103 family=B slot=3 bias=104 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=priming slot event after D2H cuda_error=0 text=no error
+cuda_call operation=priming slot event after D2H cuda_error=0 text=no error
+cuda_call operation=priming slot event after D2H cuda_error=0 text=no error
+cuda_call operation=priming slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=100 family=B slot=0 bias=101 checksum=178784 status=PASS
+frame_oracle phase=verify frame=101 family=A slot=1 bias=102 checksum=178720 status=PASS
+frame_oracle phase=verify frame=102 family=A slot=2 bias=103 checksum=180384 status=PASS
+frame_oracle phase=verify frame=103 family=B slot=3 bias=104 checksum=183776 status=PASS
+cuda_call operation=read target properties cuda_error=0 text=no error
+cuda_call operation=create bounded delay stream cuda_error=0 text=no error
+cuda_call operation=create bounded delay completion event cuda_error=0 text=no error
+cuda_call operation=launch bounded pending-submission gate cuda_error=0 text=no error
+cuda_call operation=record pending-submission gate completion cuda_error=0 text=no error
+cuda_call operation=hold original stream until boundedac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=4
+ gate completes cuda_error=0 text=no error
+bounded_pending_gate cycles=15000000 max_cycles=15000000 host_model_math=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=0 slot=0 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=0 slot=0 generation=101 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=0 slot=0 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=0 slot=0 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=0 family=A slot=0 bias=101 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=1 slot=1 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=1 slot=1 generation=102 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=1 slot=1 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=1 slot=1 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=1 family=B slot=1 bias=102 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=2 slot=2 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=2 slot=2 generation=103 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=2 slot=2 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=2 slot=2 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=2 family=A slot=2 bias=103 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=3 slot=3 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=3 slot=3 generation=104 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=3 slot=3 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=3 slot=3 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=3 family=A slot=3 bias=104 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+completion_fence label=before_invalidate_gate_release state=pending cuda_error=600 text=device not ready
+completion_fence label=slot_event_after_d2h_before_invalidate state=pending cuda_error=600 text=device not ready
+invalidate_pending_gate=PASS gate_pending=1 slot_event_pending=1 old_entry_selected=1
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=4 slot=0 cuda_error=0 text=no error
+bridge_launch phase=invalidate_rebuild frame=4 slot=0 generation=707 invalidate=1 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=retired generation source/output completion fence cuda_error=0 text=no error
+cuda_call operation=frame_d2h frame=4 slot=0 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=4 slot=0 cuda_error=0 text=no error
+frame_submit phase=invalidate_rebuild frame=4 family=B slot=0 bias=707 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=slot event after invalidation and D2H cuda_error=0 text=no error
+cuda_call operation=slot event after invalidation and D2H cuda_error=0 text=no error
+cuda_call operation=slot event after invalidation and D2H cuda_error=0 text=no error
+cuda_call operation=slot event after invalidation and D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=0 family=A slot=0 bias=101 checksum=13856 status=PASS
+frame_oracle phase=verify frame=1 family=B slot=1 bias=102 checksum=17248 status=PASS
+frame_oracle phase=verify frame=2 family=A slot=2 bias=103 checksum=17184 status=PASS
+frame_oracle phase=verify frame=3 family=A slot=3 bias=104 checksum=18848 status=PASS
+frame_oracle phase=verify frame=4 family=B slot=0 bias=707 checksum=41504 status=PASS
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=5 slot=1 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=5 slot=1 generation=102 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=5 slot=1 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=5 slot=1 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=5 family=A slot=1 bias=102 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=6 slot=2 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=6 slot=2 generation=103 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=6 slot=2 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=6 slot=2 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=6 family=A slot=2 bias=103 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=7 slot=3 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=7 slot=3 generation=104 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=7 slot=3 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=7 slot=3 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=7 family=B slot=3 bias=104 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=8 slot=0 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=8 slot=0 generation=707 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=8 slot=0 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=8 slot=0 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=8 family=A slot=0 bias=707 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=reused slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=5 family=A slot=1 bias=102 checksum=22048 status=PASS
+cuda_call operation=reused slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=6 family=A slot=2 bias=103 checksum=23712 status=PASS
+cuda_call operation=reused slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=7 family=B slot=3 bias=104 checksum=27104 status=PASS
+cuda_call operation=reused slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=8 family=A slot=0 bias=707 checksum=46304 status=PASS
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=9 slot=1 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=9 slot=1 generation=102 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=9 slot=1 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=9 slot=1 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=9 family=A slot=1 bias=102 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=10 slot=2 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=10 slot=2 generation=103 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=10 slot=2 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=10 slot=2 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=10 family=B slot=2 bias=103 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=11 slot=3 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=11 slot=3 generation=104 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=11 slot=3 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=11 slot=3 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=11 family=A slot=3 bias=104 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=12 slot=0 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=12 slot=0 generation=707 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=12 slot=0 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=12 slot=0 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=12 family=A slot=0 bias=707 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=reused slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=9 family=A slot=1 bias=102 checksum=28576 status=PASS
+cuda_call operation=reused slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=10 family=B slot=2 bias=103 checksum=31968 status=PASS
+cuda_call operation=reused slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=11 family=A slot=3 bias=104 checksum=31904 status=PASS
+cuda_call operation=reused slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=12 family=A slot=0 bias=707 checksum=52832 status=PASS
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=13 slot=1 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=13 slot=1 generation=102 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=13 slot=1 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=13 slot=1 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=13 family=B slot=1 bias=102 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=14 slot=2 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=14 slot=2 generation=103 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=14 slot=2 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=14 slot=2 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=14 family=A slot=2 bias=103 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=15 slot=3 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=15 slot=3 generation=104 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=15 slot=3 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=15 slot=3 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=15 family=A slot=3 bias=104 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=16 slot=0 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=16 slot=0 generation=707 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=16 slot=0 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=16 slot=0 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=16 family=B slot=0 bias=707 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=reused slot evenac922-tail-bridge admission requested=1 selected=0 device=0 outcome=-1 entries=5
+t after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=13 family=B slot=1 bias=102 checksum=36832 status=PASS
+cuda_call operation=reused slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=14 family=A slot=2 bias=103 checksum=36768 status=PASS
+cuda_call operation=reused slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=15 family=A slot=3 bias=104 checksum=38432 status=PASS
+cuda_call operation=reused slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=16 family=B slot=0 bias=707 checksum=61088 status=PASS
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=17 slot=1 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=17 slot=1 generation=102 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=17 slot=1 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=17 slot=1 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=17 family=A slot=1 bias=102 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=18 slot=2 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=18 slot=2 generation=103 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=18 slot=2 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=18 slot=2 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=18 family=A slot=2 bias=103 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=19 slot=3 cuda_error=0 text=no error
+bridge_launch phase=aba20 frame=19 slot=3 generation=104 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=19 slot=3 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=19 slot=3 cuda_error=0 text=no error
+frame_submit phase=aba20 frame=19 family=B slot=3 bias=104 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=reused slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=17 family=A slot=1 bias=102 checksum=41632 status=PASS
+cuda_call operation=reused slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=18 family=A slot=2 bias=103 checksum=43296 status=PASS
+cuda_call operation=reused slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=19 family=B slot=3 bias=104 checksum=46688 status=PASS
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add deliberately unsupported host callback node cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=31 slot=4 cuda_error=0 text=no error
+bridge_launch phase=unsupported_host_node frame=31 slot=4 generation=909 invalidate=0 outcome=-1 cuda_error=0 cuda_text=no error
+host_fallback phase=unsupported_host_node frame=31 slot=4 decline=-1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=31 slot=4 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=31 slot=4 cuda_error=0 text=no error
+frame_submit phase=unsupported_host_node frame=31 family=B slot=4 bias=909 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=0 fallback=1
+cuda_call operation=host-node fallback D2H completion fence cuda_error=0 text=no error
+frame_oracle phase=verify frame=31 family=B slot=4 bias=909 checksum=92032 status=PASS
+host_node_decline_gate=PASS expected_outcome=-1 actual_outcome=-1 fallback=1 callback_count=1
+cuda_call operation=create alternate stream cuda_error=0 text=no error
+cuda_call operation=read target properties cuda_error=0 text=no error
+cuda_call operation=retire previous bounded delay gate cuda_error=0 text=no error
+cuda_call operation=launch bounded pending-submission gate cuda_error=0 text=no error
+cuda_call operation=record pending-submission gate completion cuda_error=0 text=no error
+cuda_call operation=hold original stream until bounded gate completes cuda_error=0 text=no error
+bounded_pending_gate cycles=15000000 max_cycles=15000000 host_model_math=0
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=40 slot=0 cuda_error=0 text=no error
+bridge_launch phase=stream_change_pending frame=40 slot=0 generation=707 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=40 slot=0 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=40 slot=0 cuda_error=0 text=no error
+frame_submit phase=stream_change_pending frame=40 family=B slot=0 bias=707 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+completion_fence label=slot_event_after_external_d2h_before_stream_change state=pending cuda_error=600 text=device not ready
+bridge_launch phase=stream_change_probe frame=40 slot=0 generation=707 invalidate=0 outcome=-4 cuda_error=0 cuda_text=no error
+stream_change_slot_event_after_d2h state=complete cuda_error=0 cuda_text=no error
+frame_oracle phase=verify frame=40 family=B slot=0 bias=707 checksum=100256 status=PASS
+cuda_call operation=stream_change_fallback_h2d frame=40 cuda_error=0 text=no error
+host_fallback phase=stream_change_probe frame=40 decline=-4 cuda_error=0 cuda_text=no error
+cuda_call operation=stream_change_fallback_d2h frame=40 cuda_error=0 text=no error
+cuda_call operation=record alternate-stream slot event after D2H cuda_error=0 text=no error
+cuda_call operation=alternate-stream slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=40 family=B slot=0 bias=707 checksum=100256 status=PASS
+stream_change_gate=PASS expected_outcome=-4 pending_before_probe=1 drained_before_fallback=1 outcome=-4 fallback=1
+cuda_call operation=finish_original_stream cuda_error=0 text=no error
+cuda_call operation=finish_alternate_stream cuda_error=0 text=no error
+cuda_call operation=finish_delay_stream cuda_error=0 text=no error
+drop_context cuda_error=0 text=no error
+cleanup original_stream_fence cuda_error=0 text=no error
+cleanup alternate_stream_fence cuda_error=0 text=no error
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=2
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=3
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=4
+cuda_call operation=create capacity-probe stream cuda_error=0 text=no error
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=200 slot=0 cuda_error=0 text=no error
+bridge_launch phase=capacity9 frame=200 slot=0 generation=2000 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=200 slot=0 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=200 slot=0 cuda_error=0 text=no error
+frame_submit phase=capacity9 frame=200 family=A slot=0 bias=2000 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=capacity probe slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=200 family=A slot=0 bias=2000 checksum=401024 status=PASS
+capacity_entry index=0 outcome=1 selected=1 fallback=0
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=201 slot=1 cuda_error=0 text=no error
+bridge_launch phase=capacity9 frame=201 slot=1 generation=2001 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=201 slot=1 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=201 slot=1 cuda_error=0 text=no error
+frame_submit phase=capacity9 frame=201 family=A slot=1 bias=2001 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=capacity probe slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=201 family=A slot=1 bias=2001 checksum=402688 status=PASS
+capacity_entry index=1 outcome=1 selected=1 fallback=0
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=202 slot=2 cuda_error=0 text=no error
+bridge_launch phase=capacity9 frame=202 slot=2 generation=2002 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=202 slot=2 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=202 slot=2 cuda_error=0 text=no error
+frame_submit phase=capacity9 frame=202 family=B slot=2 bias=2002 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=capacity probe slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=202 family=B slot=2 bias=2002 checksum=406080 status=PASS
+capacity_entry index=2 outcome=1 selected=1 fallback=0
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=203 slot=3 cuda_error=0 text=no error
+bridge_launch phase=capacity9 frame=203 slot=3 generation=2003 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=203 slot=3 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=203 slot=3 cuda_error=0 text=no error
+frame_submit phase=capacity9 frame=203 family=A slot=3 bias=2003 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=capacity probe slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=203 family=A slot=3 bias=2003 checksum=406016 status=PASS
+capacity_entry index=3 outcome=1 selected=1 ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=5
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=6
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=7
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=8
+fallback=0
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=204 slot=4 cuda_error=0 text=no error
+bridge_launch phase=capacity9 frame=204 slot=4 generation=2004 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=204 slot=4 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=204 slot=4 cuda_error=0 text=no error
+frame_submit phase=capacity9 frame=204 family=A slot=4 bias=2004 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=capacity probe slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=204 family=A slot=4 bias=2004 checksum=407680 status=PASS
+capacity_entry index=4 outcome=1 selected=1 fallback=0
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=205 slot=5 cuda_error=0 text=no error
+bridge_launch phase=capacity9 frame=205 slot=5 generation=2005 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=205 slot=5 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=205 slot=5 cuda_error=0 text=no error
+frame_submit phase=capacity9 frame=205 family=B slot=5 bias=2005 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=capacity probe slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=205 family=B slot=5 bias=2005 checksum=411072 status=PASS
+capacity_entry index=5 outcome=1 selected=1 fallback=0
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=206 slot=6 cuda_error=0 text=no error
+bridge_launch phase=capacity9 frame=206 slot=6 generation=2006 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=206 slot=6 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=206 slot=6 cuda_error=0 text=no error
+frame_submit phase=capacity9 frame=206 family=A slot=6 bias=2006 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=capacity probe slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=206 family=A slot=6 bias=2006 checksum=411008 status=PASS
+capacity_entry index=6 outcome=1 selected=1 fallback=0
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=207 slot=7 cuda_error=0 text=no error
+bridge_launch phase=capacity9 frame=207 slot=7 generation=2007 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=207 slot=7 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=207 slot=7 cuda_error=0 text=no error
+frame_submit phase=capacity9 frame=207 family=A slot=7 bias=2007 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=capacity probe slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=207 family=A slot=7 bias=2007 checksum=412672 status=PASS
+capacity_entry index=7 outcome=1 selected=1 fallback=0
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=slot input-reuse completion fence cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=208 slot=8 cuda_error=0 text=no error
+bridge_launch phase=capacity9 frame=208 slot=8 generation=2008 invalidate=0 outcome=-3 cuda_error=0 cuda_text=no error
+host_fallback phase=capacity9 frame=208 slot=8 decline=-3 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=208 slot=8 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=208 slot=8 cuda_error=0 text=no error
+frame_submit phase=capacity9 frame=208 family=B slot=8 bias=2008 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=0 fallback=1
+cuda_call operation=capacity probe slot event after D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=208 family=B slot=8 bias=2008 checksum=416064 status=PASS
+capacity_entry index=8 outcome=-3 selected=0 fallback=1
+capacity8_gate=PASS limit=8 entries=9 selected_first8=8 declined_first8=0 ninth_decline=1 ninth_expected=-3
+cuda_call operation=finish_original_stream cuda_error=0 text=no error
+drop_context cuda_error=0 text=no error
+cleanup original_stream_fence cuda_error=0 text=no error
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=1
+cuda_call operation=create captured graph cuda_error=0 text=no error
+cuda_call operation=add exact integer transform cuda_error=0 text=no error
+cuda_call operation=instantiate original host graph cuda_error=0 text=no error
+cuda_call operation=frame_h2d frame=300 slot=0 cuda_error=0 text=no error
+bridge_launch phase=context_recreate frame=300 slot=0 generation=1201 invalidate=0 outcome=1 cuda_error=0 cuda_text=no error
+cuda_call operation=frame_d2h frame=300 slot=0 cuda_error=0 text=no error
+cuda_call operation=slot_event_after_d2h frame=300 slot=0 cuda_error=0 text=no error
+frame_submit phase=context_recreate frame=300 family=A slot=0 bias=1201 h2d=original_stream d2h=original_stream event_after_d2h=1 selected=1 fallback=0
+cuda_call operation=recreated context slot event after external D2H cuda_error=0 text=no error
+frame_oracle phase=verify frame=300 family=A slot=0 bias=1201 checksum=538656 status=PASS
+cuda_call operation=finish_original_stream cuda_error=0 text=no error
+drop_context cuda_error=0 text=no error
+cleanup original_stream_fence cuda_error=0 text=no error
+drop_recreate_gate=PASS reused_owner_identity=1 reused_key_identity=1
+v328_summary status=PASS frames=20 integer_oracle=PASS invalidation_pending=PASS host_node_decline_fallback=PASS stream_change_decline=PASS cap8_ninth_decline=PASS drop_context_recreate=PASS copies_outside_child=1 slot_events_after_d2h=1 bridge_selected_frames=24 host_fallback_frames=0 cuda_errors=0 gpu_model_math=0 device_reset=0

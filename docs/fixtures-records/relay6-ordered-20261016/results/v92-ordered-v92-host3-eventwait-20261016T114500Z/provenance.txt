@@ -1,0 +1,55 @@
+runtime=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92
+build_id=20261016T112235.532285Z
+tag=v92-host3-eventwait-20261016T114500Z
+binary=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-20261016/relay6-ordered-v92-host3
+binary_sha256=1b67e1675b7ee2c7a8dbd362311e17ec89dab3c64bdaadcf9d95d249df50bbc4
+source=/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-cuda/allreduce-p2p.cu
+source_sha256=b0790248c39350d862e09d0841575a8c7bad1e3c5de19fe50e55c8c9ad311b19
+case_matrix_lines=16
+case=ordered|163840|dispatch|-1
+case=ordered|163840|graph_append|-1
+case=ordered|204800|dispatch|-1
+case=ordered|204800|dispatch|0
+case=ordered|204800|dispatch|3
+case=ordered|204800|graph_append|-1
+case=ordered|204800|graph_append|0
+case=ordered|204800|graph_append|3
+case=ordered|10485760|dispatch|-1
+case=ordered|10485760|dispatch|0
+case=ordered|10485760|dispatch|3
+case=ordered|10485760|graph_append|-1
+case=ordered|10485760|graph_append|0
+case=ordered|10485760|graph_append|3
+case=segmented|10485760|dispatch|3
+case=relay|10485760|dispatch|3
+limits temp<58C used_delta<=1024MiB free>=512MiB case_timeout=15s total_timeout=120s
+1b67e1675b7ee2c7a8dbd362311e17ec89dab3c64bdaadcf9d95d249df50bbc4  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/relay6-ordered-20261016/relay6-ordered-v92-host3
+408df85bf3abc8b56383bc56022a5137bf4f99697bd38d25d1196a6cd0d4787f  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib/libggml-cuda.so.0
+14cfbe0a90af969394a4dc0d58bbc1f7097e40862c2fc29770a14af6d290e118  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib/libggml-base.so.0
+73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib/libggml.so.0
+c1fd8d19e54df03e97f1c71c8c95565626ec73f44f7d4f3e334bfe3e74f464fc  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib/libggml-cpu.so.0
+	linux-vdso64.so.1 (0x00007fffbbe20000)
+	libggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib/libggml-cuda.so.0 (0x00007fffae240000)
+	libggml.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib/libggml.so.0 (0x00007fffae210000)
+	libggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib/libggml-base.so.0 (0x00007fffae090000)
+	libggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v92/lib/libggml-cpu.so.0 (0x00007fffaded0000)
+	libcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fffaddf0000)
+	libstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fffadac0000)
+	libm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fffad990000)
+	libgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fffad950000)
+	libc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fffad6f0000)
+	/lib64/ld64.so.2 (0x00007fffbbe40000)
+	libcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fffa69d0000)
+	libcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fffa4c10000)
+	libnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fffa2db0000)
+	libgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fffa2d30000)
+	libdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fffa2d00000)
+	libpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fffa2cd0000)
+	librt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fffa2ca0000)
+	libcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff8ee10000)
+0, GPU-80452dac-e8c1-99fd-225c-ea846276ae6f, 3 MiB, 16124 MiB, 38
+1, GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb, 3 MiB, 16124 MiB, 37
+2, GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb, 3 MiB, 16124 MiB, 38
+3, GPU-fadb0459-4d30-907b-289a-862b3014f165, 3 MiB, 16124 MiB, 38
+4, GPU-760ce501-32f6-69b6-215b-1020da68bbfc, 7 MiB, 16120 MiB, 38
+5, GPU-d3558623-deca-c702-3cc0-01b4aa9c667a, 6 MiB, 16121 MiB, 38

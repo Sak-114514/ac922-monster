@@ -1,0 +1,45 @@
+utc=20261015T210022Z gpu=0 uuid=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f
+gpu0_preflight=39, 0 MiB, 0 %
+timeout_seconds=70
+614cc8685ba9d8c2f5a998a34af330609d7a372d7e764d07052c4ef3d808e7d1  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v49/lib/libggml-cuda.so.0
+built /tmp/monpack-operator-gpu.z04ER6/monpack-mul-mat-id against /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v49/lib (host C++ only; no nvcc)
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+[mp-reg] type=16 ne=[2560,640,1] ptr=0x1003748fe00
+[mp-reg] type=17 ne=[2560,640,1] ptr=0x100376f5200
+[mp-reg] type=22 ne=[2560,640,1] ptr=0x100378a8e00
+[mp-reg] type=18 ne=[2560,640,1] ptr=0x10037ac1e00
+[mp-reg] type=21 ne=[2560,640,1] ptr=0x10037cd4a00
+[mp-reg] type=20 ne=[640,2560,1] ptr=0x10038000000
+[mp-reg] type=42 ne=[640,2560,1] ptr=0x10037600000
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=0 ptr=0x10037400000 ne=[2560,640,1]
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=1 ptr=0x1003748fe00 ne=[2560,640,1]
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=0 ptr=0x10037400000 ne=[2560,640,1]
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=1 ptr=0x1003748fe00 ne=[2560,640,1]
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=0 ptr=0x10037400000 ne=[2560,640,1]
+[mp-dbg] mul_mat_id hook: type=16 ne11=1 reg=1 ptr=0x1003748fe00 ne=[2560,640,1]
+fixture_only_expert_map global=170 owner_offset=170 local=0 owners=0:170,170:171,341:171 boundaries=PASS production_EP_offset_not_under_test=yes
+mode=cpu+stock-cuda+monpack-cuda formats=7 tokens=1,4,8
+format=IQ2_XXS tokens=1 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=640 cpu_vs_stock_max_abs=0.00307548046 cpu_vs_stock_max_rel=0.826181678 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=IQ2_XXS tokens=4 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=2560 cpu_vs_stock_max_abs=0.00332200527 cpu_vs_stock_max_rel=15.7869563 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=IQ2_XXS tokens=8 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=5120 cpu_vs_stock_max_abs=0.00332200527 cpu_vs_stock_max_rel=15.7869563 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=IQ2_XS tokens=1 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=640 cpu_vs_stock_max_abs=0.00321028382 cpu_vs_stock_max_rel=3.67363332 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=IQ2_XS tokens=4 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=2560 cpu_vs_stock_max_abs=0.00347656012 cpu_vs_stock_max_rel=3.67376862 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=IQ2_XS tokens=8 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=5119 cpu_vs_stock_max_abs=0.00380040705 cpu_vs_stock_max_rel=3.77333184 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=IQ2_S tokens=1 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=640 cpu_vs_stock_max_abs=0.00228678435 cpu_vs_stock_max_rel=2.19813029 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=IQ2_S tokens=4 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=2560 cpu_vs_stock_max_abs=0.00336189568 cpu_vs_stock_max_rel=7.54257288 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=no monpack_vs_stock_unequal=1445 monpack_vs_stock_max_abs=1.1920929e-07 monpack_vs_stock_max_rel=0.000182248952 monpack_vs_stock_finite=yes
+format=IQ2_S tokens=8 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=5120 cpu_vs_stock_max_abs=0.00336189568 cpu_vs_stock_max_rel=7.54257288 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=no monpack_vs_stock_unequal=2906 monpack_vs_stock_max_abs=1.1920929e-07 monpack_vs_stock_max_rel=0.000182248952 monpack_vs_stock_finite=yes
+format=IQ3_XXS tokens=1 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=640 cpu_vs_stock_max_abs=0.00256489962 cpu_vs_stock_max_rel=22.2743177 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=IQ3_XXS tokens=4 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=2560 cpu_vs_stock_max_abs=0.00346443802 cpu_vs_stock_max_rel=22.2743177 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=IQ3_XXS tokens=8 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=5120 cpu_vs_stock_max_abs=0.00346443802 cpu_vs_stock_max_rel=22.2743177 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=IQ3_S tokens=1 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=640 cpu_vs_stock_max_abs=0.00255995989 cpu_vs_stock_max_rel=2.49461926 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=IQ3_S tokens=4 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=2560 cpu_vs_stock_max_abs=0.00322871655 cpu_vs_stock_max_rel=2.49454776 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=IQ3_S tokens=8 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=5120 cpu_vs_stock_max_abs=0.00402621925 cpu_vs_stock_max_rel=21.5191821 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=IQ4_NL tokens=1 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=1900 cpu_vs_stock_max_abs=5.96046448e-08 cpu_vs_stock_max_rel=0.00389958567 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=IQ4_NL tokens=4 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=7544 cpu_vs_stock_max_abs=5.96046448e-08 cpu_vs_stock_max_rel=0.00414230019 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=IQ4_NL tokens=8 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=15112 cpu_vs_stock_max_abs=7.4505806e-08 cpu_vs_stock_max_rel=0.00414230019 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=Q2_0 tokens=1 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=1751 cpu_vs_stock_max_abs=5.96046448e-08 cpu_vs_stock_max_rel=6.48925605e-05 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=Q2_0 tokens=4 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=7049 cpu_vs_stock_max_abs=5.96046448e-08 cpu_vs_stock_max_rel=0.000678926133 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+format=Q2_0 tokens=8 cpu_vs_stock_bitwise=no cpu_vs_stock_unequal=14042 cpu_vs_stock_max_abs=5.96046448e-08 cpu_vs_stock_max_rel=0.000678926133 cpu_vs_stock_finite=yes monpack_vs_stock_bitwise=yes monpack_vs_stock_unequal=0 monpack_vs_stock_max_abs=0 monpack_vs_stock_max_rel=0 monpack_vs_stock_finite=yes
+FAIL Monpack GEMV differs from stock CUDA for at least one type/shape
+runner_exit_status=1

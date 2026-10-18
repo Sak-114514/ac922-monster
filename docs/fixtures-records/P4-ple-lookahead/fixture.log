@@ -1,0 +1,11 @@
+PASS case=1-lane-fresh lanes=1 raw_rows=4096 unique_rows=2552 actual_GET_ROWS=exact
+PASS case=1-lane-next-chunk lanes=1 raw_rows=4096 unique_rows=2200 actual_GET_ROWS=exact
+PASS case=2-lane-chunk-boundary lanes=2 raw_rows=4096 unique_rows=1672 actual_GET_ROWS=exact
+PASS case=4-lane-mixed-history lanes=4 raw_rows=4096 unique_rows=3232 actual_GET_ROWS=exact
+PASS case=4-lane-continuation lanes=4 raw_rows=4096 unique_rows=3560 actual_GET_ROWS=exact
+PASS case=1-lane-max-1024 lanes=1 raw_rows=16384 unique_rows=13159 actual_GET_ROWS=exact
+PASS case=2-lane-max-512-each lanes=2 raw_rows=16384 unique_rows=13223 actual_GET_ROWS=exact
+PASS case=4-lane-max-256-each lanes=4 raw_rows=16384 unique_rows=10880 actual_GET_ROWS=exact
+PASS reject-oversized-1025-token-ubatch
+PASS reject-noncontiguous-lane-positions
+PASS all exact PLE lookahead fixtures

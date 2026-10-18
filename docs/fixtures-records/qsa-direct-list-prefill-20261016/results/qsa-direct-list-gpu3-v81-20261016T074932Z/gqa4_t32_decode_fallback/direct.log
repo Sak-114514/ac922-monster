@@ -1,0 +1,16 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 16128 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+QSA_DIRECT_LIST_FIXTURE device=0 mode=direct_list env_GGML_CUDA_QSA_PREFILL_DIRECT_LIST=1 fp64_oracle=0 no_model=1 capacity=16384 view=8192 width=2051 padded=2052
+QSA_DISPATCH_LOG requested=1 enabled=1
+QSA_LAUNCH_EXPECTED case=gqa4_t32_decode_fallback nsm=80 n_split=10 per=52 n_work=513 baseline_dynamic_smem_bytes=1664 direct_dynamic_smem_bytes=0 reduction_static_smem_bytes=2176 hpw=4 n_grp=1
+optimization path device=0 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=1 selected=0 reason=decode_retains_shared_list_dynamic_smem_bytes_in_auxiliary tokens=32 width=513 auxiliary=1664 count=1
+QSA_WARMUP PASS case=gqa4_t32_decode_fallback full_values=65536 exact=finite canary=PASS
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+optimization path device=0 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=1 selected=0 reason=decode_retains_shared_list_dynamic_smem_bytes_in_auxiliary tokens=32 width=513 auxiliary=1664 count=2
+QSA_GRAPH_WALL case=gqa4_t32_decode_fallback seed=0 rep=1 ms=0.369 replay_exact=1
+QSA_GRAPH_WALL case=gqa4_t32_decode_fallback seed=0 rep=2 ms=0.176 replay_exact=1
+QSA_GRAPH_WALL case=gqa4_t32_decode_fallback seed=0 rep=3 ms=0.175 replay_exact=1
+QSA_TIMING_SUMMARY case=gqa4_t32_decode_fallback reps=3 mean_graph_wall_ms=0.240
+QSA_CHANGED_INPUT PASS case=gqa4_t32_decode_fallback output_changed=1 seed0_seed1=distinct canary=PASS
+QSA_OUTPUT_FILES case=gqa4_t32_decode_fallback seed0=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-direct-list-prefill-20261016/results/qsa-direct-list-gpu3-v81-20261016T074932Z/gqa4_t32_decode_fallback/direct/gqa4_t32_decode_fallback-seed0.bin seed1=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/qsa-direct-list-prefill-20261016/results/qsa-direct-list-gpu3-v81-20261016T074932Z/gqa4_t32_decode_fallback/direct/gqa4_t32_decode_fallback-seed1.bin full_values=65536
+optimization path summary device=0 path=qsa_prefill_direct_list scope=host_dispatch_or_capture requested=2 selected=0 fallback_decode_retains_shared_list_dynamic_smem_bytes_in_auxiliary=2

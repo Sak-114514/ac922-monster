@@ -1,0 +1,20 @@
+ggml_cuda_init: found 3 CUDA devices (Total VRAM: 48384 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+ENV CUDA_VISIBLE_DEVICES=GPU-80452dac-e8c1-99fd-225c-ea846276ae6f,GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb,GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb GGML_META_CONTEXT_VIEWS=1 GGML_META_CONTEXT_VIEWS_TRACE=1
+DEVICE member=0 name=CUDA0 pci=0004:04:00.0
+DEVICE member=1 name=CUDA1 pci=0004:05:00.0
+DEVICE member=2 name=CUDA2 pci=0004:06:00.0
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp:2161: GGML_META_CONTEXT_VIEWS=1: frozen static split cache miss for shared_static_f32_weights
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v45/lib/libggml-base.so.0(+0x23088)[0x7fffaccd3088]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v45/lib/libggml-base.so.0(ggml_print_backtrace+0x308)[0x7fffaccd3688]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v45/lib/libggml-base.so.0(ggml_abort+0xe4)[0x7fffaccd3824]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v45/lib/libggml-base.so.0(+0x7ecd8)[0x7fffacd2ecd8]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v45/lib/libggml-base.so.0(+0x731cc)[0x7fffacd231cc]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v45/lib/libggml-base.so.0(+0x7f64c)[0x7fffacd2f64c]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v45/lib/libggml-base.so.0(+0x80324)[0x7fffacd30324]
+/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v45/lib/libggml-base.so.0(ggml_backend_tensor_set+0xa8)[0x7fffaccf7788]
+./owner-real-backend-fixture(+0x3254)[0x11e323254]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(+0x24d2c)[0x7fff8fa64d2c]
+/usr/lib/powerpc64le-linux-gnu/libc.so.6(__libc_start_main+0x1ac)[0x7fff8fa64f6c]

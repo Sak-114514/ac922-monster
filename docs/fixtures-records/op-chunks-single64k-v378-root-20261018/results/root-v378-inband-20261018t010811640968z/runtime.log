@@ -1,0 +1,16 @@
+v378-combined-candidate-request op_chunk=512 qsa_block_bias_native=1 qsa_bias_device=1 onecat_init_ready=1 fattn_onecat=1 target_ubatch=1024 runtime_selection_must_be_confirmed=1
+fatal-backtrace-v15 enabled=1 prewarmed=1 main_altstack=1 handlers=SIGSEGV,SIGBUS
+runner-environment ld_preload= sync_audit=0
+runner-diagnostics common_log_threshold=4 ggml_info_verbosity=4 ggml_info_visible=1
+cupti-marker phase=off dso_loaded=0 profiled=0
+fatal-backtrace-v15 reinstalled point=before-backend-init
+0.00.237.106 I ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+0.00.237.590 I   Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.00.238.079 I   Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.00.238.546 I   Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.00.239.042 I   Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.00.239.510 I   Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.00.239.975 I   Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+0.02.541.600 I CUDA static device properties cache requested=1 selected=1 physical_snapshots=6 dynamic_memory_queries_unchanged=1
+v378-qwen4exp-prefill-op-chunk requested=512 target_ubatch=1024 logical_batch=32768 qsa_block_bias_native_requested=1 onecat_init_ready_requested=1 fattn_onecat_requested=1 runtime_selection_must_be_confirmed=1
+dual-context error: V233 ROOT_UBATCH must identify the first family; later values are set explicitly

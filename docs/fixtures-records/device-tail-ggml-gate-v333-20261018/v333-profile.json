@@ -1,0 +1,43 @@
+{
+  "schema": "v333-ggml-device-tail-real-backend-gate-v1",
+  "status": "HOSTLINK_PASS; GPU gate pending; no model",
+  "runtime": {
+    "build_id": "20261017T194116.616255Z",
+    "report_sha256": "d0935c5278ac62c644947cda159235e273f795934ae4afcdfc49b70d11c2f5fe",
+    "root": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v329",
+    "dsos_sha256": {
+      "libggml-cuda.so.0": "df4f35a97ebaa9756236950970ae7929d557fc96a8bf469adb9cbe5bab0e9225",
+      "libggml-base.so.0": "8c0bd6b902f621168648b0b92c0ad697d53c1a76218cf2c69f7b20e06d997f61",
+      "libggml.so.0": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+      "libggml-cpu.so.0": "d51a3e28fafe2fc03584d790512d4dcb88583f9949647602e5cbef1fc0d71781"
+    }
+  },
+  "runner": {
+    "source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/device-tail-ggml-gate-v333-20261018/ggml-tail-gate.cpp",
+    "source_sha256": "1a4b864ab244c9e8e48bcb6f167e36df269be90485ee78f143e5707ab68e7e1b",
+    "binary": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/device-tail-ggml-gate-v333-20261018/build-v333-v329/ggml-tail-gate",
+    "binary_sha256": "6ff8ccd82769805010ae6ccaa168b3716f01bcf6c96eecf6e9f592462d89a29a",
+    "source_closure_sha256": "8c69698bf56fac3b8d7da4e67c67264b8764edc0459b857c41e7c124b0ced2d0",
+    "source_closure_count": 11
+  },
+  "tail_helper": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/device-tail-bridge-v328-20261018/build-r2/libac922-tail-bridge.so",
+    "sha256": "49ad8e2a500e5cbf24e50eb6e5d1a12888181c9d70d884cde72e4a02b23801b1"
+  },
+  "contract": {
+    "physical_cuda_devices": 6,
+    "frames": 20,
+    "scheduler_copies": 4,
+    "exact_stage_outputs": 120,
+    "capture_hint": "registry proc scoped around actual submit on same thread",
+    "require_force_cuda_graph_capture_selected_on_each_device": true,
+    "require_device_tail_helper_selected_on_each_device": true,
+    "model_loaded": false
+  },
+  "execution": {
+    "hostlink_status": "PASS",
+    "model_loads": 0,
+    "gpu_touched": false,
+    "launch_performed": false
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "scenario_map_type": "v45_context_family_arrays",
+  "corpus_artifact": "v45-real-corpus-source.json",
+  "families": {
+    "four8k_context4x16k": [
+      {
+        "label": "v45-4x8k-context-canary",
+        "kind": "v45_semantic_canary",
+        "dual": false,
+        "require_full_output": false,
+        "requests": [
+          {
+            "id": "capital-france",
+            "prompt": "What is the capital city of France? Reply with exactly the city name, without punctuation or explanation.",
+            "checker": "exact_text",
+            "expected": "Paris",
+            "max_tokens": 24,
+            "prompt_source": "compact_native_semantic_canary",
+            "prompt_sha256": "678afb9d5078d3ef479ad3e40b6e01e132b65aac62879b62ac421f37a4c5de53"
+          },
+          {
+            "id": "capital-germany",
+            "prompt": "What is the capital city of Germany? Reply with exactly the city name, without punctuation or explanation.",
+            "checker": "exact_text",
+            "expected": "Berlin",
+            "max_tokens": 24,
+            "prompt_source": "compact_native_semantic_canary",
+            "prompt_sha256": "975a70ed5320d47056f22740a81f3d9f050c791ad4bdd9f083509019384344f6"
+          },
+          {
+            "id": "arithmetic-2plus2",
+            "prompt": "What is 2 + 2? Reply with only the integer.",
+            "checker": "exact_text",
+            "expected": "4",
+            "max_tokens": 24,
+            "prompt_source": "compact_native_semantic_canary",
+            "prompt_sha256": "91b79cc91e552ac9d4ccc00e3306af388b251ddf2fc7ea1f370a3357126787f0"
+          },
+          {
+            "id": "capital-italy",
+            "prompt": "What is the capital city of Italy? Reply with exactly the city name, without punctuation or explanation.",
+            "checker": "exact_text",
+            "expected": "Rome",
+            "max_tokens": 24,
+            "prompt_source": "compact_native_semantic_canary",
+            "prompt_sha256": "c66418fc19ea3bbeeec496a0e010b557e20587b86dd92af986500cf1b2f1cf5f"
+          }
+        ]
+      },
+      {
+        "label": "v45-2x8k-real-corpus",
+        "kind": "v45_long_prefill",
+        "dual": false,
+        "require_full_output": true,
+        "requests": [
+          {
+            "id": "flow-0",
+            "corpus_token_start": 0,
+            "corpus_token_count": 8192,
+            "max_tokens": 256,
+            "ignore_eos": true,
+            "prompt_source": "r19_curated_source_runtime_token_slice",
+            "prompt_sha256": ""
+          },
+          {
+            "id": "flow-1",
+            "corpus_token_start": 8192,
+            "corpus_token_count": 8192,
+            "max_tokens": 256,
+            "ignore_eos": true,
+            "prompt_source": "r19_curated_source_runtime_token_slice",
+            "prompt_sha256": ""
+          }
+        ]
+      },
+      {
+        "label": "v45-4x8k-real-corpus",
+        "kind": "v45_long_prefill",
+        "dual": false,
+        "require_full_output": true,
+        "requests": [
+          {
+            "id": "flow-0",
+            "corpus_token_start": 16384,
+            "corpus_token_count": 8192,
+            "max_tokens": 256,
+            "ignore_eos": true,
+            "prompt_source": "r19_curated_source_runtime_token_slice",
+            "prompt_sha256": ""
+          },
+          {
+            "id": "flow-1",
+            "corpus_token_start": 24576,
+            "corpus_token_count": 8192,
+            "max_tokens": 256,
+            "ignore_eos": true,
+            "prompt_source": "r19_curated_source_runtime_token_slice",
+            "prompt_sha256": ""
+          },
+          {
+            "id": "flow-2",
+            "corpus_token_start": 32768,
+            "corpus_token_count": 8192,
+            "max_tokens": 256,
+            "ignore_eos": true,
+            "prompt_source": "r19_curated_source_runtime_token_slice",
+            "prompt_sha256": ""
+          },
+          {
+            "id": "flow-3",
+            "corpus_token_start": 40960,
+            "corpus_token_count": 8192,
+            "max_tokens": 256,
+            "ignore_eos": true,
+            "prompt_source": "r19_curated_source_runtime_token_slice",
+            "prompt_sha256": ""
+          }
+        ]
+      }
+    ],
+    "single32k": [
+      {
+        "label": "v45-1x32k-context-canary",
+        "kind": "v45_semantic_canary",
+        "dual": false,
+        "require_full_output": false,
+        "requests": [
+          {
+            "id": "capital-france",
+            "prompt": "What is the capital city of France? Reply with exactly the city name, without punctuation or explanation.",
+            "checker": "exact_text",
+            "expected": "Paris",
+            "max_tokens": 24,
+            "prompt_source": "compact_native_semantic_canary",
+            "prompt_sha256": "678afb9d5078d3ef479ad3e40b6e01e132b65aac62879b62ac421f37a4c5de53"
+          }
+        ]
+      },
+      {
+        "label": "v45-1x32k-real-corpus",
+        "kind": "v45_long_prefill",
+        "dual": false,
+        "require_full_output": true,
+        "requests": [
+          {
+            "id": "flow-0",
+            "corpus_token_start": 0,
+            "corpus_token_count": 32768,
+            "max_tokens": 32,
+            "ignore_eos": true,
+            "prompt_source": "r19_curated_source_runtime_token_slice",
+            "prompt_sha256": ""
+          }
+        ]
+      }
+    ],
+    "single64k": [
+      {
+        "label": "v45-1x64k-context-canary",
+        "kind": "v45_semantic_canary",
+        "dual": false,
+        "require_full_output": false,
+        "requests": [
+          {
+            "id": "capital-france",
+            "prompt": "What is the capital city of France? Reply with exactly the city name, without punctuation or explanation.",
+            "checker": "exact_text",
+            "expected": "Paris",
+            "max_tokens": 24,
+            "prompt_source": "compact_native_semantic_canary",
+            "prompt_sha256": "678afb9d5078d3ef479ad3e40b6e01e132b65aac62879b62ac421f37a4c5de53"
+          }
+        ]
+      },
+      {
+        "label": "v45-1x64k-real-corpus",
+        "kind": "v45_long_prefill",
+        "dual": false,
+        "require_full_output": true,
+        "requests": [
+          {
+            "id": "flow-0",
+            "corpus_token_start": 0,
+            "corpus_token_count": 65536,
+            "max_tokens": 32,
+            "ignore_eos": true,
+            "prompt_source": "r19_curated_source_runtime_token_slice",
+            "prompt_sha256": ""
+          }
+        ]
+      }
+    ]
+  },
+  "policy": {
+    "runtime_tokenization": true,
+    "one_loaded_model_vocabulary": true,
+    "source_ranges_are_non_overlapping_within_each_scenario": true,
+    "output_tokens": {
+      "multi_flow": 256,
+      "single_long_prefill": 32
+    },
+    "cross_revision_tokens_are_informational": true
+  }
+}

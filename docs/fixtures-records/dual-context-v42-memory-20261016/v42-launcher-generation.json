@@ -1,0 +1,73 @@
+{
+  "status": "GENERATED_FROM_FROZEN_V41_TEMPLATE",
+  "source": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v41-ub4096-20261016/run-v41-flatmeta6.sh",
+  "source_sha256": "4c101889f2f8107d69ddb86ef40fc257b4489272dde5430e689387c6fe619528",
+  "output": "/Users/lyx/Desktop/ssh/monster-engine/standard-opt-20261014/fixtures/dual-context-v42-memory-20261016/run-v42-flatmeta6.sh",
+  "output_sha256": "90ccdef89899733fe74fce2adc022af344af065bfdd1fc1ee33bc8f23342d6f2",
+  "source_line_count": 354,
+  "output_line_count": 354,
+  "transforms": [
+    {
+      "from": "V41",
+      "to": "V42",
+      "count": 59,
+      "reason": "V42 profile/auth/log labels"
+    },
+    {
+      "from": "v41",
+      "to": "v42",
+      "count": 12,
+      "reason": "V42 output/helper labels"
+    },
+    {
+      "from": "V94",
+      "to": "V96",
+      "count": 17,
+      "reason": "V96 runtime report labels"
+    },
+    {
+      "from": "v94",
+      "to": "v96",
+      "count": 2,
+      "reason": "V96 runtime directory labels"
+    },
+    {
+      "from": "\"$V42_DIR/compare_v42_results.py\"",
+      "to": "\"$V41_SOURCE_DIR/compare_v41_results.py\"",
+      "count": 2,
+      "reason": "reuse the V41 result comparator"
+    },
+    {
+      "from": "\"$V42_DIR/verify_v42_activation.py\"",
+      "to": "\"$V42_DIR/verify_v42_activation.py\"",
+      "count": 1,
+      "reason": "use the V42-owned pinned canonical V40 activation adapter"
+    },
+    {
+      "from": "\"$V42_DIR/compare_v42_vs_v37_token_arrays.py\"",
+      "to": "\"$V41_SOURCE_DIR/compare_v41_vs_v37_token_arrays.py\"",
+      "count": 1,
+      "reason": "reuse the V41/V37 token comparator"
+    },
+    {
+      "from": "[[ \"${GGML_CUDA_P2P_AR_RELAY6_ORDERED:-}\" == \"1\" ]] || { echo \"V42 requires the ordered six-rank relay selector\" >&2; exit 2; }",
+      "to": "[[ \"${GGML_CUDA_P2P_AR_RELAY6_ORDERED:-}\" == \"1\" ]] || { echo \"V42 requires the ordered six-rank relay selector\" >&2; exit 2; }\n[[ \"${GGML_CUDA_P2P_AR_ELIDE_UNUSED_SEGMENT:-}\" == \"1\" && \"${GGML_CUDA_P2P_AR_RELAY_LEADER_STAGE:-}\" == \"1\" && \"${GGML_CUDA_GRAPH_VARIANTS_CAP:-}\" == \"1\" ]] || { echo \"V42 requires V96 unused-segment elision, leader-only staging, and graph cap 1\" >&2; exit 2; }",
+      "count": 1,
+      "reason": "require the V96 memory-control flags"
+    },
+    {
+      "from": "export GGML_CUDA_P2P_AR_RELAY6_ORDERED=1",
+      "to": "export GGML_CUDA_P2P_AR_RELAY6_ORDERED=1\nexport GGML_CUDA_P2P_AR_ELIDE_UNUSED_SEGMENT=1 GGML_CUDA_P2P_AR_RELAY_LEADER_STAGE=1 GGML_CUDA_GRAPH_VARIANTS_CAP=1",
+      "count": 1,
+      "reason": "export exact V42 flags"
+    },
+    {
+      "from": "export ROOT_DYNAMIC_LIB_DIR=${ROOT_DYNAMIC_LIB_DIR:-\"$EXP_ROOT/runtime-perf-v96/lib\"}\nexport ROOT_BUILD_REPORT=${ROOT_BUILD_REPORT:-\"$EXP_ROOT/notes/V96-build.json\"}\n[[ -d \"$ROOT_DYNAMIC_LIB_DIR\" && -f \"$ROOT_BUILD_REPORT\" ]] || { echo \"frozen V96 runtime/report missing\" >&2; exit 2; }\n[[ \"$ROOT_DYNAMIC_LIB_DIR\" == \"$EXP_ROOT/runtime-perf-v96/lib\" && \"$ROOT_BUILD_REPORT\" == \"$EXP_ROOT/notes/V96-build.json\" ]] || {\n    echo \"V42 requires the frozen V96 whole dynamic-library closure\" >&2; exit 2;\n}",
+      "to": ": \"${ROOT_DYNAMIC_LIB_DIR:?set the selected runtime library directory from the frozen profile}\"\n: \"${ROOT_BUILD_REPORT:?set the selected build report from the frozen profile}\"\n[[ -d \"$ROOT_DYNAMIC_LIB_DIR\" && -f \"$ROOT_BUILD_REPORT\" ]] || { echo \"selected runtime/report missing\" >&2; exit 2; }",
+      "count": 1,
+      "reason": "resolve runtime paths from profile"
+    }
+  ],
+  "engine_source_changed": false,
+  "gpu_touched": false
+}

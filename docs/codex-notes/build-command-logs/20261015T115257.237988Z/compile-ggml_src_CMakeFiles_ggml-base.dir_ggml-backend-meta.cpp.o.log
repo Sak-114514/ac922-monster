@@ -1,0 +1,63 @@
+{
+  "argv": [
+    "/usr/bin/c++",
+    "-DGGML_BUILD",
+    "-DGGML_SCHED_MAX_COPIES=4",
+    "-DGGML_SHARED",
+    "-DGGML_USE_OPENMP",
+    "-D_GNU_SOURCE",
+    "-D_XOPEN_SOURCE=600",
+    "-Dggml_base_EXPORTS",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/.",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/ggml/src",
+    "-I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/../include",
+    "-O3",
+    "-DNDEBUG",
+    "-std=gnu++17",
+    "-fPIC",
+    "-Wmissing-declarations",
+    "-Wmissing-noreturn",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Wcast-qual",
+    "-Wno-unused-function",
+    "-Wno-array-bounds",
+    "-Wextra-semi",
+    "-fopenmp",
+    "-o",
+    "CMakeFiles/ggml-base.dir/ggml-backend-meta.cpp.o",
+    "-c",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp"
+  ],
+  "cwd": "/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/ggml/src",
+  "display": "/usr/bin/c++ -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_base_EXPORTS -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/. -I/home/debian/ac922-monster/experiments/standard-opt-20261014/build-reuse/ggml/src -I/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -fopenmp -o CMakeFiles/ggml-base.dir/ggml-backend-meta.cpp.o -c /home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp",
+  "error": null,
+  "error_repr": null,
+  "error_type": null,
+  "object": "ggml/src/CMakeFiles/ggml-base.dir/ggml-backend-meta.cpp.o",
+  "returncode": 0,
+  "traceback": null
+}
+
+--- combined stdout/stderr ---
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp: In function ‘const char* ggml_backend_meta_split_axis_name(ggml_backend_meta_split_axis)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp:122:9: warning: case value ‘12’ not in enumerated type ‘ggml_backend_meta_split_axis’ [-Wswitch]
+  122 |         case ggml_ep_private::local_partial_axis:
+      |         ^~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp: In lambda function:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp:902:13: warning: case value ‘12’ not in enumerated type ‘const ggml_backend_meta_split_axis’ [-Wswitch]
+  902 |             case ggml_ep_private::local_partial_axis: {
+      |             ^~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp: In lambda function:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp:978:13: warning: case value ‘12’ not in enumerated type ‘const ggml_backend_meta_split_axis’ [-Wswitch]
+  978 |             case ggml_ep_private::local_partial_axis: {
+      |             ^~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp: In lambda function:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp:999:13: warning: case value ‘12’ not in enumerated type ‘const ggml_backend_meta_split_axis’ [-Wswitch]
+  999 |             case ggml_ep_private::local_partial_axis: {
+      |             ^~~~
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp: In function ‘void ggml_backend_meta_buffer_memset_tensor(ggml_backend_buffer_t, ggml_tensor*, uint8_t, size_t, size_t)’:
+/home/debian/ac922-monster/experiments/standard-opt-20261014/src/ggml/src/ggml-backend-meta.cpp:2202:9: warning: case value ‘12’ not in enumerated type ‘const ggml_backend_meta_split_axis’ [-Wswitch]
+ 2202 |         case ggml_ep_private::local_partial_axis:
+      |         ^~~~
