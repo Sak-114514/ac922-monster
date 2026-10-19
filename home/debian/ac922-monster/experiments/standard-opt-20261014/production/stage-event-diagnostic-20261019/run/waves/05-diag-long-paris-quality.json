@@ -1,0 +1,159 @@
+{
+  "request": {
+    "id": "diag-long-paris-quality",
+    "requests": [
+      {
+        "id": "long-paris",
+        "prompt": "What is the capital city of France? Reply with exactly the city name, without punctuation or explanation.",
+        "semantic_pad_to_tokens": 32768,
+        "max_tokens": 24,
+        "cache_prompt": false,
+        "ignore_eos": false
+      }
+    ],
+    "refill": false
+  },
+  "result": {
+    "id": "diag-long-paris-quality",
+    "accepted": {
+      "long-paris": {
+        "type": "accepted",
+        "id": "long-paris",
+        "input_tokens": 32768,
+        "reserved_tokens": 32792,
+        "bank": 0,
+        "wave_id": "diag-long-paris-quality"
+      }
+    },
+    "cache_status": {
+      "long-paris": {
+        "type": "cache_status",
+        "id": "long-paris",
+        "bank": 0,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      }
+    },
+    "done": {
+      "long-paris": {
+        "type": "done",
+        "id": "long-paris",
+        "input_tokens": 32768,
+        "output_tokens": 1,
+        "finish_reason": "stop",
+        "bank": 0
+      }
+    },
+    "errors": [],
+    "first_token_s": {
+      "long-paris": 9.165761134005152
+    },
+    "last_token_s": {
+      "long-paris": 9.165761134005152
+    },
+    "refill_mode_requested": false,
+    "wave_closing_seen": false,
+    "close_ack_sent": false,
+    "worker_pid": 572038,
+    "wave_done_seen": true,
+    "timings": {
+      "wave_id": "diag-long-paris-quality",
+      "mode": "bank_local_phase_progression",
+      "banks": [
+        {
+          "bank": 0,
+          "target_context": 66048,
+          "draft_context": 66048,
+          "target_ubatch": 1024
+        },
+        {
+          "bank": 1,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 2,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 3,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        }
+      ],
+      "refill_count": 0,
+      "flow_count": 1,
+      "wall_seconds": 8.197837,
+      "whole_wave_output_tok_s": 0.12198339635198895,
+      "all_emissions_tok_s": 1000000.0,
+      "prefill_input_tokens": 32768,
+      "prefill_wall_seconds": 7.626919,
+      "cached_tokens": 0,
+      "prefill_evaluated_tokens": 32768,
+      "uncached_prefill": true,
+      "prefill_aggregate_wall_tok_s": 4296.361348534054,
+      "logical_prompt_tok_s": 4296.361348534054,
+      "prefill_scope": "initial independent bank prefills",
+      "target_prefill_us_sum": 7432203,
+      "mtp_prefill_us_sum": 188604,
+      "thermal_wait_us_sum": 0,
+      "mtp_depth": 3,
+      "single_cached_affinity": false,
+      "single_cache_admission_free_mib": [],
+      "production_floor_mib": 256,
+      "context_rebuilds_before_execution": 4,
+      "capacity_growth_enabled": true,
+      "capacity_growth_applied": false,
+      "capacity_growth_reason": "request_count_out_of_range",
+      "capacity_growth_units": 0,
+      "capacity_growth_required_free_mib": 0,
+      "capacity_growth_preflight_free_mib": [],
+      "capacity_growth_exact_capacity": [
+        66048,
+        17152,
+        17152,
+        17152
+      ],
+      "capacity_growth_candidate_capacity": [
+        66048,
+        17152,
+        17152,
+        17152
+      ],
+      "state_migration_supported": false,
+      "banks_scope": "completed wave before optional idle-context reclamation",
+      "post_wave_free_before_mib": [
+        1836,
+        1392,
+        1468,
+        1620,
+        2525,
+        2393
+      ],
+      "post_wave_reclaimed_banks": 0,
+      "post_wave_reclaim_us": 1052,
+      "post_wave_free_after_mib": [
+        1836,
+        1392,
+        1468,
+        1620,
+        2525,
+        2393
+      ]
+    },
+    "wall_s": 9.737822582013905,
+    "texts": {
+      "long-paris": "Paris"
+    },
+    "host_start_monotonic_us": 283834099815,
+    "host_end_monotonic_us": 283843838669,
+    "host_full_wave_us": 9738854,
+    "measurement_scope": "host send through complete IPC response; includes full wave overhead",
+    "request_sha256": "7facf258ac70f3fa39bcfebc12611a076672f8ae6c09d62152abdcdb331db7b3"
+  }
+}

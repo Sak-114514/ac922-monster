@@ -1,0 +1,81 @@
+{
+  "argv": [
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-jcap-v421-root-20261018/host/build-v421/grouped-mmq-fullshape-v421",
+    "--format",
+    "IQ2_XS",
+    "--tokens",
+    "1024",
+    "--route",
+    "uniform10",
+    "--samples",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/monpack-ep-readiness-20261016/operator-fixture/tc-probe/samples",
+    "--device",
+    "3"
+  ],
+  "format": "IQ2_XS",
+  "rows": 640,
+  "inner": 2560,
+  "experts": 512,
+  "tokens": 1024,
+  "top_k": 10,
+  "route": "uniform10",
+  "mode": "auto",
+  "j_max_requested": null,
+  "auto_j_inferred_from_exact_route_histogram": 32,
+  "route_assignments_per_expert": 20,
+  "cap32_selected_j_claim": null,
+  "device": 3,
+  "device_uuid": "GPU-fadb0459-4d30-907b-289a-862b3014f165",
+  "runtime_library_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v411/lib",
+  "runtime_library_sha256": {
+    "libggml-cuda.so.0": "3c64cf9e82fc317145d2f8774b663726cdfa609eb6060e349a355b2a9141168d",
+    "libggml-base.so.0": "1ad9368633d009ae28fc3bd8165bee920a57128ac31390e431ba01e28c72384e",
+    "libggml.so.0": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+    "libggml-cpu.so.0": "63525deba1db08199b25852ba71c9115961fdd4db8632f7defe88172613bd31c"
+  },
+  "binary": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-jcap-v421-root-20261018/host/build-v421/grouped-mmq-fullshape-v421",
+  "binary_sha256": "3ab28a745b5148fc7d01b1ca837d7e669165112bfc12975e19d4ca4dc4df04be",
+  "candidate_source_sha256": {
+    "grouped_mmq_fullshape_cpp": "c8c4f9b900281dd562cb99d599a1115f994f2d6eb4801f9561522a51e202e5a3",
+    "route_plan_h": "17b7ce6ecae6e4d91a1715dfaf467723b3f7f03ec13a645773ceb2e0cc78448e",
+    "case_runner_py": "8c52dd4da74b79dd5e8d59bb4056bdcb4f42349c9618d416d5b270e2b1d4bb48",
+    "matrix_runner_py": "1f234bacebad6ad2cfd9aa2f8c8fed0d5dbd39c4324c601f21fa713f26bfa5e9"
+  },
+  "recipe_flags": {
+    "GGML_CUDA_MOE_GROUPED": "1",
+    "GGML_CUDA_MOE_ADAPTIVE_J": "1",
+    "GGML_CUDA_MOE_SMALL_J": "1",
+    "GGML_CUDA_MOE_SMALL_J_MAX_TOKENS": "512",
+    "GGML_CUDA_MOE_FUSED_T16": "1",
+    "GGML_OPTIMIZATION_PATH_LOG": "1"
+  },
+  "sample_manifest_and_raw_sha256": {
+    "expert170_manifest": "4f805d23a0aaa6289c8b13b1784a6e50d10f860f3b8952d830849dad9fb18ac2",
+    "expert170_IQ2_XS_raw": "3b59bc7b22011c251b51bacaba6dc6f86d267d741c0adbfa25802c4cffc8dc6b",
+    "expert171_manifest": "fed1209486140cb291f9489dbfe9d7b605e508343b83f7d27b0c86f110aa1d2e",
+    "expert171_IQ2_XS_raw": "ee424e9e80eb368d41ba193e9fac04778c116ee85fb7f4f19854c9888ccd59a3"
+  },
+  "machine": {
+    "hostname": "192",
+    "platform": "Linux-8.8.8-ac922-gw-ppc64le-with-glibc2.36",
+    "python": "3.11.2"
+  },
+  "output_f32": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-jcap-v421-root-20261018/host/results/root-v421-inband-20261018t061549210251z-05-IQ2_XS-t1024-auto/IQ2_XS-n640-t1024-uniform10-auto.f32",
+  "output_shape_token_topk_row": [
+    1024,
+    10,
+    640
+  ],
+  "output_bytes": 26214400,
+  "output_limit_bytes": 220200960,
+  "output_storage_scope": "server_only",
+  "timed_region_includes_output_dump": false,
+  "gpu_memory_cap_bytes": 2147483648,
+  "minimum_free_mib": 512,
+  "maximum_temperature_c": 58,
+  "timeout_seconds": 120,
+  "model_loaded": false,
+  "custom_kernel_called": false,
+  "source_samples_sha256_verified": true,
+  "quality_scope": "full F32 output dumped after timing; compare report is report-only"
+}

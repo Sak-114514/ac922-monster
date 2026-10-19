@@ -1,0 +1,3543 @@
+{
+  "schema": "v397-cupti-kernel-stage-analysis-v1",
+  "provenance": {
+    "profile_sha256": "c37609b935a5beffd3ac277474d6bc7ef9d588058bb0f52d732e8d2f96c2c9dc",
+    "runner_source_sha256_expected": "46031ce451f2684d3b4163dc6d048e55e3a208b9b1898acfce72be5e67f8dec5",
+    "runner_source_sha256_actual": "46031ce451f2684d3b4163dc6d048e55e3a208b9b1898acfce72be5e67f8dec5",
+    "results_sha256": "4289051256d7b19f2618d0d213850aa927eb461356c83b7a6f96edcca375a00b",
+    "runtime_log_sha256": "da54ed87bca301ae10940c929760a76b5549b2f846761872b819307084dcb84b",
+    "trace_sha256": "15aacf475e22671ea148f0f47f5a18245e434d3b021e7e2b00b4f2e1457e025b",
+    "scenario_sha256_expected": "a1f297b4c3ea50de22a1d4233ca41fa3046280325ebfa869de2467fec722e88e",
+    "scenario_sha256_actual": "a1f297b4c3ea50de22a1d4233ca41fa3046280325ebfa869de2467fec722e88e",
+    "runtime_build_id": "20261018T033835.695366Z",
+    "runtime_report_sha256": "a00b50ddbc2d38aa20b442efa1941d3f0f37c91350b18eba1f2851298072e60a",
+    "runner_sha256_profile": "861ae87c079e9ad84290d4c09c5fbae406458f59075b25bdbb4bda43530739e2",
+    "helper_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/host-child-single-exec-v398-root-20261018/build-r7/libac922-tail-bridge.so",
+    "helper_sha256_expected_binary": "4957bc1841361818ca4245394aa7617efd9a64e1f39d98f9d079fa6f08433bb1",
+    "helper_binary_actual_sha256_local": null,
+    "helper_source_sha256_expected": "6c60f4f21405e18143befac37e6503b3708f9de15bbe503f6e5c79b7783f753b",
+    "helper_source_sha256_actual": "6c60f4f21405e18143befac37e6503b3708f9de15bbe503f6e5c79b7783f753b",
+    "cupti_collector_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-cupti32k-v223-20261017/libac922-cupti-window.so",
+    "cupti_collector_sha256": "fed48760d18e858a441cb8181b4276fcb73cc69eac431551f5b25ea5ace9fe89",
+    "run_manifest": {
+      "path": "fixtures/prefill-host-child-v397-root-20261018/results/root-v397-inband-20261018t034713068101z-manifest.json",
+      "sha256": "b0a8386b4610809fd61478a46d6d4aeec92317144cc6abcad0d83436bfa6a5a1",
+      "unit": "root-v397-inband-20261018t034713068101z",
+      "runtime_build_id": "20261018T033835.695366Z",
+      "source_sha256": "46031ce451f2684d3b4163dc6d048e55e3a208b9b1898acfce72be5e67f8dec5",
+      "helper_identity": "4957bc1841361818ca4245394aa7617efd9a64e1f39d98f9d079fa6f08433bb1  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/host-child-single-exec-v398-root-20261018/build-r7/libac922-tail-bridge.so",
+      "helper_binary_sha256_actual": "4957bc1841361818ca4245394aa7617efd9a64e1f39d98f9d079fa6f08433bb1",
+      "cupti_trace_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/prefill-host-child-v397-root-20261018/results/root-v397-inband-20261018t034713068101z/cupti/diagnostic-first32k-target.jsonl",
+      "helper_binary_matches_profile": true
+    },
+    "provenance_hash_checks": {
+      "source_matches_profile": true,
+      "scenario_matches_profile": true,
+      "helper_source_matches_profile": true
+    }
+  },
+  "trace_integrity": {
+    "trace_valid": true,
+    "zero_loss_gates": {
+      "record_overflow": 0,
+      "buffer_starvation_selected_window": 0,
+      "parse_errors_selected_window": 0,
+      "bad_buffers_selected_window": 0,
+      "untimed_activity_records_during_window": 0,
+      "device_table_overflow": 0,
+      "context_stream_pair_overflow": 0,
+      "dropped_selected_window_phase": 0
+    },
+    "dropped_read_total": 0,
+    "events_stored": 612634,
+    "name_truncated_records": 28228
+  },
+  "native_gate": {
+    "label": "v397-single64k-ub512-native-paris-8192",
+    "semantic_status": "pass",
+    "external_gate_status": "pass"
+  },
+  "clean_performance_primary": {
+    "record": {
+      "label": "v397-single64k-ub512-clean64k-prefill",
+      "kind": "v50_long_prefill",
+      "wall_seconds": 17.692882,
+      "prefill_wall_seconds": 17.426902,
+      "prefill_scenario_wall_us": 17426902,
+      "scenario_whole_wall_us": 17692882,
+      "target_prefill_us_sum": 17235130,
+      "mtp_prefill_us_sum": 188120,
+      "prefill_input_tokens": 65536,
+      "prefill_aggregate_wall_tok_s": 3760.6225133991115,
+      "single_request_prefill_metric_valid": true,
+      "single_request_prefill_tok_s": 3760.6225133991115,
+      "single_request_target_prefill_metric_valid": true,
+      "single_request_target_prefill_tok_s": 3802.466241914044,
+      "prefill_chunks_by_lane": [
+        {
+          "id": "corpus64k-single64k-v397-clean-ub512",
+          "chunks": [
+            {
+              "index": 0,
+              "start_token": 0,
+              "end_token_exclusive": 32768,
+              "target_decode_sync_us": 9991055,
+              "mtp_process_sync_us": 96187,
+              "output_rows": 0
+            },
+            {
+              "index": 1,
+              "start_token": 32768,
+              "end_token_exclusive": 65536,
+              "target_decode_sync_us": 7244075,
+              "mtp_process_sync_us": 91933,
+              "output_rows": 1
+            }
+          ]
+        }
+      ],
+      "semantic_status": "unscored",
+      "measurement_complete": true,
+      "scope": "clean uninstrumented performance sample"
+    },
+    "vs_clean_baselines": {
+      "comparison": {
+        "whole_prefill_tok_s": {
+          "V397_clean": 3760.6225133991115,
+          "V386_clean": {
+            "baseline": 4243.444581951491,
+            "delta": -482.82206855237973,
+            "delta_percent": -11.378069378022552
+          },
+          "V373_clean": {
+            "baseline": 4083.5431516159956,
+            "delta": -322.9206382168841,
+            "delta_percent": -7.907854190033317
+          }
+        },
+        "target_prefill_tok_s": {
+          "V397_clean": 3802.466241914044,
+          "V386_clean": {
+            "baseline": 4307.998490465128,
+            "delta": -505.5322485510842,
+            "delta_percent": -11.734735972400552
+          },
+          "V373_clean": {
+            "baseline": 4145.6223218888235,
+            "delta": -343.15607997477946,
+            "delta_percent": -8.277552881817538
+          }
+        }
+      },
+      "baselines": {
+        "V386": {
+          "label": "v386-single64k-ub512-clean64k-prefill",
+          "whole_prefill_tok_s": 4243.444581951491,
+          "target_prefill_tok_s": 4307.998490465128
+        },
+        "V373": {
+          "label": "v373-single64k-ub512-real64k-prefill",
+          "whole_prefill_tok_s": 4083.5431516159956,
+          "target_prefill_tok_s": 4145.6223218888235
+        }
+      },
+      "scope": "Clean uncached 64K only. The diagnostic 32K request is excluded from the primary speed comparison."
+    }
+  },
+  "diagnostic_32k_separate_nonprimary": {
+    "record": {
+      "label": "v397-single64k-ub512-diagnostic32k-prefill",
+      "kind": "v50_long_prefill",
+      "wall_seconds": 13.232653,
+      "prefill_wall_seconds": 13.001589,
+      "prefill_scenario_wall_us": 13001589,
+      "scenario_whole_wall_us": 13232653,
+      "target_prefill_us_sum": 12895789,
+      "mtp_prefill_us_sum": 103736,
+      "prefill_input_tokens": 32768,
+      "prefill_aggregate_wall_tok_s": 2520.3073255122895,
+      "single_request_prefill_metric_valid": true,
+      "single_request_prefill_tok_s": 2520.3073255122895,
+      "single_request_target_prefill_metric_valid": true,
+      "single_request_target_prefill_tok_s": 2540.9845027706333,
+      "prefill_chunks_by_lane": [
+        {
+          "id": "corpus32k-single64k-v397-diagnostic-ub512",
+          "chunks": [
+            {
+              "index": 0,
+              "start_token": 0,
+              "end_token_exclusive": 32768,
+              "target_decode_sync_us": 12895789,
+              "mtp_process_sync_us": 103736,
+              "output_rows": 1
+            }
+          ]
+        }
+      ],
+      "semantic_status": "unscored",
+      "measurement_complete": true,
+      "scope": "diagnostic-only-instrumented; not a clean speed sample and not averaged with clean performance"
+    },
+    "primary_speed_comparison": false,
+    "warmth": {
+      "scenario_order": [
+        "v397-single64k-ub512-native-paris-8192",
+        "v397-single64k-ub512-clean64k-prefill",
+        "v397-single64k-ub512-diagnostic32k-prefill"
+      ],
+      "clean64k_precedes_diagnostic32k": true,
+      "same_model_load": true,
+      "graph_variants_may_be_warm_from_clean64k": true,
+      "prompt_kv_reused": false,
+      "prompt_kv_clear_evidence": "bank.reset clears target and draft llama_memory before each scenario",
+      "diagnostic_prompt_cache_enabled": false,
+      "note": "Warm graph/captured variants do not mean prompt KV was reused."
+    },
+    "gpu_stage_envelope": {
+      "label": "V397 diagnostic 32K target",
+      "available": true,
+      "window_basis": "exact v219 monotonic_us phase markers",
+      "host_window_start_us": 214618319951.0,
+      "host_window_end_us": 214631215614.0,
+      "host_wall_ms": 12895.663,
+      "span_events": 384,
+      "span_event_count_by_device": {
+        "0": 64,
+        "1": 64,
+        "2": 64,
+        "3": 64,
+        "4": 64,
+        "5": 64
+      },
+      "per_device": {
+        "0": {
+          "span_events": 64,
+          "span_duration_sum_ms": 6078.678,
+          "envelope_union_ms": 6078.678,
+          "median_span_ms": 92.9295,
+          "seq_values": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ]
+        },
+        "1": {
+          "span_events": 64,
+          "span_duration_sum_ms": 5616.904,
+          "envelope_union_ms": 5616.904,
+          "median_span_ms": 87.7175,
+          "seq_values": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ]
+        },
+        "2": {
+          "span_events": 64,
+          "span_duration_sum_ms": 5764.335,
+          "envelope_union_ms": 5764.335,
+          "median_span_ms": 90.4335,
+          "seq_values": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ]
+        },
+        "3": {
+          "span_events": 64,
+          "span_duration_sum_ms": 5777.27,
+          "envelope_union_ms": 5777.27,
+          "median_span_ms": 90.0105,
+          "seq_values": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ]
+        },
+        "4": {
+          "span_events": 64,
+          "span_duration_sum_ms": 5778.489,
+          "envelope_union_ms": 5778.489,
+          "median_span_ms": 90.745,
+          "seq_values": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ]
+        },
+        "5": {
+          "span_events": 64,
+          "span_duration_sum_ms": 5818.586,
+          "envelope_union_ms": 5818.586,
+          "median_span_ms": 91.1115,
+          "seq_values": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ]
+        }
+      },
+      "mean_per_gpu_stage_envelope_union_ms": 5805.710333333333,
+      "overall_envelope_concurrency": {
+        "available": true,
+        "wall_start_us": 214618319951.0,
+        "wall_end_us": 214631215614.0,
+        "wall_ms": 12895.663,
+        "envelope_coverage_fraction": 0.818570088253702,
+        "mean_active_device_envelopes": 2.7012385481847656,
+        "active_device_envelope_fraction": {
+          "0": 0.18142991174629797,
+          "1": 0.36021932334925316,
+          "2": 0.06316418163222783,
+          "3": 0.019659555309409063,
+          "4": 0.028260353887969932,
+          "5": 0.04092926435810241,
+          "6": 0.3063374097167397
+        },
+        "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+      },
+      "per_scheduler_span_ordinal": [
+        {
+          "scheduler_span_seq": 0,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 498.435,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.03859258729078141,
+            "mean_active_device_envelopes": 0.038651366742446666,
+            "active_device_envelope_fraction": {
+              "0": 0.9614074127092186,
+              "1": 0.03853380783911614,
+              "2": 5.877945166526141e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 1,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 516.316,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.03997917749556579,
+            "mean_active_device_envelopes": 0.040037956947231015,
+            "active_device_envelope_fraction": {
+              "0": 0.9600208225044342,
+              "1": 0.0399203980439005,
+              "2": 5.877945166526141e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 2,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 563.045,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.043602798863462855,
+            "mean_active_device_envelopes": 0.04366157831512812,
+            "active_device_envelope_fraction": {
+              "0": 0.9563972011365371,
+              "1": 0.04354401941179759,
+              "2": 5.877945166526141e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 3,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 565.777,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04381449794399872,
+            "mean_active_device_envelopes": 0.043873432486565445,
+            "active_device_envelope_fraction": {
+              "0": 0.9561855020560013,
+              "1": 0.04375556340143194,
+              "2": 5.893454256675287e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 4,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 611.282,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04734126504391434,
+            "mean_active_device_envelopes": 0.04740213822274977,
+            "active_device_envelope_fraction": {
+              "0": 0.9526587349560857,
+              "1": 0.04728039186507898,
+              "2": 6.0873178835396055e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 5,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 554.81,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04296351416751509,
+            "mean_active_device_envelopes": 0.043022991528237055,
+            "active_device_envelope_fraction": {
+              "0": 0.9570364858324849,
+              "1": 0.042904036806793104,
+              "2": 5.947736072197296e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 6,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 570.113,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04414980447302319,
+            "mean_active_device_envelopes": 0.04420966956099892,
+            "active_device_envelope_fraction": {
+              "0": 0.9558501955269768,
+              "1": 0.044089939385047516,
+              "2": 5.98650879757016e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 7,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 570.731,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04419726228887966,
+            "mean_active_device_envelopes": 0.04425759264955978,
+            "active_device_envelope_fraction": {
+              "0": 0.9558027377111203,
+              "1": 0.044136931928199424,
+              "2": 6.0330360680175966e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 8,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 582.868,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04513819878822822,
+            "mean_active_device_envelopes": 0.04519876178526067,
+            "active_device_envelope_fraction": {
+              "0": 0.9548618012117718,
+              "1": 0.04507763579119584,
+              "2": 6.056299703241315e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 9,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 547.005,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.042356721015429755,
+            "mean_active_device_envelopes": 0.04241774928516665,
+            "active_device_envelope_fraction": {
+              "0": 0.9576432789845702,
+              "1": 0.04229569274569287,
+              "2": 6.102826973688751e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 10,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 525.355,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.040738890276521667,
+            "mean_active_device_envelopes": 0.04073889027652165,
+            "active_device_envelope_fraction": {
+              "0": 0.9592611097234783,
+              "1": 0.04073889027652165,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 11,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 545.881,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.042269327292439374,
+            "mean_active_device_envelopes": 0.04233058819852845,
+            "active_device_envelope_fraction": {
+              "0": 0.9577306727075606,
+              "1": 0.042208066386350204,
+              "2": 6.126090608912469e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 12,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 530.863,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04116601061922909,
+            "mean_active_device_envelopes": 0.041166010619229115,
+            "active_device_envelope_fraction": {
+              "0": 0.9588339893807709,
+              "1": 0.041166010619229115,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 13,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 539.367,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.041825457132370736,
+            "mean_active_device_envelopes": 0.041825457132370784,
+            "active_device_envelope_fraction": {
+              "0": 0.9581745428676293,
+              "1": 0.041825457132370784,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 14,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 545.27,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04222675483997995,
+            "mean_active_device_envelopes": 0.04228320792812281,
+            "active_device_envelope_fraction": {
+              "0": 0.95777324516002,
+              "1": 0.04217030175183703,
+              "2": 5.645308814288959e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 15,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 546.533,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04231934410817029,
+            "mean_active_device_envelopes": 0.042381147832414666,
+            "active_device_envelope_fraction": {
+              "0": 0.9576806558918297,
+              "1": 0.04225754038392598,
+              "2": 6.180372424434479e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 16,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 535.33,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.041512406147710235,
+            "mean_active_device_envelopes": 0.04151240614771028,
+            "active_device_envelope_fraction": {
+              "0": 0.9584875938522898,
+              "1": 0.04151240614771028,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 17,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 549.885,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04257997436812666,
+            "mean_active_device_envelopes": 0.04264108018331434,
+            "active_device_envelope_fraction": {
+              "0": 0.9574200256318733,
+              "1": 0.04251886855293908,
+              "2": 6.110581518763324e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 18,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 540.382,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.041904165764877654,
+            "mean_active_device_envelopes": 0.041904165764877696,
+            "active_device_envelope_fraction": {
+              "0": 0.9580958342351223,
+              "1": 0.041904165764877696,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 19,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 551.27,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.042686754453803544,
+            "mean_active_device_envelopes": 0.042748480632597174,
+            "active_device_envelope_fraction": {
+              "0": 0.9573132455461965,
+              "1": 0.042625028275009975,
+              "2": 6.172617879359905e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 20,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 528.217,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.040960825356555874,
+            "mean_active_device_envelopes": 0.04096082535655592,
+            "active_device_envelope_fraction": {
+              "0": 0.9590391746434441,
+              "1": 0.04096082535655592,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 21,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 548.739,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04249033182706463,
+            "mean_active_device_envelopes": 0.04255221309675974,
+            "active_device_envelope_fraction": {
+              "0": 0.9575096681729354,
+              "1": 0.04242845055736956,
+              "2": 6.188126969509052e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 22,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 539.473,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.041833676950149834,
+            "mean_active_device_envelopes": 0.04183367695014983,
+            "active_device_envelope_fraction": {
+              "0": 0.9581663230498502,
+              "1": 0.04183367695014983,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 23,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 544.446,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04221931047670835,
+            "mean_active_device_envelopes": 0.042219310476708335,
+            "active_device_envelope_fraction": {
+              "0": 0.9577806895232917,
+              "1": 0.042219310476708335,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 24,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 537.377,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04167114168538677,
+            "mean_active_device_envelopes": 0.041671141685386784,
+            "active_device_envelope_fraction": {
+              "0": 0.9583288583146132,
+              "1": 0.041671141685386784,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 25,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 515.053,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.03994001704293915,
+            "mean_active_device_envelopes": 0.03994001704293917,
+            "active_device_envelope_fraction": {
+              "0": 0.9600599829570609,
+              "1": 0.03994001704293917,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 26,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 531.884,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04124518452444048,
+            "mean_active_device_envelopes": 0.0412451845244405,
+            "active_device_envelope_fraction": {
+              "0": 0.9587548154755595,
+              "1": 0.0412451845244405,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 27,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 531.635,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04122587570720482,
+            "mean_active_device_envelopes": 0.04122587570720482,
+            "active_device_envelope_fraction": {
+              "0": 0.9587741242927952,
+              "1": 0.04122587570720482,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 28,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 543.585,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04215254384361622,
+            "mean_active_device_envelopes": 0.04215254384361626,
+            "active_device_envelope_fraction": {
+              "0": 0.9578474561563838,
+              "1": 0.04215254384361626,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 29,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 528.255,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04096377208368429,
+            "mean_active_device_envelopes": 0.040963772083684256,
+            "active_device_envelope_fraction": {
+              "0": 0.9590362279163157,
+              "1": 0.040963772083684256,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 30,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 543.995,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.042184337478421985,
+            "mean_active_device_envelopes": 0.042184337478422006,
+            "active_device_envelope_fraction": {
+              "0": 0.957815662521578,
+              "1": 0.042184337478422006,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 31,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 536.78,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04162484705129155,
+            "mean_active_device_envelopes": 0.04162484705129159,
+            "active_device_envelope_fraction": {
+              "0": 0.9583751529487085,
+              "1": 0.04162484705129159,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 32,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 546.441,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04237036901476099,
+            "mean_active_device_envelopes": 0.042374013650946056,
+            "active_device_envelope_fraction": {
+              "0": 0.957629630985239,
+              "1": 0.04236672437857596,
+              "2": 3.6446361850491907e-06,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 33,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 534.283,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.041431216060779485,
+            "mean_active_device_envelopes": 0.041431216060779506,
+            "active_device_envelope_fraction": {
+              "0": 0.9585687839392205,
+              "1": 0.041431216060779506,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 34,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 542.293,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04205235512125283,
+            "mean_active_device_envelopes": 0.04205235512125278,
+            "active_device_envelope_fraction": {
+              "0": 0.9579476448787472,
+              "1": 0.04205235512125278,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 35,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 543.696,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.042146727934810335,
+            "mean_active_device_envelopes": 0.04216115138864904,
+            "active_device_envelope_fraction": {
+              "0": 0.9578532720651897,
+              "1": 0.042132304480971626,
+              "2": 1.4423453838705307e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 36,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 541.546,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04199264512417855,
+            "mean_active_device_envelopes": 0.041994428669545725,
+            "active_device_envelope_fraction": {
+              "0": 0.9580073548758214,
+              "1": 0.04199086157881142,
+              "2": 1.7835453671517316e-06,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 37,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 528.655,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04099479026398256,
+            "mean_active_device_envelopes": 0.04099479026398255,
+            "active_device_envelope_fraction": {
+              "0": 0.9590052097360174,
+              "1": 0.04099479026398255,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 38,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 552.569,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.042787641085223815,
+            "mean_active_device_envelopes": 0.04284921217311587,
+            "active_device_envelope_fraction": {
+              "0": 0.9572123589147762,
+              "1": 0.04272606999733166,
+              "2": 6.15710878921076e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 39,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 535.624,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04153520451022952,
+            "mean_active_device_envelopes": 0.041535204510229524,
+            "active_device_envelope_fraction": {
+              "0": 0.9584647954897705,
+              "1": 0.041535204510229524,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 40,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 538.43,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.041752797045021994,
+            "mean_active_device_envelopes": 0.041752797045022036,
+            "active_device_envelope_fraction": {
+              "0": 0.958247202954978,
+              "1": 0.041752797045022036,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 41,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 552.012,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.042750031541612055,
+            "mean_active_device_envelopes": 0.04280601935705051,
+            "active_device_envelope_fraction": {
+              "0": 0.957249968458388,
+              "1": 0.04269404372617368,
+              "2": 5.598781543841523e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 42,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 526.493,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04082713699947027,
+            "mean_active_device_envelopes": 0.040827136999470284,
+            "active_device_envelope_fraction": {
+              "0": 0.9591728630005297,
+              "1": 0.040827136999470284,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 43,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 541.476,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04198900048799348,
+            "mean_active_device_envelopes": 0.04198900048799352,
+            "active_device_envelope_fraction": {
+              "0": 0.9580109995120065,
+              "1": 0.04198900048799352,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 44,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 540.197,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04188981985648976,
+            "mean_active_device_envelopes": 0.041889819856489735,
+            "active_device_envelope_fraction": {
+              "0": 0.9581101801435102,
+              "1": 0.041889819856489735,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 45,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 543.763,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04216634693384902,
+            "mean_active_device_envelopes": 0.042166346933849,
+            "active_device_envelope_fraction": {
+              "0": 0.957833653066151,
+              "1": 0.042166346933849,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 46,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 538.898,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04178908831597106,
+            "mean_active_device_envelopes": 0.041789088315971036,
+            "active_device_envelope_fraction": {
+              "0": 0.9582109116840289,
+              "1": 0.041789088315971036,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 47,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 546.811,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04233873047085679,
+            "mean_active_device_envelopes": 0.04240270546772198,
+            "active_device_envelope_fraction": {
+              "0": 0.9576612695291432,
+              "1": 0.042274755473991524,
+              "2": 6.397499686522515e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 48,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 551.002,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.042664731545791756,
+            "mean_active_device_envelopes": 0.04272769845179732,
+            "active_device_envelope_fraction": {
+              "0": 0.9573352684542082,
+              "1": 0.04260176463978626,
+              "2": 6.29669060055307e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 49,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 525.196,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04072656054985313,
+            "mean_active_device_envelopes": 0.04072656054985308,
+            "active_device_envelope_fraction": {
+              "0": 0.9592734394501469,
+              "1": 0.04072656054985308,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 50,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 547.451,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04238983292289822,
+            "mean_active_device_envelopes": 0.04245233455619924,
+            "active_device_envelope_fraction": {
+              "0": 0.9576101670771018,
+              "1": 0.042327331289597134,
+              "2": 6.250163330105633e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 51,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 541.524,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04199272266962928,
+            "mean_active_device_envelopes": 0.041992722669629313,
+            "active_device_envelope_fraction": {
+              "0": 0.9580072773303707,
+              "1": 0.041992722669629313,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 52,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 552.825,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.042805166357092306,
+            "mean_active_device_envelopes": 0.04286906380850678,
+            "active_device_envelope_fraction": {
+              "0": 0.9571948336429077,
+              "1": 0.04274126890567782,
+              "2": 6.389745141447942e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 53,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 541.151,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.0419637982165012,
+            "mean_active_device_envelopes": 0.04196379821650116,
+            "active_device_envelope_fraction": {
+              "0": 0.9580362017834988,
+              "1": 0.04196379821650116,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 54,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 547.178,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04243116464814567,
+            "mean_active_device_envelopes": 0.04243116464814566,
+            "active_device_envelope_fraction": {
+              "0": 0.9575688353518543,
+              "1": 0.04243116464814566,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 55,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 518.744,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.040226237301641654,
+            "mean_active_device_envelopes": 0.04022623730164165,
+            "active_device_envelope_fraction": {
+              "0": 0.9597737626983583,
+              "1": 0.04022623730164165,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 56,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 543.354,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04213463084449398,
+            "mean_active_device_envelopes": 0.042134630844493995,
+            "active_device_envelope_fraction": {
+              "0": 0.957865369155506,
+              "1": 0.042134630844493995,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 57,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 543.597,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04215347438902517,
+            "mean_active_device_envelopes": 0.04215347438902521,
+            "active_device_envelope_fraction": {
+              "0": 0.9578465256109748,
+              "1": 0.04215347438902521,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 58,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 538.107,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.041727749864431174,
+            "mean_active_device_envelopes": 0.04172774986443117,
+            "active_device_envelope_fraction": {
+              "0": 0.9582722501355688,
+              "1": 0.04172774986443117,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 59,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 538.837,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04178435804347558,
+            "mean_active_device_envelopes": 0.04178435804347555,
+            "active_device_envelope_fraction": {
+              "0": 0.9582156419565244,
+              "1": 0.04178435804347555,
+              "2": 0.0,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 60,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 548.07,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04243713564785312,
+            "mean_active_device_envelopes": 0.04250033519021085,
+            "active_device_envelope_fraction": {
+              "0": 0.9575628643521469,
+              "1": 0.042373936105495315,
+              "2": 6.319954235776788e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 61,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 552.458,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.042777017358471614,
+            "mean_active_device_envelopes": 0.042840604628083104,
+            "active_device_envelope_fraction": {
+              "0": 0.9572229826415284,
+              "1": 0.04271343008886011,
+              "2": 6.358726961149651e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 62,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 553.072,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04282478535613099,
+            "mean_active_device_envelopes": 0.042888217534840976,
+            "active_device_envelope_fraction": {
+              "0": 0.957175214643869,
+              "1": 0.04276135317742097,
+              "2": 6.343217871000506e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        },
+        {
+          "scheduler_span_seq": 63,
+          "devices_observed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "events": 6,
+          "span_duration_sum_ms": 618.552,
+          "stage_envelope_concurrency": {
+            "available": true,
+            "wall_start_us": 214618319951.0,
+            "wall_end_us": 214631215614.0,
+            "wall_ms": 12895.663,
+            "envelope_coverage_fraction": 0.04790246147096122,
+            "mean_active_device_envelopes": 0.04796589364967121,
+            "active_device_envelope_fraction": {
+              "0": 0.9520975385290388,
+              "1": 0.0478390292922512,
+              "2": 6.343217871000506e-05,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.0,
+              "6": 0.0
+            },
+            "semantics": "CUDA event envelopes; includes gaps and scheduler/stream delays; not SM busy or GPU utilization"
+          }
+        }
+      ],
+      "semantics": "CUDA event envelopes, not kernel/SM busy time; approx_begin_us calibration uncertainty is recorded per event",
+      "span_event_count_per_device_contract": {
+        "expected_profile_count": null,
+        "observed": {
+          "0": 64,
+          "1": 64,
+          "2": 64,
+          "3": 64,
+          "4": 64,
+          "5": 64
+        },
+        "note": "No hard-coded V392 event count; report actual R397 period-1 spans and compare only against same-scope V392 first32K envelopes."
+      }
+    }
+  },
+  "cupti_diagnostic_trace": {
+    "trace_path": "fixtures/prefill-host-child-v397-root-20261018/results/root-v397-inband-20261018t034713068101z-cupti-diagnostic-first32k-target.jsonl",
+    "integrity": {
+      "trace_valid": true,
+      "zero_loss_gates": {
+        "record_overflow": 0,
+        "buffer_starvation_selected_window": 0,
+        "parse_errors_selected_window": 0,
+        "bad_buffers_selected_window": 0,
+        "untimed_activity_records_during_window": 0,
+        "device_table_overflow": 0,
+        "context_stream_pair_overflow": 0,
+        "dropped_selected_window_phase": 0
+      },
+      "dropped_read_total": 0,
+      "events_stored": 612634,
+      "name_truncated_records": 28228
+    },
+    "selected_window": {
+      "cupti_start_ns": 1792295633057944782,
+      "cupti_stop_ns": 1792295643853001473,
+      "cupti_duration_ms": 10795.056691,
+      "runtime_host_start_us": 214618319975.0,
+      "runtime_host_stop_us": 214629115033.0,
+      "runtime_host_duration_ms": 10795.058,
+      "host_vs_cupti_duration_delta_us": 1.3090000003576279,
+      "clock_map_slope_us_per_ns": 0.0010000001212592058,
+      "time_domain": "runtime monotonic_us affine-mapped from owner start/stop brackets",
+      "target_phase_bounds_us": [
+        214618319951,
+        214631215614
+      ],
+      "target_rows": 32768,
+      "capture_scope": "sole target 32K chunk0; MTP excluded"
+    },
+    "owner_api": {
+      "owner_pthread_id_full": 140728979519552,
+      "owner_pthread_id_low32": 81098816,
+      "cupti_runtime_thread_id": 81098816,
+      "thread_match_mode": "pthread_self_low32",
+      "linux_tid_auxiliary": 469183,
+      "runtime_api_records": 283904,
+      "wall_union_ms": 7254.261417175293,
+      "duration_sum_ms": 7254.260548,
+      "window_minus_api_union_ms": 3540.795273824707,
+      "wall_union_by_group": [
+        {
+          "name": "event_synchronize",
+          "count": 384,
+          "wall_union_ms": 14.42650894165039,
+          "duration_sum_ms": 14.426507
+        },
+        {
+          "name": "graph_destroy",
+          "count": 64,
+          "wall_union_ms": 44.15386926269531,
+          "duration_sum_ms": 44.153864
+        },
+        {
+          "name": "graph_exec_destroy",
+          "count": 6,
+          "wall_union_ms": 5.031671600341797,
+          "duration_sum_ms": 5.031671
+        },
+        {
+          "name": "graph_instantiate",
+          "count": 60,
+          "wall_union_ms": 3749.7383087768553,
+          "duration_sum_ms": 3749.737854
+        },
+        {
+          "name": "graph_launch",
+          "count": 384,
+          "wall_union_ms": 2296.6415397949218,
+          "duration_sum_ms": 2296.641261
+        },
+        {
+          "name": "graph_other",
+          "count": 52987,
+          "wall_union_ms": 27.051283935546873,
+          "duration_sum_ms": 27.051284
+        },
+        {
+          "name": "graph_upload",
+          "count": 60,
+          "wall_union_ms": 88.77568774414063,
+          "duration_sum_ms": 88.775677
+        },
+        {
+          "name": "memcpy",
+          "count": 8037,
+          "wall_union_ms": 67.41692272949219,
+          "duration_sum_ms": 67.416916
+        },
+        {
+          "name": "memset",
+          "count": 2520,
+          "wall_union_ms": 5.121095245361328,
+          "duration_sum_ms": 5.121094
+        },
+        {
+          "name": "other",
+          "count": 191847,
+          "wall_union_ms": 239.86540179443358,
+          "duration_sum_ms": 239.86538
+        },
+        {
+          "name": "stream_synchronize",
+          "count": 96,
+          "wall_union_ms": 666.6596168518066,
+          "duration_sum_ms": 666.659536
+        },
+        {
+          "name": "stream_wait_event",
+          "count": 27459,
+          "wall_union_ms": 49.379510498046876,
+          "duration_sum_ms": 49.379504
+        }
+      ],
+      "top_api_names": [
+        {
+          "name": "cudaGraphInstantiateWithFlags_v11040",
+          "count": 60,
+          "wall_union_ms": 3749.7383087768553,
+          "duration_sum_ms": 3749.737854
+        },
+        {
+          "name": "cudaGraphLaunch_v10000",
+          "count": 384,
+          "wall_union_ms": 2296.6415397949218,
+          "duration_sum_ms": 2296.641261
+        },
+        {
+          "name": "cudaStreamSynchronize_v3020",
+          "count": 96,
+          "wall_union_ms": 666.6596168518066,
+          "duration_sum_ms": 666.659536
+        },
+        {
+          "name": "cudaLaunchKernel_v7000",
+          "count": 46356,
+          "wall_union_ms": 142.43143966674805,
+          "duration_sum_ms": 142.431422
+        },
+        {
+          "name": "cudaGraphUpload_v10000",
+          "count": 60,
+          "wall_union_ms": 88.77568774414063,
+          "duration_sum_ms": 88.775677
+        },
+        {
+          "name": "cudaMemcpyAsync_v3020",
+          "count": 7337,
+          "wall_union_ms": 57.82352438354492,
+          "duration_sum_ms": 57.823519
+        },
+        {
+          "name": "cudaStreamWaitEvent_v3020",
+          "count": 27459,
+          "wall_union_ms": 49.379510498046876,
+          "duration_sum_ms": 49.379504
+        },
+        {
+          "name": "cudaGraphDestroy_v10000",
+          "count": 64,
+          "wall_union_ms": 44.15386926269531,
+          "duration_sum_ms": 44.153864
+        },
+        {
+          "name": "cudaGraphNodeGetType_v10000",
+          "count": 52867,
+          "wall_union_ms": 26.171514831542968,
+          "duration_sum_ms": 26.171515
+        },
+        {
+          "name": "cudaGetDevice_v3020",
+          "count": 69219,
+          "wall_union_ms": 23.267057403564454,
+          "duration_sum_ms": 23.267057
+        },
+        {
+          "name": "cudaEventRecord_v3020",
+          "count": 9280,
+          "wall_union_ms": 20.149963928222657,
+          "duration_sum_ms": 20.149962
+        },
+        {
+          "name": "cudaEventSynchronize_v3020",
+          "count": 384,
+          "wall_union_ms": 14.42650894165039,
+          "duration_sum_ms": 14.426507
+        },
+        {
+          "name": "cudaEventElapsedTime_v3020",
+          "count": 756,
+          "wall_union_ms": 10.676164276123046,
+          "duration_sum_ms": 10.676163
+        },
+        {
+          "name": "cudaGetLastError_v3020",
+          "count": 40126,
+          "wall_union_ms": 10.406417510986328,
+          "duration_sum_ms": 10.406415
+        },
+        {
+          "name": "cudaMemcpyPeerAsync_v4000",
+          "count": 640,
+          "wall_union_ms": 9.317846405029297,
+          "duration_sum_ms": 9.317845
+        },
+        {
+          "name": "cudaEventQuery_v3020",
+          "count": 1481,
+          "wall_union_ms": 8.591734985351563,
+          "duration_sum_ms": 8.591734
+        },
+        {
+          "name": "cudaPointerGetAttributes_v4000",
+          "count": 6273,
+          "wall_union_ms": 6.756872253417969,
+          "duration_sum_ms": 6.756874
+        },
+        {
+          "name": "cudaMemsetAsync_v3020",
+          "count": 2520,
+          "wall_union_ms": 5.121095245361328,
+          "duration_sum_ms": 5.121094
+        },
+        {
+          "name": "cudaGraphExecDestroy_v10000",
+          "count": 6,
+          "wall_union_ms": 5.031671600341797,
+          "duration_sum_ms": 5.031671
+        },
+        {
+          "name": "cudaStreamIsCapturing_v10000",
+          "count": 6273,
+          "wall_union_ms": 4.993798828125,
+          "duration_sum_ms": 4.993799
+        },
+        {
+          "name": "cudaStreamEndCapture_v10000",
+          "count": 60,
+          "wall_union_ms": 3.2302073669433593,
+          "duration_sum_ms": 3.230207
+        },
+        {
+          "name": "cudaSetDevice_v3020",
+          "count": 786,
+          "wall_union_ms": 2.0446888122558593,
+          "duration_sum_ms": 2.044689
+        },
+        {
+          "name": "cudaPeekAtLastError_v3020",
+          "count": 6657,
+          "wall_union_ms": 1.8042180786132813,
+          "duration_sum_ms": 1.804219
+        },
+        {
+          "name": "cudaDeviceGetAttribute_v5000",
+          "count": 3380,
+          "wall_union_ms": 1.3927326965332032,
+          "duration_sum_ms": 1.392734
+        },
+        {
+          "name": "cudaStreamDestroy_v5050",
+          "count": 60,
+          "wall_union_ms": 1.3799762573242187,
+          "duration_sum_ms": 1.379976
+        },
+        {
+          "name": "cudaOccupancyMaxActiveBlocksPerMultiprocessor_v6050",
+          "count": 960,
+          "wall_union_ms": 1.1183554077148437,
+          "duration_sum_ms": 1.118355
+        },
+        {
+          "name": "cudaStreamCreateWithFlags_v5000",
+          "count": 60,
+          "wall_union_ms": 1.0729112243652343,
+          "duration_sum_ms": 1.072911
+        },
+        {
+          "name": "cudaGraphGetNodes_v10000",
+          "count": 120,
+          "wall_union_ms": 0.8797691040039063,
+          "duration_sum_ms": 0.879769
+        },
+        {
+          "name": "cudaStreamBeginCapture_v10000",
+          "count": 60,
+          "wall_union_ms": 0.3189830627441406,
+          "duration_sum_ms": 0.318983
+        },
+        {
+          "name": "cudaMemcpy2DAsync_v3020",
+          "count": 60,
+          "wall_union_ms": 0.27555194091796875,
+          "duration_sum_ms": 0.275552
+        },
+        {
+          "name": "cudaEventCreateWithFlags_v3020",
+          "count": 60,
+          "wall_union_ms": 0.22988003540039062,
+          "duration_sum_ms": 0.22988
+        }
+      ]
+    },
+    "kernel_intervals": {
+      "kernel_activity_record_count": 317846,
+      "kernel_records_per_device": {
+        "0": 55437,
+        "1": 52492,
+        "2": 52492,
+        "3": 52492,
+        "4": 52492,
+        "5": 52441
+      },
+      "per_device_kernel_interval_union": {
+        "0": {
+          "kernel_interval_count": 55437,
+          "kernel_interval_union_ms": 5811.299244,
+          "kernel_duration_sum_ms": 5811.304075,
+          "kernel_interval_median_ms": 0.024063
+        },
+        "1": {
+          "kernel_interval_count": 52492,
+          "kernel_interval_union_ms": 5526.514427,
+          "kernel_duration_sum_ms": 5526.514427,
+          "kernel_interval_median_ms": 0.023809
+        },
+        "2": {
+          "kernel_interval_count": 52492,
+          "kernel_interval_union_ms": 5669.100816,
+          "kernel_duration_sum_ms": 5669.100816,
+          "kernel_interval_median_ms": 0.0220485
+        },
+        "3": {
+          "kernel_interval_count": 52492,
+          "kernel_interval_union_ms": 5645.463306,
+          "kernel_duration_sum_ms": 5645.467115,
+          "kernel_interval_median_ms": 0.023776
+        },
+        "4": {
+          "kernel_interval_count": 52492,
+          "kernel_interval_union_ms": 5688.396648,
+          "kernel_duration_sum_ms": 5688.404392,
+          "kernel_interval_median_ms": 0.0229285
+        },
+        "5": {
+          "kernel_interval_count": 52441,
+          "kernel_interval_union_ms": 5721.692198,
+          "kernel_duration_sum_ms": 5721.692198,
+          "kernel_interval_median_ms": 0.023904
+        }
+      },
+      "kernel_family_classification": {
+        "other": {
+          "kernel_interval_count": 173702,
+          "kernel_interval_union_ms": 4444.472558,
+          "kernel_duration_sum_ms": 6275.872496,
+          "per_device": {
+            "0": {
+              "count": 30976,
+              "interval_union_ms": 1159.805977,
+              "duration_sum_ms": 1159.808602
+            },
+            "1": {
+              "count": 28544,
+              "interval_union_ms": 1026.837597,
+              "duration_sum_ms": 1026.837597
+            },
+            "2": {
+              "count": 28544,
+              "interval_union_ms": 1035.089485,
+              "duration_sum_ms": 1035.089485
+            },
+            "3": {
+              "count": 28544,
+              "interval_union_ms": 1009.796083,
+              "duration_sum_ms": 1009.796083
+            },
+            "4": {
+              "count": 28544,
+              "interval_union_ms": 1012.573256,
+              "duration_sum_ms": 1012.573256
+            },
+            "5": {
+              "count": 28550,
+              "interval_union_ms": 1031.767473,
+              "duration_sum_ms": 1031.767473
+            }
+          }
+        },
+        "dense": {
+          "kernel_interval_count": 101584,
+          "kernel_interval_union_ms": 4342.090582,
+          "kernel_duration_sum_ms": 6139.865416,
+          "per_device": {
+            "0": {
+              "count": 17421,
+              "interval_union_ms": 1063.390666,
+              "duration_sum_ms": 1063.390666
+            },
+            "1": {
+              "count": 16844,
+              "interval_union_ms": 1021.484015,
+              "duration_sum_ms": 1021.484015
+            },
+            "2": {
+              "count": 16844,
+              "interval_union_ms": 1016.251607,
+              "duration_sum_ms": 1016.251607
+            },
+            "3": {
+              "count": 16844,
+              "interval_union_ms": 1012.450176,
+              "duration_sum_ms": 1012.450176
+            },
+            "4": {
+              "count": 16844,
+              "interval_union_ms": 1010.548697,
+              "duration_sum_ms": 1010.548697
+            },
+            "5": {
+              "count": 16787,
+              "interval_union_ms": 1015.740255,
+              "duration_sum_ms": 1015.740255
+            }
+          }
+        },
+        "gdn": {
+          "kernel_interval_count": 4608,
+          "kernel_interval_union_ms": 1419.104321,
+          "kernel_duration_sum_ms": 1642.655641,
+          "per_device": {
+            "0": {
+              "count": 768,
+              "interval_union_ms": 273.09326,
+              "duration_sum_ms": 273.09326
+            },
+            "1": {
+              "count": 768,
+              "interval_union_ms": 274.126756,
+              "duration_sum_ms": 274.126756
+            },
+            "2": {
+              "count": 768,
+              "interval_union_ms": 273.991825,
+              "duration_sum_ms": 273.991825
+            },
+            "3": {
+              "count": 768,
+              "interval_union_ms": 273.390127,
+              "duration_sum_ms": 273.390127
+            },
+            "4": {
+              "count": 768,
+              "interval_union_ms": 272.735016,
+              "duration_sum_ms": 272.735016
+            },
+            "5": {
+              "count": 768,
+              "interval_union_ms": 275.318657,
+              "duration_sum_ms": 275.318657
+            }
+          }
+        },
+        "moe": {
+          "kernel_interval_count": 32192,
+          "kernel_interval_union_ms": 7025.267889,
+          "kernel_duration_sum_ms": 14547.378806,
+          "per_device": {
+            "0": {
+              "count": 5312,
+              "interval_union_ms": 2408.94947,
+              "duration_sum_ms": 2408.94947
+            },
+            "1": {
+              "count": 5376,
+              "interval_union_ms": 2294.795842,
+              "duration_sum_ms": 2294.795842
+            },
+            "2": {
+              "count": 5376,
+              "interval_union_ms": 2431.788948,
+              "duration_sum_ms": 2431.788948
+            },
+            "3": {
+              "count": 5376,
+              "interval_union_ms": 2442.010173,
+              "duration_sum_ms": 2442.010173
+            },
+            "4": {
+              "count": 5376,
+              "interval_union_ms": 2486.576436,
+              "duration_sum_ms": 2486.576436
+            },
+            "5": {
+              "count": 5376,
+              "interval_union_ms": 2483.257937,
+              "duration_sum_ms": 2483.257937
+            }
+          }
+        },
+        "qsa": {
+          "kernel_interval_count": 5760,
+          "kernel_interval_union_ms": 2862.38086,
+          "kernel_duration_sum_ms": 5456.710664,
+          "per_device": {
+            "0": {
+              "count": 960,
+              "interval_union_ms": 906.062077,
+              "duration_sum_ms": 906.062077
+            },
+            "1": {
+              "count": 960,
+              "interval_union_ms": 909.270217,
+              "duration_sum_ms": 909.270217
+            },
+            "2": {
+              "count": 960,
+              "interval_union_ms": 911.978951,
+              "duration_sum_ms": 911.978951
+            },
+            "3": {
+              "count": 960,
+              "interval_union_ms": 907.820556,
+              "duration_sum_ms": 907.820556
+            },
+            "4": {
+              "count": 960,
+              "interval_union_ms": 905.970987,
+              "duration_sum_ms": 905.970987
+            },
+            "5": {
+              "count": 960,
+              "interval_union_ms": 915.607876,
+              "duration_sum_ms": 915.607876
+            }
+          }
+        }
+      },
+      "unclassified_top_names": [
+        {
+          "name": "_Z29lightning_indexer_kernel_tileILi8ELi32ELl128ELl4EL9ggml_type0EEvPKfPKcS2_PK6__halfPflllmmmmmmmmmmmmmmml",
+          "count": 768,
+          "duration_sum_ms": 1262.0212229999986
+        },
+        {
+          "name": "_Z27convert_unary_cont_sat_vec4IfEvPKvP6__halfl",
+          "count": 50048,
+          "duration_sum_ms": 915.7077360000003
+        },
+        {
+          "name": "_Z16dsv4_hc_post_f32ILb0EEvPKfS1_S1_S1_Pfllllllllllllllll",
+          "count": 6144,
+          "duration_sum_ms": 478.5314609999991
+        },
+        {
+          "name": "_Z15dsv4_hc_pre_f32ILb1EEvPKfS1_Pflllllllllllf",
+          "count": 6144,
+          "duration_sum_ms": 394.13247799999976
+        },
+        {
+          "name": "_Z21dequantize_block_q6_KI6__halfEvPKvPT_",
+          "count": 4544,
+          "duration_sum_ms": 385.7948350000007
+        },
+        {
+          "name": "_Z23dequantize_block_iq4_xsI6__halfEvPKvPT_",
+          "count": 4288,
+          "duration_sum_ms": 361.09431499999937
+        },
+        {
+          "name": "_Z13mm_ids_helperILi10EEvPKiPiS2_S2_iiiiibi",
+          "count": 9216,
+          "duration_sum_ms": 348.3413400000007
+        },
+        {
+          "name": "_Z27convert_unary_cont_sat_vec4I13__nv_bfloat16EvPKvP6__halfl",
+          "count": 30848,
+          "duration_sum_ms": 291.6702279999982
+        },
+        {
+          "name": "_Z17concat_copies_f3218concat_copies_args",
+          "count": 2368,
+          "duration_sum_ms": 274.5934970000008
+        },
+        {
+          "name": "_Z21dequantize_block_q4_KI6__halfEvPKvPT_",
+          "count": 2880,
+          "duration_sum_ms": 262.70060399999966
+        },
+        {
+          "name": "_Z22dequantize_block_iq3_sI6__halfEvPKvPT_",
+          "count": 3520,
+          "duration_sum_ms": 250.8100549999999
+        },
+        {
+          "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_addEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+          "count": 1475,
+          "duration_sum_ms": 153.9881059999998
+        },
+        {
+          "name": "_Z26moe_weighted_reduction_f32PKfS0_S0_Pfli",
+          "count": 1600,
+          "duration_sum_ms": 126.12934200000005
+        },
+        {
+          "name": "_Z10cpy_scalarIXadL_ZN36_INTERNAL_319e1a36_6_cpy_cu_bfba63e212cpy_1_scalarIffEEvPKcPcEEEvS3_S4_lllllllllllllll",
+          "count": 1024,
+          "duration_sum_ms": 93.13877999999994
+        },
+        {
+          "name": "_ZN8cublasLt19splitKreduce_kernelILi32ELi16EiffffLb1ELb0ELb0EEEvNS_18cublasSplitKParamsIT4_EEPKT2_PKT3_PS7_PKS2_SC_PKT5_S6_PSD_",
+          "count": 19200,
+          "duration_sum_ms": 92.884822000002
+        },
+        {
+          "name": "_Z21dequantize_block_q5_KI6__halfEvPKvPT_",
+          "count": 896,
+          "duration_sum_ms": 76.73178099999991
+        },
+        {
+          "name": "_Z18strided_sum_kernelILb1EEv16strided_sum_args",
+          "count": 768,
+          "duration_sum_ms": 50.576452000000046
+        },
+        {
+          "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_mulEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+          "count": 769,
+          "duration_sum_ms": 40.55215500000005
+        },
+        {
+          "name": "_Z23dequantize_block_iq4_nlI6__halfEvPKvPT_",
+          "count": 2560,
+          "duration_sum_ms": 39.448198000000055
+        },
+        {
+          "name": "_Z11fill_kernelIfEvPT_lS0_",
+          "count": 1920,
+          "duration_sum_ms": 39.183588000000064
+        },
+        {
+          "name": "_Z11fill_kernelI6__halfEvPT_lS1_",
+          "count": 768,
+          "duration_sum_ms": 37.24449899999999
+        },
+        {
+          "name": "_Z21unary_gated_op_kernelIXadL_ZN38_INTERNAL_9b06fd10_8_unary_cu_eb6d536610op_sigmoidEfEEfEvPKT0_S3_PS1_llll",
+          "count": 768,
+          "duration_sum_ms": 37.14331399999998
+        },
+        {
+          "name": "_Z14elem_chain_f32IXadL_ZN38_INTERNAL_9b06fd10_8_unary_cu_eb6d536610op_sigmoidEfEELb0ELb0ELb1ELb1EEv15elem_chain_argsPfi5uint3",
+          "count": 1600,
+          "duration_sum_ms": 34.881857999999966
+        },
+        {
+          "name": "_Z15unary_op_kernelIXadL_ZN38_INTERNAL_9b06fd10_8_unary_cu_eb6d53667op_stepEfEEfEvPKT0_PS1_i",
+          "count": 384,
+          "duration_sum_ms": 33.38521
+        },
+        {
+          "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b6op_subEffEEfffJPKfEEvPKT0_PKT1_PT2_jjj5uint3SB_SB_SB_SB_jjj",
+          "count": 384,
+          "duration_sum_ms": 32.97254100000001
+        },
+        {
+          "name": "_Z9fwht_cudaILi256EEvPKfPflf",
+          "count": 1536,
+          "duration_sum_ms": 29.713151000000018
+        },
+        {
+          "name": "_Z9fwht_cudaILi64EEvPKfPflf",
+          "count": 1536,
+          "duration_sum_ms": 26.983790000000003
+        },
+        {
+          "name": "_Z11k_bin_bcastIXadL_ZN42_INTERNAL_d4952914_11_binbcast_cu_6840010b9op_repeatEffEEfffJEEvPKT0_PKT1_PT2_jjj5uint3S9_S9_S9_S9_jjj",
+          "count": 512,
+          "duration_sum_ms": 24.089268
+        },
+        {
+          "name": "_Z21cpy_scalar_contiguousIf6__halfEvPKcPcl",
+          "count": 768,
+          "duration_sum_ms": 19.768617
+        },
+        {
+          "name": "_Z11concat_contIjLi0EEvPKT_S2_PS0_llllll",
+          "count": 768,
+          "duration_sum_ms": 13.947811000000002
+        },
+        {
+          "name": "_Z14elem_chain_f32IXadL_ZN38_INTERNAL_9b06fd10_8_unary_cu_eb6d536610op_sigmoidEfEELb1ELb0ELb0ELb0EEv15elem_chain_argsPfi5uint3",
+          "count": 6144,
+          "duration_sum_ms": 12.782777000000321
+        },
+        {
+          "name": "_Z15concat_non_contIjLi0EEvPKcS1_Pcllllmmmmllllmmmmllllmmmm",
+          "count": 768,
+          "duration_sum_ms": 11.056479
+        },
+        {
+          "name": "_Z14elem_chain_f32IXadL_ZN38_INTERNAL_9b06fd10_8_unary_cu_eb6d536611op_softplusEfEELb0ELb1ELb1ELb0EEv15elem_chain_argsPfi5uint3",
+          "count": 2304,
+          "duration_sum_ms": 7.512366999999975
+        },
+        {
+          "name": "_Z15unary_op_kernelIXadL_ZN38_INTERNAL_9b06fd10_8_unary_cu_eb6d536610op_sigmoidEfEEfEvPKT0_PS1_i",
+          "count": 2368,
+          "duration_sum_ms": 5.198948000000017
+        },
+        {
+          "name": "_Z16dequantize_blockILi64ELi1EXadL_ZN41_INTERNAL_92dc35d0_10_convert_cu_ecf1720215dequantize_q2_0EPKvliR6float2EE6__halfEvS2_PT",
+          "count": 512,
+          "duration_sum_ms": 5.1042229999999975
+        },
+        {
+          "name": "_Z15reduce_rows_f32ILb0EEvPKfPfi",
+          "count": 64,
+          "duration_sum_ms": 2.034515
+        },
+        {
+          "name": "_Z21cpy_scalar_contiguousIifEvPKcPcl",
+          "count": 768,
+          "duration_sum_ms": 1.7605030000000015
+        },
+        {
+          "name": "_Z10cpy_scalarIXadL_ZN36_INTERNAL_319e1a36_6_cpy_cu_bfba63e212cpy_1_scalarI6__halfS2_EEvPKcPcEEEvS4_S5_lllllllllllllll",
+          "count": 256,
+          "duration_sum_ms": 1.0734820000000007
+        },
+        {
+          "name": "_Z21cpy_scalar_contiguousI6__halffEvPKcPcl",
+          "count": 256,
+          "duration_sum_ms": 0.5597880000000004
+        },
+        {
+          "name": "_Z15unary_op_kernelIXadL_ZN38_INTERNAL_9b06fd10_8_unary_cu_eb6d53667op_sqrtEfEEfEvPKT0_PS1_i",
+          "count": 64,
+          "duration_sum_ms": 0.13596799999999998
+        }
+      ],
+      "unclassified_name_truncation_count": 28228,
+      "classification_basis": "kernel name prefix/token heuristics; unknown names retained, names may be truncated and family assignment can be incomplete",
+      "concurrent_gpu_kernel_counts": {
+        "available": true,
+        "selected_window_ns": [
+          1792295633057944782,
+          1792295643853001473
+        ],
+        "selected_window_ms": 10795.056691,
+        "kernel_instance_concurrency_fraction": {
+          "0": 0.052490012439898544,
+          "1": 0.41669630301712696,
+          "2": 0.05926461234181211,
+          "3": 0.025718022512235827,
+          "4": 0.03510059056159523,
+          "5": 0.06178703457445326,
+          "6": 0.34894322900040803,
+          "7": 1.9555247002639385e-07
+        },
+        "active_gpu_kernel_fraction_by_device_count": {
+          "0": 0.052490012439898544,
+          "1": 0.41669630301712696,
+          "2": 0.05926514582673626,
+          "3": 0.025717524691783945,
+          "4": 0.03510055489712296,
+          "5": 0.0617877876043106,
+          "6": 0.3489426715230207
+        },
+        "peak_concurrent_kernel_instances": 7,
+        "peak_active_gpu_count": 6,
+        "semantics": "Counts of overlapping CUPTI kernel intervals; not SM occupancy, kernel throughput, or GPU-busy percentage."
+      },
+      "memcpy_and_p2p_separate": {
+        "memcpy": {
+          "count": 10244,
+          "bytes": 32945754636,
+          "duration_sum_ms": 249.937943,
+          "interval_union_ms": 239.948951
+        },
+        "p2p": {
+          "count": 640,
+          "bytes": 13421772800,
+          "duration_sum_ms": 330.620033,
+          "interval_union_ms": 297.179936
+        }
+      },
+      "kernel_busy_or_sm_utilization_percent": null,
+      "semantics": "Per-device kernel interval union and concurrent event counts are CUPTI kernel timeline measurements, not SM occupancy or throughput."
+    },
+    "copies_separate": {
+      "memcpy": {
+        "count": 10244,
+        "bytes": 32945754636,
+        "duration_sum_ms": 249.937943,
+        "interval_union_ms": 239.948951
+      },
+      "p2p": {
+        "count": 640,
+        "bytes": 13421772800,
+        "duration_sum_ms": 330.620033,
+        "interval_union_ms": 297.179936
+      }
+    },
+    "unknown_activity_types": {
+      "device": 6
+    },
+    "limits": [
+      "Kernel interval union and concurrency counts are not SM occupancy or GPU-busy percentages.",
+      "Classification uses recognizable kernel-name tokens; unknown names remain listed, and name truncation can produce unclassified events.",
+      "Kernel coverage is interpreted from the R398 host-child helper path/mode marker, not from symbol names.",
+      "Owner API interval union overlaps GPU activity; window-minus-union is unassigned, not attributed to PLE.",
+      "This captured trace contains 317846 kernel and 283904 runtime API records. Full child tracing can perturb host graph-launch/instantiation cost; traced API timings are diagnostic, not production wall-cost attribution."
+    ]
+  },
+  "helper_activation": {
+    "expected_helper_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/host-child-single-exec-v398-root-20261018/build-r7/libac922-tail-bridge.so",
+    "expected_helper_sha256": "4957bc1841361818ca4245394aa7617efd9a64e1f39d98f9d079fa6f08433bb1",
+    "loaded_runtime_paths": [
+      "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/host-child-single-exec-v398-root-20261018/build-r7/libac922-tail-bridge.so"
+    ],
+    "helper_loaded_exact_path": true,
+    "host_child_mode_marker": true,
+    "child_kernels_expected_visible": true,
+    "coverage_note": "R398 host-child direct launch should expose internal child kernel activities. This is based on helper path and launch-mode markers, not kernel symbol names."
+  },
+  "comparison_with_v392_first32k": {
+    "available": true,
+    "reference_path": "/tmp/v392-analysis.json",
+    "same_scope": "first 32K target chunk only; diagnostic CUPTI/API and stage envelopes, never throughput",
+    "warmth_note": "V397 diagnostic follows a clean 64K on the same long-lived model/context; graph variants may be warm, while bank reset clears prompt KV. V392 also had a prior clean request; treat graph-cache state as context, not prompt KV reuse.",
+    "owner_api_union_ms": {
+      "V392": 5732.296448000008,
+      "V397": 7254.261417175293,
+      "delta_ms": 1521.9649691752848
+    },
+    "cupti_window_ms": {
+      "V392": 8450.095686,
+      "V397": 10795.056691
+    },
+    "scheduler_stage_envelopes": {
+      "V392_span_count_by_device": {
+        "0": 64,
+        "1": 64,
+        "2": 64,
+        "3": 64,
+        "4": 64,
+        "5": 64
+      },
+      "V397_span_count_by_device": {
+        "0": 64,
+        "1": 64,
+        "2": 64,
+        "3": 64,
+        "4": 64,
+        "5": 64
+      },
+      "V392_mean_active_envelopes": 3.7831084049618147,
+      "V397_mean_active_envelopes": 2.7012385481847656,
+      "V392_mean_per_gpu_union_ms": 5697.493666666666,
+      "V397_mean_per_gpu_union_ms": 5805.710333333333,
+      "semantics": "CUDA event envelopes only; not kernel-busy/SM metrics"
+    },
+    "warning": "V392 used the device-tail parent path and did not expose child kernels. Differences in CUPTI kernel count/families are coverage changes as well as runtime changes; do not treat as isolated speed gain."
+  },
+  "interpretation_limits": [
+    "Diagnostic 32K is not compared as the primary prefill speed against V386 clean 64K; the primary speed row is V397 clean 64K versus V386/V373 clean.",
+    "Diagnostic 32K graph variants may be warm from the preceding clean 64K, while prompt KV is cleared before each scenario.",
+    "R398 host-child launch mode should expose internal kernel activity; validate helper mode marker and classify by kernel names. Unknown names stay visible and truncated name count is reported.",
+    "Kernel interval unions and concurrent-kernel counts are not SM occupancy or GPU-busy percentages.",
+    "V392 comparison is same-scope diagnostic first32K, not an uninstrumented throughput comparison; V392 parent-only kernel coverage differs from V397 internal-kernel coverage."
+  ]
+}

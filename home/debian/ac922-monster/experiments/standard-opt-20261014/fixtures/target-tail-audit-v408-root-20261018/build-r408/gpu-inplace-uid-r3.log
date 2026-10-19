@@ -1,0 +1,437 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=65 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x10025246230 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=0 structural_active=0 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x10025246230 device=0 uid=100 nodes=65 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA Graph id 100 reused
+optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=65 width=0 auxiliary=0 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA decode device-tail invalidation device=0 before_capture=1 standard_update_retained=1
+CUDA graph path active ctx=0x10025246230 device=0 uid=100 nodes=65 mode=capture count=1
+CUDA Graph id 100 reused
+CUDA graph path active ctx=0x10025246230 device=0 uid=100 nodes=65 mode=replay count=1
+CUDA device-tail helper requested=1 loaded=1 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/tail-only-exec-v390-root-20261018/build-r5/libac922-tail-bridge.so scope=sm70_explicit_hint_no_cold_cohort_unchanged_graph
+ac922-tail-bridge upload_isolated=1 upload_wait_us=10 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=1 owner=0x10025246230 key=0x10025b2ff90
+optimization path device=0 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=1
+CUDA Graph id 100 reused
+CUDA graph path active ctx=0x10025246230 device=0 uid=100 nodes=65 mode=replay count=2
+optimization path device=0 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=2
+CUDA Graph id 100 reused
+CUDA Graph id 100 reused
+CUDA Graph id 100 reused
+CUDA Graph id 100 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10025246230 device=0 uid=101 nodes=65 mode=eager reason=shape_or_binding_changed node= op=none count=1
+CUDA Graph id 101 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA decode device-tail invalidation device=0 before_capture=1 standard_update_retained=1
+CUDA graph path active ctx=0x10025246230 device=0 uid=101 nodes=65 mode=capture count=2
+CUDA Graph id 101 reused
+ac922-tail-bridge upload_isolated=1 upload_wait_us=10 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=1 owner=0x10025246230 key=0x10025b2ff90
+CUDA Graph id 101 reused
+CUDA Graph id 101 reused
+CUDA Graph id 101 reused
+CUDA Graph id 101 reused
+CUDA Graph id 101 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10025246230 device=0 uid=102 nodes=65 mode=eager reason=shape_or_binding_changed node= op=none count=2
+CUDA Graph id 102 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA decode device-tail invalidation device=0 before_capture=1 standard_update_retained=1
+CUDA Graph id 102 reused
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=1 owner=0x10025246230 key=0x10025b2ff90
+CUDA Graph id 102 reused
+CUDA Graph id 102 reused
+CUDA Graph id 102 reused
+CUDA Graph id 102 reused
+CUDA Graph id 102 reused
+optimization path device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=65 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x10025246230 device=1 sm=700 compiled=1 disable_env_present=0 structural_requested=0 structural_active=0 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x10025246230 device=1 uid=101 nodes=65 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA Graph id 101 reused
+optimization path device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=65 width=0 auxiliary=0 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA decode device-tail invalidation device=1 before_capture=1 standard_update_retained=1
+CUDA graph path active ctx=0x10025246230 device=1 uid=101 nodes=65 mode=capture count=1
+CUDA Graph id 101 reused
+CUDA graph path active ctx=0x10025246230 device=1 uid=101 nodes=65 mode=replay count=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=1 owner=0x10025246230 key=0x100272529a0
+optimization path device=1 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=1
+CUDA Graph id 101 reused
+CUDA graph path active ctx=0x10025246230 device=1 uid=101 nodes=65 mode=replay count=2
+optimization path device=1 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=2
+CUDA Graph id 101 reused
+CUDA Graph id 101 reused
+CUDA Graph id 101 reused
+CUDA Graph id 101 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10025246230 device=1 uid=102 nodes=65 mode=eager reason=shape_or_binding_changed node= op=none count=1
+CUDA Graph id 102 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA decode device-tail invalidation device=1 before_capture=1 standard_update_retained=1
+CUDA graph path active ctx=0x10025246230 device=1 uid=102 nodes=65 mode=capture count=2
+CUDA Graph id 102 reused
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=1 owner=0x10025246230 key=0x100272529a0
+CUDA Graph id 102 reused
+CUDA Graph id 102 reused
+CUDA Graph id 102 reused
+CUDA Graph id 102 reused
+CUDA Graph id 102 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10025246230 device=1 uid=103 nodes=65 mode=eager reason=shape_or_binding_changed node= op=none count=2
+CUDA Graph id 103 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA decode device-tail invalidation device=1 before_capture=1 standard_update_retained=1
+CUDA Graph id 103 reused
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=1 owner=0x10025246230 key=0x100272529a0
+CUDA Graph id 103 reused
+CUDA Graph id 103 reused
+CUDA Graph id 103 reused
+CUDA Graph id 103 reused
+CUDA Graph id 103 reused
+optimization path device=2 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=65 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x10027acf2d0 device=2 sm=700 compiled=1 disable_env_present=0 structural_requested=0 structural_active=0 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x10027acf2d0 device=2 uid=102 nodes=65 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA Graph id 102 reused
+optimization path device=2 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=65 width=0 auxiliary=0 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA decode device-tail invalidation device=2 before_capture=1 standard_update_retained=1
+CUDA graph path active ctx=0x10027acf2d0 device=2 uid=102 nodes=65 mode=capture count=1
+CUDA Graph id 102 reused
+CUDA graph path active ctx=0x10027acf2d0 device=2 uid=102 nodes=65 mode=replay count=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=10 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=1 owner=0x10027acf2d0 key=0x100284ddd40
+optimization path device=2 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=1
+CUDA Graph id 102 reused
+CUDA graph path active ctx=0x10027acf2d0 device=2 uid=102 nodes=65 mode=replay count=2
+optimization path device=2 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=2
+CUDA Graph id 102 reused
+CUDA Graph id 102 reused
+CUDA Graph id 102 reused
+CUDA Graph id 102 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10027acf2d0 device=2 uid=103 nodes=65 mode=eager reason=shape_or_binding_changed node= op=none count=1
+CUDA Graph id 103 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA decode device-tail invalidation device=2 before_capture=1 standard_update_retained=1
+CUDA graph path active ctx=0x10027acf2d0 device=2 uid=103 nodes=65 mode=capture count=2
+CUDA Graph id 103 reused
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=1 owner=0x10027acf2d0 key=0x100284ddd40
+CUDA Graph id 103 reused
+CUDA Graph id 103 reused
+CUDA Graph id 103 reused
+CUDA Graph id 103 reused
+CUDA Graph id 103 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10027acf2d0 device=2 uid=104 nodes=65 mode=eager reason=shape_or_binding_changed node= op=none count=2
+CUDA Graph id 104 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 104 reused
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=1 owner=0x10027acf2d0 key=0x100284ddd40
+CUDA Graph id 104 reused
+CUDA Graph id 104 reused
+CUDA Graph id 104 reused
+CUDA Graph id 104 reused
+CUDA Graph id 104 reused
+optimization path device=3 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=65 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x10027acf2d0 device=3 sm=700 compiled=1 disable_env_present=0 structural_requested=0 structural_active=0 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x10027acf2d0 device=3 uid=103 nodes=65 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA Graph id 103 reused
+optimization path device=3 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=65 width=0 auxiliary=0 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10027acf2d0 device=3 uid=103 nodes=65 mode=capture count=1
+CUDA Graph id 103 reused
+CUDA graph path active ctx=0x10027acf2d0 device=3 uid=103 nodes=65 mode=replay count=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=1 owner=0x10027acf2d0 key=0x10029771f10
+optimization path device=3 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=1
+CUDA Graph id 103 reused
+CUDA graph path active ctx=0x10027acf2d0 device=3 uid=103 nodes=65 mode=replay count=2
+optimization path device=3 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=2
+TARGET_TAIL_FRAME gpu=0 frame=0 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=1 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=2 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=3 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=4 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=5 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=6 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=7 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=8 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=9 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=10 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=11 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=12 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=13 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=14 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=15 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=16 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=17 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=18 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=19 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=20 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=21 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=22 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=23 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=0 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=1 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=2 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=3 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=4 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=5 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=6 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=7 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=8 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=9 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=10 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=11 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=12 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=13 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=14 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=15 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=16 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=17 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=18 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=19 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=20 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=21 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=22 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=23 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=0 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=1 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=2 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=3 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=4 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=5 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=6 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=7 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=8 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=9 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=10 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=11 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=12 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=13 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=14 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=15 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=16 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=17 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=18 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=19 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=20 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=21 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=22 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=23 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=0 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=1 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=2 factor=2 output=exact
+TARGCUDA Graph id 103 reused
+CUDA Graph id 103 reused
+CUDA Graph id 103 reused
+CUDA Graph id 103 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10027acf2d0 device=3 uid=104 nodes=65 mode=eager reason=shape_or_binding_changed node= op=none count=1
+CUDA Graph id 104 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10027acf2d0 device=3 uid=104 nodes=65 mode=capture count=2
+CUDA Graph id 104 reused
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=1 owner=0x10027acf2d0 key=0x10029771f10
+CUDA Graph id 104 reused
+CUDA Graph id 104 reused
+CUDA Graph id 104 reused
+CUDA Graph id 104 reused
+CUDA Graph id 104 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10027acf2d0 device=3 uid=105 nodes=65 mode=eager reason=shape_or_binding_changed node= op=none count=2
+CUDA Graph id 105 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 105 reused
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=1 owner=0x10027acf2d0 key=0x10029771f10
+CUDA Graph id 105 reused
+CUDA Graph id 105 reused
+CUDA Graph id 105 reused
+CUDA Graph id 105 reused
+CUDA Graph id 105 reused
+optimization path device=4 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=65 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x10027acf2d0 device=4 sm=700 compiled=1 disable_env_present=0 structural_requested=0 structural_active=0 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x10027acf2d0 device=4 uid=104 nodes=65 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA Graph id 104 reused
+optimization path device=4 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=65 width=0 auxiliary=0 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10027acf2d0 device=4 uid=104 nodes=65 mode=capture count=1
+CUDA Graph id 104 reused
+CUDA graph path active ctx=0x10027acf2d0 device=4 uid=104 nodes=65 mode=replay count=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=1 owner=0x10027acf2d0 key=0x1002aa0f430
+optimization path device=4 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=1
+CUDA Graph id 104 reused
+CUDA graph path active ctx=0x10027acf2d0 device=4 uid=104 nodes=65 mode=replay count=2
+optimization path device=4 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=2
+CUDA Graph id 104 reused
+CUDA Graph id 104 reused
+CUDA Graph id 104 reused
+CUDA Graph id 104 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10027acf2d0 device=4 uid=105 nodes=65 mode=eager reason=shape_or_binding_changed node= op=none count=1
+CUDA Graph id 105 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10027acf2d0 device=4 uid=105 nodes=65 mode=capture count=2
+CUDA Graph id 105 reused
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=1 owner=0x10027acf2d0 key=0x1002aa0f430
+CUDA Graph id 105 reused
+CUDA Graph id 105 reused
+CUDA Graph id 105 reused
+CUDA Graph id 105 reused
+CUDA Graph id 105 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10027acf2d0 device=4 uid=106 nodes=65 mode=eager reason=shape_or_binding_changed node= op=none count=2
+CUDA Graph id 106 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 106 reused
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=1 owner=0x10027acf2d0 key=0x1002aa0f430
+CUDA Graph id 106 reused
+CUDA Graph id 106 reused
+CUDA Graph id 106 reused
+CUDA Graph id 106 reused
+CUDA Graph id 106 reused
+optimization path device=5 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=65 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x10027acf2d0 device=5 sm=700 compiled=1 disable_env_present=0 structural_requested=0 structural_active=0 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph fallback ctx=0x10027acf2d0 device=5 uid=105 nodes=65 mode=eager reason=initial_or_changed_warmup node= op=none count=1
+CUDA Graph id 105 reused
+optimization path device=5 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=0 reason=structural_binding_signature_unavailable tokens=65 width=0 auxiliary=0 count=2
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10027acf2d0 device=5 uid=105 nodes=65 mode=capture count=1
+CUDA Graph id 105 reused
+CUDA graph path active ctx=0x10027acf2d0 device=5 uid=105 nodes=65 mode=replay count=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=1 owner=0x10027acf2d0 key=0x1002bcb6780
+optimization path device=5 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=1
+CUDA Graph id 105 reused
+CUDA graph path active ctx=0x10027acf2d0 device=5 uid=105 nodes=65 mode=replay count=2
+optimization path device=5 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=2
+CUDA Graph id 105 reused
+CUDA Graph id 105 reused
+CUDA Graph id 105 reused
+CUDA Graph id 105 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10027acf2d0 device=5 uid=106 nodes=65 mode=eager reason=shape_or_binding_changed node= op=none count=1
+CUDA Graph id 106 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA graph path active ctx=0x10027acf2d0 device=5 uid=106 nodes=65 mode=capture count=2
+CUDA Graph id 106 reused
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=1 owner=0x10027acf2d0 key=0x1002bcb6780
+CUDA Graph id 106 reused
+CUDA Graph id 106 reused
+CUDA Graph id 106 reused
+CUDA Graph id 106 reused
+CUDA Graph id 106 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup reset
+CUDA graph fallback ctx=0x10027acf2d0 device=5 uid=107 nodes=65 mode=eager reason=shape_or_binding_changed node= op=none count=2
+CUDA Graph id 107 reused
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+CUDA Graph id 107 reused
+ac922-tail-bridge upload_isolated=1 upload_wait_us=7 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=1 owner=0x10027acf2d0 key=0x1002bcb6780
+CUDA Graph id 107 reused
+CUDA Graph id 107 reused
+CUDA Graph id 107 reused
+CUDA Graph id 107 reused
+CUDA Graph id 107 reused
+optimization path summary device=0 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=18 selected=18
+optimization path summary device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=24 selected=0 fallback_structural_binding_signature_unavailable=24
+optimization path summary device=1 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=18 selected=18
+optimization path summary device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=24 selected=0 fallback_structural_binding_signature_unavailable=24
+optimization path summary device=2 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=18 selected=18
+optimization path summary device=2 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=24 selected=0 fallback_structural_binding_signature_unavailable=24
+optimization path summary device=3 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=18 selected=18
+optimization path summary device=3 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=24 selected=0 fallback_structural_binding_signature_unavailable=24
+optimization path summary device=4 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=18 selected=18
+optimization path summary device=4 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=24 selected=0 fallback_structural_binding_signature_unavailable=24
+optimization path summary device=5 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=18 selected=18
+optimization path summary device=5 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=24 selected=0 fallback_structural_binding_signature_unavailable=24
+ET_TAIL_FRAME gpu=3 frame=3 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=4 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=5 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=6 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=7 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=8 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=9 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=10 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=11 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=12 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=13 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=14 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=15 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=16 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=17 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=18 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=19 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=20 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=21 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=22 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=23 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=0 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=1 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=2 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=3 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=4 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=5 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=6 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=7 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=8 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=9 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=10 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=11 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=12 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=13 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=14 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=15 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=16 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=17 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=18 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=19 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=20 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=21 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=22 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=23 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=0 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=1 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=2 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=3 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=4 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=5 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=6 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=7 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=8 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=9 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=10 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=11 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=12 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=13 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=14 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=15 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=16 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=17 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=18 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=19 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=20 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=21 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=22 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=23 factor=2 output=exact
+TARGET_TAIL_FIXTURE_PASS physical_gpus=6 frames_each=24 scalar_ABA=1 exact=1 hint_TLS_restore=1

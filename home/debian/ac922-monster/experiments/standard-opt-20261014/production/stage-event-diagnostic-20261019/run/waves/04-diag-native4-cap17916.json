@@ -1,0 +1,294 @@
+{
+  "request": {
+    "id": "diag-native4-cap17916",
+    "requests": [
+      {
+        "id": "capital-en",
+        "prompt": "What is the capital city of France? Reply with exactly the city name, without punctuation or explanation.",
+        "checker": "exact_text",
+        "expected": "Paris",
+        "max_tokens": 32,
+        "prompt_source": "native-semantics-case-input-chat-text",
+        "prompt_sha256": "678afb9d5078d3ef479ad3e40b6e01e132b65aac62879b62ac421f37a4c5de53",
+        "ignore_eos": false,
+        "cache_prompt": false,
+        "capacity_tokens": 17916
+      },
+      {
+        "id": "arithmetic-zh",
+        "prompt": "请计算 2847 + 6958。只输出十进制整数，不要解释。",
+        "checker": "exact_text",
+        "expected": "9805",
+        "max_tokens": 32,
+        "prompt_source": "native-semantics-case-input-chat-text",
+        "prompt_sha256": "66a63b3484247e7484205590e2d97f029e4cca6d04dad810a4bf875ea5ab3cb9",
+        "ignore_eos": false,
+        "cache_prompt": false,
+        "capacity_tokens": 17916
+      },
+      {
+        "id": "logic-en",
+        "prompt": "All dax are lamn. Some lamn are red. Does it logically follow that some dax are red? Reply with exactly YES or NO.",
+        "checker": "exact_text",
+        "expected": "NO",
+        "max_tokens": 32,
+        "prompt_source": "native-semantics-case-input-chat-text",
+        "prompt_sha256": "58744d376b8998e4096757e147962eeec82dddab03c495e0fbf84e000fc2591d",
+        "ignore_eos": false,
+        "cache_prompt": false,
+        "capacity_tokens": 17916
+      },
+      {
+        "id": "strict-json-zh",
+        "prompt": "请严格按要求输出一个 JSON 对象，不要 Markdown、代码围栏或其他文字。对象必须是：{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}",
+        "checker": "strict_json",
+        "expected": {
+          "ok": true,
+          "count": 3,
+          "colors": [
+            "红",
+            "蓝"
+          ]
+        },
+        "max_tokens": 32,
+        "prompt_source": "native-semantics-case-input-chat-text",
+        "prompt_sha256": "67df94ecb8366efe4bde382cda2f805ec358be2a81d4c21717131bfe18beff22",
+        "ignore_eos": false,
+        "cache_prompt": false,
+        "capacity_tokens": 17916
+      }
+    ],
+    "refill": false
+  },
+  "result": {
+    "id": "diag-native4-cap17916",
+    "accepted": {
+      "capital-en": {
+        "type": "accepted",
+        "id": "capital-en",
+        "input_tokens": 32,
+        "reserved_tokens": 64,
+        "bank": 0,
+        "wave_id": "diag-native4-cap17916"
+      },
+      "arithmetic-zh": {
+        "type": "accepted",
+        "id": "arithmetic-zh",
+        "input_tokens": 35,
+        "reserved_tokens": 67,
+        "bank": 1,
+        "wave_id": "diag-native4-cap17916"
+      },
+      "logic-en": {
+        "type": "accepted",
+        "id": "logic-en",
+        "input_tokens": 41,
+        "reserved_tokens": 73,
+        "bank": 2,
+        "wave_id": "diag-native4-cap17916"
+      },
+      "strict-json-zh": {
+        "type": "accepted",
+        "id": "strict-json-zh",
+        "input_tokens": 47,
+        "reserved_tokens": 79,
+        "bank": 3,
+        "wave_id": "diag-native4-cap17916"
+      }
+    },
+    "cache_status": {
+      "logic-en": {
+        "type": "cache_status",
+        "id": "logic-en",
+        "bank": 2,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      },
+      "arithmetic-zh": {
+        "type": "cache_status",
+        "id": "arithmetic-zh",
+        "bank": 1,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      },
+      "strict-json-zh": {
+        "type": "cache_status",
+        "id": "strict-json-zh",
+        "bank": 3,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      },
+      "capital-en": {
+        "type": "cache_status",
+        "id": "capital-en",
+        "bank": 0,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      }
+    },
+    "done": {
+      "capital-en": {
+        "type": "done",
+        "id": "capital-en",
+        "input_tokens": 32,
+        "output_tokens": 1,
+        "finish_reason": "stop",
+        "bank": 0
+      },
+      "logic-en": {
+        "type": "done",
+        "id": "logic-en",
+        "input_tokens": 41,
+        "output_tokens": 1,
+        "finish_reason": "stop",
+        "bank": 2
+      },
+      "arithmetic-zh": {
+        "type": "done",
+        "id": "arithmetic-zh",
+        "input_tokens": 35,
+        "output_tokens": 4,
+        "finish_reason": "stop",
+        "bank": 1
+      },
+      "strict-json-zh": {
+        "type": "done",
+        "id": "strict-json-zh",
+        "input_tokens": 47,
+        "output_tokens": 15,
+        "finish_reason": "stop",
+        "bank": 3
+      }
+    },
+    "errors": [],
+    "first_token_s": {
+      "capital-en": 2.267068463959731,
+      "arithmetic-zh": 2.663981723948382,
+      "logic-en": 2.6687601899611764,
+      "strict-json-zh": 2.866270895989146
+    },
+    "last_token_s": {
+      "capital-en": 2.267068463959731,
+      "arithmetic-zh": 2.86376602697419,
+      "logic-en": 2.6687601899611764,
+      "strict-json-zh": 3.2095485229510814
+    },
+    "refill_mode_requested": false,
+    "wave_closing_seen": false,
+    "close_ack_sent": false,
+    "worker_pid": 572038,
+    "wave_done_seen": true,
+    "timings": {
+      "wave_id": "diag-native4-cap17916",
+      "mode": "bank_local_phase_progression",
+      "banks": [
+        {
+          "bank": 0,
+          "target_context": 24576,
+          "draft_context": 24576,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 1,
+          "target_context": 24576,
+          "draft_context": 24576,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 2,
+          "target_context": 24576,
+          "draft_context": 24576,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 3,
+          "target_context": 24576,
+          "draft_context": 24576,
+          "target_ubatch": 256
+        }
+      ],
+      "refill_count": 0,
+      "flow_count": 4,
+      "wall_seconds": 1.555955,
+      "whole_wave_output_tok_s": 13.49653428280381,
+      "all_emissions_tok_s": 22.269258666983387,
+      "prefill_input_tokens": 155,
+      "prefill_wall_seconds": 1.211898,
+      "cached_tokens": 0,
+      "prefill_evaluated_tokens": 155,
+      "uncached_prefill": true,
+      "prefill_aggregate_wall_tok_s": 127.89855251844627,
+      "logical_prompt_tok_s": 127.89855251844627,
+      "prefill_scope": "initial independent bank prefills",
+      "target_prefill_us_sum": 3453750,
+      "mtp_prefill_us_sum": 382307,
+      "thermal_wait_us_sum": 0,
+      "mtp_depth": 3,
+      "single_cached_affinity": false,
+      "single_cache_admission_free_mib": [],
+      "production_floor_mib": 256,
+      "context_rebuilds_before_execution": 4,
+      "capacity_growth_enabled": true,
+      "capacity_growth_applied": true,
+      "capacity_growth_reason": "applied",
+      "capacity_growth_units": 4,
+      "capacity_growth_required_free_mib": 1024,
+      "capacity_growth_preflight_free_mib": [
+        2738,
+        2714,
+        2790,
+        2942,
+        3847,
+        3774
+      ],
+      "capacity_growth_exact_capacity": [
+        17920,
+        17920,
+        17920,
+        17920
+      ],
+      "capacity_growth_candidate_capacity": [
+        24576,
+        24576,
+        24576,
+        24576
+      ],
+      "state_migration_supported": false,
+      "banks_scope": "completed wave before optional idle-context reclamation",
+      "post_wave_free_before_mib": [
+        2628,
+        2604,
+        2680,
+        2832,
+        3737,
+        3561
+      ],
+      "post_wave_reclaimed_banks": 0,
+      "post_wave_reclaim_us": 1129,
+      "post_wave_free_after_mib": [
+        2628,
+        2604,
+        2680,
+        2832,
+        3737,
+        3561
+      ]
+    },
+    "wall_s": 3.2119317959877662,
+    "texts": {
+      "capital-en": "Paris",
+      "arithmetic-zh": "9805",
+      "logic-en": "NO",
+      "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+    },
+    "host_start_monotonic_us": 283830818133,
+    "host_end_monotonic_us": 283834031519,
+    "host_full_wave_us": 3213386,
+    "measurement_scope": "host send through complete IPC response; includes full wave overhead",
+    "request_sha256": "5e92e96a5886a2ce1b1b17f6e94c2299758aa697cfcf4c64fc0996a58bf838fa"
+  }
+}

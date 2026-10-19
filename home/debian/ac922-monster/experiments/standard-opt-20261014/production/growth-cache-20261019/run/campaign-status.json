@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "started_unix": 1792349339.514824,
+  "stages": [
+    {
+      "label": "growth",
+      "status": "PASS",
+      "started_unix": 1792349521.6093795,
+      "returncode": 0,
+      "finished_unix": 1792349556.5804803
+    },
+    {
+      "label": "affinity",
+      "status": "PASS",
+      "started_unix": 1792349556.6238823,
+      "returncode": 0,
+      "finished_unix": 1792349581.4704244,
+      "producer_status": "FAIL",
+      "producer_returncode": 1,
+      "repair_receipt": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/growth-cache-20261019/run/affinity-precondition-repair.json"
+    },
+    {
+      "label": "single-cache",
+      "status": "PASS",
+      "started_unix": 1792349737.617548,
+      "returncode": 0,
+      "finished_unix": 1792349775.1427128
+    },
+    {
+      "label": "http",
+      "status": "PASS",
+      "started_unix": 1792349775.1431715,
+      "returncode": 0,
+      "finished_unix": 1792349851.9298117
+    },
+    {
+      "label": "cancel-cached",
+      "status": "PASS",
+      "started_unix": 1792349851.930246,
+      "returncode": 0,
+      "finished_unix": 1792349867.5185738
+    },
+    {
+      "label": "prefill-pacing",
+      "status": "PASS",
+      "started_unix": 1792349867.5189557,
+      "returncode": 0,
+      "finished_unix": 1792349897.6306274
+    }
+  ],
+  "ready": {
+    "status": "ready",
+    "max_context": 262140,
+    "pool_tokens": 524288,
+    "max_parallel": 4,
+    "model": "flash-next-iq3-xxs",
+    "refill_supported": true,
+    "prefix_cache_enabled": true
+  },
+  "finished_unix": 1792349897.6310356,
+  "producer_status": "FAIL",
+  "pre_semantic_review_status": "PASS_PENDING_FULL_TEXT_REVIEW",
+  "semantic_adjudication": "evidence/semantic-review.json"
+}

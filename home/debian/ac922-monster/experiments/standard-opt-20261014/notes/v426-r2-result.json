@@ -1,0 +1,12 @@
+{
+  "unit": "root-v426-inband-20261018t071512610317z",
+  "status": "HARNESS_LOGITS_BATCH_INDEX_ERROR_NOT_NUMERIC_TEST_RESULT",
+  "weights_loaded": true,
+  "actual_canary_comparisons_completed": 0,
+  "error": "get_logits_ith(0) whenonlybatch.logits[1023]=true; APIexpectsoriginalbatchrownotcompactedordinal",
+  "fix": "serialprefixuses1023; fourprefixuses(lane+1)*1024-1; teacher/rollbackalltruealreadycorrect",
+  "fixed_header_source_sha256": "a0e22d7797f6a0412bb36d6b52f523cb8b369ec357fb4bd381005841fb2b52a7",
+  "decision": "DoNotReloadStandaloneV426; integratefixedcanaryV430sameweightswithnative+perf afterV429diag",
+  "guard_stop": "model exit1 no thermal fault; allGPUreleased",
+  "goals_met": false
+}

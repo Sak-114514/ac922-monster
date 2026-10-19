@@ -1,0 +1,252 @@
+{
+  "status": "PASS",
+  "phases": {
+    "four_by_512_stream_metrics": {
+      "status": "PASS",
+      "window_start_s": 0.010015747975558043,
+      "last_completion_s": 13.250877117970958,
+      "arrival_to_last_completion_s": 13.2408613699954,
+      "first_content_to_last_completion_all_emissions_window_s": 10.911425984988455,
+      "stream_max_tokens_verified_count": 2048,
+      "stream_all_emissions_tok_s_supplemental": 187.69315787116773,
+      "stream_token_count_note": "SSE event/chunk count is never treated as token count; each request must finish at max_tokens=512 to infer 512 output tokens.",
+      "requests": [
+        {
+          "label": "story-0",
+          "arrival_s": 0.010125698987394571,
+          "accepted_s": 0.013182241993490607,
+          "first_content_s": 2.3394511329825036,
+          "completed_s": 11.426152732979972,
+          "finish_reason": "length",
+          "max_tokens": 512,
+          "http_status": 200,
+          "prompt_sha256": "81329f1508e0f8eb699b4803d1b459d0e3849b040ffc0451580b116becba5f18",
+          "prompt_characters": 184,
+          "text": "BEGIN_0\n\nThe modern computing landscape is defined by a fundamental asymmetry in performance characteristics between the central processing unit (CPU) and the main memory system. While CPU clock speeds have increased exponentially over the past few decades, the latency and bandwidth of dynamic random-access memory (DRAM) have improved at a significantly slower rate. This divergence, often referred to as the \"memory wall,\" creates a bottleneck where the processor spends a significant portion of its cycles waiting for data to arrive from main memory. To mitigate this disparity, computer architects introduced a hierarchical memory system centered around CPU caches. These caches are small, high-speed storage areas located physically close to the processor cores, designed to hold frequently accessed data and instructions. However, as multi-core processors became ubiquitous, the simple concept of a local cache evolved into a complex distributed system requiring rigorous protocols to maintain data consistency across multiple cores. This technical explanation explores the architecture of CPU caches, the principles of cache coherency, and the specific protocols used to ensure that all processors in a system view a consistent image of memory.\n\n### The Hierarchy of Memory and Cache Architecture\n\nTo understand how caches work, one must first understand the memory hierarchy. At the top of this hierarchy sits the CPU registers, which are the fastest storage locations but are extremely limited in capacity. Below the registers lie the caches, typically organized into three levels: L1, L2, and L3. At the bottom of the hierarchy is main memory (DRAM), which is vast in capacity but slow in access speed.\n\nThe primary goal of the cache hierarchy is to exploit the principle of locality. There are two types of locality: temporal locality and spatial locality. Temporal locality refers to the tendency of a program to access the same data repeatedly within a short period. Spatial locality refers to the tendency of a program to access data items that are close to each other in memory. Caches exploit these principles by storing copies of data from main memory in faster, smaller storage units. When a CPU requests data, it first checks the L1 cache. If the data is present, it is a \"cache hit,\" and the data is returned almost instantly. If the data is not present, it is a \"cache miss,\" and the CPU must look in the L2 cache. If it is not there, it looks in the L3 cache. If it is not in any cache, the CPU must fetch the data from main memory, which can take hundreds of cycles.\n\nThe L1 cache is usually split into two separate caches:",
+          "inferred_output_tokens": 512,
+          "token_count_basis": "max_tokens_verified_by_finish_reason",
+          "semantic": {
+            "pass": true,
+            "checks": {
+              "marker": true,
+              "readable_length": true,
+              "no_replacement_char": true,
+              "topic_keywords": true
+            },
+            "characters": 2647
+          },
+          "ttft_s": 2.329325433995109,
+          "decode_window_s": 9.086701599997468,
+          "decode_window_tok_s": 56.346078317366846
+        },
+        {
+          "label": "story-1",
+          "arrival_s": 0.010727810964453965,
+          "accepted_s": 0.01369191997218877,
+          "first_content_s": 3.14604642795166,
+          "completed_s": 11.950063069991302,
+          "finish_reason": "length",
+          "max_tokens": 512,
+          "http_status": 200,
+          "prompt_sha256": "9e02d029feeb5f243a254a7bbb406768f6913f87593a0a02c4584cb330314a53",
+          "prompt_characters": 180,
+          "text": "BEGIN_1\n\nPhotosynthesis is arguably the most critical biochemical process on Earth, serving as the primary mechanism by which solar energy is converted into chemical energy, thereby sustaining nearly all life on the planet. It is not merely a biological curiosity but the foundational engine of the global carbon cycle and the biosphere’s energy budget. To understand photosynthesis fully, one must delve into the intricate molecular machinery of plant cells, the thermodynamics of light absorption, the complex enzymatic pathways of carbon fixation, and the broader metabolic networks that integrate these processes with respiration and growth. This explanation will traverse the structural basis of photosynthesis, the detailed mechanics of the light-dependent and light-independent reactions, the variations in metabolic strategies among different plant species, and the integration of photosynthesis with overall plant metabolism.\n\n### The Structural and Cellular Basis of Photosynthesis\n\nPhotosynthesis occurs primarily within the chloroplasts, specialized organelles found in the mesophyll cells of leaves. The chloroplast is a double-membrane-bound organelle that contains its own DNA, ribosomes, and a complex internal membrane system. The outer and inner membranes enclose a fluid-filled space called the stroma, which contains enzymes, DNA, ribosomes, and other molecules necessary for the synthesis of carbohydrates. Suspended within the stroma are stacks of thylakoids, known as grana. The thylakoid membranes are the site of the light-dependent reactions, while the stroma is the site of the light-independent reactions, commonly referred to as the Calvin cycle.\n\nThe thylakoid membrane is a highly specialized structure rich in pigments, electron transport chains, and ATP synthase complexes. The pigments, primarily chlorophyll a and chlorophyll b, along with accessory pigments like carotenoids, are organized into photosystems. These photosystems are large protein complexes that capture light energy and initiate the electron transport chain. The arrangement of these components is crucial for the efficiency of energy conversion. The thylakoid lumen, the interior space of the thylakoids, plays a vital role in establishing the proton gradient necessary for ATP synthesis.\n\n### The Light-Dependent Reactions: Capturing Solar Energy\n\nThe first stage of photosynthesis, the light-dependent reactions, takes place in the thylakoid membranes. The primary objective of this stage is to convert light energy into chemical energy in the form of ATP (adenosine triphosphate) and NADPH (nicotinamide adenine dinucleotide phosphate),",
+          "inferred_output_tokens": 512,
+          "token_count_basis": "max_tokens_verified_by_finish_reason",
+          "semantic": {
+            "pass": true,
+            "checks": {
+              "marker": true,
+              "readable_length": true,
+              "no_replacement_char": true,
+              "topic_keywords": true
+            },
+            "characters": 2642
+          },
+          "ttft_s": 3.135318616987206,
+          "decode_window_s": 8.804016642039642,
+          "decode_window_tok_s": 58.1552739865544
+        },
+        {
+          "label": "story-2",
+          "arrival_s": 0.011279627971816808,
+          "accepted_s": 0.014433101983740926,
+          "first_content_s": 2.980656461964827,
+          "completed_s": 13.250877117970958,
+          "finish_reason": "length",
+          "max_tokens": 512,
+          "http_status": 200,
+          "prompt_sha256": "40a8193c8a45387f0c1df22455cc3ac1b02511430916518edf38b5e3ab5d3cbc",
+          "prompt_characters": 176,
+          "text": "BEGIN_2\n\nThe architectural legacy of ancient Rome stands as one of the most profound achievements in the history of human engineering and construction. While Greek architecture is often celebrated for its aesthetic refinement, proportional harmony, and reliance on post-and-lintel systems, Roman architecture is distinguished by its revolutionary approach to structural engineering, material science, and spatial organization. The Romans did not merely build structures; they engineered environments, infrastructure, and urban systems that facilitated the administration, military dominance, and cultural cohesion of an empire spanning three continents. To understand Roman architectural engineering, one must examine the interplay between their innovative use of materials, their mastery of structural forms such as the arch and the dome, their sophisticated understanding of hydraulics and concrete chemistry, and their ability to scale these technologies to create monumental public works. This explanation will delve into the technical underpinnings of Roman construction, analyzing how these engineering principles allowed for the creation of enduring structures that continue to influence modern architectural practice.\n\nAt the heart of Roman architectural engineering lies the development and widespread application of concrete, known as *opus caementicium*. Before the Roman era, large-scale construction was predominantly limited to stone masonry, which required precise cutting, heavy lifting, and complex scaffolding. Stone is strong in compression but weak in tension, limiting the span of beams and the height of structures. The Romans, however, developed a hydraulic concrete that could be poured into molds, allowing for the creation of complex, monolithic structures with unprecedented freedom of form. This material innovation was not accidental but the result of empirical experimentation and a deep understanding of local geology.\n\nThe primary binder in Roman concrete was lime, derived from the calcination of limestone. However, the critical innovation was the addition of volcanic ash, known as *pozzolana*, sourced from the volcanic deposits near Naples and Pozzuoli. This ash, rich in silica and alumina, reacted with the lime and water to form a hydraulic cement that could harden even underwater. This chemical reaction, known as pozzolanic reaction, produced calcium silicate hydrate compounds that gave the concrete its remarkable durability and strength. Recent archaeological and materials science studies have revealed that the Romans often used seawater in their concrete mixes, which introduced chloride ions that facilitated the formation of rare, stable minerals like aluminum tobermorite. These minerals grew within the concrete matrix over time, effectively self-healing cracks and increasing the material’s resistance to erosion. This understanding of material chemistry allowed Roman engineers to construct harbors, aqueducts, and",
+          "inferred_output_tokens": 512,
+          "token_count_basis": "max_tokens_verified_by_finish_reason",
+          "semantic": {
+            "pass": true,
+            "checks": {
+              "marker": true,
+              "readable_length": true,
+              "no_replacement_char": true,
+              "topic_keywords": true
+            },
+            "characters": 2969
+          },
+          "ttft_s": 2.9693768339930102,
+          "decode_window_s": 10.270220656006131,
+          "decode_window_tok_s": 49.85287241132225
+        },
+        {
+          "label": "story-3",
+          "arrival_s": 0.01198232895694673,
+          "accepted_s": 0.03242137498455122,
+          "first_content_s": 3.137049628945533,
+          "completed_s": 12.47353880299488,
+          "finish_reason": "length",
+          "max_tokens": 512,
+          "http_status": 200,
+          "prompt_sha256": "3a9c74ce158bcc35feab783169036deddac9405d3fb78a1d95fce2290bd3e709",
+          "prompt_characters": 189,
+          "text": "BEGIN_3\n\nThe landscape of computer science is fundamentally built upon the efficient organization of data. Among the most critical operations in this domain is sorting, the process of arranging a collection of elements into a specific order, typically ascending or descending. While sorting may appear trivial in everyday life—such as organizing a deck of cards or alphabetizing a bookshelf—it represents a profound challenge in computational theory. The efficiency with which a computer can sort data dictates the performance of databases, search engines, operating systems, and countless other software applications. To understand the limits and possibilities of sorting, one must delve into the realm of comparison sorting algorithms and their associated computational complexity. This explanation will explore the theoretical foundations of comparison sorts, analyze the lower bounds imposed by information theory, examine specific algorithmic strategies, and discuss the practical implications of time and space complexity.\n\nAt the heart of sorting theory lies the concept of the comparison model. In this model, the only operation permitted to determine the relative order of two elements is a direct comparison. The algorithm is not allowed to inspect the internal structure of the data, such as the binary representation of integers or the hash values of strings, to infer order. Instead, it must rely solely on queries of the form \"Is element A less than element B?\" This restriction is crucial because it defines a universal class of sorting algorithms that can be applied to any data type where a total ordering is defined, regardless of the underlying data structure. Whether sorting integers, floating-point numbers, strings, or custom objects, comparison sorts provide a generic solution. However, this generality comes at a cost, which is quantified through computational complexity.\n\nTo understand the efficiency of these algorithms, we must first define what we mean by complexity. In computer science, complexity is usually measured in terms of time and space. Time complexity refers to the number of basic operations required to complete the task, often expressed using Big O notation, which describes the upper bound of the growth rate of the algorithm as the input size $n$ increases. Space complexity refers to the amount of memory required by the algorithm. For sorting, the primary metric of interest is the number of comparisons performed, as this is the dominant cost in the comparison model.\n\nThe theoretical foundation for the efficiency of comparison sorts is rooted in information theory, specifically the concept of decision trees. A decision tree is a binary tree where each internal node represents a comparison between two elements, and each leaf node represents a unique permutation of the input sequence. For a sequence of $n$ distinct elements, there are",
+          "inferred_output_tokens": 512,
+          "token_count_basis": "max_tokens_verified_by_finish_reason",
+          "semantic": {
+            "pass": true,
+            "checks": {
+              "marker": true,
+              "readable_length": true,
+              "no_replacement_char": true,
+              "topic_keywords": true
+            },
+            "characters": 2891
+          },
+          "ttft_s": 3.1250672999885865,
+          "decode_window_s": 9.336489174049348,
+          "decode_window_tok_s": 54.83860051196733
+        }
+      ]
+    },
+    "four_by_512_usage_aggregate": {
+      "status": "PASS",
+      "aggregate_method": "sum(actual usage.completion_tokens) / (last non-stream completion - first request arrival)",
+      "arrival_to_last_completion_s": 10.479163709969725,
+      "total_completion_tokens": 2048,
+      "aggregate_tok_s": 195.43544281606768,
+      "requests": [
+        {
+          "label": "usage-story-0",
+          "id": "chatcmpl-81c29326-290b-4a54-9c48-1cc0a263ec34",
+          "http_status": 200,
+          "arrival_s": 13.25280274898978,
+          "response_received_s": 22.581735760963056,
+          "completed_s": 22.581789327959996,
+          "wall_s": 9.328987120010424,
+          "text": "BEGIN_0\n\nThe modern computing landscape is defined by a fundamental asymmetry in performance characteristics between the central processing unit (CPU) and the main memory system. While CPU clock speeds have increased exponentially over the past few decades, the latency and bandwidth of dynamic random-access memory (DRAM) have improved at a significantly slower rate. This divergence, often referred to as the \"memory wall,\" creates a bottleneck where the processor spends a significant portion of its cycles waiting for data to arrive from main memory. To mitigate this disparity, computer architects introduced a hierarchical memory system centered around CPU caches. These caches are small, high-speed storage areas located physically close to the processor cores, designed to hold frequently accessed data and instructions. However, as multi-core processors became ubiquitous, the simple concept of a local cache evolved into a complex distributed system requiring rigorous protocols to maintain data consistency across multiple cores. This technical explanation explores the architecture of CPU caches, the principles of cache coherency, and the specific protocols used to ensure that all processors in a system view a consistent image of memory.\n\n### The Hierarchy of Memory and Cache Architecture\n\nTo understand how caches work, one must first understand the memory hierarchy. At the top of this hierarchy sits the CPU registers, which are the fastest storage locations but are extremely limited in capacity. Below the registers lie the caches, typically organized into three levels: L1, L2, and L3. At the bottom of the hierarchy is main memory (DRAM), which is vast in capacity but slow in access speed.\n\nThe primary goal of the cache hierarchy is to exploit the principle of locality. There are two types of locality: temporal locality and spatial locality. Temporal locality refers to the tendency of a program to access the same data repeatedly within a short period. Spatial locality refers to the tendency of a program to access data items that are close to each other in memory. Caches exploit these principles by storing copies of data from main memory in faster, smaller storage units. When a CPU requests data, it first checks the L1 cache. If the data is present, it is a \"cache hit,\" and the data is returned almost instantly. If the data is not present, it is a \"cache miss,\" and the CPU must look in the L2 cache. If it is not there, it looks in the L3 cache. If it is not in any cache, the CPU must fetch the data from main memory, which can take hundreds of cycles.\n\nThe L1 cache is usually split into two separate caches:",
+          "text_sha256": "5d717cf74624226ed1989fbcc3eeed028366db777bee2f6fdb37f727c1b73f87",
+          "usage": {
+            "prompt_tokens": 54,
+            "completion_tokens": 512,
+            "total_tokens": 566,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "length",
+          "prompt_sha256": "81329f1508e0f8eb699b4803d1b459d0e3849b040ffc0451580b116becba5f18",
+          "prompt_characters": 184,
+          "cache_hit_tokens": 0
+        },
+        {
+          "label": "usage-story-1",
+          "id": "chatcmpl-6942af51-2779-42e1-866e-2fe0dc1a23f8",
+          "http_status": 200,
+          "arrival_s": 13.25289055594476,
+          "response_received_s": 22.46255455998471,
+          "completed_s": 22.462611049995758,
+          "wall_s": 9.209721006045584,
+          "text": "BEGIN_1\n\nPhotosynthesis is arguably the most critical biochemical process on Earth, serving as the primary mechanism by which solar energy is converted into chemical energy, thereby sustaining nearly all life on the planet. It is not merely a biological curiosity but the foundational engine of the global carbon cycle and the biosphere’s energy budget. To understand photosynthesis fully, one must delve into the intricate molecular machinery of plant cells, the thermodynamics of light absorption, the complex enzymatic pathways of carbon fixation, and the broader metabolic networks that integrate these processes with respiration and growth. This explanation will traverse the structural basis of photosynthesis, the detailed mechanics of the light-dependent and light-independent reactions, the variations in metabolic strategies among different plant species, and the integration of photosynthesis with overall plant metabolism.\n\n### The Structural and Cellular Basis of Photosynthesis\n\nPhotosynthesis occurs primarily within the chloroplasts, specialized organelles found in the mesophyll cells of leaves. The chloroplast is a double-membrane-bound organelle that contains its own DNA, ribosomes, and a complex internal membrane system. The outer and inner membranes enclose a fluid-filled space called the stroma, which contains enzymes, DNA, ribosomes, and other molecules necessary for the synthesis of carbohydrates. Suspended within the stroma are stacks of thylakoids, known as grana. The thylakoid membranes are the site of the light-dependent reactions, while the stroma is the site of the light-independent reactions, commonly referred to as the Calvin cycle.\n\nThe thylakoid membrane is a highly specialized structure rich in pigments, electron transport chains, and ATP synthase complexes. The pigments, primarily chlorophyll a and chlorophyll b, along with accessory pigments like carotenoids, are organized into photosystems. These photosystems are large protein complexes that capture light energy and initiate the electron transport chain. The arrangement of these components is crucial for the efficiency of energy conversion. The thylakoid lumen, the interior space of the thylakoids, plays a vital role in establishing the proton gradient necessary for ATP synthesis.\n\n### The Light-Dependent Reactions: Capturing Solar Energy\n\nThe first stage of photosynthesis, the light-dependent reactions, takes place in the thylakoid membranes. The primary objective of this stage is to convert light energy into chemical energy in the form of ATP (adenosine triphosphate) and NADPH (nicotinamide adenine dinucleotide phosphate),",
+          "text_sha256": "95800d343b43a1780688d12a7b1f98bd3a6ba0e6c8a769aebfc5e0e5ba27d0f1",
+          "usage": {
+            "prompt_tokens": 50,
+            "completion_tokens": 512,
+            "total_tokens": 562,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "length",
+          "prompt_sha256": "9e02d029feeb5f243a254a7bbb406768f6913f87593a0a02c4584cb330314a53",
+          "prompt_characters": 180,
+          "cache_hit_tokens": 0
+        },
+        {
+          "label": "usage-story-2",
+          "id": "chatcmpl-948c3f14-89f4-43f4-b02a-eaf042f61403",
+          "http_status": 200,
+          "arrival_s": 13.253699693945237,
+          "response_received_s": 23.73191190394573,
+          "completed_s": 23.731966458959505,
+          "wall_s": 10.478267177008092,
+          "text": "BEGIN_2\n\nThe architectural legacy of ancient Rome stands as one of the most profound achievements in the history of human engineering and construction. While Greek architecture is often celebrated for its aesthetic refinement, proportional harmony, and reliance on post-and-lintel systems, Roman architecture is distinguished by its revolutionary approach to structural engineering, material science, and spatial organization. The Romans did not merely build structures; they engineered environments, infrastructure, and urban systems that facilitated the administration, military dominance, and cultural cohesion of an empire spanning three continents. To understand Roman architectural engineering, one must examine the interplay between their innovative use of materials, their mastery of structural forms such as the arch and the dome, their sophisticated understanding of hydraulics and concrete chemistry, and their ability to scale these technologies to create monumental public works. This explanation will delve into the technical underpinnings of Roman construction, analyzing how these engineering principles allowed for the creation of enduring structures that continue to influence modern architectural practice.\n\nAt the heart of Roman architectural engineering lies the development and widespread application of concrete, known as *opus caementicium*. Before the Roman era, large-scale construction was predominantly limited to stone masonry, which required precise cutting, heavy lifting, and complex scaffolding. Stone is strong in compression but weak in tension, limiting the span of beams and the height of structures. The Romans, however, developed a hydraulic concrete that could be poured into molds, allowing for the creation of complex, monolithic structures with unprecedented freedom of form. This material innovation was not accidental but the result of empirical experimentation and a deep understanding of local geology.\n\nThe primary binder in Roman concrete was lime, derived from the calcination of limestone. However, the critical innovation was the addition of volcanic ash, known as *pozzolana*, sourced from the volcanic deposits near Naples and Pozzuoli. This ash, rich in silica and alumina, reacted with the lime and water to form a hydraulic cement that could harden even underwater. This chemical reaction, known as pozzolanic reaction, produced calcium silicate hydrate compounds that gave the concrete its remarkable durability and strength. Recent archaeological and materials science studies have revealed that the Romans often used seawater in their concrete mixes, which introduced chloride ions that facilitated the formation of rare, stable minerals like aluminum tobermorite. These minerals grew within the concrete matrix over time, effectively self-healing cracks and increasing the material’s resistance to erosion. This understanding of material chemistry allowed Roman engineers to construct harbors, aqueducts, and",
+          "text_sha256": "a550b085283886adf9a0b5a1f38c4a447d1ca72ee4253c669feefa760ac83fc0",
+          "usage": {
+            "prompt_tokens": 48,
+            "completion_tokens": 512,
+            "total_tokens": 560,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "length",
+          "prompt_sha256": "40a8193c8a45387f0c1df22455cc3ac1b02511430916518edf38b5e3ab5d3cbc",
+          "prompt_characters": 176,
+          "cache_hit_tokens": 0
+        },
+        {
+          "label": "usage-story-3",
+          "id": "chatcmpl-65380742-b25f-4c14-bb2d-bd0f05c7c358",
+          "http_status": 200,
+          "arrival_s": 13.254290161945391,
+          "response_received_s": 23.123511413985398,
+          "completed_s": 23.123566681984812,
+          "wall_s": 9.869277047051582,
+          "text": "BEGIN_3\n\nThe landscape of computer science is fundamentally built upon the efficient organization of data. Among the most critical operations in this domain is sorting, the process of arranging a collection of elements into a specific order, typically ascending or descending. While sorting may appear trivial in everyday life—such as organizing a deck of cards or alphabetizing a bookshelf—it represents a profound challenge in computational theory. The efficiency with which a computer can sort data dictates the performance of databases, search engines, operating systems, and countless other software applications. To understand the limits and possibilities of sorting, one must delve into the realm of comparison sorting algorithms and their associated computational complexity. This explanation will explore the theoretical foundations of comparison sorts, analyze the lower bounds imposed by information theory, examine specific algorithmic strategies, and discuss the practical implications of time and space complexity.\n\nAt the heart of sorting theory lies the concept of the comparison model. In this model, the only operation permitted to determine the relative order of two elements is a direct comparison. The algorithm is not allowed to inspect the internal structure of the data, such as the binary representation of integers or the hash values of strings, to infer order. Instead, it must rely solely on queries of the form \"Is element A less than element B?\" This restriction is crucial because it defines a universal class of sorting algorithms that can be applied to any data type where a total ordering is defined, regardless of the underlying data structure. Whether sorting integers, floating-point numbers, strings, or custom objects, comparison sorts provide a generic solution. However, this generality comes at a cost, which is quantified through computational complexity.\n\nTo understand the efficiency of these algorithms, we must first define what we mean by complexity. In computer science, complexity is usually measured in terms of time and space. Time complexity refers to the number of basic operations required to complete the task, often expressed using Big O notation, which describes the upper bound of the growth rate of the algorithm as the input size $n$ increases. Space complexity refers to the amount of memory required by the algorithm. For sorting, the primary metric of interest is the number of comparisons performed, as this is the dominant cost in the comparison model.\n\nThe theoretical foundation for the efficiency of comparison sorts is rooted in information theory, specifically the concept of decision trees. A decision tree is a binary tree where each internal node represents a comparison between two elements, and each leaf node represents a unique permutation of the input sequence. For a sequence of $n$ distinct elements, there are",
+          "text_sha256": "e479539ae011a1933529236570ecce1768fdc1325346e6fd5cc330f8567d0687",
+          "usage": {
+            "prompt_tokens": 50,
+            "completion_tokens": 512,
+            "total_tokens": 562,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "length",
+          "prompt_sha256": "3a9c74ce158bcc35feab783169036deddac9405d3fb78a1d95fce2290bd3e709",
+          "prompt_characters": 189,
+          "cache_hit_tokens": 0
+        }
+      ]
+    }
+  },
+  "started_utc": "2026-10-18T20:24:14.556Z",
+  "purpose": "same worker after disk-scan termination; SSE then usage-counted four512",
+  "discovery": {
+    "ready_endpoint": "available",
+    "prefix_cache_enabled": true,
+    "ready_fields": {
+      "status": "ready",
+      "model": "flash-next-iq3-xxs",
+      "max_context": 262140,
+      "pool_tokens": 524288,
+      "max_parallel": 4
+    },
+    "prefix_cache_declaration": "enabled",
+    "models": [
+      "flash-next-iq3-xxs"
+    ]
+  },
+  "fulltext_identity_to_reviewed_ipc": {
+    "four_by_512_stream_metrics": true,
+    "four_by_512_usage_aggregate": true
+  },
+  "finished_utc": "2026-10-18T20:24:38.292Z"
+}

@@ -1,0 +1,271 @@
+{
+  "request": {
+    "id": "diag-event-decode4",
+    "requests": [
+      {
+        "id": "story-0",
+        "prompt": "Write a coherent technical explanation of how CPU caches and cache coherency work, at least 2000 words. Begin with exactly BEGIN_0 then continue with the explanation. Do not end early.",
+        "max_tokens": 512,
+        "ignore_eos": true,
+        "cache_prompt": false
+      },
+      {
+        "id": "story-1",
+        "prompt": "Write a coherent technical explanation of photosynthesis and plant metabolism, at least 2000 words. Begin with exactly BEGIN_1 then continue with the explanation. Do not end early.",
+        "max_tokens": 512,
+        "ignore_eos": true,
+        "cache_prompt": false
+      },
+      {
+        "id": "story-2",
+        "prompt": "Write a coherent technical explanation of Roman architectural engineering, at least 2000 words. Begin with exactly BEGIN_2 then continue with the explanation. Do not end early.",
+        "max_tokens": 512,
+        "ignore_eos": true,
+        "cache_prompt": false
+      },
+      {
+        "id": "story-3",
+        "prompt": "Write a coherent technical explanation of comparison sorting algorithms and complexity, at least 2000 words. Begin with exactly BEGIN_3 then continue with the explanation. Do not end early.",
+        "max_tokens": 512,
+        "ignore_eos": true,
+        "cache_prompt": false
+      }
+    ],
+    "refill": false
+  },
+  "result": {
+    "id": "diag-event-decode4",
+    "accepted": {
+      "story-0": {
+        "type": "accepted",
+        "id": "story-0",
+        "input_tokens": 54,
+        "reserved_tokens": 566,
+        "bank": 0,
+        "wave_id": "diag-event-decode4"
+      },
+      "story-1": {
+        "type": "accepted",
+        "id": "story-1",
+        "input_tokens": 50,
+        "reserved_tokens": 562,
+        "bank": 1,
+        "wave_id": "diag-event-decode4"
+      },
+      "story-2": {
+        "type": "accepted",
+        "id": "story-2",
+        "input_tokens": 48,
+        "reserved_tokens": 560,
+        "bank": 2,
+        "wave_id": "diag-event-decode4"
+      },
+      "story-3": {
+        "type": "accepted",
+        "id": "story-3",
+        "input_tokens": 50,
+        "reserved_tokens": 562,
+        "bank": 3,
+        "wave_id": "diag-event-decode4"
+      }
+    },
+    "cache_status": {
+      "story-0": {
+        "type": "cache_status",
+        "id": "story-0",
+        "bank": 0,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      },
+      "story-2": {
+        "type": "cache_status",
+        "id": "story-2",
+        "bank": 2,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      },
+      "story-3": {
+        "type": "cache_status",
+        "id": "story-3",
+        "bank": 3,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      },
+      "story-1": {
+        "type": "cache_status",
+        "id": "story-1",
+        "bank": 1,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      }
+    },
+    "done": {
+      "story-1": {
+        "type": "done",
+        "id": "story-1",
+        "input_tokens": 50,
+        "output_tokens": 512,
+        "finish_reason": "length",
+        "bank": 1
+      },
+      "story-0": {
+        "type": "done",
+        "id": "story-0",
+        "input_tokens": 54,
+        "output_tokens": 512,
+        "finish_reason": "length",
+        "bank": 0
+      },
+      "story-3": {
+        "type": "done",
+        "id": "story-3",
+        "input_tokens": 50,
+        "output_tokens": 512,
+        "finish_reason": "length",
+        "bank": 3
+      },
+      "story-2": {
+        "type": "done",
+        "id": "story-2",
+        "input_tokens": 48,
+        "output_tokens": 512,
+        "finish_reason": "length",
+        "bank": 2
+      }
+    },
+    "errors": [],
+    "first_token_s": {
+      "story-2": 2.8854439519927837,
+      "story-3": 3.015992667991668,
+      "story-1": 3.068605538981501,
+      "story-0": 3.133776318980381
+    },
+    "last_token_s": {
+      "story-2": 13.17654410598334,
+      "story-3": 12.316832242009696,
+      "story-1": 11.724200268974528,
+      "story-0": 11.888392911991104
+    },
+    "refill_mode_requested": false,
+    "wave_closing_seen": false,
+    "close_ack_sent": false,
+    "worker_pid": 572038,
+    "wave_done_seen": true,
+    "timings": {
+      "wave_id": "diag-event-decode4",
+      "mode": "bank_local_phase_progression",
+      "banks": [
+        {
+          "bank": 0,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 1,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 2,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 3,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        }
+      ],
+      "refill_count": 0,
+      "flow_count": 4,
+      "wall_seconds": 11.265946,
+      "whole_wave_output_tok_s": 181.78677582867874,
+      "all_emissions_tok_s": 199.00039226786308,
+      "prefill_input_tokens": 202,
+      "prefill_wall_seconds": 1.222503,
+      "cached_tokens": 0,
+      "prefill_evaluated_tokens": 202,
+      "uncached_prefill": true,
+      "prefill_aggregate_wall_tok_s": 165.2347683400368,
+      "logical_prompt_tok_s": 165.2347683400368,
+      "prefill_scope": "initial independent bank prefills",
+      "target_prefill_us_sum": 4228010,
+      "mtp_prefill_us_sum": 161960,
+      "thermal_wait_us_sum": 0,
+      "mtp_depth": 3,
+      "stage_event_diagnostic_requested": true,
+      "stage_event_diagnostic_selector_selected": true,
+      "stage_event_diagnostic_backend_selected": "unverified_requires_scheduler_init_log",
+      "stage_event_diagnostic_scope": "full_live_wave_includes_prefill_generation_and_wave_overhead",
+      "single_cached_affinity": false,
+      "single_cache_admission_free_mib": [],
+      "production_floor_mib": 256,
+      "context_rebuilds_before_execution": 1,
+      "capacity_growth_enabled": true,
+      "capacity_growth_applied": false,
+      "capacity_growth_reason": "no_eligible_growth",
+      "capacity_growth_units": 0,
+      "capacity_growth_required_free_mib": 0,
+      "capacity_growth_preflight_free_mib": [
+        1803,
+        1359,
+        1435,
+        1587,
+        2492,
+        2233
+      ],
+      "capacity_growth_exact_capacity": [
+        17152,
+        17152,
+        17152,
+        17152
+      ],
+      "capacity_growth_candidate_capacity": [
+        17152,
+        17152,
+        17152,
+        17152
+      ],
+      "state_migration_supported": false,
+      "banks_scope": "completed wave before optional idle-context reclamation",
+      "post_wave_free_before_mib": [
+        2738,
+        2714,
+        2790,
+        2942,
+        3847,
+        3774
+      ],
+      "post_wave_reclaimed_banks": 0,
+      "post_wave_reclaim_us": 1195,
+      "post_wave_free_after_mib": [
+        2738,
+        2714,
+        2790,
+        2942,
+        3847,
+        3774
+      ]
+    },
+    "wall_s": 13.181284824968316,
+    "texts": {
+      "story-0": "BEGIN_0\n\nThe modern computing landscape is defined by a fundamental asymmetry in performance characteristics between the central processing unit (CPU) and the main memory system. While CPU clock speeds have increased exponentially over the past few decades, the latency and bandwidth of dynamic random-access memory (DRAM) have improved at a significantly slower rate. This divergence, often referred to as the \"memory wall,\" creates a bottleneck where the processor spends a significant portion of its cycles waiting for data to arrive from main memory. To mitigate this disparity, computer architects introduced a hierarchical memory system centered around CPU caches. These caches are small, high-speed storage areas located physically close to the processor cores, designed to hold frequently accessed data and instructions. However, as multi-core processors became ubiquitous, the simple concept of a local cache evolved into a complex distributed system requiring rigorous protocols to maintain data consistency across multiple cores. This technical explanation explores the architecture of CPU caches, the principles of cache coherency, and the specific protocols used to ensure that all processors in a system view a consistent image of memory.\n\n### The Hierarchy of Memory and Cache Architecture\n\nTo understand how caches work, one must first understand the memory hierarchy. At the top of this hierarchy sits the CPU registers, which are the fastest storage locations but are extremely limited in capacity. Below the registers lie the caches, typically organized into three levels: L1, L2, and L3. At the bottom of the hierarchy is main memory (DRAM), which is vast in capacity but slow in access speed.\n\nThe primary goal of the cache hierarchy is to exploit the principle of locality. There are two types of locality: temporal locality and spatial locality. Temporal locality refers to the tendency of a program to access the same data repeatedly within a short period. Spatial locality refers to the tendency of a program to access data items that are close to each other in memory. Caches exploit these principles by storing copies of data from main memory in faster, smaller storage units. When a CPU requests data, it first checks the L1 cache. If the data is present, it is a \"cache hit,\" and the data is returned almost instantly. If the data is not present, it is a \"cache miss,\" and the CPU must look in the L2 cache. If it is not there, it looks in the L3 cache. If it is not in any cache, the CPU must fetch the data from main memory, which can take hundreds of cycles.\n\nThe L1 cache is usually split into two separate caches:",
+      "story-1": "BEGIN_1\n\nPhotosynthesis is arguably the most critical biochemical process on Earth, serving as the primary mechanism by which solar energy is converted into chemical energy, thereby sustaining nearly all life on the planet. It is not merely a biological curiosity but the foundational engine of the global carbon cycle and the biosphere’s energy budget. To understand photosynthesis fully, one must delve into the intricate molecular machinery of plant cells, the thermodynamics of light absorption, the complex enzymatic pathways of carbon fixation, and the broader metabolic networks that integrate these processes with respiration and growth. This explanation will traverse the structural basis of photosynthesis, the detailed mechanics of the light-dependent and light-independent reactions, the variations in metabolic strategies among different plant species, and the integration of photosynthesis with overall plant metabolism.\n\n### The Structural and Cellular Basis of Photosynthesis\n\nPhotosynthesis occurs primarily within the chloroplasts, specialized organelles found in the mesophyll cells of leaves. The chloroplast is a double-membrane-bound organelle that contains its own DNA, ribosomes, and a complex internal membrane system. The outer and inner membranes enclose a fluid-filled space called the stroma, which contains enzymes, DNA, ribosomes, and other molecules necessary for the synthesis of carbohydrates. Suspended within the stroma are stacks of thylakoids, known as grana. The thylakoid membranes are the site of the light-dependent reactions, while the stroma is the site of the light-independent reactions, commonly referred to as the Calvin cycle.\n\nThe thylakoid membrane is a highly specialized structure rich in pigments, electron transport chains, and ATP synthase complexes. The pigments, primarily chlorophyll a and chlorophyll b, along with accessory pigments like carotenoids, are organized into photosystems. These photosystems are large protein complexes that capture light energy and initiate the electron transport chain. The arrangement of these components is crucial for the efficiency of energy conversion. The thylakoid lumen, the interior space of the thylakoids, plays a vital role in establishing the proton gradient necessary for ATP synthesis.\n\n### The Light-Dependent Reactions: Capturing Solar Energy\n\nThe first stage of photosynthesis, the light-dependent reactions, takes place in the thylakoid membranes. The primary objective of this stage is to convert light energy into chemical energy in the form of ATP (adenosine triphosphate) and NADPH (nicotinamide adenine dinucleotide phosphate),",
+      "story-2": "BEGIN_2\n\nThe architectural legacy of ancient Rome stands as one of the most profound achievements in the history of human engineering and construction. While Greek architecture is often celebrated for its aesthetic refinement, proportional harmony, and reliance on post-and-lintel systems, Roman architecture is distinguished by its revolutionary approach to structural engineering, material science, and spatial organization. The Romans did not merely build structures; they engineered environments, infrastructure, and urban systems that facilitated the administration, military dominance, and cultural cohesion of an empire spanning three continents. To understand Roman architectural engineering, one must examine the interplay between their innovative use of materials, their mastery of structural forms such as the arch and the dome, their sophisticated understanding of hydraulics and concrete chemistry, and their ability to scale these technologies to create monumental public works. This explanation will delve into the technical underpinnings of Roman construction, analyzing how these engineering principles allowed for the creation of enduring structures that continue to influence modern architectural practice.\n\nAt the heart of Roman architectural engineering lies the development and widespread application of concrete, known as *opus caementicium*. Before the Roman era, large-scale construction was predominantly limited to stone masonry, which required precise cutting, heavy lifting, and complex scaffolding. Stone is strong in compression but weak in tension, limiting the span of beams and the height of structures. The Romans, however, developed a hydraulic concrete that could be poured into molds, allowing for the creation of complex, monolithic structures with unprecedented freedom of form. This material innovation was not accidental but the result of empirical experimentation and a deep understanding of local geology.\n\nThe primary binder in Roman concrete was lime, derived from the calcination of limestone. However, the critical innovation was the addition of volcanic ash, known as *pozzolana*, sourced from the volcanic deposits near Naples and Pozzuoli. This ash, rich in silica and alumina, reacted with the lime and water to form a hydraulic cement that could harden even underwater. This chemical reaction, known as pozzolanic reaction, produced calcium silicate hydrate compounds that gave the concrete its remarkable durability and strength. Recent archaeological and materials science studies have revealed that the Romans often used seawater in their concrete mixes, which introduced chloride ions that facilitated the formation of rare, stable minerals like aluminum tobermorite. These minerals grew within the concrete matrix over time, effectively self-healing cracks and increasing the material’s resistance to erosion. This understanding of material chemistry allowed Roman engineers to construct harbors, aqueducts, and",
+      "story-3": "BEGIN_3\n\nThe landscape of computer science is fundamentally built upon the efficient organization of data. Among the most critical operations in this domain is sorting, the process of arranging a collection of elements into a specific order, typically ascending or descending. While sorting may appear trivial in everyday life—such as organizing a deck of cards or alphabetizing a bookshelf—it represents a profound challenge in computational theory. The efficiency with which a computer can sort data dictates the performance of databases, search engines, operating systems, and countless other software applications. To understand the limits and possibilities of sorting, one must delve into the realm of comparison sorting algorithms and their associated computational complexity. This explanation will explore the theoretical foundations of comparison sorts, analyze the lower bounds imposed by information theory, examine specific algorithmic strategies, and discuss the practical implications of time and space complexity.\n\nAt the heart of sorting theory lies the concept of the comparison model. In this model, the only operation permitted to determine the relative order of two elements is a direct comparison. The algorithm is not allowed to inspect the internal structure of the data, such as the binary representation of integers or the hash values of strings, to infer order. Instead, it must rely solely on queries of the form \"Is element A less than element B?\" This restriction is crucial because it defines a universal class of sorting algorithms that can be applied to any data type where a total ordering is defined, regardless of the underlying data structure. Whether sorting integers, floating-point numbers, strings, or custom objects, comparison sorts provide a generic solution. However, this generality comes at a cost, which is quantified through computational complexity.\n\nTo understand the efficiency of these algorithms, we must first define what we mean by complexity. In computer science, complexity is usually measured in terms of time and space. Time complexity refers to the number of basic operations required to complete the task, often expressed using Big O notation, which describes the upper bound of the growth rate of the algorithm as the input size $n$ increases. Space complexity refers to the amount of memory required by the algorithm. For sorting, the primary metric of interest is the number of comparisons performed, as this is the dominant cost in the comparison model.\n\nThe theoretical foundation for the efficiency of comparison sorts is rooted in information theory, specifically the concept of decision trees. A decision tree is a binary tree where each internal node represents a comparison between two elements, and each leaf node represents a unique permutation of the input sequence. For a sequence of $n$ distinct elements, there are"
+    },
+    "host_start_monotonic_us": 283817568651,
+    "host_end_monotonic_us": 283830751390,
+    "host_full_wave_us": 13182739,
+    "measurement_scope": "host send through complete IPC response; includes full wave overhead",
+    "request_sha256": "f7dace6ee4f04c7bd5d8e61899473b056788771d9040da57af33a881bd60169c"
+  }
+}

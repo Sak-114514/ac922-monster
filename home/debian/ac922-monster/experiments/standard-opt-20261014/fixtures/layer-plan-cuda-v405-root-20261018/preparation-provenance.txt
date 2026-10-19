@@ -1,0 +1,14 @@
+Fixture preparation snapshot (not the R402 host-link base):
+  local active src/ggml/src/ggml-backend.cpp SHA-256:
+    9ae71ac86e8d942b33b8d7915d02511d7a8f39a6b6a9a0c9fb6056af3aac039c
+  local active src/src/llama-layer-graph-bindings.h SHA-256:
+    d58904713d16c405fc7dc2a1d26b833d4cee5e90f5eb6d6148fb68d94384a0f4
+  expected private header absent at preparation time:
+    src/ggml/src/ggml-layer-plan-rebind-private.hpp
+
+The API declaration contract was read from the earlier staged R388 header:
+  SHA-256 ab2b7c7161343a442f3aacdd25422ad801508b68b61c84ea3ace0ae05bcbacdc
+
+Do not use the preparation snapshot as a compile pin. After the root agent
+reloads R402, run capture-hostlink-manifest.sh against the exact R402 source
+and isolated libraries, then use those hashes for any host-link or CUDA run.

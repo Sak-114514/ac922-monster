@@ -1,0 +1,100 @@
+{
+  "schema": "ac922-stage-event-diagnostic-bootstrap-v1",
+  "status": "PREPARED_NOT_RUN",
+  "worker_sha256": "8b7654c41987acca55d168b58520dced2ec52c71c9c251ddbccf14edbdbbfa7b",
+  "worker_source_sha256": "25edba5f4dbd55e8cd242b27bbf82838bffa8dc5fe1f8b8b1f808dca220c09f9",
+  "observer_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/captured-argument-observer-20261019/libac922-tail-observer.so",
+  "observer_sha256": "80b433e73a93ef095e3bd04ed35dd7f64bb4c8b60103f6a88b14d624780857db",
+  "engine_dso_names": [
+    "libggml-base.so.0",
+    "libggml-cpu.so.0",
+    "libggml-cuda.so.0",
+    "libggml.so.0",
+    "libllama-common.so.0",
+    "libllama.so.0",
+    "libmtmd.so.0"
+  ],
+  "standard_scenario_source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/fourbank-d3-newruntime-v306-20261017/v221-d3-scenarios.json",
+  "standard_scenario_sha256": "4c2234d5d214ac7a62a43adb901c637e1ff8151bb106ad612364fc625c625324",
+  "four512_evidence": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/safe-pool-reject-20261019/evidence/four512-flow-record.json",
+  "four512_evidence_sha256": "882a84ba49e8d9e7698130b1eb34f252cee5792ab913ad3f7984ca6455f79b10",
+  "private_api_port": 8012,
+  "private_control_socket": "/home/debian/ac922-monster/production/stage-event-control.sock",
+  "auto_restore_seconds": 2400,
+  "measurement_scope": "full wave from host send to complete IPC response; not isolated pure GPU phase; no throughput claim",
+  "waves": [
+    {
+      "id": "stage-event-primer32",
+      "kind": "ordinary_uncached_primer",
+      "requests": 1,
+      "prompt_tokens": 32768,
+      "max_tokens": 8,
+      "cache_prompt": false
+    },
+    {
+      "id": "diag-event-prefill32",
+      "kind": "stage_event_prefill_window",
+      "requests": 1,
+      "prompt_tokens": 32768,
+      "max_tokens": 8,
+      "cache_prompt": false
+    },
+    {
+      "id": "diag-event-decode4",
+      "kind": "stage_event_four_request_window",
+      "requests": 4,
+      "output_tokens_each": 512,
+      "cache_prompt": false,
+      "source": "previously accepted real four-story prompt set; exact text is in run_diagnostic.py"
+    },
+    {
+      "id": "diag-native4-cap17916",
+      "kind": "context_recreation_and_native_quality",
+      "requests": 4,
+      "capacity_tokens_each": 17916,
+      "cache_prompt": false
+    },
+    {
+      "id": "diag-long-paris-quality",
+      "kind": "long_semantic_quality",
+      "requests": 1,
+      "semantic_pad_to_tokens": 32768,
+      "expected_text": "Paris",
+      "cache_prompt": false
+    }
+  ],
+  "former_inference_backend_port": 8007,
+  "public_gateway_unit": "ac922-apigateway.service",
+  "public_gateway_policy": "service stays active and configuration untouched; port 8007 is the inference backend and is expected to pause during the private window",
+  "four512_requests": [
+    {
+      "id": "story-0",
+      "prompt": "Write a coherent technical explanation of how CPU caches and cache coherency work, at least 2000 words. Begin with exactly BEGIN_0 then continue with the explanation. Do not end early.",
+      "max_tokens": 512,
+      "ignore_eos": true,
+      "cache_prompt": false
+    },
+    {
+      "id": "story-1",
+      "prompt": "Write a coherent technical explanation of photosynthesis and plant metabolism, at least 2000 words. Begin with exactly BEGIN_1 then continue with the explanation. Do not end early.",
+      "max_tokens": 512,
+      "ignore_eos": true,
+      "cache_prompt": false
+    },
+    {
+      "id": "story-2",
+      "prompt": "Write a coherent technical explanation of Roman architectural engineering, at least 2000 words. Begin with exactly BEGIN_2 then continue with the explanation. Do not end early.",
+      "max_tokens": 512,
+      "ignore_eos": true,
+      "cache_prompt": false
+    },
+    {
+      "id": "story-3",
+      "prompt": "Write a coherent technical explanation of comparison sorting algorithms and complexity, at least 2000 words. Begin with exactly BEGIN_3 then continue with the explanation. Do not end early.",
+      "max_tokens": 512,
+      "ignore_eos": true,
+      "cache_prompt": false
+    }
+  ],
+  "four512_source": "production/parallel-prepare-20261019/run_qualification.py stories; full-text and token-ID oracle production/safe-pool-reject-20261019/evidence/four512-flow-record.json"
+}

@@ -1,0 +1,2181 @@
+{
+  "schema": "ac922-prefix-affinity-acceptance-v1",
+  "status": "PASS",
+  "started_unix": 1792344509.837659,
+  "mode": "inband whole-wave on already-loaded service",
+  "model_load_count_requested": 0,
+  "model_load_count_claimed": "parent-managed; harness does not launch or reload model",
+  "corpus_characters": 32768,
+  "corpus_sha256": "43910a4f1778f781356ac4538b42ab596e7057711668621b2407d2de4cb85cc6",
+  "corpus_source_sha256": "0cbfa44640cdb46bd24f3b34e34a443da609527548914eb6b756e1b69dbfeb3c",
+  "sampling": "greedy settings are inherited from the loaded worker",
+  "max_tokens_per_request": 16,
+  "bank_context_tokens": 17152,
+  "cache_expectations": {
+    "cold4": "all requests cached_tokens=0",
+    "same4/shuffle/subsets": "all requests cached_tokens>0 and stable document-to-bank mapping",
+    "edited_early_body2": "each request cached_tokens=0 and changed NOVA value returned exactly"
+  },
+  "waves": [
+    {
+      "label": "cold4",
+      "request_order": [
+        "doc-alpha",
+        "doc-bravo",
+        "doc-charlie",
+        "doc-delta"
+      ],
+      "mapping": {
+        "doc-alpha": 0,
+        "doc-bravo": 1,
+        "doc-charlie": 2,
+        "doc-delta": 3
+      },
+      "mapping_source": "worker event when present; otherwise source-derived position modulo four",
+      "bank_mapping_by_request": [
+        {
+          "id": "doc-alpha",
+          "document_id": "DOC-AFFINITY-ALPHA-01",
+          "prompt_sha256": "7f76f0dfd981601eeada0268352fcf2b11608023abcf22e0c458a5fb5b641f37",
+          "expected": "3179",
+          "actual": "3179",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10817,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 0,
+          "cache_expectation": "cold",
+          "cache_pass": true,
+          "bank": 0,
+          "bank_event_values": {
+            "accepted": 0,
+            "cache_status": 0,
+            "done": 0
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 15.024403330986388,
+          "last_emission_s": 15.101375329017173
+        },
+        {
+          "id": "doc-bravo",
+          "document_id": "DOC-AFFINITY-BRAVO-02",
+          "prompt_sha256": "7dfa886e654976929f95abb0b25c08cbecc4faeac247d8248783980ae48388e6",
+          "expected": "6842",
+          "actual": "6842",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10817,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 0,
+          "cache_expectation": "cold",
+          "cache_pass": true,
+          "bank": 1,
+          "bank_event_values": {
+            "accepted": 1,
+            "cache_status": 1,
+            "done": 1
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 14.672047603991814,
+          "last_emission_s": 14.781521007011179
+        },
+        {
+          "id": "doc-charlie",
+          "document_id": "DOC-AFFINITY-CHARLIE-03",
+          "prompt_sha256": "498706d5bbc5ace70ddf1f09f98664c2316744f34ae2e4925cf147f3c99e6f68",
+          "expected": "5301",
+          "actual": "5301",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10818,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 0,
+          "cache_expectation": "cold",
+          "cache_pass": true,
+          "bank": 2,
+          "bank_event_values": {
+            "accepted": 2,
+            "cache_status": 2,
+            "done": 2
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 15.028090010979213,
+          "last_emission_s": 15.104620920028538
+        },
+        {
+          "id": "doc-delta",
+          "document_id": "DOC-AFFINITY-DELTA-04",
+          "prompt_sha256": "408d5e5683a67f91600dfe219b8300f8ef384f5999a9d0b2bec52d63faf6fadf",
+          "expected": "9274",
+          "actual": "9274",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10817,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 0,
+          "cache_expectation": "cold",
+          "cache_pass": true,
+          "bank": 3,
+          "bank_event_values": {
+            "accepted": 3,
+            "cache_status": 3,
+            "done": 3
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 14.666676733002532,
+          "last_emission_s": 14.77801658899989
+        }
+      ],
+      "wave_wall_s": 15.106866393005475,
+      "control_roundtrip_s": 15.11037882900564,
+      "first_token_s": {
+        "doc-delta": 14.666676733002532,
+        "doc-bravo": 14.672047603991814,
+        "doc-alpha": 15.024403330986388,
+        "doc-charlie": 15.028090010979213
+      },
+      "last_token_s": {
+        "doc-delta": 14.77801658899989,
+        "doc-bravo": 14.781521007011179,
+        "doc-alpha": 15.101375329017173,
+        "doc-charlie": 15.104620920028538
+      },
+      "timings": {
+        "wave_id": "affinity-cold4-f310fbd16a",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 14.953365,
+        "whole_wave_output_tok_s": 1.0699932757610076,
+        "all_emissions_tok_s": 36.531932333728335,
+        "prefill_input_tokens": 43269,
+        "prefill_wall_seconds": 14.876239,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 43269,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 2908.598067024871,
+        "logical_prompt_tok_s": 2908.598067024871,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 54907981,
+        "mtp_prefill_us_sum": 1817997,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2469,
+          2455,
+          2532,
+          2683,
+          3594,
+          3491
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1130,
+        "post_wave_free_after_mib": [
+          2469,
+          2455,
+          2532,
+          2683,
+          3594,
+          3491
+        ]
+      },
+      "errors": [],
+      "response": {
+        "id": "affinity-cold4-f310fbd16a",
+        "accepted": {
+          "doc-alpha": {
+            "type": "accepted",
+            "id": "doc-alpha",
+            "input_tokens": 10817,
+            "reserved_tokens": 10833,
+            "bank": 0,
+            "wave_id": "affinity-cold4-f310fbd16a"
+          },
+          "doc-bravo": {
+            "type": "accepted",
+            "id": "doc-bravo",
+            "input_tokens": 10817,
+            "reserved_tokens": 10833,
+            "bank": 1,
+            "wave_id": "affinity-cold4-f310fbd16a"
+          },
+          "doc-charlie": {
+            "type": "accepted",
+            "id": "doc-charlie",
+            "input_tokens": 10818,
+            "reserved_tokens": 10834,
+            "bank": 2,
+            "wave_id": "affinity-cold4-f310fbd16a"
+          },
+          "doc-delta": {
+            "type": "accepted",
+            "id": "doc-delta",
+            "input_tokens": 10817,
+            "reserved_tokens": 10833,
+            "bank": 3,
+            "wave_id": "affinity-cold4-f310fbd16a"
+          }
+        },
+        "cache_status": {
+          "doc-charlie": {
+            "type": "cache_status",
+            "id": "doc-charlie",
+            "bank": 2,
+            "hit": false,
+            "cached_tokens": 0,
+            "checkpoint_tokens": 0
+          },
+          "doc-alpha": {
+            "type": "cache_status",
+            "id": "doc-alpha",
+            "bank": 0,
+            "hit": false,
+            "cached_tokens": 0,
+            "checkpoint_tokens": 0
+          },
+          "doc-delta": {
+            "type": "cache_status",
+            "id": "doc-delta",
+            "bank": 3,
+            "hit": false,
+            "cached_tokens": 0,
+            "checkpoint_tokens": 0
+          },
+          "doc-bravo": {
+            "type": "cache_status",
+            "id": "doc-bravo",
+            "bank": 1,
+            "hit": false,
+            "cached_tokens": 0,
+            "checkpoint_tokens": 0
+          }
+        },
+        "done": {
+          "doc-delta": {
+            "type": "done",
+            "id": "doc-delta",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 3
+          },
+          "doc-bravo": {
+            "type": "done",
+            "id": "doc-bravo",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 1
+          },
+          "doc-alpha": {
+            "type": "done",
+            "id": "doc-alpha",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 0
+          },
+          "doc-charlie": {
+            "type": "done",
+            "id": "doc-charlie",
+            "input_tokens": 10818,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 2
+          }
+        },
+        "errors": [],
+        "first_token_s": {
+          "doc-delta": 14.666676733002532,
+          "doc-bravo": 14.672047603991814,
+          "doc-alpha": 15.024403330986388,
+          "doc-charlie": 15.028090010979213
+        },
+        "last_token_s": {
+          "doc-delta": 14.77801658899989,
+          "doc-bravo": 14.781521007011179,
+          "doc-alpha": 15.101375329017173,
+          "doc-charlie": 15.104620920028538
+        },
+        "timings": {
+          "wave_id": "affinity-cold4-f310fbd16a",
+          "mode": "bank_local_phase_progression",
+          "banks": [
+            {
+              "bank": 0,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 1,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 2,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 3,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            }
+          ],
+          "refill_count": 0,
+          "flow_count": 4,
+          "wall_seconds": 14.953365,
+          "whole_wave_output_tok_s": 1.0699932757610076,
+          "all_emissions_tok_s": 36.531932333728335,
+          "prefill_input_tokens": 43269,
+          "prefill_wall_seconds": 14.876239,
+          "cached_tokens": 0,
+          "prefill_evaluated_tokens": 43269,
+          "uncached_prefill": true,
+          "prefill_aggregate_wall_tok_s": 2908.598067024871,
+          "logical_prompt_tok_s": 2908.598067024871,
+          "prefill_scope": "initial independent bank prefills",
+          "target_prefill_us_sum": 54907981,
+          "mtp_prefill_us_sum": 1817997,
+          "thermal_wait_us_sum": 0,
+          "mtp_depth": 3,
+          "banks_scope": "completed wave before optional idle-context reclamation",
+          "post_wave_free_before_mib": [
+            2469,
+            2455,
+            2532,
+            2683,
+            3594,
+            3491
+          ],
+          "post_wave_reclaimed_banks": 0,
+          "post_wave_reclaim_us": 1130,
+          "post_wave_free_after_mib": [
+            2469,
+            2455,
+            2532,
+            2683,
+            3594,
+            3491
+          ]
+        },
+        "wall_s": 15.106866393005475,
+        "texts": {
+          "doc-alpha": "3179",
+          "doc-bravo": "6842",
+          "doc-charlie": "5301",
+          "doc-delta": "9274"
+        },
+        "label": "cold4",
+        "control_roundtrip_s": 15.11037882900564
+      },
+      "status": "PASS",
+      "mapping_stability": "anchor"
+    },
+    {
+      "label": "same4",
+      "request_order": [
+        "doc-alpha",
+        "doc-bravo",
+        "doc-charlie",
+        "doc-delta"
+      ],
+      "mapping": {
+        "doc-alpha": 0,
+        "doc-bravo": 1,
+        "doc-charlie": 2,
+        "doc-delta": 3
+      },
+      "mapping_source": "worker event when present; otherwise source-derived position modulo four",
+      "bank_mapping_by_request": [
+        {
+          "id": "doc-alpha",
+          "document_id": "DOC-AFFINITY-ALPHA-01",
+          "prompt_sha256": "7f76f0dfd981601eeada0268352fcf2b11608023abcf22e0c458a5fb5b641f37",
+          "expected": "3179",
+          "actual": "3179",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10817,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 10496,
+          "cache_expectation": "hit",
+          "cache_pass": true,
+          "bank": 0,
+          "bank_event_values": {
+            "accepted": 0,
+            "cache_status": 0,
+            "done": 0
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 0.9474870389676653,
+          "last_emission_s": 1.0391838559880853
+        },
+        {
+          "id": "doc-bravo",
+          "document_id": "DOC-AFFINITY-BRAVO-02",
+          "prompt_sha256": "7dfa886e654976929f95abb0b25c08cbecc4faeac247d8248783980ae48388e6",
+          "expected": "6842",
+          "actual": "6842",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10817,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 10496,
+          "cache_expectation": "hit",
+          "cache_pass": true,
+          "bank": 1,
+          "bank_event_values": {
+            "accepted": 1,
+            "cache_status": 1,
+            "done": 1
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 1.2552617859910242,
+          "last_emission_s": 1.3266240200027823
+        },
+        {
+          "id": "doc-charlie",
+          "document_id": "DOC-AFFINITY-CHARLIE-03",
+          "prompt_sha256": "498706d5bbc5ace70ddf1f09f98664c2316744f34ae2e4925cf147f3c99e6f68",
+          "expected": "5301",
+          "actual": "5301",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10818,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 10496,
+          "cache_expectation": "hit",
+          "cache_pass": true,
+          "bank": 2,
+          "bank_event_values": {
+            "accepted": 2,
+            "cache_status": 2,
+            "done": 2
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 1.0391706319642253,
+          "last_emission_s": 1.1218871669843793
+        },
+        {
+          "id": "doc-delta",
+          "document_id": "DOC-AFFINITY-DELTA-04",
+          "prompt_sha256": "408d5e5683a67f91600dfe219b8300f8ef384f5999a9d0b2bec52d63faf6fadf",
+          "expected": "9274",
+          "actual": "9274",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10817,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 10496,
+          "cache_expectation": "hit",
+          "cache_pass": true,
+          "bank": 3,
+          "bank_event_values": {
+            "accepted": 3,
+            "cache_status": 3,
+            "done": 3
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 1.0185710859950632,
+          "last_emission_s": 1.113721847999841
+        }
+      ],
+      "wave_wall_s": 1.329456241976004,
+      "control_roundtrip_s": 1.3330236360197887,
+      "first_token_s": {
+        "doc-alpha": 0.9474870389676653,
+        "doc-delta": 1.0185710859950632,
+        "doc-charlie": 1.0391706319642253,
+        "doc-bravo": 1.2552617859910242
+      },
+      "last_token_s": {
+        "doc-alpha": 1.0391838559880853,
+        "doc-delta": 1.113721847999841,
+        "doc-charlie": 1.1218871669843793,
+        "doc-bravo": 1.3266240200027823
+      },
+      "timings": {
+        "wave_id": "affinity-same4-ab0287d05b",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 1.18635,
+        "whole_wave_output_tok_s": 13.486745058372318,
+        "all_emissions_tok_s": 42.1948717407758,
+        "prefill_input_tokens": 43269,
+        "prefill_wall_seconds": 1.113896,
+        "cached_tokens": 41984,
+        "prefill_evaluated_tokens": 1285,
+        "uncached_prefill": false,
+        "prefill_aggregate_wall_tok_s": 1153.6085954164482,
+        "logical_prompt_tok_s": 38844.7395448049,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 3312695,
+        "mtp_prefill_us_sum": 102445,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2447,
+          2435,
+          2516,
+          2667,
+          3578,
+          3473
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1200,
+        "post_wave_free_after_mib": [
+          2447,
+          2435,
+          2516,
+          2667,
+          3578,
+          3473
+        ]
+      },
+      "errors": [],
+      "response": {
+        "id": "affinity-same4-ab0287d05b",
+        "accepted": {
+          "doc-alpha": {
+            "type": "accepted",
+            "id": "doc-alpha",
+            "input_tokens": 10817,
+            "reserved_tokens": 10833,
+            "bank": 0,
+            "wave_id": "affinity-same4-ab0287d05b"
+          },
+          "doc-bravo": {
+            "type": "accepted",
+            "id": "doc-bravo",
+            "input_tokens": 10817,
+            "reserved_tokens": 10833,
+            "bank": 1,
+            "wave_id": "affinity-same4-ab0287d05b"
+          },
+          "doc-charlie": {
+            "type": "accepted",
+            "id": "doc-charlie",
+            "input_tokens": 10818,
+            "reserved_tokens": 10834,
+            "bank": 2,
+            "wave_id": "affinity-same4-ab0287d05b"
+          },
+          "doc-delta": {
+            "type": "accepted",
+            "id": "doc-delta",
+            "input_tokens": 10817,
+            "reserved_tokens": 10833,
+            "bank": 3,
+            "wave_id": "affinity-same4-ab0287d05b"
+          }
+        },
+        "cache_status": {
+          "doc-alpha": {
+            "type": "cache_status",
+            "id": "doc-alpha",
+            "bank": 0,
+            "hit": true,
+            "cached_tokens": 10496,
+            "checkpoint_tokens": 10496
+          },
+          "doc-delta": {
+            "type": "cache_status",
+            "id": "doc-delta",
+            "bank": 3,
+            "hit": true,
+            "cached_tokens": 10496,
+            "checkpoint_tokens": 10496
+          },
+          "doc-charlie": {
+            "type": "cache_status",
+            "id": "doc-charlie",
+            "bank": 2,
+            "hit": true,
+            "cached_tokens": 10496,
+            "checkpoint_tokens": 10496
+          },
+          "doc-bravo": {
+            "type": "cache_status",
+            "id": "doc-bravo",
+            "bank": 1,
+            "hit": true,
+            "cached_tokens": 10496,
+            "checkpoint_tokens": 10496
+          }
+        },
+        "done": {
+          "doc-alpha": {
+            "type": "done",
+            "id": "doc-alpha",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 0
+          },
+          "doc-delta": {
+            "type": "done",
+            "id": "doc-delta",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 3
+          },
+          "doc-charlie": {
+            "type": "done",
+            "id": "doc-charlie",
+            "input_tokens": 10818,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 2
+          },
+          "doc-bravo": {
+            "type": "done",
+            "id": "doc-bravo",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 1
+          }
+        },
+        "errors": [],
+        "first_token_s": {
+          "doc-alpha": 0.9474870389676653,
+          "doc-delta": 1.0185710859950632,
+          "doc-charlie": 1.0391706319642253,
+          "doc-bravo": 1.2552617859910242
+        },
+        "last_token_s": {
+          "doc-alpha": 1.0391838559880853,
+          "doc-delta": 1.113721847999841,
+          "doc-charlie": 1.1218871669843793,
+          "doc-bravo": 1.3266240200027823
+        },
+        "timings": {
+          "wave_id": "affinity-same4-ab0287d05b",
+          "mode": "bank_local_phase_progression",
+          "banks": [
+            {
+              "bank": 0,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 1,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 2,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 3,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            }
+          ],
+          "refill_count": 0,
+          "flow_count": 4,
+          "wall_seconds": 1.18635,
+          "whole_wave_output_tok_s": 13.486745058372318,
+          "all_emissions_tok_s": 42.1948717407758,
+          "prefill_input_tokens": 43269,
+          "prefill_wall_seconds": 1.113896,
+          "cached_tokens": 41984,
+          "prefill_evaluated_tokens": 1285,
+          "uncached_prefill": false,
+          "prefill_aggregate_wall_tok_s": 1153.6085954164482,
+          "logical_prompt_tok_s": 38844.7395448049,
+          "prefill_scope": "initial independent bank prefills",
+          "target_prefill_us_sum": 3312695,
+          "mtp_prefill_us_sum": 102445,
+          "thermal_wait_us_sum": 0,
+          "mtp_depth": 3,
+          "banks_scope": "completed wave before optional idle-context reclamation",
+          "post_wave_free_before_mib": [
+            2447,
+            2435,
+            2516,
+            2667,
+            3578,
+            3473
+          ],
+          "post_wave_reclaimed_banks": 0,
+          "post_wave_reclaim_us": 1200,
+          "post_wave_free_after_mib": [
+            2447,
+            2435,
+            2516,
+            2667,
+            3578,
+            3473
+          ]
+        },
+        "wall_s": 1.329456241976004,
+        "texts": {
+          "doc-alpha": "3179",
+          "doc-bravo": "6842",
+          "doc-charlie": "5301",
+          "doc-delta": "9274"
+        },
+        "label": "same4",
+        "control_roundtrip_s": 1.3330236360197887
+      },
+      "status": "PASS",
+      "mapping_stability_by_request": {
+        "doc-alpha": true,
+        "doc-bravo": true,
+        "doc-charlie": true,
+        "doc-delta": true
+      },
+      "mapping_stable": true
+    },
+    {
+      "label": "shuffle_3_1_0_2",
+      "request_order": [
+        "doc-delta",
+        "doc-bravo",
+        "doc-alpha",
+        "doc-charlie"
+      ],
+      "mapping": {
+        "doc-delta": 3,
+        "doc-bravo": 1,
+        "doc-alpha": 0,
+        "doc-charlie": 2
+      },
+      "mapping_source": "worker event when present; otherwise source-derived position modulo four",
+      "bank_mapping_by_request": [
+        {
+          "id": "doc-delta",
+          "document_id": "DOC-AFFINITY-DELTA-04",
+          "prompt_sha256": "408d5e5683a67f91600dfe219b8300f8ef384f5999a9d0b2bec52d63faf6fadf",
+          "expected": "9274",
+          "actual": "9274",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10817,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 10496,
+          "cache_expectation": "hit",
+          "cache_pass": true,
+          "bank": 3,
+          "bank_event_values": {
+            "accepted": 3,
+            "cache_status": 3,
+            "done": 3
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 1.5602115180226974,
+          "last_emission_s": 1.634691726998426
+        },
+        {
+          "id": "doc-bravo",
+          "document_id": "DOC-AFFINITY-BRAVO-02",
+          "prompt_sha256": "7dfa886e654976929f95abb0b25c08cbecc4faeac247d8248783980ae48388e6",
+          "expected": "6842",
+          "actual": "6842",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10817,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 10496,
+          "cache_expectation": "hit",
+          "cache_pass": true,
+          "bank": 1,
+          "bank_event_values": {
+            "accepted": 1,
+            "cache_status": 1,
+            "done": 1
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 1.5567339250119403,
+          "last_emission_s": 1.6307422880199738
+        },
+        {
+          "id": "doc-alpha",
+          "document_id": "DOC-AFFINITY-ALPHA-01",
+          "prompt_sha256": "7f76f0dfd981601eeada0268352fcf2b11608023abcf22e0c458a5fb5b641f37",
+          "expected": "3179",
+          "actual": "3179",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10817,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 10496,
+          "cache_expectation": "hit",
+          "cache_pass": true,
+          "bank": 0,
+          "bank_event_values": {
+            "accepted": 0,
+            "cache_status": 0,
+            "done": 0
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 1.0822258249972947,
+          "last_emission_s": 1.1915032329852693
+        },
+        {
+          "id": "doc-charlie",
+          "document_id": "DOC-AFFINITY-CHARLIE-03",
+          "prompt_sha256": "498706d5bbc5ace70ddf1f09f98664c2316744f34ae2e4925cf147f3c99e6f68",
+          "expected": "5301",
+          "actual": "5301",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10818,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 10496,
+          "cache_expectation": "hit",
+          "cache_pass": true,
+          "bank": 2,
+          "bank_event_values": {
+            "accepted": 2,
+            "cache_status": 2,
+            "done": 2
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 1.1088158240308985,
+          "last_emission_s": 1.1975427470169961
+        }
+      ],
+      "wave_wall_s": 1.6373478579916991,
+      "control_roundtrip_s": 1.6408645859919488,
+      "first_token_s": {
+        "doc-alpha": 1.0822258249972947,
+        "doc-charlie": 1.1088158240308985,
+        "doc-bravo": 1.5567339250119403,
+        "doc-delta": 1.5602115180226974
+      },
+      "last_token_s": {
+        "doc-alpha": 1.1915032329852693,
+        "doc-charlie": 1.1975427470169961,
+        "doc-bravo": 1.6307422880199738,
+        "doc-delta": 1.634691726998426
+      },
+      "timings": {
+        "wave_id": "affinity-shuffle_3_1_0_2-99e725634c",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 1.499593,
+        "whole_wave_output_tok_s": 10.669561674400988,
+        "all_emissions_tok_s": 28.96042919356065,
+        "prefill_input_tokens": 43269,
+        "prefill_wall_seconds": 1.424217,
+        "cached_tokens": 41984,
+        "prefill_evaluated_tokens": 1285,
+        "uncached_prefill": false,
+        "prefill_aggregate_wall_tok_s": 902.250148678186,
+        "logical_prompt_tok_s": 30380.90403358477,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 4259945,
+        "mtp_prefill_us_sum": 212907,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2415,
+          2403,
+          2490,
+          2641,
+          3552,
+          3451
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1295,
+        "post_wave_free_after_mib": [
+          2415,
+          2403,
+          2490,
+          2641,
+          3552,
+          3451
+        ]
+      },
+      "errors": [],
+      "response": {
+        "id": "affinity-shuffle_3_1_0_2-99e725634c",
+        "accepted": {
+          "doc-delta": {
+            "type": "accepted",
+            "id": "doc-delta",
+            "input_tokens": 10817,
+            "reserved_tokens": 10833,
+            "bank": 3,
+            "wave_id": "affinity-shuffle_3_1_0_2-99e725634c"
+          },
+          "doc-bravo": {
+            "type": "accepted",
+            "id": "doc-bravo",
+            "input_tokens": 10817,
+            "reserved_tokens": 10833,
+            "bank": 1,
+            "wave_id": "affinity-shuffle_3_1_0_2-99e725634c"
+          },
+          "doc-alpha": {
+            "type": "accepted",
+            "id": "doc-alpha",
+            "input_tokens": 10817,
+            "reserved_tokens": 10833,
+            "bank": 0,
+            "wave_id": "affinity-shuffle_3_1_0_2-99e725634c"
+          },
+          "doc-charlie": {
+            "type": "accepted",
+            "id": "doc-charlie",
+            "input_tokens": 10818,
+            "reserved_tokens": 10834,
+            "bank": 2,
+            "wave_id": "affinity-shuffle_3_1_0_2-99e725634c"
+          }
+        },
+        "cache_status": {
+          "doc-charlie": {
+            "type": "cache_status",
+            "id": "doc-charlie",
+            "bank": 2,
+            "hit": true,
+            "cached_tokens": 10496,
+            "checkpoint_tokens": 10496
+          },
+          "doc-alpha": {
+            "type": "cache_status",
+            "id": "doc-alpha",
+            "bank": 0,
+            "hit": true,
+            "cached_tokens": 10496,
+            "checkpoint_tokens": 10496
+          },
+          "doc-bravo": {
+            "type": "cache_status",
+            "id": "doc-bravo",
+            "bank": 1,
+            "hit": true,
+            "cached_tokens": 10496,
+            "checkpoint_tokens": 10496
+          },
+          "doc-delta": {
+            "type": "cache_status",
+            "id": "doc-delta",
+            "bank": 3,
+            "hit": true,
+            "cached_tokens": 10496,
+            "checkpoint_tokens": 10496
+          }
+        },
+        "done": {
+          "doc-alpha": {
+            "type": "done",
+            "id": "doc-alpha",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 0
+          },
+          "doc-charlie": {
+            "type": "done",
+            "id": "doc-charlie",
+            "input_tokens": 10818,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 2
+          },
+          "doc-bravo": {
+            "type": "done",
+            "id": "doc-bravo",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 1
+          },
+          "doc-delta": {
+            "type": "done",
+            "id": "doc-delta",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 3
+          }
+        },
+        "errors": [],
+        "first_token_s": {
+          "doc-alpha": 1.0822258249972947,
+          "doc-charlie": 1.1088158240308985,
+          "doc-bravo": 1.5567339250119403,
+          "doc-delta": 1.5602115180226974
+        },
+        "last_token_s": {
+          "doc-alpha": 1.1915032329852693,
+          "doc-charlie": 1.1975427470169961,
+          "doc-bravo": 1.6307422880199738,
+          "doc-delta": 1.634691726998426
+        },
+        "timings": {
+          "wave_id": "affinity-shuffle_3_1_0_2-99e725634c",
+          "mode": "bank_local_phase_progression",
+          "banks": [
+            {
+              "bank": 0,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 1,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 2,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 3,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            }
+          ],
+          "refill_count": 0,
+          "flow_count": 4,
+          "wall_seconds": 1.499593,
+          "whole_wave_output_tok_s": 10.669561674400988,
+          "all_emissions_tok_s": 28.96042919356065,
+          "prefill_input_tokens": 43269,
+          "prefill_wall_seconds": 1.424217,
+          "cached_tokens": 41984,
+          "prefill_evaluated_tokens": 1285,
+          "uncached_prefill": false,
+          "prefill_aggregate_wall_tok_s": 902.250148678186,
+          "logical_prompt_tok_s": 30380.90403358477,
+          "prefill_scope": "initial independent bank prefills",
+          "target_prefill_us_sum": 4259945,
+          "mtp_prefill_us_sum": 212907,
+          "thermal_wait_us_sum": 0,
+          "mtp_depth": 3,
+          "banks_scope": "completed wave before optional idle-context reclamation",
+          "post_wave_free_before_mib": [
+            2415,
+            2403,
+            2490,
+            2641,
+            3552,
+            3451
+          ],
+          "post_wave_reclaimed_banks": 0,
+          "post_wave_reclaim_us": 1295,
+          "post_wave_free_after_mib": [
+            2415,
+            2403,
+            2490,
+            2641,
+            3552,
+            3451
+          ]
+        },
+        "wall_s": 1.6373478579916991,
+        "texts": {
+          "doc-delta": "9274",
+          "doc-bravo": "6842",
+          "doc-alpha": "3179",
+          "doc-charlie": "5301"
+        },
+        "label": "shuffle_3_1_0_2",
+        "control_roundtrip_s": 1.6408645859919488
+      },
+      "status": "PASS",
+      "mapping_stability_by_request": {
+        "doc-delta": true,
+        "doc-bravo": true,
+        "doc-alpha": true,
+        "doc-charlie": true
+      },
+      "mapping_stable": true
+    },
+    {
+      "label": "subset2_2_0",
+      "request_order": [
+        "doc-charlie",
+        "doc-alpha"
+      ],
+      "mapping": {
+        "doc-charlie": 2,
+        "doc-alpha": 0
+      },
+      "mapping_source": "worker event when present; otherwise source-derived position modulo four",
+      "bank_mapping_by_request": [
+        {
+          "id": "doc-charlie",
+          "document_id": "DOC-AFFINITY-CHARLIE-03",
+          "prompt_sha256": "498706d5bbc5ace70ddf1f09f98664c2316744f34ae2e4925cf147f3c99e6f68",
+          "expected": "5301",
+          "actual": "5301",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10818,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 10496,
+          "cache_expectation": "hit",
+          "cache_pass": true,
+          "bank": 2,
+          "bank_event_values": {
+            "accepted": 2,
+            "cache_status": 2,
+            "done": 2
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 0.8138062669895589,
+          "last_emission_s": 0.883017084968742
+        },
+        {
+          "id": "doc-alpha",
+          "document_id": "DOC-AFFINITY-ALPHA-01",
+          "prompt_sha256": "7f76f0dfd981601eeada0268352fcf2b11608023abcf22e0c458a5fb5b641f37",
+          "expected": "3179",
+          "actual": "3179",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10817,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 10496,
+          "cache_expectation": "hit",
+          "cache_pass": true,
+          "bank": 0,
+          "bank_event_values": {
+            "accepted": 0,
+            "cache_status": 0,
+            "done": 0
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 0.7392541539738886,
+          "last_emission_s": 0.8106306509580463
+        }
+      ],
+      "wave_wall_s": 0.8875272779841907,
+      "control_roundtrip_s": 0.889547229046002,
+      "first_token_s": {
+        "doc-alpha": 0.7392541539738886,
+        "doc-charlie": 0.8138062669895589
+      },
+      "last_token_s": {
+        "doc-alpha": 0.8106306509580463,
+        "doc-charlie": 0.883017084968742
+      },
+      "timings": {
+        "wave_id": "affinity-subset2_2_0-4d5fe88bf2",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 2,
+        "wall_seconds": 0.815209,
+        "whole_wave_output_tok_s": 9.813434346284204,
+        "all_emissions_tok_s": 55.65139963270076,
+        "prefill_input_tokens": 21635,
+        "prefill_wall_seconds": 0.745013,
+        "cached_tokens": 20992,
+        "prefill_evaluated_tokens": 643,
+        "uncached_prefill": false,
+        "prefill_aggregate_wall_tok_s": 863.0721880020885,
+        "logical_prompt_tok_s": 29039.761722278672,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 1266015,
+        "mtp_prefill_us_sum": 32907,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2405,
+          2393,
+          2482,
+          2633,
+          3544,
+          3445
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 3094,
+        "post_wave_free_after_mib": [
+          2405,
+          2393,
+          2482,
+          2633,
+          3544,
+          3445
+        ]
+      },
+      "errors": [],
+      "response": {
+        "id": "affinity-subset2_2_0-4d5fe88bf2",
+        "accepted": {
+          "doc-charlie": {
+            "type": "accepted",
+            "id": "doc-charlie",
+            "input_tokens": 10818,
+            "reserved_tokens": 10834,
+            "bank": 2,
+            "wave_id": "affinity-subset2_2_0-4d5fe88bf2"
+          },
+          "doc-alpha": {
+            "type": "accepted",
+            "id": "doc-alpha",
+            "input_tokens": 10817,
+            "reserved_tokens": 10833,
+            "bank": 0,
+            "wave_id": "affinity-subset2_2_0-4d5fe88bf2"
+          }
+        },
+        "cache_status": {
+          "doc-alpha": {
+            "type": "cache_status",
+            "id": "doc-alpha",
+            "bank": 0,
+            "hit": true,
+            "cached_tokens": 10496,
+            "checkpoint_tokens": 10496
+          },
+          "doc-charlie": {
+            "type": "cache_status",
+            "id": "doc-charlie",
+            "bank": 2,
+            "hit": true,
+            "cached_tokens": 10496,
+            "checkpoint_tokens": 10496
+          }
+        },
+        "done": {
+          "doc-alpha": {
+            "type": "done",
+            "id": "doc-alpha",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 0
+          },
+          "doc-charlie": {
+            "type": "done",
+            "id": "doc-charlie",
+            "input_tokens": 10818,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 2
+          }
+        },
+        "errors": [],
+        "first_token_s": {
+          "doc-alpha": 0.7392541539738886,
+          "doc-charlie": 0.8138062669895589
+        },
+        "last_token_s": {
+          "doc-alpha": 0.8106306509580463,
+          "doc-charlie": 0.883017084968742
+        },
+        "timings": {
+          "wave_id": "affinity-subset2_2_0-4d5fe88bf2",
+          "mode": "bank_local_phase_progression",
+          "banks": [
+            {
+              "bank": 0,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 1,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 2,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 3,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            }
+          ],
+          "refill_count": 0,
+          "flow_count": 2,
+          "wall_seconds": 0.815209,
+          "whole_wave_output_tok_s": 9.813434346284204,
+          "all_emissions_tok_s": 55.65139963270076,
+          "prefill_input_tokens": 21635,
+          "prefill_wall_seconds": 0.745013,
+          "cached_tokens": 20992,
+          "prefill_evaluated_tokens": 643,
+          "uncached_prefill": false,
+          "prefill_aggregate_wall_tok_s": 863.0721880020885,
+          "logical_prompt_tok_s": 29039.761722278672,
+          "prefill_scope": "initial independent bank prefills",
+          "target_prefill_us_sum": 1266015,
+          "mtp_prefill_us_sum": 32907,
+          "thermal_wait_us_sum": 0,
+          "mtp_depth": 3,
+          "banks_scope": "completed wave before optional idle-context reclamation",
+          "post_wave_free_before_mib": [
+            2405,
+            2393,
+            2482,
+            2633,
+            3544,
+            3445
+          ],
+          "post_wave_reclaimed_banks": 0,
+          "post_wave_reclaim_us": 3094,
+          "post_wave_free_after_mib": [
+            2405,
+            2393,
+            2482,
+            2633,
+            3544,
+            3445
+          ]
+        },
+        "wall_s": 0.8875272779841907,
+        "texts": {
+          "doc-charlie": "5301",
+          "doc-alpha": "3179"
+        },
+        "label": "subset2_2_0",
+        "control_roundtrip_s": 0.889547229046002
+      },
+      "status": "PASS",
+      "mapping_stability_by_request": {
+        "doc-charlie": true,
+        "doc-alpha": true
+      },
+      "mapping_stable": true
+    },
+    {
+      "label": "subset3_1_3_2",
+      "request_order": [
+        "doc-bravo",
+        "doc-delta",
+        "doc-charlie"
+      ],
+      "mapping": {
+        "doc-bravo": 1,
+        "doc-delta": 3,
+        "doc-charlie": 2
+      },
+      "mapping_source": "worker event when present; otherwise source-derived position modulo four",
+      "bank_mapping_by_request": [
+        {
+          "id": "doc-bravo",
+          "document_id": "DOC-AFFINITY-BRAVO-02",
+          "prompt_sha256": "7dfa886e654976929f95abb0b25c08cbecc4faeac247d8248783980ae48388e6",
+          "expected": "6842",
+          "actual": "6842",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10817,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 10496,
+          "cache_expectation": "hit",
+          "cache_pass": true,
+          "bank": 1,
+          "bank_event_values": {
+            "accepted": 1,
+            "cache_status": 1,
+            "done": 1
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 1.1736370240105316,
+          "last_emission_s": 1.2506494499975815
+        },
+        {
+          "id": "doc-delta",
+          "document_id": "DOC-AFFINITY-DELTA-04",
+          "prompt_sha256": "408d5e5683a67f91600dfe219b8300f8ef384f5999a9d0b2bec52d63faf6fadf",
+          "expected": "9274",
+          "actual": "9274",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10817,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 10496,
+          "cache_expectation": "hit",
+          "cache_pass": true,
+          "bank": 3,
+          "bank_event_values": {
+            "accepted": 3,
+            "cache_status": 3,
+            "done": 3
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 1.017241957015358,
+          "last_emission_s": 1.1497425769921392
+        },
+        {
+          "id": "doc-charlie",
+          "document_id": "DOC-AFFINITY-CHARLIE-03",
+          "prompt_sha256": "498706d5bbc5ace70ddf1f09f98664c2316744f34ae2e4925cf147f3c99e6f68",
+          "expected": "5301",
+          "actual": "5301",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10818,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 10496,
+          "cache_expectation": "hit",
+          "cache_pass": true,
+          "bank": 2,
+          "bank_event_values": {
+            "accepted": 2,
+            "cache_status": 2,
+            "done": 2
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 1.2171336599858478,
+          "last_emission_s": 1.3099483310361393
+        }
+      ],
+      "wave_wall_s": 1.3125215329928324,
+      "control_roundtrip_s": 1.315270027029328,
+      "first_token_s": {
+        "doc-delta": 1.017241957015358,
+        "doc-bravo": 1.1736370240105316,
+        "doc-charlie": 1.2171336599858478
+      },
+      "last_token_s": {
+        "doc-delta": 1.1497425769921392,
+        "doc-bravo": 1.2506494499975815,
+        "doc-charlie": 1.3099483310361393
+      },
+      "timings": {
+        "wave_id": "affinity-subset3_1_3_2-cc4b0dfd1f",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 3,
+        "wall_seconds": 1.208849,
+        "whole_wave_output_tok_s": 9.926798136078203,
+        "all_emissions_tok_s": 41.000129833744474,
+        "prefill_input_tokens": 32452,
+        "prefill_wall_seconds": 1.115234,
+        "cached_tokens": 31488,
+        "prefill_evaluated_tokens": 964,
+        "uncached_prefill": false,
+        "prefill_aggregate_wall_tok_s": 864.3925848745645,
+        "logical_prompt_tok_s": 29098.82589662797,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 2839093,
+        "mtp_prefill_us_sum": 53693,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2361,
+          2347,
+          2446,
+          2597,
+          3508,
+          3409
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1278,
+        "post_wave_free_after_mib": [
+          2361,
+          2347,
+          2446,
+          2597,
+          3508,
+          3409
+        ]
+      },
+      "errors": [],
+      "response": {
+        "id": "affinity-subset3_1_3_2-cc4b0dfd1f",
+        "accepted": {
+          "doc-bravo": {
+            "type": "accepted",
+            "id": "doc-bravo",
+            "input_tokens": 10817,
+            "reserved_tokens": 10833,
+            "bank": 1,
+            "wave_id": "affinity-subset3_1_3_2-cc4b0dfd1f"
+          },
+          "doc-delta": {
+            "type": "accepted",
+            "id": "doc-delta",
+            "input_tokens": 10817,
+            "reserved_tokens": 10833,
+            "bank": 3,
+            "wave_id": "affinity-subset3_1_3_2-cc4b0dfd1f"
+          },
+          "doc-charlie": {
+            "type": "accepted",
+            "id": "doc-charlie",
+            "input_tokens": 10818,
+            "reserved_tokens": 10834,
+            "bank": 2,
+            "wave_id": "affinity-subset3_1_3_2-cc4b0dfd1f"
+          }
+        },
+        "cache_status": {
+          "doc-delta": {
+            "type": "cache_status",
+            "id": "doc-delta",
+            "bank": 3,
+            "hit": true,
+            "cached_tokens": 10496,
+            "checkpoint_tokens": 10496
+          },
+          "doc-charlie": {
+            "type": "cache_status",
+            "id": "doc-charlie",
+            "bank": 2,
+            "hit": true,
+            "cached_tokens": 10496,
+            "checkpoint_tokens": 10496
+          },
+          "doc-bravo": {
+            "type": "cache_status",
+            "id": "doc-bravo",
+            "bank": 1,
+            "hit": true,
+            "cached_tokens": 10496,
+            "checkpoint_tokens": 10496
+          }
+        },
+        "done": {
+          "doc-delta": {
+            "type": "done",
+            "id": "doc-delta",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 3
+          },
+          "doc-bravo": {
+            "type": "done",
+            "id": "doc-bravo",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 1
+          },
+          "doc-charlie": {
+            "type": "done",
+            "id": "doc-charlie",
+            "input_tokens": 10818,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 2
+          }
+        },
+        "errors": [],
+        "first_token_s": {
+          "doc-delta": 1.017241957015358,
+          "doc-bravo": 1.1736370240105316,
+          "doc-charlie": 1.2171336599858478
+        },
+        "last_token_s": {
+          "doc-delta": 1.1497425769921392,
+          "doc-bravo": 1.2506494499975815,
+          "doc-charlie": 1.3099483310361393
+        },
+        "timings": {
+          "wave_id": "affinity-subset3_1_3_2-cc4b0dfd1f",
+          "mode": "bank_local_phase_progression",
+          "banks": [
+            {
+              "bank": 0,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 1,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 2,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 3,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            }
+          ],
+          "refill_count": 0,
+          "flow_count": 3,
+          "wall_seconds": 1.208849,
+          "whole_wave_output_tok_s": 9.926798136078203,
+          "all_emissions_tok_s": 41.000129833744474,
+          "prefill_input_tokens": 32452,
+          "prefill_wall_seconds": 1.115234,
+          "cached_tokens": 31488,
+          "prefill_evaluated_tokens": 964,
+          "uncached_prefill": false,
+          "prefill_aggregate_wall_tok_s": 864.3925848745645,
+          "logical_prompt_tok_s": 29098.82589662797,
+          "prefill_scope": "initial independent bank prefills",
+          "target_prefill_us_sum": 2839093,
+          "mtp_prefill_us_sum": 53693,
+          "thermal_wait_us_sum": 0,
+          "mtp_depth": 3,
+          "banks_scope": "completed wave before optional idle-context reclamation",
+          "post_wave_free_before_mib": [
+            2361,
+            2347,
+            2446,
+            2597,
+            3508,
+            3409
+          ],
+          "post_wave_reclaimed_banks": 0,
+          "post_wave_reclaim_us": 1278,
+          "post_wave_free_after_mib": [
+            2361,
+            2347,
+            2446,
+            2597,
+            3508,
+            3409
+          ]
+        },
+        "wall_s": 1.3125215329928324,
+        "texts": {
+          "doc-bravo": "6842",
+          "doc-delta": "9274",
+          "doc-charlie": "5301"
+        },
+        "label": "subset3_1_3_2",
+        "control_roundtrip_s": 1.315270027029328
+      },
+      "status": "PASS",
+      "mapping_stability_by_request": {
+        "doc-bravo": true,
+        "doc-delta": true,
+        "doc-charlie": true
+      },
+      "mapping_stable": true
+    },
+    {
+      "label": "edited_early_body2",
+      "request_order": [
+        "doc-alpha",
+        "doc-charlie"
+      ],
+      "mapping": {
+        "doc-alpha": 0,
+        "doc-charlie": 1
+      },
+      "mapping_source": "worker event when present; otherwise source-derived position modulo four",
+      "bank_mapping_by_request": [
+        {
+          "id": "doc-alpha",
+          "document_id": "DOC-AFFINITY-ALPHA-01",
+          "prompt_sha256": "251e7195dd2783ea733f31bf6011afe86011cb233f052c5c560df642f4575e9e",
+          "expected": "7301",
+          "actual": "7301",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10821,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 0,
+          "cache_expectation": "miss",
+          "cache_pass": true,
+          "bank": 0,
+          "bank_event_values": {
+            "accepted": 0,
+            "cache_status": 0,
+            "done": 0
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 6.884255776007194,
+          "last_emission_s": 7.139896819018759
+        },
+        {
+          "id": "doc-charlie",
+          "document_id": "DOC-AFFINITY-CHARLIE-03",
+          "prompt_sha256": "e9212df1523cd6dca36d5cd6aaf27740d58e315e0b7d877ec405146d625e1f71",
+          "expected": "4159",
+          "actual": "4159",
+          "semantic_pass": true,
+          "finish_reason": "stop",
+          "natural_stop": true,
+          "input_tokens": 10822,
+          "context_limit_tokens": 17152,
+          "context_pass": true,
+          "cache_status_present": true,
+          "cached_tokens": 0,
+          "cache_expectation": "miss",
+          "cache_pass": true,
+          "bank": 1,
+          "bank_event_values": {
+            "accepted": 1,
+            "cache_status": 1,
+            "done": 1
+          },
+          "bank_event_consistent": true,
+          "bank_mapping_source": "worker_event",
+          "ttft_s": 7.383371161995456,
+          "last_emission_s": 7.452177225030027
+        }
+      ],
+      "wave_wall_s": 7.454801537038293,
+      "control_roundtrip_s": 7.45691078499658,
+      "first_token_s": {
+        "doc-alpha": 6.884255776007194,
+        "doc-charlie": 7.383371161995456
+      },
+      "last_token_s": {
+        "doc-alpha": 7.139896819018759,
+        "doc-charlie": 7.452177225030027
+      },
+      "timings": {
+        "wave_id": "affinity-edited_early_body2-b81e465fb8",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 2,
+        "wall_seconds": 7.383714,
+        "whole_wave_output_tok_s": 1.0834655838511622,
+        "all_emissions_tok_s": 14.085647781334403,
+        "prefill_input_tokens": 21643,
+        "prefill_wall_seconds": 7.314047,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 21643,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 2959.1004815801703,
+        "logical_prompt_tok_s": 2959.1004815801703,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 13356545,
+        "mtp_prefill_us_sum": 663880,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2325,
+          2314,
+          2418,
+          2570,
+          3480,
+          3381
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1316,
+        "post_wave_free_after_mib": [
+          2325,
+          2314,
+          2418,
+          2570,
+          3480,
+          3381
+        ]
+      },
+      "errors": [],
+      "response": {
+        "id": "affinity-edited_early_body2-b81e465fb8",
+        "accepted": {
+          "doc-alpha": {
+            "type": "accepted",
+            "id": "doc-alpha",
+            "input_tokens": 10821,
+            "reserved_tokens": 10837,
+            "bank": 0,
+            "wave_id": "affinity-edited_early_body2-b81e465fb8"
+          },
+          "doc-charlie": {
+            "type": "accepted",
+            "id": "doc-charlie",
+            "input_tokens": 10822,
+            "reserved_tokens": 10838,
+            "bank": 1,
+            "wave_id": "affinity-edited_early_body2-b81e465fb8"
+          }
+        },
+        "cache_status": {
+          "doc-alpha": {
+            "type": "cache_status",
+            "id": "doc-alpha",
+            "bank": 0,
+            "hit": false,
+            "cached_tokens": 0,
+            "checkpoint_tokens": 0
+          },
+          "doc-charlie": {
+            "type": "cache_status",
+            "id": "doc-charlie",
+            "bank": 1,
+            "hit": false,
+            "cached_tokens": 0,
+            "checkpoint_tokens": 0
+          }
+        },
+        "done": {
+          "doc-alpha": {
+            "type": "done",
+            "id": "doc-alpha",
+            "input_tokens": 10821,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 0
+          },
+          "doc-charlie": {
+            "type": "done",
+            "id": "doc-charlie",
+            "input_tokens": 10822,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 1
+          }
+        },
+        "errors": [],
+        "first_token_s": {
+          "doc-alpha": 6.884255776007194,
+          "doc-charlie": 7.383371161995456
+        },
+        "last_token_s": {
+          "doc-alpha": 7.139896819018759,
+          "doc-charlie": 7.452177225030027
+        },
+        "timings": {
+          "wave_id": "affinity-edited_early_body2-b81e465fb8",
+          "mode": "bank_local_phase_progression",
+          "banks": [
+            {
+              "bank": 0,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 1,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 2,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            },
+            {
+              "bank": 3,
+              "target_context": 17152,
+              "draft_context": 17152,
+              "target_ubatch": 256
+            }
+          ],
+          "refill_count": 0,
+          "flow_count": 2,
+          "wall_seconds": 7.383714,
+          "whole_wave_output_tok_s": 1.0834655838511622,
+          "all_emissions_tok_s": 14.085647781334403,
+          "prefill_input_tokens": 21643,
+          "prefill_wall_seconds": 7.314047,
+          "cached_tokens": 0,
+          "prefill_evaluated_tokens": 21643,
+          "uncached_prefill": true,
+          "prefill_aggregate_wall_tok_s": 2959.1004815801703,
+          "logical_prompt_tok_s": 2959.1004815801703,
+          "prefill_scope": "initial independent bank prefills",
+          "target_prefill_us_sum": 13356545,
+          "mtp_prefill_us_sum": 663880,
+          "thermal_wait_us_sum": 0,
+          "mtp_depth": 3,
+          "banks_scope": "completed wave before optional idle-context reclamation",
+          "post_wave_free_before_mib": [
+            2325,
+            2314,
+            2418,
+            2570,
+            3480,
+            3381
+          ],
+          "post_wave_reclaimed_banks": 0,
+          "post_wave_reclaim_us": 1316,
+          "post_wave_free_after_mib": [
+            2325,
+            2314,
+            2418,
+            2570,
+            3480,
+            3381
+          ]
+        },
+        "wall_s": 7.454801537038293,
+        "texts": {
+          "doc-alpha": "7301",
+          "doc-charlie": "4159"
+        },
+        "label": "edited_early_body2",
+        "control_roundtrip_s": 7.45691078499658
+      },
+      "status": "PASS"
+    }
+  ],
+  "finished_wave": "edited_early_body2",
+  "finished_unix": 1792344537.609206,
+  "summary": {
+    "all_six_waves_pass": true,
+    "stable_mapping": {
+      "doc-alpha": 0,
+      "doc-bravo": 1,
+      "doc-charlie": 2,
+      "doc-delta": 3
+    },
+    "positive_hit_waves": [
+      "same4",
+      "shuffle_3_1_0_2",
+      "subset2_2_0",
+      "subset3_1_3_2"
+    ],
+    "edited_body_miss": true
+  }
+}

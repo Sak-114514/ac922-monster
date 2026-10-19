@@ -1,0 +1,164 @@
+{
+  "request": {
+    "id": "diag-event-prefill32",
+    "requests": [
+      {
+        "id": "prefill32",
+        "corpus_token_start": 0,
+        "corpus_token_count": 32768,
+        "prompt_source": "v45-curated-real-corpus-runtime-token-slice",
+        "max_tokens": 8,
+        "ignore_eos": true,
+        "cache_prompt": false
+      }
+    ],
+    "refill": false
+  },
+  "result": {
+    "id": "diag-event-prefill32",
+    "accepted": {
+      "prefill32": {
+        "type": "accepted",
+        "id": "prefill32",
+        "input_tokens": 32768,
+        "reserved_tokens": 32776,
+        "bank": 0,
+        "wave_id": "diag-event-prefill32"
+      }
+    },
+    "cache_status": {
+      "prefill32": {
+        "type": "cache_status",
+        "id": "prefill32",
+        "bank": 0,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      }
+    },
+    "done": {
+      "prefill32": {
+        "type": "done",
+        "id": "prefill32",
+        "input_tokens": 32768,
+        "output_tokens": 8,
+        "finish_reason": "length",
+        "bank": 0
+      }
+    },
+    "errors": [],
+    "first_token_s": {
+      "prefill32": 12.495549554994795
+    },
+    "last_token_s": {
+      "prefill32": 12.721978290006518
+    },
+    "refill_mode_requested": false,
+    "wave_closing_seen": false,
+    "close_ack_sent": false,
+    "worker_pid": 572038,
+    "wave_done_seen": true,
+    "timings": {
+      "wave_id": "diag-event-prefill32",
+      "mode": "bank_local_phase_progression",
+      "banks": [
+        {
+          "bank": 0,
+          "target_context": 66048,
+          "draft_context": 66048,
+          "target_ubatch": 1024
+        },
+        {
+          "bank": 1,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 2,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 3,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        }
+      ],
+      "refill_count": 0,
+      "flow_count": 1,
+      "wall_seconds": 12.612682,
+      "whole_wave_output_tok_s": 0.6342822248273603,
+      "all_emissions_tok_s": 35.340840316830636,
+      "prefill_input_tokens": 32768,
+      "prefill_wall_seconds": 12.38513,
+      "cached_tokens": 0,
+      "prefill_evaluated_tokens": 32768,
+      "uncached_prefill": true,
+      "prefill_aggregate_wall_tok_s": 2645.7534155878866,
+      "logical_prompt_tok_s": 2645.7534155878866,
+      "prefill_scope": "initial independent bank prefills",
+      "target_prefill_us_sum": 12281279,
+      "mtp_prefill_us_sum": 97989,
+      "thermal_wait_us_sum": 0,
+      "mtp_depth": 3,
+      "stage_event_diagnostic_requested": true,
+      "stage_event_diagnostic_selector_selected": true,
+      "stage_event_diagnostic_backend_selected": "unverified_requires_scheduler_init_log",
+      "stage_event_diagnostic_scope": "full_live_wave_includes_prefill_generation_and_wave_overhead",
+      "single_cached_affinity": false,
+      "single_cache_admission_free_mib": [],
+      "production_floor_mib": 256,
+      "context_rebuilds_before_execution": 0,
+      "capacity_growth_enabled": true,
+      "capacity_growth_applied": false,
+      "capacity_growth_reason": "request_count_out_of_range",
+      "capacity_growth_units": 0,
+      "capacity_growth_required_free_mib": 0,
+      "capacity_growth_preflight_free_mib": [],
+      "capacity_growth_exact_capacity": [
+        66048,
+        17152,
+        17152,
+        17152
+      ],
+      "capacity_growth_candidate_capacity": [
+        66048,
+        17152,
+        17152,
+        17152
+      ],
+      "state_migration_supported": false,
+      "banks_scope": "completed wave before optional idle-context reclamation",
+      "post_wave_free_before_mib": [
+        1803,
+        1359,
+        1435,
+        1587,
+        2492,
+        2233
+      ],
+      "post_wave_reclaimed_banks": 0,
+      "post_wave_reclaim_us": 1298,
+      "post_wave_free_after_mib": [
+        1803,
+        1359,
+        1435,
+        1587,
+        2492,
+        2233
+      ]
+    },
+    "wall_s": 12.725196190993302,
+    "texts": {
+      "prefill32": " text, const size_t last_token_size"
+    },
+    "host_start_monotonic_us": 283804600037,
+    "host_end_monotonic_us": 283817326320,
+    "host_full_wave_us": 12726283,
+    "measurement_scope": "host send through complete IPC response; includes full wave overhead",
+    "request_sha256": "4eeb189609daed4cf96cc63d3f3821b91e4b1f4c1e290b001d48b69527e56747"
+  }
+}

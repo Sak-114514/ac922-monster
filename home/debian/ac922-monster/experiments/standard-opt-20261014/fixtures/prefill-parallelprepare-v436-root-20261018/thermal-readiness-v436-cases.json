@@ -1,0 +1,1416 @@
+{
+  "schema": "v427-thermal-readiness-fixtures-v1",
+  "now_unix": 1000.0,
+  "policy": {
+    "gpu_ceiling_c": 45,
+    "sample_max_age_s": 10,
+    "distinct_samples": 2,
+    "min_separation_s": 3
+  },
+  "cases": [
+    {
+      "name": "positive_two_cool_samples",
+      "records": [
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 996.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        },
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 999.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        }
+      ],
+      "expected_ready": true
+    },
+    {
+      "name": "nvidia_gpu_hot",
+      "records": [
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 996.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              46.0
+            ],
+            [
+              4096.0,
+              46.0
+            ],
+            [
+              4096.0,
+              46.0
+            ],
+            [
+              4096.0,
+              46.0
+            ],
+            [
+              4096.0,
+              46.0
+            ],
+            [
+              4096.0,
+              46.0
+            ]
+          ],
+          "errors": []
+        },
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 999.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              46.0
+            ],
+            [
+              4096.0,
+              46.0
+            ],
+            [
+              4096.0,
+              46.0
+            ],
+            [
+              4096.0,
+              46.0
+            ],
+            [
+              4096.0,
+              46.0
+            ],
+            [
+              4096.0,
+              46.0
+            ]
+          ],
+          "errors": []
+        }
+      ],
+      "expected_ready": false
+    },
+    {
+      "name": "ibmpowernv_label_hot",
+      "records": [
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 996.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        },
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 999.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 46.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        }
+      ],
+      "expected_ready": false
+    },
+    {
+      "name": "stale_latest",
+      "records": [
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 985.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        },
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 988.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        }
+      ],
+      "expected_ready": false
+    },
+    {
+      "name": "less_than_three_seconds",
+      "records": [
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 998.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        },
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 999.5,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        }
+      ],
+      "expected_ready": false
+    },
+    {
+      "name": "duplicate_timestamp",
+      "records": [
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 998.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        },
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 998.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        }
+      ],
+      "expected_ready": false
+    },
+    {
+      "name": "missing_fitted_label",
+      "records": [
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 996.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        },
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 999.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        }
+      ],
+      "expected_ready": false
+    },
+    {
+      "name": "missing_all_gpu_labels",
+      "records": [
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 996.0,
+            "errors": [],
+            "hwmon_readings": {}
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        },
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 999.0,
+            "errors": [],
+            "hwmon_readings": {}
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        }
+      ],
+      "expected_ready": false
+    },
+    {
+      "name": "sensor_error",
+      "records": [
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 996.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        },
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 999.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": [
+            "sensor read failure"
+          ]
+        }
+      ],
+      "expected_ready": false
+    },
+    {
+      "name": "single_sample",
+      "records": [
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 999.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        }
+      ],
+      "expected_ready": false
+    },
+    {
+      "name": "reject_pre_phase_cool_history",
+      "records": [
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 996.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        },
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 999.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        }
+      ],
+      "expected_ready": false,
+      "phase_started_unix": 998.5
+    },
+    {
+      "name": "newer_hot_sample_cancels_two_old_cool_samples",
+      "records": [
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 996.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        },
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 999.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        },
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 1000.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 50.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              50.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        }
+      ],
+      "expected_ready": false
+    },
+    {
+      "name": "reject_zero_temperature",
+      "records": [
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 996.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        },
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 999.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 42.0,
+              "Chip 0 GPU 0 MEM": 42.0,
+              "Chip 0 GPU 1": 42.0,
+              "Chip 0 GPU 1 MEM": 42.0,
+              "Chip 0 GPU 2": 42.0,
+              "Chip 0 GPU 2 MEM": 42.0,
+              "Chip 8 GPU 0": 42.0,
+              "Chip 8 GPU 0 MEM": 42.0,
+              "Chip 8 GPU 1": 42.0,
+              "Chip 8 GPU 1 MEM": 42.0,
+              "Chip 8 GPU 2": 42.0,
+              "Chip 8 GPU 2 MEM": 42.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              0.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ],
+            [
+              4096.0,
+              42.0
+            ]
+          ],
+          "errors": []
+        }
+      ],
+      "expected_ready": false
+    },
+    {
+      "name": "exact_45c_boundary_passes",
+      "records": [
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 996.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 45.0,
+              "Chip 0 GPU 0 MEM": 45.0,
+              "Chip 0 GPU 1": 45.0,
+              "Chip 0 GPU 1 MEM": 45.0,
+              "Chip 0 GPU 2": 45.0,
+              "Chip 0 GPU 2 MEM": 45.0,
+              "Chip 8 GPU 0": 45.0,
+              "Chip 8 GPU 0 MEM": 45.0,
+              "Chip 8 GPU 1": 45.0,
+              "Chip 8 GPU 1 MEM": 45.0,
+              "Chip 8 GPU 2": 45.0,
+              "Chip 8 GPU 2 MEM": 45.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              45.0
+            ],
+            [
+              4096.0,
+              45.0
+            ],
+            [
+              4096.0,
+              45.0
+            ],
+            [
+              4096.0,
+              45.0
+            ],
+            [
+              4096.0,
+              45.0
+            ],
+            [
+              4096.0,
+              45.0
+            ]
+          ],
+          "errors": []
+        },
+        {
+          "event": "SAMPLE",
+          "sample": {
+            "sample_completed_unix": 999.0,
+            "errors": [],
+            "hwmon_readings": {
+              "Chip 0 GPU 0": 45.0,
+              "Chip 0 GPU 0 MEM": 45.0,
+              "Chip 0 GPU 1": 45.0,
+              "Chip 0 GPU 1 MEM": 45.0,
+              "Chip 0 GPU 2": 45.0,
+              "Chip 0 GPU 2 MEM": 45.0,
+              "Chip 8 GPU 0": 45.0,
+              "Chip 8 GPU 0 MEM": 45.0,
+              "Chip 8 GPU 1": 45.0,
+              "Chip 8 GPU 1 MEM": 45.0,
+              "Chip 8 GPU 2": 45.0,
+              "Chip 8 GPU 2 MEM": 45.0
+            }
+          },
+          "gpu": [
+            [
+              4096.0,
+              45.0
+            ],
+            [
+              4096.0,
+              45.0
+            ],
+            [
+              4096.0,
+              45.0
+            ],
+            [
+              4096.0,
+              45.0
+            ],
+            [
+              4096.0,
+              45.0
+            ],
+            [
+              4096.0,
+              45.0
+            ]
+          ],
+          "errors": []
+        }
+      ],
+      "expected_ready": true
+    }
+  ]
+}

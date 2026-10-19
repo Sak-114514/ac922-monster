@@ -1,0 +1,66 @@
+{
+  "status": "staged_only_no_build_or_gpu",
+  "fixture": "tail-cpu-audit-v432-root-20261018",
+  "parent_v428_binary_sha256": "d695f43afafc8bf0e61d178fa79b0eb7b52b1660edc0f0ff06d9fc681a82aec0",
+  "parent_r5_binary_sha256": "1cc4c9de1e840649f26255dff842e090b7421efdc514be18fb1eaf2907d386cb",
+  "parent_r428_source_sha256": "751fd87597e790544cc68bd5ec5f722493afd50dd54ac2549e55ab7e7a0078b7",
+  "parent_r428_helper_remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/tail-stage-audit-v428-root-20261018/candidate/libac922-tail-bridge-v428.so",
+  "source_provenance": {
+    "r428_source_local": "monster-engine/standard-opt-20261014/fixtures/tail-cpu-audit-v432-root-20261018/source/bridge-r5-v428.cu",
+    "r428_source_sha256": "751fd87597e790544cc68bd5ec5f722493afd50dd54ac2549e55ab7e7a0078b7",
+    "r428_source_expected_sha256": "751fd87597e790544cc68bd5ec5f722493afd50dd54ac2549e55ab7e7a0078b7",
+    "r5_binary_sha256": "1cc4c9de1e840649f26255dff842e090b7421efdc514be18fb1eaf2907d386cb",
+    "abi_header_sha256": "3e94b0074d7720a7fa087801aa1210353406626bdf2c84b322a26f569281df27"
+  },
+  "candidate_contract": {
+    "environment": "AC922_TAIL_STAGE_TIMING=1 before process start; default disabled",
+    "thread_diagnostic": "CLOCK_THREAD_CPUTIME_ID and getrusage(RUSAGE_THREAD) before/after existing child instantiate; errno restored; failed/negative deltas set diagnostic_valid=0",
+    "node_schema": "count and type totals from existing cudaGraphGetNodes/cudaGraphNodeGetType traversal only",
+    "cuda_api_call_sequence_matches_v428": true,
+    "cuda_api_call_count": 30,
+    "abi_exports_match_v428": [
+      "ac922_tail_bridge_launch",
+      "ac922_tail_bridge_v2_ready",
+      "ac922_tail_bridge_v2_launch_captured",
+      "ac922_tail_bridge_drop_context"
+    ],
+    "abi_header_unchanged": true,
+    "k_max_entries": 32,
+    "build_executed": false,
+    "gpu_executed": false
+  },
+  "files": {
+    "source/bridge-r5-v428.cu": {
+      "path": "source/bridge-r5-v428.cu",
+      "sha256": "751fd87597e790544cc68bd5ec5f722493afd50dd54ac2549e55ab7e7a0078b7"
+    },
+    "source/bridge-api.h": {
+      "path": "source/bridge-api.h",
+      "sha256": "3e94b0074d7720a7fa087801aa1210353406626bdf2c84b322a26f569281df27"
+    },
+    "candidate/bridge-r5.cu": {
+      "path": "candidate/bridge-r5.cu",
+      "sha256": "0c891f64c7e9cb196a2096941d3c0222351ae738ecb2d1e73ad5e87547443e10"
+    },
+    "candidate/bridge-api.h": {
+      "path": "candidate/bridge-api.h",
+      "sha256": "3e94b0074d7720a7fa087801aa1210353406626bdf2c84b322a26f569281df27"
+    },
+    "host/verify_cpu_audit.py": {
+      "path": "host/verify_cpu_audit.py",
+      "sha256": "baba4ef6be7d53113cd3653be6c3235e8ee8bed12e72785add2ba1c3ce489e6c"
+    },
+    "host/fixtures/cpu-audit-sample.log": {
+      "path": "host/fixtures/cpu-audit-sample.log",
+      "sha256": "a9ad63403c519bf8aafbafdd091646fea982b68de213e9f95e0be6a720274466"
+    },
+    "host/build-helper-r5.sh": {
+      "path": "host/build-helper-r5.sh",
+      "sha256": "13514eedac79846cba0f4caf3535a4ffaef99b73482926ea676afbf1fd2d2ac6"
+    },
+    "V432-STAGING.md": {
+      "path": "V432-STAGING.md",
+      "sha256": "64b617e9e198d7a9b03d206138880292938234c6b6d296e542de8e919e470441"
+    }
+  }
+}

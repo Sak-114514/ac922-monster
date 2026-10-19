@@ -1,0 +1,73 @@
+{
+  "status": "staged_only_no_build_or_gpu",
+  "fixture": "six-cuda-prepare-v436-root-20261018",
+  "parent_r5_source_sha256": "2b2962528f115d88e56835a384b6ce0b86e77f4fddda085cce5595e134029bde",
+  "parent_r5_api_sha256": "3e94b0074d7720a7fa087801aa1210353406626bdf2c84b322a26f569281df27",
+  "parent_r5_binary_sha256": "1cc4c9de1e840649f26255dff842e090b7421efdc514be18fb1eaf2907d386cb",
+  "parent_source_paths": {
+    "remote_source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/tail-only-exec-v390-root-20261018/build-src-r5/bridge-r5.cu",
+    "remote_api": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/tail-only-exec-v390-root-20261018/build-src-r5/bridge-api.h",
+    "parent_binary": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/tail-only-exec-v390-root-20261018/build-r5/libac922-tail-bridge.so"
+  },
+  "candidate_contract": {
+    "new_exports": [
+      "ac922_tail_bridge_v3_prepare_captured",
+      "ac922_tail_bridge_v3_can_prepare"
+    ],
+    "legacy_exports_preserved": [
+      "ac922_tail_bridge_launch",
+      "ac922_tail_bridge_drop_context",
+      "ac922_tail_bridge_v2_ready",
+      "ac922_tail_bridge_v2_launch_captured"
+    ],
+    "cache_bound": 32,
+    "prepare_only_no_graph_launch_or_event_record": true,
+    "inflight_decline_before_mutation": true,
+    "can_prepare_allocation_free_and_read_only": true,
+    "build_executed": false,
+    "gpu_executed": false,
+    "engine_edited": false
+  },
+  "files": {
+    "helper/source/bridge-r5.cu": {
+      "path": "helper/source/bridge-r5.cu",
+      "sha256": "2b2962528f115d88e56835a384b6ce0b86e77f4fddda085cce5595e134029bde"
+    },
+    "helper/source/bridge-api-v2.h": {
+      "path": "helper/source/bridge-api-v2.h",
+      "sha256": "3e94b0074d7720a7fa087801aa1210353406626bdf2c84b322a26f569281df27"
+    },
+    "helper/bridge-v3.cu": {
+      "path": "helper/bridge-v3.cu",
+      "sha256": "73954c06694496ffcb80b0a2e39193b5346c5e0f54f5ca7e0d843e3233bfba78"
+    },
+    "helper/bridge-api.h": {
+      "path": "helper/bridge-api.h",
+      "sha256": "210301ef0276da9041a0977ae6b9c364933c7811331d2ba85369e5abeb9d4d0c"
+    },
+    "helper/build-helper.sh": {
+      "path": "helper/build-helper.sh",
+      "sha256": "ed690188e48aa56d2c64bc504d14f743909608e7f4da970373de2b0a7f459cab"
+    },
+    "helper/V436-HELPER.md": {
+      "path": "helper/V436-HELPER.md",
+      "sha256": "bb1e8f4003ef4079096efb62538770b56c19b571fc0fde7a0775050e5c8b6653"
+    },
+    "tests/six-cuda-prepare-v436.cu": {
+      "path": "tests/six-cuda-prepare-v436.cu",
+      "sha256": "2c957ba7c69bf48ca4d44dd0a6175c78df57efc3a5de0ed32ea47782ab655643"
+    },
+    "tests/build-fixture.sh": {
+      "path": "tests/build-fixture.sh",
+      "sha256": "34748e5d3d0d2853c5f79f2f2311b82606e1b333e95915ba4a03cfb3e12e672e"
+    },
+    "tests/run-fixture.sh": {
+      "path": "tests/run-fixture.sh",
+      "sha256": "b3e04cbf61cdd82426e8c8e525bd23d505032549e22743225f983357fce0356c"
+    },
+    "tests/verify_source_closure.py": {
+      "path": "tests/verify_source_closure.py",
+      "sha256": "8a5f686fd3d50370e31b1bc2e15127ac3c9a98b4c86e2f601d60c9dfaa32c0ba"
+    }
+  }
+}

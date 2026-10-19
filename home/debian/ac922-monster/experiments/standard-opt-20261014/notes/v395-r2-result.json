@@ -1,0 +1,52 @@
+{
+  "schema": "v395-r2-final-v1",
+  "unit": "root-v395-inband-20261018t033103663092z",
+  "runtime": "runtime-perf-v393",
+  "native4": "PASS",
+  "runtime_markers": {
+    "vocab_contexts": 4,
+    "compact_intermediate": 30,
+    "final_full_logits": 38
+  },
+  "performance": {
+    "shared_tg": 220.05417876985572,
+    "shared_tokens": 1753,
+    "shared_window_seconds": 7.96622,
+    "all_emissions_tok_s": 148.7856857708795,
+    "all_emissions_wall_seconds": 13.764765,
+    "prefill_aggregate_wall_tok_s": 2552.68953591266,
+    "prefill_wall_seconds": 25.673314,
+    "target_prefill_us_sum": 94986735,
+    "scenario_whole_wall_us": 36621870
+  },
+  "baseline_v306_shared_tg": 283.4371554330967,
+  "shared_delta_pct": -22.36226812479497,
+  "baseline_output_comparison": [
+    {
+      "lane": 0,
+      "output_equal": true,
+      "tokens_equal": true,
+      "counts": 512
+    },
+    {
+      "lane": 1,
+      "output_equal": true,
+      "tokens_equal": true,
+      "counts": 512
+    },
+    {
+      "lane": 2,
+      "output_equal": true,
+      "tokens_equal": true,
+      "counts": 512
+    },
+    {
+      "lane": 3,
+      "output_equal": true,
+      "tokens_equal": true,
+      "counts": 512
+    }
+  ],
+  "decision": "REJECT_COMBINATION; native semantics pass but unrolled+parallel head+compact argmax combination slower. Does not isolate argmax-only effect.",
+  "controller_postcheck": "incorrect literal graph prefix failed after model completedsuccessfully; fixedcontroller literal; rawresultsretained"
+}

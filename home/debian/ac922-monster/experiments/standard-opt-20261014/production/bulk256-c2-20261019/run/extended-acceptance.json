@@ -1,0 +1,234 @@
+{
+  "status": "PASS_PENDING_LONG_TEXT_REVIEW",
+  "started_unix": 1792375997.4086673,
+  "model_reloaded": false,
+  "worker_pid": 584736,
+  "long32k_wave": {
+    "id": "bulk256-c2-four32k512-c1",
+    "accepted": {
+      "long32k-flow-0": {
+        "type": "accepted",
+        "id": "long32k-flow-0",
+        "input_tokens": 32768,
+        "reserved_tokens": 33280,
+        "bank": 0,
+        "wave_id": "bulk256-c2-four32k512-c1"
+      },
+      "long32k-flow-1": {
+        "type": "accepted",
+        "id": "long32k-flow-1",
+        "input_tokens": 32768,
+        "reserved_tokens": 33280,
+        "bank": 1,
+        "wave_id": "bulk256-c2-four32k512-c1"
+      },
+      "long32k-flow-2": {
+        "type": "accepted",
+        "id": "long32k-flow-2",
+        "input_tokens": 32768,
+        "reserved_tokens": 33280,
+        "bank": 2,
+        "wave_id": "bulk256-c2-four32k512-c1"
+      },
+      "long32k-flow-3": {
+        "type": "accepted",
+        "id": "long32k-flow-3",
+        "input_tokens": 32768,
+        "reserved_tokens": 33280,
+        "bank": 3,
+        "wave_id": "bulk256-c2-four32k512-c1"
+      }
+    },
+    "cache_status": {
+      "long32k-flow-2": {
+        "type": "cache_status",
+        "id": "long32k-flow-2",
+        "bank": 2,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      },
+      "long32k-flow-1": {
+        "type": "cache_status",
+        "id": "long32k-flow-1",
+        "bank": 1,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      },
+      "long32k-flow-0": {
+        "type": "cache_status",
+        "id": "long32k-flow-0",
+        "bank": 0,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      },
+      "long32k-flow-3": {
+        "type": "cache_status",
+        "id": "long32k-flow-3",
+        "bank": 3,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      }
+    },
+    "done": {
+      "long32k-flow-1": {
+        "type": "done",
+        "id": "long32k-flow-1",
+        "input_tokens": 32768,
+        "output_tokens": 512,
+        "finish_reason": "length",
+        "bank": 1
+      },
+      "long32k-flow-2": {
+        "type": "done",
+        "id": "long32k-flow-2",
+        "input_tokens": 32768,
+        "output_tokens": 512,
+        "finish_reason": "length",
+        "bank": 2
+      },
+      "long32k-flow-0": {
+        "type": "done",
+        "id": "long32k-flow-0",
+        "input_tokens": 32768,
+        "output_tokens": 512,
+        "finish_reason": "length",
+        "bank": 0
+      },
+      "long32k-flow-3": {
+        "type": "done",
+        "id": "long32k-flow-3",
+        "input_tokens": 32768,
+        "output_tokens": 512,
+        "finish_reason": "length",
+        "bank": 3
+      }
+    },
+    "errors": [],
+    "first_token_s": {
+      "long32k-flow-1": 34.484626259014476,
+      "long32k-flow-2": 34.620887467986904,
+      "long32k-flow-0": 34.62089319102233,
+      "long32k-flow-3": 35.55985972401686
+    },
+    "last_token_s": {
+      "long32k-flow-1": 43.873190807993524,
+      "long32k-flow-2": 44.22832404001383,
+      "long32k-flow-0": 45.54509065899765,
+      "long32k-flow-3": 45.84305425401544
+    },
+    "refill_mode_requested": false,
+    "wave_closing_seen": false,
+    "close_ack_sent": false,
+    "worker_pid": 584736,
+    "wave_done_seen": true,
+    "timings": {
+      "wave_id": "bulk256-c2-four32k512-c1",
+      "mode": "bank_local_phase_progression",
+      "banks": [
+        {
+          "bank": 0,
+          "target_context": 33536,
+          "draft_context": 33536,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 1,
+          "target_context": 33536,
+          "draft_context": 33536,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 2,
+          "target_context": 33536,
+          "draft_context": 33536,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 3,
+          "target_context": 33536,
+          "draft_context": 33536,
+          "target_ubatch": 256
+        }
+      ],
+      "refill_count": 0,
+      "flow_count": 4,
+      "wall_seconds": 44.538244,
+      "whole_wave_output_tok_s": 45.98295343660158,
+      "all_emissions_tok_s": 180.30589493748062,
+      "prefill_input_tokens": 131072,
+      "prefill_wall_seconds": 34.254037,
+      "cached_tokens": 0,
+      "prefill_evaluated_tokens": 131072,
+      "uncached_prefill": true,
+      "prefill_aggregate_wall_tok_s": 3826.4686874717863,
+      "logical_prompt_tok_s": 3826.4686874717863,
+      "prefill_scope": "initial independent bank prefills",
+      "target_prefill_us_sum": 129532435,
+      "mtp_prefill_us_sum": 4353068,
+      "thermal_wait_us_sum": 0,
+      "mtp_depth": 3,
+      "single_cached_affinity": false,
+      "single_cache_admission_free_mib": [],
+      "production_floor_mib": 256,
+      "context_rebuilds_before_execution": 4,
+      "capacity_growth_enabled": true,
+      "capacity_growth_applied": false,
+      "capacity_growth_reason": "insufficient_gpu_headroom",
+      "capacity_growth_units": 9,
+      "capacity_growth_required_free_mib": 1664,
+      "capacity_growth_preflight_free_mib": [
+        1458,
+        1470,
+        1632,
+        1792,
+        2683,
+        1895
+      ],
+      "capacity_growth_exact_capacity": [
+        33536,
+        33536,
+        33536,
+        33536
+      ],
+      "capacity_growth_candidate_capacity": [
+        33536,
+        40960,
+        40960,
+        40960
+      ],
+      "state_migration_supported": false,
+      "banks_scope": "completed wave before optional idle-context reclamation",
+      "post_wave_free_before_mib": [
+        1767,
+        1749,
+        1911,
+        2071,
+        2966,
+        2662
+      ],
+      "post_wave_reclaimed_banks": 0,
+      "post_wave_reclaim_us": 1581,
+      "post_wave_free_after_mib": [
+        1767,
+        1749,
+        1911,
+        2071,
+        2966,
+        2662
+      ]
+    },
+    "wall_s": 45.84826940699713,
+    "texts": {
+      "long32k-flow-0": " text, const size_t last_token_size, const bool is_full_stop) {\n        GGML_ASSERT(task);\n\n        size_t stop_pos = std::string::npos;\n\n        const auto copy_last = [&](const std::string & word, size_t len) {\n            const auto tmp = text.substr(last_token_size, len);\n            const auto stop_pos_tmp = text.find(word);\n\n            stopping_word += text.substr(last_token_size, std::string::npos);\n\n            if (stop_pos == std::string::npos) {\n                stop_pos = stop_pos_tmp != std::string::npos ? stop_pos_tmp : std::string::string::npos;\n            }\n\n            stopping_word.clear();\n            return stop_pos_tmp != std::end(text) && stop_pos_tmp != std::string::npos;\n    };\n\n    size_t find_stopping_strings_llama3() {\n        // https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/Llama3.1_2025-4-7.pdf\n        //\n        // llama3 model seems to have a peculiar behavior with stopping words\n        //\n        // observation:\n        // - the model typically generates a partial token of '<|eot_id|>' with '<|eot' prefix\n        // - if there is a sequence of '<|eot_id|>', only the last one is considered as the stopping word\n        // - when the stopping word is found, discard everything before it in the output text\n        // - when the stopping word is not found, keep everything in the output text\n        // - when the stopping word is split across two tokens, keep the first part, discard the second part\n        from the model output\n        // - when the stopping word is split across two tokens, keep the find_stopping_strings_llama3()\n        //   from the model output\n        // - when the `stop_pos` is found, discard everything before it in the model output\n        //\n        // implementation:\n        //   - search for the last occurrence of '<|eot_id|>' in the generation history of the slot\n        //   - if not found, search for the last occurrence of '<|eot' in the last generated token\n        //   - if found, discard everything before it in the output text\n        //   - if not found, keep everything in",
+      "long32k-flow-1": "                    break;\n                }\n            }\n\n            // set probability for top n_probs tokens\n            result.probs.reserve(n_probs);\n            for (size_t i = 0; i < n_probs; i++) {\n                // Some samplers do return 0.0 probabilities, others don't.\n                // Filter 0.0 probailities, to ensure the behavior is consistent.\n                if (cur[i].p == 0.0) {\n                    break;\n                }\n\n</parameter>\n<parameter name=\"pattern\">.*</parameter>\n</invoke>\n</function>\n</tool_call>\n<tool_call>\n<function=read_file>\n<parameter=path>\n/workspace/llama.cpp/tools/server/bench/speed-bench/README.md\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=read_file>\n<parameter=path>\n/workspace/llama.cpp/tools/server/bench/speed-bench/speed_bench.py\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=read_file>\n<parameter=path>\n/workspace/llama.cpp/tools/server/bench/speed-bench/speed_bench_data.json\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=read_file>\n<parameter=path>\n/workspace/llama.cpp/tools/server/bench/speed-bench/requirements.txt\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=read_file>\n<parameter=path>\n/workspace/llama.cpp/tools/server/bench/README.md\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=read_file>\n<parameter=path>\n/workspace/llama.cpp/tools/server/bench/prompts/prompts_shared.json\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=read_file>\n<parameter=path>\n/workspace/llama.cpp/tools/server/bench/prompts/prompts_shared_16k.json\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=read_file>\n<parameter=path>\n/workspace/llama.cpp/tools/server/bench/bench.py\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=read_file>\n<parameter=path>\n/workspace/llama.cpp/tools/server/bench/speed-bench/README-speed-bench.md\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=read_file>\n<parameter=path>\n/workspace/llama",
+      "long32k-flow-2": " \"new: ... \";\n\n                                    for (int i = np0; i < np1; i++) {\n                                        if (i == n_past) {\n                                            ss0 << \"| \";\n                                            ss1 << \"| \";\n                                        }\n\n                                        {\n                                            const auto token = slot.prompt.tokens[i];\n                                            const auto piece = token != LLAMA_TOKEN_NULL ? common_token_to_piece(ctx_tgt, token) : \"NULL\";\n\n                                            st0 << (token == LLAMA_TOKEN_NULL ? \"NULL\" : piece) << \" \";\n                                        }\n\n                                        {\n                                            const auto & token = slot.task->tokens[i];\n                                            const auto piece = token != LLAMA_TOKEN_NULL ? common_token_to_piece(ctx_tgt, token) : \"NULL\";\n\n                                            st1 << (token == LLAMA_TOKEN_NULL ? \"NULL\" : piece) << \" \";\n                                        }\n                                    }\n\n                                    ss0 << st0.str();\n                                    ss1 << st1.str();\n\n                                    SLT_DBG(slot, \"%s\\n\", ss0.str().c_str());\n                                    SLT_DBG(slot, \"%s\\n\", ss1.str().c_str());\n                                }\n\n                                if (pos_min > pos_min_thold) {\n                                    SLT_DBG(slot, \"n_past = %d, slot.prompt.tokens.size() = %d, seq_id = %d, pos_min = %d, pos_min_thold = %d\\n\",\n                                            n_past, (int) slot.prompt.tokens.size(), slot.id, pos_min, pos_min_thold);\n\n                                    SLT_WRN(slot, \"ignoring prompt prefix with %zu tokens due to pos_min = %d > pos_min_thold = %d\\n\", n_past, pos_min, pos_min_thold);\n\n                                    n_past = 0;\n                                }\n                            }\n\n                            if (n_past > 0) {\n                                // TODO: can we remove the existing prompt in KV cache?\n                                //       this is useful if we receive similar prompts to what we currently have\n                                //       in order to do this, we need to track the position of the cached prompt somehow\n                                //       ref: https://github.com/ggml-org/llama.cpp/issues/13838\n\n                                SLT_TRC(slot, \"reusing %d tokens, n_ctx = %d, n_prompt = %d, n_gen = %d\\n\",\n                                        n_past, slot.n",
+      "long32k-flow-3": " TODO: move these fields to a separate private /info endpoint,\n    // similar to what's done in OAI-compat endpoints\n    // this will make the /info endpoint slightly lighter (in terms of payload size)\n    return {\n        { \"general\", {\n            { \"name\",            meta.model_name },\n            { \"description\",     meta.model_path },\n\n===== source 0099 | code | sources/llama-v100-v3/tools/server/server-context.cpp | chunk=70 | sha256=1811111111111111111111111111111111111111111111111111111111111111 =====\n            { \"file\",            meta.model_path },\n            { \"type\",            llama_vocab_type_name(meta.model_vocab_type) },\n            { \"size\",            {\n                { \"bytes\", meta.model_size }\n            }},\n            { \"ftype\",           meta.model_ftype },\n            { \"vocab_size\",      meta.model_vocab_n_tokens },\n            { \"context_length\",  meta.model_n_ctx_train },\n            { \"embedding_length\", meta.model_n_embd_inp },\n            { \"quantization\",    {\n                { \"type\", meta.model_ftype },\n            }},\n            { \"align\",           llama_model_meta_align(meta.model_path.c_str()) },\n        }},\n        { \"model\", meta.model_name },\n        { \"model_aliases\", meta.model_aliases },\n        { \"model_tags\", meta.model_tags },\n        { \"chat_template\", common_chat_get_template(meta.chat_params.tmpls.get(), COMMON_CHAT_FORMAT_CONTENT_ONLY) },\n        { \"special\", {\n            { \"bos_token_id\", meta.bos_token_str },\n            { \"eos_token_id\", meta.eos_token_str },\n            { \"add_bos_token\", params.add_bos_token },\n        }},\n        { \"additional_toks\", {\n            { \"function\", meta.chat_params.parser->token_eot },\n            { \"vision\", {\n                meta.chat_params.token_look_image,\n                meta.chat_params.token_end_image,\n            } }\n        }},\n        { \"vocab\", {\n            { \"special"
+    }
+  },
+  "http": "PASS",
+  "finished_unix": 1792376118.493515
+}

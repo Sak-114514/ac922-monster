@@ -1,0 +1,16 @@
+V441_RING_PASS device=0 frames=8 exact=1 no_inter_launch_sync=1 prepare_only=1
+V441_FALLBACK_PASS device=0 key=0x7fffe5975e74 initial_graph=0x1000167c790 exact=1 retained_commit=1 followup_cuda_clean=1 drop_fenced=1
+V441_RING_PASS device=1 frames=8 exact=1 no_inter_launch_sync=1 prepare_only=1
+V441_FALLBACK_PASS device=1 key=0x7fffe5975e74 initial_graph=0x10002130a60 exact=1 retained_commit=1 followup_cuda_clean=1 drop_fenced=1
+V441_RING_PASS device=2 frames=8 exact=1 no_inter_launch_sync=1 prepare_only=1
+V441_FALLBACK_PASS device=2 key=0x7fffe5975e74 initial_graph=0x10002be5ea0 exact=1 retained_commit=1 followup_cuda_clean=1 drop_fenced=1
+V441_RING_PASS device=3 frames=8 exact=1 no_inter_launch_sync=1 prepare_only=1
+V441_FALLBACK_PASS device=3 key=0x7fffe5975e74 initial_graph=0x100036a3b50 exact=1 retained_commit=1 followup_cuda_clean=1 drop_fenced=1
+V441_RING_PASS device=4 frames=8 exact=1 no_inter_launch_sync=1 prepare_only=1
+V441_FALLBACK_PASS device=4 key=0x7fffe5975e74 initial_graph=0x10004170a50 exact=1 retained_commit=1 followup_cuda_clean=1 drop_fenced=1
+V441_RING_PASS device=5 frames=8 exact=1 no_inter_launch_sync=1 prepare_only=1
+V441_FALLBACK_PASS device=5 key=0x7fffe5975e74 initial_graph=0x10004c41850 exact=1 retained_commit=1 followup_cuda_clean=1 drop_fenced=1
+V441_TWO_STREAM_PASS slots=2 outputs_exact=1
+V441_PREPARE_REBIND_PASS device=0 key=0x7fffe5975e74 graph_a=0x10004c27880 prepare_only=1 launch_rebound_a=1
+V441_OWNER_DEVICE_PASS owner=0x12a330210 devices=6 prepared_only=1 exact_pair_slots=1
+V441_SHARED_EXEC_PASS devices=6 rings=6 fallback=6 two_streams=1 owner_device_pairs=6 outputs_exact=1

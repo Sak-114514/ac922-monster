@@ -1,0 +1,165 @@
+{
+  "wave_id": "affinity-subset2_2_0-7b2872644a",
+  "mode": "bank_local_phase_progression",
+  "banks": [
+    {
+      "bank": 0,
+      "target_context": 24576,
+      "draft_context": 24576,
+      "target_ubatch": 256
+    },
+    {
+      "bank": 1,
+      "target_context": 24576,
+      "draft_context": 24576,
+      "target_ubatch": 256
+    },
+    {
+      "bank": 2,
+      "target_context": 17152,
+      "draft_context": 17152,
+      "target_ubatch": 256
+    },
+    {
+      "bank": 3,
+      "target_context": 17152,
+      "draft_context": 17152,
+      "target_ubatch": 256
+    }
+  ],
+  "refill_count": 0,
+  "flow_count": 2,
+  "flows": [
+    {
+      "id": "doc-alpha",
+      "bank": 0,
+      "input_tokens": 10817,
+      "output_tokens": 4,
+      "cached_tokens": 10496,
+      "output": "3179",
+      "token_ids": [
+        18,
+        16,
+        22,
+        24
+      ],
+      "emitted_us": [
+        268554119328,
+        268554192660,
+        268554192671,
+        268554192680
+      ],
+      "proposed": 3,
+      "accepted": 3,
+      "prefill_us": 666634,
+      "target_prefill_us": 605736,
+      "mtp_prefill_us": 14768,
+      "thermal_wait_us": 0,
+      "prefill_started_us": 268553452694,
+      "prefill_finished_us": 268554119381,
+      "warmup_started_us": 268554119382,
+      "warmup_finished_us": 268554192694,
+      "decode_started_us": 268554192694,
+      "decode_finished_us": 268554192695,
+      "warmup_frames": 1,
+      "active_chain_lanes": 1,
+      "setup_parallel": true,
+      "setup_wait_us": 3,
+      "fallback_lanes": 0
+    },
+    {
+      "id": "doc-charlie",
+      "bank": 2,
+      "input_tokens": 10818,
+      "output_tokens": 4,
+      "cached_tokens": 10496,
+      "output": "5301",
+      "token_ids": [
+        20,
+        18,
+        15,
+        16
+      ],
+      "emitted_us": [
+        268554187682,
+        268554258246,
+        268554258256,
+        268554258265
+      ],
+      "proposed": 3,
+      "accepted": 3,
+      "prefill_us": 734980,
+      "target_prefill_us": 674278,
+      "mtp_prefill_us": 16176,
+      "thermal_wait_us": 0,
+      "prefill_started_us": 268553452701,
+      "prefill_finished_us": 268554187728,
+      "warmup_started_us": 268554187728,
+      "warmup_finished_us": 268554258277,
+      "decode_started_us": 268554258277,
+      "decode_finished_us": 268554258278,
+      "warmup_frames": 1,
+      "active_chain_lanes": 1,
+      "setup_parallel": true,
+      "setup_wait_us": 3,
+      "fallback_lanes": 0
+    }
+  ],
+  "wall_seconds": 0.806072,
+  "whole_wave_output_tok_s": 9.92467174148215,
+  "all_emissions_tok_s": 57.58005426920115,
+  "prefill_input_tokens": 21635,
+  "prefill_wall_seconds": 0.735034,
+  "cached_tokens": 20992,
+  "prefill_evaluated_tokens": 643,
+  "uncached_prefill": false,
+  "prefill_aggregate_wall_tok_s": 874.7894655213228,
+  "logical_prompt_tok_s": 29434.012576288987,
+  "prefill_scope": "initial independent bank prefills",
+  "target_prefill_us_sum": 1280014,
+  "mtp_prefill_us_sum": 30944,
+  "thermal_wait_us_sum": 0,
+  "mtp_depth": 3,
+  "single_cached_affinity": false,
+  "single_cache_admission_free_mib": [],
+  "production_floor_mib": 256,
+  "context_rebuilds_before_execution": 0,
+  "capacity_growth_enabled": true,
+  "capacity_growth_applied": false,
+  "capacity_growth_reason": "no_eligible_growth",
+  "capacity_growth_units": 0,
+  "capacity_growth_required_free_mib": 0,
+  "capacity_growth_preflight_free_mib": [],
+  "capacity_growth_exact_capacity": [
+    24576,
+    24576,
+    17152,
+    17152
+  ],
+  "capacity_growth_candidate_capacity": [
+    24576,
+    24576,
+    17152,
+    17152
+  ],
+  "state_migration_supported": false,
+  "banks_scope": "completed wave before optional idle-context reclamation",
+  "post_wave_free_before_mib": [
+    2238,
+    2226,
+    2336,
+    2488,
+    3275,
+    3250
+  ],
+  "post_wave_reclaimed_banks": 0,
+  "post_wave_reclaim_us": 1241,
+  "post_wave_free_after_mib": [
+    2238,
+    2226,
+    2336,
+    2488,
+    3275,
+    3250
+  ]
+}

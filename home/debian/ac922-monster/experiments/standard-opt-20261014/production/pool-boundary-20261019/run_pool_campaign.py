@@ -1,0 +1,60 @@
+"""One private model load for the pool-boundary and retained L4 behavior."""
+import json
+import os
+from pathlib import Path
+import subprocess
+import time
+from urllib.request import urlopen
+
+F = Path(__file__).resolve().parent
+R = F/'run'
+d = {'status':'WAITING_FOR_READY', 'started_unix':time.time(), 'stages':[]}
+
+
+def save():
+    (R/'campaign-status.json').write_text(json.dumps(d, indent=2)+'\n')
+
+
+save()
+try:
+    deadline = time.monotonic()+600
+    while True:
+        try:
+            with urlopen('http://127.0.0.1:8006/ready', timeout=3) as response:
+                ready = json.load(response)
+            if ready.get('status') == 'ready':
+                d['ready'] = ready
+                break
+        except Exception:
+            pass
+        if time.monotonic() >= deadline:
+            raise RuntimeError('private pool-boundary worker readiness timeout')
+        time.sleep(2)
+    env = dict(os.environ, AC922_BASE_URL='http://127.0.0.1:8006/v1',
+        AC922_READY_URL='http://127.0.0.1:8006/ready', AC922_API_KEY_FILE='/home/debian/apigateway/api_key',
+        AC922_RESULT_JSON=str(R/'http-result.json'), AC922_MODEL_RUN_ROOT=str(R/'model'),
+        NO_PROXY='127.0.0.1,localhost', no_proxy='127.0.0.1,localhost')
+    d['status'] = 'RUNNING'
+    for label, python, script, args in [
+        ('pool-boundary','/usr/bin/python3','pool_boundary_acceptance.py',['--run']),
+        ('affinity','/usr/bin/python3','affinity_acceptance.py',['--run']),
+        ('single-cache','/usr/bin/python3','single_cache_acceptance.py',[]),
+        ('http','/home/debian/comfyui/venv/bin/python','lastwave_http_acceptance.py',[]),
+        ('cancel-cached','/home/debian/comfyui/venv/bin/python','cancel_cached_single.py',['--run'])]:
+        step = {'label':label, 'status':'RUNNING', 'started_unix':time.time()}
+        d['stages'].append(step)
+        save()
+        with (R/(label+'-controller.log')).open('w') as output:
+            p = subprocess.run([python,str(F/script),*args],cwd=F,env=env,
+                               stdout=output,stderr=subprocess.STDOUT,timeout=1200)
+        step.update(status='PASS' if not p.returncode else 'FAIL',returncode=p.returncode,finished_unix=time.time())
+        save()
+        if p.returncode:
+            raise RuntimeError(label+' failed; see controller log')
+    d['status'] = 'PASS_PENDING_FULL_TEXT_REVIEW'
+except BaseException as error:
+    d.update(status='FAIL',error=repr(error))
+    raise
+finally:
+    d['finished_unix'] = time.time()
+    save()

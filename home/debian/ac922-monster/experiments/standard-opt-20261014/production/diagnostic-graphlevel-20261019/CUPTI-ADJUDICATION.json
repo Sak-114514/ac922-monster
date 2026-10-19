@@ -1,0 +1,35 @@
+{
+  "status": "REJECTED_FOR_DEVICE_GRAPH_TIME_ATTRIBUTION",
+  "production_unchanged": true,
+  "no_further_model_load_for_CUPTI": true,
+  "observations": [
+    {
+      "case": "production_R5_1400_kernel_nodes",
+      "result": "PASS exact 4096-element oracle"
+    },
+    {
+      "case": "combined_kernel_graph_MEMCPY",
+      "result": "SIGSEGV during first R5 graph upload, no model loaded"
+    },
+    {
+      "case": "combined_kernel_graph_MEMSET",
+      "result": "SIGSEGV during first R5 graph upload, no model loaded"
+    },
+    {
+      "case": "graph_trace_and_runtime_only_memops_sixGPU",
+      "result": "PASS six exact oracles, zero metadata drops/errors, timings not qualified"
+    },
+    {
+      "case": "singleGPU kernel1400",
+      "cuda_event_ms": 2.30694,
+      "device_graph_trace_ns": 2752
+    },
+    {
+      "case": "singleGPU memops1400",
+      "cuda_event_ms": 2.45814,
+      "device_graph_trace_ns": 2815
+    }
+  ],
+  "interpretation": "Positive child GraphTrace records and valid metadata do not establish accurate full child execution durations for current tail-launch path. Do not infer six-card busy time, overlap, or MoE/communication fractions from these records. CUPTI correctness limitations are separate from production computation correctness. CUDA event stream brackets give millisecond rather than microsecond spans for the same exact oracle.",
+  "next": "Use established CUDA-event stage scopes and host wall timers; no CUPTI/device-graph profiling in next candidate."
+}

@@ -1,0 +1,1681 @@
+{
+  "status": "FAIL",
+  "started_unix": 1792369555.632408,
+  "waves": [
+    {
+      "id": "hardware-native4-c4",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 64,
+          "bank": 0,
+          "wave_id": "hardware-native4-c4"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 67,
+          "bank": 1,
+          "wave_id": "hardware-native4-c4"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 73,
+          "bank": 2,
+          "wave_id": "hardware-native4-c4"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 79,
+          "bank": 3,
+          "wave_id": "hardware-native4-c4"
+        }
+      },
+      "cache_status": {
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "capital-en": 0.2483318520244211,
+        "arithmetic-zh": 0.4408183360355906,
+        "logic-en": 0.5936268120422028,
+        "strict-json-zh": 0.6106626010150649
+      },
+      "last_token_s": {
+        "capital-en": 0.2483318520244211,
+        "arithmetic-zh": 0.5239440570003353,
+        "logic-en": 0.5936268120422028,
+        "strict-json-zh": 0.8323291250271723
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 577096,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "hardware-native4-c4",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 0.803769,
+        "whole_wave_output_tok_s": 26.126909597160378,
+        "all_emissions_tok_s": 35.95884253622853,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 0.580823,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 266.8627103265539,
+        "logical_prompt_tok_s": 266.8627103265539,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 1722385,
+        "mtp_prefill_us_sum": 28342,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          3051,
+          3951,
+          3325,
+          3477,
+          3488,
+          4637
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 889,
+        "post_wave_free_after_mib": [
+          3051,
+          3951,
+          3325,
+          3477,
+          3488,
+          4637
+        ]
+      },
+      "wall_s": 0.8349715240183286,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      }
+    },
+    {
+      "id": "hardware-full524288-native-c4",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 64,
+          "bank": 0,
+          "wave_id": "hardware-full524288-native-c4"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 67,
+          "bank": 1,
+          "wave_id": "hardware-full524288-native-c4"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 73,
+          "bank": 2,
+          "wave_id": "hardware-full524288-native-c4"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 79,
+          "bank": 3,
+          "wave_id": "hardware-full524288-native-c4"
+        }
+      },
+      "cache_status": {
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "capital-en": 2.484918557049241,
+        "arithmetic-zh": 2.6091722740093246,
+        "logic-en": 2.8440322130336426,
+        "strict-json-zh": 2.8475115630426444
+      },
+      "last_token_s": {
+        "capital-en": 2.484918557049241,
+        "arithmetic-zh": 2.809704840008635,
+        "logic-en": 2.8440322130336426,
+        "strict-json-zh": 3.270208113011904
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 577096,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "hardware-full524288-native-c4",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 131072,
+            "draft_context": 131072,
+            "target_ubatch": 128
+          },
+          {
+            "bank": 1,
+            "target_context": 131072,
+            "draft_context": 131072,
+            "target_ubatch": 128
+          },
+          {
+            "bank": 2,
+            "target_context": 131072,
+            "draft_context": 131072,
+            "target_ubatch": 128
+          },
+          {
+            "bank": 3,
+            "target_context": 131072,
+            "draft_context": 131072,
+            "target_ubatch": 128
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 1.592488,
+        "whole_wave_output_tok_s": 13.18691255444311,
+        "all_emissions_tok_s": 26.741542987030353,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 1.169266,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 132.56179517748743,
+        "logical_prompt_tok_s": 132.56179517748743,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 3624073,
+        "mtp_prefill_us_sum": 393605,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 4,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [
+          3051,
+          3951,
+          3325,
+          3477,
+          3488,
+          4637
+        ],
+        "capacity_growth_exact_capacity": [
+          131072,
+          131072,
+          131072,
+          131072
+        ],
+        "capacity_growth_candidate_capacity": [
+          131072,
+          131072,
+          131072,
+          131072
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1659,
+          1151,
+          2053,
+          2205,
+          2216,
+          3365
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 873,
+        "post_wave_free_after_mib": [
+          1659,
+          1151,
+          2053,
+          2205,
+          2216,
+          3365
+        ]
+      },
+      "wall_s": 3.272248526045587,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      }
+    },
+    {
+      "id": "hardware-single262140-native-c4",
+      "accepted": {
+        "single-max": {
+          "type": "accepted",
+          "id": "single-max",
+          "input_tokens": 32,
+          "reserved_tokens": 56,
+          "bank": 0,
+          "wave_id": "hardware-single262140-native-c4"
+        }
+      },
+      "cache_status": {
+        "single-max": {
+          "type": "cache_status",
+          "id": "single-max",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "single-max": {
+          "type": "done",
+          "id": "single-max",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "single-max": 2.065197224030271
+      },
+      "last_token_s": {
+        "single-max": 2.065197224030271
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 577096,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "hardware-single262140-native-c4",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 262144,
+            "draft_context": 262144,
+            "target_ubatch": 128
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 0.648252,
+        "whole_wave_output_tok_s": 1.5426099726649514,
+        "all_emissions_tok_s": 1000000.0,
+        "prefill_input_tokens": 32,
+        "prefill_wall_seconds": 0.486592,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 65.76351440220965,
+        "logical_prompt_tok_s": 65.76351440220965,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 403341,
+        "mtp_prefill_us_sum": 71678,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 4,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          262144,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          262144,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2243,
+          2475,
+          2547,
+          2699,
+          2710,
+          3865
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 823,
+        "post_wave_free_after_mib": [
+          2243,
+          2475,
+          2547,
+          2699,
+          2710,
+          3865
+        ]
+      },
+      "wall_s": 2.2281579990522005,
+      "texts": {
+        "single-max": "Paris"
+      }
+    },
+    {
+      "id": "hardware-raw32k-cold-c4",
+      "accepted": {
+        "raw32k": {
+          "type": "accepted",
+          "id": "raw32k",
+          "input_tokens": 32768,
+          "reserved_tokens": 32776,
+          "bank": 0,
+          "wave_id": "hardware-raw32k-cold-c4"
+        }
+      },
+      "cache_status": {
+        "raw32k": {
+          "type": "cache_status",
+          "id": "raw32k",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "raw32k": {
+          "type": "done",
+          "id": "raw32k",
+          "input_tokens": 32768,
+          "output_tokens": 8,
+          "finish_reason": "length",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "raw32k": 19.686636111990083
+      },
+      "last_token_s": {
+        "raw32k": 20.38881184597267
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 577096,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "hardware-raw32k-cold-c4",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 2048
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 19.566704,
+        "whole_wave_output_tok_s": 0.4088578229629272,
+        "all_emissions_tok_s": 11.39086765662799,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 18.862451,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32768,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 1737.207958817229,
+        "logical_prompt_tok_s": 1737.207958817229,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 18190942,
+        "mtp_prefill_us_sum": 194662,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 1,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1191,
+          1161,
+          579,
+          731,
+          742,
+          1891
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1019,
+        "post_wave_free_after_mib": [
+          1191,
+          1161,
+          579,
+          731,
+          742,
+          1891
+        ]
+      },
+      "wall_s": 20.39224957197439,
+      "texts": {
+        "raw32k": " text, const size_t last_token_size"
+      }
+    },
+    {
+      "id": "hardware-raw32k-retained-c4",
+      "accepted": {
+        "raw32k": {
+          "type": "accepted",
+          "id": "raw32k",
+          "input_tokens": 32768,
+          "reserved_tokens": 32776,
+          "bank": 0,
+          "wave_id": "hardware-raw32k-retained-c4"
+        }
+      },
+      "cache_status": {
+        "raw32k": {
+          "type": "cache_status",
+          "id": "raw32k",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "raw32k": {
+          "type": "done",
+          "id": "raw32k",
+          "input_tokens": 32768,
+          "output_tokens": 8,
+          "finish_reason": "length",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "raw32k": 16.401025759987533
+      },
+      "last_token_s": {
+        "raw32k": 16.62145806499757
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 577096,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "hardware-raw32k-retained-c4",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 2048
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 16.580459,
+        "whole_wave_output_tok_s": 0.48249568965491246,
+        "all_emissions_tok_s": 36.27278951353655,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 16.359155,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32768,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 2003.037442948612,
+        "logical_prompt_tok_s": 2003.037442948612,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 16250939,
+        "mtp_prefill_us_sum": 102083,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1089,
+          1069,
+          499,
+          651,
+          662,
+          1819
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 970,
+        "post_wave_free_after_mib": [
+          1089,
+          1069,
+          499,
+          651,
+          662,
+          1819
+        ]
+      },
+      "wall_s": 16.623650896013714,
+      "texts": {
+        "raw32k": " text, const size_t last_token_size"
+      }
+    },
+    {
+      "id": "hardware-four512-c4",
+      "accepted": {
+        "story-0": {
+          "type": "accepted",
+          "id": "story-0",
+          "input_tokens": 54,
+          "reserved_tokens": 566,
+          "bank": 0,
+          "wave_id": "hardware-four512-c4"
+        },
+        "story-1": {
+          "type": "accepted",
+          "id": "story-1",
+          "input_tokens": 50,
+          "reserved_tokens": 562,
+          "bank": 1,
+          "wave_id": "hardware-four512-c4"
+        },
+        "story-2": {
+          "type": "accepted",
+          "id": "story-2",
+          "input_tokens": 48,
+          "reserved_tokens": 560,
+          "bank": 2,
+          "wave_id": "hardware-four512-c4"
+        },
+        "story-3": {
+          "type": "accepted",
+          "id": "story-3",
+          "input_tokens": 50,
+          "reserved_tokens": 562,
+          "bank": 3,
+          "wave_id": "hardware-four512-c4"
+        }
+      },
+      "cache_status": {
+        "story-0": {
+          "type": "cache_status",
+          "id": "story-0",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "story-2": {
+          "type": "cache_status",
+          "id": "story-2",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "story-3": {
+          "type": "cache_status",
+          "id": "story-3",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "story-1": {
+          "type": "cache_status",
+          "id": "story-1",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "story-0": {
+          "type": "done",
+          "id": "story-0",
+          "input_tokens": 54,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 0
+        },
+        "story-1": {
+          "type": "done",
+          "id": "story-1",
+          "input_tokens": 50,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 1
+        },
+        "story-3": {
+          "type": "done",
+          "id": "story-3",
+          "input_tokens": 50,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 3
+        },
+        "story-2": {
+          "type": "done",
+          "id": "story-2",
+          "input_tokens": 48,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 2
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "story-0": 1.874337019980885,
+        "story-2": 2.147872784989886,
+        "story-3": 2.310967710975092,
+        "story-1": 2.4267431200132705
+      },
+      "last_token_s": {
+        "story-0": 11.127295170968864,
+        "story-2": 12.98970468097832,
+        "story-3": 12.270495923003182,
+        "story-1": 11.945219325018115
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 577096,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "hardware-four512-c4",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 12.192082,
+        "whole_wave_output_tok_s": 167.9778728522331,
+        "all_emissions_tok_s": 184.2486312926688,
+        "prefill_input_tokens": 202,
+        "prefill_wall_seconds": 1.628399,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 202,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 124.04822159679539,
+        "logical_prompt_tok_s": 124.04822159679539,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 4231336,
+        "mtp_prefill_us_sum": 1203124,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 1,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [
+          1089,
+          1069,
+          499,
+          651,
+          662,
+          1819
+        ],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2875,
+          3795,
+          3185,
+          3337,
+          3348,
+          4499
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1282,
+        "post_wave_free_after_mib": [
+          2875,
+          3795,
+          3185,
+          3337,
+          3348,
+          4499
+        ]
+      },
+      "wall_s": 12.9939332389622,
+      "texts": {
+        "story-0": "BEGIN_0\n\nThe modern computing landscape is defined by a fundamental asymmetry in performance characteristics between the central processing unit (CPU) and the main memory system. While CPU clock speeds have increased exponentially over the past few decades, the latency and bandwidth of dynamic random-access memory (DRAM) have improved at a significantly slower rate. This divergence, often referred to as the \"memory wall,\" creates a bottleneck where the processor spends a significant portion of its cycles waiting for data to arrive from main memory. To mitigate this disparity, computer architects introduced a hierarchical memory system centered around CPU caches. These caches are small, high-speed storage areas located physically close to the processor cores, designed to hold frequently accessed data and instructions. However, as multi-core processors became ubiquitous, the simple concept of a local cache evolved into a complex distributed system requiring rigorous protocols to maintain data consistency across multiple cores. This technical explanation explores the architecture of CPU caches, the principles of cache coherency, and the specific protocols used to ensure that all processors in a system view a consistent image of memory.\n\n### The Hierarchy of Memory and Cache Architecture\n\nTo understand how caches work, one must first understand the memory hierarchy. At the top of this hierarchy sits the CPU registers, which are the fastest storage locations but are extremely limited in capacity. Below the registers lie the caches, typically organized into three levels: L1, L2, and L3. At the bottom of the hierarchy is main memory (DRAM), which is vast in capacity but slow in access speed.\n\nThe primary goal of the cache hierarchy is to exploit the principle of locality. There are two types of locality: temporal locality and spatial locality. Temporal locality refers to the tendency of a program to access the same data repeatedly within a short period. Spatial locality refers to the tendency of a program to access data items that are close to each other in memory. Caches exploit these principles by storing copies of data from main memory in faster, smaller storage units. When a CPU requests data, it first checks the L1 cache. If the data is present, it is a \"cache hit,\" and the data is returned almost instantly. If the data is not present, it is a \"cache miss,\" and the CPU must look in the L2 cache. If it is not there, it looks in the L3 cache. If it is not in any cache, the CPU must fetch the data from main memory, which can take hundreds of cycles.\n\nThe L1 cache is usually split into two separate caches:",
+        "story-1": "BEGIN_1\n\nPhotosynthesis is arguably the most critical biochemical process on Earth, serving as the primary mechanism by which solar energy is converted into chemical energy, thereby sustaining nearly all life on the planet. It is not merely a biological curiosity but the foundational engine of the global carbon cycle and the biosphere’s energy budget. To understand photosynthesis fully, one must delve into the intricate molecular machinery of plant cells, the thermodynamics of light absorption, the complex enzymatic pathways of carbon fixation, and the broader metabolic networks that integrate these processes with respiration and growth. This explanation will traverse the structural basis of photosynthesis, the detailed mechanics of the light-dependent and light-independent reactions, the variations in metabolic strategies among different plant species, and the integration of photosynthesis with overall plant metabolism.\n\n### The Structural and Cellular Basis of Photosynthesis\n\nPhotosynthesis occurs primarily within the chloroplasts, specialized organelles found in the mesophyll cells of leaves. The chloroplast is a double-membrane-bound organelle that contains its own DNA, ribosomes, and a complex internal membrane system. The outer and inner membranes enclose a fluid-filled space called the stroma, which contains enzymes, DNA, ribosomes, and other molecules necessary for the synthesis of carbohydrates. Suspended within the stroma are stacks of thylakoids, known as grana. The thylakoid membranes are the site of the light-dependent reactions, while the stroma is the site of the light-independent reactions, commonly referred to as the Calvin cycle.\n\nThe thylakoid membrane is a highly specialized structure rich in pigments, electron transport chains, and ATP synthase complexes. The pigments, primarily chlorophyll a and chlorophyll b, along with accessory pigments like carotenoids, are organized into photosystems. These photosystems are large protein complexes that capture light energy and initiate the electron transport chain. The arrangement of these components is crucial for the efficiency of energy conversion. The thylakoid lumen, the interior space of the thylakoids, plays a vital role in establishing the proton gradient necessary for ATP synthesis.\n\n### The Light-Dependent Reactions: Capturing Solar Energy\n\nThe first stage of photosynthesis, the light-dependent reactions, takes place in the thylakoid membranes. The primary objective of this stage is to convert light energy into chemical energy in the form of ATP (adenosine triphosphate) and NADPH (nicotinamide adenine dinucleotide phosphate),",
+        "story-2": "BEGIN_2\n\nThe architectural legacy of ancient Rome stands as one of the most profound achievements in the history of human engineering and construction. While Greek architecture is often celebrated for its aesthetic refinement, proportional harmony, and reliance on post-and-lintel systems, Roman architecture is distinguished by its revolutionary approach to structural engineering, material science, and spatial organization. The Romans did not merely build structures; they engineered environments, infrastructure, and urban systems that facilitated the administration, military dominance, and cultural cohesion of an empire spanning three continents. To understand Roman architectural engineering, one must examine the interplay between their innovative use of materials, their mastery of structural forms such as the arch and the dome, their sophisticated understanding of hydraulics and concrete chemistry, and their ability to scale these technologies to create monumental public works. This explanation will delve into the technical underpinnings of Roman construction, analyzing how these engineering principles allowed for the creation of enduring structures that continue to influence modern architectural practice.\n\nAt the heart of Roman architectural engineering lies the development and widespread application of concrete, known as *opus caementicium*. Before the Roman era, large-scale construction was predominantly limited to stone masonry, which required precise cutting, heavy lifting, and complex scaffolding. Stone is strong in compression but weak in tension, limiting the span of beams and the height of structures. The Romans, however, developed a hydraulic concrete that could be poured into molds, allowing for the creation of complex, monolithic structures with unprecedented freedom of form. This material innovation was not accidental but the result of empirical experimentation and a deep understanding of local geology.\n\nThe primary binder in Roman concrete was lime, derived from the calcination of limestone. However, the critical innovation was the addition of volcanic ash, known as *pozzolana*, sourced from the volcanic deposits near Naples and Pozzuoli. This ash, rich in silica and alumina, reacted with the lime and water to form a hydraulic cement that could harden even underwater. This chemical reaction, known as pozzolanic reaction, produced calcium silicate hydrate compounds that gave the concrete its remarkable durability and strength. Recent archaeological and materials science studies have revealed that the Romans often used seawater in their concrete mixes, which introduced chloride ions that facilitated the formation of rare, stable minerals like aluminum tobermorite. These minerals grew within the concrete matrix over time, effectively self-healing cracks and increasing the material’s resistance to erosion. This understanding of material chemistry allowed Roman engineers to construct harbors, aqueducts, and",
+        "story-3": "BEGIN_3\n\nThe landscape of computer science is fundamentally built upon the efficient organization of data. Among the most critical operations in this domain is sorting, the process of arranging a collection of elements into a specific order, typically ascending or descending. While sorting may appear trivial in everyday life—such as organizing a deck of cards or alphabetizing a bookshelf—it represents a profound challenge in computational theory. The efficiency with which a computer can sort data dictates the performance of databases, search engines, operating systems, and countless other software applications. To understand the limits and possibilities of sorting, one must delve into the realm of comparison sorting algorithms and their associated computational complexity. This explanation will explore the theoretical foundations of comparison sorts, analyze the lower bounds imposed by information theory, examine specific algorithmic strategies, and discuss the practical implications of time and space complexity.\n\nAt the heart of sorting theory lies the concept of the comparison model. In this model, the only operation permitted to determine the relative order of two elements is a direct comparison. The algorithm is not allowed to inspect the internal structure of the data, such as the binary representation of integers or the hash values of strings, to infer order. Instead, it must rely solely on queries of the form \"Is element A less than element B?\" This restriction is crucial because it defines a universal class of sorting algorithms that can be applied to any data type where a total ordering is defined, regardless of the underlying data structure. Whether sorting integers, floating-point numbers, strings, or custom objects, comparison sorts provide a generic solution. However, this generality comes at a cost, which is quantified through computational complexity.\n\nTo understand the efficiency of these algorithms, we must first define what we mean by complexity. In computer science, complexity is usually measured in terms of time and space. Time complexity refers to the number of basic operations required to complete the task, often expressed using Big O notation, which describes the upper bound of the growth rate of the algorithm as the input size $n$ increases. Space complexity refers to the amount of memory required by the algorithm. For sorting, the primary metric of interest is the number of comparisons performed, as this is the dominant cost in the comparison model.\n\nThe theoretical foundation for the efficiency of comparison sorts is rooted in information theory, specifically the concept of decision trees. A decision tree is a binary tree where each internal node represents a comparison between two elements, and each leaf node represents a unique permutation of the input sequence. For a sequence of $n$ distinct elements, there are"
+      }
+    },
+    {
+      "id": "hardware-raw64k-cold-c4",
+      "accepted": {
+        "raw64k": {
+          "type": "accepted",
+          "id": "raw64k",
+          "input_tokens": 65536,
+          "reserved_tokens": 65544,
+          "bank": 0,
+          "wave_id": "hardware-raw64k-cold-c4"
+        }
+      },
+      "cache_status": {
+        "raw64k": {
+          "type": "cache_status",
+          "id": "raw64k",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "raw64k": {
+          "type": "done",
+          "id": "raw64k",
+          "input_tokens": 65536,
+          "output_tokens": 8,
+          "finish_reason": "length",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "raw64k": 16.288975610979833
+      },
+      "last_token_s": {
+        "raw64k": 17.26734476001002
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 577096,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "hardware-raw64k-cold-c4",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 1024
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 16.493977,
+        "whole_wave_output_tok_s": 0.48502553386608943,
+        "all_emissions_tok_s": 8.175236187682986,
+        "prefill_input_tokens": 65536,
+        "prefill_wall_seconds": 15.514281,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 65536,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 4224.237011048079,
+        "logical_prompt_tok_s": 4224.237011048079,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 15184263,
+        "mtp_prefill_us_sum": 321490,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 1,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1933,
+          2259,
+          1825,
+          1977,
+          1988,
+          3135
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 954,
+        "post_wave_free_after_mib": [
+          1933,
+          2259,
+          1825,
+          1977,
+          1988,
+          3135
+        ]
+      },
+      "wall_s": 17.26988233899465,
+      "texts": {
+        "raw64k": " \"new: ... \";\n\n                                    for"
+      }
+    },
+    {
+      "id": "hardware-raw64k-retained-c4",
+      "accepted": {
+        "raw64k": {
+          "type": "accepted",
+          "id": "raw64k",
+          "input_tokens": 65536,
+          "reserved_tokens": 65544,
+          "bank": 0,
+          "wave_id": "hardware-raw64k-retained-c4"
+        }
+      },
+      "cache_status": {
+        "raw64k": {
+          "type": "cache_status",
+          "id": "raw64k",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "raw64k": {
+          "type": "done",
+          "id": "raw64k",
+          "input_tokens": 65536,
+          "output_tokens": 8,
+          "finish_reason": "length",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "raw64k": 23.934368848975282
+      },
+      "last_token_s": {
+        "raw64k": 24.077300368982833
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 577096,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "hardware-raw64k-retained-c4",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 1024
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 24.028539,
+        "whole_wave_output_tok_s": 0.3329374291129394,
+        "all_emissions_tok_s": 55.91981099103885,
+        "prefill_input_tokens": 65536,
+        "prefill_wall_seconds": 23.884892,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 65536,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 2743.8265159415414,
+        "logical_prompt_tok_s": 2743.8265159415414,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 23626217,
+        "mtp_prefill_us_sum": 250664,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1749,
+          2077,
+          1679,
+          1831,
+          1842,
+          2999
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1227,
+        "post_wave_free_after_mib": [
+          1749,
+          2077,
+          1679,
+          1831,
+          1842,
+          2999
+        ]
+      },
+      "wall_s": 24.07955610094359,
+      "texts": {
+        "raw64k": " \"new: ... \";\n\n                                    for"
+      }
+    },
+    {
+      "id": "hardware-semantic-prefix-fill-c4",
+      "accepted": {
+        "long-paris": {
+          "type": "accepted",
+          "id": "long-paris",
+          "input_tokens": 32768,
+          "reserved_tokens": 32792,
+          "bank": 0,
+          "wave_id": "hardware-semantic-prefix-fill-c4"
+        }
+      },
+      "cache_status": {
+        "long-paris": {
+          "type": "cache_status",
+          "id": "long-paris",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "long-paris": {
+          "type": "done",
+          "id": "long-paris",
+          "input_tokens": 32768,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "long-paris": 10.600923158985097
+      },
+      "last_token_s": {
+        "long-paris": 10.600923158985097
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 577096,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "hardware-semantic-prefix-fill-c4",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 2048
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 9.334632,
+        "whole_wave_output_tok_s": 0.10712795105366768,
+        "all_emissions_tok_s": 1000000.0,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 8.717128,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32768,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 3759.0362330345497,
+        "logical_prompt_tok_s": 3759.0362330345497,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 8362407,
+        "mtp_prefill_us_sum": 305852,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 1,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          865,
+          713,
+          315,
+          467,
+          478,
+          1635
+        ],
+        "post_wave_reclaimed_banks": 1,
+        "post_wave_reclaim_us": 814895,
+        "post_wave_free_after_mib": [
+          2693,
+          3651,
+          3043,
+          3195,
+          3206,
+          4363
+        ]
+      },
+      "wall_s": 12.03379782603588,
+      "texts": {
+        "long-paris": "Paris"
+      }
+    },
+    {
+      "id": "hardware-semantic-prefix-hit-c4",
+      "accepted": {
+        "long-paris": {
+          "type": "accepted",
+          "id": "long-paris",
+          "input_tokens": 32768,
+          "reserved_tokens": 32792,
+          "bank": 0,
+          "wave_id": "hardware-semantic-prefix-hit-c4"
+        }
+      },
+      "cache_status": {
+        "long-paris": {
+          "type": "cache_status",
+          "id": "long-paris",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "long-paris": {
+          "type": "done",
+          "id": "long-paris",
+          "input_tokens": 32768,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "long-paris": 9.271299632033333
+      },
+      "last_token_s": {
+        "long-paris": 9.271299632033333
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 577096,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "hardware-semantic-prefix-hit-c4",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 2048
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 9.147579,
+        "whole_wave_output_tok_s": 0.1093185420973134,
+        "all_emissions_tok_s": 1000000.0,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 8.516939,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32768,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 3847.3916509205947,
+        "logical_prompt_tok_s": 3847.3916509205947,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 8192368,
+        "mtp_prefill_us_sum": 273771,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 1,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          865,
+          713,
+          315,
+          467,
+          478,
+          1635
+        ],
+        "post_wave_reclaimed_banks": 1,
+        "post_wave_reclaim_us": 670499,
+        "post_wave_free_after_mib": [
+          2693,
+          3651,
+          3043,
+          3195,
+          3206,
+          4363
+        ]
+      },
+      "wall_s": 10.572811751044355,
+      "texts": {
+        "long-paris": "Paris"
+      }
+    }
+  ],
+  "cuda_event_diagnostic_enabled": false,
+  "clean_speedup_claimed": false,
+  "model_loads_requested": 1,
+  "mtp_depth": 3,
+  "quality_reduction_requested": false,
+  "ready": {
+    "status": "ready",
+    "max_context": 262140,
+    "pool_tokens": 524288,
+    "max_parallel": 4,
+    "model": "flash-next-iq3-xxs",
+    "refill_supported": true,
+    "prefix_cache_enabled": true
+  },
+  "full_pool_and_single_capacity_semantics": "PASS",
+  "four512_native_record": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/hardware-balance-20261019/run/model/copy0/fourbank16k-d3/lastwave-7.json",
+  "four512_parity": {
+    "story-0": {
+      "full_text_exact": true,
+      "token_ids_exact": true
+    },
+    "story-1": {
+      "full_text_exact": true,
+      "token_ids_exact": true
+    },
+    "story-2": {
+      "full_text_exact": true,
+      "token_ids_exact": true
+    },
+    "story-3": {
+      "full_text_exact": true,
+      "token_ids_exact": true
+    }
+  },
+  "four512_full_texts_exact": true,
+  "four512_all_2048_token_ids_exact": true,
+  "error": "AssertionError()",
+  "finished_unix": 1792369802.562649
+}

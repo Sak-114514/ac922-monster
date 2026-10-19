@@ -1,0 +1,122 @@
+{
+  "wave_id": "hardware-semantic-prefix-fill-c4",
+  "mode": "bank_local_phase_progression",
+  "banks": [
+    {
+      "bank": 0,
+      "target_context": 66048,
+      "draft_context": 66048,
+      "target_ubatch": 2048
+    },
+    {
+      "bank": 1,
+      "target_context": 17152,
+      "draft_context": 17152,
+      "target_ubatch": 256
+    },
+    {
+      "bank": 2,
+      "target_context": 17152,
+      "draft_context": 17152,
+      "target_ubatch": 256
+    },
+    {
+      "bank": 3,
+      "target_context": 17152,
+      "draft_context": 17152,
+      "target_ubatch": 256
+    }
+  ],
+  "refill_count": 0,
+  "flow_count": 1,
+  "flows": [
+    {
+      "id": "long-paris",
+      "bank": 0,
+      "input_tokens": 32768,
+      "output_tokens": 1,
+      "cached_tokens": 0,
+      "output": "Paris",
+      "token_ids": [
+        57590
+      ],
+      "emitted_us": [
+        288775808929
+      ],
+      "proposed": 3,
+      "accepted": 3,
+      "prefill_us": 8717089,
+      "target_prefill_us": 8362407,
+      "mtp_prefill_us": 305852,
+      "thermal_wait_us": 0,
+      "prefill_started_us": 288767091840,
+      "prefill_finished_us": 288775808968,
+      "warmup_started_us": 288775808968,
+      "warmup_finished_us": 288776425240,
+      "decode_started_us": 288776425240,
+      "decode_finished_us": 288776425240,
+      "warmup_frames": 1,
+      "active_chain_lanes": 1,
+      "setup_parallel": true,
+      "setup_wait_us": 4,
+      "fallback_lanes": 0
+    }
+  ],
+  "wall_seconds": 9.334632,
+  "whole_wave_output_tok_s": 0.10712795105366768,
+  "all_emissions_tok_s": 1000000.0,
+  "prefill_input_tokens": 32768,
+  "prefill_wall_seconds": 8.717128,
+  "cached_tokens": 0,
+  "prefill_evaluated_tokens": 32768,
+  "uncached_prefill": true,
+  "prefill_aggregate_wall_tok_s": 3759.0362330345497,
+  "logical_prompt_tok_s": 3759.0362330345497,
+  "prefill_scope": "initial independent bank prefills",
+  "target_prefill_us_sum": 8362407,
+  "mtp_prefill_us_sum": 305852,
+  "thermal_wait_us_sum": 0,
+  "mtp_depth": 3,
+  "single_cached_affinity": false,
+  "single_cache_admission_free_mib": [],
+  "production_floor_mib": 256,
+  "context_rebuilds_before_execution": 1,
+  "capacity_growth_enabled": true,
+  "capacity_growth_applied": false,
+  "capacity_growth_reason": "request_count_out_of_range",
+  "capacity_growth_units": 0,
+  "capacity_growth_required_free_mib": 0,
+  "capacity_growth_preflight_free_mib": [],
+  "capacity_growth_exact_capacity": [
+    66048,
+    17152,
+    17152,
+    17152
+  ],
+  "capacity_growth_candidate_capacity": [
+    66048,
+    17152,
+    17152,
+    17152
+  ],
+  "state_migration_supported": false,
+  "banks_scope": "completed wave before optional idle-context reclamation",
+  "post_wave_free_before_mib": [
+    865,
+    713,
+    315,
+    467,
+    478,
+    1635
+  ],
+  "post_wave_reclaimed_banks": 1,
+  "post_wave_reclaim_us": 814895,
+  "post_wave_free_after_mib": [
+    2693,
+    3651,
+    3043,
+    3195,
+    3206,
+    4363
+  ]
+}

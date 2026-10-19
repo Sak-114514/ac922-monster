@@ -1,0 +1,40 @@
+{
+  "fixture": "shared-hostexec-v441-r2-root-20261018",
+  "status": "staged_only_no_build_or_gpu",
+  "r1_parent": {
+    "helper_sha256": "fdee2d2806a4f4b37375c86933d61142fe3c319b69fee78945334350acb23ee9",
+    "helper_path": "helper/bridge-v441-r1.cu",
+    "direct_fixture_path": "tests/shared-exec-v441-r1.cu",
+    "preserved_as_copied_build_input": true
+  },
+  "r2_contract": {
+    "changed_behavior": "shared V2 readiness only",
+    "readiness_calls_cuda_apis": false,
+    "readiness_uses_owner_device_key_graph_metadata": true,
+    "ready_if_key_binding_slot_exists_even_when_other_key_last_committed": true,
+    "actual_launch_and_prepare_validation_unchanged": true,
+    "engine_files_changed": false,
+    "build_executed_by_fixture_author": false,
+    "gpu_executed_by_fixture_author": false
+  },
+  "files": {
+    "PLAN.md": "dae50dd592a7bc3649aad5b933b4e915e4adac30715d0b1d622c9e1a1a2c3e18",
+    "helper/bridge-api.h": "c715127588e4badd1f264af2362e9a597aba1e9a60438f8950d2c5d70fe56003",
+    "helper/bridge-v441-r1.cu": "fdee2d2806a4f4b37375c86933d61142fe3c319b69fee78945334350acb23ee9",
+    "helper/bridge-v441-r2.cu": "343a75f910744f0beda092a0717021f3b71117f2fb7722690d7b175cc8d39886",
+    "helper/build-helper-v441-r2.sh": "271aa974226f3bac8e3f90cb29eb3356f300c8d94b90cbdde3bcc3da8007f8ca",
+    "helper/context-gate-v441.h": "d53233a3ab66d9b98f4919df33ac4ad426e4d1fa357a23fea7e874e6c32b99e8",
+    "helper/update-policy-v441.h": "c9198278dc9a61815c9de4ed04030bddba40e695b1de31ab3b7ef0d2c1bb327b",
+    "tests/build-shared-exec-v441-r2.sh": "d2b2ef0f762edbb0403db62380bc31a6e01b066d90edf1d18ae01f6aafbadcae",
+    "tests/check-shared-exec-v441-r1.py": "9fede65fcb38f2c370f09ebdccd363a0bae18164d6cc62574a4d3f98077a986a",
+    "tests/check-shared-exec-v441-r2.py": "03c854e70fe8d4e56403f9fcb97e6d292df12cb80472262e77fd5a7dc65d79e9",
+    "tests/check-source-closure-r2.py": "2f9aec35e3f732869ad3e7fee4b0799561e57972afcabc9a264ea3781c6dc6a1",
+    "tests/run-cpu-contract-v441-r2.sh": "7590e88006955fdf2324bae66fc1ac7e827dfba0e73908adcf40146b9932d3e2",
+    "tests/run-shared-exec-v441-r2.sh": "3f990bcf645ac74545e775e9a8e9f298237da68f6d96fc8cd18fd1b196b1dbdc",
+    "tests/shared-exec-v441-r1.cu": "a058514c01853623a1c3bc8d0c360e0e47068b32aa8b26314c084ee6808cfcd9",
+    "tests/shared-exec-v441-r2.cu": "50c166b5512df2b1a819f4a2c4e132c07d9276ef22da5259cab594ae30220dc1",
+    "tests/shared-state-cpu-v441-r1.cpp": "984eddc5b21612474c4511cc0d2b8e27388a6db829f08bd2f283d87540f169b8",
+    "tests/shared-state-cpu-v441-r2.cpp": "984eddc5b21612474c4511cc0d2b8e27388a6db829f08bd2f283d87540f169b8",
+    "tests/verify-r2-static.py": "178b946051289ae00d5148a04aa099ebd6c429a0769aa69126128cd1b8c22880"
+  }
+}

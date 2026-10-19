@@ -1,0 +1,976 @@
+{
+  "status": "PASS",
+  "waves": [
+    {
+      "id": "capacity-probe-17152-4910e6da45",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 64,
+          "bank": 0,
+          "wave_id": "capacity-probe-17152-4910e6da45"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 67,
+          "bank": 1,
+          "wave_id": "capacity-probe-17152-4910e6da45"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 73,
+          "bank": 2,
+          "wave_id": "capacity-probe-17152-4910e6da45"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 79,
+          "bank": 3,
+          "wave_id": "capacity-probe-17152-4910e6da45"
+        }
+      },
+      "cache_status": {
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "arithmetic-zh": 1.0941692399792373,
+        "logic-en": 1.2700668079778552,
+        "capital-en": 1.2804425819776952,
+        "strict-json-zh": 1.2818133719847538
+      },
+      "last_token_s": {
+        "arithmetic-zh": 1.1883747049723752,
+        "logic-en": 1.2700668079778552,
+        "capital-en": 1.2804425819776952,
+        "strict-json-zh": 1.5030787640134804
+      },
+      "timings": {
+        "wave_id": "capacity-probe-17152-4910e6da45",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 0.809252,
+        "whole_wave_output_tok_s": 25.949889527613156,
+        "all_emissions_tok_s": 51.3535323894065,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 0.587553,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 263.80598856613784,
+        "logical_prompt_tok_s": 263.80598856613784,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 2029685,
+        "mtp_prefill_us_sum": 108846,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2439,
+          2427,
+          2563,
+          2715,
+          3626,
+          3557
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1317,
+        "post_wave_free_after_mib": [
+          2439,
+          2427,
+          2563,
+          2715,
+          3626,
+          3557
+        ]
+      },
+      "wall_s": 1.5055892780073918,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      },
+      "label": "capacity-probe-17152",
+      "control_roundtrip_s": 1.506519393005874,
+      "semantic_status": "PASS"
+    },
+    {
+      "id": "capacity-probe-24576-d2ecc11ba5",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 64,
+          "bank": 0,
+          "wave_id": "capacity-probe-24576-d2ecc11ba5"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 67,
+          "bank": 1,
+          "wave_id": "capacity-probe-24576-d2ecc11ba5"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 73,
+          "bank": 2,
+          "wave_id": "capacity-probe-24576-d2ecc11ba5"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 79,
+          "bank": 3,
+          "wave_id": "capacity-probe-24576-d2ecc11ba5"
+        }
+      },
+      "cache_status": {
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "arithmetic-zh": 0.6767920299898833,
+        "logic-en": 0.8834523339755833,
+        "strict-json-zh": 0.8988429309683852,
+        "capital-en": 0.9100357219576836
+      },
+      "last_token_s": {
+        "arithmetic-zh": 0.7621446689590812,
+        "logic-en": 0.8834523339755833,
+        "strict-json-zh": 1.1445318349869922,
+        "capital-en": 0.9100357219576836
+      },
+      "timings": {
+        "wave_id": "capacity-probe-24576-d2ecc11ba5",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 24576,
+            "draft_context": 24576,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 0.80081,
+        "whole_wave_output_tok_s": 26.223448758132392,
+        "all_emissions_tok_s": 44.89577765900588,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 0.56515,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 274.2634698752544,
+        "logical_prompt_tok_s": 274.2634698752544,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 1893693,
+        "mtp_prefill_us_sum": 85251,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2411,
+          2399,
+          2535,
+          2687,
+          3598,
+          3503
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1337,
+        "post_wave_free_after_mib": [
+          2411,
+          2399,
+          2535,
+          2687,
+          3598,
+          3503
+        ]
+      },
+      "wall_s": 1.147505453962367,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      },
+      "label": "capacity-probe-24576",
+      "control_roundtrip_s": 1.1483252980397083,
+      "semantic_status": "PASS"
+    },
+    {
+      "id": "capacity-probe-32768-4021f827a5",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 64,
+          "bank": 0,
+          "wave_id": "capacity-probe-32768-4021f827a5"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 67,
+          "bank": 1,
+          "wave_id": "capacity-probe-32768-4021f827a5"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 73,
+          "bank": 2,
+          "wave_id": "capacity-probe-32768-4021f827a5"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 79,
+          "bank": 3,
+          "wave_id": "capacity-probe-32768-4021f827a5"
+        }
+      },
+      "cache_status": {
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "arithmetic-zh": 0.7099882469628938,
+        "logic-en": 0.8514398299739696,
+        "strict-json-zh": 0.8745197270181961,
+        "capital-en": 0.9198415990103967
+      },
+      "last_token_s": {
+        "arithmetic-zh": 0.7940025120042264,
+        "logic-en": 0.8514398299739696,
+        "strict-json-zh": 1.1040678530116566,
+        "capital-en": 0.9198415990103967
+      },
+      "timings": {
+        "wave_id": "capacity-probe-32768-4021f827a5",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 32768,
+            "draft_context": 32768,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 0.754298,
+        "whole_wave_output_tok_s": 27.840455628942408,
+        "all_emissions_tok_s": 53.28975415660082,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 0.56952,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 272.1590110970642,
+        "logical_prompt_tok_s": 272.1590110970642,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 1883096,
+        "mtp_prefill_us_sum": 59039,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2383,
+          2371,
+          2507,
+          2659,
+          3570,
+          3445
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1309,
+        "post_wave_free_after_mib": [
+          2383,
+          2371,
+          2507,
+          2659,
+          3570,
+          3445
+        ]
+      },
+      "wall_s": 1.1064036539755762,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      },
+      "label": "capacity-probe-32768",
+      "control_roundtrip_s": 1.1071764460066333,
+      "semantic_status": "PASS"
+    },
+    {
+      "id": "capacity-probe-33024-673402879a",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 64,
+          "bank": 0,
+          "wave_id": "capacity-probe-33024-673402879a"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 67,
+          "bank": 1,
+          "wave_id": "capacity-probe-33024-673402879a"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 73,
+          "bank": 2,
+          "wave_id": "capacity-probe-33024-673402879a"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 79,
+          "bank": 3,
+          "wave_id": "capacity-probe-33024-673402879a"
+        }
+      },
+      "cache_status": {
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "arithmetic-zh": 0.7448040040326305,
+        "logic-en": 0.8314918840187602,
+        "strict-json-zh": 0.8878898080438375,
+        "capital-en": 0.9227446460281499
+      },
+      "last_token_s": {
+        "arithmetic-zh": 0.8236929459962994,
+        "logic-en": 0.8314918840187602,
+        "strict-json-zh": 1.1260007790406235,
+        "capital-en": 0.9227446460281499
+      },
+      "timings": {
+        "wave_id": "capacity-probe-33024-673402879a",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 33024,
+            "draft_context": 33024,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 0.768549,
+        "whole_wave_output_tok_s": 27.324217453929418,
+        "all_emissions_tok_s": 55.09049269263965,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 0.565057,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 274.3086095739014,
+        "logical_prompt_tok_s": 274.3086095739014,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 1861034,
+        "mtp_prefill_us_sum": 83500,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2381,
+          2369,
+          2505,
+          2657,
+          3568,
+          3441
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1317,
+        "post_wave_free_after_mib": [
+          2381,
+          2369,
+          2505,
+          2657,
+          3568,
+          3441
+        ]
+      },
+      "wall_s": 1.1280450490303338,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      },
+      "label": "capacity-probe-33024",
+      "control_roundtrip_s": 1.1288302360335365,
+      "semantic_status": "PASS"
+    },
+    {
+      "id": "capacity-probe-40960-8eac53d769",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 64,
+          "bank": 0,
+          "wave_id": "capacity-probe-40960-8eac53d769"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 67,
+          "bank": 1,
+          "wave_id": "capacity-probe-40960-8eac53d769"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 73,
+          "bank": 2,
+          "wave_id": "capacity-probe-40960-8eac53d769"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 79,
+          "bank": 3,
+          "wave_id": "capacity-probe-40960-8eac53d769"
+        }
+      },
+      "cache_status": {
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        },
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "arithmetic-zh": 0.9017935909796506,
+        "strict-json-zh": 0.9017985539976507,
+        "logic-en": 0.9019251730060205,
+        "capital-en": 1.185538749967236
+      },
+      "last_token_s": {
+        "arithmetic-zh": 1.0087326539796777,
+        "strict-json-zh": 1.1717188769835047,
+        "logic-en": 0.9019251730060205,
+        "capital-en": 1.185538749967236
+      },
+      "timings": {
+        "wave_id": "capacity-probe-40960-8eac53d769",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 40960,
+            "draft_context": 40960,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 0.978412,
+        "whole_wave_output_tok_s": 21.463350817447047,
+        "all_emissions_tok_s": 73.99133948988256,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 0.812775,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 190.70468456829997,
+        "logical_prompt_tok_s": 190.70468456829997,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 2137193,
+        "mtp_prefill_us_sum": 246907,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2353,
+          2341,
+          2477,
+          2629,
+          3540,
+          3385
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1328,
+        "post_wave_free_after_mib": [
+          2353,
+          2341,
+          2477,
+          2629,
+          3540,
+          3385
+        ]
+      },
+      "wall_s": 1.3530088369734585,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      },
+      "label": "capacity-probe-40960",
+      "control_roundtrip_s": 1.3538744000252336,
+      "semantic_status": "PASS"
+    }
+  ],
+  "purpose": "read existing qualified exact context geometries; same-UB memory increment only; no new code or precision"
+}

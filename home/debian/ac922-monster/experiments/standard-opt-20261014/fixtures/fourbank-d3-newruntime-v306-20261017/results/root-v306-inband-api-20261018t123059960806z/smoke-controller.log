@@ -1,0 +1,25 @@
+{"type": "ready", "model": "flash-next-iq3-xxs", "max_parallel": 4, "max_context": 262140, "pool_tokens": 524288}
+{"type": "accepted", "id": "combo-paris-32k", "input_tokens": 32768, "reserved_tokens": 32792}
+{"wave": "combo-quality32k-cold", "wall_s": 10.339328703004867, "done": {"combo-paris-32k": {"type": "done", "id": "combo-paris-32k", "input_tokens": 32768, "output_tokens": 1, "finish_reason": "stop"}}, "errors": []}
+{"type": "accepted", "id": "combo-corpus32k", "input_tokens": 32768, "reserved_tokens": 32776}
+{"wave": "combo-formal32k-combined", "wall_s": 11.628740521002328, "done": {"combo-corpus32k": {"type": "done", "id": "combo-corpus32k", "input_tokens": 32768, "output_tokens": 8, "finish_reason": "length"}}, "errors": []}
+{"type": "accepted", "id": "combo-paris-8192", "input_tokens": 8192, "reserved_tokens": 8216}
+{"wave": "combo-quality8192-after-cache", "wall_s": 3.5285298530070577, "done": {"combo-paris-8192": {"type": "done", "id": "combo-paris-8192", "input_tokens": 8192, "output_tokens": 1, "finish_reason": "stop"}}, "errors": []}
+{"type": "accepted", "id": "capital-en", "input_tokens": 32, "reserved_tokens": 64}
+{"type": "accepted", "id": "arithmetic-zh", "input_tokens": 35, "reserved_tokens": 67}
+{"type": "accepted", "id": "logic-en", "input_tokens": 41, "reserved_tokens": 73}
+{"type": "accepted", "id": "strict-json-zh", "input_tokens": 47, "reserved_tokens": 79}
+{"wave": "combo-native4-after-prefill", "wall_s": 4.713877934002085, "done": {"capital-en": {"type": "done", "id": "capital-en", "input_tokens": 32, "output_tokens": 1, "finish_reason": "stop"}, "arithmetic-zh": {"type": "done", "id": "arithmetic-zh", "input_tokens": 35, "output_tokens": 4, "finish_reason": "stop"}, "logic-en": {"type": "done", "id": "logic-en", "input_tokens": 41, "output_tokens": 1, "finish_reason": "stop"}, "strict-json-zh": {"type": "done", "id": "strict-json-zh", "input_tokens": 47, "output_tokens": 15, "finish_reason": "stop"}}, "errors": []}
+{"type": "accepted", "id": "story-0", "input_tokens": 54, "reserved_tokens": 566}
+{"type": "accepted", "id": "story-1", "input_tokens": 50, "reserved_tokens": 562}
+{"type": "accepted", "id": "story-2", "input_tokens": 48, "reserved_tokens": 560}
+{"type": "accepted", "id": "story-3", "input_tokens": 50, "reserved_tokens": 562}
+{"wave": "combo-four512", "wall_s": 14.357416604994796, "done": {"story-1": {"type": "done", "id": "story-1", "input_tokens": 50, "output_tokens": 512, "finish_reason": "length"}, "story-0": {"type": "done", "id": "story-0", "input_tokens": 54, "output_tokens": 512, "finish_reason": "length"}, "story-3": {"type": "done", "id": "story-3", "input_tokens": 50, "output_tokens": 512, "finish_reason": "length"}, "story-2": {"type": "done", "id": "story-2", "input_tokens": 48, "output_tokens": 512, "finish_reason": "length"}}, "errors": []}
+Traceback (most recent call last):
+  File "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/combo-20261018/combo-smoke-c8.py", line 94, in <module>
+    r=wave('combo-502784-capacity-multi',caprequests);assert not r['errors'],r
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/combo-20261018/combo-smoke-c8.py", line 51, in wave
+    elif kind=='eof': raise RuntimeError('worker event EOF')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: worker event EOF

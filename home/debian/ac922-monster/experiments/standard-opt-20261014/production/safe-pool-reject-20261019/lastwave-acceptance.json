@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "qualified_unix": 1792355363.2984576,
+  "worker_sha256": "1c5498bce467858e7c1a4006e16e3f5376988f4d5f12bd8f6daae73f110a49a5",
+  "quality": "evidence/parent-semantic-review.json",
+  "cpu_python_tests": 34,
+  "strict_cpp_fixtures": 7,
+  "cuda_tus_rebuilt": 0,
+  "engine_tus_rebuilt": 0,
+  "baseline": "/home/debian/ac922-monster/production/releases/20261019-r444-banked-l4",
+  "mtp_depth": 3,
+  "telemetry": {
+    "status": "RECORDED",
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/safe-pool-reject-20261019/run/gpu-samples.jsonl",
+    "samples": 5476,
+    "start_unix": 1792354074.125975,
+    "end_unix": 1792355177.0901175,
+    "minimum_free_mib_by_gpu": [
+      1185.375,
+      757.375,
+      935.375,
+      1087.375,
+      1234.812,
+      1561.25
+    ],
+    "maximum_temperature_c_by_gpu": [
+      59,
+      59,
+      59,
+      57,
+      58,
+      57
+    ]
+  },
+  "evidence_sha256": {
+    "evidence/campaign-status.json": "5b1af21130cf719e9d65f899edb736405a043b9315984685482dc295208255d8",
+    "evidence/cancel-cached-single.json": "c585c9b28165805f120a482767ece06894a0ea0641ef1e97a00dfaf6e2a10ed8",
+    "evidence/four512-flow-record.json": "882a84ba49e8d9e7698130b1eb34f252cee5792ab913ad3f7984ca6455f79b10",
+    "evidence/http-result.json": "ac6fac4db16e6efa0a8f880a905bbe548b670498460d94867a77edbcd31a4453",
+    "evidence/io-audit-interference.json": "a7cd6f65157008824cf25f2d3dff940ff9a64887e391ebefc41f85e2b9644714",
+    "evidence/measured-summary.json": "b576641b0e623179c51d2114578852adf14b486c87aa3d01810930d280b44f12",
+    "evidence/parent-semantic-review.json": "bfb7a81ea3a23c6b4ec1361b6e8e38627c2a31469129dfa7802528573fc1c853",
+    "evidence/perf-after-scan-http.json": "91a8530744b6669b0dce00ca1cfe10d17ce621a4f40d49be575a24b3968a00bd",
+    "evidence/perf-after-scan-prefill.json": "b5155b4180c0a3109145363e4664e996690c062d88ff2c39f146317e66e4cb97",
+    "evidence/prefill-order-result.json": "40285656309b502146c23529f8e2c0b53d8122525b7ec2461a505c9cce337673",
+    "evidence/producer-original-campaign-status.json": "cbe15dbdaf3e7ae01aea4d4bb8f09af32ada6e7a47b7f3864012db105d0ae749",
+    "evidence/producer-original-single-cache-result.json": "28924ea515ee4505b459dff3bdd85f2d68de06b2aa1b8c8649d695b64976ba30",
+    "evidence/safe-affinity-mock.log": "faedcdcadf6da728b14d21df92d927c3b5ff8d9697004832e38865be958e145a",
+    "evidence/safe-cpu-validation.json": "b49cd0c158779a5eef562e71024d694330333b22c1d60219058f2824e4a6a4e0",
+    "evidence/safe-pool-mock.log": "9ee4cb352ebe6e2d19fe494b80519083b130abc4ffe984cc9f8e5ea97341dc21",
+    "evidence/safe-pool-reject-result.json": "57fad135dfec7cb9864774c5d80f29e911c53be9541dd75ccb21815b75a15a05",
+    "evidence/safe-python-tests.log": "cceeff20b8100ecc060846b45d5255878fc55888fc9ae66c07eaa1ed62307af8",
+    "evidence/safe-test_bank_affinity.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/safe-test_bank_growth.log": "ee085dac129f5e8a5e40e2fb3f4b14af38d3fb3b5b4a8c07cb6828d74488e66b",
+    "evidence/safe-test_bank_retention.log": "eca5f270bb26f5b6663b4f37227e736dc656be0a907b48f0b7a6870544fc0813",
+    "evidence/safe-test_bank_setup_guard.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/safe-test_lastwave_runner.log": "2cbbb973c890f67c4ac5c1e31026071021d8e88de5e9234ab29495c0d066a0f9",
+    "evidence/safe-test_prefill_thermal.log": "3c06c32b17c81a01d6bf768138a85f41d90ae5407c666c312a4140c582edc995",
+    "evidence/safe-test_prefix_checkpoint.log": "6bc3877f3d416b9aa9e50d8cdf9a9909b2705af440f812792d91a7ca51df456e",
+    "evidence/single-cache-result.json": "95e9240325945ac9c149870e8cfde5f4e9bcfcc7f7ddb39e96669d330c9139fa"
+  },
+  "limits": [
+    "No new tiny1280 context allocation; near-boundary cohort intentionally refused.",
+    "No claim that C5 CUDA cause is fixed or raw300/6000 targets are met.",
+    "Unchanged L4 accepted layouts, standard indexer, fixed D3 and quantization."
+  ],
+  "architect_review": "APPROVE final evidence: narrow robustness release, no speedup claim, polluted timings labelled and preserved, C5tiny1280 excluded"
+}

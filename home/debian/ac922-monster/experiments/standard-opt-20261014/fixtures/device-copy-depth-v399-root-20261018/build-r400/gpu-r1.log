@@ -1,0 +1,78 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+PP pinned inputs requested=1 selected=1 scheduler=0x100221ad6a0 copies=4 cap=268435456 reset_preserves_slots=1 host_slots=8 device_ring_unchanged=1
+PP stable CPU input leafs requested=1 selected=1 scheduler=0x100221ad6a0 reason=pinned-ordinary-cuda-pipeline
+PP stable CPU input leafs summary scheduler=0x100221ad6a0 groups=0
+PP pinned inputs summary scheduler=0x100221ad6a0 copies=0 declines=0 pinned_high_water=0 cap=268435456
+PP device copy depth requested=8 selected=1 scheduler=0x10026b71e40 copies=8 capacity=8 plain_cuda_devices=6 existing_events_and_peer_fences=retained
+PP pinned inputs requested=1 selected=1 scheduler=0x10026b71e40 copies=8 cap=268435456 reset_preserves_slots=1 host_slots=8 device_ring_unchanged=1
+PP stable CPU input leafs requested=1 selected=1 scheduler=0x10026b71e40 reason=pinned-ordinary-cuda-pipeline
+PP stable CPU input leafs summary scheduler=0x10026b71e40 groups=0
+PP pinned inputs summary scheduler=0x10026b71e40 copies=0 declines=0 pinned_high_water=0 cap=268435456
+PP device copy depth requested=8 selected=0 scheduler=0x10026b71e40 copies=1 capacity=8 plain_cuda_devices=0 existing_events_and_peer_fences=retained
+PP pinned inputs requested=1 selected=0 scheduler=0x10026b71e40 copies=1 reason=requires-plain-cuda-pipeline
+PP stable CPU input leafs requested=1 selected=0 scheduler=0x10026b71e40 reason=requires-private-pinned-inputs
+PP device copy depth requested=8 selected=0 scheduler=0x10026b71e40 copies=4 capacity=8 plain_cuda_devices=0 existing_events_and_peer_fences=retained
+PP pinned inputs requested=1 selected=1 scheduler=0x10026b71e40 copies=4 cap=268435456 reset_preserves_slots=1 host_slots=8 device_ring_unchanged=1
+PP stable CPU input leafs requested=1 selected=1 scheduler=0x10026b71e40 reason=pinned-ordinary-cuda-pipeline
+PP stable CPU input leafs summary scheduler=0x10026b71e40 groups=0
+PP pinned inputs summary scheduler=0x10026b71e40 copies=0 declines=0 pinned_high_water=0 cap=268435456
+PP device copy depth requested=8 selected=1 scheduler=0x10026b71e40 copies=8 capacity=8 plain_cuda_devices=6 existing_events_and_peer_fences=retained
+PP pinned inputs requested=1 selected=1 scheduler=0x10026b71e40 copies=8 cap=268435456 reset_preserves_slots=1 host_slots=8 device_ring_unchanged=1
+PP stable CPU input leafs requested=1 selected=1 scheduler=0x10026b71e40 reason=pinned-ordinary-cuda-pipeline
+CUDA layer pinned upload requested=1 selected=1 device=0 nonblocking_stream=1 old_consumer_wait=retained source_done_on=upload_stream compute_wait_copy_done=1 no_new_tensor_buffers=1
+PP pinned inputs active scheduler=0x10026b71e40 backend=CUDA0 slot=0 source=copydepth_cpu_rows bytes=262144 private_source=1 device_event_wait=1
+CUDA layer pinned upload requested=1 selected=1 device=1 nonblocking_stream=1 old_consumer_wait=retained source_done_on=upload_stream compute_wait_copy_done=1 no_new_tensor_buffers=1
+PP pinned inputs active scheduler=0x10026b71e40 backend=CUDA1 slot=0 source=leaf_3 bytes=262144 private_source=1 device_event_wait=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x10026b71e40 source=CUDA0 destination=CUDA1 slot=0 waits=1
+CUDA layer pinned upload requested=1 selected=1 device=2 nonblocking_stream=1 old_consumer_wait=retained source_done_on=upload_stream compute_wait_copy_done=1 no_new_tensor_buffers=1
+PP pinned inputs active scheduler=0x10026b71e40 backend=CUDA2 slot=0 source=leaf_4 bytes=262144 private_source=1 device_event_wait=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x10026b71e40 source=CUDA1 destination=CUDA2 slot=0 waits=2
+CUDA layer pinned upload requested=1 selected=1 device=3 nonblocking_stream=1 old_consumer_wait=retained source_done_on=upload_stream compute_wait_copy_done=1 no_new_tensor_buffers=1
+PP pinned inputs active scheduler=0x10026b71e40 backend=CUDA3 slot=0 source=leaf_5 bytes=262144 private_source=1 device_event_wait=1
+CUDA layer pinned upload requested=1 selected=1 device=4 nonblocking_stream=1 old_consumer_wait=retained source_done_on=upload_stream compute_wait_copy_done=1 no_new_tensor_buffers=1
+PP pinned inputs active scheduler=0x10026b71e40 backend=CUDA4 slot=0 source=leaf_6 bytes=262144 private_source=1 device_event_wait=1
+CUDA layer pinned upload requested=1 selected=1 device=5 nonblocking_stream=1 old_consumer_wait=retained source_done_on=upload_stream compute_wait_copy_done=1 no_new_tensor_buffers=1
+PP pinned inputs active scheduler=0x10026b71e40 backend=CUDA5 slot=0 source=leaf_7 bytes=262144 private_source=1 device_event_wait=1
+PP stable CPU input leafs summary scheduler=0x10026b71e40 groups=168
+PP pinned inputs summary scheduler=0x10026b71e40 copies=168 declines=0 pinned_high_water=14680064 cap=268435456
+CUDA layer pinned upload summary device=0 copies=48 bytes=12582912 drained_before_context_free=1
+CUDA layer pinned upload summary device=1 copies=24 bytes=6291456 drained_before_context_free=1
+CUDA layer pinned upload summary device=2 copies=24 bytes=6291456 drained_before_context_free=1
+CUDA layer pinned upload summary device=3 copies=24 bytes=6291456 drained_before_context_free=1
+CUDA layer pinned upload summary device=4 copies=24 bytes=6291456 drained_before_context_free=1
+CUDA layer pinned upload summary device=5 copies=24 bytes=6291456 drained_before_context_free=1
+COPY_PROBE backends=7 parallel=1 actual=4 expected=4
+COPY_PROBE backends=7 parallel=1 actual=8 expected=8
+COPY_PROBE backends=7 parallel=0 actual=1 expected=1
+COPY_PROBE twoGPU optin declined_to4=1
+RING_QUEUED frame=0 copy=0 seed=0 source_poisoned=1
+RING_QUEUED frame=1 copy=1 seed=1 source_poisoned=1
+RING_QUEUED frame=2 copy=2 seed=0 source_poisoned=1
+RING_QUEUED frame=3 copy=3 seed=0 source_poisoned=1
+RING_QUEUED frame=4 copy=4 seed=1 source_poisoned=1
+RING_QUEUED frame=5 copy=5 seed=0 source_poisoned=1
+RING_QUEUED frame=6 copy=6 seed=0 source_poisoned=1
+RING_QUEUED frame=7 copy=7 seed=1 source_poisoned=1
+RING_QUEUED frame=8 copy=0 seed=0 source_poisoned=1
+RING_QUEUED frame=9 copy=1 seed=0 source_poisoned=1
+RING_QUEUED frame=10 copy=2 seed=1 source_poisoned=1
+RING_QUEUED frame=11 copy=3 seed=0 source_poisoned=1
+RING_QUEUED frame=12 copy=4 seed=0 source_poisoned=1
+RING_QUEUED frame=13 copy=5 seed=1 source_poisoned=1
+RING_QUEUED frame=14 copy=6 seed=0 source_poisoned=1
+RING_QUEUED frame=15 copy=7 seed=0 source_poisoned=1
+RING_QUEUED frame=16 copy=0 seed=1 source_poisoned=1
+RING_QUEUED frame=17 copy=1 seed=0 source_poisoned=1
+RING_QUEUED frame=18 copy=2 seed=0 source_poisoned=1
+RING_QUEUED frame=19 copy=3 seed=1 source_poisoned=1
+RING_QUEUED frame=20 copy=4 seed=0 source_poisoned=1
+RING_QUEUED frame=21 copy=5 seed=0 source_poisoned=1
+RING_QUEUED frame=22 copy=6 seed=1 source_poisoned=1
+RING_QUEUED frame=23 copy=7 seed=0 source_poisoned=1
+DEVICE_COPY_DEPTH_PASS copies=8 frames=24 wrap=3 source_poison=1 exact_cpu_oracle=1 sink_canary=1 default4=1 negative_topologies=1

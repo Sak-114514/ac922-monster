@@ -1,0 +1,111 @@
+{
+  "wave_id": "lastwave-32k-repeat-26e0f78992",
+  "mode": "bank_local_phase_progression",
+  "banks": [
+    {
+      "bank": 0,
+      "target_context": 66048,
+      "draft_context": 66048,
+      "target_ubatch": 1024
+    },
+    {
+      "bank": 1,
+      "target_context": 1024,
+      "draft_context": 1024,
+      "target_ubatch": 256
+    },
+    {
+      "bank": 2,
+      "target_context": 1024,
+      "draft_context": 1024,
+      "target_ubatch": 256
+    },
+    {
+      "bank": 3,
+      "target_context": 1024,
+      "draft_context": 1024,
+      "target_ubatch": 256
+    }
+  ],
+  "refill_count": 0,
+  "flow_count": 1,
+  "flows": [
+    {
+      "id": "corpus32k",
+      "bank": 0,
+      "input_tokens": 32768,
+      "output_tokens": 8,
+      "cached_tokens": 0,
+      "output": " text, const size_t last_token_size",
+      "token_ids": [
+        1414,
+        11,
+        713,
+        1331,
+        516,
+        1483,
+        6256,
+        2291
+      ],
+      "emitted_us": [
+        260973571844,
+        260973650110,
+        260973650122,
+        260973700392,
+        260973744527,
+        260973744538,
+        260973784883,
+        260973784893
+      ],
+      "proposed": 10,
+      "accepted": 3,
+      "prefill_us": 6919176,
+      "target_prefill_us": 6782724,
+      "mtp_prefill_us": 106089,
+      "thermal_wait_us": 0,
+      "prefill_started_us": 260966652667,
+      "prefill_finished_us": 260973571898,
+      "warmup_started_us": 260973571898,
+      "warmup_finished_us": 260973784905,
+      "decode_started_us": 260973784905,
+      "decode_finished_us": 260973784906,
+      "warmup_frames": 4,
+      "active_chain_lanes": 4,
+      "fallback_lanes": 0
+    }
+  ],
+  "wall_seconds": 7.132835,
+  "whole_wave_output_tok_s": 1.1215736800304508,
+  "all_emissions_tok_s": 37.55004717224676,
+  "prefill_input_tokens": 32768,
+  "prefill_wall_seconds": 6.919231,
+  "cached_tokens": 0,
+  "prefill_evaluated_tokens": 32768,
+  "uncached_prefill": true,
+  "prefill_aggregate_wall_tok_s": 4735.786390134973,
+  "logical_prompt_tok_s": 4735.786390134973,
+  "prefill_scope": "initial independent bank prefills",
+  "target_prefill_us_sum": 6782724,
+  "mtp_prefill_us_sum": 106089,
+  "thermal_wait_us_sum": 0,
+  "mtp_depth": 3,
+  "banks_scope": "completed wave before optional idle-context reclamation",
+  "post_wave_free_before_mib": [
+    1919,
+    1487,
+    1579,
+    1731,
+    2641,
+    2696
+  ],
+  "post_wave_reclaimed_banks": 0,
+  "post_wave_reclaim_us": 1213,
+  "post_wave_free_after_mib": [
+    1919,
+    1487,
+    1579,
+    1731,
+    2641,
+    2696
+  ]
+}

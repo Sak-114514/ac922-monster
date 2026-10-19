@@ -1,0 +1,189 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+PP pinned inputs requested=1 selected=1 scheduler=0x10013a90b30 copies=4 cap=268435456 reset_preserves_slots=1 host_slots=8 device_ring_unchanged=1
+SLOT_LAYOUT slot=0 edge=0 copy=0x7ffeccac0480 data=0x10037600200 flags=3 add=0x7fff88c701d0 add_data=0x10037620200 add_flags=16
+SLOT_LAYOUT slot=0 edge=1 copy=0x7ffeccac0a40 data=0x7ffeafa00200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa20200 add_flags=16
+SLOT_LAYOUT slot=0 edge=2 copy=0x7ffeccac1000 data=0x7ffe8fa00200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa20200 add_flags=16
+SLOT_LAYOUT slot=0 edge=3 copy=0x7ffeccac15c0 data=0x7ffe4fa00200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa20200 add_flags=16
+SLOT_LAYOUT slot=0 edge=4 copy=0x7ffeccac1b80 data=0x7ffe0fa00200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa20200 add_flags=16
+SLOT_LAYOUT slot=0 edge=5 copy=0x7ffeccac2140 data=0x7ffdcfa00200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa20200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=1 next_copy=2 root_uid=9 split_uid_fingerprint=8648501329476070560 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=1 edge=0 copy=0x7ffeccac05f0 data=0x10037608200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=1 edge=1 copy=0x7ffeccac0bb0 data=0x7ffeafa08200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=2 copy=0x7ffeccac1170 data=0x7ffe8fa08200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=3 copy=0x7ffeccac1730 data=0x7ffe4fa08200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=4 copy=0x7ffeccac1cf0 data=0x7ffe0fa08200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=5 copy=0x7ffeccac22b0 data=0x7ffdcfa08200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+CUDA layer pinned upload requested=1 selected=1 device=0 nonblocking_stream=1 old_consumer_wait=retained source_done_on=upload_stream compute_wait_copy_done=1 no_new_tensor_buffers=1
+PP pinned inputs active scheduler=0x10013a90b30 backend=CUDA0 slot=0 source=cpu_get_rows_512 bytes=32768 private_source=1 device_event_wait=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x10013a90b30 source=CUDA0 destination=CUDA1 slot=1 waits=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x10013a90b30 source=CUDA1 destination=CUDA2 slot=1 waits=2
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=2 next_copy=3 root_uid=17 split_uid_fingerprint=15761503044658297192 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=2 edge=0 copy=0x7ffeccac0760 data=0x10037610200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=2 edge=1 copy=0x7ffeccac0d20 data=0x7ffeafa10200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=2 copy=0x7ffeccac12e0 data=0x7ffe8fa10200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=3 copy=0x7ffeccac18a0 data=0x7ffe4fa10200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=4 copy=0x7ffeccac1e60 data=0x7ffe0fa10200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=5 copy=0x7ffeccac2420 data=0x7ffdcfa10200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=3 next_copy=0 root_uid=25 split_uid_fingerprint=6474080303698925040 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=3 edge=0 copy=0x7ffeccac08d0 data=0x10037618200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=3 edge=1 copy=0x7ffeccac0e90 data=0x7ffeafa18200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=2 copy=0x7ffeccac1450 data=0x7ffe8fa18200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=3 copy=0x7ffeccac1a10 data=0x7ffe4fa18200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=4 copy=0x7ffeccac1fd0 data=0x7ffe0fa18200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=5 copy=0x7ffeccac2590 data=0x7ffdcfa18200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=0 next_copy=1 root_uid=33 split_uid_fingerprint=17964911503861837560 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=0 edge=0 copy=0x7ffeccac0480 data=0x10037600200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=0 edge=1 copy=0x7ffeccac0a40 data=0x7ffeafa00200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=2 copy=0x7ffeccac1000 data=0x7ffe8fa00200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=3 copy=0x7ffeccac15c0 data=0x7ffe4fa00200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=4 copy=0x7ffeccac1b80 data=0x7ffe0fa00200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=5 copy=0x7ffeccac2140 data=0x7ffdcfa00200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=1 next_copy=2 root_uid=41 split_uid_fingerprint=1089369086102875776 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=1 edge=0 copy=0x7ffeccac05f0 data=0x10037608200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=1 edge=1 copy=0x7ffeccac0bb0 data=0x7ffeafa08200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=2 copy=0x7ffeccac1170 data=0x7ffe8fa08200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=3 copy=0x7ffeccac1730 data=0x7ffe4fa08200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=4 copy=0x7ffeccac1cf0 data=0x7ffe0fa08200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=5 copy=0x7ffeccac22b0 data=0x7ffdcfa08200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=2 next_copy=3 root_uid=49 split_uid_fingerprint=11068782934425972616 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=2 edge=0 copy=0x7ffeccac0760 data=0x10037610200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=2 edge=1 copy=0x7ffeccac0d20 data=0x7ffeafa10200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=2 copy=0x7ffeccac12e0 data=0x7ffe8fa10200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=3 copy=0x7ffeccac18a0 data=0x7ffe4fa10200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=4 copy=0x7ffeccac1e60 data=0x7ffe0fa10200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=5 copy=0x7ffeccac2420 data=0x7ffdcfa10200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=3 next_copy=0 root_uid=57 split_uid_fingerprint=16920552796748883664 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=3 edge=0 copy=0x7ffeccac08d0 data=0x10037618200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=3 edge=1 copy=0x7ffeccac0e90 data=0x7ffeafa18200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=2 copy=0x7ffeccac1450 data=0x7ffe8fa18200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=3 copy=0x7ffeccac1a10 data=0x7ffe4fa18200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=4 copy=0x7ffeccac1fd0 data=0x7ffe0fa18200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=5 copy=0x7ffeccac2590 data=0x7ffdcfa18200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=0 next_copy=1 root_uid=65 split_uid_fingerprint=10872028565315826968 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=0 edge=0 copy=0x7ffeccac0480 data=0x10037600200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=0 edge=1 copy=0x7ffeccac0a40 data=0x7ffeafa00200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=2 copy=0x7ffeccac1000 data=0x7ffe8fa00200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=3 copy=0x7ffeccac15c0 data=0x7ffe4fa00200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=4 copy=0x7ffeccac1b80 data=0x7ffe0fa00200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=5 copy=0x7ffeccac2140 data=0x7ffdcfa00200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=1 next_copy=2 root_uid=73 split_uid_fingerprint=17515001150527421664 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=1 edge=0 copy=0x7ffeccac05f0 data=0x10037608200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=1 edge=1 copy=0x7ffeccac0bb0 data=0x7ffeafa08200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=2 copy=0x7ffeccac1170 data=0x7ffe8fa08200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=3 copy=0x7ffeccac1730 data=0x7ffe4fa08200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=4 copy=0x7ffeccac1cf0 data=0x7ffe0fa08200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=5 copy=0x7ffeccac22b0 data=0x7ffdcfa08200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=2 next_copy=3 root_uid=81 split_uid_fingerprint=18399383833007628200 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=2 edge=0 copy=0x7ffeccac0760 data=0x10037610200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=2 edge=1 copy=0x7ffeccac0d20 data=0x7ffeafa10200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=2 copy=0x7ffeccac12e0 data=0x7ffe8fa10200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=3 copy=0x7ffeccac18a0 data=0x7ffe4fa10200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=4 copy=0x7ffeccac1e60 data=0x7ffe0fa10200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=5 copy=0x7ffeccac2420 data=0x7ffdcfa10200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=3 next_copy=0 root_uid=89 split_uid_fingerprint=15343422806008040112 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=3 edge=0 copy=0x7ffeccac08d0 data=0x10037618200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=3 edge=1 copy=0x7ffeccac0e90 data=0x7ffeafa18200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=2 copy=0x7ffeccac1450 data=0x7ffe8fa18200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=3 copy=0x7ffeccac1a10 data=0x7ffe4fa18200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=4 copy=0x7ffeccac1fd0 data=0x7ffe0fa18200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=5 copy=0x7ffeccac2590 data=0x7ffdcfa18200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=0 next_copy=1 root_uid=97 split_uid_fingerprint=8952965172412522936 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=0 edge=0 copy=0x7ffeccac0480 data=0x10037600200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=0 edge=1 copy=0x7ffeccac0a40 data=0x7ffeafa00200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=2 copy=0x7ffeccac1000 data=0x7ffe8fa00200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=3 copy=0x7ffeccac15c0 data=0x7ffe4fa00200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=4 copy=0x7ffeccac1b80 data=0x7ffe0fa00200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=5 copy=0x7ffeccac2140 data=0x7ffdcfa00200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=1 next_copy=2 root_uid=105 split_uid_fingerprint=4417989410554448832 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=1 edge=0 copy=0x7ffeccac05f0 data=0x10037608200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=1 edge=1 copy=0x7ffeccac0bb0 data=0x7ffeafa08200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=2 copy=0x7ffeccac1170 data=0x7ffe8fa08200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=3 copy=0x7ffeccac1730 data=0x7ffe4fa08200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=4 copy=0x7ffeccac1cf0 data=0x7ffe0fa08200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=5 copy=0x7ffeccac22b0 data=0x7ffdcfa08200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=2 next_copy=3 root_uid=113 split_uid_fingerprint=1174135715938628552 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=2 edge=0 copy=0x7ffeccac0760 data=0x10037610200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=2 edge=1 copy=0x7ffeccac0d20 data=0x7ffeafa10200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=2 copy=0x7ffeccac12e0 data=0x7ffe8fa10200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=3 copy=0x7ffeccac18a0 data=0x7ffe4fa10200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=4 copy=0x7ffeccac1e60 data=0x7ffe0fa10200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=5 copy=0x7ffeccac2420 data=0x7ffdcfa10200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=3 next_copy=0 root_uid=121 split_uid_fingerprint=13518707641711131280 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=3 edge=0 copy=0x7ffeccac08d0 data=0x10037618200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=3 edge=1 copy=0x7ffeccac0e90 data=0x7ffeafa18200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=2 copy=0x7ffeccac1450 data=0x7ffe8fa18200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=3 copy=0x7ffeccac1a10 data=0x7ffe4fa18200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=4 copy=0x7ffeccac1fd0 data=0x7ffe0fa18200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=5 copy=0x7ffeccac2590 data=0x7ffdcfa18200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=0 next_copy=1 root_uid=129 split_uid_fingerprint=8502261482620902360 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=0 edge=0 copy=0x7ffeccac0480 data=0x10037600200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=0 edge=1 copy=0x7ffeccac0a40 data=0x7ffeafa00200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=2 copy=0x7ffeccac1000 data=0x7ffe8fa00200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=3 copy=0x7ffeccac15c0 data=0x7ffe4fa00200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=4 copy=0x7ffeccac1b80 data=0x7ffe0fa00200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=5 copy=0x7ffeccac2140 data=0x7ffdcfa00200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=1 next_copy=2 root_uid=137 split_uid_fingerprint=2135985515173314848 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=1 edge=0 copy=0x7ffeccac05f0 data=0x10037608200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=1 edge=1 copy=0x7ffeccac0bb0 data=0x7ffeafa08200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=2 copy=0x7ffeccac1170 data=0x7ffe8fa08200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=3 copy=0x7ffeccac1730 data=0x7ffe4fa08200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=4 copy=0x7ffeccac1cf0 data=0x7ffe0fa08200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=5 copy=0x7ffeccac22b0 data=0x7ffdcfa08200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=2 next_copy=3 root_uid=145 split_uid_fingerprint=16719849231075036904 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=2 edge=0 copy=0x7ffeccac0760 data=0x10037610200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=2 edge=1 copy=0x7ffeccac0d20 data=0x7ffeafa10200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=2 copy=0x7ffeccac12e0 data=0x7ffe8fa10200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=3 copy=0x7ffeccac18a0 data=0x7ffe4fa10200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=4 copy=0x7ffeccac1e60 data=0x7ffe0fa10200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=5 copy=0x7ffeccac2420 data=0x7ffdcfa10200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=3 next_copy=0 root_uid=153 split_uid_fingerprint=18263865203482152560 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=3 edge=0 copy=0x7ffeccac08d0 data=0x10037618200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=3 edge=1 copy=0x7ffeccac0e90 data=0x7ffeafa18200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=2 copy=0x7ffeccac1450 data=0x7ffe8fa18200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=3 copy=0x7ffeccac1a10 data=0x7ffe4fa18200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=4 copy=0x7ffeccac1fd0 data=0x7ffe0fa18200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=5 copy=0x7ffeccac2590 data=0x7ffdcfa18200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=0 next_copy=1 root_uid=161 split_uid_fingerprint=11452677164535903864 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=0 edge=0 copy=0x7ffeccac0480 data=0x10037600200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=0 edge=1 copy=0x7ffeccac0a40 data=0x7ffeafa00200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=2 copy=0x7ffeccac1000 data=0x7ffe8fa00200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=3 copy=0x7ffeccac15c0 data=0x7ffe4fa00200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=4 copy=0x7ffeccac1b80 data=0x7ffe0fa00200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=5 copy=0x7ffeccac2140 data=0x7ffdcfa00200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=1 next_copy=2 root_uid=169 split_uid_fingerprint=2047715272519615488 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=1 edge=0 copy=0x7ffeccac05f0 data=0x10037608200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=1 edge=1 copy=0x7ffeccac0bb0 data=0x7ffeafa08200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=2 copy=0x7ffeccac1170 data=0x7ffe8fa08200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=3 copy=0x7ffeccac1730 data=0x7ffe4fa08200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=4 copy=0x7ffeccac1cf0 data=0x7ffe0fa08200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=1 edge=5 copy=0x7ffeccac22b0 data=0x7ffdcfa08200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=2 next_copy=3 root_uid=177 split_uid_fingerprint=4166940530712936200 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=2 edge=0 copy=0x7ffeccac0760 data=0x10037610200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=2 edge=1 copy=0x7ffeccac0d20 data=0x7ffeafa10200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=2 copy=0x7ffeccac12e0 data=0x7ffe8fa10200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=3 copy=0x7ffeccac18a0 data=0x7ffe4fa10200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=4 copy=0x7ffeccac1e60 data=0x7ffe0fa10200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=2 edge=5 copy=0x7ffeccac2420 data=0x7ffdcfa10200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=3 next_copy=0 root_uid=185 split_uid_fingerprint=11644509745073399632 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=3 edge=0 copy=0x7ffeccac08d0 data=0x10037618200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=3 edge=1 copy=0x7ffeccac0e90 data=0x7ffeafa18200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=2 copy=0x7ffeccac1450 data=0x7ffe8fa18200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=3 copy=0x7ffeccac1a10 data=0x7ffe4fa18200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=4 copy=0x7ffeccac1fd0 data=0x7ffe0fa18200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=3 edge=5 copy=0x7ffeccac2590 data=0x7ffdcfa18200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+layer-plan-rebind selected=1 scheduler=0x10013a90b30 root_edges=6 graph_copy_nodes=6 helper_fields=0 helper_fields_verified=0 helper_views=0 helper_none_views=0 helper_none_view_sites=0 helper_none_view_sites_verified=0 helper_views_reinitialized=0 helper_none_views_reinitialized=0 cur_copy=0 next_copy=1 root_uid=193 split_uid_fingerprint=16187944884758824344 physical_copy_slots=4 alloc_retry=existing
+SLOT_LAYOUT slot=0 edge=0 copy=0x7ffeccac0480 data=0x10037600200 flags=3 add=0x7fff88c701d0 add_data=0x10037600200 add_flags=16
+SLOT_LAYOUT slot=0 edge=1 copy=0x7ffeccac0a40 data=0x7ffeafa00200 flags=3 add=0x7fff88c70340 add_data=0x7ffeafa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=2 copy=0x7ffeccac1000 data=0x7ffe8fa00200 flags=3 add=0x7fff88c704b0 add_data=0x7ffe8fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=3 copy=0x7ffeccac15c0 data=0x7ffe4fa00200 flags=3 add=0x7fff88c70620 add_data=0x7ffe4fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=4 copy=0x7ffeccac1b80 data=0x7ffe0fa00200 flags=3 add=0x7fff88c70790 add_data=0x7ffe0fa00200 add_flags=16
+SLOT_LAYOUT slot=0 edge=5 copy=0x7ffeccac2140 data=0x7ffdcfa00200 flags=3 add=0x7fff88c70900 add_data=0x7ffdcfa00200 add_flags=18
+PP pinned inputs summary scheduler=0x10013a90b30 copies=24 declines=0 pinned_high_water=262144 cap=268435456
+CUDA layer pinned upload summary device=0 copies=24 bytes=786432 drained_before_context_free=1
+FIXTURE_RESULT status=FAIL reason=slot 0 edge 0 mismatch at element 0: actual=-19.000000 expected=-18.000000

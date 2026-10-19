@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "qualified_unix": 1792347838.3391857,
+  "worker_sha256": "904e1a22d6255c12d3216f0977d4a86b4133b26c1785cf248f2fd694cc2c8b2e",
+  "api_tests": 30,
+  "cuda_tus_rebuilt": 0,
+  "engine_tus_rebuilt": 0,
+  "mtp_depth": 3,
+  "quality": "evidence/semantic-review.json",
+  "six_device_first_capture": "onecat-fixture-receipt.json",
+  "telemetry": {
+    "status": "RECORDED",
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/single-cache-20261019/run/gpu-samples.jsonl",
+    "samples": 1978,
+    "start_unix": 1792347373.129445,
+    "end_unix": 1792347772.173691,
+    "minimum_free_mib_by_gpu": [
+      1129.375,
+      699.375,
+      887.375,
+      1039.375,
+      1950.125,
+      1683.375
+    ],
+    "maximum_temperature_c_by_gpu": [
+      60,
+      60,
+      60,
+      58,
+      59,
+      58
+    ]
+  },
+  "evidence_sha256": {
+    "evidence/affinity-result.json": "81e10164f4eeb7a1547a7c44c7743ccf731ba3f783b3db1f958adc138c76a072",
+    "evidence/build-report.json": "c66f429b7f2e7fa5ee38fcdef6bdb3b327d5375232867e3dec621cc90de53b0a",
+    "evidence/c3-postcleanup-affinity-mock.log": "faedcdcadf6da728b14d21df92d927c3b5ff8d9697004832e38865be958e145a",
+    "evidence/c3-postcleanup-api.log": "da228c8a34b15cffe4feb9f6a950e72bffb4a5536c6a4ef95e9c21daee609b28",
+    "evidence/c3-postcleanup-runner.log": "a03814009c996f5f4de20120feaa5d1dc860e22aeb06b64fe4c81c97652279a0",
+    "evidence/campaign-status.json": "5c3c1c2d67965d229e0c1309242a6f456642ba0e9cef165cf9f2d172cb9db64a",
+    "evidence/cancel-cached-single.json": "87f86566ab225190145fb4880204fa45d7320c2aacd63d2380e52b4f18636c86",
+    "evidence/four512-flow-record.json": "6a0c1d994c30bcc16f8c4b6d99d2364a188f87b55c7c93b32863190c99410b4a",
+    "evidence/http-result.json": "fbe79589016d32b5565e3609475019517c16a370e2f143fc5408548f2ed8aefa",
+    "evidence/measured-summary.json": "1fd74b8b5239fa9172137eaa6269d7114d2af728d29a89eeba63b4b7c9fcf368",
+    "evidence/native-semantic-gate.json": "52d3f737b8157cfd6265f7539d2f7b12bd327aeea1203b7298b3f8624104e80e",
+    "evidence/raw32k-recheck-result.json": "7ebadecddd5288d0c5e740957ec2563879d78d875ecbe81f1227ce3edc0d3424",
+    "evidence/semantic-review.json": "4b00df6ff200f551b16fdd7ef3a781af7c25ced9eb585b99094b22ba87683660",
+    "evidence/single-cache-result.json": "8bc01da4c0e407f3fa672df742cabf0cde1b912aeb3aeebefc73c8342f121b4d"
+  },
+  "limits": [
+    "raw300/6000notmet",
+    "cache latency improvement is not raw compute throughput",
+    "full524288pool proof inherited from unchanged L2 allocator; no full-pool input rerun",
+    "fixedD3, samequant/experts/runtime; no hardware changes"
+  ],
+  "architect_review": "APPROVE: independently read actual C3 IPC/HTTP/cancel, exact L2 full-text/token-ID comparison and new cached essay. Pending producer labels reconciled with explicit preserved status. No raw speed gain claim."
+}

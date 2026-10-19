@@ -1,0 +1,745 @@
+{
+  "schema": "ac922-lastwave-http-acceptance-v1",
+  "started_utc": "2026-10-18T15:50:38.575Z",
+  "status": "PASS",
+  "endpoint": "http://127.0.0.1:8002/v1",
+  "model": "flash-next-iq3-xxs",
+  "phases": {
+    "native_canaries": {
+      "status": "PASS",
+      "requests": [
+        {
+          "label": "capital-en",
+          "id": "chatcmpl-a6a15ed1-7cd7-46b7-bdf3-02dc41f046cd",
+          "http_status": 200,
+          "arrival_s": 0.013146345008863136,
+          "response_received_s": 0.40993722100392915,
+          "completed_s": 0.40996678901137784,
+          "wall_s": 0.3968211410101503,
+          "text": "Paris",
+          "text_sha256": "5dd272b4f316b776a7b8e3d0894b37e1e42be3d5d3b204b8a5836cc50597a6b1",
+          "usage": {
+            "prompt_tokens": 32,
+            "completion_tokens": 1,
+            "total_tokens": 33,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "prompt_sha256": "678afb9d5078d3ef479ad3e40b6e01e132b65aac62879b62ac421f37a4c5de53",
+          "cache_hit_tokens": 0,
+          "semantic": {
+            "pass": true,
+            "verdict": "exact_text",
+            "expected": "Paris"
+          }
+        },
+        {
+          "label": "arithmetic-zh",
+          "id": "chatcmpl-4ba44378-a56d-44a0-9f0b-7e615bd14084",
+          "http_status": 200,
+          "arrival_s": 0.013232037017587572,
+          "response_received_s": 0.5454387220088392,
+          "completed_s": 0.5454652030020952,
+          "wall_s": 0.532233776000794,
+          "text": "9805",
+          "text_sha256": "4c9dc211c8fdd6b61a4ea8a0c3b23cde44be3251dce3924434cebefe31622636",
+          "usage": {
+            "prompt_tokens": 35,
+            "completion_tokens": 4,
+            "total_tokens": 39,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "prompt_sha256": "66a63b3484247e7484205590e2d97f029e4cca6d04dad810a4bf875ea5ab3cb9",
+          "cache_hit_tokens": 0,
+          "semantic": {
+            "pass": true,
+            "verdict": "exact_text",
+            "expected": "9805"
+          }
+        },
+        {
+          "label": "logic-en",
+          "id": "chatcmpl-9b9f257d-4774-484a-b6bd-b366dbc12bf9",
+          "http_status": 200,
+          "arrival_s": 0.013951749016996473,
+          "response_received_s": 0.667272040998796,
+          "completed_s": 0.6672980959992856,
+          "wall_s": 0.6533468450070359,
+          "text": "NO",
+          "text_sha256": "23794d91c53ae875c8e247d72561e35d9d06ee07c70c9e0dbcc977a6d161504a",
+          "usage": {
+            "prompt_tokens": 41,
+            "completion_tokens": 1,
+            "total_tokens": 42,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "prompt_sha256": "58744d376b8998e4096757e147962eeec82dddab03c495e0fbf84e000fc2591d",
+          "cache_hit_tokens": 0,
+          "semantic": {
+            "pass": true,
+            "verdict": "exact_text",
+            "expected": "NO"
+          }
+        },
+        {
+          "label": "strict-json-zh",
+          "id": "chatcmpl-13e93a8d-8764-47c7-b7bb-415024350572",
+          "http_status": 200,
+          "arrival_s": 0.01464488499914296,
+          "response_received_s": 0.8562749150150921,
+          "completed_s": 0.8563203060184605,
+          "wall_s": 0.8416759080137126,
+          "text": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}",
+          "text_sha256": "247454caeed8233ba94832e7f9ec0cc302d6c35122f237e2cb04967b93621173",
+          "usage": {
+            "prompt_tokens": 47,
+            "completion_tokens": 15,
+            "total_tokens": 62,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "prompt_sha256": "67df94ecb8366efe4bde382cda2f805ec358be2a81d4c21717131bfe18beff22",
+          "cache_hit_tokens": 0,
+          "semantic": {
+            "pass": true,
+            "verdict": "exact_json",
+            "expected": {
+              "ok": true,
+              "count": 3,
+              "colors": [
+                "红",
+                "蓝"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "asymmetric_refill": {
+      "status": "PASS",
+      "interpretation": "HTTP 200 is queued/accepted only; first nonempty SSE content before the original 512-token request completes proves refill execution.",
+      "long_request": {
+        "label": "refill-long",
+        "arrival_s": 0.8573446680093184,
+        "accepted_s": 0.8601159760146402,
+        "first_content_s": 1.3992743040143978,
+        "completed_s": 8.934330081014195,
+        "finish_reason": "length",
+        "max_tokens": 512,
+        "http_status": 200,
+        "prompt_sha256": "b5313a3e39d0312e2b02bd864ed92cc3afb694ad41a0c08afd2e7ba9f8a6a9e7",
+        "prompt_characters": 241,
+        "text": "BEGIN_REFILL_LONG\n\nModern computer architecture relies on a hierarchical memory system to bridge the significant speed gap between the processor’s execution units and the main system memory. At the heart of this hierarchy lies the CPU cache, a small, high-speed storage area that holds copies of frequently accessed data to minimize latency. To understand how these caches function and how multiple processors maintain a consistent view of memory, one must examine the structure of cache levels, the granularity of cache lines, and the protocols governing memory coherency.\n\nThe cache hierarchy is typically organized into three distinct levels: L1, L2, and L3. The L1 cache is the smallest and fastest, located directly on the processor core. It is usually split into two separate caches: the L1 Instruction Cache (L1i), which stores machine code instructions, and the L1 Data Cache (L1d), which stores data operands. Because the L1 cache is physically close to the execution units, it offers the lowest latency, often measured in single-digit clock cycles. However, its capacity is limited, typically ranging from 32KB to 64KB per core.\n\nThe L2 cache serves as a larger, slightly slower buffer between the L1 cache and the main memory. In modern multi-core processors, the L2 cache is often private to each core, meaning each core has its own dedicated L2 cache. This allows for higher bandwidth and lower contention compared to a shared L2. The L2 cache is larger than L1, often ranging from 256KB to 1MB per core, and has a higher latency, typically around 10-20 cycles.\n\nThe L3 cache is the largest level in the hierarchy and is usually shared among all cores in a processor package. It acts as a last-level cache (LLC) before data must be fetched from main memory (DRAM). The L3 cache can range from several megabytes to tens of megabytes, depending on the processor design. While it offers the highest capacity, it also has the highest latency among the cache levels, often exceeding 40 cycles. When a core requests data, it first checks the L1 cache. If the data is not found (a cache miss), it checks the L2 cache. If still not found, it checks the L3 cache. Only if the data is absent from all cache levels does the processor access main memory, which can take hundreds of cycles.\n\nData in caches is not stored byte-by-byte but in fixed",
+        "semantic": {
+          "pass": true,
+          "checks": {
+            "marker": true,
+            "cache_topic": true,
+            "memory_topic": true,
+            "readable_length": true
+          }
+        }
+      },
+      "requests": {
+        "refill-short-paris": {
+          "label": "refill-short-paris",
+          "arrival_s": 0.8577888460131362,
+          "accepted_s": 0.8609185150125995,
+          "first_content_s": 1.1545006000087596,
+          "completed_s": 1.2282237210019957,
+          "finish_reason": "stop",
+          "max_tokens": 64,
+          "http_status": 200,
+          "prompt_sha256": "678afb9d5078d3ef479ad3e40b6e01e132b65aac62879b62ac421f37a4c5de53",
+          "prompt_characters": 105,
+          "text": "Paris",
+          "semantic": {
+            "pass": true,
+            "expected": "Paris",
+            "actual": "Paris"
+          }
+        },
+        "refill-short-math": {
+          "label": "refill-short-math",
+          "arrival_s": 0.8585122800141107,
+          "accepted_s": 0.8628283700090833,
+          "first_content_s": 1.275035470025614,
+          "completed_s": 1.4506265119998716,
+          "finish_reason": "stop",
+          "max_tokens": 64,
+          "http_status": 200,
+          "prompt_sha256": "66a63b3484247e7484205590e2d97f029e4cca6d04dad810a4bf875ea5ab3cb9",
+          "prompt_characters": 30,
+          "text": "9805",
+          "semantic": {
+            "pass": true,
+            "expected": "9805",
+            "actual": "9805"
+          }
+        },
+        "refill-short-logic": {
+          "label": "refill-short-logic",
+          "arrival_s": 0.8590212220151443,
+          "accepted_s": 0.8629096420190763,
+          "first_content_s": 1.3179372120066546,
+          "completed_s": 1.5157997280184645,
+          "finish_reason": "stop",
+          "max_tokens": 64,
+          "http_status": 200,
+          "prompt_sha256": "58744d376b8998e4096757e147962eeec82dddab03c495e0fbf84e000fc2591d",
+          "prompt_characters": 114,
+          "text": "NO",
+          "semantic": {
+            "pass": true,
+            "expected": "NO",
+            "actual": "NO"
+          }
+        },
+        "refill-followup-rome": {
+          "label": "refill-followup-rome",
+          "arrival_s": 1.2286002170003485,
+          "accepted_s": 1.2308784460183233,
+          "first_content_s": 1.4633156589989085,
+          "completed_s": 1.7966891250107437,
+          "finish_reason": "stop",
+          "max_tokens": 64,
+          "http_status": 200,
+          "prompt_sha256": "6184edac1dc52283dce2f1c4a7cae5652ef0abf011a0eda09bb0c445d079f0ba",
+          "prompt_characters": 89,
+          "text": "Rome",
+          "semantic": {
+            "pass": true,
+            "expected": "Rome",
+            "actual": "Rome"
+          }
+        },
+        "refill-followup-multiply": {
+          "label": "refill-followup-multiply",
+          "arrival_s": 1.2289776370162144,
+          "accepted_s": 1.2316251780139282,
+          "first_content_s": 1.6515586300229188,
+          "completed_s": 1.874454818025697,
+          "finish_reason": "stop",
+          "max_tokens": 64,
+          "http_status": 200,
+          "prompt_sha256": "6825a6280a7fe95e3d5e8afea17bdf3c7d26ffacdbea6312623d158ef0776a0b",
+          "prompt_characters": 59,
+          "text": "342",
+          "semantic": {
+            "pass": true,
+            "expected": "342",
+            "actual": "342"
+          }
+        },
+        "refill-long": {
+          "label": "refill-long",
+          "arrival_s": 0.8573446680093184,
+          "accepted_s": 0.8601159760146402,
+          "first_content_s": 1.3992743040143978,
+          "completed_s": 8.934330081014195,
+          "finish_reason": "length",
+          "max_tokens": 512,
+          "http_status": 200,
+          "prompt_sha256": "b5313a3e39d0312e2b02bd864ed92cc3afb694ad41a0c08afd2e7ba9f8a6a9e7",
+          "prompt_characters": 241,
+          "text": "BEGIN_REFILL_LONG\n\nModern computer architecture relies on a hierarchical memory system to bridge the significant speed gap between the processor’s execution units and the main system memory. At the heart of this hierarchy lies the CPU cache, a small, high-speed storage area that holds copies of frequently accessed data to minimize latency. To understand how these caches function and how multiple processors maintain a consistent view of memory, one must examine the structure of cache levels, the granularity of cache lines, and the protocols governing memory coherency.\n\nThe cache hierarchy is typically organized into three distinct levels: L1, L2, and L3. The L1 cache is the smallest and fastest, located directly on the processor core. It is usually split into two separate caches: the L1 Instruction Cache (L1i), which stores machine code instructions, and the L1 Data Cache (L1d), which stores data operands. Because the L1 cache is physically close to the execution units, it offers the lowest latency, often measured in single-digit clock cycles. However, its capacity is limited, typically ranging from 32KB to 64KB per core.\n\nThe L2 cache serves as a larger, slightly slower buffer between the L1 cache and the main memory. In modern multi-core processors, the L2 cache is often private to each core, meaning each core has its own dedicated L2 cache. This allows for higher bandwidth and lower contention compared to a shared L2. The L2 cache is larger than L1, often ranging from 256KB to 1MB per core, and has a higher latency, typically around 10-20 cycles.\n\nThe L3 cache is the largest level in the hierarchy and is usually shared among all cores in a processor package. It acts as a last-level cache (LLC) before data must be fetched from main memory (DRAM). The L3 cache can range from several megabytes to tens of megabytes, depending on the processor design. While it offers the highest capacity, it also has the highest latency among the cache levels, often exceeding 40 cycles. When a core requests data, it first checks the L1 cache. If the data is not found (a cache miss), it checks the L2 cache. If still not found, it checks the L3 cache. Only if the data is absent from all cache levels does the processor access main memory, which can take hundreds of cycles.\n\nData in caches is not stored byte-by-byte but in fixed",
+          "semantic": {
+            "pass": true,
+            "checks": {
+              "marker": true,
+              "cache_topic": true,
+              "memory_topic": true,
+              "readable_length": true
+            }
+          }
+        }
+      },
+      "followup_gates": {
+        "refill-followup-rome": {
+          "http_accepted_before_long_done": true,
+          "first_content_before_long_done": true,
+          "semantic_pass": true
+        },
+        "refill-followup-multiply": {
+          "http_accepted_before_long_done": true,
+          "first_content_before_long_done": true,
+          "semantic_pass": true
+        }
+      },
+      "followups_dispatched_after_short_completion": true
+    },
+    "sse_cancel_reuse": {
+      "status": "PASS",
+      "cancel_request": {
+        "http_status": 200,
+        "arrival_s": 8.936250477010617,
+        "accepted_s": 8.93826251901919,
+        "first_content_s": 9.274301091005327,
+        "cancel_requested_s": 9.274302755016834,
+        "completed_s": 9.274770446005277,
+        "cancelled_after_first_content": true
+      },
+      "cancel_sample_text": "The",
+      "reuse_request": {
+        "label": "post-cancel-paris",
+        "id": "chatcmpl-691bb652-9fc6-4468-b2c5-56e38e2abd2c",
+        "http_status": 200,
+        "arrival_s": 9.425029137026286,
+        "response_received_s": 9.72573275200557,
+        "completed_s": 9.725760218017967,
+        "wall_s": 0.3007314949936699,
+        "text": "Paris",
+        "text_sha256": "5dd272b4f316b776a7b8e3d0894b37e1e42be3d5d3b204b8a5836cc50597a6b1",
+        "usage": {
+          "prompt_tokens": 25,
+          "completion_tokens": 1,
+          "total_tokens": 26,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop",
+        "prompt_sha256": "3db1e37c50a003e57b23aa963b4d40afef4cc7f6425705ee4e002f2a5708d863",
+        "prompt_characters": 61,
+        "cache_hit_tokens": 0
+      },
+      "cancel_to_reuse_wall_s": 0.7895114420098253
+    },
+    "exact_prefix_cache": {
+      "status": "PASS",
+      "rules": "Native chat requests test shared-prefix A/B/A (NOVA=3179, ORION=6842, NOVA=3179) with suffix-only edits, exact answers, and natural EOG; an early common-body edit introduces NOVA=5301 and must not reuse the old prefix. Explicit cached-token evidence is required. Expected cold=0, B/A hits>0, edited-body=0.",
+      "requests": [
+        {
+          "label": "prefix-cold-A",
+          "id": "chatcmpl-14d7ab1d-6f7b-4d5c-b3bc-a64c0580bc4d",
+          "http_status": 200,
+          "arrival_s": 9.727194218023214,
+          "response_received_s": 16.88499063299969,
+          "completed_s": 16.885021300025983,
+          "wall_s": 7.15782750598737,
+          "text": "3179",
+          "text_sha256": "9d73bfb92adaebaa346e5c12db11ce0bf0dc5ae059677dcec5198d7302d32493",
+          "usage": {
+            "prompt_tokens": 10811,
+            "completion_tokens": 4,
+            "total_tokens": 10815,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "prompt_sha256": "cf594a941b1485449a719e321e09d799a2ddedd2b54c3b680c339f17f947c3e8",
+          "prompt_characters": 32957,
+          "cache_hit_tokens": 0,
+          "cache_evidence_source": "response",
+          "actual_prompt_tokens": 10811,
+          "expected": "3179",
+          "natural_eog": true,
+          "semantic_pass": true
+        },
+        {
+          "label": "prefix-hit-B",
+          "id": "chatcmpl-594cafd4-c63f-4c01-a21b-c0f80bfbb708",
+          "http_status": 200,
+          "arrival_s": 16.885224934027065,
+          "response_received_s": 18.734314976027235,
+          "completed_s": 18.734337450005114,
+          "wall_s": 1.8491128509922419,
+          "text": "6842",
+          "text_sha256": "06ca9051ba43e00d2b48400b88747c21329827ae81da1bd8639ab72cf43f7260",
+          "usage": {
+            "prompt_tokens": 10811,
+            "completion_tokens": 4,
+            "total_tokens": 10815,
+            "prompt_tokens_details": {
+              "cached_tokens": 9216
+            }
+          },
+          "finish_reason": "stop",
+          "prompt_sha256": "7d2c1c6c6ce1073a30a8b06c4000d65e305a6992d668aeac42bf6bb4a02e7b8b",
+          "prompt_characters": 32958,
+          "cache_hit_tokens": 9216,
+          "cache_evidence_source": "response",
+          "actual_prompt_tokens": 10811,
+          "expected": "6842",
+          "natural_eog": true,
+          "semantic_pass": true
+        },
+        {
+          "label": "prefix-hit-A",
+          "id": "chatcmpl-f641f9d8-5002-40a5-b266-38e8ba2c81fe",
+          "http_status": 200,
+          "arrival_s": 18.73453589802375,
+          "response_received_s": 20.584928633004893,
+          "completed_s": 20.584954390011262,
+          "wall_s": 1.8504188419901766,
+          "text": "3179",
+          "text_sha256": "9d73bfb92adaebaa346e5c12db11ce0bf0dc5ae059677dcec5198d7302d32493",
+          "usage": {
+            "prompt_tokens": 10811,
+            "completion_tokens": 4,
+            "total_tokens": 10815,
+            "prompt_tokens_details": {
+              "cached_tokens": 9216
+            }
+          },
+          "finish_reason": "stop",
+          "prompt_sha256": "cf594a941b1485449a719e321e09d799a2ddedd2b54c3b680c339f17f947c3e8",
+          "prompt_characters": 32957,
+          "cache_hit_tokens": 9216,
+          "cache_evidence_source": "response",
+          "actual_prompt_tokens": 10811,
+          "expected": "3179",
+          "natural_eog": true,
+          "semantic_pass": true
+        },
+        {
+          "label": "prefix-edited-new-key",
+          "id": "chatcmpl-5491012a-f830-4538-855c-96c8d6357d50",
+          "http_status": 200,
+          "arrival_s": 20.585143292002613,
+          "response_received_s": 27.936005837022094,
+          "completed_s": 27.936031831020955,
+          "wall_s": 7.350888902001316,
+          "text": "5301",
+          "text_sha256": "9401e925f19506afce3d53cfeca7c8f63b716310047d2e6b52bde0f72c9812fc",
+          "usage": {
+            "prompt_tokens": 10811,
+            "completion_tokens": 4,
+            "total_tokens": 10815,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "prompt_sha256": "bc9496693119f22c2815fcf7843b0a0bace64317a880967bb6967659ecd736c2",
+          "prompt_characters": 32957,
+          "cache_hit_tokens": 0,
+          "cache_evidence_source": "response",
+          "actual_prompt_tokens": 10811,
+          "expected": "5301",
+          "natural_eog": true,
+          "semantic_pass": true
+        }
+      ]
+    },
+    "http_real_corpus_prefill": {
+      "status": "PASS",
+      "note": "These HTTP prompt lengths are approximate; actual API usage is authoritative. Do not call them exact 32K/64K tests.",
+      "requests": [
+        {
+          "label": "http-real-corpus-approx-32768",
+          "id": "chatcmpl-9b193bf3-9614-4ed5-9398-8445418e867b",
+          "http_status": 200,
+          "arrival_s": 27.938541013019858,
+          "response_received_s": 36.45681570502347,
+          "completed_s": 36.45684246602468,
+          "wall_s": 8.518301859003259,
+          "text": "EPSILON72941",
+          "text_sha256": "616408d17f40e9af051396ea057818d7c7036528bb4f9e8469a071fdfc7fc210",
+          "usage": {
+            "prompt_tokens": 33101,
+            "completion_tokens": 7,
+            "total_tokens": 33108,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "prompt_sha256": "73383f2eed3873bbcbdd17c1cbf2ac2d6f127254243c43f0e7a0b5dc1645b1d7",
+          "prompt_characters": 108461,
+          "cache_hit_tokens": 0,
+          "requested_class_token_target": 32768,
+          "input_length_status": "APPROXIMATE_CHAR_SCALED_REAL_CORPUS",
+          "corpus_characters_used": 108239,
+          "actual_prompt_tokens_from_api": 33101,
+          "ttft_s": null,
+          "ttft_note": "Non-streaming API does not expose first-content time; exact token timing is performed by the parent's in-band run.",
+          "semantic_pass": true
+        },
+        {
+          "label": "http-real-corpus-approx-65536",
+          "id": "chatcmpl-ef7b5bc4-1547-4e9c-8f70-74ba586189f6",
+          "http_status": 200,
+          "arrival_s": 36.45806098400499,
+          "response_received_s": 82.9536313280114,
+          "completed_s": 82.95366510300664,
+          "wall_s": 46.49560450101853,
+          "text": "EPSILON72941",
+          "text_sha256": "616408d17f40e9af051396ea057818d7c7036528bb4f9e8469a071fdfc7fc210",
+          "usage": {
+            "prompt_tokens": 60551,
+            "completion_tokens": 7,
+            "total_tokens": 60558,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "prompt_sha256": "8ee8151cdc2e91127000e8212e3265c04b153b27ad01bba1ab2a69d0d2b2ef6b",
+          "prompt_characters": 216700,
+          "cache_hit_tokens": 0,
+          "requested_class_token_target": 65536,
+          "input_length_status": "APPROXIMATE_CHAR_SCALED_REAL_CORPUS",
+          "corpus_characters_used": 216478,
+          "actual_prompt_tokens_from_api": 60551,
+          "ttft_s": null,
+          "ttft_note": "Non-streaming API does not expose first-content time; exact token timing is performed by the parent's in-band run.",
+          "semantic_pass": true
+        }
+      ]
+    },
+    "four_by_512_stream_metrics": {
+      "status": "PASS",
+      "window_start_s": 82.95700083102565,
+      "last_completion_s": 96.63152864502626,
+      "arrival_to_last_completion_s": 13.674527814000612,
+      "first_content_to_last_completion_all_emissions_window_s": 11.234340196999256,
+      "stream_max_tokens_verified_count": 2048,
+      "stream_all_emissions_tok_s_supplemental": 182.29820034709562,
+      "stream_token_count_note": "SSE event/chunk count is never treated as token count; each request must finish at max_tokens=512 to infer 512 output tokens.",
+      "requests": [
+        {
+          "label": "story-0",
+          "arrival_s": 82.95710264501395,
+          "accepted_s": 82.95972722800798,
+          "first_content_s": 86.21093130201916,
+          "completed_s": 95.23584495601244,
+          "finish_reason": "length",
+          "max_tokens": 512,
+          "http_status": 200,
+          "prompt_sha256": "81329f1508e0f8eb699b4803d1b459d0e3849b040ffc0451580b116becba5f18",
+          "prompt_characters": 184,
+          "text": "BEGIN_0\n\nThe modern computing landscape is defined by a fundamental asymmetry in performance characteristics between the central processing unit (CPU) and the main memory system. While CPU clock speeds have increased exponentially over the past few decades, the latency and bandwidth of dynamic random-access memory (DRAM) have improved at a significantly slower rate. This divergence, often referred to as the \"memory wall,\" creates a bottleneck where the processor spends a significant portion of its cycles waiting for data to arrive from main memory. To mitigate this disparity, computer architects introduced a hierarchical memory system centered around CPU caches. These caches are small, high-speed storage areas located physically close to the processor cores, designed to hold frequently accessed data and instructions. However, as multi-core processors became ubiquitous, the simple concept of a local cache evolved into a complex distributed system requiring rigorous protocols to maintain data consistency across multiple cores. This technical explanation explores the architecture of CPU caches, the principles of cache coherency, and the specific protocols used to ensure that all processors in a system view a consistent image of memory.\n\n### The Hierarchy of Memory and Cache Architecture\n\nTo understand how caches work, one must first understand the memory hierarchy. At the top of this hierarchy sits the CPU registers, which are the fastest storage locations but are extremely limited in capacity. Below the registers lie the caches, typically organized into three levels: L1, L2, and L3. At the bottom of the hierarchy is main memory (DRAM), which is vast in capacity but slow in access speed.\n\nThe primary goal of the cache hierarchy is to exploit the principle of locality. There are two types of locality: temporal locality and spatial locality. Temporal locality refers to the tendency of a program to access the same data repeatedly within a short period. Spatial locality refers to the tendency of a program to access data items that are close to each other in memory. Caches exploit these principles by storing copies of data from main memory in faster, smaller storage units. When a CPU requests data, it first checks the L1 cache. If the data is present, it is a \"cache hit,\" and the data is returned almost instantly. If the data is not present, it is a \"cache miss,\" and the CPU must look in the L2 cache. If it is not there, it looks in the L3 cache. If it is not in any cache, the CPU must fetch the data from main memory, which can take hundreds of cycles.\n\nThe L1 cache is usually split into two separate caches:",
+          "inferred_output_tokens": 512,
+          "token_count_basis": "max_tokens_verified_by_finish_reason",
+          "semantic": {
+            "pass": true,
+            "checks": {
+              "marker": true,
+              "readable_length": true,
+              "no_replacement_char": true,
+              "topic_keywords": true
+            },
+            "characters": 2647
+          },
+          "ttft_s": 3.253828657005215,
+          "decode_window_s": 9.02491365399328,
+          "decode_window_tok_s": 56.73184471670306
+        },
+        {
+          "label": "story-1",
+          "arrival_s": 82.95763172701118,
+          "accepted_s": 82.96022110700142,
+          "first_content_s": 86.29424691101303,
+          "completed_s": 95.39093449001666,
+          "finish_reason": "length",
+          "max_tokens": 512,
+          "http_status": 200,
+          "prompt_sha256": "9e02d029feeb5f243a254a7bbb406768f6913f87593a0a02c4584cb330314a53",
+          "prompt_characters": 180,
+          "text": "BEGIN_1\n\nPhotosynthesis is arguably the most critical biochemical process on Earth, serving as the primary mechanism by which solar energy is converted into chemical energy, thereby sustaining nearly all life on the planet. It is not merely a biological curiosity but the foundational engine of the global carbon cycle and the biosphere’s energy budget. To understand photosynthesis fully, one must delve into the intricate molecular machinery of plant cells, the thermodynamics of light absorption, the complex enzymatic pathways of carbon fixation, and the broader metabolic networks that integrate these processes with respiration and growth. This explanation will traverse the structural basis of photosynthesis, the detailed mechanics of the light-dependent and light-independent reactions, the variations in metabolic strategies among different plant species, and the integration of photosynthesis with overall plant metabolism.\n\n### The Structural and Cellular Basis of Photosynthesis\n\nPhotosynthesis occurs primarily within the chloroplasts, specialized organelles found in the mesophyll cells of leaves. The chloroplast is a double-membrane-bound organelle that contains its own DNA, ribosomes, and a complex internal membrane system. The outer and inner membranes enclose a fluid-filled space called the stroma, which contains enzymes, DNA, ribosomes, and other molecules necessary for the synthesis of carbohydrates. Suspended within the stroma are stacks of thylakoids, known as grana. The thylakoid membranes are the site of the light-dependent reactions, while the stroma is the site of the light-independent reactions, commonly referred to as the Calvin cycle.\n\nThe thylakoid membrane is a highly specialized structure rich in pigments, electron transport chains, and ATP synthase complexes. The pigments, primarily chlorophyll a and chlorophyll b, along with accessory pigments like carotenoids, are organized into photosystems. These photosystems are large protein complexes that capture light energy and initiate the electron transport chain. The arrangement of these components is crucial for the efficiency of energy conversion. The thylakoid lumen, the interior space of the thylakoids, plays a vital role in establishing the proton gradient necessary for ATP synthesis.\n\n### The Light-Dependent Reactions: Capturing Solar Energy\n\nThe first stage of photosynthesis, the light-dependent reactions, takes place in the thylakoid membranes. The primary objective of this stage is to convert light energy into chemical energy in the form of ATP (adenosine triphosphate) and NADPH (nicotinamide adenine dinucleotide phosphate),",
+          "inferred_output_tokens": 512,
+          "token_count_basis": "max_tokens_verified_by_finish_reason",
+          "semantic": {
+            "pass": true,
+            "checks": {
+              "marker": true,
+              "readable_length": true,
+              "no_replacement_char": true,
+              "topic_keywords": true
+            },
+            "characters": 2642
+          },
+          "ttft_s": 3.3366151840018574,
+          "decode_window_s": 9.096687579003628,
+          "decode_window_tok_s": 56.28422385108229
+        },
+        {
+          "label": "story-2",
+          "arrival_s": 82.95813690900104,
+          "accepted_s": 82.961984012014,
+          "first_content_s": 85.39718844802701,
+          "completed_s": 95.97542511500069,
+          "finish_reason": "length",
+          "max_tokens": 512,
+          "http_status": 200,
+          "prompt_sha256": "40a8193c8a45387f0c1df22455cc3ac1b02511430916518edf38b5e3ab5d3cbc",
+          "prompt_characters": 176,
+          "text": "BEGIN_2\n\nThe architectural legacy of ancient Rome stands as one of the most profound achievements in the history of human engineering and construction. While Greek architecture is often celebrated for its aesthetic refinement, proportional harmony, and reliance on post-and-lintel systems, Roman architecture is distinguished by its revolutionary approach to structural engineering, material science, and spatial organization. The Romans did not merely build structures; they engineered environments, infrastructure, and urban systems that facilitated the administration, military dominance, and cultural cohesion of an empire spanning three continents. To understand Roman architectural engineering, one must examine the interplay between their innovative use of materials, their mastery of structural forms such as the arch and the dome, their sophisticated understanding of hydraulics and concrete chemistry, and their ability to scale these technologies to create monumental public works. This explanation will delve into the technical underpinnings of Roman construction, analyzing how these engineering principles allowed for the creation of enduring structures that continue to influence modern architectural practice.\n\nAt the heart of Roman architectural engineering lies the development and widespread application of concrete, known as *opus caementicium*. Before the Roman era, large-scale construction was predominantly limited to stone masonry, which required precise cutting, heavy lifting, and complex scaffolding. Stone is strong in compression but weak in tension, limiting the span of beams and the height of structures. The Romans, however, developed a hydraulic concrete that could be poured into molds, allowing for the creation of complex, monolithic structures with unprecedented freedom of form. This material innovation was not accidental but the result of empirical experimentation and a deep understanding of local geology.\n\nThe primary binder in Roman concrete was lime, derived from the calcination of limestone. However, the critical innovation was the addition of volcanic ash, known as *pozzolana*, sourced from the volcanic deposits near Naples and Pozzuoli. This ash, rich in silica and alumina, reacted with the lime and water to form a hydraulic cement that could harden even underwater. This chemical reaction, known as pozzolanic reaction, produced calcium silicate hydrate compounds that gave the concrete its remarkable durability and strength. Recent archaeological and materials science studies have revealed that the Romans often used seawater in their concrete mixes, which introduced chloride ions that facilitated the formation of rare, stable minerals like aluminum tobermorite. These minerals grew within the concrete matrix over time, effectively self-healing cracks and increasing the material’s resistance to erosion. This understanding of material chemistry allowed Roman engineers to construct harbors, aqueducts, and",
+          "inferred_output_tokens": 512,
+          "token_count_basis": "max_tokens_verified_by_finish_reason",
+          "semantic": {
+            "pass": true,
+            "checks": {
+              "marker": true,
+              "readable_length": true,
+              "no_replacement_char": true,
+              "topic_keywords": true
+            },
+            "characters": 2969
+          },
+          "ttft_s": 2.439051539025968,
+          "decode_window_s": 10.57823666697368,
+          "decode_window_tok_s": 48.40126158252023
+        },
+        {
+          "label": "story-3",
+          "arrival_s": 82.95879181401688,
+          "accepted_s": 82.9620218250202,
+          "first_content_s": 86.3990402680065,
+          "completed_s": 96.63152864502626,
+          "finish_reason": "length",
+          "max_tokens": 512,
+          "http_status": 200,
+          "prompt_sha256": "3a9c74ce158bcc35feab783169036deddac9405d3fb78a1d95fce2290bd3e709",
+          "prompt_characters": 189,
+          "text": "BEGIN_3\n\nThe landscape of computer science is fundamentally built upon the efficient organization of data. Among the most critical operations in this domain is sorting, the process of arranging a collection of elements into a specific order, typically ascending or descending. While sorting may appear trivial in everyday life—such as organizing a deck of cards or alphabetizing a bookshelf—it represents a profound challenge in computational theory. The efficiency with which a computer can sort data dictates the performance of databases, search engines, operating systems, and countless other software applications. To understand the limits and possibilities of sorting, one must delve into the realm of comparison sorting algorithms and their associated computational complexity. This explanation will explore the theoretical foundations of comparison sorts, analyze the lower bounds imposed by information theory, examine specific algorithmic strategies, and discuss the practical implications of time and space complexity.\n\nAt the heart of sorting theory lies the concept of the comparison model. In this model, the only operation permitted to determine the relative order of two elements is a direct comparison. The algorithm is not allowed to inspect the internal structure of the data, such as the binary representation of integers or the hash values of strings, to infer order. Instead, it must rely solely on queries of the form \"Is element A less than element B?\" This restriction is crucial because it defines a universal class of sorting algorithms that can be applied to any data type where a total ordering is defined, regardless of the underlying data structure. Whether sorting integers, floating-point numbers, strings, or custom objects, comparison sorts provide a generic solution. However, this generality comes at a cost, which is quantified through computational complexity.\n\nTo understand the efficiency of these algorithms, we must first define what we mean by complexity. In computer science, complexity is usually measured in terms of time and space. Time complexity refers to the number of basic operations required to complete the task, often expressed using Big O notation, which describes the upper bound of the growth rate of the algorithm as the input size $n$ increases. Space complexity refers to the amount of memory required by the algorithm. For sorting, the primary metric of interest is the number of comparisons performed, as this is the dominant cost in the comparison model.\n\nThe theoretical foundation for the efficiency of comparison sorts is rooted in information theory, specifically the concept of decision trees. A decision tree is a binary tree where each internal node represents a comparison between two elements, and each leaf node represents a unique permutation of the input sequence. For a sequence of $n$ distinct elements, there are",
+          "inferred_output_tokens": 512,
+          "token_count_basis": "max_tokens_verified_by_finish_reason",
+          "semantic": {
+            "pass": true,
+            "checks": {
+              "marker": true,
+              "readable_length": true,
+              "no_replacement_char": true,
+              "topic_keywords": true
+            },
+            "characters": 2891
+          },
+          "ttft_s": 3.440248453989625,
+          "decode_window_s": 10.232488377019763,
+          "decode_window_tok_s": 50.03670477162284
+        }
+      ]
+    },
+    "four_by_512_usage_aggregate": {
+      "status": "PASS",
+      "aggregate_method": "sum(actual usage.completion_tokens) / (last non-stream completion - first request arrival)",
+      "arrival_to_last_completion_s": 10.111671120015671,
+      "total_completion_tokens": 2048,
+      "aggregate_tok_s": 202.53823286895292,
+      "requests": [
+        {
+          "label": "usage-story-0",
+          "id": "chatcmpl-e67600d0-bd73-4643-b12f-d6f4765ddfee",
+          "http_status": 200,
+          "arrival_s": 96.63473686799989,
+          "response_received_s": 106.09354040800827,
+          "completed_s": 106.09357421001187,
+          "wall_s": 9.458837728016078,
+          "text": "BEGIN_0\n\nThe modern computing landscape is defined by a fundamental asymmetry in performance characteristics between the central processing unit (CPU) and the main memory system. While CPU clock speeds have increased exponentially over the past few decades, the latency and bandwidth of dynamic random-access memory (DRAM) have improved at a significantly slower rate. This divergence, often referred to as the \"memory wall,\" creates a bottleneck where the processor spends a significant portion of its cycles waiting for data to arrive from main memory. To mitigate this disparity, computer architects introduced a hierarchical memory system centered around CPU caches. These caches are small, high-speed storage areas located physically close to the processor cores, designed to hold frequently accessed data and instructions. However, as multi-core processors became ubiquitous, the simple concept of a local cache evolved into a complex distributed system requiring rigorous protocols to maintain data consistency across multiple cores. This technical explanation explores the architecture of CPU caches, the principles of cache coherency, and the specific protocols used to ensure that all processors in a system view a consistent image of memory.\n\n### The Hierarchy of Memory and Cache Architecture\n\nTo understand how caches work, one must first understand the memory hierarchy. At the top of this hierarchy sits the CPU registers, which are the fastest storage locations but are extremely limited in capacity. Below the registers lie the caches, typically organized into three levels: L1, L2, and L3. At the bottom of the hierarchy is main memory (DRAM), which is vast in capacity but slow in access speed.\n\nThe primary goal of the cache hierarchy is to exploit the principle of locality. There are two types of locality: temporal locality and spatial locality. Temporal locality refers to the tendency of a program to access the same data repeatedly within a short period. Spatial locality refers to the tendency of a program to access data items that are close to each other in memory. Caches exploit these principles by storing copies of data from main memory in faster, smaller storage units. When a CPU requests data, it first checks the L1 cache. If the data is present, it is a \"cache hit,\" and the data is returned almost instantly. If the data is not present, it is a \"cache miss,\" and the CPU must look in the L2 cache. If it is not there, it looks in the L3 cache. If it is not in any cache, the CPU must fetch the data from main memory, which can take hundreds of cycles.\n\nThe L1 cache is usually split into two separate caches:",
+          "text_sha256": "5d717cf74624226ed1989fbcc3eeed028366db777bee2f6fdb37f727c1b73f87",
+          "usage": {
+            "prompt_tokens": 54,
+            "completion_tokens": 512,
+            "total_tokens": 566,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "length",
+          "prompt_sha256": "81329f1508e0f8eb699b4803d1b459d0e3849b040ffc0451580b116becba5f18",
+          "prompt_characters": 184,
+          "cache_hit_tokens": 0
+        },
+        {
+          "label": "usage-story-1",
+          "id": "chatcmpl-b1fadd2c-2b70-4471-a43d-cda0db44473c",
+          "http_status": 200,
+          "arrival_s": 96.63481246502488,
+          "response_received_s": 105.85210374402232,
+          "completed_s": 105.85216235902044,
+          "wall_s": 9.21735030200216,
+          "text": "BEGIN_1\n\nPhotosynthesis is arguably the most critical biochemical process on Earth, serving as the primary mechanism by which solar energy is converted into chemical energy, thereby sustaining nearly all life on the planet. It is not merely a biological curiosity but the foundational engine of the global carbon cycle and the biosphere’s energy budget. To understand photosynthesis fully, one must delve into the intricate molecular machinery of plant cells, the thermodynamics of light absorption, the complex enzymatic pathways of carbon fixation, and the broader metabolic networks that integrate these processes with respiration and growth. This explanation will traverse the structural basis of photosynthesis, the detailed mechanics of the light-dependent and light-independent reactions, the variations in metabolic strategies among different plant species, and the integration of photosynthesis with overall plant metabolism.\n\n### The Structural and Cellular Basis of Photosynthesis\n\nPhotosynthesis occurs primarily within the chloroplasts, specialized organelles found in the mesophyll cells of leaves. The chloroplast is a double-membrane-bound organelle that contains its own DNA, ribosomes, and a complex internal membrane system. The outer and inner membranes enclose a fluid-filled space called the stroma, which contains enzymes, DNA, ribosomes, and other molecules necessary for the synthesis of carbohydrates. Suspended within the stroma are stacks of thylakoids, known as grana. The thylakoid membranes are the site of the light-dependent reactions, while the stroma is the site of the light-independent reactions, commonly referred to as the Calvin cycle.\n\nThe thylakoid membrane is a highly specialized structure rich in pigments, electron transport chains, and ATP synthase complexes. The pigments, primarily chlorophyll a and chlorophyll b, along with accessory pigments like carotenoids, are organized into photosystems. These photosystems are large protein complexes that capture light energy and initiate the electron transport chain. The arrangement of these components is crucial for the efficiency of energy conversion. The thylakoid lumen, the interior space of the thylakoids, plays a vital role in establishing the proton gradient necessary for ATP synthesis.\n\n### The Light-Dependent Reactions: Capturing Solar Energy\n\nThe first stage of photosynthesis, the light-dependent reactions, takes place in the thylakoid membranes. The primary objective of this stage is to convert light energy into chemical energy in the form of ATP (adenosine triphosphate) and NADPH (nicotinamide adenine dinucleotide phosphate),",
+          "text_sha256": "95800d343b43a1780688d12a7b1f98bd3a6ba0e6c8a769aebfc5e0e5ba27d0f1",
+          "usage": {
+            "prompt_tokens": 50,
+            "completion_tokens": 512,
+            "total_tokens": 562,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "length",
+          "prompt_sha256": "9e02d029feeb5f243a254a7bbb406768f6913f87593a0a02c4584cb330314a53",
+          "prompt_characters": 180,
+          "cache_hit_tokens": 0
+        },
+        {
+          "label": "usage-story-2",
+          "id": "chatcmpl-0968e504-8efa-44e0-b0ed-23e161f9bc71",
+          "http_status": 200,
+          "arrival_s": 96.63486901001306,
+          "response_received_s": 106.74634374800371,
+          "completed_s": 106.74640798801556,
+          "wall_s": 10.111539720004657,
+          "text": "BEGIN_2\n\nThe architectural legacy of ancient Rome stands as one of the most profound achievements in the history of human engineering and construction. While Greek architecture is often celebrated for its aesthetic refinement, proportional harmony, and reliance on post-and-lintel systems, Roman architecture is distinguished by its revolutionary approach to structural engineering, material science, and spatial organization. The Romans did not merely build structures; they engineered environments, infrastructure, and urban systems that facilitated the administration, military dominance, and cultural cohesion of an empire spanning three continents. To understand Roman architectural engineering, one must examine the interplay between their innovative use of materials, their mastery of structural forms such as the arch and the dome, their sophisticated understanding of hydraulics and concrete chemistry, and their ability to scale these technologies to create monumental public works. This explanation will delve into the technical underpinnings of Roman construction, analyzing how these engineering principles allowed for the creation of enduring structures that continue to influence modern architectural practice.\n\nAt the heart of Roman architectural engineering lies the development and widespread application of concrete, known as *opus caementicium*. Before the Roman era, large-scale construction was predominantly limited to stone masonry, which required precise cutting, heavy lifting, and complex scaffolding. Stone is strong in compression but weak in tension, limiting the span of beams and the height of structures. The Romans, however, developed a hydraulic concrete that could be poured into molds, allowing for the creation of complex, monolithic structures with unprecedented freedom of form. This material innovation was not accidental but the result of empirical experimentation and a deep understanding of local geology.\n\nThe primary binder in Roman concrete was lime, derived from the calcination of limestone. However, the critical innovation was the addition of volcanic ash, known as *pozzolana*, sourced from the volcanic deposits near Naples and Pozzuoli. This ash, rich in silica and alumina, reacted with the lime and water to form a hydraulic cement that could harden even underwater. This chemical reaction, known as pozzolanic reaction, produced calcium silicate hydrate compounds that gave the concrete its remarkable durability and strength. Recent archaeological and materials science studies have revealed that the Romans often used seawater in their concrete mixes, which introduced chloride ions that facilitated the formation of rare, stable minerals like aluminum tobermorite. These minerals grew within the concrete matrix over time, effectively self-healing cracks and increasing the material’s resistance to erosion. This understanding of material chemistry allowed Roman engineers to construct harbors, aqueducts, and",
+          "text_sha256": "a550b085283886adf9a0b5a1f38c4a447d1ca72ee4253c669feefa760ac83fc0",
+          "usage": {
+            "prompt_tokens": 48,
+            "completion_tokens": 512,
+            "total_tokens": 560,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "length",
+          "prompt_sha256": "40a8193c8a45387f0c1df22455cc3ac1b02511430916518edf38b5e3ab5d3cbc",
+          "prompt_characters": 176,
+          "cache_hit_tokens": 0
+        },
+        {
+          "label": "usage-story-3",
+          "id": "chatcmpl-314eadf4-b3c9-4437-ad02-f9bc352e45ff",
+          "http_status": 200,
+          "arrival_s": 96.63492011200287,
+          "response_received_s": 106.19468318801955,
+          "completed_s": 106.19474607502343,
+          "wall_s": 9.559826448996319,
+          "text": "BEGIN_3\n\nThe landscape of computer science is fundamentally built upon the efficient organization of data. Among the most critical operations in this domain is sorting, the process of arranging a collection of elements into a specific order, typically ascending or descending. While sorting may appear trivial in everyday life—such as organizing a deck of cards or alphabetizing a bookshelf—it represents a profound challenge in computational theory. The efficiency with which a computer can sort data dictates the performance of databases, search engines, operating systems, and countless other software applications. To understand the limits and possibilities of sorting, one must delve into the realm of comparison sorting algorithms and their associated computational complexity. This explanation will explore the theoretical foundations of comparison sorts, analyze the lower bounds imposed by information theory, examine specific algorithmic strategies, and discuss the practical implications of time and space complexity.\n\nAt the heart of sorting theory lies the concept of the comparison model. In this model, the only operation permitted to determine the relative order of two elements is a direct comparison. The algorithm is not allowed to inspect the internal structure of the data, such as the binary representation of integers or the hash values of strings, to infer order. Instead, it must rely solely on queries of the form \"Is element A less than element B?\" This restriction is crucial because it defines a universal class of sorting algorithms that can be applied to any data type where a total ordering is defined, regardless of the underlying data structure. Whether sorting integers, floating-point numbers, strings, or custom objects, comparison sorts provide a generic solution. However, this generality comes at a cost, which is quantified through computational complexity.\n\nTo understand the efficiency of these algorithms, we must first define what we mean by complexity. In computer science, complexity is usually measured in terms of time and space. Time complexity refers to the number of basic operations required to complete the task, often expressed using Big O notation, which describes the upper bound of the growth rate of the algorithm as the input size $n$ increases. Space complexity refers to the amount of memory required by the algorithm. For sorting, the primary metric of interest is the number of comparisons performed, as this is the dominant cost in the comparison model.\n\nThe theoretical foundation for the efficiency of comparison sorts is rooted in information theory, specifically the concept of decision trees. A decision tree is a binary tree where each internal node represents a comparison between two elements, and each leaf node represents a unique permutation of the input sequence. For a sequence of $n$ distinct elements, there are",
+          "text_sha256": "e479539ae011a1933529236570ecce1768fdc1325346e6fd5cc330f8567d0687",
+          "usage": {
+            "prompt_tokens": 50,
+            "completion_tokens": 512,
+            "total_tokens": 562,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "length",
+          "prompt_sha256": "3a9c74ce158bcc35feab783169036deddac9405d3fb78a1d95fce2290bd3e709",
+          "prompt_characters": 189,
+          "cache_hit_tokens": 0
+        }
+      ]
+    }
+  },
+  "limitations": [],
+  "discovery": {
+    "ready_endpoint": "available",
+    "prefix_cache_enabled": true,
+    "ready_fields": {
+      "status": "ready",
+      "model": "flash-next-iq3-xxs",
+      "max_context": 262140,
+      "pool_tokens": 524288,
+      "max_parallel": 4
+    },
+    "prefix_cache_declaration": "enabled",
+    "models": [
+      "flash-next-iq3-xxs"
+    ]
+  },
+  "finished_utc": "2026-10-18T15:52:25.325Z"
+}

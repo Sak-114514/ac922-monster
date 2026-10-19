@@ -1,0 +1,106 @@
+{
+  "unit": "root-v429-inband-20261018t071939468737z",
+  "status": "DIAGNOSTIC_FIRST_FORMAL_COMPLETE_SECOND_FORMAL_THERMAL58_STOP",
+  "native_semantic_scope": "bothnative8192 completedpendingofflinegateinspection",
+  "completed_target_windows": [
+    {
+      "label": "v420-single32k-ub1280-native-paris-8192",
+      "phase": "target_prefill",
+      "chunk": 0,
+      "rows": 8192,
+      "start_us": 227145491418,
+      "end_us": 227152141212,
+      "phase_wall_us": 6649794,
+      "logged_launch_calls": 42,
+      "logged_cold_calls": 42,
+      "sampled_host_us": {
+        "done_event_sync": 0,
+        "child_graph_instantiate": 3615327,
+        "controller_graph_instantiate": 6202,
+        "upload_drain": 1985,
+        "prepare": 3657524,
+        "launch_cpu": 3659301
+      },
+      "prepare_other_us": 34010,
+      "launch_other_including_retire_destroy_us": 1777,
+      "logged_by_device": {
+        "0": 7,
+        "1": 7,
+        "2": 7,
+        "3": 7,
+        "4": 7,
+        "5": 7
+      },
+      "arithmetic_scope": "overlapping/nested clocks not additive; no GPU-kernel-time attribution"
+    },
+    {
+      "label": "v420-single32k-ub1280-formal32k-prefill",
+      "phase": "target_prefill",
+      "chunk": 0,
+      "rows": 32768,
+      "start_us": 227162149127,
+      "end_us": 227174668563,
+      "phase_wall_us": 12519436,
+      "logged_launch_calls": 61,
+      "logged_cold_calls": 60,
+      "sampled_host_us": {
+        "done_event_sync": 0,
+        "child_graph_instantiate": 7699048,
+        "controller_graph_instantiate": 2958,
+        "upload_drain": 2744,
+        "prepare": 7754304,
+        "launch_cpu": 7757081
+      },
+      "prepare_other_us": 49554,
+      "launch_other_including_retire_destroy_us": 2777,
+      "logged_by_device": {
+        "0": 10,
+        "1": 10,
+        "2": 10,
+        "3": 11,
+        "4": 10,
+        "5": 10
+      },
+      "arithmetic_scope": "overlapping/nested clocks not additive; no GPU-kernel-time attribution"
+    },
+    {
+      "label": "v420-single32k-ub1536-native-paris-8192",
+      "phase": "target_prefill",
+      "chunk": 0,
+      "rows": 8192,
+      "start_us": 227187178841,
+      "end_us": 227190987177,
+      "phase_wall_us": 3808336,
+      "logged_launch_calls": 36,
+      "logged_cold_calls": 36,
+      "sampled_host_us": {
+        "done_event_sync": 0,
+        "child_graph_instantiate": 117980,
+        "controller_graph_instantiate": 1372,
+        "upload_drain": 727742,
+        "prepare": 877251,
+        "launch_cpu": 879120
+      },
+      "prepare_other_us": 30157,
+      "launch_other_including_retire_destroy_us": 1869,
+      "logged_by_device": {
+        "0": 6,
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "arithmetic_scope": "overlapping/nested clocks not additive; no GPU-kernel-time attribution"
+    }
+  ],
+  "guard_stop": {
+    "event": "GUARD_STOP",
+    "reason": "['GPU temperature/free guard']",
+    "unix": 1792308219.0740628
+  },
+  "primary_performance_claim": false,
+  "model_reused_ELF": true,
+  "goals_met": false,
+  "next": "V430fixedonebank4canary+native+perf; inspectgraphinstantiateblockingversusGPUactivity"
+}

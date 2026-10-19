@@ -1,0 +1,170 @@
+{
+  "schema": "ac922-combo-release-v1",
+  "version": "20261018-r444-banked-combo-c12-r2",
+  "status": "FROZEN_NOT_PROMOTED",
+  "prepared_unix": 1792331227.633585,
+  "prepare_only": true,
+  "current_symlink_mutated": false,
+  "systemd_mutated": false,
+  "gateway_mutated": false,
+  "worker": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/combo-20261018/build-combo-c12/bank-worker",
+    "bytes": 833736,
+    "mtime_ns": 1792330784407309329,
+    "sha256": "bd24867485a0d834c073ede91e18352eb2595d067d5576ad39ccd76307a14680"
+  },
+  "worker_source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/combo-20261018/bank-worker-combo.cpp",
+  "runtime": {
+    "build": {
+      "build_run_id": "20261018T092503.472988Z",
+      "report_sha256": "b993f9a857c73586a9ff39b5b655ec5bc1984ae48924b33ef033abcef5daf4f4"
+    },
+    "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v444/lib",
+    "private_dsos": [
+      "libllama-common.so.0",
+      "libmtmd.so.0",
+      "libllama.so.0",
+      "libggml.so.0",
+      "libggml-cpu.so.0",
+      "libggml-cuda.so.0",
+      "libggml-base.so.0"
+    ],
+    "tail_bridge": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/tail-only-exec-v390-root-20261018/build-r5/libac922-tail-bridge.so",
+      "bytes": 380896,
+      "mtime_ns": 1792291730930500115,
+      "sha256": "1cc4c9de1e840649f26255dff842e090b7421efdc514be18fb1eaf2907d386cb"
+    }
+  },
+  "model_identity": [
+    {
+      "path": "/home/debian/models/qwen3.8-flash-next-gsq-rco/integrated/IQ3_XXS-MTP-Q8.gguf",
+      "bytes": 78615622080,
+      "mtime_ns": 1790833321720010216
+    }
+  ],
+  "smoke_gate": {
+    "status": "PASS",
+    "path": "/home/debian/ac922-monster/production/releases/20261018-r444-banked-combo-c12-r2/smoke-acceptance.json",
+    "sha256": "7b2d64a350f4d7c790d7834366a3e0f1acb7dc49785d5458e4a62015a70cb674",
+    "worker_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/combo-20261018/build-combo-c12/bank-worker",
+    "worker_sha256": "bd24867485a0d834c073ede91e18352eb2595d067d5576ad39ccd76307a14680",
+    "source_sha256": "8c740eaeb24aac21918e2717705b66e6da04799e3e56bfa4ce3de29ba0990a69",
+    "environment_sha256": "6bb18dec3192ba95e4c2f64c1e817a4cd1a612cca08b82fd736299a480748853",
+    "thermal_header_sha256": "7644f095caaa6c0e249bfdd47e5f3e8b8de7896beb8fb2a8ae583eef38e7f3b5",
+    "thermal_policy_sha256": "f8a4b1ef8d7a7ec6011e87d1669283b69f13b681326ec726d3d8f030d6509a7a",
+    "started": 1792330879.8232958,
+    "finished": 1792331163.1210046,
+    "wave_ids": [
+      "combo-formal32k-cold",
+      "combo-formal32k-warm",
+      "combo-quality8192-after-cache",
+      "combo-native4-after-prefill",
+      "combo-native4-8k-prefill",
+      "combo-four512",
+      "combo-524288-capacity-multi",
+      "combo-native4-after-large",
+      "combo-max-single-UB512",
+      "combo-native4-final"
+    ],
+    "experiment_root": "/home/debian/ac922-monster/experiments/standard-opt-20261014",
+    "source_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/fourbank-d3-newruntime-v306-20261017/results/root-v306-inband-api-20261018t134017007122z/worker-smoke-result.json"
+  },
+  "promotion_eligible": true,
+  "api_sources": {
+    "api.py": "a7876bba0db7cc4c00c9a71eb299b0e039c973af00223a0ebfec289f0740eb4a",
+    "llm_routes.py": "dda4457ab1f78967b40718d39144b801b147d9c0a5d0c4939dc481d32b9ef80c"
+  },
+  "checker_source_sha256": "071e1d7bc13147d70f3fa400409acd8670ab0fced4beb4b08cf8839d3dae0c86",
+  "checker_packaged_sha256": "1af55ed492401761fe25a8ec3a24c2035917d8c8ea17014ff120edb752a26168",
+  "external_inputs": {
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/native-semantic/case-input.json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/native-semantic/case-input.json",
+      "bytes": 14172,
+      "mtime_ns": 1792121526588054378,
+      "sha256": "f2487f90c32d0e383494dc5ae68bec24d6bf0c8d31a065dfbf614447fb6b53fd"
+    },
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/native-semantic/run_semantic_native.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/native-semantic/run_semantic_native.py",
+      "bytes": 34556,
+      "mtime_ns": 1792121526594190058,
+      "sha256": "85b56838258de35eb492425a0286f1078ac836b1826b9f8885fe331cd92cc2ad"
+    },
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/v45-real-corpus-source.json": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/v45-real-corpus-source.json",
+      "bytes": 411671,
+      "mtime_ns": 1792164129955283257,
+      "sha256": "bd231acb8ce9423222dd0e5b043b2c274163106dc99af8d5a2380916b7df957c"
+    },
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/inband-guard-v222-20261017/model_guard.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/inband-guard-v222-20261017/model_guard.py",
+      "bytes": 7540,
+      "mtime_ns": 1792315073807827828,
+      "sha256": "4b6bb3ae49a82b6bba801044834e14c53a80f67ee5239694727370400dc0a156"
+    },
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/inband-guard-v222-20261017/stop_model.py": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/inband-guard-v222-20261017/stop_model.py",
+      "bytes": 2914,
+      "mtime_ns": 1792315074027820245,
+      "sha256": "7ab4a6fd289ace6c424220513acb0191f9e339913e30dc7dc468d2fd31fe2d5e"
+    },
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/inband-guard-v222-20261017/sdr.cache": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/inband-guard-v222-20261017/sdr.cache",
+      "bytes": 14373,
+      "mtime_ns": 1792225133853513646,
+      "sha256": "1930d6ffcde18c03efb7fa9c9e74af982afca1569bcfecc10be73eeabd96eed2"
+    }
+  },
+  "sha256": {
+    "20-bounded-pinned-memory.conf": "a4f45c7ca0ba04facb56a7d303832917cb6ecb1e1b91c035f99cade4eaa72364",
+    "README.md": "6ef057c2dc9b2de168561eebb52757279bd742c63e29da3e80502a8744034f36",
+    "V444-build.json": "b993f9a857c73586a9ff39b5b655ec5bc1984ae48924b33ef033abcef5daf4f4",
+    "ac922-inference-safety.service": "caa436676f2ba9d647f9cc7351a48616df061f76f1e27e6bde6148d454a13e09",
+    "ac922-inference.service": "0d16f1c7461c045a9384f527ca241d9a01a7e21433581df209889af6a2159fa6",
+    "api.py": "a7876bba0db7cc4c00c9a71eb299b0e039c973af00223a0ebfec289f0740eb4a",
+    "bank-worker": "bd24867485a0d834c073ede91e18352eb2595d067d5576ad39ccd76307a14680",
+    "bank-worker-combo.cpp": "8c740eaeb24aac21918e2717705b66e6da04799e3e56bfa4ce3de29ba0990a69",
+    "build-combo.sh": "254f369325d61436a2f789615722df2951f867916757dd06361d0b15460773bc",
+    "combo-environment.json": "d1b3b6774ea7769cbfa71476a57a9afeb75c15e9d904ca189ba4ed64d4f521e6",
+    "combo_safety_monitor.py": "15173c361e7eec57136225fdd610339cf79ee619f7cd568f167f266d92cd4e52",
+    "combo_temperature_policy.py": "f8a4b1ef8d7a7ec6011e87d1669283b69f13b681326ec726d3d8f030d6509a7a",
+    "ldd-tail-bridge.txt": "16dd793854b834ca3bda2f94c4356eb93eebf81e950d1c39c9cb889c310f8d7d",
+    "ldd-worker.txt": "da0239dda2aa2f0c4c6f6b0bb3c71ec96800688b80b18e2365c4c0343791f59a",
+    "lib/libac922-tail-bridge.so": "1cc4c9de1e840649f26255dff842e090b7421efdc514be18fb1eaf2907d386cb",
+    "lib/libggml-base.so": "6c9170ecaeb88bc36a1ae4896776a620972d2035845229e73ebc26126c708475",
+    "lib/libggml-base.so.0": "6c9170ecaeb88bc36a1ae4896776a620972d2035845229e73ebc26126c708475",
+    "lib/libggml-cpu.so": "63525deba1db08199b25852ba71c9115961fdd4db8632f7defe88172613bd31c",
+    "lib/libggml-cpu.so.0": "63525deba1db08199b25852ba71c9115961fdd4db8632f7defe88172613bd31c",
+    "lib/libggml-cuda.so": "a22cc41dc5a4d52e275b6929430739a149760821d7d2a45cfcf02c83859c695c",
+    "lib/libggml-cuda.so.0": "a22cc41dc5a4d52e275b6929430739a149760821d7d2a45cfcf02c83859c695c",
+    "lib/libggml.so": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+    "lib/libggml.so.0": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+    "lib/libllama-common.so": "b9913980218fcd689295c604e2c503736241665318a395bee25fe5bc3f88b353",
+    "lib/libllama-common.so.0": "b9913980218fcd689295c604e2c503736241665318a395bee25fe5bc3f88b353",
+    "lib/libllama.so": "eff3228dd905a65dec5e46dcc73aef3113f36255488edbea5ad4f3204e1c25e0",
+    "lib/libllama.so.0": "eff3228dd905a65dec5e46dcc73aef3113f36255488edbea5ad4f3204e1c25e0",
+    "lib/libmtmd.so": "02b78e109820e28de208363e3f6d8f3cde8f43a452ec8770972d3565caed8e23",
+    "lib/libmtmd.so.0": "02b78e109820e28de208363e3f6d8f3cde8f43a452ec8770972d3565caed8e23",
+    "llm_routes.py": "dda4457ab1f78967b40718d39144b801b147d9c0a5d0c4939dc481d32b9ef80c",
+    "production-ipc.h": "3b13eeb196deea6d7624bcd58d85a643982217d62502333daf1cf521b1054a96",
+    "production-shape-policy.h": "df39ed912bd106d91e7a14a958c39a0d94624f0efbeb9525c353526883d51980",
+    "promote_combo_gateway.py": "4392beb4e8ecb2a0256a51c1dee17e7f477985bc267ed7a65e83c1bfd853e64d",
+    "safety_monitor.py": "15173c361e7eec57136225fdd610339cf79ee619f7cd568f167f266d92cd4e52",
+    "smoke-acceptance.json": "7b2d64a350f4d7c790d7834366a3e0f1acb7dc49785d5458e4a62015a70cb674",
+    "test_api.py": "126ccb256f948a9a19977b4e40941aeb3cd9415a54f67d3fcc73ed048cba7ca9",
+    "thermal-pacing.h": "7644f095caaa6c0e249bfdd47e5f3e8b8de7896beb8fb2a8ae583eef38e7f3b5",
+    "verify-v35-preclean.py": "4b97209a30737eea347ef3d5293019254b9b42180ba5b5e5f55f076c06224fbc",
+    "verify_combo_native.py": "1af55ed492401761fe25a8ec3a24c2035917d8c8ea17014ff120edb752a26168",
+    "verify_release.py": "5af4d2cda855d457d50b50850a1059819fe0266533272dc62e72abb5bf285d4b",
+    "verify_release_base.py": "13c0039885bfe361e8204d0d78dad483291c129dbc47f46a337171dc2e23ee1a",
+    "wait_safety.py": "7718247fc3ad17a92011a9b0974750391f544b8a8e898b760bf80b8e1ba51cba",
+    "worker-command.json": "4edfa4e62ab72da47710a5f8b79ac8f59d67d8014b51be33c6cbb4892672412d",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/native-semantic/case-input.json": "f2487f90c32d0e383494dc5ae68bec24d6bf0c8d31a065dfbf614447fb6b53fd",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/dual-context-v35-onebank4-combined-20261016/native-semantic/run_semantic_native.py": "85b56838258de35eb492425a0286f1078ac836b1826b9f8885fe331cd92cc2ad",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/long-prefill-combo-v45-20261016/v45-real-corpus-source.json": "bd231acb8ce9423222dd0e5b043b2c274163106dc99af8d5a2380916b7df957c",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/inband-guard-v222-20261017/model_guard.py": "4b6bb3ae49a82b6bba801044834e14c53a80f67ee5239694727370400dc0a156",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/inband-guard-v222-20261017/stop_model.py": "7ab4a6fd289ace6c424220513acb0191f9e339913e30dc7dc468d2fd31fe2d5e",
+    "/home/debian/ac922-monster/experiments/standard-opt-20261014/notes/inband-guard-v222-20261017/sdr.cache": "1930d6ffcde18c03efb7fa9c9e74af982afca1569bcfecc10be73eeabd96eed2"
+  },
+  "promotion_contract": "root-owned integration must verify promotion_eligible and the PASS receipt before atomically replacing production/current; this script has no promotion path"
+}

@@ -1,0 +1,136 @@
+{
+  "wave_id": "r441-topology-raw32k-retained-c1",
+  "mode": "bank_local_phase_progression",
+  "banks": [
+    {
+      "bank": 0,
+      "target_context": 66048,
+      "draft_context": 66048,
+      "target_ubatch": 1024
+    },
+    {
+      "bank": 1,
+      "target_context": 17152,
+      "draft_context": 17152,
+      "target_ubatch": 256
+    },
+    {
+      "bank": 2,
+      "target_context": 17152,
+      "draft_context": 17152,
+      "target_ubatch": 256
+    },
+    {
+      "bank": 3,
+      "target_context": 17152,
+      "draft_context": 17152,
+      "target_ubatch": 256
+    }
+  ],
+  "refill_count": 0,
+  "flow_count": 1,
+  "flows": [
+    {
+      "id": "raw32k",
+      "bank": 0,
+      "input_tokens": 32768,
+      "output_tokens": 8,
+      "cached_tokens": 0,
+      "output": " text, const size_t last_token_size",
+      "token_ids": [
+        1414,
+        11,
+        713,
+        1331,
+        516,
+        1483,
+        6256,
+        2291
+      ],
+      "emitted_us": [
+        285722460708,
+        285722561105,
+        285722561117,
+        285722613013,
+        285722657265,
+        285722657277,
+        285722697742,
+        285722697753
+      ],
+      "proposed": 10,
+      "accepted": 3,
+      "prefill_us": 7976944,
+      "target_prefill_us": 7868789,
+      "mtp_prefill_us": 102298,
+      "thermal_wait_us": 0,
+      "prefill_started_us": 285714483763,
+      "prefill_finished_us": 285722460764,
+      "warmup_started_us": 285722460764,
+      "warmup_finished_us": 285722697767,
+      "decode_started_us": 285722697767,
+      "decode_finished_us": 285722697768,
+      "warmup_frames": 4,
+      "active_chain_lanes": 4,
+      "setup_parallel": true,
+      "setup_wait_us": 4,
+      "fallback_lanes": 0
+    }
+  ],
+  "wall_seconds": 8.215205,
+  "whole_wave_output_tok_s": 0.9738040621019195,
+  "all_emissions_tok_s": 33.748866249024445,
+  "prefill_input_tokens": 32768,
+  "prefill_wall_seconds": 7.977001,
+  "cached_tokens": 0,
+  "prefill_evaluated_tokens": 32768,
+  "uncached_prefill": true,
+  "prefill_aggregate_wall_tok_s": 4107.809438659968,
+  "logical_prompt_tok_s": 4107.809438659968,
+  "prefill_scope": "initial independent bank prefills",
+  "target_prefill_us_sum": 7868789,
+  "mtp_prefill_us_sum": 102298,
+  "thermal_wait_us_sum": 0,
+  "mtp_depth": 3,
+  "single_cached_affinity": false,
+  "single_cache_admission_free_mib": [],
+  "production_floor_mib": 256,
+  "context_rebuilds_before_execution": 0,
+  "capacity_growth_enabled": true,
+  "capacity_growth_applied": false,
+  "capacity_growth_reason": "request_count_out_of_range",
+  "capacity_growth_units": 0,
+  "capacity_growth_required_free_mib": 0,
+  "capacity_growth_preflight_free_mib": [],
+  "capacity_growth_exact_capacity": [
+    66048,
+    17152,
+    17152,
+    17152
+  ],
+  "capacity_growth_candidate_capacity": [
+    66048,
+    17152,
+    17152,
+    17152
+  ],
+  "state_migration_supported": false,
+  "banks_scope": "completed wave before optional idle-context reclamation",
+  "post_wave_free_before_mib": [
+    1939,
+    1507,
+    1545,
+    1697,
+    2604,
+    2335
+  ],
+  "post_wave_reclaimed_banks": 0,
+  "post_wave_reclaim_us": 1241,
+  "post_wave_free_after_mib": [
+    1939,
+    1507,
+    1545,
+    1697,
+    2604,
+    2335
+  ]
+}

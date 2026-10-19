@@ -1,0 +1,493 @@
+{
+  "status": "FAIL",
+  "started_unix": 1792374116.7466905,
+  "waves": [
+    {
+      "id": "multi512-fourlong-native-c1",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 0,
+          "wave_id": "multi512-fourlong-native-c1"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 1,
+          "wave_id": "multi512-fourlong-native-c1"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 2,
+          "wave_id": "multi512-fourlong-native-c1"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 3,
+          "wave_id": "multi512-fourlong-native-c1"
+        }
+      },
+      "cache_status": {
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 8192,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 8192,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 8192,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 8192,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "logic-en": 18.14492573001189,
+        "arithmetic-zh": 18.146810537960846,
+        "strict-json-zh": 18.18713207601104,
+        "capital-en": 18.187532578012906
+      },
+      "last_token_s": {
+        "logic-en": 18.14492573001189,
+        "arithmetic-zh": 19.12346134800464,
+        "strict-json-zh": 19.307403770973906,
+        "capital-en": 18.187532578012906
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 582503,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "multi512-fourlong-native-c1",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 512
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 512
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 512
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 512
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 17.747412,
+        "whole_wave_output_tok_s": 1.183271115811139,
+        "all_emissions_tok_s": 18.062092312773512,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 16.6263,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32768,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 1970.8534069516368,
+        "logical_prompt_tok_s": 1970.8534069516368,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 62719918,
+        "mtp_prefill_us_sum": 1800961,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 4,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [
+          2937,
+          2921,
+          2955,
+          3107,
+          4014,
+          3938
+        ],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1584,
+          850,
+          960,
+          1112,
+          2019,
+          1894
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 2255,
+        "post_wave_free_after_mib": [
+          1584,
+          850,
+          960,
+          1112,
+          2019,
+          1894
+        ]
+      },
+      "wall_s": 19.31161457201233,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      }
+    },
+    {
+      "id": "multi512-aligned-four16k512-c1",
+      "accepted": {
+        "v221-d3-flow-0": {
+          "type": "accepted",
+          "id": "v221-d3-flow-0",
+          "input_tokens": 16384,
+          "reserved_tokens": 16896,
+          "bank": 0,
+          "wave_id": "multi512-aligned-four16k512-c1"
+        },
+        "v221-d3-flow-1": {
+          "type": "accepted",
+          "id": "v221-d3-flow-1",
+          "input_tokens": 16384,
+          "reserved_tokens": 16896,
+          "bank": 1,
+          "wave_id": "multi512-aligned-four16k512-c1"
+        },
+        "v221-d3-flow-2": {
+          "type": "accepted",
+          "id": "v221-d3-flow-2",
+          "input_tokens": 16384,
+          "reserved_tokens": 16896,
+          "bank": 2,
+          "wave_id": "multi512-aligned-four16k512-c1"
+        },
+        "v221-d3-flow-3": {
+          "type": "accepted",
+          "id": "v221-d3-flow-3",
+          "input_tokens": 16384,
+          "reserved_tokens": 16896,
+          "bank": 3,
+          "wave_id": "multi512-aligned-four16k512-c1"
+        }
+      },
+      "cache_status": {
+        "v221-d3-flow-0": {
+          "type": "cache_status",
+          "id": "v221-d3-flow-0",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "v221-d3-flow-1": {
+          "type": "cache_status",
+          "id": "v221-d3-flow-1",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "v221-d3-flow-3": {
+          "type": "cache_status",
+          "id": "v221-d3-flow-3",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "v221-d3-flow-2": {
+          "type": "cache_status",
+          "id": "v221-d3-flow-2",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "v221-d3-flow-2": {
+          "type": "done",
+          "id": "v221-d3-flow-2",
+          "input_tokens": 16384,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 2
+        },
+        "v221-d3-flow-3": {
+          "type": "done",
+          "id": "v221-d3-flow-3",
+          "input_tokens": 16384,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 3
+        },
+        "v221-d3-flow-1": {
+          "type": "done",
+          "id": "v221-d3-flow-1",
+          "input_tokens": 16384,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 1
+        },
+        "v221-d3-flow-0": {
+          "type": "done",
+          "id": "v221-d3-flow-0",
+          "input_tokens": 16384,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "v221-d3-flow-0": 23.638422651041765,
+        "v221-d3-flow-3": 23.643356863001827,
+        "v221-d3-flow-2": 23.98686148104025,
+        "v221-d3-flow-1": 24.069448151043616
+      },
+      "last_token_s": {
+        "v221-d3-flow-0": 36.01629150501685,
+        "v221-d3-flow-3": 34.47857891203603,
+        "v221-d3-flow-2": 32.166002524027135,
+        "v221-d3-flow-1": 35.800671668024734
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 582503,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "multi512-aligned-four16k512-c1",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 512
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 512
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 512
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 512
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 35.962262,
+        "whole_wave_output_tok_s": 56.94858682693541,
+        "all_emissions_tok_s": 165.45564124563538,
+        "prefill_input_tokens": 65536,
+        "prefill_wall_seconds": 24.014513,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 65536,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 2729.016407703125,
+        "logical_prompt_tok_s": 2729.016407703125,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 93615920,
+        "mtp_prefill_us_sum": 1481301,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1159,
+          431,
+          627,
+          777,
+          1684,
+          1576
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 18749,
+        "post_wave_free_after_mib": [
+          1159,
+          431,
+          627,
+          777,
+          1684,
+          1576
+        ]
+      },
+      "wall_s": 36.038797617016826,
+      "texts": {
+        "v221-d3-flow-0": " the draft model\n                                        --spec-draft-cpu-moe overrides this setting\n                                        (env:\n                                        LLAMA_ARG_SPEC_DRAFT_N_CPU_MOE)\n```\n\n### EAGLE-3 Parameters\n\n```\n```\n\n\n</think>\n\nassistant\n<think>\nThe user wants a summary of the provided sources. Let me look at what's in the sources:\n\n1. README.md of llama.cpp (chunks 0, 1, 2) — general project description, quick start, backends, docs, contributing, acknowledgements.\n2. allreduce-p2p.cu (chunks 0–5) — CUDA peer-to-peer AllReduce implementation for multi-GPU: one-shot kernel and segmented (ring-style) kernel, double buffering, flags, epoch counters, init/free/reserve/set_params functions.\n3. docs/speculative.md (chunks 0–5) — speculative decoding documentation: draft model, EAGLE-3, DFlash, DSpark, n-gram variants, CLI options.\n4. monomoe-sm70.cu (chunks 0, 1) — experimental SM70 weight-streaming MoE kernel using cooperative launch.\n\nThe user's query is in Chinese: \"总结这些来源\" = \"Summarize these sources.\" So I should respond in Chinese.\n\nI need to produce a summary covering these sources. Format: probably a structured summary with sections per topic. Medium length — enough detail but concise. Use headings and bullet points. No tools needed.\n\nLet me draft the summary in Chinese:\n\n1. llama.cpp project overview (README)\n- LLM inference in C/C++, MIT license\n- Quick install methods: llama.app, Docker, precompiled binaries, source build\n- Features: no dependencies, Apple Silicon, x86 AVX/AVX512/AMX, RISC-V, quantization 1.5–8 bit, CUDA/HIP/MUSA, Vulkan, SYCL, CPU+GPU hybrid inference\n- Backend table: BLAS, BLIS, CANN, CUDA, HIP, Hexagon, IBM zDNN, MUSA, Metal, OpenCL, OpenVINO, RPC, SYCL, VirtGPU, Vulkan, WebGPU, ZenDNN\n- Docs and contribution guidelines, acknowledgements (cpp-httplib, stb, nlohmann/json, miniaudio, subprocess.h)\n\n2. CUDA P2P AllReduce",
+        "v221-d3-flow-1": " text, const size_t last_token_size, bool is_full_stop) {\n        GGML_ASSERT(task);\n\n        size_t stop_pos = std::string::npos;\n\n        for (const std::string & word : task->antiprompt) {\n            if (word.empty()) {\n                continue;\n            }\n\n            size_t pos;\n\n            if (is_full_stop) {\n                const size_t tmp = word.size() + last_token_size;\n                const size_t from_pos = text.size() > tmp ? text.size() - tmp : 0;\n\n                pos = text.find(word, from_pos);\n            } else {\n                // otherwise, partial stop\n                pos = text.find(word);\n            }\n\n            if (pos != std::string::npos) {\n                stop_pos = pos;\n                break;\n            }\n        }\n\n        return stop_pos;\n    }\n\n    // process logits for the last token in the batch\n    // idx_batch is the index of the last token in the batch\n    // idx_gen is the index of the last generated token within the slot\n    // returns the resulting token\n    // note: this function is not used in speculative decoding\n    llama_token process_last_token(int idx_batch, int idx_gen) {\n        // sample next token\n        const llama_token id = common_sampler_sample(smpl.get(), ctx_tgt, idx_batch);\n        common_sampler_accept(smpl.get(), id, true);\n\n        // note: when not using speculative decoding, the tokens are already in prompt.tokens\n        //       but this is not the case when using speculative decoding\n        //       this is why we handle the stats and logging here\n        prompt.tokens.push_back(id);\n\n        SLT_TRC(*this, \"id=%d, pos=%d, logit=%d\\n\", id, prompt.n_tokens() - 1, idx_batch);\n\n        // process the UTF-8 buffer and check if it contains any newlines\n        {\n            common_string_buffer buf;\n\n            const size_t n_add = llama_token_to_piece(vocab, id, buf.data, -1, UTF8_BYTE_LIMIT, true);\n            buf.add(n_add);\n\n            has_new_line  = buf.has_newline()  || has_new_line;\n            truncated     = buf.is_truncated() || truncated;\n        }\n\n        // save generated token\n        sampled = id",
+        "v221-d3-flow-2": "                    break;\n                }\n            }\n\n            // set probability for top n_probs tokens\n            result.probs.reserve(n_probs);\n            for (size_t i = 0; i < n_probs; i++) {\n                result.probs.push_back({\n\n===== source 0056 | code | sources/llama-v100-v3/tools/server/server-context.cpp | chunk=27 | sha256=1111111111111111111111111111111111111111111111111111111111111111 =====\n                    cur[i].id,\n                    common_token_to_piece(ctx_tgt, cur[i].id, special),\n                    cur[i].p\n                });\n            }\n        }\n    }\n\n    void send_error(const server_task & task, const std::string & error, const enum error_type type = ERROR_TYPE_SERVER) {\n        send_error(task.id, error, type);\n    }\n\n    void send_error(const server_slot & slot, const std::string & error, const enum error_type type = ERROR_TYPE_SERVER) {\n        send_error(slot.task->id, error, type, slot.task->n_tokens(), slot.stats.n_gen);\n    }\n\n    void send_error(const int id_task, const std::string & error, const enum error_type type = ERROR_TYPE_SERVER, const int n_prompt_tokens = 0, const int n_gen = 0) {\n        SRV_ERR(\"id = %d: %s\\n\", id_task, error.c_str());\n\n        // if the task is associated with a slot, we can send a slot_data event to avoid getting errors from the UI\n        int id_slot = -1;\n        for (const auto & slot : slots) {\n            if (slot.task && slot.task->id == id_task) {\n                id_slot = slot.id;\n                break;\n            }\n        }\n\n        server_task_result_ptr res = std::make_unique<server_task_result_error>(\n            id_task, id_slot, n_prompt_tokens, n_gen, error, type);\n\n        SRV_TRC(\"send_error: sending result for task %d to client: %s\\n\", id_task, res->to_json",
+        "v221-d3-flow-3": " \"new: ... \";\n\n                                    for (int i = np0; i < np1; i++) {\n                                        if (i == n_past) {\n                                            ss0 << \"| \";\n                                            ss1 << \"| \";\n                                        }\n\n                                        {\n                                            const auto token = slot.prompt.tokens[i];\n                                            const auto piece = token != LLAMA_TOKEN_NULL ? common_token_to_piece(ctx_tgt, token) : \"[MTMD]\";\n\n                                            if (i < n_past) {\n                                                st0 << piece << ' ';\n                                            } else {\n                                                st1 << piece << ' ';\n                                            }\n                                        }\n                                    }\n\n                                    SLT_DBG(slot, \"%s vs %s\\n\", ss0.str().c_str() + st0.str().c_str(), ss1.str().c_str() + st1.str().c_str());\n                                }\n\n                                if (pos_min < pos_min_thold) {\n                                    SLT_WRN(slot, \"ignoring context checkpoint (pos_min = %d, pos_max = %d, n_tokens = %d, min = %d, min_step = %d, size = %.3f MiB)\\n\",\n                                            pos_min, llama_memory_seq_pos_max(llama_get_memory(ctx_tgt), slot.id), slot.prompt.n_tokens(), params_base.n_ctx_checkpoints, params_base.checkpoint_min_step,\n                                            (float) slot.prompt.checkpoints.size() / 1024 / 1024);\n\n                                    // note: even if the checkpoints are erased, we can still use the KV cache if possible\n                                    slot.prompt.checkpoints.clear();\n                                    slot.spec_ckpt.clear();\n\n                                    if (n_past > slot.prompt.n_tokens()) {\n                                        slot.prompt_clear();\n                                        n_past = 0;\n\n                                        SLT_DBG(slot, \"after prompt_clear, n_past = %d\\n\", n_past);\n                                    }\n                                }\n                            }\n\n                            {\n                                auto & tokens = slot.prompt.tokens;\n\n                                if (tokens.size() > n_past) {\n                                    tokens.resize(n_past);\n                                }\n\n                                GGML_ASSERT(tokens.pos_next() == pos_next);\n                                GGML_ASSERT(tokens.size() == tokens.size_text());\n                            }\n\n===== source 0078 | code | sources/llama-v100-v3/tools/server/server-context.cpp | chunk=49 | sha256=111111"
+      }
+    }
+  ],
+  "model_loads_requested": 1,
+  "quality_reduction_requested": false,
+  "mtp_depth": 3,
+  "throughput_is_not_a_semantic_gate": true,
+  "ready": {
+    "status": "ready",
+    "max_context": 262140,
+    "pool_tokens": 524288,
+    "max_parallel": 4,
+    "model": "flash-next-iq3-xxs",
+    "refill_supported": true,
+    "prefix_cache_enabled": true
+  },
+  "boosted_long_native": "PASS",
+  "aligned": {
+    "native_record": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/multi-prefill-20261019/run/model/copy0/fourbank16k-d3/lastwave-3.json",
+    "baseline_all_emissions": 219.94367165245035,
+    "actual_all_emissions": 165.45564124563538,
+    "actual_prefill": 2729.016407703125,
+    "parity": {
+      "v221-d3-flow-2": {
+        "text_exact": false,
+        "token_ids_exact": false
+      },
+      "v221-d3-flow-3": {
+        "text_exact": false,
+        "token_ids_exact": false
+      },
+      "v221-d3-flow-1": {
+        "text_exact": false,
+        "token_ids_exact": false
+      },
+      "v221-d3-flow-0": {
+        "text_exact": false,
+        "token_ids_exact": false
+      }
+    },
+    "proposed": 2038,
+    "accepted": 1362
+  },
+  "error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')",
+  "finished_unix": 1792374350.5352483
+}

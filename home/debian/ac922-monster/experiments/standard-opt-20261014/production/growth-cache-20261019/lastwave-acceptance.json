@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "qualified_unix": 1792350053.4446273,
+  "worker_sha256": "40605b900b36a6691ab1738b56e0d106b859ee4bb44cfe98b4ef5f4415494486",
+  "api_tests": 30,
+  "coordinator_tests": 13,
+  "growth_policy_cases": 13,
+  "cuda_tus_rebuilt": 0,
+  "engine_tus_rebuilt": 0,
+  "mtp_depth": 3,
+  "quality": "evidence/semantic-review.json",
+  "six_device_first_capture": "onecat-fixture-receipt.json",
+  "telemetry": {
+    "status": "RECORDED",
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/growth-cache-20261019/run/gpu-samples.jsonl",
+    "samples": 3150,
+    "start_unix": 1792349339.5366945,
+    "end_unix": 1792349975.2905989,
+    "minimum_free_mib_by_gpu": [
+      1131.375,
+      705.375,
+      869.375,
+      1021.375,
+      1806.5,
+      1663.375
+    ],
+    "maximum_temperature_c_by_gpu": [
+      61,
+      60,
+      61,
+      59,
+      60,
+      59
+    ]
+  },
+  "evidence_sha256": {
+    "evidence/affinity-precondition-repair.json": "aae12c7f8a332da552990f4c5afb636df373bd047154733561b81d54073d439b",
+    "evidence/affinity-primed-before-repair.json": "20c4b3106a1f5a79ba8c424ad9e74cf3c966d3b37601194e39275e775b889cac",
+    "evidence/affinity-result.json": "cf55ab25c51b9fbbbce7a7b6dc3ecb676eab58f47027d9943f88466e8b6544cf",
+    "evidence/build-report.json": "c1990267b6a4f5aca635597efbc2184c73a590b5c80d731a6f08d1a8bfa3f24d",
+    "evidence/c4-affinity-mock.log": "faedcdcadf6da728b14d21df92d927c3b5ff8d9697004832e38865be958e145a",
+    "evidence/c4-api-tests.log": "64aa9feb093b63d79ac56b3dd2feb662541a4ec8baac2086f3735a95aec88dd2",
+    "evidence/c4-coordinator.log": "2da361efc393f4590d1119a97584bd7a47f998f31c7ea27f129e39d10efda9ee",
+    "evidence/c4-growth-mock.log": "758b0158c94ed253a85a8dabb83efc49d2a6b17625e440887ef98678f9b8fe88",
+    "evidence/c4-test-growth.log": "ee085dac129f5e8a5e40e2fb3f4b14af38d3fb3b5b4a8c07cb6828d74488e66b",
+    "evidence/c4-test-thermal.log": "3c06c32b17c81a01d6bf768138a85f41d90ae5407c666c312a4140c582edc995",
+    "evidence/campaign-status.json": "99554d6076f05dc20e0fd25371ec347110a64f26c7c3b57a125e0b512a4e747d",
+    "evidence/cancel-cached-single.json": "fa5e8fafe687e917a7aa931a283d6278c45d2a6e3e81c39d9bf3954e5cf74f76",
+    "evidence/four512-flow-record.json": "92210b89b754f52d41486a8c433907cab8636e42c8be6172f0f86fc97987a17b",
+    "evidence/growth-result.json": "e29497f996ff83720fab0b08c5d30bb98d0e279bdbedbd1adfa56a0da12f2139",
+    "evidence/http-result.json": "a2821d547984ca5884d487c2ffe91e9ac8f6aaf5b4955a6f5f4d0258853e7fc2",
+    "evidence/measured-summary.json": "96c7f38b668736f17d3f094e9fac1e57d7581c2c91da146d9ca45ce42607d02d",
+    "evidence/native-semantic-gate.json": "52d3f737b8157cfd6265f7539d2f7b12bd327aeea1203b7298b3f8624104e80e",
+    "evidence/prefill-pacing-result.json": "cd12f0769e426a525f4e0a0d74812fb6edc1d9116ee4212126c399919d112312",
+    "evidence/semantic-review.json": "ce47f098c5c4afb12fa1fec5691fdd40f44a97184e683bbbbfebd0ff3f17ea96",
+    "evidence/single-cache-result.json": "5450ba0f120d3ec9acd036abb1728187b8e3d8dc110992afa24541ce3606ae78"
+  },
+  "limits": [
+    "raw300/6000notmet",
+    "cache latency improvement is not raw compute throughput",
+    "full524288pool proof inherited from unchanged L2 allocator; no full-pool input rerun",
+    "fixedD3, samequant/experts/runtime; no hardware changes; fixed61/57 soft wait with unchanged65 hard stop",
+    "pre-existing near-pool active-minimum crash is under C5 repair; no completion claim for that edge"
+  ],
+  "architect_review": "Source architecture and exact-recovery fix APPROVED by lastwave_architect; independent real-model/semantic evidence APPROVED by lastwave_prefix for interim normal-workload release. Preexisting C5 pool-boundary fix remains open; no overall completion claim."
+}

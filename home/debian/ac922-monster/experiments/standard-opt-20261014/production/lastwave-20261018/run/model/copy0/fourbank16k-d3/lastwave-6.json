@@ -1,0 +1,97 @@
+{
+  "wave_id": "lastwave-64k-max262k-UB512-c24ddc56fb",
+  "mode": "bank_local_phase_progression",
+  "banks": [
+    {
+      "bank": 0,
+      "target_context": 262144,
+      "draft_context": 262144,
+      "target_ubatch": 512
+    },
+    {
+      "bank": 1,
+      "target_context": 1024,
+      "draft_context": 1024,
+      "target_ubatch": 256
+    },
+    {
+      "bank": 2,
+      "target_context": 1024,
+      "draft_context": 1024,
+      "target_ubatch": 256
+    },
+    {
+      "bank": 3,
+      "target_context": 1024,
+      "draft_context": 1024,
+      "target_ubatch": 256
+    }
+  ],
+  "refill_count": 0,
+  "flow_count": 1,
+  "flows": [
+    {
+      "id": "paris",
+      "bank": 0,
+      "input_tokens": 65536,
+      "output_tokens": 1,
+      "cached_tokens": 0,
+      "output": "Paris",
+      "token_ids": [
+        57590
+      ],
+      "emitted_us": [
+        260955954541
+      ],
+      "proposed": 3,
+      "accepted": 3,
+      "prefill_us": 19214174,
+      "target_prefill_us": 18877920,
+      "mtp_prefill_us": 319846,
+      "thermal_wait_us": 0,
+      "prefill_started_us": 260936740366,
+      "prefill_finished_us": 260955954607,
+      "warmup_started_us": 260955954607,
+      "warmup_finished_us": 260956861649,
+      "decode_started_us": 260956861649,
+      "decode_finished_us": 260956861650,
+      "warmup_frames": 1,
+      "active_chain_lanes": 1,
+      "fallback_lanes": 0
+    }
+  ],
+  "wall_seconds": 20.121763,
+  "whole_wave_output_tok_s": 0.04969743456376064,
+  "all_emissions_tok_s": 1000000.0,
+  "prefill_input_tokens": 65536,
+  "prefill_wall_seconds": 19.214241,
+  "cached_tokens": 0,
+  "prefill_evaluated_tokens": 65536,
+  "uncached_prefill": true,
+  "prefill_aggregate_wall_tok_s": 3410.803476442291,
+  "logical_prompt_tok_s": 3410.803476442291,
+  "prefill_scope": "initial independent bank prefills",
+  "target_prefill_us_sum": 18877920,
+  "mtp_prefill_us_sum": 319846,
+  "thermal_wait_us_sum": 0,
+  "mtp_depth": 3,
+  "banks_scope": "completed wave before optional idle-context reclamation",
+  "post_wave_free_before_mib": [
+    1045,
+    853,
+    945,
+    1097,
+    2007,
+    1356
+  ],
+  "post_wave_reclaimed_banks": 0,
+  "post_wave_reclaim_us": 3211,
+  "post_wave_free_after_mib": [
+    1045,
+    853,
+    945,
+    1097,
+    2007,
+    1356
+  ]
+}

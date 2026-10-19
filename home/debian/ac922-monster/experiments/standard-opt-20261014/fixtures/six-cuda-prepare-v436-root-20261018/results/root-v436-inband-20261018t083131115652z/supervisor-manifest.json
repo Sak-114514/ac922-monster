@@ -1,0 +1,28 @@
+{
+  "unit": "root-v436-inband-20261018t083131115652z",
+  "guard_unit": "ac922-v436-guard-20261018t083131115652z",
+  "output": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/six-cuda-prepare-v436-root-20261018/results/root-v436-inband-20261018t083131115652z",
+  "model_launch_command": [
+    "systemd-run",
+    "--user",
+    "--unit=root-v436-inband-20261018t083131115652z",
+    "--property=RuntimeMaxSec=600s",
+    "--property=KillMode=control-group",
+    "--property=TimeoutStopSec=20s",
+    "/bin/bash",
+    "-lc",
+    "env V436_SCHED_FIXTURE_RUN_AUTHORIZED=1 V436_SCHED_BINARY=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/six-cuda-prepare-v436-root-20261018/tests/build-scheduler6-r436-hostlink-r2/scheduler6-fixture-v436 V436_SCHED_PLUGIN_DIR=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/six-cuda-prepare-v436-root-20261018/tests/build-scheduler6-r436-hostlink-r2/backends V436_SCHED_RUNTIME_ROOT=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v436 V436_SCHED_HELPER_SO=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/six-cuda-prepare-v436-root-20261018/helper/build-v436/libac922-tail-bridge-v3.so V436_SCHED_RUN_TAG=root-v436-inband-20261018t083131115652z /usr/bin/timeout 180 bash /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/six-cuda-prepare-v436-root-20261018/tests/run-scheduler6-matrix.sh >/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/six-cuda-prepare-v436-root-20261018/results/root-v436-inband-20261018t083131115652z/scheduler.log 2>&1"
+  ],
+  "model_loads": 0,
+  "identity": "f8e8f65b1be1dd7d0c6ca78e27160adf9736aceb31156dc069e59d8e9ba5eb35  /tmp/tail-only-exec-v390-v390-r1/tail-only-exec-v390-fixture\n608e7f47858d63f3ae695fdb54577d7b7a35b9d106192fdcf41649fdf21679ff  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/six-cuda-prepare-v436-root-20261018/helper/build-v436/libac922-tail-bridge-v3.so\n73954c06694496ffcb80b0a2e39193b5346c5e0f54f5ca7e0d843e3233bfba78  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/six-cuda-prepare-v436-root-20261018/helper/bridge-v3.cu\n",
+  "ldd": "\tlinux-vdso64.so.1 (0x00007fffa38a0000)\n\tlibggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v436/lib/libggml-cuda.so.0 (0x00007fff95ba0000)\n\tlibggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v436/lib/libggml-cpu.so.0 (0x00007fff959e0000)\n\tlibggml.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v436/lib/libggml.so.0 (0x00007fff959b0000)\n\tlibggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v436/lib/libggml-base.so.0 (0x00007fff95810000)\n\tlibcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fff95730000)\n\tlibstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fff95400000)\n\tlibgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fff953c0000)\n\tlibc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fff95160000)\n\tlibcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fff8e440000)\n\tlibcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fff8c680000)\n\tlibnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fff8a820000)\n\tlibm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fff8a6f0000)\n\t/lib64/ld64.so.2 (0x00007fffa38c0000)\n\tlibgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fff8a670000)\n\tlibdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fff8a640000)\n\tlibpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fff8a610000)\n\tlibrt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fff8a5e0000)\n\tlibcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff76750000)\n",
+  "fixture_scope": "directV2+cap32lifecycle+actualGGMLABA6GPUs; noLLMperformanceclaim",
+  "GPU_UUIDs": [
+    "GPU-80452dac-e8c1-99fd-225c-ea846276ae6f",
+    "GPU-ac5b33c1-276d-c1ae-15a6-46f7894daefb",
+    "GPU-e6529eb8-aa1f-1d02-5d63-dfb7995bf1eb",
+    "GPU-fadb0459-4d30-907b-289a-862b3014f165",
+    "GPU-760ce501-32f6-69b6-215b-1020da68bbfc",
+    "GPU-d3558623-deca-c702-3cc0-01b4aa9c667a"
+  ]
+}

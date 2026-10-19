@@ -1,0 +1,73 @@
+{
+  "status": "staged_only_no_build_or_gpu",
+  "fixture": "tail-stage-audit-v428-root-20261018",
+  "parent_r5_binary_sha256": "1cc4c9de1e840649f26255dff842e090b7421efdc514be18fb1eaf2907d386cb",
+  "parent_r5_binary_remote_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/tail-only-exec-v390-root-20261018/build-r5/libac922-tail-bridge.so",
+  "frozen_source_evidence": {
+    "remote_cu": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/tail-only-exec-v390-root-20261018/build-src-r5/bridge-r5.cu",
+    "remote_api": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/tail-only-exec-v390-root-20261018/build-src-r5/bridge-api.h",
+    "local_staged_r5_cu_sha256": "2b2962528f115d88e56835a384b6ce0b86e77f4fddda085cce5595e134029bde",
+    "remote_r5_cu_sha256": "2b2962528f115d88e56835a384b6ce0b86e77f4fddda085cce5595e134029bde",
+    "local_staged_api_sha256": "3e94b0074d7720a7fa087801aa1210353406626bdf2c84b322a26f569281df27",
+    "remote_r5_api_sha256": "3e94b0074d7720a7fa087801aa1210353406626bdf2c84b322a26f569281df27",
+    "source_identity_matches": true
+  },
+  "candidate_contract": {
+    "environment": "AC922_TAIL_STAGE_TIMING=1 before process start; default disabled",
+    "timing_phases": [
+      "done_event_sync_us",
+      "child_graph_instantiate_us",
+      "controller_graph_instantiate_us",
+      "upload_drain_us",
+      "prepare_us",
+      "launch_cpu_us"
+    ],
+    "log_policy": "fixed-size global aggregate; emit on phase/call >=1000us or every 64 calls",
+    "cuda_api_call_sequence_matches_r5": true,
+    "cuda_api_call_count": 30,
+    "abi_exports_match_r5": [
+      "ac922_tail_bridge_launch",
+      "ac922_tail_bridge_v2_ready",
+      "ac922_tail_bridge_v2_launch_captured",
+      "ac922_tail_bridge_drop_context"
+    ],
+    "bridge_api_header_unchanged": true,
+    "k_max_entries": 32,
+    "build_executed": false,
+    "gpu_executed": false
+  },
+  "files": {
+    "source/bridge-r5.cu": {
+      "path": "source/bridge-r5.cu",
+      "sha256": "2b2962528f115d88e56835a384b6ce0b86e77f4fddda085cce5595e134029bde"
+    },
+    "source/bridge-api.h": {
+      "path": "source/bridge-api.h",
+      "sha256": "3e94b0074d7720a7fa087801aa1210353406626bdf2c84b322a26f569281df27"
+    },
+    "candidate/bridge-r5.cu": {
+      "path": "candidate/bridge-r5.cu",
+      "sha256": "751fd87597e790544cc68bd5ec5f722493afd50dd54ac2549e55ab7e7a0078b7"
+    },
+    "candidate/bridge-api.h": {
+      "path": "candidate/bridge-api.h",
+      "sha256": "3e94b0074d7720a7fa087801aa1210353406626bdf2c84b322a26f569281df27"
+    },
+    "host/verify_stage_timing.py": {
+      "path": "host/verify_stage_timing.py",
+      "sha256": "30eca90d07616cb2ea4e516de8a78b1c751ac070e37c03e973ad06ec9d7880d6"
+    },
+    "host/fixtures/stage-timing-sample.log": {
+      "path": "host/fixtures/stage-timing-sample.log",
+      "sha256": "4d0a5059bf8d0dd166a14224b6261fe7c210042e01e85bec134b22b3f84717c9"
+    },
+    "host/build-helper-r5.sh": {
+      "path": "host/build-helper-r5.sh",
+      "sha256": "73f82d37938759312ad653482e47fc8be65d54e24c91b3375ac36c486cf3cda0"
+    },
+    "V428-STAGING.md": {
+      "path": "V428-STAGING.md",
+      "sha256": "2f087a0b1e5de8c4739fd664a3c2839eba513798ace7657836931724aef41052"
+    }
+  }
+}

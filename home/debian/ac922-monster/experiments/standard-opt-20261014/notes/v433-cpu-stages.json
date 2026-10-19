@@ -1,0 +1,111 @@
+{
+  "log": "monster-engine/standard-opt-20261014/fixtures/prefill-tail-cpu-v433-root-20261018/results/root-v433-inband-20261018t074337913997z-runtime.log",
+  "status": "TARGET_WINDOWS_ANALYZED",
+  "helper_lines": 103,
+  "windows": [
+    {
+      "label": "v420-single32k-ub1280-native-paris-8192",
+      "phase": "target_prefill",
+      "chunk": 0,
+      "rows": 8192,
+      "start_us": 228582252614,
+      "end_us": 228588854369,
+      "phase_wall_us": 6601755,
+      "logged_launch_calls": 42,
+      "logged_cold_calls": 42,
+      "sampled_host_us": {
+        "done_event_sync": 0,
+        "child_graph_instantiate": 3588133,
+        "controller_graph_instantiate": 6369,
+        "upload_drain": 1964,
+        "prepare": 3631515,
+        "launch_cpu": 3633262
+      },
+      "prepare_other_us": 35049,
+      "launch_other_including_retire_destroy_us": 1747,
+      "cpu_valid_calls": 42,
+      "child_cpu_us": 3463968,
+      "child_user_us": 3108129,
+      "child_system_us": 375856,
+      "child_major_faults": 0,
+      "child_minor_faults": 3084,
+      "child_voluntary_switches": 67,
+      "child_involuntary_switches": 165,
+      "node_counts": [
+        835,
+        836,
+        848,
+        849,
+        869,
+        882,
+        883,
+        897,
+        916
+      ],
+      "logged_by_device": {
+        "0": 7,
+        "1": 7,
+        "2": 7,
+        "3": 7,
+        "4": 7,
+        "5": 7
+      },
+      "arithmetic_scope": "overlapping/nested clocks not additive; no GPU-kernel-time attribution"
+    },
+    {
+      "label": "v420-single32k-ub1280-formal32k-prefill",
+      "phase": "target_prefill",
+      "chunk": 0,
+      "rows": 32768,
+      "start_us": 228596844747,
+      "end_us": 228609329563,
+      "phase_wall_us": 12484816,
+      "logged_launch_calls": 61,
+      "logged_cold_calls": 60,
+      "sampled_host_us": {
+        "done_event_sync": 0,
+        "child_graph_instantiate": 7711566,
+        "controller_graph_instantiate": 2980,
+        "upload_drain": 2805,
+        "prepare": 7767120,
+        "launch_cpu": 7769843
+      },
+      "prepare_other_us": 49769,
+      "launch_other_including_retire_destroy_us": 2723,
+      "cpu_valid_calls": 60,
+      "child_cpu_us": 7514030,
+      "child_user_us": 6955613,
+      "child_system_us": 673144,
+      "child_major_faults": 0,
+      "child_minor_faults": 2672,
+      "child_voluntary_switches": 114,
+      "child_involuntary_switches": 323,
+      "node_counts": [
+        836,
+        837,
+        848,
+        849,
+        875,
+        884,
+        888,
+        897,
+        922
+      ],
+      "logged_by_device": {
+        "0": 10,
+        "1": 10,
+        "2": 10,
+        "3": 11,
+        "4": 10,
+        "5": 10
+      },
+      "arithmetic_scope": "overlapping/nested clocks not additive; no GPU-kernel-time attribution"
+    }
+  ],
+  "limitations": [
+    "Only slow or periodic helper calls are logged. Unlogged calls are not assigned zero time.",
+    "prepare includes graph validation and both instantiate subphases; launch includes prepare/retire.",
+    "Host-call times can include GPU completion waits; they are not GPU compute times.",
+    "Incomplete target windows are excluded."
+  ]
+}

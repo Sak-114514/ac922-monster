@@ -1,0 +1,12 @@
+{
+  "tests/build-fixture.sh": {
+    "supersedes_sha256": "34748e5d3d0d2853c5f79f2f2311b82606e1b333e95915ba4a03cfb3e12e672e",
+    "sha256": "fede2918692118cf6131068f29e84e8908abf6db0d37b05d26f604c2fc55de15",
+    "reason": "Forward nvcc host-link rpath as -Xlinker arguments; no CUDA or source changes."
+  },
+  "tests/verify_source_closure.py": {
+    "supersedes_sha256": "8a5f686fd3d50370e31b1bc2e15127ac3c9a98b4c86e2f601d60c9dfaa32c0ba",
+    "sha256": "ad59b3d1c3ccbf7b40fd1203fe0dbc0ffd2d1dc634b96dc66282d749dae4f972",
+    "reason": "Validate the tests-local source-hash overrides while preserving the pinned helper manifest."
+  }
+}

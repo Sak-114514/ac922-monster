@@ -1,0 +1,682 @@
+{
+  "status": "PASS",
+  "waves": [
+    {
+      "id": "c4-native4-invalidate-before-cold-retry-436399b447",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 64,
+          "bank": 0,
+          "wave_id": "c4-native4-invalidate-before-cold-retry-436399b447"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 67,
+          "bank": 1,
+          "wave_id": "c4-native4-invalidate-before-cold-retry-436399b447"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 73,
+          "bank": 2,
+          "wave_id": "c4-native4-invalidate-before-cold-retry-436399b447"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 79,
+          "bank": 3,
+          "wave_id": "c4-native4-invalidate-before-cold-retry-436399b447"
+        }
+      },
+      "cache_status": {
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "capital-en": 0.2886067010113038,
+        "arithmetic-zh": 0.4198532369919121,
+        "logic-en": 0.573519652010873,
+        "strict-json-zh": 0.5930944790015928
+      },
+      "last_token_s": {
+        "capital-en": 0.2886067010113038,
+        "arithmetic-zh": 0.5016247850144282,
+        "logic-en": 0.573519652010873,
+        "strict-json-zh": 0.7983447689912282
+      },
+      "timings": {
+        "wave_id": "c4-native4-invalidate-before-cold-retry-436399b447",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 24576,
+            "draft_context": 24576,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 24576,
+            "draft_context": 24576,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 0.782982,
+        "whole_wave_output_tok_s": 26.820539935783966,
+        "all_emissions_tok_s": 41.197392401239064,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 0.577262,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 268.5089266225735,
+        "logical_prompt_tok_s": 268.5089266225735,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 1739196,
+        "mtp_prefill_us_sum": 18732,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          24576,
+          24576,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          24576,
+          24576,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2146,
+          2139,
+          2263,
+          2415,
+          3201,
+          3180
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1261,
+        "post_wave_free_after_mib": [
+          2146,
+          2139,
+          2263,
+          2415,
+          3201,
+          3180
+        ]
+      },
+      "wall_s": 0.8006125380052254,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      },
+      "label": "c4-native4-invalidate-before-cold-retry",
+      "control_roundtrip_s": 0.8015390150249004
+    }
+  ],
+  "purpose": "explicitly invalidate all four prefix checkpoints before cold-only retry",
+  "cold4_replacement": {
+    "label": "cold4",
+    "request_order": [
+      "doc-alpha",
+      "doc-bravo",
+      "doc-charlie",
+      "doc-delta"
+    ],
+    "mapping": {
+      "doc-alpha": 0,
+      "doc-bravo": 1,
+      "doc-charlie": 2,
+      "doc-delta": 3
+    },
+    "mapping_source": "worker event when present; otherwise source-derived position modulo four",
+    "bank_mapping_by_request": [
+      {
+        "id": "doc-alpha",
+        "document_id": "DOC-AFFINITY-ALPHA-01",
+        "prompt_sha256": "7f76f0dfd981601eeada0268352fcf2b11608023abcf22e0c458a5fb5b641f37",
+        "expected": "3179",
+        "actual": "3179",
+        "semantic_pass": true,
+        "finish_reason": "stop",
+        "natural_stop": true,
+        "input_tokens": 10817,
+        "context_limit_tokens": 17152,
+        "context_pass": true,
+        "cache_status_present": true,
+        "cached_tokens": 0,
+        "cache_expectation": "cold",
+        "cache_pass": true,
+        "bank": 0,
+        "expected_bank": null,
+        "bank_pass": true,
+        "reserved_tokens": 10833,
+        "bank_event_values": {
+          "accepted": 0,
+          "cache_status": 0,
+          "done": 0
+        },
+        "bank_event_consistent": true,
+        "bank_mapping_source": "worker_event",
+        "ttft_s": 13.194829485961236,
+        "last_emission_s": 13.352591565984767
+      },
+      {
+        "id": "doc-bravo",
+        "document_id": "DOC-AFFINITY-BRAVO-02",
+        "prompt_sha256": "7dfa886e654976929f95abb0b25c08cbecc4faeac247d8248783980ae48388e6",
+        "expected": "6842",
+        "actual": "6842",
+        "semantic_pass": true,
+        "finish_reason": "stop",
+        "natural_stop": true,
+        "input_tokens": 10817,
+        "context_limit_tokens": 17152,
+        "context_pass": true,
+        "cache_status_present": true,
+        "cached_tokens": 0,
+        "cache_expectation": "cold",
+        "cache_pass": true,
+        "bank": 1,
+        "expected_bank": null,
+        "bank_pass": true,
+        "reserved_tokens": 10833,
+        "bank_event_values": {
+          "accepted": 1,
+          "cache_status": 1,
+          "done": 1
+        },
+        "bank_event_consistent": true,
+        "bank_mapping_source": "worker_event",
+        "ttft_s": 13.617685490986332,
+        "last_emission_s": 13.709705501969438
+      },
+      {
+        "id": "doc-charlie",
+        "document_id": "DOC-AFFINITY-CHARLIE-03",
+        "prompt_sha256": "498706d5bbc5ace70ddf1f09f98664c2316744f34ae2e4925cf147f3c99e6f68",
+        "expected": "5301",
+        "actual": "5301",
+        "semantic_pass": true,
+        "finish_reason": "stop",
+        "natural_stop": true,
+        "input_tokens": 10818,
+        "context_limit_tokens": 17152,
+        "context_pass": true,
+        "cache_status_present": true,
+        "cached_tokens": 0,
+        "cache_expectation": "cold",
+        "cache_pass": true,
+        "bank": 2,
+        "expected_bank": null,
+        "bank_pass": true,
+        "reserved_tokens": 10834,
+        "bank_event_values": {
+          "accepted": 2,
+          "cache_status": 2,
+          "done": 2
+        },
+        "bank_event_consistent": true,
+        "bank_mapping_source": "worker_event",
+        "ttft_s": 13.899544061976485,
+        "last_emission_s": 13.968564809998497
+      },
+      {
+        "id": "doc-delta",
+        "document_id": "DOC-AFFINITY-DELTA-04",
+        "prompt_sha256": "408d5e5683a67f91600dfe219b8300f8ef384f5999a9d0b2bec52d63faf6fadf",
+        "expected": "9274",
+        "actual": "9274",
+        "semantic_pass": true,
+        "finish_reason": "stop",
+        "natural_stop": true,
+        "input_tokens": 10817,
+        "context_limit_tokens": 17152,
+        "context_pass": true,
+        "cache_status_present": true,
+        "cached_tokens": 0,
+        "cache_expectation": "cold",
+        "cache_pass": true,
+        "bank": 3,
+        "expected_bank": null,
+        "bank_pass": true,
+        "reserved_tokens": 10833,
+        "bank_event_values": {
+          "accepted": 3,
+          "cache_status": 3,
+          "done": 3
+        },
+        "bank_event_consistent": true,
+        "bank_mapping_source": "worker_event",
+        "ttft_s": 13.82043906499166,
+        "last_emission_s": 13.892290435964242
+      }
+    ],
+    "wave_wall_s": 13.973379693983588,
+    "control_roundtrip_s": 13.97712308896007,
+    "first_token_s": {
+      "doc-alpha": 13.194829485961236,
+      "doc-bravo": 13.617685490986332,
+      "doc-delta": 13.82043906499166,
+      "doc-charlie": 13.899544061976485
+    },
+    "last_token_s": {
+      "doc-alpha": 13.352591565984767,
+      "doc-bravo": 13.709705501969438,
+      "doc-delta": 13.892290435964242,
+      "doc-charlie": 13.968564809998497
+    },
+    "timings": {
+      "wave_id": "affinity-c4-cold4-after-explicit-invalidation-dcbcf7878c",
+      "mode": "bank_local_phase_progression",
+      "banks": [
+        {
+          "bank": 0,
+          "target_context": 24576,
+          "draft_context": 24576,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 1,
+          "target_context": 24576,
+          "draft_context": 24576,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 2,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 3,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        }
+      ],
+      "refill_count": 0,
+      "flow_count": 4,
+      "wall_seconds": 13.814742,
+      "whole_wave_output_tok_s": 1.15818304822486,
+      "all_emissions_tok_s": 20.677979244478333,
+      "prefill_input_tokens": 43269,
+      "prefill_wall_seconds": 13.744921,
+      "cached_tokens": 0,
+      "prefill_evaluated_tokens": 43269,
+      "uncached_prefill": true,
+      "prefill_aggregate_wall_tok_s": 3147.999177296108,
+      "logical_prompt_tok_s": 3147.999177296108,
+      "prefill_scope": "initial independent bank prefills",
+      "target_prefill_us_sum": 52153616,
+      "mtp_prefill_us_sum": 1507971,
+      "thermal_wait_us_sum": 0,
+      "mtp_depth": 3,
+      "single_cached_affinity": false,
+      "single_cache_admission_free_mib": [],
+      "production_floor_mib": 256,
+      "context_rebuilds_before_execution": 0,
+      "capacity_growth_enabled": true,
+      "capacity_growth_applied": false,
+      "capacity_growth_reason": "no_eligible_growth",
+      "capacity_growth_units": 0,
+      "capacity_growth_required_free_mib": 0,
+      "capacity_growth_preflight_free_mib": [],
+      "capacity_growth_exact_capacity": [
+        24576,
+        24576,
+        17152,
+        17152
+      ],
+      "capacity_growth_candidate_capacity": [
+        24576,
+        24576,
+        17152,
+        17152
+      ],
+      "state_migration_supported": false,
+      "banks_scope": "completed wave before optional idle-context reclamation",
+      "post_wave_free_before_mib": [
+        1998,
+        1993,
+        2147,
+        2299,
+        3084,
+        3073
+      ],
+      "post_wave_reclaimed_banks": 0,
+      "post_wave_reclaim_us": 3461,
+      "post_wave_free_after_mib": [
+        1998,
+        1993,
+        2147,
+        2299,
+        3084,
+        3073
+      ]
+    },
+    "errors": [],
+    "response": {
+      "id": "affinity-c4-cold4-after-explicit-invalidation-dcbcf7878c",
+      "accepted": {
+        "doc-alpha": {
+          "type": "accepted",
+          "id": "doc-alpha",
+          "input_tokens": 10817,
+          "reserved_tokens": 10833,
+          "bank": 0,
+          "wave_id": "affinity-c4-cold4-after-explicit-invalidation-dcbcf7878c"
+        },
+        "doc-bravo": {
+          "type": "accepted",
+          "id": "doc-bravo",
+          "input_tokens": 10817,
+          "reserved_tokens": 10833,
+          "bank": 1,
+          "wave_id": "affinity-c4-cold4-after-explicit-invalidation-dcbcf7878c"
+        },
+        "doc-charlie": {
+          "type": "accepted",
+          "id": "doc-charlie",
+          "input_tokens": 10818,
+          "reserved_tokens": 10834,
+          "bank": 2,
+          "wave_id": "affinity-c4-cold4-after-explicit-invalidation-dcbcf7878c"
+        },
+        "doc-delta": {
+          "type": "accepted",
+          "id": "doc-delta",
+          "input_tokens": 10817,
+          "reserved_tokens": 10833,
+          "bank": 3,
+          "wave_id": "affinity-c4-cold4-after-explicit-invalidation-dcbcf7878c"
+        }
+      },
+      "cache_status": {
+        "doc-charlie": {
+          "type": "cache_status",
+          "id": "doc-charlie",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "doc-delta": {
+          "type": "cache_status",
+          "id": "doc-delta",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "doc-alpha": {
+          "type": "cache_status",
+          "id": "doc-alpha",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "doc-bravo": {
+          "type": "cache_status",
+          "id": "doc-bravo",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "doc-alpha": {
+          "type": "done",
+          "id": "doc-alpha",
+          "input_tokens": 10817,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "doc-bravo": {
+          "type": "done",
+          "id": "doc-bravo",
+          "input_tokens": 10817,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "doc-delta": {
+          "type": "done",
+          "id": "doc-delta",
+          "input_tokens": 10817,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 3
+        },
+        "doc-charlie": {
+          "type": "done",
+          "id": "doc-charlie",
+          "input_tokens": 10818,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 2
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "doc-alpha": 13.194829485961236,
+        "doc-bravo": 13.617685490986332,
+        "doc-delta": 13.82043906499166,
+        "doc-charlie": 13.899544061976485
+      },
+      "last_token_s": {
+        "doc-alpha": 13.352591565984767,
+        "doc-bravo": 13.709705501969438,
+        "doc-delta": 13.892290435964242,
+        "doc-charlie": 13.968564809998497
+      },
+      "timings": {
+        "wave_id": "affinity-c4-cold4-after-explicit-invalidation-dcbcf7878c",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 24576,
+            "draft_context": 24576,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 24576,
+            "draft_context": 24576,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 13.814742,
+        "whole_wave_output_tok_s": 1.15818304822486,
+        "all_emissions_tok_s": 20.677979244478333,
+        "prefill_input_tokens": 43269,
+        "prefill_wall_seconds": 13.744921,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 43269,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 3147.999177296108,
+        "logical_prompt_tok_s": 3147.999177296108,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 52153616,
+        "mtp_prefill_us_sum": 1507971,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          24576,
+          24576,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          24576,
+          24576,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1998,
+          1993,
+          2147,
+          2299,
+          3084,
+          3073
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 3461,
+        "post_wave_free_after_mib": [
+          1998,
+          1993,
+          2147,
+          2299,
+          3084,
+          3073
+        ]
+      },
+      "wall_s": 13.973379693983588,
+      "texts": {
+        "doc-alpha": "3179",
+        "doc-bravo": "6842",
+        "doc-charlie": "5301",
+        "doc-delta": "9274"
+      },
+      "label": "c4-cold4-after-explicit-invalidation",
+      "control_roundtrip_s": 13.97712308896007
+    },
+    "status": "PASS",
+    "actual_run_order": "after original nine passing affinity waves and explicit four-bank invalidation"
+  }
+}

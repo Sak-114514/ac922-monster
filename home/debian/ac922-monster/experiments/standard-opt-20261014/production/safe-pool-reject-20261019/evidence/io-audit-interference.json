@@ -1,0 +1,18 @@
+{
+  "status": "CONFIRMED_AND_STOPPED",
+  "recorded_unix": 1792355145.2736905,
+  "scope": "Current session audit command accidentally used grep -R without a directory in /home/debian; recursively read model weights.",
+  "processes": [
+    557443,
+    557444
+  ],
+  "observed_read_bytes": 426200244224,
+  "observed_elapsed_seconds": 1923,
+  "source_of_observation": "Parent live /proc/557444/io and fd3=model safetensors; exact argv/cwd/uid checked before SIGTERM.",
+  "termination_time_upper_bound_unix": 1792355046.9602363,
+  "no_model_reload": true,
+  "original_quality_evidence_remains_valid": true,
+  "original_performance_marked_io_polluted": true,
+  "repeat_scope": "one retained uncached32K and one SSE4x512 then usage4x512, same model/PID",
+  "causality_limit": "Removal improved measured rates; residual differences to older L4 receipts are not assigned a cause."
+}

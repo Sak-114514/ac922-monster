@@ -1,0 +1,149 @@
+{
+  "schema": "ac922-late-prefill-probe-v1",
+  "status": "RECORDED",
+  "started_unix": 1792344791.6553743,
+  "endpoint": "http://127.0.0.1:8003/v1",
+  "model": "flash-next-iq3-xxs",
+  "service_mode": "already-loaded API only; no service/model lifecycle operations",
+  "additional_model_loads_requested": 0,
+  "long_prompt_class": "approximately 32K class using the existing C12 real-corpus character calibration; not exact-token preflight",
+  "long_corpus_characters": 108239,
+  "long_prompt_characters_including_template": 108501,
+  "long_prompt_sha256": "60fa0830e87d2ed8765f93b42e5b18f0bf6b0ac713d5fa0e3bb4958113b652fc",
+  "verification_code": "EPSILON72941",
+  "long_max_tokens": 16,
+  "short_launch_delay_s_requested": 0.5,
+  "short_cases": [
+    {
+      "id": "short-paris",
+      "max_tokens": 16,
+      "kind": "exact_text",
+      "expected": "Paris",
+      "prompt_sha256": "678afb9d5078d3ef479ad3e40b6e01e132b65aac62879b62ac421f37a4c5de53",
+      "prompt_characters": 105
+    },
+    {
+      "id": "short-arithmetic",
+      "max_tokens": 16,
+      "kind": "exact_text",
+      "expected": "11",
+      "prompt_sha256": "5e5756a869c9877dfcccb1e0f0aece46899b5d481fa89e786d3c69c346a36651",
+      "prompt_characters": 24
+    },
+    {
+      "id": "short-strict-json",
+      "max_tokens": 32,
+      "kind": "strict_json",
+      "expected": {
+        "ok": true,
+        "count": 3,
+        "colors": [
+          "红",
+          "蓝"
+        ]
+      },
+      "prompt_sha256": "67df94ecb8366efe4bde382cda2f805ec358be2a81d4c21717131bfe18beff22",
+      "prompt_characters": 87
+    }
+  ],
+  "requests": {
+    "long-prefill": {
+      "id": "long-prefill",
+      "arrival_s": 0.0008240839815698564,
+      "http_status": 200,
+      "headers_received_s": 0.01453290501376614,
+      "first_nonempty_s": 9.836668126983568,
+      "completed_s": 10.512763848993927,
+      "finish_reason": "stop",
+      "response_id": "chatcmpl-469fd7d0-9a02-4b8e-adac-17b2acfe5c15",
+      "max_tokens": 16,
+      "prompt_characters": 108501,
+      "prompt_sha256": "60fa0830e87d2ed8765f93b42e5b18f0bf6b0ac713d5fa0e3bb4958113b652fc",
+      "text": "EPSILON72941",
+      "stream_usage": null,
+      "semantic_kind": "exact_text",
+      "expected": "EPSILON72941",
+      "semantic_pass": true
+    },
+    "short-paris": {
+      "id": "short-paris",
+      "arrival_s": 0.5024178189923987,
+      "http_status": 200,
+      "headers_received_s": 0.5049060920136981,
+      "first_nonempty_s": 0.9556747089955024,
+      "completed_s": 1.0332850919803604,
+      "finish_reason": "stop",
+      "response_id": "chatcmpl-05f928f0-42e0-43bd-8600-1463717d211b",
+      "max_tokens": 16,
+      "prompt_characters": 105,
+      "prompt_sha256": "678afb9d5078d3ef479ad3e40b6e01e132b65aac62879b62ac421f37a4c5de53",
+      "text": "Paris",
+      "stream_usage": null,
+      "semantic_kind": "exact_text",
+      "expected": "Paris",
+      "semantic_pass": true
+    },
+    "short-arithmetic": {
+      "id": "short-arithmetic",
+      "arrival_s": 0.5029893920291215,
+      "http_status": 200,
+      "headers_received_s": 0.5055742239928804,
+      "first_nonempty_s": 1.0878816930344328,
+      "completed_s": 1.1595096079981886,
+      "finish_reason": "stop",
+      "response_id": "chatcmpl-55845022-d7b6-4496-b946-7a9177c6f061",
+      "max_tokens": 16,
+      "prompt_characters": 24,
+      "prompt_sha256": "5e5756a869c9877dfcccb1e0f0aece46899b5d481fa89e786d3c69c346a36651",
+      "text": "11",
+      "stream_usage": null,
+      "semantic_kind": "exact_text",
+      "expected": "11",
+      "semantic_pass": true
+    },
+    "short-strict-json": {
+      "id": "short-strict-json",
+      "arrival_s": 0.5035921270027757,
+      "http_status": 200,
+      "headers_received_s": 0.5072155930101871,
+      "first_nonempty_s": 1.5130044230027124,
+      "completed_s": 1.7945285459863953,
+      "finish_reason": "stop",
+      "response_id": "chatcmpl-fc2277fe-2624-494d-b3bb-81d95db50d6a",
+      "max_tokens": 32,
+      "prompt_characters": 87,
+      "prompt_sha256": "67df94ecb8366efe4bde382cda2f805ec358be2a81d4c21717131bfe18beff22",
+      "text": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}",
+      "stream_usage": null,
+      "semantic_kind": "strict_json",
+      "expected": {
+        "ok": true,
+        "count": 3,
+        "colors": [
+          "红",
+          "蓝"
+        ]
+      },
+      "semantic_pass": true
+    }
+  },
+  "short_wave_launch_s": 0.5023243449977599,
+  "timing_analysis": {
+    "global_time_origin": "long request launch",
+    "first_request_arrival_s": 0.0008240839815698564,
+    "short_launch_delay_s_requested": 0.5,
+    "long_completed_before_short_launch": false,
+    "short_first_nonempty_before_long_completion": {
+      "short-paris": true,
+      "short-arithmetic": true,
+      "short-strict-json": true
+    },
+    "all_short_first_nonempty_before_long_completion": true,
+    "last_completion_s": 10.512763848993927,
+    "arrival_to_last_completion_s": 10.511939765012357,
+    "interpretation": "all three short requests emitted content while the long request was still active",
+    "throughput_note": "No token rate is computed from SSE event or chunk counts."
+  },
+  "semantic_status": "PASS",
+  "finished_unix": 1792344802.1682658
+}

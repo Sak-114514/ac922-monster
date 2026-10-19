@@ -1,0 +1,12 @@
+V424_MATRIX_CASE 1/18 --format IQ3_XXS --tokens 4 --j-mode auto --run-tag root-v424-inband-20261018t064120412555z-01-IQ3_XXS-t4-auto --device 3 --timeout-seconds 120
+V424_SAMPLE_PREFLIGHT PASS format=IQ3_XXS experts=170,171 source_prefix=64 sha256=manifest_exact
+required selected grouped-MMQ marker reason=compact_grouped_launch missing; log=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/results/root-v424-inband-20261018t064120412555z-01-IQ3_XXS-t4-auto/IQ3_XXS-n640-t4-allhot10-auto.log
+Traceback (most recent call last):
+  File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/run-v424-matrix.py", line 94, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/run-v424-matrix.py", line 58, in main
+    subprocess.run(command, check=True, env=os.environ.copy())
+  File "/usr/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/python3', '/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/run-v424-case.py', '--format', 'IQ3_XXS', '--tokens', '4', '--j-mode', 'auto', '--run-tag', 'root-v424-inband-20261018t064120412555z-01-IQ3_XXS-t4-auto', '--device', '3', '--timeout-seconds', '120']' returned non-zero exit status 1.

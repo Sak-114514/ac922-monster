@@ -1,0 +1,45 @@
+{
+  "schema": "v401-r2-final-v1",
+  "unit": "root-v401-inband-20261018t040546041143z",
+  "runtime": "runtime-perf-v400",
+  "actual_native4": "PASS",
+  "actual_all2048_tokens_equal_V306": true,
+  "parity": [
+    {
+      "lane": 0,
+      "tokens": 512,
+      "tokens_equal": true,
+      "output_equal": true
+    },
+    {
+      "lane": 1,
+      "tokens": 512,
+      "tokens_equal": true,
+      "output_equal": true
+    },
+    {
+      "lane": 2,
+      "tokens": 512,
+      "tokens_equal": true,
+      "output_equal": true
+    },
+    {
+      "lane": 3,
+      "tokens": 512,
+      "tokens_equal": true,
+      "output_equal": true
+    }
+  ],
+  "performance": {
+    "shared_tg": 252.12632030891143,
+    "all_emissions_tok_s": 197.672235689394,
+    "prefill_aggregate_wall_tok_s": 1022.2695372678284,
+    "prefill_wall_seconds": 64.108337,
+    "shared_tokens": 1757,
+    "shared_window_seconds": 6.968729,
+    "all_emissions_wall_seconds": 10.360585
+  },
+  "decision": "REJECTCOMBINATION shared\u221211.05% andPP\u221259.36%; notretained",
+  "runtime_configuration": "V306genericD3+8copies+R398hostexec+R389upload+variants8/crossUID1; noisolatedcausalclaim",
+  "controller_postcheck": "oldV306runnerdoesnotemitmtp_vocab_parallel_requested, None assertionincorrect. Explicitas-runflag0+absenceofinit/runtime path verifiedoffline; no modelrerun."
+}

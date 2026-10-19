@@ -1,0 +1,275 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+CUDA graph binding key requested=1 selected=1 device=0 raw_key=0x7fff7af601d0 key=0x10002480be0 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=65 width=0 auxiliary=0 count=1
+CUDA decode device-tail invalidation device=0 before_capture=1 standard_update_retained=1
+CUDA graph path config ctx=0x10001b76220 device=0 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x10001b76220 device=0 uid=100 nodes=65 mode=capture count=1
+optimization path device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_graph_replay tokens=65 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x10001b76220 device=0 uid=100 nodes=65 mode=replay count=1
+CUDA device-tail helper requested=1 loaded=1 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/tail-only-exec-v390-root-20261018/build-r5/libac922-tail-bridge.so scope=sm70_explicit_hint_no_cold_cohort_unchanged_graph
+ac922-tail-bridge upload_isolated=1 upload_wait_us=11 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=1 owner=0x10001b76220 key=0x10001e268e0
+optimization path device=0 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=1
+CUDA graph path active ctx=0x10001b76220 device=0 uid=100 nodes=65 mode=replay count=2
+optimization path device=0 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=2
+CUDA graph binding key requested=1 selected=1 device=0 raw_key=0x7fff7af601d0 key=0x10002f6e320 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA decode device-tail invalidation device=0 before_capture=1 standard_update_retained=1
+CUDA graph path active ctx=0x10001b76220 device=0 uid=100 nodes=65 mode=capture count=2
+ac922-tail-bridge upload_isolated=1 upload_wait_us=10 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=1 owner=0x10001b76220 key=0x10002f57bc0
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=2 owner=0x10001b76220 key=0x10001e268e0
+CUDA graph binding key requested=1 selected=1 device=1 raw_key=0x10002ff8250 key=0x10003c10ca0 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=65 width=0 auxiliary=0 count=1
+CUDA decode device-tail invalidation device=1 before_capture=1 standard_update_retained=1
+CUDA graph path config ctx=0x10001b76220 device=1 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x10001b76220 device=1 uid=101 nodes=65 mode=capture count=1
+optimization path device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_graph_replay tokens=65 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x10001b76220 device=1 uid=101 nodes=65 mode=replay count=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=1 owner=0x10001b76220 key=0x10003b861c0
+optimization path device=1 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=1
+CUDA graph path active ctx=0x10001b76220 device=1 uid=101 nodes=65 mode=replay count=2
+optimization path device=1 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=2
+CUDA graph binding key requested=1 selected=1 device=1 raw_key=0x10002ff8250 key=0x1000440af50 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA decode device-tail invalidation device=1 before_capture=1 standard_update_retained=1
+CUDA graph path active ctx=0x10001b76220 device=1 uid=101 nodes=65 mode=capture count=2
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=1 owner=0x10001b76220 key=0x10003686840
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=2 owner=0x10001b76220 key=0x10003b861c0
+CUDA graph binding key requested=1 selected=1 device=2 raw_key=0x1000448aad0 key=0x10004ea7af0 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=2 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=65 width=0 auxiliary=0 count=1
+CUDA decode device-tail invalidation device=2 before_capture=1 standard_update_retained=1
+CUDA graph path config ctx=0x10001b76220 device=2 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x10001b76220 device=2 uid=102 nodes=65 mode=capture count=1
+optimization path device=2 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_graph_replay tokens=65 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x10001b76220 device=2 uid=102 nodes=65 mode=replay count=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=10 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=1 owner=0x10001b76220 key=0x10004e13590
+optimization path device=2 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=1
+CUDA graph path active ctx=0x10001b76220 device=2 uid=102 nodes=65 mode=replay count=2
+optimization path device=2 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=2
+CUDA graph binding key requested=1 selected=1 device=2 raw_key=0x1000448aad0 key=0x100056a1c40 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA decode device-tail invalidation device=2 before_capture=1 standard_update_retained=1
+CUDA graph path active ctx=0x10001b76220 device=2 uid=102 nodes=65 mode=capture count=2
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=1 owner=0x10001b76220 key=0x10004917c80
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=2 owner=0x10001b76220 key=0x10004e13590
+CUDA graph binding key requested=1 selected=1 device=3 raw_key=0x10005721290 key=0x10006147730 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=3 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=65 width=0 auxiliary=0 count=1
+CUDA decode device-tail invalidation device=3 before_capture=1 standard_update_retained=1
+CUDA graph path config ctx=0x10001b76220 device=3 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x10001b76220 device=3 uid=103 nodes=65 mode=capture count=1
+optimization path device=3 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_graph_replay tokens=65 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x10001b76220 device=3 uid=103 nodes=65 mode=replay count=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=10 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=1 owner=0x10001b76220 key=0x100060a9850
+optimization path device=3 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=1
+CUDA graph path active ctx=0x10001b76220 device=3 uid=103 nodes=65 mode=replay count=2
+optimization path device=3 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=2
+TARGET_TAIL_FRAME gpu=0 frame=0 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=1 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=2 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=3 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=4 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=5 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=6 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=7 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=8 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=9 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=10 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=11 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=12 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=13 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=14 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=15 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=16 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=17 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=18 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=19 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=20 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=21 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=22 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=0 frame=23 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=0 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=1 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=2 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=3 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=4 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=5 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=6 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=7 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=8 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=9 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=10 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=11 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=12 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=13 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=14 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=15 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=16 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=17 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=18 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=19 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=20 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=21 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=22 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=1 frame=23 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=0 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=1 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=2 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=3 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=4 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=5 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=6 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=7 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=8 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=9 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=10 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=11 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=12 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=13 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=14 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=15 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=16 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=17 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=18 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=19 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=20 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=21 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=22 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=2 frame=23 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=0 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=1 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=2 factor=2 output=exact
+TARGCUDA graph binding key requested=1 selected=1 device=3 raw_key=0x10005721290 key=0x10006941a50 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA decode device-tail invalidation device=3 before_capture=1 standard_update_retained=1
+CUDA graph path active ctx=0x10001b76220 device=3 uid=103 nodes=65 mode=capture count=2
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=1 owner=0x10001b76220 key=0x10005bae170
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=2 owner=0x10001b76220 key=0x100060a9850
+CUDA graph binding key requested=1 selected=1 device=4 raw_key=0x100069c11d0 key=0x100073f0310 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=4 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=65 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x10001b76220 device=4 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x10001b76220 device=4 uid=104 nodes=65 mode=capture count=1
+optimization path device=4 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_graph_replay tokens=65 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x10001b76220 device=4 uid=104 nodes=65 mode=replay count=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=1 owner=0x10001b76220 key=0x100073492b0
+optimization path device=4 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=1
+CUDA graph path active ctx=0x10001b76220 device=4 uid=104 nodes=65 mode=replay count=2
+optimization path device=4 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=2
+CUDA graph binding key requested=1 selected=1 device=4 raw_key=0x100069c11d0 key=0x10007beba40 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph path active ctx=0x10001b76220 device=4 uid=104 nodes=65 mode=capture count=2
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=1 owner=0x10001b76220 key=0x10006e4da20
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=2 owner=0x10001b76220 key=0x100073492b0
+CUDA graph binding key requested=1 selected=1 device=5 raw_key=0x10007c6ad50 key=0x100086a4390 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+optimization path device=5 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_changed_graph_capture tokens=65 width=0 auxiliary=0 count=1
+CUDA graph path config ctx=0x10001b76220 device=5 sm=700 compiled=1 disable_env_present=0 structural_requested=1 structural_active=1 test_policy=-1 variant_cache_requested=0 graph_opt_requested=0
+CUDA graph path active ctx=0x10001b76220 device=5 uid=105 nodes=65 mode=capture count=1
+optimization path device=5 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=1 selected=1 reason=compatible_graph_replay tokens=65 width=0 auxiliary=0 count=2
+CUDA graph path active ctx=0x10001b76220 device=5 uid=105 nodes=65 mode=replay count=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=1 owner=0x10001b76220 key=0x100085f2eb0
+optimization path device=5 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=1
+CUDA graph path active ctx=0x10001b76220 device=5 uid=105 nodes=65 mode=replay count=2
+optimization path device=5 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=1 selected=1 reason=one_node_host_controller_tail_unchanged_graph tokens=65 width=0 auxiliary=0 count=2
+CUDA graph binding key requested=1 selected=1 device=5 raw_key=0x10007c6ad50 key=0x10008e9e680 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA graph path active ctx=0x10001b76220 device=5 uid=105 nodes=65 mode=capture count=2
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=1 owner=0x10001b76220 key=0x100080f7660
+ac922-tail-bridge upload_isolated=1 upload_wait_us=35 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=2 owner=0x10001b76220 key=0x100085f2eb0
+optimization path summary device=0 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=22 selected=22
+optimization path summary device=0 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=24 selected=24
+optimization path summary device=1 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=22 selected=22
+optimization path summary device=1 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=24 selected=24
+optimization path summary device=2 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=22 selected=22
+optimization path summary device=2 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=24 selected=24
+optimization path summary device=3 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=22 selected=22
+optimization path summary device=3 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=24 selected=24
+optimization path summary device=4 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=22 selected=22
+optimization path summary device=4 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=24 selected=24
+optimization path summary device=5 path=cuda_graph_device_tail_mtp_decode scope=host_dispatch_or_capture requested=22 selected=22
+optimization path summary device=5 path=cuda_graph_force_capture scope=host_dispatch_or_capture requested=24 selected=24
+ET_TAIL_FRAME gpu=3 frame=3 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=4 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=5 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=6 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=7 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=8 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=9 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=10 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=11 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=12 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=13 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=14 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=15 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=16 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=17 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=18 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=19 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=20 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=21 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=22 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=3 frame=23 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=0 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=1 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=2 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=3 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=4 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=5 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=6 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=7 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=8 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=9 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=10 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=11 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=12 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=13 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=14 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=15 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=16 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=17 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=18 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=19 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=20 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=21 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=22 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=4 frame=23 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=0 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=1 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=2 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=3 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=4 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=5 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=6 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=7 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=8 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=9 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=10 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=11 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=12 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=13 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=14 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=15 factor=3 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=16 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=17 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=18 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=19 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=20 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=21 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=22 factor=2 output=exact
+TARGET_TAIL_FRAME gpu=5 frame=23 factor=2 output=exact
+TARGET_TAIL_FIXTURE_PASS physical_gpus=6 frames_each=24 scalar_ABA=1 exact=1 hint_TLS_restore=1

@@ -1,0 +1,362 @@
+{
+  "status": "PASS",
+  "waves": [
+    {
+      "id": "prefix-fourbank-cold-e3e3cc2ee3",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224
+        }
+      },
+      "cache_status": {
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 8192,
+          "output_tokens": 15,
+          "finish_reason": "stop"
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 8192,
+          "output_tokens": 1,
+          "finish_reason": "stop"
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 8192,
+          "output_tokens": 4,
+          "finish_reason": "stop"
+        },
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 8192,
+          "output_tokens": 1,
+          "finish_reason": "stop"
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "strict-json-zh": 13.020901758980472,
+        "logic-en": 13.325227535999147,
+        "arithmetic-zh": 13.653737962973537,
+        "capital-en": 13.65798452697345
+      },
+      "last_token_s": {
+        "strict-json-zh": 13.683391569997184,
+        "logic-en": 13.325227535999147,
+        "arithmetic-zh": 13.82098051198409,
+        "capital-en": 13.65798452697345
+      },
+      "timings": {
+        "wave_id": "prefix-fourbank-cold-e3e3cc2ee3",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 13.857475,
+        "whole_wave_output_tok_s": 1.5154275941324087,
+        "all_emissions_tok_s": 26.24639112122083,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 13.623208,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32768,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 2405.3071787496747,
+        "logical_prompt_tok_s": 2405.3071787496747,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 49127875,
+        "mtp_prefill_us_sum": 2736170,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2433,
+          2419,
+          2503,
+          2655,
+          3566,
+          3465
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1905,
+        "post_wave_free_after_mib": [
+          2433,
+          2419,
+          2503,
+          2655,
+          3566,
+          3465
+        ]
+      },
+      "wall_s": 13.894765343982726,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      },
+      "label": "prefix-fourbank-cold",
+      "control_roundtrip_s": 13.895941877999576,
+      "semantic_status": "PASS"
+    },
+    {
+      "id": "prefix-fourbank-hit-5d09baf0e3",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224
+        }
+      },
+      "cache_status": {
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "hit": true,
+          "cached_tokens": 7680,
+          "checkpoint_tokens": 7680
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "hit": true,
+          "cached_tokens": 7680,
+          "checkpoint_tokens": 7680
+        },
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "hit": true,
+          "cached_tokens": 7680,
+          "checkpoint_tokens": 7680
+        },
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "hit": true,
+          "cached_tokens": 7680,
+          "checkpoint_tokens": 7680
+        }
+      },
+      "done": {
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 8192,
+          "output_tokens": 1,
+          "finish_reason": "stop"
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 8192,
+          "output_tokens": 1,
+          "finish_reason": "stop"
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 8192,
+          "output_tokens": 15,
+          "finish_reason": "stop"
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 8192,
+          "output_tokens": 4,
+          "finish_reason": "stop"
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "capital-en": 1.1204540280159563,
+        "logic-en": 1.7307759879913647,
+        "strict-json-zh": 1.8316611890040804,
+        "arithmetic-zh": 1.83539932401618
+      },
+      "last_token_s": {
+        "capital-en": 1.1204540280159563,
+        "logic-en": 1.7307759879913647,
+        "strict-json-zh": 2.052997418009909,
+        "arithmetic-zh": 2.126247014006367
+      },
+      "timings": {
+        "wave_id": "prefix-fourbank-hit-5d09baf0e3",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 2.107632,
+        "whole_wave_output_tok_s": 9.963788744904233,
+        "all_emissions_tok_s": 20.879068435620884,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 1.816147,
+        "cached_tokens": 30720,
+        "prefill_evaluated_tokens": 2048,
+        "uncached_prefill": false,
+        "prefill_aggregate_wall_tok_s": 1127.6620229529879,
+        "logical_prompt_tok_s": 18042.592367247806,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 6075594,
+        "mtp_prefill_us_sum": 164146,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2385,
+          2373,
+          2465,
+          2617,
+          3528,
+          3429
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1264,
+        "post_wave_free_after_mib": [
+          2385,
+          2373,
+          2465,
+          2617,
+          3528,
+          3429
+        ]
+      },
+      "wall_s": 2.1287118380132597,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      },
+      "label": "prefix-fourbank-hit",
+      "control_roundtrip_s": 2.1295490289921872,
+      "semantic_status": "PASS"
+    }
+  ],
+  "purpose": "four separate same-bank prefix states"
+}

@@ -1,0 +1,344 @@
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+PP pinned inputs requested=1 selected=1 scheduler=0x10018c8e220 copies=4 cap=268435456 reset_preserves_slots=1 host_slots=8 device_ring_unchanged=1
+PP stable CPU input leafs requested=1 selected=1 scheduler=0x10018c8e220 reason=pinned-ordinary-cuda-pipeline
+PP stable CPU input leafs summary scheduler=0x10018c8e220 groups=0
+PP pinned inputs summary scheduler=0x10018c8e220 copies=0 declines=0 pinned_high_water=0 cap=268435456
+PP device copy depth requested=8 selected=1 scheduler=0x1001d652c40 copies=8 capacity=8 plain_cuda_devices=6 existing_events_and_peer_fences=retained
+PP pinned inputs requested=1 selected=1 scheduler=0x1001d652c40 copies=8 cap=268435456 reset_preserves_slots=1 host_slots=8 device_ring_unchanged=1
+PP stable CPU input leafs requested=1 selected=1 scheduler=0x1001d652c40 reason=pinned-ordinary-cuda-pipeline
+PP stable CPU input leafs summary scheduler=0x1001d652c40 groups=0
+PP pinned inputs summary scheduler=0x1001d652c40 copies=0 declines=0 pinned_high_water=0 cap=268435456
+PP device copy depth requested=8 selected=0 scheduler=0x1001d652c40 copies=1 capacity=8 plain_cuda_devices=0 existing_events_and_peer_fences=retained
+PP pinned inputs requested=1 selected=0 scheduler=0x1001d652c40 copies=1 reason=requires-plain-cuda-pipeline
+PP stable CPU input leafs requested=1 selected=0 scheduler=0x1001d652c40 reason=requires-private-pinned-inputs
+PP device copy depth requested=8 selected=0 scheduler=0x1001d652c40 copies=4 capacity=8 plain_cuda_devices=0 existing_events_and_peer_fences=retained
+PP pinned inputs requested=1 selected=1 scheduler=0x1001d652c40 copies=4 cap=268435456 reset_preserves_slots=1 host_slots=8 device_ring_unchanged=1
+PP stable CPU input leafs requested=1 selected=1 scheduler=0x1001d652c40 reason=pinned-ordinary-cuda-pipeline
+PP stable CPU input leafs summary scheduler=0x1001d652c40 groups=0
+PP pinned inputs summary scheduler=0x1001d652c40 copies=0 declines=0 pinned_high_water=0 cap=268435456
+PP device copy depth requested=8 selected=1 scheduler=0x1001d652c40 copies=8 capacity=8 plain_cuda_devices=6 existing_events_and_peer_fences=retained
+PP pinned inputs requested=1 selected=1 scheduler=0x1001d652c40 copies=8 cap=268435456 reset_preserves_slots=1 host_slots=8 device_ring_unchanged=1
+PP stable CPU input leafs requested=1 selected=1 scheduler=0x1001d652c40 reason=pinned-ordinary-cuda-pipeline
+CUDA layer pinned upload requested=1 selected=1 device=0 nonblocking_stream=1 old_consumer_wait=retained source_done_on=upload_stream compute_wait_copy_done=1 no_new_tensor_buffers=1
+PP pinned inputs active scheduler=0x1001d652c40 backend=CUDA0 slot=0 source=copydepth_cpu_rows bytes=262144 private_source=1 device_event_wait=1
+CUDA graph binding key requested=1 selected=1 device=0 raw_key=0x1001e086910 key=0x1001e323640 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+CUDA device-tail captured-only requested=1 loaded=1 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/host-child-single-exec-v398-root-20261018/build-r7/libac922-tail-bridge.so abi=2
+ac922-tail-bridge upload_isolated=1 upload_wait_us=11 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=1 owner=0x10018c86ee0 key=0x1001e323980
+ac922-tail-bridge launch_mode=host_child_single_exec controller_allocated=0 captured_math_unchanged=1
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=1 standard_exec_present=0 graph=0x1001e3243f0 graph_key=0x1001e323640 helper_key=0x1001e323980
+CUDA layer pinned upload requested=1 selected=1 device=1 nonblocking_stream=1 old_consumer_wait=retained source_done_on=upload_stream compute_wait_copy_done=1 no_new_tensor_buffers=1
+PP pinned inputs active scheduler=0x1001d652c40 backend=CUDA1 slot=0 source=leaf_3 bytes=262144 private_source=1 device_event_wait=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x1001d652c40 source=CUDA0 destination=CUDA1 slot=0 waits=1
+CUDA graph binding key requested=1 selected=1 device=1 raw_key=0x1001e086a80 key=0x1001eb9a9f0 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=1 owner=0x10018c88160 key=0x10018cf4c20
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=1 standard_exec_present=0 graph=0x1001eb9b920 graph_key=0x1001eb9a9f0 helper_key=0x10018cf4c20
+CUDA layer pinned upload requested=1 selected=1 device=2 nonblocking_stream=1 old_consumer_wait=retained source_done_on=upload_stream compute_wait_copy_done=1 no_new_tensor_buffers=1
+PP pinned inputs active scheduler=0x1001d652c40 backend=CUDA2 slot=0 source=leaf_4 bytes=262144 private_source=1 device_event_wait=1
+layer-peer-reuse-fence requested=1 selected=1 scheduler=0x1001d652c40 source=CUDA1 destination=CUDA2 slot=0 waits=2
+CUDA graph binding key requested=1 selected=1 device=2 raw_key=0x1001e086bf0 key=0x1001f131340 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=1 owner=0x10018c893e0 key=0x10019a2c9f0
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=1 standard_exec_present=0 graph=0x1001f132270 graph_key=0x1001f131340 helper_key=0x10019a2c9f0
+CUDA layer pinned upload requested=1 selected=1 device=3 nonblocking_stream=1 old_consumer_wait=retained source_done_on=upload_stream compute_wait_copy_done=1 no_new_tensor_buffers=1
+PP pinned inputs active scheduler=0x1001d652c40 backend=CUDA3 slot=0 source=leaf_5 bytes=262144 private_source=1 device_event_wait=1
+CUDA graph binding key requested=1 selected=1 device=3 raw_key=0x1001e086d60 key=0x1001f6c7b40 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=7 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=1 owner=0x10018c8a700 key=0x1001a6f2690
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=1 standard_exec_present=0 graph=0x1001f6c8a70 graph_key=0x1001f6c7b40 helper_key=0x1001a6f2690
+CUDA layer pinned upload requested=1 selected=1 device=4 nonblocking_stream=1 old_consumer_wait=retained source_done_on=upload_stream compute_wait_copy_done=1 no_new_tensor_buffers=1
+PP pinned inputs active scheduler=0x1001d652c40 backend=CUDA4 slot=0 source=leaf_6 bytes=262144 private_source=1 device_event_wait=1
+CUDA graph binding key requested=1 selected=1 device=4 raw_key=0x1001e086ed0 key=0x1001fc5e330 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=1 owner=0x10018c8ba20 key=0x1001b3bd820
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=1 standard_exec_present=0 graph=0x1001fc5f260 graph_key=0x1001fc5e330 helper_key=0x1001b3bd820
+CUDA layer pinned upload requested=1 selected=1 device=5 nonblocking_stream=1 old_consumer_wait=retained source_done_on=upload_stream compute_wait_copy_done=1 no_new_tensor_buffers=1
+PP pinned inputs active scheduler=0x1001d652c40 backend=CUDA5 slot=0 source=leaf_7 bytes=262144 private_source=1 device_event_wait=1
+CUDA graph binding key requested=1 selected=1 device=5 raw_key=0x1001e087040 key=0x7fff54f0d4d0 pool_size=1 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=1 owner=0x10018c8cd40 key=0x1001c091cb0
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff54f0e400 graph_key=0x7fff54f0d4d0 helper_key=0x1001c091cb0
+CUDA graph binding key requested=1 selected=1 device=0 raw_key=0x7fff41a601d0 key=0x7fff41eab6f0 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=13 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=2 owner=0x10018c86ee0 key=0x1001e31f000
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41eabe50 graph_key=0x7fff41eab6f0 helper_key=0x1001e31f000
+CUDA graph binding key requested=1 selected=1 device=1 raw_key=0x7fff41a60340 key=0x7fff41e494d0 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=2 owner=0x10018c88160 key=0x1001eb95ee0
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41e49f10 graph_key=0x7fff41e494d0 helper_key=0x1001eb95ee0
+CUDA graph binding key requested=1 selected=1 device=2 raw_key=0x7fff41a604b0 key=0x7fff41e1f650 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=2 owner=0x10018c893e0 key=0x1001f12c830
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41e1fc60 graph_key=0x7fff41e1f650 helper_key=0x1001f12c830
+CUDA graph binding key requested=1 selected=1 device=3 raw_key=0x7fff41a60620 key=0x7fff41dbd7d0 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=7 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=2 owner=0x10018c8a700 key=0x1001f6c3030
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41dbe150 graph_key=0x7fff41dbd7d0 helper_key=0x1001f6c3030
+CUDA graph binding key requested=1 selected=1 device=4 raw_key=0x7fff41a60790 key=0x7fff41edb7f0 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=7 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=2 owner=0x10018c8ba20 key=0x1001fc59830
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41edc170 graph_key=0x7fff41edb7f0 helper_key=0x1001fc59830
+CUDA graph binding key requested=1 selected=1 device=5 raw_key=0x7fff41a60900 key=0x7fff41d41750 pool_size=2 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=7 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=2 owner=0x10018c8cd40 key=0x7fff54f089c0
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41d420d0 graph_key=0x7fff41d41750 helper_key=0x7fff54f089c0
+ac922-tail-bridge upload_isolated=1 upload_wait_us=10 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=3 owner=0x10018c86ee0 key=0x7fff41ea9cb0
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41d51490 graph_key=0x7fff41d50b30 helper_key=0x7fff41ea9cb0
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=3 owner=0x10018c88160 key=0x7fff41e7f360
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41d59830 graph_key=0x7fff41d58ed0 helper_key=0x7fff41e7f360
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=3 owner=0x10018c893e0 key=0x7fff41e1d510
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41a32500 graph_key=0x7fff41a31ba0 helper_key=0x7fff41e1d510
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=3 owner=0x10018c8a700 key=0x7fff41dbb690
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41a3a890 graph_key=0x7fff41a39f30 helper_key=0x7fff41dbb690
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=3 owner=0x10018c8ba20 key=0x7fff41ed96e0
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41a42cf0 graph_key=0x7fff41a42390 helper_key=0x7fff41ed96e0
+ac922-tail-bridge upload_isolated=1 upload_wait_us=7 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=3 owner=0x10018c8cd40 key=0x7fff54def5d0
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41a4b150 graph_key=0x7fff41a4a7f0 helper_key=0x7fff54def5d0
+CUDA graph binding key requested=1 selected=1 device=0 raw_key=0x7fff412401d0 key=0x7fff41a538c0 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=10 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=4 owner=0x10018c86ee0 key=0x7fff41d4edf0
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41a547f0 graph_key=0x7fff41a538c0 helper_key=0x7fff41d4edf0
+CUDA graph binding key requested=1 selected=1 device=1 raw_key=0x7fff41240340 key=0x7fff41a53960 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=4 owner=0x10018c88160 key=0x7fff41d56d70
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41a59c10 graph_key=0x7fff41a53960 helper_key=0x7fff41d56d70
+CUDA graph binding key requested=1 selected=1 device=2 raw_key=0x7fff412404b0 key=0x7fff41a58d80 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=4 owner=0x10018c893e0 key=0x7fff41d5f180
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41a5f090 graph_key=0x7fff41a58d80 helper_key=0x7fff41d5f180
+CUDA graph binding key requested=1 selected=1 device=3 raw_key=0x7fff41240620 key=0x7fff41a5e200 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=7 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=4 owner=0x10018c8a700 key=0x7fff41a37dd0
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41624db0 graph_key=0x7fff41a5e200 helper_key=0x7fff41a37dd0
+CUDA graph binding key requested=1 selected=1 device=4 raw_key=0x7fff41240790 key=0x7fff41623f20 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=7 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=4 owner=0x10018c8ba20 key=0x7fff41a40270
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff4162a230 graph_key=0x7fff41623f20 helper_key=0x7fff41a40270
+CUDA graph binding key requested=1 selected=1 device=5 raw_key=0x7fff41240900 key=0x7fff416293a0 pool_size=4 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=7 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=4 owner=0x10018c8cd40 key=0x7fff41a48690
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff4162f6b0 graph_key=0x7fff416293a0 helper_key=0x7fff41a48690
+ac922-tail-bridge upload_isolated=1 upload_wait_us=12 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=5 owner=0x10018c86ee0 key=0x7fff416330e0
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41639140 graph_key=0x7fff416382b0 helper_key=0x7fff416330e0
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=5 owner=0x10018c88160 key=0x7fff41a57190
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff4163e580 graph_key=0x7fff4163d6f0 helper_key=0x7fff41a57190
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=5 owner=0x10018c893e0 key=0x7fff41a5c610
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41643a60 graph_key=0x7fff41642bd0 helper_key=0x7fff41a5c610
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=5 owner=0x10018c8a700 key=0x7fff41622330
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41648f00 graph_key=0x7fff41648070 helper_key=0x7fff41622330
+ac922-tail-bridge upload_isolated=1 upload_wait_us=7 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=5 owner=0x10018c8ba20 key=0x7fff416277b0
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff4164e360 graph_key=0x7fff4164d4d0 helper_key=0x7fff416277b0
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=5 owner=0x10018c8cd40 key=0x7fff4162cc30
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff412140a0 graph_key=0x7fff41213210 helper_key=0x7fff4162cc30
+ac922-tail-bridge upload_isolated=1 upload_wait_us=10 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=6 owner=0x10018c86ee0 key=0x7fff416341e0
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff4121aa90 graph_key=0x7fff41219ba0 helper_key=0x7fff416341e0
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=6 owner=0x10018c88160 key=0x7fff4163bb00
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff4121ff10 graph_key=0x7fff41219be0 helper_key=0x7fff4163bb00
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=6 owner=0x10018c893e0 key=0x7fff41640fa0
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff412253d0 graph_key=0x7fff41224060 helper_key=0x7fff41640fa0
+ac922-tail-bridge upload_isolated=1 upload_wait_us=7 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=6 owner=0x10018c8a700 key=0x7fff41646480
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff4122a850 graph_key=0x7fff41224520 helper_key=0x7fff41646480
+ac922-tail-bridge upload_isolated=1 upload_wait_us=7 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=6 owner=0x10018c8ba20 key=0x7fff4164b8c0
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff4122fcd0 graph_key=0x7fff412299a0 helper_key=0x7fff4164b8c0
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=6 owner=0x10018c8cd40 key=0x7fff41211620
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff41235190 graph_key=0x7fff41233e20 helper_key=0x7fff41211620
+ac922-tail-bridge upload_isolated=1 upload_wait_us=45 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=7 owner=0x10018c86ee0 key=0x7fff412183f0
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff4123ba60 graph_key=0x7fff4123b610 helper_key=0x7fff412183f0
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=7 owner=0x10018c88160 key=0x7fff4121d490
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff409f1790 graph_key=0x7fff409f1250 helper_key=0x7fff4121d490
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=7 owner=0x10018c893e0 key=0x7fff41222910
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff409f6d40 graph_key=0x7fff409f6800 helper_key=0x7fff41222910
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=7 owner=0x10018c8a700 key=0x7fff41227dd0
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff409fc2b0 graph_key=0x7fff409fbd70 helper_key=0x7fff41227dd0
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=7 owner=0x10018c8ba20 key=0x7fff4122d250
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff40a01820 graph_key=0x7fff40a012e0 helper_key=0x7fff4122d250
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=7 owner=0x10018c8cd40 key=0x1001e307f40
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff40a06d90 graph_key=0x7fff40a06850 helper_key=0x1001e307f40
+CUDA graph binding key requested=1 selected=1 device=0 raw_key=0x7fff402001d0 key=0x7fff40a0cf30 pool_size=8 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=10 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=8 owner=0x10018c86ee0 key=0x7fff412393c0
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff40a0a850 graph_key=0x7fff40a0cf30 helper_key=0x7fff412393c0
+CUDA graph binding key requested=1 selected=1 device=1 raw_key=0x7fff40200340 key=0x7fff40a11f60 pool_size=8 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=8 owner=0x10018c88160 key=0x7fff4123e3e0
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff40a123b0 graph_key=0x7fff40a11f60 helper_key=0x7fff4123e3e0
+CUDA graph binding key requested=1 selected=1 device=2 raw_key=0x7fff402004b0 key=0x7fff40a18670 pool_size=8 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=8 owner=0x10018c893e0 key=0x7fff409f4190
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff40a18ac0 graph_key=0x7fff40a18670 helper_key=0x7fff409f4190
+CUDA graph binding key requested=1 selected=1 device=3 raw_key=0x7fff40200620 key=0x7fff40a1d980 pool_size=8 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=7 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=8 owner=0x10018c8a700 key=0x7fff409f9720
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff40a1ddd0 graph_key=0x7fff40a1d980 helper_key=0x7fff409f9720
+CUDA graph binding key requested=1 selected=1 device=4 raw_key=0x7fff40200790 key=0x7fff405e3480 pool_size=8 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=7 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=8 owner=0x10018c8ba20 key=0x7fff409fec90
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff405e38d0 graph_key=0x7fff405e3480 helper_key=0x7fff409fec90
+CUDA graph binding key requested=1 selected=1 device=5 raw_key=0x7fff40200900 key=0x7fff405e87a0 pool_size=8 cap=32 reused_retired_key=0 exact_binding_check_retained=1 compute_only=1
+ac922-tail-bridge upload_isolated=1 upload_wait_us=7 compute_stream_not_drained=1
+ac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=8 owner=0x10018c8cd40 key=0x7fff40a04200
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=1 standard_exec_present=0 graph=0x7fff405e8bf0 graph_key=0x7fff405e87a0 helper_key=0x7fff40a04200
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x1001e3243f0 graph_key=0x1001e323640 helper_key=0x1001e323980
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x1001eb9b920 graph_key=0x1001eb9a9f0 helper_key=0x10018cf4c20
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x1001f132270 graph_key=0x1001f131340 helper_key=0x10019a2c9f0
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x1001f6c8a70 graph_key=0x1001f6c7b40 helper_key=0x1001a6f2690
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x1001fc5f260 graph_key=0x1001fc5e330 helper_key=0x1001b3bd820
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff54f0e400 graph_key=0x7fff54f0d4d0 helper_key=0x1001c091cb0
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41eabe50 graph_key=0x7fff41eab6f0 helper_key=0x1001e31f000
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41e49f10 graph_key=0x7fff41e494d0 helper_key=0x1001eb95ee0
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41e1fc60 graph_key=0x7fff41e1f650 helper_key=0x1001f12c830
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41dbe150 graph_key=0x7fff41dbd7d0 helper_key=0x1001f6c3030
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41edc170 graph_key=0x7fff41edb7f0 helper_key=0x1001fc59830
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41d420d0 graph_key=0x7fff41d41750 helper_key=0x7fff54f089c0
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41d51490 graph_key=0x7fff41d50b30 helper_key=0x7fff41ea9cb0
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41d59830 graph_key=0x7fff41d58ed0 helper_key=0x7fff41e7f360
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41a32500 graph_key=0x7fff41a31ba0 helper_key=0x7fff41e1d510
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41a3a890 graph_key=0x7fff41a39f30 helper_key=0x7fff41dbb690
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41a42cf0 graph_key=0x7fff41a42390 helper_key=0x7fff41ed96e0
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41a4b150 graph_key=0x7fff41a4a7f0 helper_key=0x7fff54def5d0
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41a547f0 graph_key=0x7fff41a538c0 helper_key=0x7fff41d4edf0
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41a59c10 graph_key=0x7fff41a53960 helper_key=0x7fff41d56d70
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41a5f090 graph_key=0x7fff41a58d80 helper_key=0x7fff41d5f180
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41624db0 graph_key=0x7fff41a5e200 helper_key=0x7fff41a37dd0
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4162a230 graph_key=0x7fff41623f20 helper_key=0x7fff41a40270
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4162f6b0 graph_key=0x7fff416293a0 helper_key=0x7fff41a48690
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41639140 graph_key=0x7fff416382b0 helper_key=0x7fff416330e0
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4163e580 graph_key=0x7fff4163d6f0 helper_key=0x7fff41a57190
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41643a60 graph_key=0x7fff41642bd0 helper_key=0x7fff41a5c610
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41648f00 graph_key=0x7fff41648070 helper_key=0x7fff41622330
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4164e360 graph_key=0x7fff4164d4d0 helper_key=0x7fff416277b0
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff412140a0 graph_key=0x7fff41213210 helper_key=0x7fff4162cc30
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4121aa90 graph_key=0x7fff41219ba0 helper_key=0x7fff416341e0
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4121ff10 graph_key=0x7fff41219be0 helper_key=0x7fff4163bb00
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff412253d0 graph_key=0x7fff41224060 helper_key=0x7fff41640fa0
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4122a850 graph_key=0x7fff41224520 helper_key=0x7fff41646480
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4122fcd0 graph_key=0x7fff412299a0 helper_key=0x7fff4164b8c0
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41235190 graph_key=0x7fff41233e20 helper_key=0x7fff41211620
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4123ba60 graph_key=0x7fff4123b610 helper_key=0x7fff412183f0
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff409f1790 graph_key=0x7fff409f1250 helper_key=0x7fff4121d490
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff409f6d40 graph_key=0x7fff409f6800 helper_key=0x7fff41222910
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff409fc2b0 graph_key=0x7fff409fbd70 helper_key=0x7fff41227dd0
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff40a01820 graph_key=0x7fff40a012e0 helper_key=0x7fff4122d250
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff40a06d90 graph_key=0x7fff40a06850 helper_key=0x1001e307f40
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff40a0a850 graph_key=0x7fff40a0cf30 helper_key=0x7fff412393c0
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff40a123b0 graph_key=0x7fff40a11f60 helper_key=0x7fff4123e3e0
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff40a18ac0 graph_key=0x7fff40a18670 helper_key=0x7fff409f4190
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff40a1ddd0 graph_key=0x7fff40a1d980 helper_key=0x7fff409f9720
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff405e38d0 graph_key=0x7fff405e3480 helper_key=0x7fff409fec90
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff405e8bf0 graph_key=0x7fff405e87a0 helper_key=0x7fff40a04200
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x1001e3243f0 graph_key=0x1001e323640 helper_key=0x1001e323980
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x1001eb9b920 graph_key=0x1001eb9a9f0 helper_key=0x10018cf4c20
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x1001f132270 graph_key=0x1001f131340 helper_key=0x10019a2c9f0
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x1001f6c8a70 graph_key=0x1001f6c7b40 helper_key=0x1001a6f2690
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x1001fc5f260 graph_key=0x1001fc5e330 helper_key=0x1001b3bd820
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff54f0e400 graph_key=0x7fff54f0d4d0 helper_key=0x1001c091cb0
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41eabe50 graph_key=0x7fff41eab6f0 helper_key=0x1001e31f000
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41e49f10 graph_key=0x7fff41e494d0 helper_key=0x1001eb95ee0
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41e1fc60 graph_key=0x7fff41e1f650 helper_key=0x1001f12c830
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41dbe150 graph_key=0x7fff41dbd7d0 helper_key=0x1001f6c3030
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41edc170 graph_key=0x7fff41edb7f0 helper_key=0x1001fc59830
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41d420d0 graph_key=0x7fff41d41750 helper_key=0x7fff54f089c0
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41d51490 graph_key=0x7fff41d50b30 helper_key=0x7fff41ea9cb0
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41d59830 graph_key=0x7fff41d58ed0 helper_key=0x7fff41e7f360
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41a32500 graph_key=0x7fff41a31ba0 helper_key=0x7fff41e1d510
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41a3a890 graph_key=0x7fff41a39f30 helper_key=0x7fff41dbb690
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41a42cf0 graph_key=0x7fff41a42390 helper_key=0x7fff41ed96e0
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41a4b150 graph_key=0x7fff41a4a7f0 helper_key=0x7fff54def5d0
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41a547f0 graph_key=0x7fff41a538c0 helper_key=0x7fff41d4edf0
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41a59c10 graph_key=0x7fff41a53960 helper_key=0x7fff41d56d70
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41a5f090 graph_key=0x7fff41a58d80 helper_key=0x7fff41d5f180
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41624db0 graph_key=0x7fff41a5e200 helper_key=0x7fff41a37dd0
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4162a230 graph_key=0x7fff41623f20 helper_key=0x7fff41a40270
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4162f6b0 graph_key=0x7fff416293a0 helper_key=0x7fff41a48690
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41639140 graph_key=0x7fff416382b0 helper_key=0x7fff416330e0
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4163e580 graph_key=0x7fff4163d6f0 helper_key=0x7fff41a57190
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41643a60 graph_key=0x7fff41642bd0 helper_key=0x7fff41a5c610
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41648f00 graph_key=0x7fff41648070 helper_key=0x7fff41622330
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4164e360 graph_key=0x7fff4164d4d0 helper_key=0x7fff416277b0
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff412140a0 graph_key=0x7fff41213210 helper_key=0x7fff4162cc30
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4121aa90 graph_key=0x7fff41219ba0 helper_key=0x7fff416341e0
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4121ff10 graph_key=0x7fff41219be0 helper_key=0x7fff4163bb00
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff412253d0 graph_key=0x7fff41224060 helper_key=0x7fff41640fa0
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4122a850 graph_key=0x7fff41224520 helper_key=0x7fff41646480
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4122fcd0 graph_key=0x7fff412299a0 helper_key=0x7fff4164b8c0
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff41235190 graph_key=0x7fff41233e20 helper_key=0x7fff41211620
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff4123ba60 graph_key=0x7fff4123b610 helper_key=0x7fff412183f0
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff409f1790 graph_key=0x7fff409f1250 helper_key=0x7fff4121d490
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff409f6d40 graph_key=0x7fff409f6800 helper_key=0x7fff41222910
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff409fc2b0 graph_key=0x7fff409fbd70 helper_key=0x7fff41227dd0
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff40a01820 graph_key=0x7fff40a012e0 helper_key=0x7fff4122d250
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff40a06d90 graph_key=0x7fff40a06850 helper_key=0x1001e307f40
+CUDA graph captured-only requested=1 selected=1 device=0 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff40a0a850 graph_key=0x7fff40a0cf30 helper_key=0x7fff412393c0
+CUDA graph captured-only requested=1 selected=1 device=1 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff40a123b0 graph_key=0x7fff40a11f60 helper_key=0x7fff4123e3e0
+CUDA graph captured-only requested=1 selected=1 device=2 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff40a18ac0 graph_key=0x7fff40a18670 helper_key=0x7fff409f4190
+CUDA graph captured-only requested=1 selected=1 device=3 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff40a1ddd0 graph_key=0x7fff40a1d980 helper_key=0x7fff409f9720
+CUDA graph captured-only requested=1 selected=1 device=4 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff405e38d0 graph_key=0x7fff405e3480 helper_key=0x7fff409fec90
+CUDA graph captured-only requested=1 selected=1 device=5 outcome=1 invalidate=0 standard_exec_present=0 graph=0x7fff405e8bf0 graph_key=0x7fff405e87a0 helper_key=0x7fff40a04200
+PP stable CPU input leafs summary scheduler=0x1001d652c40 groups=168
+PP pinned inputs summary scheduler=0x1001d652c40 copies=168 declines=0 pinned_high_water=14680064 cap=268435456
+CUDA layer pinned upload summary device=0 copies=48 bytes=12582912 drained_before_context_free=1
+CUDA layer pinned upload summary device=1 copies=24 bytes=6291456 drained_before_context_free=1
+CUDA layer pinned upload summary device=2 copies=24 bytes=6291456 drained_before_context_free=1
+CUDA layer pinned upload summary device=3 copies=24 bytes=6291456 drained_before_context_free=1
+CUDA layer pinned upload summary device=4 copies=24 bytes=6291456 drained_before_context_free=1
+CUDA layer pinned upload summary device=5 copies=24 bytes=6291456 drained_before_context_free=1
+COPY_PROBE backends=7 parallel=1 actual=4 expected=4
+COPY_PROBE backends=7 parallel=1 actual=8 expected=8
+COPY_PROBE backends=7 parallel=0 actual=1 expected=1
+COPY_PROBE twoGPU optin declined_to4=1
+RING_QUEUED frame=0 copy=0 seed=0 source_poisoned=1
+RING_QUEUED frame=1 copy=1 seed=1 source_poisoned=1
+RING_QUEUED frame=2 copy=2 seed=0 source_poisoned=1
+RING_QUEUED frame=3 copy=3 seed=0 source_poisoned=1
+RING_QUEUED frame=4 copy=4 seed=1 source_poisoned=1
+RING_QUEUED frame=5 copy=5 seed=0 source_poisoned=1
+RING_QUEUED frame=6 copy=6 seed=0 source_poisoned=1
+RING_QUEUED frame=7 copy=7 seed=1 source_poisoned=1
+RING_QUEUED frame=8 copy=0 seed=0 source_poisoned=1
+RING_QUEUED frame=9 copy=1 seed=0 source_poisoned=1
+RING_QUEUED frame=10 copy=2 seed=1 source_poisoned=1
+RING_QUEUED frame=11 copy=3 seed=0 source_poisoned=1
+RING_QUEUED frame=12 copy=4 seed=0 source_poisoned=1
+RING_QUEUED frame=13 copy=5 seed=1 source_poisoned=1
+RING_QUEUED frame=14 copy=6 seed=0 source_poisoned=1
+RING_QUEUED frame=15 copy=7 seed=0 source_poisoned=1
+RING_QUEUED frame=16 copy=0 seed=1 source_poisoned=1
+RING_QUEUED frame=17 copy=1 seed=0 source_poisoned=1
+RING_QUEUED frame=18 copy=2 seed=0 source_poisoned=1
+RING_QUEUED frame=19 copy=3 seed=1 source_poisoned=1
+RING_QUEUED frame=20 copy=4 seed=0 source_poisoned=1
+RING_QUEUED frame=21 copy=5 seed=0 source_poisoned=1
+RING_QUEUED frame=22 copy=6 seed=1 source_poisoned=1
+RING_QUEUED frame=23 copy=7 seed=0 source_poisoned=1
+DEVICE_COPY_DEPTH_PASS copies=8 frames=24 wrap=3 source_poison=1 exact_cpu_oracle=1 sink_canary=1 default4=1 negative_topologies=1

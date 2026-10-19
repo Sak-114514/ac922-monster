@@ -1,0 +1,142 @@
+{
+  "schema": "v404-graph-launch-cost-v1",
+  "status": "PREPARED_HOSTLINK_PENDING_NOT_LAUNCHABLE",
+  "candidate": "Bounded no-model actual-GGML graph-launch cost comparison across R5/R6/R398 helpers",
+  "runtime": {
+    "name": "runtime-perf-v400",
+    "build_id": "20261018T033835.695366Z",
+    "report": "notes/V400-build.json",
+    "report_sha256": "a00b50ddbc2d38aa20b442efa1941d3f0f37c91350b18eba1f2851298072e60a",
+    "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v400",
+    "runtime_library_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v400/lib"
+  },
+  "runner": {
+    "source": "graph-launch-cost-v404.cu",
+    "source_sha256": "bcceb1327863f319393dd8aa316a70ca16b08251ef82522825ab05eaf83870c5",
+    "binary": "/tmp/graph-launch-cost-v404-<tag>/graph-launch-cost-v404",
+    "binary_sha256": "ROOT_SET_AFTER_HOSTLINK",
+    "hostlink_script": "root-host-link-v404.sh",
+    "hostlink_script_sha256": "f937836547e9b3f62f7c17b6c9bc25983b8b79f6d2fe003f8468d84eafe2f4d2",
+    "hostlink_status": "PENDING_ROOT_CPU_ONLY_V400_HOSTLINK",
+    "run_matrix_script": "run-matrix-v404.sh",
+    "run_matrix_script_sha256": "b766ca15c3092a4afc7a1375bde9a5b8ccc5dab1edb111d83b5a1ce7bfc3a20a",
+    "static_verifier": "verify_v404_static.py",
+    "static_verifier_sha256": "27ba33b71f869105e67298811594bc79f1b81a563884294f4624629a2ddb248d"
+  },
+  "helpers": {
+    "r5-device-controller": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/tail-only-exec-v390-root-20261018/build-r5/libac922-tail-bridge.so",
+      "sha256": "1cc4c9de1e840649f26255dff842e090b7421efdc514be18fb1eaf2907d386cb",
+      "mode_contract": "helper-owned device controller graph launches unchanged captured child"
+    },
+    "r6-device-host-child": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/host-child-launch-v396-root-20261018/build-r6/libac922-tail-bridge.so",
+      "sha256": "54178a8472f0495850c40945d53b506a48c4f17f82a104751eeef57fc6dfdc07",
+      "mode_contract": "host-child launch using DeviceLaunch executable"
+    },
+    "r398-host-child-single-exec": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/host-child-single-exec-v398-root-20261018/build-r7/libac922-tail-bridge.so",
+      "sha256": "4957bc1841361818ca4245394aa7617efd9a64e1f39d98f9d079fa6f08433bb1",
+      "mode_contract": "host launches normal child exec; no controller allocation and no DeviceLaunch flag"
+    }
+  },
+  "fixture_contract": {
+    "backend": "one visible V100 physical GPU per process",
+    "graph": "real GGML graph of 8192 sequential GGML_OP_ADD nodes; exact output each frame",
+    "shapes": [
+      64,
+      128
+    ],
+    "frames_per_shape": 16,
+    "frame_order": "A/B/A alternating input families per graph shape",
+    "expected_dynamic_input": "input and ones tensors are marked inputs and mutated/set at runtime; no scalar constant folding",
+    "metadata_arena": "16 MiB base plus 4096 bytes per ADD node",
+    "no_model": true,
+    "expected_device_graph_kernels_per_graph_estimate": 1024,
+    "device_kernel_count_is_measured_not_assumed": true
+  },
+  "primary_mode": {
+    "trace_library_loaded": false,
+    "cuda_events": false,
+    "measurements": [
+      "host time in ggml_backend_graph_compute_async",
+      "host total through ggml_backend_synchronize",
+      "cold first frame per shape",
+      "warm replay frames per shape"
+    ],
+    "summary": "per-frame records plus cold/warm medians separated by width",
+    "cupti": "disabled"
+  },
+  "optional_modes": {
+    "trace": "pass --trace TRACE_PATH to load the existing CUPTI collector only for the actual GGML A/B/A window",
+    "cuda_events": "pass --cuda-events to add CUDA event elapsed time on the GGML backend stream; do not mix with primary wall timing"
+  },
+  "comparison_modes": [
+    "r5-device-controller",
+    "r6-device-host-child",
+    "r398-host-child-single-exec"
+  ],
+  "run_policy": {
+    "separate_process_per_helper": true,
+    "sequential_only": true,
+    "automatic_retry": false,
+    "mathematics_identical": true,
+    "performance_threshold": null,
+    "full_model_claim": false,
+    "mode_marker_expected": {
+      "r5-device-controller": "device-controller R5 helper log",
+      "r6-device-host-child": "launch_mode=host_child controller_not_executed=1 captured_math_unchanged=1",
+      "r398-host-child-single-exec": "launch_mode=host_child_single_exec controller_allocated=0 captured_math_unchanged=1"
+    },
+    "root_guard_required_by_operator": true,
+    "primary_trace_mode": "no CUPTI; do not set --trace",
+    "optional_event_mode": "separate process passes with --cuda-events; keep separate from no-event primary runs",
+    "optional_trace_mode": "separate process passes with --trace TRACE_PATH; primary comparison remains no-CUPTI",
+    "run_command_environment": {
+      "V404_RUN_AUTHORIZED": "1",
+      "V404_RUNNER": "root-hostlinked binary",
+      "V404_OUT": "fresh unique directory",
+      "V404_LD_LIBRARY_PATH": "frozen R400 + CUDA libraries",
+      "V404_GPU_UUID": "one physical V100 UUID visible as ordinal 0"
+    }
+  },
+  "safety": {
+    "model_loaded": false,
+    "gpu_touched": false,
+    "hostlink_run": false,
+    "launch_eligible": false,
+    "hostlink_authorization_env": "V404_HOSTLINK_AUTHORIZED=1",
+    "run_authorization_env": "V404_RUN_AUTHORIZED=1",
+    "actual_build": false,
+    "root_live_guard_required": true
+  },
+  "source_sha256": {
+    "graph-launch-cost-v404.cu": "bcceb1327863f319393dd8aa316a70ca16b08251ef82522825ab05eaf83870c5",
+    "trace-window-v404.h": "de13569dd02f7b4da24d89d19105db87f4715a4b42804e31ce846c1d86e6b522",
+    "bridge-api-v2-proposed.h": "3e94b0074d7720a7fa087801aa1210353406626bdf2c84b322a26f569281df27",
+    "root-host-link-v404.sh": "f937836547e9b3f62f7c17b6c9bc25983b8b79f6d2fe003f8468d84eafe2f4d2",
+    "run-matrix-v404.sh": "b766ca15c3092a4afc7a1375bde9a5b8ccc5dab1edb111d83b5a1ce7bfc3a20a",
+    "README.md": "f89533ef0bc09b44d8c0b3fbcfe12961d2a4ce2c0f6f30948faf2f107a7911fd",
+    "verify_v404_static.py": "27ba33b71f869105e67298811594bc79f1b81a563884294f4624629a2ddb248d"
+  },
+  "source_verification": {
+    "dynamic_metadata_arena": true,
+    "ggml_add_count": 8192,
+    "per_frame_output_exact": true,
+    "per_frame_input_unchanged": true,
+    "helper_modes_separate_processes": true,
+    "no_constant_folding": true
+  },
+  "hostlink": {
+    "status": "PENDING_ROOT_CPU_ONLY_V400_HOSTLINK",
+    "script": "root-host-link-v404.sh",
+    "script_sha256": "f937836547e9b3f62f7c17b6c9bc25983b8b79f6d2fe003f8468d84eafe2f4d2",
+    "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v400",
+    "report": "notes/V400-build.json",
+    "report_sha256": "a00b50ddbc2d38aa20b442efa1941d3f0f37c91350b18eba1f2851298072e60a",
+    "build_id": "20261018T033835.695366Z",
+    "authorization_env": "V404_HOSTLINK_AUTHORIZED=1"
+  },
+  "source_closure": "source-closure-v404.json",
+  "source_closure_sha256": "ae4e4d1ab6408ff98434be5791fcac78f2d9e451604ded6b87e2ceb4016b64c5"
+}

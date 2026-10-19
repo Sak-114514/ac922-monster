@@ -1,0 +1,67 @@
+{
+  "fixture": "shared-hostexec-v441-root-20261018",
+  "status": "staged_only_no_build_or_gpu",
+  "parent": {
+    "release": "R439 flags-zero host-child helper",
+    "source_sha256": "0db350adf205a5eb0ee050da648e0b8d15302d7ce538473cb6d6dbf512aa406f",
+    "api_header_sha256": "c715127588e4badd1f264af2362e9a597aba1e9a60438f8950d2c5d70fe56003",
+    "upstream_source_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/six-hostchild-prepare-v439-root-20261018/helper/bridge-v3.cu",
+    "copied_parent_manifests_are_retained_as_historical_records": true
+  },
+  "candidate_contract": {
+    "default_off_env": "AC922_HOST_GRAPH_SHARED_EXEC=1",
+    "shared_context_identity": [
+      "owner",
+      "device"
+    ],
+    "shared_slot_identity": [
+      "owner",
+      "device",
+      "exact_cudaStream_t"
+    ],
+    "max_shared_slots_per_context": 32,
+    "max_per_key_entries_per_context": 32,
+    "instantiate_flags": 0,
+    "per_launch_binding_update": true,
+    "topology_fallback_only_on_exact_cudaErrorGraphExecUpdateFailure": true,
+    "unknown_cuda_status_propagates": true,
+    "shared_launches_record_slot_and_per_key_events": true,
+    "closing_generation_gate": true,
+    "device_launch_controller": false,
+    "prepare_launches_model_graph": false,
+    "build_executed_by_fixture_author": false,
+    "gpu_executed_by_fixture_author": false
+  },
+  "files": {
+    "PLAN.md": "ba7f2fa699f2158e600af2bd143075a564146096bba8183039bb04f24a4e3970",
+    "helper/bridge-api.h": "c715127588e4badd1f264af2362e9a597aba1e9a60438f8950d2c5d70fe56003",
+    "helper/bridge-v441.cu": "fdee2d2806a4f4b37375c86933d61142fe3c319b69fee78945334350acb23ee9",
+    "helper/build-helper-v441.sh": "1c3819aa1b63673cc6ae59f51cfa44ba0ac5f5821d72bd2a069a6e61a4cf4f18",
+    "helper/context-gate-v441.h": "d53233a3ab66d9b98f4919df33ac4ad426e4d1fa357a23fea7e874e6c32b99e8",
+    "helper/source/bridge-api-r439.h": "c715127588e4badd1f264af2362e9a597aba1e9a60438f8950d2c5d70fe56003",
+    "helper/source/bridge-r439-v3.cu": "0db350adf205a5eb0ee050da648e0b8d15302d7ce538473cb6d6dbf512aa406f",
+    "helper/source/bridge-v439-v3.cu": "0db350adf205a5eb0ee050da648e0b8d15302d7ce538473cb6d6dbf512aa406f",
+    "helper/source/build-helper-r439.sh": "c84fa15d169774bfea643daa02d88a51e7c3b1cd1cc8836cad9e2a11046074e8",
+    "helper/source/source-provenance-v439.json": "77424ce479ce925a0ba72867498078e8e7650d29c077ffa3b1d278f57aef4d9d",
+    "helper/update-policy-v441.h": "c9198278dc9a61815c9de4ed04030bddba40e695b1de31ab3b7ef0d2c1bb327b",
+    "tests/baseline-r439/README.md": "f1f40ab62f888cb56d0a17fec4e1e76d7f17b03dceeccd7b1a2c83282919b094",
+    "tests/baseline-r439/V439-HELPER.md": "de28652589697ffd3a8328cfa586906dd829559156a56ff284bb1a367050cd33",
+    "tests/baseline-r439/build-fixture.sh": "3c8f74c21cfdad2fad87adca3c84f58a6fe9222c0f9ec3067504141ac8270655",
+    "tests/baseline-r439/build-scheduler6-host.sh": "fce7dc702d4f0a462ef2e706289937c62a443950d1bb71704f1d2a84fab41c8e",
+    "tests/baseline-r439/check-direct-fixture.py": "75824d47aad396d2c2183bf25c42292273fe4754992889e50dc64dd1f4f9a617",
+    "tests/baseline-r439/check-scheduler6-log.py": "be10ff0f54cd28e9a1ae09d37536961083168cd0a7c3ca2bdc9c5b83914977e5",
+    "tests/baseline-r439/run-fixture.sh": "da2170fdf5dcb0247d5258e54249fd17bfc94d0125f450c4144791fe60c17ad1",
+    "tests/baseline-r439/run-scheduler6-matrix.sh": "b70490158cbf895676699a95541306fca0b45df064b7b1d1c6376c9d9cc8b8f9",
+    "tests/baseline-r439/scheduler6-fixture-v439.cpp": "5e13e961eb0e006b49e03fd5ef9cc0a523ea61cea7f66ce2c4ea89d3ba3267ba",
+    "tests/baseline-r439/six-cuda-prepare-v439.cu": "92efdfd761223ae588acb7fdcd7e40add0c3a7143ce5e578d7e2e6b9ab71c128",
+    "tests/baseline-r439/source-provenance-v439.json": "77424ce479ce925a0ba72867498078e8e7650d29c077ffa3b1d278f57aef4d9d",
+    "tests/baseline-r439/verify-source-closure.py": "6cb3d9e448f08e69106acbab9bf7d47d322f464fc8e8ab389ea2ee1a2aa91054",
+    "tests/build-shared-exec-v441.sh": "6c70ba58bc2c907ddd484f100814eb020ae082b46c5f76f989ab036870f8208d",
+    "tests/check-shared-exec-v441.py": "9fede65fcb38f2c370f09ebdccd363a0bae18164d6cc62574a4d3f98077a986a",
+    "tests/check-source-closure-v441.py": "f0bc7fba021691e4eb626e264e274c7ee679a8a81be8bf0e5216ce36f0f5330b",
+    "tests/run-cpu-contract-v441.sh": "79c103f25072f12434e0d5a101cb635b34bd20fea1077bf008f51698c23634b3",
+    "tests/run-shared-exec-v441.sh": "35bbf7d52771d000cc12cd99be33cc65ea28198dce80baa0f22a3edbd8cacd6b",
+    "tests/shared-exec-v441.cu": "a058514c01853623a1c3bc8d0c360e0e47068b32aa8b26314c084ee6808cfcd9",
+    "tests/shared-state-cpu-v441.cpp": "984eddc5b21612474c4511cc0d2b8e27388a6db829f08bd2f283d87540f169b8"
+  }
+}

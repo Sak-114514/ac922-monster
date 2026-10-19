@@ -1,0 +1,147 @@
+{
+  "status": "PASS",
+  "waves": [
+    {
+      "id": "c5g-after-scan-raw32k-retained-8de3502f33",
+      "accepted": {
+        "raw32k": {
+          "type": "accepted",
+          "id": "raw32k",
+          "input_tokens": 32768,
+          "reserved_tokens": 32776,
+          "bank": 0,
+          "wave_id": "c5g-after-scan-raw32k-retained-8de3502f33"
+        }
+      },
+      "cache_status": {
+        "raw32k": {
+          "type": "cache_status",
+          "id": "raw32k",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "raw32k": {
+          "type": "done",
+          "id": "raw32k",
+          "input_tokens": 32768,
+          "output_tokens": 8,
+          "finish_reason": "length",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "raw32k": 7.368100647989195
+      },
+      "last_token_s": {
+        "raw32k": 7.590516455005854
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 558568,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "c5g-after-scan-raw32k-retained-8de3502f33",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 1024
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 7.566746,
+        "whole_wave_output_tok_s": 1.057257637563095,
+        "all_emissions_tok_s": 35.94487852877612,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 7.343226,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32768,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 4462.343934396136,
+        "logical_prompt_tok_s": 4462.343934396136,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 7234330,
+        "mtp_prefill_us_sum": 100091,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1185,
+          757,
+          935,
+          1087,
+          1238,
+          1720
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1280,
+        "post_wave_free_after_mib": [
+          1185,
+          757,
+          935,
+          1087,
+          1238,
+          1720
+        ]
+      },
+      "wall_s": 7.593143807956949,
+      "texts": {
+        "raw32k": " text, const size_t last_token_size"
+      },
+      "label": "c5g-after-scan-raw32k-retained",
+      "control_roundtrip_s": 7.594059358991217
+    }
+  ],
+  "started_unix": 1792355046.9602363,
+  "purpose": "same worker; unbounded audit grep stopped before measurement"
+}

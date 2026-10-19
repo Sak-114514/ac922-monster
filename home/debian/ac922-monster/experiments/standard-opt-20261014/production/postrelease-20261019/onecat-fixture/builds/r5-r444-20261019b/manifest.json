@@ -1,0 +1,84 @@
+{
+  "status": "HOST_BUILD_PASS",
+  "tag": "r5-r444-20261019b",
+  "created_utc": "2026-10-18T17:17:20.623598+00:00",
+  "host_only": true,
+  "gpu_process_started": false,
+  "model_loaded": false,
+  "runtime_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/build-lastwave/lib",
+  "private_build_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/build-lastwave/build-report.json",
+  "private_build_report_sha256": "93a410292d9865e3e5f2be4de71bb0b6380e859eae21beff1aef711f13c44fbf",
+  "private_build_report_status": "BUILD_PASS",
+  "private_build_report_base_release": "/home/debian/ac922-monster/production/releases/20261018-r444-banked-combo-c12-r2",
+  "private_host_tus": [
+    "ggml/src/ggml-backend.cpp",
+    "src/llama-context.cpp",
+    "common/speculative.cpp"
+  ],
+  "private_relinked_host_dsos": [
+    "libggml-base.so.0",
+    "libllama.so.0",
+    "libllama-common.so.0"
+  ],
+  "fixture_source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/onecat-init-concurrency-v372-20261018/onecat-init-concurrency-v372.cpp",
+  "fixture_source_sha256": "64f56a0a640d22033a941a884b0fef5a0d43e9271af83593686d67574c328466",
+  "oracle_source": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/onecat-variable-lanes-20261015/onecat-variable-lanes.cpp",
+  "oracle_source_sha256": "041d8d90f83c5db7126f87fda28ce9bee25cc7f5870628d342d8b3cbce2fd529",
+  "verifier": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/onecat-init-concurrency-v372-20261018/verify-result.py",
+  "verifier_sha256": "98d4da76b1cb23803a3871e97f3bafe082648f59a6938fb8d0ba076e51c4eb0d",
+  "binary": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/onecat-fixture/builds/r5-r444-20261019b/onecat-init-concurrency-v372",
+  "binary_sha256": "c7882ad95633a7b4bf326320d3be4b61b1b52f0134ea302667993f48af58ca0f",
+  "backend_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/onecat-fixture/builds/r5-r444-20261019b/backend",
+  "dso_closure": {
+    "libggml-cuda.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/build-lastwave/lib/libggml-cuda.so.0",
+      "sha256": "a22cc41dc5a4d52e275b6929430739a149760821d7d2a45cfcf02c83859c695c"
+    },
+    "libggml-cpu.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/build-lastwave/lib/libggml-cpu.so.0",
+      "sha256": "63525deba1db08199b25852ba71c9115961fdd4db8632f7defe88172613bd31c"
+    },
+    "libggml.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/build-lastwave/lib/libggml.so.0",
+      "sha256": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2"
+    },
+    "libggml-base.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/build-lastwave/lib/libggml-base.so.0",
+      "sha256": "3a3f7888906ba9ceccf2ad95490e96e9a2896e9e5fdef8135490fc312d14df4b"
+    },
+    "libllama.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/build-lastwave/lib/libllama.so.0",
+      "sha256": "f6bbc2a31d0594a6d8a3bdffc5ee9173c16a661f3e8613fedd26746863aae268"
+    },
+    "libllama-common.so.0": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/build-lastwave/lib/libllama-common.so.0",
+      "sha256": "17b8ef18322dd2b576d07f5063350fd0499f6a5e0353c94310249f409f9e8504"
+    }
+  },
+  "required_loaded_dsos": [
+    "libggml-cuda.so.0",
+    "libggml-cpu.so.0",
+    "libggml.so.0",
+    "libggml-base.so.0",
+    "libllama.so.0",
+    "libllama-common.so.0"
+  ],
+  "frozen_r444_cuda": {
+    "path": "/home/debian/ac922-monster/production/releases/20261018-r444-banked-combo-c12-r2/lib/libggml-cuda.so.0",
+    "sha256": "a22cc41dc5a4d52e275b6929430739a149760821d7d2a45cfcf02c83859c695c",
+    "matches_private_closure": true
+  },
+  "r5_helper": {
+    "name": "libac922-tail-bridge.so",
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/build-lastwave/lib/libac922-tail-bridge.so",
+    "present": true,
+    "sha256": "1cc4c9de1e840649f26255dff842e090b7421efdc514be18fb1eaf2907d386cb",
+    "linked_or_loaded_by_fixture": false,
+    "note": "Recorded for provenance; V372 is a direct GGML fixture and does not claim to exercise the R5 runtime helper."
+  },
+  "ldd_r_sha256": "209b89512791c2973e71afdbc7525450cd2c5d3cac25b7f385dad48dcee6fcc1",
+  "ldd_r_text": "\tlinux-vdso64.so.1 (0x00007fffbc9c0000)\n\tlibggml-cuda.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/build-lastwave/lib/libggml-cuda.so.0 (0x00007fffaecc0000)\n\tlibggml.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/build-lastwave/lib/libggml.so.0 (0x00007fffaec90000)\n\tlibggml-base.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/build-lastwave/lib/libggml-base.so.0 (0x00007fffaeaf0000)\n\tlibllama.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/build-lastwave/lib/libllama.so.0 (0x00007fffae740000)\n\tlibllama-common.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/build-lastwave/lib/libllama-common.so.0 (0x00007fffae1e0000)\n\tlibstdc++.so.6 => /usr/lib/powerpc64le-linux-gnu/libstdc++.so.6 (0x00007fffadeb0000)\n\tlibm.so.6 => /usr/lib/powerpc64le-linux-gnu/libm.so.6 (0x00007fffadd80000)\n\tlibgcc_s.so.1 => /usr/lib/powerpc64le-linux-gnu/libgcc_s.so.1 (0x00007fffadd40000)\n\tlibc.so.6 => /usr/lib/powerpc64le-linux-gnu/libc.so.6 (0x00007fffadae0000)\n\tlibcudart.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcudart.so.12 (0x00007fffada00000)\n\tlibcublas.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublas.so.12 (0x00007fffa6ce0000)\n\tlibcuda.so.1 => /usr/lib/powerpc64le-linux-gnu/libcuda.so.1 (0x00007fffa4f20000)\n\tlibnccl.so.2 => /usr/local/cuda/lib/libnccl.so.2 (0x00007fffa30c0000)\n\t/lib64/ld64.so.2 (0x00007fffbc9e0000)\n\tlibggml-cpu.so.0 => /home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/build-lastwave/lib/libggml-cpu.so.0 (0x00007fffa2f00000)\n\tlibgomp.so.1 => /usr/lib/powerpc64le-linux-gnu/libgomp.so.1 (0x00007fffa2e80000)\n\tlibdl.so.2 => /usr/lib/powerpc64le-linux-gnu/libdl.so.2 (0x00007fffa2e50000)\n\tlibpthread.so.0 => /usr/lib/powerpc64le-linux-gnu/libpthread.so.0 (0x00007fffa2e20000)\n\tlibrt.so.1 => /usr/lib/powerpc64le-linux-gnu/librt.so.1 (0x00007fffa2df0000)\n\tlibcublasLt.so.12 => /usr/local/cuda-12.4/targets/ppc64le-linux/lib/libcublasLt.so.12 (0x00007fff8ef60000)\n",
+  "build_log": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/onecat-fixture/builds/r5-r444-20261019b/host-build.log",
+  "run_gate": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/onecat_fixture_gate.py",
+  "gpu_test": "not run; requires AC922_POSTRELEASE_GPU_WINDOW=1 and the separate gate script"
+}

@@ -1,0 +1,1376 @@
+{
+  "status": "PASS",
+  "waves": [
+    {
+      "id": "c3-raw32k-cold-fallback-a5733922ec",
+      "accepted": {
+        "raw32k": {
+          "type": "accepted",
+          "id": "raw32k",
+          "input_tokens": 32768,
+          "reserved_tokens": 32776,
+          "bank": 0,
+          "wave_id": "c3-raw32k-cold-fallback-a5733922ec"
+        }
+      },
+      "cache_status": {
+        "raw32k": {
+          "type": "cache_status",
+          "id": "raw32k",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "raw32k": {
+          "type": "done",
+          "id": "raw32k",
+          "input_tokens": 32768,
+          "output_tokens": 8,
+          "finish_reason": "length",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "raw32k": 9.421105686982628
+      },
+      "last_token_s": {
+        "raw32k": 10.197231184982229
+      },
+      "timings": {
+        "wave_id": "c3-raw32k-cold-fallback-a5733922ec",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 1024
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 8.87644,
+        "whole_wave_output_tok_s": 0.9012622177359392,
+        "all_emissions_tok_s": 10.30767109767678,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 8.100086,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32768,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 4045.38914772016,
+        "logical_prompt_tok_s": 4045.38914772016,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 7912054,
+        "mtp_prefill_us_sum": 181824,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 2,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1256,
+          833,
+          987,
+          1139,
+          1924,
+          1835
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1678,
+        "post_wave_free_after_mib": [
+          1256,
+          833,
+          987,
+          1139,
+          1924,
+          1835
+        ]
+      },
+      "wall_s": 10.199660181999207,
+      "texts": {
+        "raw32k": " text, const size_t last_token_size"
+      },
+      "label": "c3-raw32k-cold-fallback",
+      "control_roundtrip_s": 10.200430753000546
+    },
+    {
+      "id": "c3-mixed-geometry-single-d-50c5f147b5",
+      "accepted": {
+        "mixed-doc-d": {
+          "type": "accepted",
+          "id": "mixed-doc-d",
+          "input_tokens": 10817,
+          "reserved_tokens": 10833,
+          "bank": 3,
+          "wave_id": "c3-mixed-geometry-single-d-50c5f147b5"
+        }
+      },
+      "cache_status": {
+        "mixed-doc-d": {
+          "type": "cache_status",
+          "id": "mixed-doc-d",
+          "bank": 3,
+          "hit": true,
+          "cached_tokens": 10496,
+          "checkpoint_tokens": 10496
+        }
+      },
+      "done": {
+        "mixed-doc-d": {
+          "type": "done",
+          "id": "mixed-doc-d",
+          "input_tokens": 10817,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "mixed-doc-d": 0.7391566190053709
+      },
+      "last_token_s": {
+        "mixed-doc-d": 0.8095268569886684
+      },
+      "timings": {
+        "wave_id": "c3-mixed-geometry-single-d-50c5f147b5",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 1024
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 0.749988,
+        "whole_wave_output_tok_s": 5.333418668032022,
+        "all_emissions_tok_s": 56.83109797681291,
+        "prefill_input_tokens": 10817,
+        "prefill_wall_seconds": 0.679375,
+        "cached_tokens": 10496,
+        "prefill_evaluated_tokens": 321,
+        "uncached_prefill": false,
+        "prefill_aggregate_wall_tok_s": 472.493100275989,
+        "logical_prompt_tok_s": 15921.98712051518,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 626932,
+        "mtp_prefill_us_sum": 17519,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": true,
+        "single_cache_admission_free_mib": [
+          1256,
+          833,
+          987,
+          1139,
+          1924,
+          1835
+        ],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1256,
+          833,
+          987,
+          1139,
+          1924,
+          1835
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1441,
+        "post_wave_free_after_mib": [
+          1256,
+          833,
+          987,
+          1139,
+          1924,
+          1835
+        ]
+      },
+      "wall_s": 0.811606123985257,
+      "texts": {
+        "mixed-doc-d": "9274"
+      },
+      "label": "c3-mixed-geometry-single-d",
+      "control_roundtrip_s": 0.8124259659671225,
+      "semantic_status": "PASS"
+    },
+    {
+      "id": "c3-cached-single-512-prose-ff35aa1c20",
+      "accepted": {
+        "cached-essay": {
+          "type": "accepted",
+          "id": "cached-essay",
+          "input_tokens": 10835,
+          "reserved_tokens": 11347,
+          "bank": 3,
+          "wave_id": "c3-cached-single-512-prose-ff35aa1c20"
+        }
+      },
+      "cache_status": {
+        "cached-essay": {
+          "type": "cache_status",
+          "id": "cached-essay",
+          "bank": 3,
+          "hit": true,
+          "cached_tokens": 10496,
+          "checkpoint_tokens": 10496
+        }
+      },
+      "done": {
+        "cached-essay": {
+          "type": "done",
+          "id": "cached-essay",
+          "input_tokens": 10835,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "cached-essay": 0.7602740789880045
+      },
+      "last_token_s": {
+        "cached-essay": 8.439062379009556
+      },
+      "timings": {
+        "wave_id": "c3-cached-single-512-prose-ff35aa1c20",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 1024
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 8.388968,
+        "whole_wave_output_tok_s": 61.032537017664154,
+        "all_emissions_tok_s": 66.67691129626688,
+        "prefill_input_tokens": 10835,
+        "prefill_wall_seconds": 0.709681,
+        "cached_tokens": 10496,
+        "prefill_evaluated_tokens": 339,
+        "uncached_prefill": false,
+        "prefill_aggregate_wall_tok_s": 477.6794080720775,
+        "logical_prompt_tok_s": 15267.422968911384,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 657343,
+        "mtp_prefill_us_sum": 16639,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": true,
+        "single_cache_admission_free_mib": [
+          1256,
+          833,
+          987,
+          1139,
+          1924,
+          1835
+        ],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1256,
+          833,
+          987,
+          1139,
+          1924,
+          1835
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1482,
+        "post_wave_free_after_mib": [
+          1256,
+          833,
+          987,
+          1139,
+          1924,
+          1835
+        ]
+      },
+      "wall_s": 8.441899270983413,
+      "texts": {
+        "cached-essay": "BEGIN_CACHE_D\n\n# CPU Caches and Cache Coherency: A Comprehensive Technical Analysis\n\nModern computer architecture relies heavily on a hierarchical memory system to bridge the widening performance gap between processor speed and main memory latency. At the heart of this hierarchy lies the CPU cache, a small, fast, and expensive form of static random-access memory (SRAM) located close to the processor core. While caches dramatically accelerate data access, they introduce a complex challenge known as cache coherency, particularly in multi-core and multi-processor systems. This document provides a detailed technical explanation of CPU cache structures, their operational mechanisms, and the protocols used to maintain data consistency across multiple caches.\n\n## 1. The Memory Hierarchy and the Need for Caches\n\nThe fundamental principle behind CPU caches is the locality of reference, which manifests in two forms: temporal locality and spatial locality. Temporal locality suggests that if a memory location is accessed, it is likely to be accessed again in the near future. Spatial locality suggests that if a memory location is accessed, nearby memory locations are likely to be accessed soon. Caches exploit these principles by storing copies of frequently accessed data in faster memory closer to the CPU.\n\nThe memory hierarchy typically consists of:\n1.  **Registers**: Located inside the CPU core, extremely fast, but very limited in capacity.\n2.  **L1 Cache**: The first level of cache, usually split into L1 Instruction Cache (L1i) and L1 Data Cache (L1d). It is directly connected to the core and has the lowest latency (typically 3-4 cycles).\n3.  **L2 Cache**: A larger, slightly slower cache that may be private to a core or shared between a few cores. Latency is typically 10-15 cycles.\n4.  **L3 Cache**: A large, shared cache across all cores in a processor. It acts as a last-level cache (LLC) before main memory. Latency is typically 30-50 cycles.\n5.  **Main Memory (DRAM)**: Slower, larger, and volatile. Access latency is hundreds of cycles.\n\nThe goal of this hierarchy is to ensure that the CPU spends most of its time accessing data from the fastest available level. When a processor requests data, it first checks the L1 cache. If the data is not present (a cache miss), it checks L2, then L3, and finally main memory. The cost of a cache miss"
+      },
+      "label": "c3-cached-single-512-prose",
+      "control_roundtrip_s": 8.44276919303229,
+      "semantic_status": "PASS_COHERENT_AT_512_TOKEN_LIMIT",
+      "producer_semantic_status": "FULL_TEXT_REVIEW_REQUIRED"
+    },
+    {
+      "id": "c3-single-d-after-prose-497a5cac6b",
+      "accepted": {
+        "doc-d-after-prose": {
+          "type": "accepted",
+          "id": "doc-d-after-prose",
+          "input_tokens": 10817,
+          "reserved_tokens": 10833,
+          "bank": 3,
+          "wave_id": "c3-single-d-after-prose-497a5cac6b"
+        }
+      },
+      "cache_status": {
+        "doc-d-after-prose": {
+          "type": "cache_status",
+          "id": "doc-d-after-prose",
+          "bank": 3,
+          "hit": true,
+          "cached_tokens": 10496,
+          "checkpoint_tokens": 10496
+        }
+      },
+      "done": {
+        "doc-d-after-prose": {
+          "type": "done",
+          "id": "doc-d-after-prose",
+          "input_tokens": 10817,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "doc-d-after-prose": 0.7067122820299119
+      },
+      "last_token_s": {
+        "doc-d-after-prose": 0.7777247980120592
+      },
+      "timings": {
+        "wave_id": "c3-single-d-after-prose-497a5cac6b",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 1024
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 0.727374,
+        "whole_wave_output_tok_s": 5.499234231633245,
+        "all_emissions_tok_s": 56.325335135744055,
+        "prefill_input_tokens": 10817,
+        "prefill_wall_seconds": 0.655911,
+        "cached_tokens": 10496,
+        "prefill_evaluated_tokens": 321,
+        "uncached_prefill": false,
+        "prefill_aggregate_wall_tok_s": 489.39566496064253,
+        "logical_prompt_tok_s": 16491.56669121268,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 604567,
+        "mtp_prefill_us_sum": 15642,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": true,
+        "single_cache_admission_free_mib": [
+          1256,
+          833,
+          987,
+          1139,
+          1924,
+          1835
+        ],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1256,
+          833,
+          987,
+          1139,
+          1924,
+          1835
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1456,
+        "post_wave_free_after_mib": [
+          1256,
+          833,
+          987,
+          1139,
+          1924,
+          1835
+        ]
+      },
+      "wall_s": 0.7800307139987126,
+      "texts": {
+        "doc-d-after-prose": "9274"
+      },
+      "label": "c3-single-d-after-prose",
+      "control_roundtrip_s": 0.7808400889625773,
+      "semantic_status": "PASS"
+    },
+    {
+      "id": "c3-single-capacity-fallback-ed1d85a7a1",
+      "accepted": {
+        "capacity-fallback-d": {
+          "type": "accepted",
+          "id": "capacity-fallback-d",
+          "input_tokens": 10817,
+          "reserved_tokens": 19009,
+          "bank": 0,
+          "wave_id": "c3-single-capacity-fallback-ed1d85a7a1"
+        }
+      },
+      "cache_status": {
+        "capacity-fallback-d": {
+          "type": "cache_status",
+          "id": "capacity-fallback-d",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "capacity-fallback-d": {
+          "type": "done",
+          "id": "capacity-fallback-d",
+          "input_tokens": 10817,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "capacity-fallback-d": 4.036225372983608
+      },
+      "last_token_s": {
+        "capacity-fallback-d": 4.108019324950874
+      },
+      "timings": {
+        "wave_id": "c3-single-capacity-fallback-ed1d85a7a1",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 1024
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 4.05761,
+        "whole_wave_output_tok_s": 0.9858019868839045,
+        "all_emissions_tok_s": 55.72660527452319,
+        "prefill_input_tokens": 10817,
+        "prefill_wall_seconds": 3.984939,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 10817,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 2714.470660655031,
+        "logical_prompt_tok_s": 2714.470660655031,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 3769734,
+        "mtp_prefill_us_sum": 174526,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [
+          1256,
+          833,
+          987,
+          1139,
+          1924,
+          1835
+        ],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1256,
+          833,
+          987,
+          1139,
+          1924,
+          1835
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1560,
+        "post_wave_free_after_mib": [
+          1256,
+          833,
+          987,
+          1139,
+          1924,
+          1835
+        ]
+      },
+      "wall_s": 4.110892464988865,
+      "texts": {
+        "capacity-fallback-d": "9274"
+      },
+      "label": "c3-single-capacity-fallback",
+      "control_roundtrip_s": 4.111687185999472,
+      "semantic_status": "PASS"
+    },
+    {
+      "id": "c3-native4-after-single-profile-changes-39e13d3589",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 64,
+          "bank": 0,
+          "wave_id": "c3-native4-after-single-profile-changes-39e13d3589"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 67,
+          "bank": 1,
+          "wave_id": "c3-native4-after-single-profile-changes-39e13d3589"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 73,
+          "bank": 2,
+          "wave_id": "c3-native4-after-single-profile-changes-39e13d3589"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 79,
+          "bank": 3,
+          "wave_id": "c3-native4-after-single-profile-changes-39e13d3589"
+        }
+      },
+      "cache_status": {
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        },
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "logic-en": 1.2248673029826023,
+        "strict-json-zh": 1.2356487219803967,
+        "capital-en": 1.3693695939728059,
+        "arithmetic-zh": 1.4824295889702626
+      },
+      "last_token_s": {
+        "logic-en": 1.2248673029826023,
+        "strict-json-zh": 1.5072893089964055,
+        "capital-en": 1.3693695939728059,
+        "arithmetic-zh": 1.659496454987675
+      },
+      "timings": {
+        "wave_id": "c3-native4-after-single-profile-changes-39e13d3589",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 1.008009,
+        "whole_wave_output_tok_s": 20.833147323089378,
+        "all_emissions_tok_s": 48.314291367386474,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 0.751937,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 206.13429050572057,
+        "logical_prompt_tok_s": 206.13429050572057,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 2201029,
+        "mtp_prefill_us_sum": 156162,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 1,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [
+          1256,
+          833,
+          987,
+          1139,
+          1924,
+          1835
+        ],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2182,
+          2177,
+          2331,
+          2483,
+          3268,
+          3325
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1338,
+        "post_wave_free_after_mib": [
+          2182,
+          2177,
+          2331,
+          2483,
+          3268,
+          3325
+        ]
+      },
+      "wall_s": 1.7404195789713413,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      },
+      "label": "c3-native4-after-single-profile-changes",
+      "control_roundtrip_s": 1.7412390499957837,
+      "semantic_status": "PASS"
+    },
+    {
+      "id": "c3-four512-383a1a9b2b",
+      "accepted": {
+        "story-0": {
+          "type": "accepted",
+          "id": "story-0",
+          "input_tokens": 54,
+          "reserved_tokens": 566,
+          "bank": 0,
+          "wave_id": "c3-four512-383a1a9b2b"
+        },
+        "story-1": {
+          "type": "accepted",
+          "id": "story-1",
+          "input_tokens": 50,
+          "reserved_tokens": 562,
+          "bank": 1,
+          "wave_id": "c3-four512-383a1a9b2b"
+        },
+        "story-2": {
+          "type": "accepted",
+          "id": "story-2",
+          "input_tokens": 48,
+          "reserved_tokens": 560,
+          "bank": 2,
+          "wave_id": "c3-four512-383a1a9b2b"
+        },
+        "story-3": {
+          "type": "accepted",
+          "id": "story-3",
+          "input_tokens": 50,
+          "reserved_tokens": 562,
+          "bank": 3,
+          "wave_id": "c3-four512-383a1a9b2b"
+        }
+      },
+      "cache_status": {
+        "story-1": {
+          "type": "cache_status",
+          "id": "story-1",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "story-0": {
+          "type": "cache_status",
+          "id": "story-0",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "story-3": {
+          "type": "cache_status",
+          "id": "story-3",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "story-2": {
+          "type": "cache_status",
+          "id": "story-2",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "story-1": {
+          "type": "done",
+          "id": "story-1",
+          "input_tokens": 50,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 1
+        },
+        "story-0": {
+          "type": "done",
+          "id": "story-0",
+          "input_tokens": 54,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 0
+        },
+        "story-3": {
+          "type": "done",
+          "id": "story-3",
+          "input_tokens": 50,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 3
+        },
+        "story-2": {
+          "type": "done",
+          "id": "story-2",
+          "input_tokens": 48,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 2
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "story-2": 0.42168073705397546,
+        "story-3": 0.8417788150254637,
+        "story-1": 0.8436571720521897,
+        "story-0": 0.8740072670043446
+      },
+      "last_token_s": {
+        "story-2": 10.579604715050664,
+        "story-3": 9.937394563050475,
+        "story-1": 9.325964725052472,
+        "story-0": 9.387416491052136
+      },
+      "timings": {
+        "wave_id": "c3-four512-383a1a9b2b",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 10.54982,
+        "whole_wave_output_tok_s": 194.12653486031041,
+        "all_emissions_tok_s": 201.615939945227,
+        "prefill_input_tokens": 202,
+        "prefill_wall_seconds": 0.843055,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 202,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 239.60477074449472,
+        "logical_prompt_tok_s": 239.60477074449472,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 2825808,
+        "mtp_prefill_us_sum": 21780,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2183,
+          2177,
+          2331,
+          2483,
+          3268,
+          3325
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1451,
+        "post_wave_free_after_mib": [
+          2183,
+          2177,
+          2331,
+          2483,
+          3268,
+          3325
+        ]
+      },
+      "wall_s": 10.58446281903889,
+      "texts": {
+        "story-0": "BEGIN_0\n\nThe modern computing landscape is defined by a fundamental asymmetry in performance characteristics between the central processing unit (CPU) and the main memory system. While CPU clock speeds have increased exponentially over the past few decades, the latency and bandwidth of dynamic random-access memory (DRAM) have improved at a significantly slower rate. This divergence, often referred to as the \"memory wall,\" creates a bottleneck where the processor spends a significant portion of its cycles waiting for data to arrive from main memory. To mitigate this disparity, computer architects introduced a hierarchical memory system centered around CPU caches. These caches are small, high-speed storage areas located physically close to the processor cores, designed to hold frequently accessed data and instructions. However, as multi-core processors became ubiquitous, the simple concept of a local cache evolved into a complex distributed system requiring rigorous protocols to maintain data consistency across multiple cores. This technical explanation explores the architecture of CPU caches, the principles of cache coherency, and the specific protocols used to ensure that all processors in a system view a consistent image of memory.\n\n### The Hierarchy of Memory and Cache Architecture\n\nTo understand how caches work, one must first understand the memory hierarchy. At the top of this hierarchy sits the CPU registers, which are the fastest storage locations but are extremely limited in capacity. Below the registers lie the caches, typically organized into three levels: L1, L2, and L3. At the bottom of the hierarchy is main memory (DRAM), which is vast in capacity but slow in access speed.\n\nThe primary goal of the cache hierarchy is to exploit the principle of locality. There are two types of locality: temporal locality and spatial locality. Temporal locality refers to the tendency of a program to access the same data repeatedly within a short period. Spatial locality refers to the tendency of a program to access data items that are close to each other in memory. Caches exploit these principles by storing copies of data from main memory in faster, smaller storage units. When a CPU requests data, it first checks the L1 cache. If the data is present, it is a \"cache hit,\" and the data is returned almost instantly. If the data is not present, it is a \"cache miss,\" and the CPU must look in the L2 cache. If it is not there, it looks in the L3 cache. If it is not in any cache, the CPU must fetch the data from main memory, which can take hundreds of cycles.\n\nThe L1 cache is usually split into two separate caches:",
+        "story-1": "BEGIN_1\n\nPhotosynthesis is arguably the most critical biochemical process on Earth, serving as the primary mechanism by which solar energy is converted into chemical energy, thereby sustaining nearly all life on the planet. It is not merely a biological curiosity but the foundational engine of the global carbon cycle and the biosphere’s energy budget. To understand photosynthesis fully, one must delve into the intricate molecular machinery of plant cells, the thermodynamics of light absorption, the complex enzymatic pathways of carbon fixation, and the broader metabolic networks that integrate these processes with respiration and growth. This explanation will traverse the structural basis of photosynthesis, the detailed mechanics of the light-dependent and light-independent reactions, the variations in metabolic strategies among different plant species, and the integration of photosynthesis with overall plant metabolism.\n\n### The Structural and Cellular Basis of Photosynthesis\n\nPhotosynthesis occurs primarily within the chloroplasts, specialized organelles found in the mesophyll cells of leaves. The chloroplast is a double-membrane-bound organelle that contains its own DNA, ribosomes, and a complex internal membrane system. The outer and inner membranes enclose a fluid-filled space called the stroma, which contains enzymes, DNA, ribosomes, and other molecules necessary for the synthesis of carbohydrates. Suspended within the stroma are stacks of thylakoids, known as grana. The thylakoid membranes are the site of the light-dependent reactions, while the stroma is the site of the light-independent reactions, commonly referred to as the Calvin cycle.\n\nThe thylakoid membrane is a highly specialized structure rich in pigments, electron transport chains, and ATP synthase complexes. The pigments, primarily chlorophyll a and chlorophyll b, along with accessory pigments like carotenoids, are organized into photosystems. These photosystems are large protein complexes that capture light energy and initiate the electron transport chain. The arrangement of these components is crucial for the efficiency of energy conversion. The thylakoid lumen, the interior space of the thylakoids, plays a vital role in establishing the proton gradient necessary for ATP synthesis.\n\n### The Light-Dependent Reactions: Capturing Solar Energy\n\nThe first stage of photosynthesis, the light-dependent reactions, takes place in the thylakoid membranes. The primary objective of this stage is to convert light energy into chemical energy in the form of ATP (adenosine triphosphate) and NADPH (nicotinamide adenine dinucleotide phosphate),",
+        "story-2": "BEGIN_2\n\nThe architectural legacy of ancient Rome stands as one of the most profound achievements in the history of human engineering and construction. While Greek architecture is often celebrated for its aesthetic refinement, proportional harmony, and reliance on post-and-lintel systems, Roman architecture is distinguished by its revolutionary approach to structural engineering, material science, and spatial organization. The Romans did not merely build structures; they engineered environments, infrastructure, and urban systems that facilitated the administration, military dominance, and cultural cohesion of an empire spanning three continents. To understand Roman architectural engineering, one must examine the interplay between their innovative use of materials, their mastery of structural forms such as the arch and the dome, their sophisticated understanding of hydraulics and concrete chemistry, and their ability to scale these technologies to create monumental public works. This explanation will delve into the technical underpinnings of Roman construction, analyzing how these engineering principles allowed for the creation of enduring structures that continue to influence modern architectural practice.\n\nAt the heart of Roman architectural engineering lies the development and widespread application of concrete, known as *opus caementicium*. Before the Roman era, large-scale construction was predominantly limited to stone masonry, which required precise cutting, heavy lifting, and complex scaffolding. Stone is strong in compression but weak in tension, limiting the span of beams and the height of structures. The Romans, however, developed a hydraulic concrete that could be poured into molds, allowing for the creation of complex, monolithic structures with unprecedented freedom of form. This material innovation was not accidental but the result of empirical experimentation and a deep understanding of local geology.\n\nThe primary binder in Roman concrete was lime, derived from the calcination of limestone. However, the critical innovation was the addition of volcanic ash, known as *pozzolana*, sourced from the volcanic deposits near Naples and Pozzuoli. This ash, rich in silica and alumina, reacted with the lime and water to form a hydraulic cement that could harden even underwater. This chemical reaction, known as pozzolanic reaction, produced calcium silicate hydrate compounds that gave the concrete its remarkable durability and strength. Recent archaeological and materials science studies have revealed that the Romans often used seawater in their concrete mixes, which introduced chloride ions that facilitated the formation of rare, stable minerals like aluminum tobermorite. These minerals grew within the concrete matrix over time, effectively self-healing cracks and increasing the material’s resistance to erosion. This understanding of material chemistry allowed Roman engineers to construct harbors, aqueducts, and",
+        "story-3": "BEGIN_3\n\nThe landscape of computer science is fundamentally built upon the efficient organization of data. Among the most critical operations in this domain is sorting, the process of arranging a collection of elements into a specific order, typically ascending or descending. While sorting may appear trivial in everyday life—such as organizing a deck of cards or alphabetizing a bookshelf—it represents a profound challenge in computational theory. The efficiency with which a computer can sort data dictates the performance of databases, search engines, operating systems, and countless other software applications. To understand the limits and possibilities of sorting, one must delve into the realm of comparison sorting algorithms and their associated computational complexity. This explanation will explore the theoretical foundations of comparison sorts, analyze the lower bounds imposed by information theory, examine specific algorithmic strategies, and discuss the practical implications of time and space complexity.\n\nAt the heart of sorting theory lies the concept of the comparison model. In this model, the only operation permitted to determine the relative order of two elements is a direct comparison. The algorithm is not allowed to inspect the internal structure of the data, such as the binary representation of integers or the hash values of strings, to infer order. Instead, it must rely solely on queries of the form \"Is element A less than element B?\" This restriction is crucial because it defines a universal class of sorting algorithms that can be applied to any data type where a total ordering is defined, regardless of the underlying data structure. Whether sorting integers, floating-point numbers, strings, or custom objects, comparison sorts provide a generic solution. However, this generality comes at a cost, which is quantified through computational complexity.\n\nTo understand the efficiency of these algorithms, we must first define what we mean by complexity. In computer science, complexity is usually measured in terms of time and space. Time complexity refers to the number of basic operations required to complete the task, often expressed using Big O notation, which describes the upper bound of the growth rate of the algorithm as the input size $n$ increases. Space complexity refers to the amount of memory required by the algorithm. For sorting, the primary metric of interest is the number of comparisons performed, as this is the dominant cost in the comparison model.\n\nThe theoretical foundation for the efficiency of comparison sorts is rooted in information theory, specifically the concept of decision trees. A decision tree is a binary tree where each internal node represents a comparison between two elements, and each leaf node represents a unique permutation of the input sequence. For a sequence of $n$ distinct elements, there are"
+      },
+      "label": "c3-four512",
+      "control_roundtrip_s": 10.585521746019367,
+      "semantic_status": "PASS_EXACT_REVIEWED_L3",
+      "producer_semantic_status": "FULL_TEXT_REVIEW_REQUIRED"
+    },
+    {
+      "id": "c3-native4-final-b79e053cd2",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 64,
+          "bank": 0,
+          "wave_id": "c3-native4-final-b79e053cd2"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 67,
+          "bank": 1,
+          "wave_id": "c3-native4-final-b79e053cd2"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 73,
+          "bank": 2,
+          "wave_id": "c3-native4-final-b79e053cd2"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 79,
+          "bank": 3,
+          "wave_id": "c3-native4-final-b79e053cd2"
+        }
+      },
+      "cache_status": {
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "capital-en": 0.25118464999832213,
+        "arithmetic-zh": 0.3791473970049992,
+        "logic-en": 0.5091472389758565,
+        "strict-json-zh": 0.5326932470197789
+      },
+      "last_token_s": {
+        "capital-en": 0.25118464999832213,
+        "arithmetic-zh": 0.4504018439911306,
+        "logic-en": 0.5091472389758565,
+        "strict-json-zh": 0.7225222859997302
+      },
+      "timings": {
+        "wave_id": "c3-native4-final-b79e053cd2",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 0.692216,
+        "whole_wave_output_tok_s": 30.3373513469784,
+        "all_emissions_tok_s": 44.55599946532801,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 0.501892,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 308.83138205032157,
+        "logical_prompt_tok_s": 308.83138205032157,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 1516630,
+        "mtp_prefill_us_sum": 22729,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2183,
+          2177,
+          2331,
+          2483,
+          3268,
+          3325
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1346,
+        "post_wave_free_after_mib": [
+          2183,
+          2177,
+          2331,
+          2483,
+          3268,
+          3325
+        ]
+      },
+      "wall_s": 0.7248651160043664,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      },
+      "label": "c3-native4-final",
+      "control_roundtrip_s": 0.7256807750090957,
+      "semantic_status": "PASS"
+    }
+  ],
+  "purpose": "conditional singleton cache reuses existing geometry; cold path unchanged",
+  "pre_semantic_review_status": "PASS_PENDING_FULL_TEXT_REVIEW",
+  "producer_status": "PASS_PENDING_FULL_TEXT_REVIEW",
+  "semantic_adjudication": "evidence/semantic-review.json"
+}

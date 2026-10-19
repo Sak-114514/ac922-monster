@@ -1,0 +1,65 @@
+{
+  "status": "RUN_GATES_PASS",
+  "run_tag": "root-v421-inband-20261018t061549210251z-05-IQ2_XS-t1024-auto",
+  "format": "IQ2_XS",
+  "tokens": 1024,
+  "rows": 640,
+  "top_k": 10,
+  "route": "uniform10",
+  "j_mode": "auto",
+  "auto_j_bucket_inferred_from_exact_histogram": 32,
+  "grouped_j_max_requested": null,
+  "cap32_final_selected_j": null,
+  "cap32_interpretation": null,
+  "median_ms": 2.3357,
+  "route_histogram": {
+    "route": "uniform10",
+    "active_experts": "512",
+    "min_assignments": "20",
+    "max_assignments": "20",
+    "cold_j": "32",
+    "cold_experts": "512",
+    "hot_j": "64",
+    "hot_experts": "0",
+    "source_rule_bucket_counts": "exact_input_histogram"
+  },
+  "output_f32": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-jcap-v421-root-20261018/host/results/root-v421-inband-20261018t061549210251z-05-IQ2_XS-t1024-auto/IQ2_XS-n640-t1024-uniform10-auto.f32",
+  "output_shape_token_topk_row": [
+    1024,
+    10,
+    640
+  ],
+  "output_bytes": 26214400,
+  "output_sha256": "4ce102b0e389f22ab92ad570aa796754944f74fce66108d87fe53a12738f9af4",
+  "output_storage_scope": "server_only",
+  "gpu_device": 3,
+  "gpu_uuid": "GPU-fadb0459-4d30-907b-289a-862b3014f165",
+  "gpu_postflight": {
+    "free_mib": 16124,
+    "temperature_c": 42,
+    "pids": []
+  },
+  "binary_sha256": "3ab28a745b5148fc7d01b1ca837d7e669165112bfc12975e19d4ca4dc4df04be",
+  "runtime_library_sha256": {
+    "libggml-cuda.so.0": "3c64cf9e82fc317145d2f8774b663726cdfa609eb6060e349a355b2a9141168d",
+    "libggml-base.so.0": "1ad9368633d009ae28fc3bd8165bee920a57128ac31390e431ba01e28c72384e",
+    "libggml.so.0": "73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2",
+    "libggml-cpu.so.0": "63525deba1db08199b25852ba71c9115961fdd4db8632f7defe88172613bd31c"
+  },
+  "candidate_source_sha256": {
+    "grouped_mmq_fullshape_cpp": "c8c4f9b900281dd562cb99d599a1115f994f2d6eb4801f9561522a51e202e5a3",
+    "route_plan_h": "17b7ce6ecae6e4d91a1715dfaf467723b3f7f03ec13a645773ceb2e0cc78448e",
+    "case_runner_py": "8c52dd4da74b79dd5e8d59bb4056bdcb4f42349c9618d416d5b270e2b1d4bb48",
+    "matrix_runner_py": "1f234bacebad6ad2cfd9aa2f8c8fed0d5dbd39c4324c601f21fa713f26bfa5e9"
+  },
+  "sample_manifest_and_raw_sha256": {
+    "expert170_manifest": "4f805d23a0aaa6289c8b13b1784a6e50d10f860f3b8952d830849dad9fb18ac2",
+    "expert170_IQ2_XS_raw": "3b59bc7b22011c251b51bacaba6dc6f86d267d741c0adbfa25802c4cffc8dc6b",
+    "expert171_manifest": "fed1209486140cb291f9489dbfe9d7b605e508343b83f7d27b0c86f110aa1d2e",
+    "expert171_IQ2_XS_raw": "ee424e9e80eb368d41ba193e9fac04778c116ee85fb7f4f19854c9888ccd59a3"
+  },
+  "log": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-jcap-v421-root-20261018/host/results/root-v421-inband-20261018t061549210251z-05-IQ2_XS-t1024-auto/IQ2_XS-n640-t1024-uniform10-auto.log",
+  "guard_log": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-jcap-v421-root-20261018/host/results/root-v421-inband-20261018t061549210251z-05-IQ2_XS-t1024-auto/IQ2_XS-n640-t1024-uniform10-auto-guard.jsonl",
+  "elapsed_s": 1.258,
+  "quality_gate": "report_only_compare_after_matrix"
+}

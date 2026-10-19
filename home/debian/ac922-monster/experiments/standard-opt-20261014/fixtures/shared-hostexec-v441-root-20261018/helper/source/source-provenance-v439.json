@@ -1,0 +1,42 @@
+{
+  "fixture": "six-hostchild-prepare-v439-root-20261018",
+  "status": "staged_only_no_build_or_gpu",
+  "parent": {
+    "release": "R398 R7 host-child single-exec",
+    "source_sha256": "6c60f4f21405e18143befac37e6503b3708f9de15bbe503f6e5c79b7783f753b",
+    "api_header_sha256": "3e94b0074d7720a7fa087801aa1210353406626bdf2c84b322a26f569281df27",
+    "binary_sha256_reported_by_root_build_log": "4957bc1841361818ca4245394aa7617efd9a64e1f39d98f9d079fa6f08433bb1",
+    "source_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/host-child-single-exec-v398-root-20261018/build-src-r7/bridge-r7.cu"
+  },
+  "candidate_contract": {
+    "new_exports": [
+      "ac922_tail_bridge_v3_prepare_captured",
+      "ac922_tail_bridge_v3_can_prepare"
+    ],
+    "legacy_exports_preserved": [
+      "ac922_tail_bridge_launch",
+      "ac922_tail_bridge_drop_context",
+      "ac922_tail_bridge_v2_ready",
+      "ac922_tail_bridge_v2_launch_captured"
+    ],
+    "cache_bound": 32,
+    "child_instantiation_flags": 0,
+    "device_launch_controller": false,
+    "prepare_launches_graph": false,
+    "prepare_records_done_event": false,
+    "quiescence_declines_before_mutation": true,
+    "private_upload_stream_fence_retained": true,
+    "compute_stream_sync_on_prepare": false,
+    "timing_env": "AC922_TAIL_STAGE_TIMING=1",
+    "timing_default_off": true,
+    "build_executed_by_fixture_author": false,
+    "gpu_executed_by_fixture_author": false
+  },
+  "files": {
+    "helper/source/bridge-r7.cu": "6c60f4f21405e18143befac37e6503b3708f9de15bbe503f6e5c79b7783f753b",
+    "helper/source/bridge-api-v2.h": "3e94b0074d7720a7fa087801aa1210353406626bdf2c84b322a26f569281df27",
+    "helper/bridge-v3.cu": "0db350adf205a5eb0ee050da648e0b8d15302d7ce538473cb6d6dbf512aa406f",
+    "helper/bridge-api.h": "c715127588e4badd1f264af2362e9a597aba1e9a60438f8950d2c5d70fe56003",
+    "helper/build-helper.sh": "c84fa15d169774bfea643daa02d88a51e7c3b1cd1cc8836cad9e2a11046074e8"
+  }
+}

@@ -1,0 +1,27 @@
+V291_CASE_BEGIN format=IQ2_XS tensor=blk.0.ffn_gate_exps.weight type=iq2_xs K=2560 N=640 E=512 T=1024 topk=10 route=uniform10 j_mode=auto source_experts=170,171 raw_prefix_rows=64 synthetic_bank=alternating_two_real_expert_templates repeated_rows=576 requantize=0 model_load=0 bank_bytes=242483200 estimated_gpu_bytes=547659776 free_before_mib=15816 total_mib=16128 device=3 sm=7.0
+V291_RECIPE_FLAGS grouped=1 adaptive_j=1 small_j=1 small_j_max_tokens=512 fused_t16=1 j_mode=auto grouped_j_max=0 fused_t16_exercised=0 reason=isolated_MUL_MAT_ID_has_no_gate_up_GLUscope
+V291_CPU_ROUTE_AUDIT associations=10240 expert_domain=512 route_plan_tiles_analysis_only=1024 validation=PASS consumed_by_MUL_MAT_ID=0
+V291_EXPERT_ROUTE_HISTOGRAM route=uniform10 active_experts=512 min_assignments=20 max_assignments=20 cold_j=32 cold_experts=512 hot_j=64 hot_experts=0 source_rule_bucket_counts=exact_input_histogram
+ggml_cuda_init: found 6 CUDA devices (Total VRAM: 96768 MiB):
+  Device 0: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 1: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 2: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 3: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 4: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+  Device 5: Tesla V100-SXM2-16GB, compute capability 7.0, VMM: yes, VRAM: 16128 MiB
+[mp-dbg] mul_mat_id hook: type=17 ne11=1 reg=0 ptr=0x7ffd00000000 ne=[2560,640,512]
+optimization path device=3 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_adaptive_J32_J64 tokens=1024 width=640 auxiliary=512 count=1
+optimization path device=3 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=1 selected=1 reason=gpu_prefix_original_kernels tokens=1024 width=640 auxiliary=512 count=1
+optimization path device=3 path=mmq_moe_small_j scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_type_shared_or_explicit_override tokens=1024 width=640 auxiliary=512 count=1
+QUALITY method=ggml_grouped_mmq_vs_fp32 format=IQ2_XS K=2560 N=640 E=512 T=1024 route=uniform10 scope=6_representative_tokens_all10routes_allNrows elements=38400 rms=0.000849117442 rel_l2=0.00381082637 max_abs=0.00248473138 nonfinite=0 verdict=REPORT_ONLY
+ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+[mp-dbg] mul_mat_id hook: type=17 ne11=1 reg=0 ptr=0x7ffd00000000 ne=[2560,640,512]
+optimization path device=3 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=1 selected=1 reason=compact_grouped_adaptive_J32_J64 tokens=1024 width=640 auxiliary=512 count=2
+optimization path device=3 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=1 selected=1 reason=gpu_prefix_original_kernels tokens=1024 width=640 auxiliary=512 count=2
+optimization path device=3 path=mmq_moe_small_j scope=host_dispatch_or_capture requested=1 selected=0 reason=shape_type_shared_or_explicit_override tokens=1024 width=640 auxiliary=512 count=2
+TIMING method=ggml_grouped_mmq_full_graph format=IQ2_XS K=2560 N=640 E=512 T=1024 route=uniform10 median_ms=2.3357 warmups=1 samples=5 scope=MUL_MAT_ID_dispatch_quantize_and_matmul weights_buffer_bytes=242483200 graph_buffer_bytes=36741120 actual_gpu_bytes=281018368 free_gpu_bytes=16303325184 output_bytes=26214400
+V421_OUTPUT_F32 path=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-jcap-v421-root-20261018/host/results/root-v421-inband-20261018t061549210251z-05-IQ2_XS-t1024-auto/IQ2_XS-n640-t1024-uniform10-auto.f32 bytes=26214400 shape=token,top_k,row timed_region=excluded exclusive_create=1
+V291_CASE_COMPLETE format=IQ2_XS N=640 K=2560 T=1024 route=uniform10 baseline=grouped_mmq correctness=representative_only timing=complete model_load=0
+optimization path summary device=3 path=mmq_moe_adaptive_j scope=host_dispatch_or_capture requested=2 selected=2
+optimization path summary device=3 path=mmq_moe_grouped scope=host_dispatch_or_capture requested=2 selected=2
+optimization path summary device=3 path=mmq_moe_small_j scope=host_dispatch_or_capture requested=2 selected=0 fallback_shape_type_shared_or_explicit_override=2

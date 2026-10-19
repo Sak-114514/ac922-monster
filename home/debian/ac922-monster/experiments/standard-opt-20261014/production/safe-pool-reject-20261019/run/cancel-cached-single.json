@@ -1,0 +1,229 @@
+{
+  "schema": "ac922-cancel-cached-single-v1",
+  "status": "PASS",
+  "endpoint": "http://127.0.0.1:8007/v1",
+  "model_runs_root": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/safe-pool-reject-20261019/run/model",
+  "phases": {
+    "cancel": {
+      "arrival_s": 4.875008016824722e-06,
+      "http_status": 200,
+      "response_id": "chatcmpl-eea4ec85-3186-4b7d-b42d-d99fa443cdfe",
+      "first_content_s": 1.544710338988807,
+      "cancel_requested_s": 1.5447121919714846,
+      "partial_text": "The",
+      "completed_s": 1.8017483639996499,
+      "max_tokens": 512,
+      "prompt_characters": 33054,
+      "prompt_sha256": "4c40a8c025b8ccb81dc9bd2061592c2e4f22b6d11ddaf7cae0c218cde298b094",
+      "headers_s": 0.012881158967502415
+    },
+    "follow": {
+      "label": "doc-delta-follow",
+      "id": "chatcmpl-be7c545b-c897-49db-a4fe-444f61fc1de4",
+      "http_status": 200,
+      "arrival_s": 2.102241843007505,
+      "response_received_s": 3.6168193119810894,
+      "completed_s": 3.6168603809783235,
+      "wall_s": 1.5146199520095252,
+      "text": "9274",
+      "text_sha256": "ad7150f04bd7954d908a04aa95bf9da687d9feb51cb8e3058593e78e9d476145",
+      "usage": {
+        "prompt_tokens": 10817,
+        "completion_tokens": 4,
+        "total_tokens": 10821,
+        "prompt_tokens_details": {
+          "cached_tokens": 10496
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_sha256": "408d5e5683a67f91600dfe219b8300f8ef384f5999a9d0b2bec52d63faf6fadf",
+      "prompt_characters": 32992,
+      "cache_hit_tokens": 10496
+    },
+    "internal_flows": {
+      "eea4ec85-3186-4b7d-b42d-d99fa443cdfe": {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/safe-pool-reject-20261019/run/model/copy0/fourbank16k-d3/lastwave-35.json",
+        "flow": {
+          "id": "eea4ec85-3186-4b7d-b42d-d99fa443cdfe",
+          "bank": 3,
+          "input_tokens": 10831,
+          "output_tokens": 4,
+          "cached_tokens": 10496,
+          "output": "The reference material provided",
+          "token_ids": [
+            760,
+            5604,
+            3558,
+            3766
+          ],
+          "emitted_us": [
+            273754504434,
+            273754753390,
+            273754761149,
+            273754761159
+          ],
+          "proposed": 3,
+          "accepted": 2,
+          "prefill_us": 1187889,
+          "target_prefill_us": 1121384,
+          "mtp_prefill_us": 30325,
+          "thermal_wait_us": 0,
+          "prefill_started_us": 273753316544,
+          "prefill_finished_us": 273754504494,
+          "warmup_started_us": 273754504494,
+          "warmup_finished_us": 273754761174,
+          "decode_started_us": 273754761174,
+          "decode_finished_us": 273754761175,
+          "warmup_frames": 1,
+          "active_chain_lanes": 1,
+          "setup_parallel": true,
+          "setup_wait_us": 4,
+          "fallback_lanes": 0
+        },
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ]
+      },
+      "be7c545b-c897-49db-a4fe-444f61fc1de4": {
+        "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/safe-pool-reject-20261019/run/model/copy0/fourbank16k-d3/lastwave-36.json",
+        "flow": {
+          "id": "be7c545b-c897-49db-a4fe-444f61fc1de4",
+          "bank": 3,
+          "input_tokens": 10817,
+          "output_tokens": 4,
+          "cached_tokens": 10496,
+          "output": "9274",
+          "token_ids": [
+            24,
+            17,
+            22,
+            19
+          ],
+          "emitted_us": [
+            273756291218,
+            273756575325,
+            273756575336,
+            273756575347
+          ],
+          "proposed": 3,
+          "accepted": 3,
+          "prefill_us": 1147104,
+          "target_prefill_us": 1095847,
+          "mtp_prefill_us": 15674,
+          "thermal_wait_us": 0,
+          "prefill_started_us": 273755144114,
+          "prefill_finished_us": 273756291273,
+          "warmup_started_us": 273756291274,
+          "warmup_finished_us": 273756575363,
+          "decode_started_us": 273756575363,
+          "decode_finished_us": 273756575364,
+          "warmup_frames": 1,
+          "active_chain_lanes": 1,
+          "setup_parallel": true,
+          "setup_wait_us": 3,
+          "fallback_lanes": 0
+        },
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ]
+      }
+    },
+    "follow_cached_tokens": 10496
+  },
+  "seed": {
+    "body_characters": 32768,
+    "documents": {
+      "doc-alpha": {
+        "expected": "3179",
+        "actual": "3179",
+        "bank": 0
+      },
+      "doc-bravo": {
+        "expected": "6842",
+        "actual": "6842",
+        "bank": 1
+      },
+      "doc-charlie": {
+        "expected": "5301",
+        "actual": "5301",
+        "bank": 2
+      },
+      "doc-delta": {
+        "expected": "9274",
+        "actual": "9274",
+        "bank": 3
+      }
+    },
+    "geometry": {
+      "0": {
+        "target_context": 17152,
+        "draft_context": 17152,
+        "target_ubatch": 256
+      },
+      "1": {
+        "target_context": 17152,
+        "draft_context": 17152,
+        "target_ubatch": 256
+      },
+      "2": {
+        "target_context": 17152,
+        "draft_context": 17152,
+        "target_ubatch": 256
+      },
+      "3": {
+        "target_context": 17152,
+        "draft_context": 17152,
+        "target_ubatch": 256
+      }
+    },
+    "mtp_depth": 3,
+    "seed_attempts": 1
+  },
+  "finished_unix": 1792354771.5819569
+}

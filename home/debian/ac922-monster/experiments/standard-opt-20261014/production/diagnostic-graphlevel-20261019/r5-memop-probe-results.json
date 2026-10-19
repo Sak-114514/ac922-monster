@@ -1,0 +1,23 @@
+[
+  {
+    "tag": "r5-memcpy-only-c8",
+    "returncode": -11,
+    "stdout": "",
+    "stderr": "r5_prime device=0 nodes=1400 memops=1\n",
+    "elapsed_s": 0.24937725067138672
+  },
+  {
+    "tag": "r5-memset-only-c9",
+    "returncode": -11,
+    "stdout": "",
+    "stderr": "r5_prime device=0 nodes=1400 memops=1\n",
+    "elapsed_s": 0.252288818359375
+  },
+  {
+    "tag": "r5-graphspan-memops-c10",
+    "returncode": 0,
+    "stdout": "{\"status\":\"PASS\",\"production_r5_export\":true,\"nodes\":1400,\"devices\":6,\"mode\":\"memops\",\"memops\":true,\"expected_value\":2800,\"oracle_elements_per_device\":4096}\n",
+    "stderr": "r5_prime device=0 nodes=1400 memops=1\nac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1\nac922-tail-bridge admission requested=1 selected=1 device=0 outcome=1 entries=1 owner=0x1002cc743c0 key=0x1002cc743e0\nr5_prime device=1 nodes=1400 memops=1\nac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1\nac922-tail-bridge admission requested=1 selected=1 device=1 outcome=1 entries=1 owner=0x1002cc743c4 key=0x1002cc743e4\nr5_prime device=2 nodes=1400 memops=1\nac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1\nac922-tail-bridge admission requested=1 selected=1 device=2 outcome=1 entries=1 owner=0x1002cc743c8 key=0x1002cc743e8\nr5_prime device=3 nodes=1400 memops=1\nac922-tail-bridge upload_isolated=1 upload_wait_us=9 compute_stream_not_drained=1\nac922-tail-bridge admission requested=1 selected=1 device=3 outcome=1 entries=1 owner=0x1002cc743cc key=0x1002cc743ec\nr5_prime device=4 nodes=1400 memops=1\nac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1\nac922-tail-bridge admission requested=1 selected=1 device=4 outcome=1 entries=1 owner=0x1002cc743d0 key=0x1002cc743f0\nr5_prime device=5 nodes=1400 memops=1\nac922-tail-bridge upload_isolated=1 upload_wait_us=8 compute_stream_not_drained=1\nac922-tail-bridge admission requested=1 selected=1 device=5 outcome=1 entries=1 owner=0x1002cc743d4 key=0x1002cc743f4\n",
+    "elapsed_s": 1.326551914215088
+  }
+]

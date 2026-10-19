@@ -1,0 +1,829 @@
+{
+  "schema": "ac922-pool-boundary-acceptance-v1",
+  "status": "PASS",
+  "waves": [
+    {
+      "label": "native-before",
+      "wave_id": "affinity-pool-boundary-native-before-19ada75b6f",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 56,
+          "bank": 0,
+          "wave_id": "affinity-pool-boundary-native-before-19ada75b6f"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 59,
+          "bank": 1,
+          "wave_id": "affinity-pool-boundary-native-before-19ada75b6f"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 65,
+          "bank": 2,
+          "wave_id": "affinity-pool-boundary-native-before-19ada75b6f"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 71,
+          "bank": 3,
+          "wave_id": "affinity-pool-boundary-native-before-19ada75b6f"
+        }
+      },
+      "done": {
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      },
+      "timings": {
+        "wave_id": "affinity-pool-boundary-native-before-19ada75b6f",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 1.484483,
+        "whole_wave_output_tok_s": 14.146339163196885,
+        "all_emissions_tok_s": 27.258248540710195,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 1.097326,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 141.25246280503697,
+        "logical_prompt_tok_s": 141.25246280503697,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 3504352,
+        "mtp_prefill_us_sum": 277973,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 4,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [
+          1515,
+          1591,
+          1623,
+          1775,
+          2560,
+          1033
+        ],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2927,
+          2913,
+          2945,
+          3097,
+          3882,
+          3933
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 816,
+        "post_wave_free_after_mib": [
+          2927,
+          2913,
+          2945,
+          3097,
+          3882,
+          3933
+        ]
+      },
+      "semantics": {
+        "actual_input_tokens_total": 155,
+        "requests": {
+          "capital-en": {
+            "bank": 0,
+            "actual_input_tokens": 32,
+            "output_tokens": 1,
+            "text": "Paris"
+          },
+          "arithmetic-zh": {
+            "bank": 1,
+            "actual_input_tokens": 35,
+            "output_tokens": 4,
+            "text": "9805"
+          },
+          "logic-en": {
+            "bank": 2,
+            "actual_input_tokens": 41,
+            "output_tokens": 1,
+            "text": "NO"
+          },
+          "strict-json-zh": {
+            "bank": 3,
+            "actual_input_tokens": 47,
+            "output_tokens": 15,
+            "text": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+          }
+        }
+      },
+      "geometry": {
+        "0": {
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        "1": {
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        "2": {
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        "3": {
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        }
+      },
+      "wall_s": 2.8334522569784895
+    },
+    {
+      "label": "fit-capacity",
+      "wave_id": "affinity-pool-boundary-fit-508928-9c0d441c11",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 56,
+          "bank": 0,
+          "wave_id": "affinity-pool-boundary-fit-508928-9c0d441c11"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 59,
+          "bank": 1,
+          "wave_id": "affinity-pool-boundary-fit-508928-9c0d441c11"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 65,
+          "bank": 2,
+          "wave_id": "affinity-pool-boundary-fit-508928-9c0d441c11"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 71,
+          "bank": 3,
+          "wave_id": "affinity-pool-boundary-fit-508928-9c0d441c11"
+        }
+      },
+      "done": {
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      },
+      "timings": {
+        "wave_id": "affinity-pool-boundary-fit-508928-9c0d441c11",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 169216,
+            "draft_context": 169216,
+            "target_ubatch": 128
+          },
+          {
+            "bank": 1,
+            "target_context": 169216,
+            "draft_context": 169216,
+            "target_ubatch": 128
+          },
+          {
+            "bank": 2,
+            "target_context": 169216,
+            "draft_context": 169216,
+            "target_ubatch": 128
+          },
+          {
+            "bank": 3,
+            "target_context": 1280,
+            "draft_context": 1280,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 1.584227,
+        "whole_wave_output_tok_s": 13.255676112072322,
+        "all_emissions_tok_s": 29.131344910962124,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 1.26075,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 122.94269284156256,
+        "logical_prompt_tok_s": 122.94269284156256,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 3891229,
+        "mtp_prefill_us_sum": 499741,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 4,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [
+          2927,
+          2913,
+          2945,
+          3097,
+          3882,
+          3933
+        ],
+        "capacity_growth_exact_capacity": [
+          169216,
+          169216,
+          169216,
+          1280
+        ],
+        "capacity_growth_candidate_capacity": [
+          169216,
+          169216,
+          169216,
+          1280
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1515,
+          1591,
+          1623,
+          1775,
+          2560,
+          1033
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 815,
+        "post_wave_free_after_mib": [
+          1515,
+          1591,
+          1623,
+          1775,
+          2560,
+          1033
+        ]
+      },
+      "wall_s": 3.2065577839966863,
+      "capacity_tokens_requested": [
+        169212,
+        169212,
+        169212,
+        1276
+      ],
+      "capacity_tokens_requested_sum": 508912,
+      "data": {
+        "actual_input_tokens_total": 155,
+        "capacity_tokens_requested": [
+          169212,
+          169212,
+          169212,
+          1276
+        ],
+        "capacity_tokens_requested_sum": 508912,
+        "target_context_by_bank": [
+          169216,
+          169216,
+          169216,
+          1280
+        ],
+        "draft_context_by_bank": [
+          169216,
+          169216,
+          169216,
+          1280
+        ],
+        "target_context_total": 508928,
+        "draft_context_total": 508928,
+        "active_tiny_bank3": true,
+        "requests": {
+          "capital-en": {
+            "input_tokens": 32,
+            "reserved_tokens": 56,
+            "bank": 0,
+            "output_tokens": 1,
+            "text": "Paris"
+          },
+          "arithmetic-zh": {
+            "input_tokens": 35,
+            "reserved_tokens": 59,
+            "bank": 1,
+            "output_tokens": 4,
+            "text": "9805"
+          },
+          "logic-en": {
+            "input_tokens": 41,
+            "reserved_tokens": 65,
+            "bank": 2,
+            "output_tokens": 1,
+            "text": "NO"
+          },
+          "strict-json-zh": {
+            "input_tokens": 47,
+            "reserved_tokens": 71,
+            "bank": 3,
+            "output_tokens": 15,
+            "text": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+          }
+        }
+      }
+    },
+    {
+      "label": "overpool-terminal-errors",
+      "wave_id": "affinity-pool-boundary-overpool-400-8cb7882188",
+      "errors": [
+        {
+          "type": "error",
+          "id": "capital-en",
+          "status": 400,
+          "message": "shared context pool exceeded"
+        },
+        {
+          "type": "error",
+          "id": "arithmetic-zh",
+          "status": 400,
+          "message": "shared context pool exceeded"
+        },
+        {
+          "type": "error",
+          "id": "logic-en",
+          "status": 400,
+          "message": "shared context pool exceeded"
+        },
+        {
+          "type": "error",
+          "id": "strict-json-zh",
+          "status": 400,
+          "message": "shared context pool exceeded"
+        }
+      ],
+      "accepted": {},
+      "done": {},
+      "timings": {},
+      "capacity_tokens_requested": [
+        174588,
+        174588,
+        174588,
+        1276
+      ],
+      "capacity_tokens_requested_sum": 525040,
+      "data": {
+        "capacity_tokens_requested": [
+          174588,
+          174588,
+          174588,
+          1276
+        ],
+        "capacity_tokens_requested_sum": 525040,
+        "aligned_pool_demand_cells": 525056,
+        "errors": [
+          {
+            "type": "error",
+            "id": "capital-en",
+            "status": 400,
+            "message": "shared context pool exceeded"
+          },
+          {
+            "type": "error",
+            "id": "arithmetic-zh",
+            "status": 400,
+            "message": "shared context pool exceeded"
+          },
+          {
+            "type": "error",
+            "id": "logic-en",
+            "status": 400,
+            "message": "shared context pool exceeded"
+          },
+          {
+            "type": "error",
+            "id": "strict-json-zh",
+            "status": 400,
+            "message": "shared context pool exceeded"
+          }
+        ],
+        "accepted_count": 0,
+        "done_count": 0,
+        "wave_done_observed": true
+      }
+    },
+    {
+      "label": "native-after-overflow",
+      "wave_id": "affinity-pool-boundary-native-after-overflow-52c270e707",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 56,
+          "bank": 0,
+          "wave_id": "affinity-pool-boundary-native-after-overflow-52c270e707"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 59,
+          "bank": 1,
+          "wave_id": "affinity-pool-boundary-native-after-overflow-52c270e707"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 65,
+          "bank": 2,
+          "wave_id": "affinity-pool-boundary-native-after-overflow-52c270e707"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 71,
+          "bank": 3,
+          "wave_id": "affinity-pool-boundary-native-after-overflow-52c270e707"
+        }
+      },
+      "done": {
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      },
+      "timings": {
+        "wave_id": "affinity-pool-boundary-native-after-overflow-52c270e707",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 1.48428,
+        "whole_wave_output_tok_s": 14.148273910582908,
+        "all_emissions_tok_s": 26.825336402492457,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 1.147541,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 135.07142664183675,
+        "logical_prompt_tok_s": 135.07142664183675,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 3498964,
+        "mtp_prefill_us_sum": 279825,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 4,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [
+          1515,
+          1591,
+          1623,
+          1775,
+          2560,
+          1033
+        ],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2927,
+          2913,
+          2945,
+          3097,
+          3882,
+          3933
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 797,
+        "post_wave_free_after_mib": [
+          2927,
+          2913,
+          2945,
+          3097,
+          3882,
+          3933
+        ]
+      },
+      "wall_s": 2.8413085300126113,
+      "semantics": {
+        "actual_input_tokens_total": 155,
+        "requests": {
+          "capital-en": {
+            "bank": 0,
+            "actual_input_tokens": 32,
+            "output_tokens": 1,
+            "text": "Paris"
+          },
+          "arithmetic-zh": {
+            "bank": 1,
+            "actual_input_tokens": 35,
+            "output_tokens": 4,
+            "text": "9805"
+          },
+          "logic-en": {
+            "bank": 2,
+            "actual_input_tokens": 41,
+            "output_tokens": 1,
+            "text": "NO"
+          },
+          "strict-json-zh": {
+            "bank": 3,
+            "actual_input_tokens": 47,
+            "output_tokens": 15,
+            "text": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+          }
+        }
+      },
+      "geometry": {
+        "0": {
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        "1": {
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        "2": {
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        "3": {
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        }
+      }
+    }
+  ],
+  "capacity_interpretation": "capacity_tokens are context reservations; actual_input_tokens are reported separately.",
+  "worker_pid": {
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/pool-boundary-20261019/build-lastwave/bank-worker",
+    "before": [
+      554443
+    ],
+    "after_native_before": [
+      554443
+    ],
+    "after_fit": [
+      554443
+    ],
+    "after_overpool": [
+      554443
+    ],
+    "after_native_recovery": [
+      554443
+    ]
+  },
+  "profile_invariants": {
+    "maxpool": {
+      "observations": [],
+      "unchanged_when_reported": true,
+      "observed": false
+    },
+    "maxrequest": {
+      "observations": [],
+      "unchanged_when_reported": true,
+      "observed": false
+    },
+    "fixed_d3": {
+      "observations": [
+        {
+          "wave": "native-before",
+          "field": "mtp_depth",
+          "value": 3
+        },
+        {
+          "wave": "fit-capacity",
+          "field": "mtp_depth",
+          "value": 3
+        },
+        {
+          "wave": "native-after-overflow",
+          "field": "mtp_depth",
+          "value": 3
+        }
+      ],
+      "unchanged_when_reported": true,
+      "observed": true
+    }
+  }
+}

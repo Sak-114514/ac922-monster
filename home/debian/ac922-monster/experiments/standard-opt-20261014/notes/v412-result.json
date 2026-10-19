@@ -1,0 +1,54 @@
+{
+  "families": {
+    "single32k-ub512": {
+      "native_label": "v412-single32k-ub512-native-paris-8192",
+      "formal_label": "v412-single32k-ub512-formal32k-prefill",
+      "target_n_ubatch": 512,
+      "kv_pad_tokens": 32768,
+      "input_tokens": 32768,
+      "whole_prefill_tok_s": 3265.570356657526,
+      "target_prefill_tok_s": 3299.329803496154,
+      "native_semantic": "pass",
+      "formal_complete": true
+    },
+    "single32k-ub1024": {
+      "native_label": "v412-single32k-ub1024-native-paris-8192",
+      "formal_label": "v412-single32k-ub1024-formal32k-prefill",
+      "target_n_ubatch": 1024,
+      "kv_pad_tokens": 32768,
+      "input_tokens": 32768,
+      "whole_prefill_tok_s": 5044.570274752656,
+      "target_prefill_tok_s": 5134.48325409158,
+      "native_semantic": "pass",
+      "formal_complete": true
+    }
+  },
+  "optional64k_gate_passed": false,
+  "plan_rebind_selected_rows": 108,
+  "physical_copy_slots": 8,
+  "target_layer_counts": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+  ],
+  "all_layer_counts": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    10
+  ],
+  "cupti": "off",
+  "candidate_is_combined": true,
+  "unit": "root-v412-inband-20261018t051230694054z",
+  "status": "COMPLETED_TWO_UNCACHED_32K_FAMILIES_NATIVE_PASS_GUARD_SUCCESS",
+  "offline_postcheck_note": "As-run controller incorrectly looked for device capacity in pinned-host log; raw artifacts analyzed offline with separate depth and pinned-host evidence, no model rerun.",
+  "same_workload_ub1024_vs512_percent": 54.47746408122176,
+  "goal_prefill_6000_pass": false,
+  "quality_scope": "exact8192Paris native perUB; long corpus generation8unscored",
+  "no_64k_due_threshold": true
+}

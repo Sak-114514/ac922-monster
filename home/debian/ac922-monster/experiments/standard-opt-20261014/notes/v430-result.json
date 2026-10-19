@@ -1,0 +1,39 @@
+{
+  "unit": "root-v430-inband-20261018t073201414357z",
+  "status": "TARGET_STATE_CANARY_ALLFINITE_NUMERICDIFFERENCES_UNRESOLVED_NO_PERFORMANCE",
+  "comparisons": 56,
+  "logit_top1_matches": 27,
+  "logit_comparisons": 28,
+  "all_finite": true,
+  "per_kind": {
+    "prefix_logits": {
+      "max_abs": 1.720022201538086,
+      "max_relative_l2": 0.10732965954520404
+    },
+    "prefix_h_nextn": {
+      "max_abs": 0.457295298576355,
+      "max_relative_l2": 0.11523565236321687
+    },
+    "teacher_logits": {
+      "max_abs": 2.1836137771606445,
+      "max_relative_l2": 0.12903460042549528
+    },
+    "teacher_h_nextn": {
+      "max_abs": 0.9757499694824219,
+      "max_relative_l2": 0.16275066173555636
+    },
+    "rollback_logits": {
+      "max_abs": 4.308730125427246,
+      "max_relative_l2": 0.32383328848122944
+    },
+    "rollback_h_nextn": {
+      "max_abs": 4.708915710449219,
+      "max_relative_l2": 0.5349451954026515
+    }
+  },
+  "protocol_issue": "canaryrm prefix+accepted rollsbackseed; productionmustkeeponeseed+accepted, missingnextteacherforaccepted3",
+  "next": "V434alignedserialUB64vs4x64,mixedsameinputclearrepeatandproductionrollback; conditionaldiagnosticperformanceunderexplicitunresolvedflag; semanticgateunchanged",
+  "performance_wave_ran": false,
+  "hardware_thermal_fault": false,
+  "goals_met": false
+}

@@ -1,0 +1,304 @@
+{
+  "status": "THROUGHPUT_COMPLETE_PENDING_TEXT_REVIEW",
+  "diagnostic_only": true,
+  "wave": {
+    "id": "hardware-aligned-v306-4x16k512-c4",
+    "accepted": {
+      "v221-d3-flow-0": {
+        "type": "accepted",
+        "id": "v221-d3-flow-0",
+        "input_tokens": 16384,
+        "reserved_tokens": 16896,
+        "bank": 0,
+        "wave_id": "hardware-aligned-v306-4x16k512-c4"
+      },
+      "v221-d3-flow-1": {
+        "type": "accepted",
+        "id": "v221-d3-flow-1",
+        "input_tokens": 16384,
+        "reserved_tokens": 16896,
+        "bank": 1,
+        "wave_id": "hardware-aligned-v306-4x16k512-c4"
+      },
+      "v221-d3-flow-2": {
+        "type": "accepted",
+        "id": "v221-d3-flow-2",
+        "input_tokens": 16384,
+        "reserved_tokens": 16896,
+        "bank": 2,
+        "wave_id": "hardware-aligned-v306-4x16k512-c4"
+      },
+      "v221-d3-flow-3": {
+        "type": "accepted",
+        "id": "v221-d3-flow-3",
+        "input_tokens": 16384,
+        "reserved_tokens": 16896,
+        "bank": 3,
+        "wave_id": "hardware-aligned-v306-4x16k512-c4"
+      }
+    },
+    "cache_status": {
+      "v221-d3-flow-3": {
+        "type": "cache_status",
+        "id": "v221-d3-flow-3",
+        "bank": 3,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      },
+      "v221-d3-flow-2": {
+        "type": "cache_status",
+        "id": "v221-d3-flow-2",
+        "bank": 2,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      },
+      "v221-d3-flow-0": {
+        "type": "cache_status",
+        "id": "v221-d3-flow-0",
+        "bank": 0,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      },
+      "v221-d3-flow-1": {
+        "type": "cache_status",
+        "id": "v221-d3-flow-1",
+        "bank": 1,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      }
+    },
+    "done": {
+      "v221-d3-flow-2": {
+        "type": "done",
+        "id": "v221-d3-flow-2",
+        "input_tokens": 16384,
+        "output_tokens": 512,
+        "finish_reason": "length",
+        "bank": 2
+      },
+      "v221-d3-flow-3": {
+        "type": "done",
+        "id": "v221-d3-flow-3",
+        "input_tokens": 16384,
+        "output_tokens": 512,
+        "finish_reason": "length",
+        "bank": 3
+      },
+      "v221-d3-flow-1": {
+        "type": "done",
+        "id": "v221-d3-flow-1",
+        "input_tokens": 16384,
+        "output_tokens": 512,
+        "finish_reason": "length",
+        "bank": 1
+      },
+      "v221-d3-flow-0": {
+        "type": "done",
+        "id": "v221-d3-flow-0",
+        "input_tokens": 16384,
+        "output_tokens": 512,
+        "finish_reason": "length",
+        "bank": 0
+      }
+    },
+    "errors": [],
+    "first_token_s": {
+      "v221-d3-flow-0": 15.710029740992468,
+      "v221-d3-flow-1": 16.233021076011937,
+      "v221-d3-flow-3": 16.454630760999862,
+      "v221-d3-flow-2": 16.561745935003273
+    },
+    "last_token_s": {
+      "v221-d3-flow-0": 24.77266227803193,
+      "v221-d3-flow-1": 24.71102945599705,
+      "v221-d3-flow-3": 24.54782450699713,
+      "v221-d3-flow-2": 24.489077168982476
+    },
+    "refill_mode_requested": false,
+    "wave_closing_seen": false,
+    "close_ack_sent": false,
+    "worker_pid": 577096,
+    "wave_done_seen": true,
+    "timings": {
+      "wave_id": "hardware-aligned-v306-4x16k512-c4",
+      "mode": "bank_local_phase_progression",
+      "banks": [
+        {
+          "bank": 0,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 1,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 2,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 3,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        }
+      ],
+      "refill_count": 0,
+      "flow_count": 4,
+      "wall_seconds": 24.737621,
+      "whole_wave_output_tok_s": 82.78888256878056,
+      "all_emissions_tok_s": 225.9789755693335,
+      "prefill_input_tokens": 65536,
+      "prefill_wall_seconds": 16.526252,
+      "cached_tokens": 0,
+      "prefill_evaluated_tokens": 65536,
+      "uncached_prefill": true,
+      "prefill_aggregate_wall_tok_s": 3965.5694467202848,
+      "logical_prompt_tok_s": 3965.5694467202848,
+      "prefill_scope": "initial independent bank prefills",
+      "target_prefill_us_sum": 62836420,
+      "mtp_prefill_us_sum": 1929734,
+      "thermal_wait_us_sum": 0,
+      "mtp_depth": 3,
+      "single_cached_affinity": false,
+      "single_cache_admission_free_mib": [],
+      "production_floor_mib": 256,
+      "context_rebuilds_before_execution": 0,
+      "capacity_growth_enabled": true,
+      "capacity_growth_applied": false,
+      "capacity_growth_reason": "no_eligible_growth",
+      "capacity_growth_units": 0,
+      "capacity_growth_required_free_mib": 0,
+      "capacity_growth_preflight_free_mib": [],
+      "capacity_growth_exact_capacity": [
+        17152,
+        17152,
+        17152,
+        17152
+      ],
+      "capacity_growth_candidate_capacity": [
+        17152,
+        17152,
+        17152,
+        17152
+      ],
+      "state_migration_supported": false,
+      "banks_scope": "completed wave before optional idle-context reclamation",
+      "post_wave_free_before_mib": [
+        2419,
+        3323,
+        2771,
+        2923,
+        2934,
+        4089
+      ],
+      "post_wave_reclaimed_banks": 0,
+      "post_wave_reclaim_us": 10707,
+      "post_wave_free_after_mib": [
+        2419,
+        3323,
+        2771,
+        2923,
+        2934,
+        4089
+      ]
+    },
+    "wall_s": 24.785945426032413,
+    "texts": {
+      "v221-d3-flow-0": " the draft model\n                                        --spec-draft-cpu-moe overrides this setting\n                                        (env:\n                                        LLAMA_ARG_SPEC_DRAFT_N_CPU_MOE)\n```\n\n### EAGLE-3 Parameters\n\n```\n```\n\n\n\nuser\n请基于以上资料回答：llama.cpp 的 speculative decoding 支持哪些实现方式？\n</parameter>\n</parameter>\n<think>\nThe user is asking about what implementations of speculative decoding are supported by llama.cpp. Let me look through the provided sources, particularly the speculative.md documentation, to compile a comprehensive answer.\n\nFrom source 0006 (speculative.md chunk 0):\n- Draft Model (`draft`)\n- EAGLE-3 (`draft-eagle3`)\n\nFrom source 0008 (speculative.md chunk 1):\n- DFlash (`draft-dflash`)\n- DSpark (`draft-dspark`)\n\nFrom source 0010 (speculative.md chunk 2):\n- n-gram Cache (`ngram-cache`)\n- n-gram Map (`ngram-simple`, `ngram-map-*`)\n  - ngram-simple\n  - ngram-map-k\n  - ngram-map-k4v\n- n-gram Mod (`ngram-mod`)\n\nFrom source 0012 (speculative.md chunk 3):\n- Mentions `draft-mtp` in the command-line options\n\nFrom source 0014 (speculative.md chunk 4):\n- Draft Model Parameters section\n\nFrom source 0016 (speculative.md chunk 5):\n- EAGLE-3 Parameters section\n\nLet me compile a comprehensive answer in Chinese since the user asked in Chinese.\n</think>\n\n# llama.cpp 的 Speculative Decoding 实现方式\n\n根据 llama.cpp 官方文档（`docs/speculative.md`），`llama-server` 支持以下多种 speculative decoding 实现：\n\n---\n\n## 一、基于 Draft Model 的实现\n\n| 实现 | 类型标识 | 说明 |\n|------|----------|------|\n| **Draft Model** | `draft` / `draft-simple` | 使用一个更小的模型生成 draft tokens，最经典的方式 |\n| **EAGLE-3** | `draft-eagle3` | 单层 transformer draft，读取 target model 的 hidden states 来预测下一个 token，接受率更高；支持 reduced draft vocabulary + `d2",
+      "v221-d3-flow-1": " text, const size_t last_token_size, bool is_full_stop) {\n        GGML_ASSERT(task);\n\n        size_t stop_pos = std::string::npos;\n\n        for (const std::string & word : task->antiprompt) {\n            if (word.empty()) {\n                continue;\n            }\n\n            size_t pos;\n\n            if (is_full_stop) {\n                const size_t total  = generated_text.size() + text.size();\n                const size_t to_add = last_token_size > word.size() ? last_token_size - word.size() : 0;\n\n                pos = total > word.size() + to_add ? total - word.size() - to_add : 0;\n            } else {\n                pos = generated_text.size();\n            }\n\n            size_t prefix_len = common_str_prefix_at(generated_text, pos, word);\n            generated_text.append(text);\n\n            size_t search_len = generated_text.size();\n            size_t found_pos = generated_text.find(word, pos);\n\n            pos = found_pos != std::string::npos ? found_pos : search_len;\n\n            const size_t suffix_len = common_str_suffix_at(generated_text, pos, word);\n\n            if (found_pos != std::string::npos) {\n                // check if the stopping word is part of a longer word\n                if (task->add_extra_anti_tokens) {\n                    if (pos > 0 && common_is_word_char(generated_text[pos - 1]) &&\n                            pos + word.size() < search_len && common_is_word_char(generated_text[pos + word.size()])) {\n                        // the stopping word is part of a longer word - skip it\n                        pos = pos + word.size();\n\n                        // search for the stopping word again, starting from the end of the current word\n                        found_pos = generated_text.find(word, pos);\n\n                        pos = found_pos != std::string::npos ? found_pos : search_len;\n\n                        suffix_len = common_str_suffix_at(generated_text, pos, word);\n                    }\n                }\n\n                generated_text.resize(pos + word.size());\n\n                stop_pos = pos;\n                stop     = is_full_stop ? STOP_TYPE_STOP_WORD : STOP_TYPE_ANTIPROMPT;\n            }\n\n            // remove the last `prefix_len` chars from the next chunk\n            n_sent_text = prefix_len;\n\n            // remove the last",
+      "v221-d3-flow-2": "                    break;\n                }\n            }\n\n            // set probability for top n_probs tokens\n            result.probs.reserve(n_probs);\n            for (size_t i = 0; i < n_probs; i++) {\n                result.probs.push_back({\n\n===== source 0056 | code | sources/llama-v100-v3/tools/server/server-context.cpp | chunk=27 | sha256=1111111111111111111111111111111111111111111111111111111111111111 =====\n                    cur[i].id,\n                    common_token_to_piece(ctx_tgt, cur[i].id, special),\n                    cur[i].p\n                });\n            }\n        }\n    }\n\n    void send_error(const server_task & task, const std::string & error, const enum error_type type = ERROR_TYPE_SERVER) {\n        send_error(task.id, error, type);\n    }\n\n    void send_error(const server_slot & slot, const std::string & error, const enum error_type type = ERROR_TYPE_SERVER) {\n        send_error(slot.task->id, error, type, slot.task->n_tokens(), slot.stats.n_gen);\n    }\n\n    void send_error(const uint32_t id_task, const std::string & error, const enum error_type type = ERROR_TYPE_SERVER, int n_prompt_tokens = 0, int64_t n_gen = 0) {\n        SRV_ERR(\"id = %d: %s\\n\", id_task, error.c_str());\n\n        if (error_type_is_server_error(type)) {\n            metrics.n_failed_requests++;\n        }\n\n        server_task_result_ptr res = std::make_unique<server_task_result_error>(\n            id_task, n_prompt_tokens, n_gen, error, type\n        );\n\n        SRV_INF(\"sending error result, id = %d\\n\", id_task);\n        queue_results.send(std::move(res));\n    }\n\n    void send_partial_response(server_slot & slot, completion_token_output & tkn, bool is_draft) {\n        auto filter = [&](const std::string & res) -> std::string {\n            if (!slot.task->params.echo) {\n               ",
+      "v221-d3-flow-3": " \"new: ... \";\n\n                                    for (int i = np0; i < np1; i++) {\n                                        if (i == n_past) {\n                                            ss0 << \" (> \" << n_past << \" matches)\";\n                                            ss1 << \" (> \" << n_past << \" matches)\";\n                                        }\n\n                                        ss0 << ' ' << slot.prompt.tokens[i];\n                                        ss1 << ' ' << slot.task->tokens[i];\n\n                                        st0 << \" \" << common_token_to_piece(ctx_tgt, slot.prompt.tokens[i], true);\n                                        st1 << \" \" << common_token_to_piece(ctx_tgt, slot.task->tokens[i], true);\n                                    }\n\n                                    SLT_DBG(slot, \"%s\\n\", ss0.str().c_str());\n                                    SLT_DBG(slot, \"%s\\n\", ss1.str().c_str());\n\n                                    SLT_DBG(slot, \"%s\\n\", st0.str().c_str());\n                                    SLT_DBG(slot, \"%s\\n\", st1.str().c_str());\n                                }\n\n                                if (pos_min > pos_min_thold) {\n                                    // evict context checkpoints within min-step of a previous checkpoint, unless they\n                                    // cover the current prompt prefix\n                                    // only when the list is full, otherwise short prompts keep just the oldest checkpoint\n                                    int64_t last = -1;\n                                    for (auto it = slot.prompt.checkpoints.begin();\n                                            slot.prompt.checkpoints.size() + 1 >= (size_t) params_base.n_ctx_checkpoints &&\n                                            it != slot.prompt.checkpoints.end(); ) {\n                                        if (it->id_task != slot.task->id && last >= 0 && it->n_tokens <= last + params_base.checkpoint_min_step) {\n                                            SLT_TRC(slot, \"erasing context checkpoint too close to an earlier one (pos_min = %d, pos_max = %d, n_tokens = %\" PRId64 \", size = %.3f MiB)\\n\",\n                                                    it->pos_min, it->pos_max, it->n_tokens, (float) it->size() / 1024 / 1024);\n\n                                            it = slot.prompt.checkpoints.erase(it);\n                                            continue;\n                                        }\n\n                                        last = it->n_tokens;\n                                        ++it;\n                                    }\n\n                                    while (slot.prompt.checkpoints.size() >= (size_t) params_base.n_ctx_checkpoints)"
+    }
+  },
+  "baseline_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/hardware-balance-20261019/reference-v306.json",
+  "started_unix": 1792369948.5864828,
+  "finished_unix": 1792369973.3737488,
+  "correctness_scored": false,
+  "throughput_is_not_a_semantic_gate": true,
+  "native_record": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/hardware-balance-20261019/run/model/copy0/fourbank16k-d3/lastwave-13.json",
+  "corpus_sha256": "4d7ee033662bde6151a7dd13a9b106929e8caa7d447a091d1e2f125a09e8ca15",
+  "requests": [
+    {
+      "id": "v221-d3-flow-0",
+      "corpus_token_start": 0,
+      "corpus_token_count": 16384,
+      "max_tokens": 512,
+      "ignore_eos": true,
+      "cache_prompt": false
+    },
+    {
+      "id": "v221-d3-flow-1",
+      "corpus_token_start": 16384,
+      "corpus_token_count": 16384,
+      "max_tokens": 512,
+      "ignore_eos": true,
+      "cache_prompt": false
+    },
+    {
+      "id": "v221-d3-flow-2",
+      "corpus_token_start": 32768,
+      "corpus_token_count": 16384,
+      "max_tokens": 512,
+      "ignore_eos": true,
+      "cache_prompt": false
+    },
+    {
+      "id": "v221-d3-flow-3",
+      "corpus_token_start": 49152,
+      "corpus_token_count": 16384,
+      "max_tokens": 512,
+      "ignore_eos": true,
+      "cache_prompt": false
+    }
+  ],
+  "corpus_proof": "frozen boot corpus digest plus unchanged worker token-slice preparation; live slim flow record omits offsets",
+  "common_post_warmup_window": {
+    "start_us": 288950668289,
+    "end_us": 288958337908,
+    "tokens": 1906,
+    "tok_s": 248.51299653868074
+  },
+  "baseline_output_parity": {
+    "v221-d3-flow-2": {
+      "text_exact": true,
+      "token_ids_exact": true
+    },
+    "v221-d3-flow-3": {
+      "text_exact": true,
+      "token_ids_exact": true
+    },
+    "v221-d3-flow-1": {
+      "text_exact": true,
+      "token_ids_exact": true
+    },
+    "v221-d3-flow-0": {
+      "text_exact": true,
+      "token_ids_exact": true
+    }
+  },
+  "baseline": {
+    "all_emissions_tok_s": 219.94367165245035,
+    "shared_tg": 283.4371554330967,
+    "scenario_whole_wall_us": 34572505,
+    "parallel_seconds": 7.654467
+  },
+  "actual": {
+    "all_emissions_tok_s": 225.9789755693335,
+    "shared_tg": null,
+    "scenario_whole_wall_us": null,
+    "parallel_seconds": null,
+    "prefill_aggregate_wall_tok_s": 3965.5694467202848
+  },
+  "accepted": 1390,
+  "proposed": 1955
+}

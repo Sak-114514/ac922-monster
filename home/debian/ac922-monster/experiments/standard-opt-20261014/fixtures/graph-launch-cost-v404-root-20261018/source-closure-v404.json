@@ -1,0 +1,74 @@
+{
+  "schema": "v404-fixture-closure-v1",
+  "status": "prepared_only_no_hostlink_no_gpu",
+  "runtime": {
+    "name": "runtime-perf-v400",
+    "build_id": "20261018T033835.695366Z",
+    "report": "notes/V400-build.json",
+    "report_sha256": "a00b50ddbc2d38aa20b442efa1941d3f0f37c91350b18eba1f2851298072e60a",
+    "runtime_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v400",
+    "runtime_library_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v400/lib"
+  },
+  "helpers": {
+    "r5-device-controller": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/tail-only-exec-v390-root-20261018/build-r5/libac922-tail-bridge.so",
+      "sha256": "1cc4c9de1e840649f26255dff842e090b7421efdc514be18fb1eaf2907d386cb",
+      "mode_contract": "helper-owned device controller graph launches unchanged captured child"
+    },
+    "r6-device-host-child": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/host-child-launch-v396-root-20261018/build-r6/libac922-tail-bridge.so",
+      "sha256": "54178a8472f0495850c40945d53b506a48c4f17f82a104751eeef57fc6dfdc07",
+      "mode_contract": "host-child launch using DeviceLaunch executable"
+    },
+    "r398-host-child-single-exec": {
+      "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/host-child-single-exec-v398-root-20261018/build-r7/libac922-tail-bridge.so",
+      "sha256": "4957bc1841361818ca4245394aa7617efd9a64e1f39d98f9d079fa6f08433bb1",
+      "mode_contract": "host launches normal child exec; no controller allocation and no DeviceLaunch flag"
+    }
+  },
+  "source_files": [
+    {
+      "path": "graph-launch-cost-v404.cu",
+      "sha256": "bcceb1327863f319393dd8aa316a70ca16b08251ef82522825ab05eaf83870c5"
+    },
+    {
+      "path": "trace-window-v404.h",
+      "sha256": "de13569dd02f7b4da24d89d19105db87f4715a4b42804e31ce846c1d86e6b522"
+    },
+    {
+      "path": "bridge-api-v2-proposed.h",
+      "sha256": "3e94b0074d7720a7fa087801aa1210353406626bdf2c84b322a26f569281df27"
+    },
+    {
+      "path": "root-host-link-v404.sh",
+      "sha256": "f937836547e9b3f62f7c17b6c9bc25983b8b79f6d2fe003f8468d84eafe2f4d2"
+    },
+    {
+      "path": "run-matrix-v404.sh",
+      "sha256": "b766ca15c3092a4afc7a1375bde9a5b8ccc5dab1edb111d83b5a1ce7bfc3a20a"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f89533ef0bc09b44d8c0b3fbcfe12961d2a4ce2c0f6f30948faf2f107a7911fd"
+    },
+    {
+      "path": "verify_v404_static.py",
+      "sha256": "27ba33b71f869105e67298811594bc79f1b81a563884294f4624629a2ddb248d"
+    }
+  ],
+  "workload": {
+    "backend": "one visible V100 physical GPU per process",
+    "graph": "real GGML graph of 8192 sequential GGML_OP_ADD nodes; exact output each frame",
+    "shapes": [
+      64,
+      128
+    ],
+    "frames_per_shape": 16,
+    "frame_order": "A/B/A alternating input families per graph shape",
+    "expected_dynamic_input": "input and ones tensors are marked inputs and mutated/set at runtime; no scalar constant folding",
+    "metadata_arena": "16 MiB base plus 4096 bytes per ADD node",
+    "no_model": true,
+    "expected_device_graph_kernels_per_graph_estimate": 1024,
+    "device_kernel_count_is_measured_not_assumed": true
+  }
+}

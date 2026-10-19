@@ -1,0 +1,1817 @@
+{
+  "status": "MODEL_COMPLETE_PENDING_LOG_AND_TEXT_REVIEW",
+  "started_unix": 1792375540.8259063,
+  "waves": [
+    {
+      "id": "bulk256-c2-fourlong-native-c1",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 0,
+          "wave_id": "bulk256-c2-fourlong-native-c1"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 1,
+          "wave_id": "bulk256-c2-fourlong-native-c1"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 2,
+          "wave_id": "bulk256-c2-fourlong-native-c1"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 3,
+          "wave_id": "bulk256-c2-fourlong-native-c1"
+        }
+      },
+      "cache_status": {
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 8192,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 8192,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 8192,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 8192,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "capital-en": 10.747874157037586,
+        "logic-en": 10.883703630010132,
+        "arithmetic-zh": 10.928975315007847,
+        "strict-json-zh": 10.99842138204258
+      },
+      "last_token_s": {
+        "capital-en": 10.747874157037586,
+        "logic-en": 10.883703630010132,
+        "arithmetic-zh": 11.01389373204438,
+        "strict-json-zh": 11.217172136006411
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 584736,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "bulk256-c2-fourlong-native-c1",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 11.183317,
+        "whole_wave_output_tok_s": 1.877797079345958,
+        "all_emissions_tok_s": 44.74034620505992,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 10.963965,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32768,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 2988.6997997531003,
+        "logical_prompt_tok_s": 2988.6997997531003,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 40898822,
+        "mtp_prefill_us_sum": 708584,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2425,
+          2411,
+          2495,
+          2647,
+          3557,
+          3454
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 2014,
+        "post_wave_free_after_mib": [
+          2425,
+          2411,
+          2495,
+          2647,
+          3557,
+          3454
+        ]
+      },
+      "wall_s": 11.220345715002622,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      }
+    },
+    {
+      "id": "bulk256-c2-aligned-four16k512-c1",
+      "accepted": {
+        "v221-d3-flow-0": {
+          "type": "accepted",
+          "id": "v221-d3-flow-0",
+          "input_tokens": 16384,
+          "reserved_tokens": 16896,
+          "bank": 0,
+          "wave_id": "bulk256-c2-aligned-four16k512-c1"
+        },
+        "v221-d3-flow-1": {
+          "type": "accepted",
+          "id": "v221-d3-flow-1",
+          "input_tokens": 16384,
+          "reserved_tokens": 16896,
+          "bank": 1,
+          "wave_id": "bulk256-c2-aligned-four16k512-c1"
+        },
+        "v221-d3-flow-2": {
+          "type": "accepted",
+          "id": "v221-d3-flow-2",
+          "input_tokens": 16384,
+          "reserved_tokens": 16896,
+          "bank": 2,
+          "wave_id": "bulk256-c2-aligned-four16k512-c1"
+        },
+        "v221-d3-flow-3": {
+          "type": "accepted",
+          "id": "v221-d3-flow-3",
+          "input_tokens": 16384,
+          "reserved_tokens": 16896,
+          "bank": 3,
+          "wave_id": "bulk256-c2-aligned-four16k512-c1"
+        }
+      },
+      "cache_status": {
+        "v221-d3-flow-2": {
+          "type": "cache_status",
+          "id": "v221-d3-flow-2",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "v221-d3-flow-3": {
+          "type": "cache_status",
+          "id": "v221-d3-flow-3",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "v221-d3-flow-0": {
+          "type": "cache_status",
+          "id": "v221-d3-flow-0",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "v221-d3-flow-1": {
+          "type": "cache_status",
+          "id": "v221-d3-flow-1",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "v221-d3-flow-2": {
+          "type": "done",
+          "id": "v221-d3-flow-2",
+          "input_tokens": 16384,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 2
+        },
+        "v221-d3-flow-3": {
+          "type": "done",
+          "id": "v221-d3-flow-3",
+          "input_tokens": 16384,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 3
+        },
+        "v221-d3-flow-1": {
+          "type": "done",
+          "id": "v221-d3-flow-1",
+          "input_tokens": 16384,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 1
+        },
+        "v221-d3-flow-0": {
+          "type": "done",
+          "id": "v221-d3-flow-0",
+          "input_tokens": 16384,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "v221-d3-flow-2": 15.805232559039723,
+        "v221-d3-flow-1": 15.919275369029492,
+        "v221-d3-flow-0": 16.20524929300882,
+        "v221-d3-flow-3": 16.26194445003057
+      },
+      "last_token_s": {
+        "v221-d3-flow-2": 23.373443725984544,
+        "v221-d3-flow-1": 23.87630604399601,
+        "v221-d3-flow-0": 24.165124232997186,
+        "v221-d3-flow-3": 23.71255800302606
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 584736,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "bulk256-c2-aligned-four16k512-c1",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 24.131887,
+        "whole_wave_output_tok_s": 84.86696460993706,
+        "all_emissions_tok_s": 244.97616446513078,
+        "prefill_input_tokens": 65536,
+        "prefill_wall_seconds": 16.227399,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 65536,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 4038.601626791823,
+        "logical_prompt_tok_s": 4038.601626791823,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 63409597,
+        "mtp_prefill_us_sum": 626449,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2331,
+          2319,
+          2417,
+          2569,
+          3476,
+          3380
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1366,
+        "post_wave_free_after_mib": [
+          2331,
+          2319,
+          2417,
+          2569,
+          3476,
+          3380
+        ]
+      },
+      "wall_s": 24.17009151703678,
+      "texts": {
+        "v221-d3-flow-0": " the draft model\n                                        --spec-draft-cpu-moe overrides this setting\n                                        (env:\n                                        LLAMA_ARG_SPEC_DRAFT_N_CPU_MOE)\n```\n\n### EAGLE-3 Parameters\n\n```\n```\n\n\n\nuser\n请基于以上资料回答：llama.cpp 的 speculative decoding 支持哪些实现方式？\n</parameter>\n</parameter>\n<think>\nThe user is asking about what implementations of speculative decoding are supported by llama.cpp. Let me look through the provided sources, particularly the speculative.md documentation, to compile a comprehensive answer.\n\nFrom source 0006 (speculative.md chunk 0):\n- Draft Model (`draft`)\n- EAGLE-3 (`draft-eagle3`)\n\nFrom source 0008 (speculative.md chunk 1):\n- DFlash (`draft-dflash`)\n- DSpark (`draft-dspark`)\n\nFrom source 0010 (speculative.md chunk 2):\n- n-gram Cache (`ngram-cache`)\n- n-gram Map (`ngram-simple`, `ngram-map-*`)\n  - ngram-simple\n  - ngram-map-k\n  - ngram-map-k4v\n- n-gram Mod (`ngram-mod`)\n\nFrom source 0012 (speculative.md chunk 3):\n- Mentions `draft-mtp` in the command-line options\n\nFrom source 0014 (speculative.md chunk 4):\n- Draft Model Parameters section\n\nFrom source 0016 (speculative.md chunk 5):\n- EAGLE-3 Parameters section\n\nLet me compile a comprehensive answer in Chinese since the user asked in Chinese.\n</think>\n\n# llama.cpp 的 Speculative Decoding 实现方式\n\n根据 llama.cpp 官方文档（`docs/speculative.md`），`llama-server` 支持以下多种 speculative decoding 实现：\n\n---\n\n## 一、基于 Draft Model 的实现\n\n| 实现 | 类型标识 | 说明 |\n|------|----------|------|\n| **Draft Model** | `draft` / `draft-simple` | 使用一个更小的模型生成 draft tokens，最经典的方式 |\n| **EAGLE-3** | `draft-eagle3` | 单层 transformer draft，读取 target model 的 hidden states 来预测下一个 token，接受率更高；支持 reduced draft vocabulary + `d2",
+        "v221-d3-flow-1": " text, const size_t last_token_size, bool is_full_stop) {\n        GGML_ASSERT(task);\n\n        size_t stop_pos = std::string::npos;\n\n        for (const std::string & word : task->antiprompt) {\n            if (word.empty()) {\n                continue;\n            }\n\n            size_t pos;\n\n            if (is_full_stop) {\n                const size_t total  = generated_text.size() + text.size();\n                const size_t to_add = last_token_size > word.size() ? last_token_size - word.size() : 0;\n\n                pos = total > word.size() + to_add ? total - word.size() - to_add : 0;\n            } else {\n                pos = generated_text.size();\n            }\n\n            size_t prefix_len = common_str_prefix_at(generated_text, pos, word);\n            generated_text.append(text);\n\n            size_t search_len = generated_text.size();\n            size_t found_pos = generated_text.find(word, pos);\n\n            pos = found_pos != std::string::npos ? found_pos : search_len;\n\n            const size_t suffix_len = common_str_suffix_at(generated_text, pos, word);\n\n            if (found_pos != std::string::npos) {\n                // check if the stopping word is part of a longer word\n                if (task->add_extra_anti_tokens) {\n                    if (pos > 0 && common_is_word_char(generated_text[pos - 1]) &&\n                            pos + word.size() < search_len && common_is_word_char(generated_text[pos + word.size()])) {\n                        // the stopping word is part of a longer word - skip it\n                        pos = pos + word.size();\n\n                        // search for the stopping word again, starting from the end of the current word\n                        found_pos = generated_text.find(word, pos);\n\n                        pos = found_pos != std::string::npos ? found_pos : search_len;\n\n                        suffix_len = common_str_suffix_at(generated_text, pos, word);\n                    }\n                }\n\n                generated_text.resize(pos + word.size());\n\n                stop_pos = pos;\n                stop     = is_full_stop ? STOP_TYPE_STOP_WORD : STOP_TYPE_ANTIPROMPT;\n            }\n\n            // remove the last `prefix_len` chars from the next chunk\n            n_sent_text = prefix_len;\n\n            // remove the last",
+        "v221-d3-flow-2": "                    break;\n                }\n            }\n\n            // set probability for top n_probs tokens\n            result.probs.reserve(n_probs);\n            for (size_t i = 0; i < n_probs; i++) {\n                result.probs.push_back({\n\n===== source 0056 | code | sources/llama-v100-v3/tools/server/server-context.cpp | chunk=27 | sha256=1111111111111111111111111111111111111111111111111111111111111111 =====\n                    cur[i].id,\n                    common_token_to_piece(ctx_tgt, cur[i].id, special),\n                    cur[i].p\n                });\n            }\n        }\n    }\n\n    void send_error(const server_task & task, const std::string & error, const enum error_type type = ERROR_TYPE_SERVER) {\n        send_error(task.id, error, type);\n    }\n\n    void send_error(const server_slot & slot, const std::string & error, const enum error_type type = ERROR_TYPE_SERVER) {\n        send_error(slot.task->id, error, type, slot.task->n_tokens(), slot.stats.n_gen);\n    }\n\n    void send_error(const uint32_t id_task, const std::string & error, const enum error_type type = ERROR_TYPE_SERVER, int n_prompt_tokens = 0, int64_t n_gen = 0) {\n        SRV_ERR(\"id = %d: %s\\n\", id_task, error.c_str());\n\n        if (error_type_is_server_error(type)) {\n            metrics.n_failed_requests++;\n        }\n\n        server_task_result_ptr res = std::make_unique<server_task_result_error>(\n            id_task, n_prompt_tokens, n_gen, error, type\n        );\n\n        SRV_INF(\"sending error result, id = %d\\n\", id_task);\n        queue_results.send(std::move(res));\n    }\n\n    void send_partial_response(server_slot & slot, completion_token_output & tkn, bool is_draft) {\n        auto filter = [&](const std::string & res) -> std::string {\n            if (!slot.task->params.echo) {\n               ",
+        "v221-d3-flow-3": " \"new: ... \";\n\n                                    for (int i = np0; i < np1; i++) {\n                                        if (i == n_past) {\n                                            ss0 << \" (> \" << n_past << \" matches)\";\n                                            ss1 << \" (> \" << n_past << \" matches)\";\n                                        }\n\n                                        ss0 << ' ' << slot.prompt.tokens[i];\n                                        ss1 << ' ' << slot.task->tokens[i];\n\n                                        st0 << \" \" << common_token_to_piece(ctx_tgt, slot.prompt.tokens[i], true);\n                                        st1 << \" \" << common_token_to_piece(ctx_tgt, slot.task->tokens[i], true);\n                                    }\n\n                                    SLT_DBG(slot, \"%s\\n\", ss0.str().c_str());\n                                    SLT_DBG(slot, \"%s\\n\", ss1.str().c_str());\n\n                                    SLT_DBG(slot, \"%s\\n\", st0.str().c_str());\n                                    SLT_DBG(slot, \"%s\\n\", st1.str().c_str());\n                                }\n\n                                if (pos_min > pos_min_thold) {\n                                    // evict context checkpoints within min-step of a previous checkpoint, unless they\n                                    // cover the current prompt prefix\n                                    // only when the list is full, otherwise short prompts keep just the oldest checkpoint\n                                    int64_t last = -1;\n                                    for (auto it = slot.prompt.checkpoints.begin();\n                                            slot.prompt.checkpoints.size() + 1 >= (size_t) params_base.n_ctx_checkpoints &&\n                                            it != slot.prompt.checkpoints.end(); ) {\n                                        if (it->id_task != slot.task->id && last >= 0 && it->n_tokens <= last + params_base.checkpoint_min_step) {\n                                            SLT_TRC(slot, \"erasing context checkpoint too close to an earlier one (pos_min = %d, pos_max = %d, n_tokens = %\" PRId64 \", size = %.3f MiB)\\n\",\n                                                    it->pos_min, it->pos_max, it->n_tokens, (float) it->size() / 1024 / 1024);\n\n                                            it = slot.prompt.checkpoints.erase(it);\n                                            continue;\n                                        }\n\n                                        last = it->n_tokens;\n                                        ++it;\n                                    }\n\n                                    while (slot.prompt.checkpoints.size() >= (size_t) params_base.n_ctx_checkpoints)"
+      }
+    },
+    {
+      "id": "bulk256-c2-prefix-fill-c1",
+      "accepted": {
+        "prefix-0": {
+          "type": "accepted",
+          "id": "prefix-0",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 0,
+          "wave_id": "bulk256-c2-prefix-fill-c1"
+        },
+        "prefix-1": {
+          "type": "accepted",
+          "id": "prefix-1",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 1,
+          "wave_id": "bulk256-c2-prefix-fill-c1"
+        },
+        "prefix-2": {
+          "type": "accepted",
+          "id": "prefix-2",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 2,
+          "wave_id": "bulk256-c2-prefix-fill-c1"
+        },
+        "prefix-3": {
+          "type": "accepted",
+          "id": "prefix-3",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 3,
+          "wave_id": "bulk256-c2-prefix-fill-c1"
+        }
+      },
+      "cache_status": {
+        "prefix-0": {
+          "type": "cache_status",
+          "id": "prefix-0",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "prefix-3": {
+          "type": "cache_status",
+          "id": "prefix-3",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "prefix-1": {
+          "type": "cache_status",
+          "id": "prefix-1",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "prefix-2": {
+          "type": "cache_status",
+          "id": "prefix-2",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "prefix-0": {
+          "type": "done",
+          "id": "prefix-0",
+          "input_tokens": 8192,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "prefix-2": {
+          "type": "done",
+          "id": "prefix-2",
+          "input_tokens": 8192,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "prefix-1": {
+          "type": "done",
+          "id": "prefix-1",
+          "input_tokens": 8192,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "prefix-3": {
+          "type": "done",
+          "id": "prefix-3",
+          "input_tokens": 8192,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "prefix-0": 10.348639198055025,
+        "prefix-3": 10.973992804007139,
+        "prefix-2": 11.221554749005008,
+        "prefix-1": 11.286120416014455
+      },
+      "last_token_s": {
+        "prefix-0": 10.348639198055025,
+        "prefix-3": 11.375721758056898,
+        "prefix-2": 11.221554749005008,
+        "prefix-1": 11.367963751021307
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 584736,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "bulk256-c2-prefix-fill-c1",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 11.22369,
+        "whole_wave_output_tok_s": 1.871042411185626,
+        "all_emissions_tok_s": 20.446254100204172,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 11.133366,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32768,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 2943.2248971245535,
+        "logical_prompt_tok_s": 2943.2248971245535,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 42266296,
+        "mtp_prefill_us_sum": 534495,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2163,
+          2148,
+          2280,
+          2439,
+          3332,
+          3268
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1445,
+        "post_wave_free_after_mib": [
+          2163,
+          2148,
+          2280,
+          2439,
+          3332,
+          3268
+        ]
+      },
+      "wall_s": 11.378491309005767,
+      "texts": {
+        "prefix-0": "Paris",
+        "prefix-1": "9805",
+        "prefix-2": "NO",
+        "prefix-3": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      }
+    },
+    {
+      "id": "bulk256-c2-prefix-reordered-hit-c1",
+      "accepted": {
+        "prefix-2": {
+          "type": "accepted",
+          "id": "prefix-2",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 2,
+          "wave_id": "bulk256-c2-prefix-reordered-hit-c1"
+        },
+        "prefix-0": {
+          "type": "accepted",
+          "id": "prefix-0",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 0,
+          "wave_id": "bulk256-c2-prefix-reordered-hit-c1"
+        },
+        "prefix-3": {
+          "type": "accepted",
+          "id": "prefix-3",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 3,
+          "wave_id": "bulk256-c2-prefix-reordered-hit-c1"
+        },
+        "prefix-1": {
+          "type": "accepted",
+          "id": "prefix-1",
+          "input_tokens": 8192,
+          "reserved_tokens": 8224,
+          "bank": 1,
+          "wave_id": "bulk256-c2-prefix-reordered-hit-c1"
+        }
+      },
+      "cache_status": {
+        "prefix-1": {
+          "type": "cache_status",
+          "id": "prefix-1",
+          "bank": 1,
+          "hit": true,
+          "cached_tokens": 7680,
+          "checkpoint_tokens": 7680
+        },
+        "prefix-2": {
+          "type": "cache_status",
+          "id": "prefix-2",
+          "bank": 2,
+          "hit": true,
+          "cached_tokens": 7680,
+          "checkpoint_tokens": 7680
+        },
+        "prefix-0": {
+          "type": "cache_status",
+          "id": "prefix-0",
+          "bank": 0,
+          "hit": true,
+          "cached_tokens": 7680,
+          "checkpoint_tokens": 7680
+        },
+        "prefix-3": {
+          "type": "cache_status",
+          "id": "prefix-3",
+          "bank": 3,
+          "hit": true,
+          "cached_tokens": 7680,
+          "checkpoint_tokens": 7680
+        }
+      },
+      "done": {
+        "prefix-1": {
+          "type": "done",
+          "id": "prefix-1",
+          "input_tokens": 8192,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "prefix-2": {
+          "type": "done",
+          "id": "prefix-2",
+          "input_tokens": 8192,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "prefix-0": {
+          "type": "done",
+          "id": "prefix-0",
+          "input_tokens": 8192,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "prefix-3": {
+          "type": "done",
+          "id": "prefix-3",
+          "input_tokens": 8192,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "prefix-1": 1.041345748002641,
+        "prefix-2": 1.1097211739979684,
+        "prefix-0": 1.3371042879880406,
+        "prefix-3": 1.4041308620362543
+      },
+      "last_token_s": {
+        "prefix-1": 1.1844560889876448,
+        "prefix-2": 1.1097211739979684,
+        "prefix-0": 1.3371042879880406,
+        "prefix-3": 1.6263923399965279
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 584736,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "bulk256-c2-prefix-reordered-hit-c1",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 1.512861,
+        "whole_wave_output_tok_s": 13.880984439416443,
+        "all_emissions_tok_s": 35.89338638717683,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 1.290073,
+        "cached_tokens": 30720,
+        "prefill_evaluated_tokens": 2048,
+        "uncached_prefill": false,
+        "prefill_aggregate_wall_tok_s": 1587.507063553768,
+        "logical_prompt_tok_s": 25400.113016860287,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 3949349,
+        "mtp_prefill_us_sum": 202974,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2140,
+          2118,
+          2256,
+          2414,
+          3308,
+          3248
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1452,
+        "post_wave_free_after_mib": [
+          2140,
+          2118,
+          2256,
+          2414,
+          3308,
+          3248
+        ]
+      },
+      "wall_s": 1.6289369179867208,
+      "texts": {
+        "prefix-2": "NO",
+        "prefix-0": "Paris",
+        "prefix-3": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}",
+        "prefix-1": "9805"
+      }
+    },
+    {
+      "id": "bulk256-c2-single32k-fill-c1",
+      "accepted": {
+        "single32k": {
+          "type": "accepted",
+          "id": "single32k",
+          "input_tokens": 32768,
+          "reserved_tokens": 32792,
+          "bank": 0,
+          "wave_id": "bulk256-c2-single32k-fill-c1"
+        }
+      },
+      "cache_status": {
+        "single32k": {
+          "type": "cache_status",
+          "id": "single32k",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "single32k": {
+          "type": "done",
+          "id": "single32k",
+          "input_tokens": 32768,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "single32k": 9.612049953022506
+      },
+      "last_token_s": {
+        "single32k": 9.612049953022506
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 584736,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "bulk256-c2-single32k-fill-c1",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 1024
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 9.395625,
+        "whole_wave_output_tok_s": 0.10643251513337325,
+        "all_emissions_tok_s": 1000000.0,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 8.761645,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32768,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 3739.9369638920543,
+        "logical_prompt_tok_s": 3739.9369638920543,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 8420680,
+        "mtp_prefill_us_sum": 293109,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 1,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1268,
+          826,
+          964,
+          1122,
+          2017,
+          1778
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 5062,
+        "post_wave_free_after_mib": [
+          1268,
+          826,
+          964,
+          1122,
+          2017,
+          1778
+        ]
+      },
+      "wall_s": 10.25142585800495,
+      "texts": {
+        "single32k": "Paris"
+      }
+    },
+    {
+      "id": "bulk256-c2-single32k-hit-c1",
+      "accepted": {
+        "single32k": {
+          "type": "accepted",
+          "id": "single32k",
+          "input_tokens": 32768,
+          "reserved_tokens": 32792,
+          "bank": 0,
+          "wave_id": "bulk256-c2-single32k-hit-c1"
+        }
+      },
+      "cache_status": {
+        "single32k": {
+          "type": "cache_status",
+          "id": "single32k",
+          "bank": 0,
+          "hit": true,
+          "cached_tokens": 30720,
+          "checkpoint_tokens": 30720
+        }
+      },
+      "done": {
+        "single32k": {
+          "type": "done",
+          "id": "single32k",
+          "input_tokens": 32768,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "single32k": 2.008798375958577
+      },
+      "last_token_s": {
+        "single32k": 2.008798375958577
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 584736,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "bulk256-c2-single32k-hit-c1",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 1024
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 2.073279,
+        "whole_wave_output_tok_s": 0.48232775231891123,
+        "all_emissions_tok_s": 1000000.0,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 1.997858,
+        "cached_tokens": 30720,
+        "prefill_evaluated_tokens": 2048,
+        "uncached_prefill": false,
+        "prefill_aggregate_wall_tok_s": 1025.0978798292972,
+        "logical_prompt_tok_s": 16401.566077268755,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 1857452,
+        "mtp_prefill_us_sum": 103597,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": true,
+        "single_cache_admission_free_mib": [
+          1268,
+          826,
+          964,
+          1122,
+          2017,
+          1778
+        ],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1268,
+          826,
+          964,
+          1122,
+          2017,
+          1773
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1397,
+        "post_wave_free_after_mib": [
+          1268,
+          826,
+          964,
+          1122,
+          2017,
+          1773
+        ]
+      },
+      "wall_s": 2.0860513559891842,
+      "texts": {
+        "single32k": "Paris"
+      }
+    },
+    {
+      "id": "bulk256-c2-long-topic-four512-c1",
+      "accepted": {
+        "story-0": {
+          "type": "accepted",
+          "id": "story-0",
+          "input_tokens": 8192,
+          "reserved_tokens": 8704,
+          "bank": 0,
+          "wave_id": "bulk256-c2-long-topic-four512-c1"
+        },
+        "story-1": {
+          "type": "accepted",
+          "id": "story-1",
+          "input_tokens": 8192,
+          "reserved_tokens": 8704,
+          "bank": 1,
+          "wave_id": "bulk256-c2-long-topic-four512-c1"
+        },
+        "story-2": {
+          "type": "accepted",
+          "id": "story-2",
+          "input_tokens": 8192,
+          "reserved_tokens": 8704,
+          "bank": 2,
+          "wave_id": "bulk256-c2-long-topic-four512-c1"
+        },
+        "story-3": {
+          "type": "accepted",
+          "id": "story-3",
+          "input_tokens": 8192,
+          "reserved_tokens": 8704,
+          "bank": 3,
+          "wave_id": "bulk256-c2-long-topic-four512-c1"
+        }
+      },
+      "cache_status": {
+        "story-0": {
+          "type": "cache_status",
+          "id": "story-0",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "story-1": {
+          "type": "cache_status",
+          "id": "story-1",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "story-3": {
+          "type": "cache_status",
+          "id": "story-3",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "story-2": {
+          "type": "cache_status",
+          "id": "story-2",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "story-3": {
+          "type": "done",
+          "id": "story-3",
+          "input_tokens": 8192,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 3
+        },
+        "story-1": {
+          "type": "done",
+          "id": "story-1",
+          "input_tokens": 8192,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 1
+        },
+        "story-0": {
+          "type": "done",
+          "id": "story-0",
+          "input_tokens": 8192,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 0
+        },
+        "story-2": {
+          "type": "done",
+          "id": "story-2",
+          "input_tokens": 8192,
+          "output_tokens": 512,
+          "finish_reason": "length",
+          "bank": 2
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "story-1": 11.631521941977553,
+        "story-3": 12.069207337975968,
+        "story-2": 12.475238290964626,
+        "story-0": 13.956865336978808
+      },
+      "last_token_s": {
+        "story-1": 21.71020835195668,
+        "story-3": 21.675647088966798,
+        "story-2": 23.275177325005643,
+        "story-0": 22.538154579990078
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 584736,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "bulk256-c2-long-topic-four512-c1",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 22.549841,
+        "whole_wave_output_tok_s": 90.82103949203012,
+        "all_emissions_tok_s": 175.88850317853198,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 13.23031,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32768,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 2476.7371286084754,
+        "logical_prompt_tok_s": 2476.7371286084754,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 46672885,
+        "mtp_prefill_us_sum": 507995,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 1,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [
+          1268,
+          826,
+          964,
+          1122,
+          2017,
+          1773
+        ],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2004,
+          1986,
+          2148,
+          2308,
+          3199,
+          3135
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1762,
+        "post_wave_free_after_mib": [
+          2004,
+          1986,
+          2148,
+          2308,
+          3199,
+          3135
+        ]
+      },
+      "wall_s": 23.280398484959733,
+      "texts": {
+        "story-0": "BEGIN_0\n\nThe modern computing landscape is defined by a fundamental tension between the speed of processing and the speed of memory access. Central Processing Units (CPUs) have become exponentially faster over the last few decades, with clock speeds and instruction-level parallelism increasing dramatically. However, the speed of main memory (DRAM) has not kept pace, resulting in a significant latency gap. If a CPU were to fetch every piece of data it needed directly from main memory, it would spend the vast majority of its cycles waiting for data to arrive, rendering its processing power largely useless. To bridge this gap, computer architects introduced a hierarchical memory system centered on CPU caches. These caches are small, fast, static random-access memory (SRAM) units located close to the processor cores. While caches solve the latency problem, they introduce a new and complex challenge: cache coherency. In multi-core systems, where multiple processors share a common main memory, ensuring that all cores see a consistent view of memory is critical for correctness. This explanation details the mechanics of CPU caches, the principles of locality that make them effective, the organization of cache hierarchies, and the sophisticated protocols used to maintain cache coherency in modern multi-core architectures.\n\n### The Principle of Locality and Cache Hierarchy\n\nThe effectiveness of CPU caches relies on the statistical properties of program execution, known as the principle of locality. This principle manifests in two forms: temporal locality and spatial locality. Temporal locality refers to the tendency of a program to access the same memory locations repeatedly within a short time frame. For example, a loop variable or a frequently called function’s code is accessed many times in quick succession. Spatial locality refers to the tendency of a program to access memory locations that are close to each other in address space. For instance, when iterating through an array, the CPU accesses element 0, then element 1, then element 2, and so on. Because these addresses are contiguous, fetching a block of memory containing element 0 likely brings element 1 into the cache as well, anticipating the next access.\n\nTo exploit these properties, caches are organized into a hierarchy, typically consisting of three levels: L1, L2, and L3. The L1 cache is the smallest and fastest, located directly on the processor core. It is usually split into two separate caches: one for instructions (L1i) and one for data (L1d). This split allows the CPU to fetch instructions and data simultaneously, reducing contention. The L1 cache",
+        "story-1": "BEGIN_1\n\nPhotosynthesis is the fundamental biochemical process that sustains nearly all life on Earth, serving as the primary mechanism by which solar energy is converted into chemical energy. It is not merely a single reaction but a complex, multi-stage metabolic pathway that integrates light capture, electron transport, carbon fixation, and biosynthetic assembly. To understand photosynthesis comprehensively, one must examine it through the lens of plant metabolism, considering the intricate interplay between the light-dependent reactions, the Calvin cycle, and the broader physiological context of plant growth, stress response, and ecological function. This explanation will delve into the molecular mechanisms, the thermodynamic principles, the evolutionary adaptations, and the systemic integration of photosynthesis within the plant organism.\n\n### The Biological Context: Chloroplasts and Cellular Architecture\n\nPhotosynthesis occurs primarily in the chloroplasts, specialized organelles found in the mesophyll cells of leaves. The chloroplast is a double-membrane-bound organelle with a complex internal structure. The outer membrane encloses the stroma, a fluid-filled space containing enzymes, DNA, ribosomes, and metabolites. Within the stroma lie the thylakoids, a system of flattened, membrane-bound sacs. These thylakoids are stacked into structures called grana (singular: granum). The thylakoid membrane is the site of the light-dependent reactions, while the stroma is the site of the light-independent reactions, commonly known as the Calvin cycle.\n\nThe thylakoid membrane is densely packed with protein complexes, pigments, and electron carriers. The pigments, primarily chlorophyll a and chlorophyll b, along with accessory pigments like carotenoids, are organized into photosystems. These photosystems are large protein complexes that serve as the primary sites of light absorption. The structural integrity of the thylakoid membrane is crucial for maintaining the proton gradient necessary for ATP synthesis. The lumen, the interior space of the thylakoid, plays a critical role in this gradient formation.\n\n### The Light-Dependent Reactions: Capturing Solar Energy\n\nThe light-dependent reactions are the first stage of photosynthesis, occurring in the thylakoid membranes. Their primary function is to convert light energy into chemical energy in the form of ATP (adenosine triphosphate) and NADPH (nicotinamide adenine dinucleotide phosphate). These reactions are \"light-dependent\" because they require photons to excite electrons and drive the electron transport chain.\n\n",
+        "story-2": "BEGIN_2\n\nRoman architectural engineering stands as one of the most significant technological achievements in human history, representing a profound shift from the post-and-lintel construction methods of the ancient world to a sophisticated system capable of spanning vast distances, supporting immense loads, and creating interior spaces of unprecedented volume and complexity. While Roman architecture is often celebrated for its aesthetic grandeur—the soaring arches of the Colosseum, the domed perfection of the Pantheon, or the intricate mosaics of private villas—the true revolution lay in the underlying engineering principles. These principles were not merely artistic choices but were driven by a rigorous understanding of materials science, structural mechanics, and logistical organization. To understand Roman architectural engineering is to understand a civilization that mastered the interplay between concrete, geometry, and labor to build an empire that physically manifested its power and permanence.\n\nThe foundation of Roman architectural superiority was the development and widespread adoption of concrete, known as *opus caementicium*. Unlike the stone masonry that dominated Greek and earlier Near Eastern architecture, Roman concrete was a composite material that allowed for fluidity in form and strength in mass. The Romans did not invent concrete; the Greeks and earlier civilizations had used lime-based mortars. However, the Romans revolutionized the material by incorporating volcanic ash, specifically *pozzolana*, found in abundance near Naples and Rome. This volcanic ash, when mixed with lime and water, created a hydraulic cement that could harden underwater and possessed superior tensile strength compared to traditional lime mortars. This chemical innovation was critical. It allowed Roman engineers to cast structures in situ, pouring the mixture into wooden forms to create walls, foundations, and vaults that were monolithic and seamless. The aggregate used in the concrete varied depending on the structural requirements; heavy basalt or limestone was used for foundations and load-bearing walls, while lighter pumice or tufa was used in the upper sections of domes and vaults to reduce weight. This gradation of materials was a sophisticated engineering strategy, optimizing the strength-to-weight ratio of massive structures. The durability of Roman concrete is evidenced by the fact that many Roman harbors, aqueducts, and buildings remain standing today, having survived millennia of weathering, earthquakes, and human conflict. Recent scientific studies have even suggested that Roman concrete may be more durable than modern Portland cement concrete, due to the formation of specific mineral crystals like tobermorite during the curing process, which reinforce the material over time.\n\nThe structural implications of this material innovation were profound. Stone masonry",
+        "story-3": "BEGIN_3\n\nComparison sorting algorithms represent one of the most fundamental and extensively studied areas in computer science. At their core, these algorithms rely on a single primitive operation: comparing two elements to determine their relative order. This seemingly simple constraint leads to profound theoretical limits and a rich landscape of algorithmic strategies, each with distinct trade-offs in time complexity, space complexity, stability, and practical performance. Understanding comparison sorting requires delving into information theory, decision tree models, and the intricate engineering choices that bridge theoretical optimality with real-world efficiency.\n\nThe theoretical foundation of comparison sorting begins with the concept of the decision tree. Any comparison-based sorting algorithm can be modeled as a binary decision tree, where each internal node represents a comparison between two elements, and each leaf represents a unique permutation of the input sequence. For an input of size n, there are n! possible permutations, meaning the decision tree must have at least n! leaves. A binary tree with L leaves has a minimum height of log₂(L). Therefore, the minimum height of any decision tree capable of sorting n elements is log₂(n!). Using Stirling's approximation, log₂(n!) ≈ n log₂(n) - n log₂(e) + O(log n). This establishes the Ω(n log n) lower bound for the worst-case number of comparisons required by any comparison-based sorting algorithm. This lower bound is not merely a mathematical curiosity; it is a fundamental information-theoretic limit. Sorting n distinct elements requires distinguishing between n! possible orderings, and each comparison provides at most one bit of information. Thus, at least log₂(n!) bits of information are necessary, translating directly to the n log n comparison complexity.\n\nThis lower bound applies strictly to the worst-case scenario. However, many practical algorithms exhibit different behaviors in average or best cases. For instance, insertion sort has a best-case complexity of O(n) when the input is already sorted, but its worst-case complexity is O(n²). This highlights a critical distinction: the Ω(n log n) bound is a worst-case guarantee for comparison-based sorts, but it does not preclude algorithms from being faster on specific input distributions. Nevertheless, for general-purpose sorting where input order is unknown or adversarial, the n log n barrier is insurmountable for comparison-based methods.\n\nAmong the algorithms that achieve this optimal O(n log n) worst-case complexity, merge sort and heap sort are the most prominent classical examples. Merge sort operates on the divide-and-conquer paradigm. It recursively divides the input array"
+      }
+    },
+    {
+      "id": "bulk256-c2-full524288-native-c1",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 64,
+          "bank": 0,
+          "wave_id": "bulk256-c2-full524288-native-c1"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 67,
+          "bank": 1,
+          "wave_id": "bulk256-c2-full524288-native-c1"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 73,
+          "bank": 2,
+          "wave_id": "bulk256-c2-full524288-native-c1"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 79,
+          "bank": 3,
+          "wave_id": "bulk256-c2-full524288-native-c1"
+        }
+      },
+      "cache_status": {
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "capital-en": 3.6689254619996063,
+        "arithmetic-zh": 4.0377228439901955,
+        "logic-en": 4.037875828973483,
+        "strict-json-zh": 4.044656131998636
+      },
+      "last_token_s": {
+        "capital-en": 3.6689254619996063,
+        "arithmetic-zh": 4.268531662994064,
+        "logic-en": 4.037875828973483,
+        "strict-json-zh": 4.496194200008176
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 584736,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "bulk256-c2-full524288-native-c1",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 131072,
+            "draft_context": 131072,
+            "target_ubatch": 128
+          },
+          {
+            "bank": 1,
+            "target_context": 131072,
+            "draft_context": 131072,
+            "target_ubatch": 128
+          },
+          {
+            "bank": 2,
+            "target_context": 131072,
+            "draft_context": 131072,
+            "target_ubatch": 128
+          },
+          {
+            "bank": 3,
+            "target_context": 131072,
+            "draft_context": 131072,
+            "target_ubatch": 128
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 1.634245,
+        "whole_wave_output_tok_s": 12.849970475663074,
+        "all_emissions_tok_s": 25.38405470384665,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 1.18229,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 131.10150639859933,
+        "logical_prompt_tok_s": 131.10150639859933,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 3777589,
+        "mtp_prefill_us_sum": 521034,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 4,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [
+          2004,
+          1986,
+          2148,
+          2308,
+          3199,
+          3135
+        ],
+        "capacity_growth_exact_capacity": [
+          131072,
+          131072,
+          131072,
+          131072
+        ],
+        "capacity_growth_candidate_capacity": [
+          131072,
+          131072,
+          131072,
+          131072
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          874,
+          976,
+          1138,
+          1298,
+          2189,
+          519
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1456,
+        "post_wave_free_after_mib": [
+          874,
+          976,
+          1138,
+          1298,
+          2189,
+          519
+        ]
+      },
+      "wall_s": 4.498675150971394,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      }
+    },
+    {
+      "id": "bulk256-c2-single262140-native-c1",
+      "accepted": {
+        "max-single": {
+          "type": "accepted",
+          "id": "max-single",
+          "input_tokens": 32,
+          "reserved_tokens": 56,
+          "bank": 0,
+          "wave_id": "bulk256-c2-single262140-native-c1"
+        }
+      },
+      "cache_status": {
+        "max-single": {
+          "type": "cache_status",
+          "id": "max-single",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "max-single": {
+          "type": "done",
+          "id": "max-single",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "max-single": 2.162682154972572
+      },
+      "last_token_s": {
+        "max-single": 2.162682154972572
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 584736,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "bulk256-c2-single262140-native-c1",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 262144,
+            "draft_context": 262144,
+            "target_ubatch": 128
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 0.703768,
+        "whole_wave_output_tok_s": 1.4209228041058986,
+        "all_emissions_tok_s": 1000000.0,
+        "prefill_input_tokens": 32,
+        "prefill_wall_seconds": 0.535176,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 59.79341375547484,
+        "logical_prompt_tok_s": 59.79341375547484,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 429997,
+        "mtp_prefill_us_sum": 92365,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 4,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          262144,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          262144,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1458,
+          1470,
+          1632,
+          1792,
+          2683,
+          1895
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1544,
+        "post_wave_free_after_mib": [
+          1458,
+          1470,
+          1632,
+          1792,
+          2683,
+          1895
+        ]
+      },
+      "wall_s": 2.3332629489596,
+      "texts": {
+        "max-single": "Paris"
+      }
+    }
+  ],
+  "model_loads_requested": 1,
+  "quality_reduction_requested": false,
+  "mtp_depth": 3,
+  "throughput_is_not_a_semantic_gate": true,
+  "ready": {
+    "status": "ready",
+    "max_context": 262140,
+    "pool_tokens": 524288,
+    "max_parallel": 4,
+    "model": "flash-next-iq3-xxs",
+    "refill_supported": true,
+    "prefix_cache_enabled": true
+  },
+  "bulk_long_native": "PASS",
+  "aligned": {
+    "native_record": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/bulk256-c2-20261019/run/model/copy0/fourbank16k-d3/lastwave-3.json",
+    "baseline_all_emissions": 219.94367165245035,
+    "actual_all_emissions": 244.97616446513078,
+    "actual_prefill": 4038.601626791823,
+    "parity": {
+      "v221-d3-flow-2": {
+        "text_exact": true,
+        "token_ids_exact": true
+      },
+      "v221-d3-flow-3": {
+        "text_exact": true,
+        "token_ids_exact": true
+      },
+      "v221-d3-flow-1": {
+        "text_exact": true,
+        "token_ids_exact": true
+      },
+      "v221-d3-flow-0": {
+        "text_exact": true,
+        "token_ids_exact": true
+      }
+    },
+    "proposed": 1964,
+    "accepted": 1387
+  },
+  "prefix_affinity_reordered": {
+    "status": "PASS",
+    "cached_tokens": 30720,
+    "filled_banks": {
+      "prefix-0": 0,
+      "prefix-2": 2,
+      "prefix-1": 1,
+      "prefix-3": 3
+    },
+    "hit_banks": {
+      "prefix-1": 1,
+      "prefix-2": 2,
+      "prefix-0": 0,
+      "prefix-3": 3
+    }
+  },
+  "single_profile_transition_and_prefix": "PASS",
+  "topic_outputs": "PENDING_READABILITY_REVIEW",
+  "native_semantics": "PASS",
+  "full_pool_and_single_capacity_semantics": "PASS",
+  "prefix_reuse": "PASS",
+  "finished_unix": 1792375786.4560068
+}

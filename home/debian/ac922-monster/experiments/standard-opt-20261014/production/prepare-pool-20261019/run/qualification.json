@@ -1,0 +1,530 @@
+{
+  "status": "REJECTED_MODEL_CUDA_FAULT_AND_NO_SPEEDUP",
+  "started_unix": 1792361848.5057113,
+  "waves": [
+    {
+      "id": "pool-native4-c3",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 64,
+          "bank": 0,
+          "wave_id": "pool-native4-c3"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 67,
+          "bank": 1,
+          "wave_id": "pool-native4-c3"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 73,
+          "bank": 2,
+          "wave_id": "pool-native4-c3"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 79,
+          "bank": 3,
+          "wave_id": "pool-native4-c3"
+        }
+      },
+      "cache_status": {
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "capital-en": 0.26533506996929646,
+        "arithmetic-zh": 0.42340253898873925,
+        "logic-en": 0.5697605980094522,
+        "strict-json-zh": 0.5872646879870445
+      },
+      "last_token_s": {
+        "capital-en": 0.26533506996929646,
+        "arithmetic-zh": 0.5042439439566806,
+        "logic-en": 0.5697605980094522,
+        "strict-json-zh": 0.788685625011567
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 569410,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "pool-native4-c3",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 0.759779,
+        "whole_wave_output_tok_s": 27.63961625683258,
+        "all_emissions_tok_s": 40.12580394914341,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 0.55802,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 277.76782194186586,
+        "logical_prompt_tok_s": 277.76782194186586,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 1687039,
+        "mtp_prefill_us_sum": 18450,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2925,
+          2911,
+          2943,
+          3095,
+          4001,
+          3927
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 781,
+        "post_wave_free_after_mib": [
+          2925,
+          2911,
+          2943,
+          3095,
+          4001,
+          3927
+        ]
+      },
+      "wall_s": 0.7903587069595233,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"\u7ea2\",\"\u84dd\"]}"
+      }
+    },
+    {
+      "id": "pool-raw32k-cold-c3",
+      "accepted": {
+        "raw32k": {
+          "type": "accepted",
+          "id": "raw32k",
+          "input_tokens": 32768,
+          "reserved_tokens": 32776,
+          "bank": 0,
+          "wave_id": "pool-raw32k-cold-c3"
+        }
+      },
+      "cache_status": {
+        "raw32k": {
+          "type": "cache_status",
+          "id": "raw32k",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "raw32k": {
+          "type": "done",
+          "id": "raw32k",
+          "input_tokens": 32768,
+          "output_tokens": 8,
+          "finish_reason": "length",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "raw32k": 15.06003375101136
+      },
+      "last_token_s": {
+        "raw32k": 15.814145059033763
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 569410,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "pool-raw32k-cold-c3",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 1024
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 15.246329,
+        "whole_wave_output_tok_s": 0.5247164743722899,
+        "all_emissions_tok_s": 10.608419372034616,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 14.487422,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32768,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 2261.8240843678054,
+        "logical_prompt_tok_s": 2261.8240843678054,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 13799708,
+        "mtp_prefill_us_sum": 239460,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 1,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1889,
+          1453,
+          1505,
+          1657,
+          2563,
+          2308
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1125,
+        "post_wave_free_after_mib": [
+          1889,
+          1453,
+          1505,
+          1657,
+          2563,
+          2308
+        ]
+      },
+      "wall_s": 15.822926065011416,
+      "texts": {
+        "raw32k": " text, const size_t last_token_size"
+      }
+    },
+    {
+      "id": "pool-raw32k-retained-c3",
+      "accepted": {
+        "raw32k": {
+          "type": "accepted",
+          "id": "raw32k",
+          "input_tokens": 32768,
+          "reserved_tokens": 32776,
+          "bank": 0,
+          "wave_id": "pool-raw32k-retained-c3"
+        }
+      },
+      "cache_status": {
+        "raw32k": {
+          "type": "cache_status",
+          "id": "raw32k",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "raw32k": {
+          "type": "done",
+          "id": "raw32k",
+          "input_tokens": 32768,
+          "output_tokens": 8,
+          "finish_reason": "length",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "raw32k": 12.487780620984267
+      },
+      "last_token_s": {
+        "raw32k": 12.70485238096444
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 569410,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "pool-raw32k-retained-c3",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 1024
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 12.601495,
+        "whole_wave_output_tok_s": 0.6348453100207555,
+        "all_emissions_tok_s": 36.852433642586675,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 12.383533,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32768,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 2646.094616132569,
+        "logical_prompt_tok_s": 2646.094616132569,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 12227926,
+        "mtp_prefill_us_sum": 149302,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1785,
+          1353,
+          1425,
+          1577,
+          2484,
+          2230
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1153,
+        "post_wave_free_after_mib": [
+          1785,
+          1353,
+          1425,
+          1577,
+          2484,
+          2230
+        ]
+      },
+      "wall_s": 12.70733725297032,
+      "texts": {
+        "raw32k": " text, const size_t last_token_size"
+      }
+    },
+    {
+      "status": "ERROR",
+      "error": "worker exited during acceptance"
+    }
+  ],
+  "cuda_event_diagnostic_enabled": false,
+  "clean_speedup_claimed": false,
+  "model_loads_requested": 1,
+  "mtp_depth": 3,
+  "quality_reduction_requested": false,
+  "ready": {
+    "status": "ready",
+    "max_context": 262140,
+    "pool_tokens": 524288,
+    "max_parallel": 4,
+    "model": "flash-next-iq3-xxs",
+    "refill_supported": true,
+    "prefix_cache_enabled": true
+  },
+  "error": "AssertionError('worker exited during acceptance')",
+  "finished_unix": 1792362059.2468011,
+  "producer_status_before_parent_review": "FAIL",
+  "promotion_eligible": false,
+  "first_cuda_errors": [
+    "3.28.174.279 E CUDA error: an illegal memory access was encountered",
+    "3.28.174.305 E CUDA error: an illegal memory access was encountered",
+    "3.28.174.316 E CUDA error: an illegal memory access was encountered",
+    "3.28.174.353 E CUDA error: an illegal memory access was encountered"
+  ],
+  "interpretation": "Persistent-thread candidate did not improve retained32K (2646vsnewthread2671;L54462). Failed while switching tofour512. Local/GPUfixtures passed but actualmodel failed; no correctness/production claim. Wholefaultlog preserved;L5restore initiated. Do notfurther prioritize thisroute."
+}

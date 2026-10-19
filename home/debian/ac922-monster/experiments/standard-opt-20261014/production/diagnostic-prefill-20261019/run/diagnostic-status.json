@@ -1,0 +1,435 @@
+{
+  "status": "VALID_API_TRACE_DEVICE_CHILD_KERNEL_COVERAGE_INCOMPLETE",
+  "started_unix": 1792356613.7215216,
+  "waves": [
+    {
+      "id": "diag-current-raw32k",
+      "accepted": {
+        "current32k-input": {
+          "type": "accepted",
+          "id": "current32k-input",
+          "input_tokens": 32768,
+          "reserved_tokens": 32776,
+          "bank": 0,
+          "wave_id": "diag-current-raw32k"
+        }
+      },
+      "cache_status": {
+        "current32k-input": {
+          "type": "cache_status",
+          "id": "current32k-input",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "current32k-input": {
+          "type": "done",
+          "id": "current32k-input",
+          "input_tokens": 32768,
+          "output_tokens": 8,
+          "finish_reason": "length",
+          "bank": 0
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "current32k-input": 18.079662219970487
+      },
+      "last_token_s": {
+        "current32k-input": 18.95099822100019
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 561433,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "diag-current-raw32k",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 66048,
+            "draft_context": 66048,
+            "target_ubatch": 1024
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 1,
+        "wall_seconds": 18.406942,
+        "whole_wave_output_tok_s": 0.4346186346433862,
+        "all_emissions_tok_s": 9.180786908197868,
+        "prefill_input_tokens": 32768,
+        "prefill_wall_seconds": 17.528406,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 32768,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 1869.4226959370978,
+        "logical_prompt_tok_s": 1869.4226959370978,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 16856495,
+        "mtp_prefill_us_sum": 293143,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "diagnostic_prefill32": {
+          "enabled": true,
+          "wave_id": "diag-current-raw32k",
+          "request_id": "current32k-input",
+          "bank": 0,
+          "input_tokens": 32768,
+          "cached_tokens": 0,
+          "chunk_index": 0,
+          "collector": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-cupti32k-v223-20261017/libac922-cupti-window.so",
+          "trace_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/diagnostic-prefill-20261019/run/current32k-target-c1.jsonl",
+          "start_us": 275757998686,
+          "stop_us": 275774854492,
+          "start_status": 0,
+          "stop_status": 0,
+          "mtp_excluded": true,
+          "prepare_status": 0
+        },
+        "cupti_window": {
+          "phase": "prefill1",
+          "selected_for_scenario": true,
+          "profiled_diagnostic_only": true,
+          "defer_stop_failure": false,
+          "dso_loaded": true,
+          "prepared_before_cuda_init": true,
+          "collector": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/layer6-cupti32k-v223-20261017/libac922-cupti-window.so",
+          "trace_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/diagnostic-prefill-20261019/run/current32k-target-c1.jsonl",
+          "scope": "diag-current-raw32k target chunk 0; stop after natural target sync; MTP excluded",
+          "prepare_status": 0,
+          "start_status": 0,
+          "stop_status": 0,
+          "start_host_before_us": 275757998654,
+          "start_host_after_us": 275757998686,
+          "stop_host_before_us": 275774152238,
+          "stop_host_after_us": 275774854492,
+          "last_error": ""
+        },
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 1,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "request_count_out_of_range",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          66048,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          1903,
+          1467,
+          1519,
+          1671,
+          1884,
+          2315
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 3442,
+        "post_wave_free_after_mib": [
+          1903,
+          1467,
+          1519,
+          1671,
+          1884,
+          2315
+        ]
+      },
+      "wall_s": 18.96214234898798,
+      "texts": {
+        "current32k-input": " text, const size_t last_token_size"
+      }
+    },
+    {
+      "id": "diag-post-native4",
+      "accepted": {
+        "capital-en": {
+          "type": "accepted",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "reserved_tokens": 64,
+          "bank": 0,
+          "wave_id": "diag-post-native4"
+        },
+        "arithmetic-zh": {
+          "type": "accepted",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "reserved_tokens": 67,
+          "bank": 1,
+          "wave_id": "diag-post-native4"
+        },
+        "logic-en": {
+          "type": "accepted",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "reserved_tokens": 73,
+          "bank": 2,
+          "wave_id": "diag-post-native4"
+        },
+        "strict-json-zh": {
+          "type": "accepted",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "reserved_tokens": 79,
+          "bank": 3,
+          "wave_id": "diag-post-native4"
+        }
+      },
+      "cache_status": {
+        "capital-en": {
+          "type": "cache_status",
+          "id": "capital-en",
+          "bank": 0,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "arithmetic-zh": {
+          "type": "cache_status",
+          "id": "arithmetic-zh",
+          "bank": 1,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "strict-json-zh": {
+          "type": "cache_status",
+          "id": "strict-json-zh",
+          "bank": 3,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        },
+        "logic-en": {
+          "type": "cache_status",
+          "id": "logic-en",
+          "bank": 2,
+          "hit": false,
+          "cached_tokens": 0,
+          "checkpoint_tokens": 0
+        }
+      },
+      "done": {
+        "capital-en": {
+          "type": "done",
+          "id": "capital-en",
+          "input_tokens": 32,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 0
+        },
+        "arithmetic-zh": {
+          "type": "done",
+          "id": "arithmetic-zh",
+          "input_tokens": 35,
+          "output_tokens": 4,
+          "finish_reason": "stop",
+          "bank": 1
+        },
+        "logic-en": {
+          "type": "done",
+          "id": "logic-en",
+          "input_tokens": 41,
+          "output_tokens": 1,
+          "finish_reason": "stop",
+          "bank": 2
+        },
+        "strict-json-zh": {
+          "type": "done",
+          "id": "strict-json-zh",
+          "input_tokens": 47,
+          "output_tokens": 15,
+          "finish_reason": "stop",
+          "bank": 3
+        }
+      },
+      "errors": [],
+      "first_token_s": {
+        "capital-en": 1.4145162249915302,
+        "arithmetic-zh": 1.5160355599946342,
+        "strict-json-zh": 1.67882422497496,
+        "logic-en": 1.6884891740046442
+      },
+      "last_token_s": {
+        "capital-en": 1.4145162249915302,
+        "arithmetic-zh": 1.6036335990065709,
+        "strict-json-zh": 1.899950354010798,
+        "logic-en": 1.6884891740046442
+      },
+      "refill_mode_requested": false,
+      "wave_closing_seen": false,
+      "close_ack_sent": false,
+      "worker_pid": 561433,
+      "wave_done_seen": true,
+      "timings": {
+        "wave_id": "diag-post-native4",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 1.056424,
+        "whole_wave_output_tok_s": 19.878382164736887,
+        "all_emissions_tok_s": 43.25856468082389,
+        "prefill_input_tokens": 155,
+        "prefill_wall_seconds": 0.843978,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 155,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 183.65407629108816,
+        "logical_prompt_tok_s": 183.65407629108816,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 2820008,
+        "mtp_prefill_us_sum": 71874,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 1,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [
+          1903,
+          1467,
+          1519,
+          1671,
+          1884,
+          2315
+        ],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2839,
+          2823,
+          2875,
+          3027,
+          3240,
+          3857
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1112,
+        "post_wave_free_after_mib": [
+          2839,
+          2823,
+          2875,
+          3027,
+          3240,
+          3857
+        ]
+      },
+      "wall_s": 1.9026049899985082,
+      "texts": {
+        "capital-en": "Paris",
+        "arithmetic-zh": "9805",
+        "logic-en": "NO",
+        "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+      }
+    }
+  ],
+  "ready": {
+    "status": "ready",
+    "max_context": 262140,
+    "pool_tokens": 524288,
+    "max_parallel": 4,
+    "model": "flash-next-iq3-xxs",
+    "refill_supported": true,
+    "prefix_cache_enabled": true
+  },
+  "actual_marker_proof": {
+    "start": "diag-prefill32 event=target-start pid=561433 wave_id=diag-current-raw32k request_id=current32k-input bank=0 input_tokens=32768 cached_tokens=0 chunk_index=0 chunk_tokens=32768 now_us=275757998768 start_us=275757998686 stop_us=0 start_status=0 stop_status=-999 mtp_entered=0 ru_valid=1 ru_major_faults=191345 ru_minor_faults=931132 ru_maxrss_kib=34743360 ru_user_us=18192823 ru_system_us=17105453",
+    "stop": "diag-prefill32 event=target-stop pid=561433 wave_id=diag-current-raw32k request_id=current32k-input bank=0 input_tokens=32768 cached_tokens=0 chunk_index=0 chunk_tokens=32768 now_us=275774855085 start_us=275757998686 stop_us=275774854492 start_status=0 stop_status=0 mtp_entered=0 ru_valid=1 ru_major_faults=200448 ru_minor_faults=983810 ru_maxrss_kib=35891520 ru_user_us=27904822 ru_system_us=19509830",
+    "mtp_entry": "diag-prefill32 event=mtp-entry pid=561433 wave_id=diag-current-raw32k request_id=current32k-input bank=0 input_tokens=32768 cached_tokens=0 chunk_index=0 chunk_tokens=32768 now_us=275774855174 start_us=275757998686 stop_us=275774854492 start_status=0 stop_status=0 mtp_entered=1 ru_valid=1 ru_major_faults=200449 ru_minor_faults=983810 ru_maxrss_kib=35891520 ru_user_us=27908771 ru_system_us=19510481"
+  },
+  "post_native_semantics": "PASS",
+  "actual_worker_pid": 561433,
+  "finished_unix": 1792356796.207045,
+  "producer_status": "CAPTURE_COMPLETE_PENDING_TRACE_REVIEW",
+  "coverage_adjudication": {
+    "trace_valid": true,
+    "drop_records": 0,
+    "six_devices": true,
+    "concurrent_kernel_records": 192,
+    "actual_names": "R5 launch_unch trampoline only",
+    "child_compute_kernel_coverage": false,
+    "gpu_busy_percent_claim_allowed": false,
+    "native_post_canaries": "PASS",
+    "next": "Local12.4graph-level device trace fixture before another model capture"
+  }
+}

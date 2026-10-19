@@ -1,0 +1,38 @@
+{
+  "unit": "root-v424-inband-20261018t064120412555z",
+  "guard_unit": "ac922-v424-guard-20261018t064120412555z",
+  "output": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/results/root-v424-inband-20261018t064120412555z",
+  "model_launch_command": [
+    "systemd-run",
+    "--user",
+    "--unit=root-v424-inband-20261018t064120412555z",
+    "--property=RuntimeMaxSec=1800s",
+    "--property=KillMode=control-group",
+    "--property=TimeoutStopSec=20s",
+    "--setenv=V424_GPU_WINDOW_GRANTED=1",
+    "--setenv=RUNTIME_ROOT=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v411",
+    "--setenv=BIN=/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/build-v424/grouped-mmq-fullshape-v424",
+    "--setenv=DEVICE=3",
+    "--setenv=LD_LIBRARY_PATH=/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v411/lib",
+    "--setenv=OMP_WAIT_POLICY=PASSIVE",
+    "--setenv=GOMP_SPINCOUNT=0",
+    "/bin/bash",
+    "-lc",
+    "(/usr/bin/numactl --cpunodebind=0 --membind=0,8 /usr/bin/python3 /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/run-v424-matrix.py --run-tag root-v424-inband-20261018t064120412555z --device 3 --timeout-seconds 120 && /usr/bin/python3 /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/compare-v424-outputs.py --matrix /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/results/root-v424-inband-20261018t064120412555z-matrix.json --report /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/results/root-v424-inband-20261018t064120412555z-output-compare.json) >/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/results/root-v424-inband-20261018t064120412555z/runtime.log 2>&1"
+  ],
+  "model_loads": 0,
+  "identity": "3c9d32e5292ba84888c20927376bbbb44ae0ee7d9ead0e49b539272f3ae8147f  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/build-v424/grouped-mmq-fullshape-v424\n1571e61b52e72f91f69357a57541fd0538d22a2a857724dc3511ac61be737e09  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/candidate/grouped-mmq-fullshape.cpp\n17b7ce6ecae6e4d91a1715dfaf467723b3f7f03ec13a645773ceb2e0cc78448e  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/candidate/route-plan.h\neb45b7a6bacab5c02b6085c402e8da4903480657a33be7015d28df8960ce74b2  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/run-v424-case.py\n7a251c5d6f52da3fef83bc10e57b7af91568f54932dee51a9d6e1d59add1ff70  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/run-v424-matrix.py\n52504c54d81b0088dd31de6b4f274bac049f3f33cdae8dfee537a7e470aace7e  /home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/compare-v424-outputs.py\n3c64cf9e82fc317145d2f8774b663726cdfa609eb6060e349a355b2a9141168d  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v411/lib/libggml-cuda.so.0\n1ad9368633d009ae28fc3bd8165bee920a57128ac31390e431ba01e28c72384e  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v411/lib/libggml-base.so.0\n63525deba1db08199b25852ba71c9115961fdd4db8632f7defe88172613bd31c  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v411/lib/libggml-cpu.so.0\n73ddff0764ae9545cc0cc561baffee5909c820e13e07060cc1bc3ed7314814e2  /home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v411/lib/libggml.so.0\n",
+  "environment": {
+    "V424_GPU_WINDOW_GRANTED": "1",
+    "RUNTIME_ROOT": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v411",
+    "BIN": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/build-v424/grouped-mmq-fullshape-v424",
+    "DEVICE": "3",
+    "LD_LIBRARY_PATH": "/home/debian/ac922-monster/experiments/standard-opt-20261014/runtime-perf-v411/lib",
+    "OMP_WAIT_POLICY": "PASSIVE",
+    "GOMP_SPINCOUNT": "0"
+  },
+  "matrix_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/results/root-v424-inband-20261018t064120412555z-matrix.json",
+  "comparison_report": "/home/debian/ac922-monster/experiments/standard-opt-20261014/fixtures/mmq-decode-jcap-v424-root-20261018/host/results/root-v424-inband-20261018t064120412555z-output-compare.json",
+  "quality_scope": "fullF32auto_vs_cap8_cap16_T4_T6_3of7formats_noLLMclaim",
+  "BMC_masks_and_targets": "notobservedormodified"
+}

@@ -1,0 +1,795 @@
+{
+  "schema": "ac922-growth-cache-acceptance-v1",
+  "status": "PASS",
+  "started_unix": 1792349521.6816542,
+  "corpus_characters": 32768,
+  "waves": [
+    {
+      "label": "growth-seed4",
+      "wave_id": "affinity-growth-seed4-7af663b751",
+      "wall_s": 15.604726143006701,
+      "control_roundtrip_s": 15.608267410949338,
+      "events": {
+        "doc-alpha": {
+          "accepted": {
+            "type": "accepted",
+            "id": "doc-alpha",
+            "input_tokens": 10817,
+            "reserved_tokens": 10833,
+            "bank": 0,
+            "wave_id": "affinity-growth-seed4-7af663b751"
+          },
+          "cache": {
+            "type": "cache_status",
+            "id": "doc-alpha",
+            "bank": 0,
+            "hit": false,
+            "cached_tokens": 0,
+            "checkpoint_tokens": 0
+          },
+          "done": {
+            "type": "done",
+            "id": "doc-alpha",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 0
+          },
+          "text": "3179"
+        },
+        "doc-bravo": {
+          "accepted": {
+            "type": "accepted",
+            "id": "doc-bravo",
+            "input_tokens": 10817,
+            "reserved_tokens": 10833,
+            "bank": 1,
+            "wave_id": "affinity-growth-seed4-7af663b751"
+          },
+          "cache": {
+            "type": "cache_status",
+            "id": "doc-bravo",
+            "bank": 1,
+            "hit": false,
+            "cached_tokens": 0,
+            "checkpoint_tokens": 0
+          },
+          "done": {
+            "type": "done",
+            "id": "doc-bravo",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 1
+          },
+          "text": "6842"
+        },
+        "doc-charlie": {
+          "accepted": {
+            "type": "accepted",
+            "id": "doc-charlie",
+            "input_tokens": 10818,
+            "reserved_tokens": 10834,
+            "bank": 2,
+            "wave_id": "affinity-growth-seed4-7af663b751"
+          },
+          "cache": {
+            "type": "cache_status",
+            "id": "doc-charlie",
+            "bank": 2,
+            "hit": false,
+            "cached_tokens": 0,
+            "checkpoint_tokens": 0
+          },
+          "done": {
+            "type": "done",
+            "id": "doc-charlie",
+            "input_tokens": 10818,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 2
+          },
+          "text": "5301"
+        },
+        "doc-delta": {
+          "accepted": {
+            "type": "accepted",
+            "id": "doc-delta",
+            "input_tokens": 10817,
+            "reserved_tokens": 10833,
+            "bank": 3,
+            "wave_id": "affinity-growth-seed4-7af663b751"
+          },
+          "cache": {
+            "type": "cache_status",
+            "id": "doc-delta",
+            "bank": 3,
+            "hit": false,
+            "cached_tokens": 0,
+            "checkpoint_tokens": 0
+          },
+          "done": {
+            "type": "done",
+            "id": "doc-delta",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 3
+          },
+          "text": "9274"
+        }
+      },
+      "timings": {
+        "wave_id": "affinity-growth-seed4-7af663b751",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 4,
+        "wall_seconds": 15.45324,
+        "whole_wave_output_tok_s": 1.0353815769379107,
+        "all_emissions_tok_s": 38.97771205702439,
+        "prefill_input_tokens": 43269,
+        "prefill_wall_seconds": 15.381758,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 43269,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 2813.0074598755227,
+        "logical_prompt_tok_s": 2813.0074598755227,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 56250084,
+        "mtp_prefill_us_sum": 2532509,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          17152,
+          17152,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2468,
+          2454,
+          2530,
+          2682,
+          3467,
+          3490
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1262,
+        "post_wave_free_after_mib": [
+          2468,
+          2454,
+          2530,
+          2682,
+          3467,
+          3490
+        ]
+      }
+    },
+    {
+      "label": "growth-7900-ab",
+      "wave_id": "affinity-growth-7900-ab-fbedecd5b3",
+      "wall_s": 9.568381644960027,
+      "control_roundtrip_s": 9.570652352005709,
+      "events": {
+        "growth-7900-ab-doc-alpha": {
+          "accepted": {
+            "type": "accepted",
+            "id": "growth-7900-ab-doc-alpha",
+            "input_tokens": 10817,
+            "reserved_tokens": 18717,
+            "bank": 0,
+            "wave_id": "affinity-growth-7900-ab-fbedecd5b3"
+          },
+          "cache": {
+            "type": "cache_status",
+            "id": "growth-7900-ab-doc-alpha",
+            "bank": 0,
+            "hit": false,
+            "cached_tokens": 0,
+            "checkpoint_tokens": 0
+          },
+          "done": {
+            "type": "done",
+            "id": "growth-7900-ab-doc-alpha",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 0
+          },
+          "text": "3179"
+        },
+        "growth-7900-ab-doc-bravo": {
+          "accepted": {
+            "type": "accepted",
+            "id": "growth-7900-ab-doc-bravo",
+            "input_tokens": 10817,
+            "reserved_tokens": 18717,
+            "bank": 1,
+            "wave_id": "affinity-growth-7900-ab-fbedecd5b3"
+          },
+          "cache": {
+            "type": "cache_status",
+            "id": "growth-7900-ab-doc-bravo",
+            "bank": 1,
+            "hit": false,
+            "cached_tokens": 0,
+            "checkpoint_tokens": 0
+          },
+          "done": {
+            "type": "done",
+            "id": "growth-7900-ab-doc-bravo",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 1
+          },
+          "text": "6842"
+        }
+      },
+      "timings": {
+        "wave_id": "affinity-growth-7900-ab-fbedecd5b3",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 24576,
+            "draft_context": 24576,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 24576,
+            "draft_context": 24576,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 2,
+        "wall_seconds": 8.427057,
+        "whole_wave_output_tok_s": 0.9493231148193254,
+        "all_emissions_tok_s": 38.901991295679444,
+        "prefill_input_tokens": 21634,
+        "prefill_wall_seconds": 8.225631,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 21634,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 2630.0717841585647,
+        "logical_prompt_tok_s": 2630.0717841585647,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 15475568,
+        "mtp_prefill_us_sum": 865201,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 2,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": true,
+        "capacity_growth_reason": "applied",
+        "capacity_growth_units": 2,
+        "capacity_growth_required_free_mib": 768,
+        "capacity_growth_preflight_free_mib": [
+          2468,
+          2454,
+          2530,
+          2682,
+          3467,
+          3490
+        ],
+        "capacity_growth_exact_capacity": [
+          18944,
+          18944,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          24576,
+          24576,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2412,
+          2398,
+          2474,
+          2626,
+          3411,
+          3382
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1156,
+        "post_wave_free_after_mib": [
+          2412,
+          2398,
+          2474,
+          2626,
+          3411,
+          3382
+        ]
+      }
+    },
+    {
+      "label": "growth-8192-ab",
+      "wave_id": "affinity-growth-8192-ab-5951b5605e",
+      "wall_s": 1.2616784760029987,
+      "control_roundtrip_s": 1.2638847139896825,
+      "events": {
+        "growth-8192-ab-doc-alpha": {
+          "accepted": {
+            "type": "accepted",
+            "id": "growth-8192-ab-doc-alpha",
+            "input_tokens": 10817,
+            "reserved_tokens": 19009,
+            "bank": 0,
+            "wave_id": "affinity-growth-8192-ab-5951b5605e"
+          },
+          "cache": {
+            "type": "cache_status",
+            "id": "growth-8192-ab-doc-alpha",
+            "bank": 0,
+            "hit": true,
+            "cached_tokens": 10496,
+            "checkpoint_tokens": 10496
+          },
+          "done": {
+            "type": "done",
+            "id": "growth-8192-ab-doc-alpha",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 0
+          },
+          "text": "3179"
+        },
+        "growth-8192-ab-doc-bravo": {
+          "accepted": {
+            "type": "accepted",
+            "id": "growth-8192-ab-doc-bravo",
+            "input_tokens": 10817,
+            "reserved_tokens": 19009,
+            "bank": 1,
+            "wave_id": "affinity-growth-8192-ab-5951b5605e"
+          },
+          "cache": {
+            "type": "cache_status",
+            "id": "growth-8192-ab-doc-bravo",
+            "bank": 1,
+            "hit": true,
+            "cached_tokens": 10496,
+            "checkpoint_tokens": 10496
+          },
+          "done": {
+            "type": "done",
+            "id": "growth-8192-ab-doc-bravo",
+            "input_tokens": 10817,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 1
+          },
+          "text": "6842"
+        }
+      },
+      "timings": {
+        "wave_id": "affinity-growth-8192-ab-5951b5605e",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 24576,
+            "draft_context": 24576,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 24576,
+            "draft_context": 24576,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 2,
+        "wall_seconds": 1.185766,
+        "whole_wave_output_tok_s": 6.746693698419418,
+        "all_emissions_tok_s": 105.34493883409489,
+        "prefill_input_tokens": 21634,
+        "prefill_wall_seconds": 1.114993,
+        "cached_tokens": 20992,
+        "prefill_evaluated_tokens": 642,
+        "uncached_prefill": false,
+        "prefill_aggregate_wall_tok_s": 575.7883681780962,
+        "logical_prompt_tok_s": 19402.812394337903,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 2100943,
+        "mtp_prefill_us_sum": 33260,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          24576,
+          24576,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          24576,
+          24576,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2400,
+          2386,
+          2466,
+          2618,
+          3403,
+          3372
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1182,
+        "post_wave_free_after_mib": [
+          2400,
+          2386,
+          2466,
+          2618,
+          3403,
+          3372
+        ]
+      }
+    },
+    {
+      "label": "growth-edit-ab",
+      "wave_id": "affinity-growth-edit-ab-ab23aadc57",
+      "wall_s": 8.438549762999173,
+      "control_roundtrip_s": 8.440637213992886,
+      "events": {
+        "growth-edit-ab-doc-alpha": {
+          "accepted": {
+            "type": "accepted",
+            "id": "growth-edit-ab-doc-alpha",
+            "input_tokens": 10819,
+            "reserved_tokens": 10835,
+            "bank": 0,
+            "wave_id": "affinity-growth-edit-ab-ab23aadc57"
+          },
+          "cache": {
+            "type": "cache_status",
+            "id": "growth-edit-ab-doc-alpha",
+            "bank": 0,
+            "hit": false,
+            "cached_tokens": 0,
+            "checkpoint_tokens": 0
+          },
+          "done": {
+            "type": "done",
+            "id": "growth-edit-ab-doc-alpha",
+            "input_tokens": 10819,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 0
+          },
+          "text": "7301"
+        },
+        "growth-edit-ab-doc-bravo": {
+          "accepted": {
+            "type": "accepted",
+            "id": "growth-edit-ab-doc-bravo",
+            "input_tokens": 10819,
+            "reserved_tokens": 10835,
+            "bank": 1,
+            "wave_id": "affinity-growth-edit-ab-ab23aadc57"
+          },
+          "cache": {
+            "type": "cache_status",
+            "id": "growth-edit-ab-doc-bravo",
+            "bank": 1,
+            "hit": false,
+            "cached_tokens": 0,
+            "checkpoint_tokens": 0
+          },
+          "done": {
+            "type": "done",
+            "id": "growth-edit-ab-doc-bravo",
+            "input_tokens": 10819,
+            "output_tokens": 4,
+            "finish_reason": "stop",
+            "bank": 1
+          },
+          "text": "4159"
+        }
+      },
+      "timings": {
+        "wave_id": "affinity-growth-edit-ab-ab23aadc57",
+        "mode": "bank_local_phase_progression",
+        "banks": [
+          {
+            "bank": 0,
+            "target_context": 24576,
+            "draft_context": 24576,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 1,
+            "target_context": 24576,
+            "draft_context": 24576,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 2,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          },
+          {
+            "bank": 3,
+            "target_context": 17152,
+            "draft_context": 17152,
+            "target_ubatch": 256
+          }
+        ],
+        "refill_count": 0,
+        "flow_count": 2,
+        "wall_seconds": 8.365263,
+        "whole_wave_output_tok_s": 0.956335742223526,
+        "all_emissions_tok_s": 73.51454669092647,
+        "prefill_input_tokens": 21638,
+        "prefill_wall_seconds": 8.268763,
+        "cached_tokens": 0,
+        "prefill_evaluated_tokens": 21638,
+        "uncached_prefill": true,
+        "prefill_aggregate_wall_tok_s": 2616.836399833929,
+        "logical_prompt_tok_s": 2616.836399833929,
+        "prefill_scope": "initial independent bank prefills",
+        "target_prefill_us_sum": 15736058,
+        "mtp_prefill_us_sum": 674017,
+        "thermal_wait_us_sum": 0,
+        "mtp_depth": 3,
+        "single_cached_affinity": false,
+        "single_cache_admission_free_mib": [],
+        "production_floor_mib": 256,
+        "context_rebuilds_before_execution": 0,
+        "capacity_growth_enabled": true,
+        "capacity_growth_applied": false,
+        "capacity_growth_reason": "no_eligible_growth",
+        "capacity_growth_units": 0,
+        "capacity_growth_required_free_mib": 0,
+        "capacity_growth_preflight_free_mib": [],
+        "capacity_growth_exact_capacity": [
+          24576,
+          24576,
+          17152,
+          17152
+        ],
+        "capacity_growth_candidate_capacity": [
+          24576,
+          24576,
+          17152,
+          17152
+        ],
+        "state_migration_supported": false,
+        "banks_scope": "completed wave before optional idle-context reclamation",
+        "post_wave_free_before_mib": [
+          2308,
+          2296,
+          2390,
+          2542,
+          3329,
+          3306
+        ],
+        "post_wave_reclaimed_banks": 0,
+        "post_wave_reclaim_us": 1178,
+        "post_wave_free_after_mib": [
+          2308,
+          2296,
+          2390,
+          2542,
+          3329,
+          3306
+        ]
+      }
+    }
+  ],
+  "growth_gate": {
+    "wave": "growth-7900-ab",
+    "exact_capacity": [
+      18944,
+      18944,
+      17152,
+      17152
+    ],
+    "candidate_capacity": [
+      24576,
+      24576,
+      17152,
+      17152
+    ],
+    "reserved_tokens": {
+      "growth-7900-ab-doc-alpha": 18717,
+      "growth-7900-ab-doc-bravo": 18717
+    },
+    "reserved_tokens_by_document": {
+      "DOC-AFFINITY-ALPHA-01": 18717,
+      "DOC-AFFINITY-BRAVO-02": 18717
+    },
+    "bank_by_document": {
+      "DOC-AFFINITY-ALPHA-01": 0,
+      "DOC-AFFINITY-BRAVO-02": 1
+    },
+    "prompt_sha256_by_document": {
+      "DOC-AFFINITY-ALPHA-01": "7f76f0dfd981601eeada0268352fcf2b11608023abcf22e0c458a5fb5b641f37",
+      "DOC-AFFINITY-BRAVO-02": "7dfa886e654976929f95abb0b25c08cbecc4faeac247d8248783980ae48388e6"
+    },
+    "growth_units_logged": 2,
+    "growth_units_calculated": 2,
+    "required_free_mib": 768,
+    "preflight_free_mib": [
+      2468,
+      2454,
+      2530,
+      2682,
+      3467,
+      3490
+    ],
+    "geometry": {
+      "0": {
+        "target_context": 24576,
+        "draft_context": 24576,
+        "target_ubatch": 256
+      },
+      "1": {
+        "target_context": 24576,
+        "draft_context": 24576,
+        "target_ubatch": 256
+      },
+      "2": {
+        "target_context": 17152,
+        "draft_context": 17152,
+        "target_ubatch": 256
+      },
+      "3": {
+        "target_context": 17152,
+        "draft_context": 17152,
+        "target_ubatch": 256
+      }
+    },
+    "context_rebuilds_before_execution": 2
+  },
+  "repeat_gate": {
+    "wave": "growth-8192-ab",
+    "exact_capacity": [
+      24576,
+      24576,
+      17152,
+      17152
+    ],
+    "reserved_tokens": {
+      "growth-8192-ab-doc-alpha": 19009,
+      "growth-8192-ab-doc-bravo": 19009
+    },
+    "strictly_larger_than_7900": true,
+    "geometry": {
+      "0": {
+        "target_context": 24576,
+        "draft_context": 24576,
+        "target_ubatch": 256
+      },
+      "1": {
+        "target_context": 24576,
+        "draft_context": 24576,
+        "target_ubatch": 256
+      },
+      "2": {
+        "target_context": 17152,
+        "draft_context": 17152,
+        "target_ubatch": 256
+      },
+      "3": {
+        "target_context": 17152,
+        "draft_context": 17152,
+        "target_ubatch": 256
+      }
+    },
+    "context_rebuilds_before_execution": 0,
+    "cache_tokens": {
+      "growth-8192-ab-doc-alpha": 10496,
+      "growth-8192-ab-doc-bravo": 10496
+    }
+  },
+  "early_edit_gate": {
+    "geometry_unchanged": true,
+    "cache_tokens": {
+      "growth-edit-ab-doc-alpha": 0,
+      "growth-edit-ab-doc-bravo": 0
+    },
+    "answers": {
+      "growth-edit-ab-doc-alpha": "7301",
+      "growth-edit-ab-doc-bravo": "4159"
+    },
+    "prompt_prefixes_changed": {
+      "DOC-AFFINITY-ALPHA-01": true,
+      "DOC-AFFINITY-BRAVO-02": true
+    }
+  },
+  "finished_unix": 1792349556.565623
+}

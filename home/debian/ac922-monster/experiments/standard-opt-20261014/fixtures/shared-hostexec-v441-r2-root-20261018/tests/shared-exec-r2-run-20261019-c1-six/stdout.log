@@ -1,0 +1,16 @@
+V441_R2_RING_PASS device=0 frames=8 exact=1 no_inter_launch_sync=1 prepare_only=1 distinct_keys=8 old_key_ready=1 old_key_rebound=1 current_device=5 current_unchanged=1 cross_device=1 key0=0x7fffd1466d08 graph0=0x10037c3e560
+V441_FALLBACK_PASS device=0 key=0x7fffd1466e04 initial_graph=0x10037c645a0 exact=1 retained_commit=1 followup_cuda_clean=1 drop_fenced=1
+V441_R2_RING_PASS device=1 frames=8 exact=1 no_inter_launch_sync=1 prepare_only=1 distinct_keys=8 old_key_ready=1 old_key_rebound=1 current_device=1 current_unchanged=1 cross_device=0 key0=0x7fffd1466d08 graph0=0x1003919bf70
+V441_FALLBACK_PASS device=1 key=0x7fffd1466e04 initial_graph=0x100391b6a70 exact=1 retained_commit=1 followup_cuda_clean=1 drop_fenced=1
+V441_R2_RING_PASS device=2 frames=8 exact=1 no_inter_launch_sync=1 prepare_only=1 distinct_keys=8 old_key_ready=1 old_key_rebound=1 current_device=2 current_unchanged=1 cross_device=0 key0=0x7fffd1466d08 graph0=0x10039c5a490
+V441_FALLBACK_PASS device=2 key=0x7fffd1466e04 initial_graph=0x10039c74f90 exact=1 retained_commit=1 followup_cuda_clean=1 drop_fenced=1
+V441_R2_RING_PASS device=3 frames=8 exact=1 no_inter_launch_sync=1 prepare_only=1 distinct_keys=8 old_key_ready=1 old_key_rebound=1 current_device=3 current_unchanged=1 cross_device=0 key0=0x7fffd1466d08 graph0=0x1003a721ba0
+V441_FALLBACK_PASS device=3 key=0x7fffd1466e04 initial_graph=0x1003a73fea0 exact=1 retained_commit=1 followup_cuda_clean=1 drop_fenced=1
+V441_R2_RING_PASS device=4 frames=8 exact=1 no_inter_launch_sync=1 prepare_only=1 distinct_keys=8 old_key_ready=1 old_key_rebound=1 current_device=4 current_unchanged=1 cross_device=0 key0=0x7fffd1466d08 graph0=0x1003b1f3210
+V441_FALLBACK_PASS device=4 key=0x7fffd1466e04 initial_graph=0x1003b20e210 exact=1 retained_commit=1 followup_cuda_clean=1 drop_fenced=1
+V441_R2_RING_PASS device=5 frames=8 exact=1 no_inter_launch_sync=1 prepare_only=1 distinct_keys=8 old_key_ready=1 old_key_rebound=1 current_device=5 current_unchanged=1 cross_device=0 key0=0x7fffd1466d08 graph0=0x1003b1f1df0
+V441_FALLBACK_PASS device=5 key=0x7fffd1466e04 initial_graph=0x1003b1f1df0 exact=1 retained_commit=1 followup_cuda_clean=1 drop_fenced=1
+V441_TWO_STREAM_PASS slots=2 outputs_exact=1
+V441_PREPARE_REBIND_PASS device=0 key=0x7fffd1466e04 graph_a=0x1003b20b880 prepare_only=1 launch_rebound_a=1
+V441_OWNER_DEVICE_PASS owner=0x124990218 devices=6 prepared_only=1 exact_pair_slots=1
+V441_R2_SHARED_EXEC_PASS devices=6 rings=6 fallback=6 two_streams=1 owner_device_pairs=6 outputs_exact=1

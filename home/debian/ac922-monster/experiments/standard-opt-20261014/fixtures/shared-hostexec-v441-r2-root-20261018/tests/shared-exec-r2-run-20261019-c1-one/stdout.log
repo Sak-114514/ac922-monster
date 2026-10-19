@@ -1,0 +1,6 @@
+V441_R2_RING_PASS device=0 frames=8 exact=1 no_inter_launch_sync=1 prepare_only=1 distinct_keys=8 old_key_ready=1 old_key_rebound=1 current_device=0 current_unchanged=1 cross_device=0 key0=0x7fffcc395ea8 graph0=0x1003effe560
+V441_FALLBACK_PASS device=0 key=0x7fffcc395fa4 initial_graph=0x1003f024640 exact=1 retained_commit=1 followup_cuda_clean=1 drop_fenced=1
+V441_TWO_STREAM_PASS slots=2 outputs_exact=1
+V441_PREPARE_REBIND_PASS device=0 key=0x7fffcc395fa4 graph_a=0x1003f0285e0 prepare_only=1 launch_rebound_a=1
+V441_OWNER_DEVICE_PASS owner=0x10bcf0218 devices=1 prepared_only=1 exact_pair_slots=1
+V441_R2_SHARED_EXEC_PASS devices=1 rings=1 fallback=1 two_streams=1 owner_device_pairs=1 outputs_exact=1

@@ -1,0 +1,339 @@
+{
+  "schema": "ac922-single-cache-measured-summary-v1",
+  "status": "PASS",
+  "semantic_adjudication": "evidence/semantic-review.json",
+  "receipts": {
+    "onecat_fixture": {
+      "status": "PASS",
+      "run_tag": "r5-r444-sixcard-20261019-p1",
+      "case_count": 6
+    },
+    "campaign": {
+      "status": "PASS",
+      "stages": {
+        "affinity": {
+          "status": "PASS",
+          "returncode": 0
+        },
+        "cancel-cached": {
+          "status": "PASS",
+          "returncode": 0
+        },
+        "http": {
+          "status": "PASS",
+          "returncode": 0
+        },
+        "single-cache": {
+          "status": "PASS",
+          "returncode": 0
+        }
+      }
+    }
+  },
+  "acceptance_status": {
+    "affinity": "PASS",
+    "single_cache": "PASS",
+    "http": "PASS",
+    "cancel_cached_single": "PASS",
+    "http_result_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/single-cache-20261019/run/http-result.json"
+  },
+  "c3_raw32k_uncached_prefill": {
+    "prefill_input_tokens": 32768,
+    "prefill_wall_seconds": 8.800807,
+    "prefill_aggregate_wall_tok_s": 3723.2949205680798,
+    "target_prefill_us_sum": 8302981,
+    "mtp_prefill_us_sum": 489970,
+    "thermal_wait_us_sum": 0,
+    "cached_tokens": 0,
+    "control_wall_s": 10.407322924002074,
+    "bank": 0,
+    "target_ubatch": 1024
+  },
+  "c3_four512": {
+    "wave_id": "c3-four512-52eeb883c4",
+    "rawflow_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/single-cache-20261019/run/model/copy0/fourbank16k-d3/lastwave-18.json",
+    "actual_output_tokens": 2048,
+    "actual_tokens_by_request": [
+      512,
+      512,
+      512,
+      512
+    ],
+    "ipc_control_wall_s": 10.875008579983842,
+    "ipc_control_actual_tok_s": 188.32169050141962,
+    "worker_whole_wave_output_tok_s": 188.91127700702552,
+    "worker_all_emissions_tok_s": 194.8078940191789,
+    "http_usage_completion_tokens": 2048,
+    "http_usage_elapsed_s": 9.967605442972854,
+    "http_usage_actual_tok_s_recomputed": 205.46559669893804,
+    "http_usage_recorded_tok_s": 205.46559669893804,
+    "http_stream_phase_status": "PASS",
+    "http_stream_counted_tokens_from_finish_reason": 2048
+  },
+  "l2_four512_exact_comparison": {
+    "baseline_path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/evidence/four512-flow-record.json",
+    "per_flow": {
+      "story-1": {
+        "token_ids_exact": true,
+        "text_exact": true,
+        "current_output_tokens": 512,
+        "current_text_characters": 2642,
+        "l2_text_characters": 2642
+      },
+      "story-0": {
+        "token_ids_exact": true,
+        "text_exact": true,
+        "current_output_tokens": 512,
+        "current_text_characters": 2647,
+        "l2_text_characters": 2647
+      },
+      "story-3": {
+        "token_ids_exact": true,
+        "text_exact": true,
+        "current_output_tokens": 512,
+        "current_text_characters": 2891,
+        "l2_text_characters": 2891
+      },
+      "story-2": {
+        "token_ids_exact": true,
+        "text_exact": true,
+        "current_output_tokens": 512,
+        "current_text_characters": 2969,
+        "l2_text_characters": 2969
+      }
+    }
+  },
+  "http_full_text_identity_if_available": {
+    "story-1": {
+      "sse_available": true,
+      "sse_full_text_exact": true,
+      "usage_response_available": true,
+      "usage_response_full_text_exact": true
+    },
+    "story-0": {
+      "sse_available": true,
+      "sse_full_text_exact": true,
+      "usage_response_available": true,
+      "usage_response_full_text_exact": true
+    },
+    "story-3": {
+      "sse_available": true,
+      "sse_full_text_exact": true,
+      "usage_response_available": true,
+      "usage_response_full_text_exact": true
+    },
+    "story-2": {
+      "sse_available": true,
+      "sse_full_text_exact": true,
+      "usage_response_available": true,
+      "usage_response_full_text_exact": true
+    }
+  },
+  "cached_single_waves": [
+    {
+      "label": "c3-mixed-geometry-single-d",
+      "status": "PASS",
+      "wall_s": 1.042821713956073,
+      "control_roundtrip_s": 1.043856500997208,
+      "bank_by_request": {
+        "mixed-doc-d": 3
+      },
+      "cached_tokens_by_request": {
+        "mixed-doc-d": 10496
+      },
+      "output_tokens_by_request": {
+        "mixed-doc-d": 4
+      },
+      "geometry": [
+        {
+          "bank": 0,
+          "target_context": 66048,
+          "draft_context": 66048,
+          "target_ubatch": 1024
+        },
+        {
+          "bank": 1,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 2,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 3,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        }
+      ],
+      "single_cached_affinity": true,
+      "context_rebuilds_before_execution": 0,
+      "post_wave_reclaimed_banks": 0
+    },
+    {
+      "label": "c3-cached-single-512-prose",
+      "status": "PASS_COHERENT_AT_512_TOKEN_LIMIT",
+      "wall_s": 8.43119197001215,
+      "control_roundtrip_s": 8.432276037987322,
+      "bank_by_request": {
+        "cached-essay": 3
+      },
+      "cached_tokens_by_request": {
+        "cached-essay": 10496
+      },
+      "output_tokens_by_request": {
+        "cached-essay": 512
+      },
+      "geometry": [
+        {
+          "bank": 0,
+          "target_context": 66048,
+          "draft_context": 66048,
+          "target_ubatch": 1024
+        },
+        {
+          "bank": 1,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 2,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 3,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        }
+      ],
+      "single_cached_affinity": true,
+      "context_rebuilds_before_execution": 0,
+      "post_wave_reclaimed_banks": 0,
+      "producer_status": "FULL_TEXT_REVIEW_REQUIRED"
+    },
+    {
+      "label": "c3-single-d-after-prose",
+      "status": "PASS",
+      "wall_s": 0.7760555020067841,
+      "control_roundtrip_s": 0.7770371160004288,
+      "bank_by_request": {
+        "doc-d-after-prose": 3
+      },
+      "cached_tokens_by_request": {
+        "doc-d-after-prose": 10496
+      },
+      "output_tokens_by_request": {
+        "doc-d-after-prose": 4
+      },
+      "geometry": [
+        {
+          "bank": 0,
+          "target_context": 66048,
+          "draft_context": 66048,
+          "target_ubatch": 1024
+        },
+        {
+          "bank": 1,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 2,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 3,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        }
+      ],
+      "single_cached_affinity": true,
+      "context_rebuilds_before_execution": 0,
+      "post_wave_reclaimed_banks": 0
+    },
+    {
+      "label": "c3-single-capacity-fallback",
+      "status": "PASS",
+      "wall_s": 8.48057419899851,
+      "control_roundtrip_s": 8.481627585017122,
+      "bank_by_request": {
+        "capacity-fallback-d": 0
+      },
+      "cached_tokens_by_request": {
+        "capacity-fallback-d": 0
+      },
+      "output_tokens_by_request": {
+        "capacity-fallback-d": 4
+      },
+      "geometry": [
+        {
+          "bank": 0,
+          "target_context": 66048,
+          "draft_context": 66048,
+          "target_ubatch": 1024
+        },
+        {
+          "bank": 1,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 2,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 3,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        }
+      ],
+      "single_cached_affinity": false,
+      "context_rebuilds_before_execution": 0,
+      "post_wave_reclaimed_banks": 0
+    }
+  ],
+  "telemetry": {
+    "status": "RECORDED",
+    "path": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/single-cache-20261019/run/gpu-samples.jsonl",
+    "samples": 1978,
+    "start_unix": 1792347373.129445,
+    "end_unix": 1792347772.173691,
+    "minimum_free_mib_by_gpu": [
+      1129.375,
+      699.375,
+      887.375,
+      1039.375,
+      1950.125,
+      1683.375
+    ],
+    "maximum_temperature_c_by_gpu": [
+      60,
+      60,
+      60,
+      58,
+      59,
+      58
+    ]
+  },
+  "source_paths": {
+    "run_dir": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/single-cache-20261019/run",
+    "l2_flow": "/home/debian/ac922-monster/experiments/standard-opt-20261014/production/postrelease-20261019/evidence/four512-flow-record.json"
+  },
+  "producer_status": "PENDING_SEMANTIC_ADJUDICATION"
+}

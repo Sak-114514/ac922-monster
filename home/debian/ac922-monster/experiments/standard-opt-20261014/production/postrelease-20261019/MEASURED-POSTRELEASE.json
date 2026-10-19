@@ -1,0 +1,214 @@
+{
+  "status": "PASS",
+  "worker_sha256": "52d7ab82a656c794e4ffd01be15d13f59c8b3e8225d3f642df7c569d696b284f",
+  "http_status": "PASS",
+  "affinity_status": "PASS",
+  "prefill": {
+    "lastwave-32k-first": {
+      "prefill_input_tokens": 32768,
+      "cached_tokens": 0,
+      "prefill_wall_seconds": 7.719618,
+      "prefill_aggregate_wall_tok_s": 4244.769624610959,
+      "thermal_wait_us_sum": 0
+    },
+    "lastwave-32k-repeat": {
+      "prefill_input_tokens": 32768,
+      "cached_tokens": 0,
+      "prefill_wall_seconds": 6.893085,
+      "prefill_aggregate_wall_tok_s": 4753.749591075694,
+      "thermal_wait_us_sum": 0
+    },
+    "lastwave-64k-max262k-UB512": {
+      "prefill_input_tokens": 65536,
+      "cached_tokens": 0,
+      "prefill_wall_seconds": 16.741482,
+      "prefill_aggregate_wall_tok_s": 3914.5877288522006,
+      "thermal_wait_us_sum": 0
+    },
+    "lastwave-native4-8k": {
+      "prefill_input_tokens": 32768,
+      "cached_tokens": 0,
+      "prefill_wall_seconds": 9.837972,
+      "prefill_aggregate_wall_tok_s": 3330.7677639253293,
+      "thermal_wait_us_sum": 4431709
+    }
+  },
+  "generation": {
+    "whole_wave_output_tok_s": 205.77161239942762,
+    "all_emissions_tok_s": 215.21821897886312,
+    "wall_seconds": 9.952782,
+    "ipc_control_tok_s": 204.78502188084178,
+    "ipc_control_wall_s": 10.000731406966224,
+    "http_usage_tok_s": 210.0030817563784,
+    "http_wall_s": 9.752237837994471
+  },
+  "affinity": [
+    {
+      "label": "cold4",
+      "status": "PASS",
+      "wall_s": 15.106866393005475,
+      "mapping": {
+        "doc-alpha": 0,
+        "doc-bravo": 1,
+        "doc-charlie": 2,
+        "doc-delta": 3
+      },
+      "cache_tokens": {
+        "doc-alpha": 0,
+        "doc-bravo": 0,
+        "doc-charlie": 0,
+        "doc-delta": 0
+      }
+    },
+    {
+      "label": "same4",
+      "status": "PASS",
+      "wall_s": 1.329456241976004,
+      "mapping": {
+        "doc-alpha": 0,
+        "doc-bravo": 1,
+        "doc-charlie": 2,
+        "doc-delta": 3
+      },
+      "cache_tokens": {
+        "doc-alpha": 10496,
+        "doc-bravo": 10496,
+        "doc-charlie": 10496,
+        "doc-delta": 10496
+      }
+    },
+    {
+      "label": "shuffle_3_1_0_2",
+      "status": "PASS",
+      "wall_s": 1.6373478579916991,
+      "mapping": {
+        "doc-delta": 3,
+        "doc-bravo": 1,
+        "doc-alpha": 0,
+        "doc-charlie": 2
+      },
+      "cache_tokens": {
+        "doc-delta": 10496,
+        "doc-bravo": 10496,
+        "doc-alpha": 10496,
+        "doc-charlie": 10496
+      }
+    },
+    {
+      "label": "subset2_2_0",
+      "status": "PASS",
+      "wall_s": 0.8875272779841907,
+      "mapping": {
+        "doc-charlie": 2,
+        "doc-alpha": 0
+      },
+      "cache_tokens": {
+        "doc-charlie": 10496,
+        "doc-alpha": 10496
+      }
+    },
+    {
+      "label": "subset3_1_3_2",
+      "status": "PASS",
+      "wall_s": 1.3125215329928324,
+      "mapping": {
+        "doc-bravo": 1,
+        "doc-delta": 3,
+        "doc-charlie": 2
+      },
+      "cache_tokens": {
+        "doc-bravo": 10496,
+        "doc-delta": 10496,
+        "doc-charlie": 10496
+      }
+    },
+    {
+      "label": "edited_early_body2",
+      "status": "PASS",
+      "wall_s": 7.454801537038293,
+      "mapping": {
+        "doc-alpha": 0,
+        "doc-charlie": 1
+      },
+      "cache_tokens": {
+        "doc-alpha": 0,
+        "doc-charlie": 0
+      }
+    }
+  ],
+  "setup": {
+    "scope": "host request-phase wall intervals, not proof of GPU kernel overlap",
+    "max_simultaneous_windows": 3,
+    "overlap_ge2_ms": 393.691,
+    "overlap_all4_ms": 0.0,
+    "per_flow": [
+      {
+        "id": "story-0",
+        "parallel": true,
+        "wait_us": 4,
+        "warmup_frames": 4,
+        "warmup_ms": 241.516,
+        "proposed": 544,
+        "accepted": 329
+      },
+      {
+        "id": "story-1",
+        "parallel": true,
+        "wait_us": 4,
+        "warmup_frames": 4,
+        "warmup_ms": 287.185,
+        "proposed": 541,
+        "accepted": 330
+      },
+      {
+        "id": "story-3",
+        "parallel": true,
+        "wait_us": 3,
+        "warmup_frames": 4,
+        "warmup_ms": 302.269,
+        "proposed": 582,
+        "accepted": 316
+      },
+      {
+        "id": "story-2",
+        "parallel": true,
+        "wait_us": 4,
+        "warmup_frames": 4,
+        "warmup_ms": 243.592,
+        "proposed": 647,
+        "accepted": 295
+      }
+    ]
+  },
+  "l1_output_comparison": {
+    "story-0": {
+      "token_ids_exact": true,
+      "text_exact": true
+    },
+    "story-1": {
+      "token_ids_exact": true,
+      "text_exact": true
+    },
+    "story-3": {
+      "token_ids_exact": true,
+      "text_exact": true
+    },
+    "story-2": {
+      "token_ids_exact": true,
+      "text_exact": true
+    }
+  },
+  "telemetry": {
+    "samples": 4467,
+    "minimum_free_mib": 755.812,
+    "max_gpu_core_c": 61
+  },
+  "asymmetric_ttft": {
+    "strict-json-zh": 1.3355428769718856,
+    "logic-en": 2.111876350012608,
+    "arithmetic-zh": 5.758201015996747,
+    "capital-en": 14.643689217977226
+  },
+  "semantic_review": "all2048IPCtokenIDs/texts exact to already fully read/qualified L1; all8HTTPlong texts exact to those same fourIPCtexts; new semantic/native/code/edited/refill/late checks passed",
+  "raw_performance_scope": "single samples; 4x8K thermal_wait_sum4.431709s included; do not add cache speed to raw PP"
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "label": "v401-d3-native-fourbank-canary",
+    "kind": "semantic_p4_gate",
+    "dual": true,
+    "requests": [
+      {
+        "id": "capital-en",
+        "prompt": "What is the capital city of France? Reply with exactly the city name, without punctuation or explanation.",
+        "checker": "exact_text",
+        "expected": "Paris",
+        "max_tokens": 32,
+        "prompt_source": "native-semantics-case-input-chat-text",
+        "prompt_sha256": "678afb9d5078d3ef479ad3e40b6e01e132b65aac62879b62ac421f37a4c5de53",
+        "ignore_eos": false
+      },
+      {
+        "id": "arithmetic-zh",
+        "prompt": "请计算 2847 + 6958。只输出十进制整数，不要解释。",
+        "checker": "exact_text",
+        "expected": "9805",
+        "max_tokens": 32,
+        "prompt_source": "native-semantics-case-input-chat-text",
+        "prompt_sha256": "66a63b3484247e7484205590e2d97f029e4cca6d04dad810a4bf875ea5ab3cb9",
+        "ignore_eos": false
+      },
+      {
+        "id": "logic-en",
+        "prompt": "All dax are lamn. Some lamn are red. Does it logically follow that some dax are red? Reply with exactly YES or NO.",
+        "checker": "exact_text",
+        "expected": "NO",
+        "max_tokens": 32,
+        "prompt_source": "native-semantics-case-input-chat-text",
+        "prompt_sha256": "58744d376b8998e4096757e147962eeec82dddab03c495e0fbf84e000fc2591d",
+        "ignore_eos": false
+      },
+      {
+        "id": "strict-json-zh",
+        "prompt": "请严格按要求输出一个 JSON 对象，不要 Markdown、代码围栏或其他文字。对象必须是：{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}",
+        "checker": "strict_json",
+        "expected": {
+          "ok": true,
+          "count": 3,
+          "colors": [
+            "红",
+            "蓝"
+          ]
+        },
+        "max_tokens": 32,
+        "prompt_source": "native-semantics-case-input-chat-text",
+        "prompt_sha256": "67df94ecb8366efe4bde382cda2f805ec358be2a81d4c21717131bfe18beff22",
+        "ignore_eos": false
+      }
+    ],
+    "family": "d3",
+    "mtp_depth": 3,
+    "require_gpu_chain": true
+  },
+  {
+    "label": "v401-d3-fourbank-4x16k-512",
+    "kind": "v50_long_prefill",
+    "dual": true,
+    "require_full_output": true,
+    "requests": [
+      {
+        "id": "v221-d3-flow-0",
+        "corpus_token_start": 0,
+        "corpus_token_count": 16384,
+        "prompt_source": "v45-curated-real-corpus-runtime-token-slice",
+        "max_tokens": 512,
+        "ignore_eos": true
+      },
+      {
+        "id": "v221-d3-flow-1",
+        "corpus_token_start": 16384,
+        "corpus_token_count": 16384,
+        "prompt_source": "v45-curated-real-corpus-runtime-token-slice",
+        "max_tokens": 512,
+        "ignore_eos": true
+      },
+      {
+        "id": "v221-d3-flow-2",
+        "corpus_token_start": 32768,
+        "corpus_token_count": 16384,
+        "prompt_source": "v45-curated-real-corpus-runtime-token-slice",
+        "max_tokens": 512,
+        "ignore_eos": true
+      },
+      {
+        "id": "v221-d3-flow-3",
+        "corpus_token_start": 49152,
+        "corpus_token_count": 16384,
+        "prompt_source": "v45-curated-real-corpus-runtime-token-slice",
+        "max_tokens": 512,
+        "ignore_eos": true
+      }
+    ],
+    "family": "d3",
+    "mtp_depth": 3,
+    "require_gpu_chain": true
+  }
+]

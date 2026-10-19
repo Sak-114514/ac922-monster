@@ -1,0 +1,231 @@
+{
+  "status": "PASS",
+  "started_unix": 1792366028.1120803,
+  "finished_unix": 1792366040.2467165,
+  "wave": {
+    "id": "r441-fourlong-native-c1",
+    "accepted": {
+      "capital-en": {
+        "type": "accepted",
+        "id": "capital-en",
+        "input_tokens": 8192,
+        "reserved_tokens": 8224,
+        "bank": 0,
+        "wave_id": "r441-fourlong-native-c1"
+      },
+      "arithmetic-zh": {
+        "type": "accepted",
+        "id": "arithmetic-zh",
+        "input_tokens": 8192,
+        "reserved_tokens": 8224,
+        "bank": 1,
+        "wave_id": "r441-fourlong-native-c1"
+      },
+      "logic-en": {
+        "type": "accepted",
+        "id": "logic-en",
+        "input_tokens": 8192,
+        "reserved_tokens": 8224,
+        "bank": 2,
+        "wave_id": "r441-fourlong-native-c1"
+      },
+      "strict-json-zh": {
+        "type": "accepted",
+        "id": "strict-json-zh",
+        "input_tokens": 8192,
+        "reserved_tokens": 8224,
+        "bank": 3,
+        "wave_id": "r441-fourlong-native-c1"
+      }
+    },
+    "cache_status": {
+      "capital-en": {
+        "type": "cache_status",
+        "id": "capital-en",
+        "bank": 0,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      },
+      "logic-en": {
+        "type": "cache_status",
+        "id": "logic-en",
+        "bank": 2,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      },
+      "strict-json-zh": {
+        "type": "cache_status",
+        "id": "strict-json-zh",
+        "bank": 3,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      },
+      "arithmetic-zh": {
+        "type": "cache_status",
+        "id": "arithmetic-zh",
+        "bank": 1,
+        "hit": false,
+        "cached_tokens": 0,
+        "checkpoint_tokens": 0
+      }
+    },
+    "done": {
+      "capital-en": {
+        "type": "done",
+        "id": "capital-en",
+        "input_tokens": 8192,
+        "output_tokens": 1,
+        "finish_reason": "stop",
+        "bank": 0
+      },
+      "logic-en": {
+        "type": "done",
+        "id": "logic-en",
+        "input_tokens": 8192,
+        "output_tokens": 1,
+        "finish_reason": "stop",
+        "bank": 2
+      },
+      "arithmetic-zh": {
+        "type": "done",
+        "id": "arithmetic-zh",
+        "input_tokens": 8192,
+        "output_tokens": 4,
+        "finish_reason": "stop",
+        "bank": 1
+      },
+      "strict-json-zh": {
+        "type": "done",
+        "id": "strict-json-zh",
+        "input_tokens": 8192,
+        "output_tokens": 15,
+        "finish_reason": "stop",
+        "bank": 3
+      }
+    },
+    "errors": [],
+    "first_token_s": {
+      "capital-en": 11.519637352030259,
+      "logic-en": 11.78178973600734,
+      "arithmetic-zh": 11.782592446019407,
+      "strict-json-zh": 11.783001423988026
+    },
+    "last_token_s": {
+      "capital-en": 11.519637352030259,
+      "logic-en": 11.78178973600734,
+      "arithmetic-zh": 12.031834416033234,
+      "strict-json-zh": 12.130522051011212
+    },
+    "refill_mode_requested": false,
+    "wave_closing_seen": false,
+    "close_ack_sent": false,
+    "worker_pid": 573279,
+    "wave_done_seen": true,
+    "timings": {
+      "wave_id": "r441-fourlong-native-c1",
+      "mode": "bank_local_phase_progression",
+      "banks": [
+        {
+          "bank": 0,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 1,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 2,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        },
+        {
+          "bank": 3,
+          "target_context": 17152,
+          "draft_context": 17152,
+          "target_ubatch": 256
+        }
+      ],
+      "refill_count": 0,
+      "flow_count": 4,
+      "wall_seconds": 10.527169,
+      "whole_wave_output_tok_s": 1.9948383083809142,
+      "all_emissions_tok_s": 34.368085468518835,
+      "prefill_input_tokens": 32768,
+      "prefill_wall_seconds": 10.178694,
+      "cached_tokens": 0,
+      "prefill_evaluated_tokens": 32768,
+      "uncached_prefill": true,
+      "prefill_aggregate_wall_tok_s": 3219.2735138712296,
+      "logical_prompt_tok_s": 3219.2735138712296,
+      "prefill_scope": "initial independent bank prefills",
+      "target_prefill_us_sum": 38317880,
+      "mtp_prefill_us_sum": 2064280,
+      "thermal_wait_us_sum": 0,
+      "mtp_depth": 3,
+      "single_cached_affinity": false,
+      "single_cache_admission_free_mib": [],
+      "production_floor_mib": 256,
+      "context_rebuilds_before_execution": 4,
+      "capacity_growth_enabled": true,
+      "capacity_growth_applied": false,
+      "capacity_growth_reason": "insufficient_gpu_headroom",
+      "capacity_growth_units": 9,
+      "capacity_growth_required_free_mib": 1664,
+      "capacity_growth_preflight_free_mib": [
+        1853,
+        1445,
+        1523,
+        1675,
+        2582,
+        2645
+      ],
+      "capacity_growth_exact_capacity": [
+        17152,
+        17152,
+        17152,
+        17152
+      ],
+      "capacity_growth_candidate_capacity": [
+        17152,
+        24576,
+        24576,
+        24576
+      ],
+      "state_migration_supported": false,
+      "banks_scope": "completed wave before optional idle-context reclamation",
+      "post_wave_free_before_mib": [
+        2321,
+        2333,
+        2411,
+        2563,
+        3470,
+        3379
+      ],
+      "post_wave_reclaimed_banks": 0,
+      "post_wave_reclaim_us": 1288,
+      "post_wave_free_after_mib": [
+        2321,
+        2333,
+        2411,
+        2563,
+        3470,
+        3379
+      ]
+    },
+    "wall_s": 12.133372389012948,
+    "texts": {
+      "capital-en": "Paris",
+      "arithmetic-zh": "9805",
+      "logic-en": "NO",
+      "strict-json-zh": "{\"ok\":true,\"count\":3,\"colors\":[\"红\",\"蓝\"]}"
+    }
+  }
+}
